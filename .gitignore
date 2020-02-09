@@ -3,7 +3,7 @@ Addatone_MachX03/addatone_sim/work/*
 Addatone_MachX03/impl1/*
 Addatone_MachX03/Addatone_tcr.dir/*
 Addatone_STM32F405/Debug/*
-
+Addatone_MachX03/addatone_sim/src/wave.asdbw/*
 *.html
 *.log
 *.tcr

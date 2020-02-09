@@ -12,13 +12,13 @@ module Sample_Pos_RAM (din, addr, write_en, clk, dout);
 
 	integer i;
 
-	//initial
-	//begin
-		//for (i = 0; i < 256; i++)
-		//begin
-			//mem[i] = 1'b0;
-		//end
-	//end
+	initial
+	begin
+		for (i = 0; i < 256; i = i + 1)
+		begin
+			mem[i] = 1'b0;
+		end
+	end
 
 	always @(posedge clk)	// Control with a clock edge.
 	begin
