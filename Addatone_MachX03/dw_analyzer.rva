@@ -1,0 +1,75 @@
+<!DOCTYPE ispTLA>
+<ispTLA>
+ <CreationDate>Tue 21. Jan 17:52:41 2020</CreationDate>
+ <XCFFileName/>
+ <CableSetting>
+  <IsTRSTConnected val="false"/>
+  <TRSTSetting val="0"/>
+  <IsBSCANConnected val="false"/>
+  <BSCANSetting val="0"/>
+  <CableType val="USB2"/>
+  <PortAddress val="0"/>
+  <PortSetting val="0"/>
+  <TCKDelay val="1"/>
+ </CableSetting>
+ <DeviceCount>1</DeviceCount>
+ <Device>
+  <DeviceIndex>0</DeviceIndex>
+  <DeviceName>1. LCMXO3LF-6900C</DeviceName>
+  <DeviceID>0x612BD043</DeviceID>
+  <HasIspTRACY>true</HasIspTRACY>
+  <HasJTAG2WB>false</HasJTAG2WB>
+  <SERDES/>
+  <IRBypassLen>8</IRBypassLen>
+  <RVLFileName>dw_reveal.rvl</RVLFileName>
+  <RVSFileName>dw_reveal.rvs</RVSFileName>
+  <LACoreCount>1</LACoreCount>
+  <WinUI CoreIndex="0">
+   <TraceSigTreeData>
+    <TraceSignal IsHidden="false" Name="adc/data_out" NodeType="1" PortIndex="0">
+     <BusRadix Radix="0"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="adc/data_out:0" NodeType="2" PortIndex="0"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:1" NodeType="2" PortIndex="1"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:2" NodeType="2" PortIndex="2"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:3" NodeType="2" PortIndex="3"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:4" NodeType="2" PortIndex="4"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:5" NodeType="2" PortIndex="5"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:6" NodeType="2" PortIndex="6"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:7" NodeType="2" PortIndex="7"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:8" NodeType="2" PortIndex="8"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:9" NodeType="2" PortIndex="9"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:10" NodeType="2" PortIndex="10"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:11" NodeType="2" PortIndex="11"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:12" NodeType="2" PortIndex="12"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:13" NodeType="2" PortIndex="13"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:14" NodeType="2" PortIndex="14"/>
+    <TraceSignal IsHidden="false" Name="adc/data_out:15" NodeType="2" PortIndex="15"/>
+    <TraceSignal IsHidden="false" Name="adc/receive_bit" NodeType="1" PortIndex="16">
+     <BusRadix Radix="0"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="adc/receive_bit:0" NodeType="2" PortIndex="16"/>
+    <TraceSignal IsHidden="false" Name="adc/receive_bit:1" NodeType="2" PortIndex="17"/>
+    <TraceSignal IsHidden="false" Name="adc/receive_bit:2" NodeType="2" PortIndex="18"/>
+    <TraceSignal IsHidden="false" Name="adc/receive_bit:3" NodeType="2" PortIndex="19"/>
+    <TraceSignal IsHidden="false" Name="adc/SPISlaveState" NodeType="1" PortIndex="20">
+     <BusRadix Radix="0"/>
+     <IsExpanded Expand="false"/>
+    </TraceSignal>
+    <TraceSignal IsHidden="false" Name="adc/SPISlaveState:0" NodeType="2" PortIndex="20"/>
+    <TraceSignal IsHidden="false" Name="adc/SPISlaveState:1" NodeType="2" PortIndex="21"/>
+    <TraceSignal IsHidden="false" Name="adc/spi_clock_in" NodeType="0" PortIndex="22"/>
+    <TraceSignal IsHidden="false" Name="adc/spi_data_in" NodeType="0" PortIndex="23"/>
+    <TraceSignal IsHidden="false" Name="adc_spi_clock" NodeType="0" PortIndex="24"/>
+    <TraceSignal IsHidden="false" Name="adc_spi_data" NodeType="0" PortIndex="25"/>
+   </TraceSigTreeData>
+   <TriggerUI UserSelect="0" PreSelectType="0" PreSelect="1" UserSelectPos="0"/>
+   <CoreRun Run="true"/>
+   <CoreWndUIData>
+    <ClockFrequency Unit="ns" Frequency="-1.0"/>
+   </CoreWndUIData>
+  </WinUI>
+ </Device>
+</ispTLA>

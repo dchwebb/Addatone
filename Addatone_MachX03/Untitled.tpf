@@ -1,0 +1,8 @@
+FREQUENCY NET "fpga_clock" 88.676066 MHz ;
+RVL_ALIAS "fpga_clock" "fpga_clock"; 
+RVL_ALIAS "fpga_clock" "fpga_clock"; 
+RVL_ALIAS "fpga_clock" "fpga_clock"; 
+BLOCK RESETPATHS ;
+BLOCK ASYNCPATHS ;
+BLOCK JTAGPATHS ;
+VOLTAGE 3.300 V;

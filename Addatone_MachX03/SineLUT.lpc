@@ -1,0 +1,52 @@
+[Device]
+Family=machxo3lf
+PartType=LCMXO3LF-6900C
+PartName=LCMXO3LF-6900C-5BG256C
+SpeedGrade=5
+Package=CABGA256
+OperatingCondition=COM
+Status=S
+
+[IP]
+VendorName=Lattice Semiconductor Corporation
+CoreType=LPM
+CoreStatus=Demo
+CoreName=ROM
+CoreRevision=5.4
+ModuleName=SineLUT
+SourceFormat=Verilog HDL
+ParameterFileVersion=1.0
+Date=02/07/2020
+Time=12:38:33
+
+[Parameters]
+Verilog=1
+VHDL=0
+EDIF=1
+Destination=Synplicity
+Expression=BusA(0 to 7)
+Order=Big Endian [MSB:LSB]
+IO=0
+Address=1500
+Data=16
+enByte=0
+ByteSize=9
+OutputEn=0
+ClockEn=0
+Optimization=Speed
+Reset=Sync
+Reset1=Sync
+Init=0
+MemFile=d:/docs/fpga/oscillator/sin_lut_2c_1500.mem
+MemFormat=hex
+EnECC=0
+Pipeline=0
+Write=Normal
+init_data=0
+no_init=0
+
+[FilesGenerated]
+d:/docs/fpga/oscillator/sin_lut_2c_1500.mem=mem
+
+[Command]
+cmd_line= -w -n SineLUT -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type romblk -device LCMXO3LF-6900C -addr_width 11 -data_width 16 -num_words 1500 -cascade -1 -memfile "d:/docs/fpga/oscillator/sin_lut_2c_1500.mem" -memformat hex

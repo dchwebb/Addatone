@@ -1,0 +1,14 @@
+[Version]
+Version=10.5
+[Designs]
+osc_sim=osc_sim.adf
+[Settings]
+Active=osc_sim
+[Expand]
+osc_sim=1
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+macro=

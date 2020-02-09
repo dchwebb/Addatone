@@ -1,0 +1,54 @@
+<Project ModBy="Inserter" SigType="0" Name="D:/docs/FPGA/Oscillator/dw_reveal.rvl" Date="2020-01-21">
+    <IP Version="1_6_042617"/>
+    <Design DesignEntry="Schematic/Verilog HDL" Synthesis="lse" DeviceFamily="MachXO3LF" DesignName="Oscillator"/>
+    <Core InsertDataset="0" Insert="1" Reveal_sig="275462478" Name="top_LA0" ID="0">
+        <Setting>
+            <Clock SampleClk="fpga_clock" SampleEnable="0" EnableClk="" EnableClk_Pri="0"/>
+            <TraceBuffer Implementation="0" BitTimeStamp="0" hasTimeStamp="0" IncTrigSig="0" BufferDepth="4096"/>
+            <Capture Mode="0" MinSamplesPerTrig="16"/>
+            <Event CntEnable="0" MaxEventCnt="8"/>
+            <TrigOut Polarity="0" MinPulseWidth="0" TrigOutNetType="1" EnableTrigOut="0" TrigOutNet="reveal_debug_top_LA0_net"/>
+            <DistRAM Disable="0"/>
+        </Setting>
+        <Dataset Name="Base">
+            <Trace>
+                <Bus Name="adc/data_out">
+                    <Sig Type="SIG" Name="adc/data_out:0"/>
+                    <Sig Type="SIG" Name="adc/data_out:1"/>
+                    <Sig Type="SIG" Name="adc/data_out:2"/>
+                    <Sig Type="SIG" Name="adc/data_out:3"/>
+                    <Sig Type="SIG" Name="adc/data_out:4"/>
+                    <Sig Type="SIG" Name="adc/data_out:5"/>
+                    <Sig Type="SIG" Name="adc/data_out:6"/>
+                    <Sig Type="SIG" Name="adc/data_out:7"/>
+                    <Sig Type="SIG" Name="adc/data_out:8"/>
+                    <Sig Type="SIG" Name="adc/data_out:9"/>
+                    <Sig Type="SIG" Name="adc/data_out:10"/>
+                    <Sig Type="SIG" Name="adc/data_out:11"/>
+                    <Sig Type="SIG" Name="adc/data_out:12"/>
+                    <Sig Type="SIG" Name="adc/data_out:13"/>
+                    <Sig Type="SIG" Name="adc/data_out:14"/>
+                    <Sig Type="SIG" Name="adc/data_out:15"/>
+                </Bus>
+                <Bus Name="adc/receive_bit">
+                    <Sig Type="SIG" Name="adc/receive_bit:0"/>
+                    <Sig Type="SIG" Name="adc/receive_bit:1"/>
+                    <Sig Type="SIG" Name="adc/receive_bit:2"/>
+                    <Sig Type="SIG" Name="adc/receive_bit:3"/>
+                </Bus>
+                <Bus Name="adc/SPISlaveState">
+                    <Sig Type="SIG" Name="adc/SPISlaveState:0"/>
+                    <Sig Type="SIG" Name="adc/SPISlaveState:1"/>
+                </Bus>
+                <Sig Type="SIG" Name="adc/spi_clock_in"/>
+                <Sig Type="SIG" Name="adc/spi_data_in"/>
+                <Sig Type="SIG" Name="adc_spi_clock"/>
+                <Sig Type="SIG" Name="adc_spi_data"/>
+            </Trace>
+            <Trigger>
+                <TU Serialbits="0" Type="0" ID="1" Sig="(BUS)adc/SPISlaveState[1:0],"/>
+                <TE MaxSequence="1" MaxEvnCnt="1" ID="1" Resource="1"/>
+            </Trigger>
+        </Dataset>
+    </Core>
+</Project>
