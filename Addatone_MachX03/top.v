@@ -74,10 +74,10 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	// Instantiate fractional adder - this scales then accumulates samples for each sine wave
 	parameter DIV_BIT = 7;			// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
 	reg adder_start, adder_clear;
-	wire adder_done;
+	wire adder_ready;
 	reg [DIV_BIT - 1:0] adder_mult;
 	wire signed [31:0] adder_total;
-	Fraction #(.DIVISOR_BITS(DIV_BIT)) addSample (.clock(fpga_clock), .reset(reset), .start(adder_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .in(lut_value), .accumulator(adder_total), .done(adder_done));
+	Fraction #(.DIVISOR_BITS(DIV_BIT)) addSample (.clock(fpga_clock), .reset(reset), .start(adder_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .in(lut_value), .accumulator(adder_total), .done(adder_ready));
 
 	// State Machine settings
 	reg [1:0] state_machine;
@@ -85,7 +85,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	localparam sm_idle = 2'b00;
 	localparam sm_init = 2'b01;
 	localparam sm_calc_harmonics = 2'b10;
-	localparam sm_increment_sp = 2'b11;
+	localparam sm_done = 2'b11;
 
 
 	always @(posedge adc_data_received) begin
@@ -101,6 +101,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 			sample_pos2 <= 1'b0;
 			lut_addr <= 1'b0;
 			state_machine <= sm_init;
+			adder_start <= 1'b0;
 		end
 		else begin
 
@@ -108,26 +109,27 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 				sm_init:
 				begin
 					freq_increment <= frequency;
-					output_sample <= 32'h1FFFF;											// Add extra 2^16 to cancel divide by two on final value
 					harmonic <= 8'b0;
 					state_machine <= sm_calc_harmonics;
 					sm_counter <= 1'b0;
 					adder_clear <= 1'b0;
+					adder_start <= 1'b0;
+					adder_mult <= 7'd127;					
 				end
 
 				sm_calc_harmonics:
 				begin
 					sm_counter <= sm_counter + 1'b1;
 					
-					if (harmonic > 4) begin
-						state_machine <= sm_idle;
+					if (harmonic > 6) begin
+						state_machine <= sm_done;
 					end
 					else if (sm_counter == 0) begin
 						// increment next sample position by frequency: number of items in sine LUT is 1500 (32*1500=48000Hz) which means that we can divide by 32 to get correct position
 						sample_pos <= (sp_readdata + freq_increment) % SAMPLERATE;
 					end
 					else if (sm_counter == 1) begin
-						lut_addr <= sample_pos >> 5;										// pass sine LUT to memory address to be read in two cycles
+						lut_addr <= sample_pos >> 5;									// pass sine LUT to memory address to be read in two cycles
 
 						//	Write sample position to memory
 						sp_writedata <= sample_pos;
@@ -142,12 +144,20 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 						sp_write <= 1'b0;
 						sp_addr <= harmonic;
 					end
-					else if (sm_counter == 3) begin
-						harmonic_sample <= harmonic == 1 ? lut_value : {lut_value[15], lut_value[15:1]};
-					end
-					else if (sm_counter == 4) begin
-						output_sample <= output_sample + harmonic_sample;
+					else if (adder_ready) begin
+						// Wait until the adder is free and then start the next calculation
+						adder_mult <= adder_mult - 20;
+						adder_start <= 1'b1;												// Tell the adder the next sample is ready
 						sm_counter <= 0;
+					end
+				end
+				
+				sm_done:
+				begin
+					if (adder_ready) begin
+						// all harmonics calculated - offset output for sending to DAC
+						output_sample <= 32'h1FFFF + adder_total;											// Add extra 2^17 to cancel divide by two on final value
+						state_machine <= sm_idle;
 					end
 				end
 
