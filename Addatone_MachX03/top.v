@@ -14,7 +14,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	wire lut_enable = 1'b1;
 	wire signed [15:0] lut_value;
 
-	// Smaple position RAM
+	// Sample position RAM
 	reg [7:0] sp_addr;
 	reg sp_write;
 	wire [15:0] sp_readdata;
@@ -51,6 +51,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	parameter LUTSIZE = 1500;
 	//reg [9:0] lut_pos = 10'b0;
 
+
 	// Sample settings
 	parameter SEND_CHANNEL_A = 8'b00110001;		// Write to DAC Channel A
 
@@ -69,6 +70,14 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 
 	// initialise DAC SPI (Maxim5134)
 	DAC_SPI_Out dac(.clock_in(fpga_clock), .reset(reset), .data_in(dac_data), .send(dac_send), .spi_cs_out(dac_spi_cs), .spi_clock_out(dac_spi_clock), .spi_data_out(dac_spi_data));
+
+	// Instantiate fractional adder - this scales then accumulates samples for each sine wave
+	parameter DIV_BIT = 7;			// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
+	reg adder_start, adder_clear;
+	wire adder_done;
+	reg [DIV_BIT - 1:0] adder_mult;
+	wire signed [31:0] adder_total;
+	Fraction #(.DIVISOR_BITS(DIV_BIT)) addSample (.clock(fpga_clock), .reset(reset), .start(adder_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .in(lut_value), .accumulator(adder_total), .done(adder_done));
 
 	// State Machine settings
 	reg [1:0] state_machine;
@@ -103,11 +112,13 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 					harmonic <= 8'b0;
 					state_machine <= sm_calc_harmonics;
 					sm_counter <= 1'b0;
+					adder_clear <= 1'b0;
 				end
 
 				sm_calc_harmonics:
 				begin
 					sm_counter <= sm_counter + 1'b1;
+					
 					if (harmonic > 4) begin
 						state_machine <= sm_idle;
 					end
@@ -154,6 +165,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 				state_machine <= sm_init;
 				sp_addr <= 1'b0;
 				sp_write <= 1'b0;
+				adder_clear <= 1'b1;
 			end
 			else begin
 				sample_timer <= sample_timer + 1'b1;

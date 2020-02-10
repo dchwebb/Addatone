@@ -24,16 +24,19 @@
         <Source name="SineLUT.ipx" type="IPX_Module" type_short="IPX">
             <Options/>
         </Source>
-        <Source name="SineLUT.v" type="Verilog" type_short="Verilog" excluded="TRUE">
+        <Source name="SineLUT.v" type="Verilog" type_short="Verilog" excluded="TRUE" syn_sim="SimOnly">
             <Options/>
         </Source>
         <Source name="OscPll.ipx" type="IPX_Module" type_short="IPX">
             <Options/>
         </Source>
-        <Source name="OscPll.v" type="Verilog" type_short="Verilog" excluded="TRUE">
+        <Source name="OscPll.v" type="Verilog" type_short="Verilog" excluded="TRUE" syn_sim="SimOnly">
             <Options/>
         </Source>
         <Source name="sample_pos_RAM.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="Fraction.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
         <Source name="Addatone.lpf" type="Logic Preference" type_short="LPF">
