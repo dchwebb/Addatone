@@ -1,5 +1,5 @@
 SCUBA, Version Diamond (64-bit) 3.11.2.446
-Fri Feb 07 15:41:31 2020
+Tue Feb 11 11:43:20 2020
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -7,7 +7,7 @@ Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
 
-    Issued command   : C:\lscc\diamond\3.11_x64\ispfpga\bin\nt64\scuba.exe -w -n OscPll -lang verilog -synth lse -arch xo3c00f -type pll -fin 12 -mdiv 1 -ndiv 6 -trimp 0 -phasep 0 -trimp_r -adiv 6 -phase_cntl STATIC -fb_mode 1 
+    Issued command   : C:\lscc\diamond\3.11_x64\ispfpga\bin\nt64\scuba.exe -w -n OscPll -lang verilog -synth lse -arch xo3c00f -type pll -fin 12 -fclkop 78 -fclkop_tol 10.0 -trimp 0 -phasep 0 -trimp_r -phase_cntl STATIC -fb_mode 1 
     Circuit name     : OscPll
     Module type      : pll
     Module Version   : 5.7

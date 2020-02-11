@@ -42,7 +42,6 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	// Timing settings
 	input wire crystal_osc;
 	reg [15:0] sample_pos;
-	reg [15:0] sample_pos2;
 	reg [15:0] sample_timer = 1'b0;
 	reg [15:0] freq_increment;						// Sample position offset incrementing by n * freqency for each harmonic
 	reg [15:0] frequency = 16'd1000;
@@ -63,7 +62,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	SineLUT sin_lut (.Address(lut_addr), .OutClock(fpga_clock), .OutClockEn(lut_enable), .Reset(reset), .Q(lut_value));
 
 	// Initialise Sample Position RAM
-	Sample_Pos_RAM sample_pos_ram(.din(sp_writedata), .addr(sp_addr), .write_en(sp_write), .clk(fpga_clock), .dout(sp_readdata));
+	Sample_Pos_RAM sample_pos_ram(.din(sp_writedata), .addr(harmonic), .write_en(sp_write), .clk(fpga_clock), .dout(sp_readdata));
 
 	// Initialise ADC SPI input microcontroller
 	ADC_SPI_In adc(.reset(reset), .clock(fpga_clock), .spi_nss(adc_spi_nss), .spi_clock_in(adc_spi_clock), .spi_data_in(adc_spi_data), .data_out(adc_data), .data_received(adc_data_received));
@@ -101,7 +100,8 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 			lut_addr <= 1'b0;
 			state_machine <= sm_init;
 			adder_start <= 1'b0;
-			sp_addr <= 1'b0;
+			//sp_addr <= 1'b0;
+			harmonic <= 8'b0;
 		end
 		else begin
 
@@ -109,7 +109,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 				sm_init:
 				begin
 					freq_increment <= frequency;
-					harmonic <= 8'b0;
+					//harmonic <= 8'b0;
 					state_machine <= sm_calc_harmonics;
 					sm_counter <= 1'b0;
 					adder_clear <= 1'b0;
@@ -137,14 +137,15 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 						sp_writedata <= sample_pos;
 						sp_write <= 1'b1;
 
-						harmonic <= harmonic + 1'b1;
+						//harmonic <= harmonic + 1'b1;
 					end
 					else if (sm_counter == 2) begin
 						freq_increment <= freq_increment + frequency;			// set up next sample position offset
 
 						// Load up next sample position
 						sp_write <= 1'b0;
-						sp_addr <= harmonic;
+						//sp_addr <= harmonic;
+						harmonic <= harmonic + 1'b1;
 					end
 					else if (adder_ready) begin
 						// Wait until the adder is free and then start the next calculation
@@ -175,7 +176,8 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 				sample_timer <= 1'b0;
 				dac_send <= 1'b1;
 				state_machine <= sm_init;
-				sp_addr <= 1'b0;
+				//sp_addr <= 1'b0;
+				harmonic <= 8'b0;
 				sp_write <= 1'b0;
 				adder_clear <= 1'b1;
 			end
