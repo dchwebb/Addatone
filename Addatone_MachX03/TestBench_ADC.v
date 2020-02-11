@@ -11,7 +11,7 @@ module TestBench;
 	OSCH #(.NOM_FREQ("133.00")) rc_oscillator(.STDBY(1'b0), .OSC(fpga_clock), .SEDSTDBY());
 
 
-	ADC_SPI_In dut(.clock(fpga_clock), .reset(reset), .spi_clock_in(SPIClkOut), .spi_data_in(SPIDataOut), .data_out(data_in), .data_received(received));
+	ADC_SPI_In dut(.clock(fpga_clock), .reset(reset), .spi_clock_in(SPIClkOut), .spi_data_in(SPIDataOut), .data_out0(data_in), .data_received(received));
 	reg [15:0] data_packet [2:0];
 	integer i;
 

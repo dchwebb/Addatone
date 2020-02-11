@@ -9,7 +9,7 @@ void TIM3_IRQHandler(void) {
 //	m.Offset = 2000			&& 2299
 //	m.Spread = -690			&& -583
 	pitch = (float)((ADC_array[0] + ADC_array[2] + ADC_array[4] + ADC_array[6]) >> 2);
-	freq = 2350.0f * std::pow(2.0f, pitch / -600.0f);
+	freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);
 //	freq += fup ? .01 : -.01;
 //	if (freq > 230 || freq < 220) fup = !fup;
 
@@ -17,8 +17,8 @@ void TIM3_IRQHandler(void) {
 	sendSPIData((uint16_t)freq);
 
 	// Send fine tune data as sum of four values (4 * 1024 = 4096) left shifted to create 16bit value (4096 << 2 = 65k)
-//	sendSPIData((uint16_t)(ADC_array[1] + ADC_array[3] + ADC_array[5] + ADC_array[7]) << 2);
-	//sendSPIData((uint16_t)0b0101010100110011);
+	sendSPIData((uint16_t)(ADC_array[1] + ADC_array[3] + ADC_array[5] + ADC_array[7]) << 2);
+//	sendSPIData((uint16_t)0b0101010100110011);
 }
 
 void SysTick_Handler(void) {

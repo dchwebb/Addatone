@@ -41,10 +41,11 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	input wire adc_spi_nss;
 	input wire adc_spi_clock;
 	input wire adc_spi_data;
-	wire [15:0] adc_data;
+	wire [15:0] adc_data0;
+	wire [15:0] adc_data1;
 	wire adc_data_received;
 	// Initialise ADC SPI input microcontroller
-	ADC_SPI_In adc(.reset(reset), .clock(fpga_clock), .spi_nss(adc_spi_nss), .spi_clock_in(adc_spi_clock), .spi_data_in(adc_spi_data), .data_out(adc_data), .data_received(adc_data_received));
+	ADC_SPI_In adc(.reset(reset), .clock(fpga_clock), .spi_nss(adc_spi_nss), .spi_clock_in(adc_spi_clock), .spi_data_in(adc_spi_data), .data_out0(adc_data0), .data_out1(adc_data1), .data_received(adc_data_received));
 
 	// output settings
 	reg signed [31:0] output_sample;
@@ -71,17 +72,21 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	Fraction #(.DIVISOR_BITS(DIV_BIT)) addSample (.clock(fpga_clock), .reset(reset), .start(adder_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .in(lut_value), .accumulator(adder_total), .done(adder_ready));
 
 	// State Machine settings - used to control calculation of amplitude of each harmonic sample
-	reg [1:0] state_machine;
-	reg [3:0] sm_counter;
-	localparam sm_idle = 2'b00;
-	localparam sm_init = 2'b01;
-	localparam sm_harm = 2'b10;
-	localparam sm_done = 2'b11;
+	reg [2:0] state_machine;
+	localparam sm_idle = 3'b000;
+	localparam sm_init = 3'b001;
+	localparam sm_harm0 = 3'b010;
+	localparam sm_harm1 = 3'b011;
+	localparam sm_harm2 = 3'b100;
+	localparam sm_harm3 = 3'b101;
+	localparam sm_wait_adder = 3'b110;
+	localparam sm_done = 3'b111;
+	localparam sm_prep = 3'b111;
 
 
 	always @(posedge adc_data_received) begin
-		err_out <=  ~err_out; //(adc_data < 1000)? 1'b0 : 1'b1;
-		frequency <= adc_data;
+		err_out <=  ~err_out;
+		frequency <= adc_data0;
 	end
 
 	always @(posedge fpga_clock or posedge reset) begin
@@ -99,54 +104,63 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 				sm_init:
 				begin
 					freq_increment <= frequency;
-					state_machine <= sm_harm;
-					sm_counter <= 1'b0;
 					adder_clear <= 1'b0;
 					adder_start <= 1'b0;
 					adder_mult <= 7'd127;
+					state_machine <= sm_harm0;
 				end
 
-				sm_harm:
+				sm_harm0:
 				begin
-					sm_counter <= sm_counter + 1'b1;
+					// increment next sample position by frequency: number of items in sine LUT is 1500 (32*1500=48000Hz) which means that we can divide by 32 to get correct position
+					sample_pos <= (sp_readdata + freq_increment) % SAMPLERATE;
 
-					if (harmonic > 6) begin
-						state_machine <= sm_done;
-					end
-					else if (sm_counter == 0) begin
-						// increment next sample position by frequency: number of items in sine LUT is 1500 (32*1500=48000Hz) which means that we can divide by 32 to get correct position
-						sample_pos <= (sp_readdata + freq_increment) % SAMPLERATE;
+					adder_start <= 1'b0;
+					state_machine <= sm_harm1;
+				end
 
-						adder_start <= 1'b0;
-					end
-					else if (sm_counter == 1) begin
-						lut_addr <= sample_pos >> 5;									// pass sine LUT to memory address to be read in two cycles
+				sm_harm1:
+				begin
+					lut_addr <= sample_pos >> 5;									// pass sine LUT to memory address to be read in two cycles
 
-						//	Write sample position to memory
-						sp_writedata <= sample_pos;
-						sp_write <= 1'b1;
+					//	Write sample position to memory
+					sp_writedata <= sample_pos;
+					sp_write <= 1'b1;
 
-						//harmonic <= harmonic + 1'b1;
-					end
-					else if (sm_counter == 2) begin
-						freq_increment <= freq_increment + frequency;			// set up next sample position offset
+					state_machine <= sm_harm2;
+				end
 
-						// Load up next sample position
-						sp_write <= 1'b0;
-						harmonic <= harmonic + 1'b1;
-					end
-					else if (adder_ready) begin
-						// Wait until the adder is free and then start the next calculation
-						adder_mult <= adder_mult - 20;
-						adder_start <= 1'b1;												// Tell the adder the next sample is ready
-						sm_counter <= 0;
-					end
+				sm_harm2:
+				begin
+					freq_increment <= freq_increment + frequency;			// set up next sample position offset
+
+					// Load up next sample position
+					sp_write <= 1'b0;
+					//harmonic <= harmonic + 1'b1;
+					state_machine <= sm_harm3;
+				end
+
+				sm_harm3:
+				begin
+					harmonic <= harmonic + 1'b1;									// harmonic incremented here to resolve timing issues through pipelining
+					state_machine <= sm_wait_adder;
+				end
+
+				sm_wait_adder:
+				if (adder_ready) begin
+					// Wait until the adder is free and then start the next calculation
+					adder_mult <= adder_mult - 20;
+					adder_start <= 1'b1;												// Tell the adder the next sample is ready
+
+					state_machine <= (harmonic > 6) ? sm_done : sm_harm0;
+
 				end
 
 				sm_done:
 				begin
 					if (adder_ready) begin
 						// all harmonics calculated - offset output for sending to DAC
+						adder_start <= 1'b0;
 						output_sample <= 32'h1FFFF + adder_total;					// Add extra 2^17 to cancel divide by two on final value
 						state_machine <= sm_idle;
 					end
