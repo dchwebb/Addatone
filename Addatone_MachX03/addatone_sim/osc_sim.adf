@@ -23,7 +23,7 @@ ENABLE_ADV_DATAFLOW=0
 FLOW_TYPE=HDL
 LANGUAGE=VHDL
 REFRESH_FLOW=1
-fileopenfolder=D:\docs\FPGA\Oscillator
+fileopenfolder=D:\Eurorack\Addatone\Addatone_MachX03
 
 [LocalVerilogSets]
 EnableSLP=0
@@ -99,6 +99,7 @@ Count=0
 /..\sample_output_list.awc=-1
 /..\..\sample_pos_RAM.v=-1
 /osc_waveform.awc=-1
+/..\..\Fraction.v=-1
 
 [Files.Data]
 .\..\DAC_SPI_Out.v=Verilog Source Code
@@ -110,10 +111,13 @@ Count=0
 .\sample_output_list.awc=Accelerated Waveform Configuration
 .\..\sample_pos_RAM.v=Verilog Source Code
 .\src\osc_waveform.awc=Accelerated Waveform Configuration
+.\..\Fraction.v=Verilog Source Code
 
 [SpecTracer]
 WindowVisible=0
+
 [HierarchyViewer]
 HierarchyInformation=
 ShowHide=ShowTopLevel
 Selected=
+

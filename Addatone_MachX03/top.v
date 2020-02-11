@@ -97,11 +97,11 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 		if (reset) begin
 			sample_timer <= 1'b0;
 			dac_send <= 1'b0;
-			sample_pos <= 1'b0;
-			sample_pos2 <= 1'b0;
+			//sample_pos <= 1'b0;
 			lut_addr <= 1'b0;
 			state_machine <= sm_init;
 			adder_start <= 1'b0;
+			sp_addr <= 1'b0;
 		end
 		else begin
 
@@ -114,19 +114,21 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 					sm_counter <= 1'b0;
 					adder_clear <= 1'b0;
 					adder_start <= 1'b0;
-					adder_mult <= 7'd127;					
+					adder_mult <= 7'd127;
 				end
 
 				sm_calc_harmonics:
 				begin
 					sm_counter <= sm_counter + 1'b1;
-					
+
 					if (harmonic > 6) begin
 						state_machine <= sm_done;
 					end
 					else if (sm_counter == 0) begin
 						// increment next sample position by frequency: number of items in sine LUT is 1500 (32*1500=48000Hz) which means that we can divide by 32 to get correct position
 						sample_pos <= (sp_readdata + freq_increment) % SAMPLERATE;
+
+						adder_start <= 1'b0;
 					end
 					else if (sm_counter == 1) begin
 						lut_addr <= sample_pos >> 5;									// pass sine LUT to memory address to be read in two cycles
@@ -151,12 +153,12 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 						sm_counter <= 0;
 					end
 				end
-				
+
 				sm_done:
 				begin
 					if (adder_ready) begin
 						// all harmonics calculated - offset output for sending to DAC
-						output_sample <= 32'h1FFFF + adder_total;											// Add extra 2^17 to cancel divide by two on final value
+						output_sample <= 32'h1FFFF + adder_total;					// Add extra 2^17 to cancel divide by two on final value
 						state_machine <= sm_idle;
 					end
 				end

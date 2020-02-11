@@ -5,3 +5,4 @@ i<>.\..\OscPll.v
 i<>.\..\top.v
 i<>.\..\TestBench_Top.v
 i<>.\..\sample_pos_RAM.v
+i<>.\..\Fraction.v

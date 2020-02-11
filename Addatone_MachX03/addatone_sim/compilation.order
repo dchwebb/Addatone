@@ -5,3 +5,4 @@
 .\..\top.v
 .\..\TestBench_Top.v
 .\..\sample_pos_RAM.v
+.\..\Fraction.v

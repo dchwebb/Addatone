@@ -21,7 +21,7 @@ module TestBench_Top;
 	wire osc_clock;
 	OSCH #(.NOM_FREQ("12.09")) rc_oscillator(.STDBY(1'b0), .OSC(osc_clock), .SEDSTDBY());
 
-	top #(.SAMPLEINTERVAL(30)) dut(.dac_spi_cs(spi_cs_out), .dac_spi_data(spi_data_out), .dac_spi_clock(spi_clock_out), .adc_spi_data(spi_data_in), .adc_spi_clock(spi_clock_in), .rstn(rstn), .crystal_osc(osc_clock));
+	top #(.SAMPLEINTERVAL(200)) dut(.dac_spi_cs(spi_cs_out), .dac_spi_data(spi_data_out), .dac_spi_clock(spi_clock_out), .adc_spi_data(spi_data_in), .adc_spi_clock(spi_clock_in), .rstn(rstn), .crystal_osc(osc_clock));
 
 	reg [15:0] data_packet [2:0];
 	integer i;
