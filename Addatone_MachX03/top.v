@@ -4,7 +4,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	wire reset;
 	assign reset = ~rstn;
 
-	//	Initialise 84MHz PLL clock from dev board 12 MHz crystal (dev board pin C8)
+	//	Initialise 72MHz PLL clock from dev board 12 MHz crystal (dev board pin C8)
 	input wire crystal_osc;
 	wire fpga_clock;
 	OscPll pll(.CLKI(crystal_osc), .CLKOP(fpga_clock));
@@ -16,11 +16,9 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 
 	// SinLUT settings
 	reg [10:0] lut_addr = 11'b0;
-	//wire lut_enable = 1'b1;
 	wire signed [15:0] lut_value;
 
 	// Sample position RAM - memory array to store current position in cycle of each harmonic
-	//reg [7:0] sp_addr;
 	reg sp_write;
 	wire [15:0] sp_readdata;
 	reg [15:0] sp_writedata;
@@ -72,16 +70,18 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	Fraction #(.DIVISOR_BITS(DIV_BIT)) addSample (.clock(fpga_clock), .reset(reset), .start(adder_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .in(lut_value), .accumulator(adder_total), .done(adder_ready));
 
 	// State Machine settings - used to control calculation of amplitude of each harmonic sample
-	reg [2:0] state_machine;
-	localparam sm_idle = 3'b000;
-	localparam sm_init = 3'b001;
-	localparam sm_harm0 = 3'b010;
-	localparam sm_harm1 = 3'b011;
-	localparam sm_harm2 = 3'b100;
-	localparam sm_harm3 = 3'b101;
-	localparam sm_wait_adder = 3'b110;
-	localparam sm_done = 3'b111;
-	localparam sm_prep = 3'b111;
+	reg [3:0] state_machine;
+	localparam sm_idle = 4'd0;
+	localparam sm_init = 4'd1;
+	localparam sm_harm0 = 4'd2;
+	localparam sm_harm1 = 4'd3;
+	localparam sm_harm2 = 4'd4;
+	localparam sm_harm3 = 4'd5;
+	localparam sm_wait_adder = 4'd6;
+	localparam sm_calc_done = 4'd7;
+	localparam sm_ready_to_send = 4'd8;
+	localparam sm_prep = 4'd9;
+	
 
 
 	always @(posedge adc_data_received) begin
@@ -99,6 +99,8 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 			harmonic <= 8'b0;
 		end
 		else begin
+			sample_timer <= sample_timer + 1'b1;
+
 
 			case (state_machine)
 				sm_init:
@@ -149,43 +151,43 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 				sm_wait_adder:
 				if (adder_ready) begin
 					// Wait until the adder is free and then start the next calculation
-					adder_mult <= adder_mult - 20;
+					adder_mult <= adder_mult - 10;
 					adder_start <= 1'b1;												// Tell the adder the next sample is ready
 
-					state_machine <= (harmonic > 6) ? sm_done : sm_harm0;
-
+					state_machine <= (harmonic > 10) ? sm_calc_done : sm_harm0;
 				end
 
-				sm_done:
+				sm_calc_done:
 				begin
 					if (adder_ready) begin
 						// all harmonics calculated - offset output for sending to DAC
 						adder_start <= 1'b0;
-						output_sample <= 32'h1FFFF + adder_total;					// Add extra 2^17 to cancel divide by two on final value
-						state_machine <= sm_idle;
+						output_sample <= 32'h1FFFF + adder_total;			// Add extra 2^17 to cancel divide by two on final value
+						state_machine <= sm_ready_to_send;
 					end
 				end
+				
+				sm_ready_to_send:
+					if (sample_timer == SAMPLEINTERVAL) begin
+						//debug_sample <= output_sample;
+						dac_data <= {SEND_CHANNEL_A, output_sample[17:2]};		// effectively divide output sample by 2 to avoid overflow caused by adding multiple sine waves
 
+						sample_timer <= 1'b0;
+						dac_send <= 1'b1;
+						state_machine <= sm_prep;
+					end				
+
+				sm_prep:
+				begin
+					harmonic <= 8'b0;													// pre main loop preparation phase moved here for timing
+					sp_write <= 1'b0;
+					adder_clear <= 1'b1;
+					dac_send <= 1'b0;
+					state_machine <= sm_init;
+				end
+				
 			endcase
 
-
-
-			// send DAC data out once sample timer reaches appropriate count
-			if (sample_timer == SAMPLEINTERVAL) begin
-				debug_sample <= output_sample;
-				dac_data <= {SEND_CHANNEL_A, output_sample[17:2]};		// effectively divide output sample by 2 to avoid overflow caused by adding multiple sine waves
-
-				sample_timer <= 1'b0;
-				dac_send <= 1'b1;
-				state_machine <= sm_init;
-				harmonic <= 8'b0;
-				sp_write <= 1'b0;
-				adder_clear <= 1'b1;
-			end
-			else begin
-				sample_timer <= sample_timer + 1'b1;
-				dac_send <= 1'b0;
-			end
 		end
 	end
 
