@@ -184,31 +184,30 @@ void InitSPI()
 	GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR3;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
 	GPIOB->AFR[0] |= 0b0110 << 12;					// 0b0110 = Alternate Function 6 (SPI3); 12 is position of Pin 3
 
+	// Software NSS - use PA15 on pin 50
+	GPIOA->MODER |= GPIO_MODER_MODER15_0;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
+	GPIOA->MODER &= ~GPIO_MODER_MODER15_1;
+	GPIOA->BSRR |= GPIO_BSRR_BS_15;
+
+	// Configure SPI
+	SPI3->CR1 |= SPI_CR1_DFF;						// Use 16 bit data frame
+	SPI3->CR1 |= SPI_CR1_SSM;						// Software slave management: When SSM bit is set, NSS pin input is replaced with the value from the SSI bit
+	SPI3->CR1 |= SPI_CR1_SSI;						// Internal slave select
 	SPI3->CR1 |= SPI_CR1_BR_2;						// Baud rate control prescaler: 0b001: fPCLK/4; 0b100: fPCLK/32
 	SPI3->CR1 |= SPI_CR1_MSTR;						// Master selection
-	SPI3->CR1 |= SPI_CR1_DFF;						// Use 16 bit data frame
 
-	// Hardware NSS - use PA15 on pin 50
-	GPIOA->MODER |= GPIO_MODER_MODER15_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
-	GPIOA->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR15;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
-	GPIOA->AFR[1] |= 0b0110 << 28;					// 0b0110 = Alternate Function 6 (SPI3); 28 is position of Pin 15
-
-//	// Hardware NSS - use PA4 on pin 20
-//	GPIOA->MODER |= GPIO_MODER_MODER4_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
-//	GPIOA->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR4;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
-//	GPIOA->AFR[0] |= 0b0110 << 16;					// 0b0110 = Alternate Function 6 (SPI3); 16 is position of Pin 4
-
-	SPI3->CR1 &= ~SPI_CR1_SSM;						// Software slave management: When SSM bit is set, NSS pin input is replaced with the value from the SSI bit
-	SPI3->CR2 |= SPI_CR2_SSOE;						// Uses hardware slave select - NSS line is pulled low when SPI enabled
+	SPI3->CR1 |= SPI_CR1_SPE;						// Enable SPI
 }
 
 void sendSPIData(uint16_t data) {
 	while (((SPI3->SR & SPI_SR_TXE) == 0) | ((SPI3->SR & SPI_SR_BSY) == SPI_SR_BSY) );
-	SPI3->CR1 |= SPI_CR1_SPE;
+	GPIOA->BSRR |= GPIO_BSRR_BR_15;
 	SPI3->DR = data;		// Send cmd data [X X C C C A A A]
-	while (((SPI3->SR & SPI_SR_TXE) == 0) | ((SPI3->SR & SPI_SR_BSY) == SPI_SR_BSY) );
-	SPI3->CR1 &= ~SPI_CR1_SPE;
+}
 
+void clearSPI() {
+	while (((SPI3->SR & SPI_SR_TXE) == 0) | ((SPI3->SR & SPI_SR_BSY) == SPI_SR_BSY) );
+	GPIOA->BSRR |= GPIO_BSRR_BS_15;
 }
 
 //	Setup Timer 3 on an interrupt to trigger SPI data send

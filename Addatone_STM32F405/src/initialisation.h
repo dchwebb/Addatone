@@ -19,3 +19,4 @@ void InitCoverageTimer();
 void InitSPI();
 void InitSPITimer();
 void sendSPIData(uint16_t data);
+void clearSPI();
