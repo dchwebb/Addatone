@@ -10,7 +10,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	OscPll pll(.CLKI(crystal_osc), .CLKOP(fpga_clock));
 
 	// Debug settings
-	output reg err_out;
+	output wire err_out;
 	output reg debug_out;
 	reg [31:0] debug_sample;
 
@@ -39,7 +39,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	wire [15:0] adc_data1;
 	wire adc_data_received;
 	// Initialise ADC SPI input microcontroller
-	ADC_SPI_In adc(.i_reset(reset), .i_clock(fpga_clock), .i_SPI_CS(adc_spi_nss), .i_SPI_clock(adc_spi_clock), .i_SPI_data(adc_spi_data), .o_data0(adc_data0), .o_data1(adc_data1), .o_data_received(adc_data_received));
+	ADC_SPI_In adc(.i_reset(reset), .i_clock(fpga_clock), .i_SPI_CS(adc_spi_nss), .i_SPI_clock(adc_spi_clock), .i_SPI_data(adc_spi_data), .o_data0(adc_data0), .o_data1(adc_data1), .o_data_received(adc_data_received), .CS_stable(err_out));
 
 	// output settings
 	reg signed [31:0] output_sample;
@@ -82,9 +82,9 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	localparam sm_prep = 4'd9;
 
 	always @(posedge adc_data_received) begin
-		err_out <=  ~err_out;
+//		err_out <=  ~err_out;
 		frequency <= adc_data0;
-		if (adc_data0 != 16'd200)
+		if (adc_data1 != 16'h5533)
 			debug_out <= ~debug_out;
 		//harmonic_scale <= adc_data1;
 	end
@@ -174,7 +174,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 					if (sample_timer == SAMPLEINTERVAL) begin
 						//debug_sample <= output_sample;
 						//dac_data <= {SEND_CHANNEL_A, output_sample[17:2]};	// effectively divide output sample by 2 to avoid overflow caused by adding multiple sine waves
-						dac_data <= {SEND_CHANNEL_A, frequency};	// effectively divide output sample by 2 to avoid overflow caused by adding multiple sine waves
+						dac_data <= {SEND_CHANNEL_A, adc_data0};	// effectively divide output sample by 2 to avoid overflow caused by adding multiple sine waves
 
 						sample_timer <= 1'b0;
 						dac_send <= 1'b1;
