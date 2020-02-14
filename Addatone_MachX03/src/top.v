@@ -43,6 +43,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 
 	// output settings
 	reg signed [31:0] output_sample;
+	reg [15:0] dac_sample;								// Contains output sample scaled
 	parameter SEND_CHANNEL_A = 8'b00110001;		// Write to DAC Channel A
 
 	// Timing and Sine LUT settings
@@ -78,8 +79,9 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	localparam sm_harm3 = 4'd5;
 	localparam sm_wait_adder = 4'd6;
 	localparam sm_calc_done = 4'd7;
-	localparam sm_ready_to_send = 4'd8;
-	localparam sm_prep = 4'd9;
+	localparam sm_scale_sample = 4'd8;
+	localparam sm_ready_to_send = 4'd9;
+	localparam sm_prep = 4'd10;
 
 	always @(posedge adc_data_received) begin
 //		err_out <=  ~err_out;
@@ -166,15 +168,21 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 						// all harmonics calculated - offset output for sending to DAC
 						adder_start <= 1'b0;
 						output_sample <= 32'h1FFFF + adder_total;			// Add extra 2^17 to cancel divide by two on final value
-						state_machine <= sm_ready_to_send;
+						state_machine <= sm_scale_sample;
 					end
 				end
-				
+
+				sm_scale_sample:
+				begin
+					dac_sample <= output_sample >> 2;							// scale output sample to send to DAC
+					state_machine <= sm_ready_to_send;
+				end
+					
 				sm_ready_to_send:
 					if (sample_timer == SAMPLEINTERVAL) begin
 						//debug_sample <= output_sample;
 						//dac_data <= {SEND_CHANNEL_A, output_sample[17:2]};	// effectively divide output sample by 2 to avoid overflow caused by adding multiple sine waves
-						dac_data <= {SEND_CHANNEL_A, adc_data0};	// effectively divide output sample by 2 to avoid overflow caused by adding multiple sine waves
+						dac_data <= {SEND_CHANNEL_A, dac_sample};	// effectively divide output sample by 2 to avoid overflow caused by adding multiple sine waves
 
 						sample_timer <= 1'b0;
 						dac_send <= 1'b1;
