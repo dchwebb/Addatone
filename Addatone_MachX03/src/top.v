@@ -39,7 +39,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	wire [15:0] adc_data1;
 	wire adc_data_received;
 	// Initialise ADC SPI input microcontroller
-	ADC_SPI_In adc(.reset(reset), .clock(fpga_clock), .spi_nss(adc_spi_nss), .spi_clock_in(adc_spi_clock), .spi_data_in(adc_spi_data), .data_out0(adc_data0), .data_out1(adc_data1), .data_received(adc_data_received));
+	ADC_SPI_In adc(.i_reset(reset), .i_clock(fpga_clock), .i_SPI_CS(adc_spi_nss), .i_SPI_clock(adc_spi_clock), .i_SPI_data(adc_spi_data), .o_data0(adc_data0), .o_data1(adc_data1), .o_data_received(adc_data_received));
 
 	// output settings
 	reg signed [31:0] output_sample;
@@ -84,6 +84,8 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	always @(posedge adc_data_received) begin
 		err_out <=  ~err_out;
 		frequency <= adc_data0;
+		if (adc_data0 != 16'd200)
+			debug_out <= ~debug_out;
 		//harmonic_scale <= adc_data1;
 	end
 

@@ -2,41 +2,44 @@
 <BaliProject version="3.2" title="Addatone" device="LCMXO3LF-6900C-5BG256C" default_implementation="impl1">
     <Options/>
     <Implementation title="impl1" dir="impl1" description="impl1" synthesis="lse" default_strategy="Strategy1">
-        <Options top="top"/>
-        <Source name="top.v" type="Verilog" type_short="Verilog">
-            <Options top_module="top"/>
-        </Source>
-        <Source name="ADC_SPI_In.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="DAC_SPI_Out.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="TestBench_ADC.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
-            <Options/>
-        </Source>
-        <Source name="TestBench_Top.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
-            <Options/>
-        </Source>
-        <Source name="TestBench_DAC.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
-            <Options/>
-        </Source>
+        <Options def_top="top" top="top"/>
         <Source name="SineLUT.ipx" type="IPX_Module" type_short="IPX">
-            <Options/>
-        </Source>
-        <Source name="SineLUT.v" type="Verilog" type_short="Verilog" excluded="TRUE" syn_sim="SimOnly">
             <Options/>
         </Source>
         <Source name="OscPll.ipx" type="IPX_Module" type_short="IPX">
             <Options/>
         </Source>
-        <Source name="OscPll.v" type="Verilog" type_short="Verilog" excluded="TRUE" syn_sim="SimOnly">
+        <Source name="src/top.v" type="Verilog" type_short="Verilog">
+            <Options top_module="top"/>
+        </Source>
+        <Source name="src/ADC_SPI_In.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="sample_pos_RAM.v" type="Verilog" type_short="Verilog">
+        <Source name="src/ADC_SPI_In1.v" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options/>
         </Source>
-        <Source name="Fraction.v" type="Verilog" type_short="Verilog">
+        <Source name="src/DAC_SPI_Out.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/Fraction.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/sample_pos_RAM.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/SineLUT.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/SineLUT_tmpl.v" type="Verilog" type_short="Verilog" excluded="TRUE">
+            <Options/>
+        </Source>
+        <Source name="src/TestBench_ADC.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
+            <Options/>
+        </Source>
+        <Source name="src/TestBench_DAC.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
+            <Options/>
+        </Source>
+        <Source name="src/TestBench_Top.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
             <Options/>
         </Source>
         <Source name="Addatone.lpf" type="Logic Preference" type_short="LPF">

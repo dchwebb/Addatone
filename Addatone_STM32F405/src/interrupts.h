@@ -8,12 +8,12 @@ void TIM3_IRQHandler(void) {
 
 //	m.Offset = 2000			&& 2299
 //	m.Spread = -690			&& -583
-	pitch = (float)((ADC_array[0] + ADC_array[2] + ADC_array[4] + ADC_array[6]) >> 2);
-	freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);
+//	pitch = (float)((ADC_array[0] + ADC_array[2] + ADC_array[4] + ADC_array[6]) >> 2);
+//	freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);
 //	freq += fup ? .01 : -.01;
 //	if (freq > 230 || freq < 220) fup = !fup;
 
-//	freq = 200;
+	freq = 200;
 	sendSPIData((uint16_t)freq);
 
 	// Send fine tune data as sum of four values (4 * 1024 = 4096) left shifted to create 16bit value (4096 << 2 = 65k)

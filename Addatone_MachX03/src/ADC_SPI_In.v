@@ -1,14 +1,14 @@
 module ADC_SPI_In
 #(parameter RECEIVEBYTES = 2)
 	(
-		input wire reset,
-		input wire clock,
-		input wire spi_nss,
-		input wire spi_clock_in,
-		input wire spi_data_in,
-		output wire [15:0] data_out0,
-		output wire [15:0] data_out1,
-		output reg data_received
+		input wire i_reset,
+		input wire i_clock,
+		input wire i_SPI_CS,
+		input wire i_SPI_clock,
+		input wire i_SPI_data,
+		output wire [15:0] o_data0,
+		output wire [15:0] o_data1,
+		output reg o_data_received
 	);
 
 	reg [3:0] receive_bit;
@@ -25,17 +25,17 @@ module ADC_SPI_In
 	reg nss_stable;
 
 	// Check for false triggers using main clock to count negative clock pulses and noise on the nss line
-	always @(posedge clock) begin
-		if (spi_clock_in) begin
+	always @(posedge i_clock) begin
+		if (i_SPI_clock) begin
 			clock_counter <= 1'b0;
 		end
 		else begin
 			clock_counter <= clock_counter + 1'b1;		// count negative spi clock duration to eliminate noise
 		end
 
-		if (spi_nss != nss_stable) begin
+		if (i_SPI_CS != nss_stable) begin
 			if (nss_change) begin
-				nss_stable <= spi_nss;
+				nss_stable <= i_SPI_CS;
 				nss_change <= 1'b0;
 			end
 			else
@@ -46,8 +46,8 @@ module ADC_SPI_In
 	end
 
 
-	always @(posedge spi_clock_in or posedge nss_stable or posedge reset) begin
-		if (nss_stable || reset) begin
+	always @(posedge i_SPI_clock or posedge nss_stable or posedge i_reset) begin
+		if (nss_stable || i_reset) begin
 			SPISlaveState <= state_waiting;
 		end
 		else if (clock_counter > 2) begin		//  check there have been at least two counts of negative pulse before recording a valid SPI clock cycle
@@ -57,20 +57,20 @@ module ADC_SPI_In
 						SPISlaveState <= state_receiving;
 						receive_byte <= 1'b0;
 						receive_bit <= 1'b1;
-						data_received <= 1'b0;
-						bytes_in[0][0] <= spi_data_in;
+						o_data_received <= 1'b0;
+						bytes_in[0][0] <= i_SPI_data;
 					end
 
 				state_receiving:
 					begin
-						bytes_in[receive_byte][receive_bit] <= spi_data_in;
+						bytes_in[receive_byte][receive_bit] <= i_SPI_data;
 						receive_bit <= receive_bit + 1'b1;
 						
 						if (receive_bit == 15) begin								// Byte received
 							receive_byte <= receive_byte + 1'b1;
 							if (receive_byte == RECEIVEBYTES - 1) begin		// If all bytes received set state back to waiting and activate received flag
 								SPISlaveState <= state_waiting;
-								data_received <= 1'b1;
+								o_data_received <= 1'b1;
 								receive_byte <= 1'b0;
 							end
 							else begin
@@ -84,6 +84,6 @@ module ADC_SPI_In
 	end
 
 	// Output bytes are continously assigned but only valid when received flag is high
-	assign data_out0 = bytes_in[0];
-	assign data_out1 = bytes_in[1];
+	assign o_data0 = bytes_in[0];
+	assign o_data1 = bytes_in[1];
 endmodule
