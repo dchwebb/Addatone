@@ -1,0 +1,8 @@
+[Version]
+Version=10.5
+[Designs]
+addatone_sim=addatone_sim.adf
+[Settings]
+Active=addatone_sim
+[Expand]
+addatone_sim=1

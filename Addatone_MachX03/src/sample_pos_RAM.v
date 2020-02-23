@@ -8,7 +8,7 @@ module Sample_Pos_RAM (din, addr, write_en, clk, dout);
 	input write_en, clk;
 
 	// Define RAM as an indexed memory array.
-	reg [data_width - 1:0] mem [(1 << addr_width) - 1:0] /* synthesis syn_romstyle = "EBR" */;
+	reg [data_width - 1:0] mem [(1 << addr_width) - 1:0];
 
 	integer i;
 

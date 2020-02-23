@@ -1,8 +1,8 @@
-i<>.\..\DAC_SPI_Out.v
-i<>.\..\ADC_SPI_In.v
 i<>.\..\SineLUT.v
 i<>.\..\OscPll.v
-i<>.\..\top.v
-i<>.\..\TestBench_Top.v
-i<>.\..\sample_pos_RAM.v
-i<>.\..\Fraction.v
+i<>.\..\src\top.v
+i<>.\..\src\ADC_SPI_In.v
+i<>.\..\src\DAC_SPI_Out.v
+i<>.\..\src\Fraction.v
+i<>.\..\src\sample_pos_RAM.v
+i<>.\..\src\TestBench_Top.v

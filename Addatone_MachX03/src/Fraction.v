@@ -6,11 +6,11 @@
 module Fraction
 	#(parameter DIVISOR_BITS = 7)
 	(
-	input wire clock, reset, start, clear_accumulator,
-	input wire [DIVISOR_BITS - 1:0] multiple,
-	input wire signed [15:0] in,
-	output reg [31:0] accumulator,
-	output reg done
+		input wire clock, reset, start, clear_accumulator,
+		input wire [DIVISOR_BITS - 1:0] multiple,
+		input wire signed [15:0] in,
+		output reg [31:0] accumulator,
+		output reg done
 	);
 
 	// working registers
@@ -19,7 +19,7 @@ module Fraction
 	reg signed [31:0] working_total;
 	reg [4:0] counter;
 
-	always @(posedge clock) begin
+	always @(posedge clock or posedge clear_accumulator) begin
 		if (reset) begin
 			counter <= 1'b0;
 			done <= 1'b1;

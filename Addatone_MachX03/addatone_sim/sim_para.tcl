@@ -1,12 +1,12 @@
 lappend auto_path "C:/lscc/diamond/3.11_x64/data/script"
 package require simulation_generation
-set ::bali::simulation::Para(PROJECT) {osc_sim}
-set ::bali::simulation::Para(PROJECTPATH) {D:/docs/FPGA/Oscillator}
-set ::bali::simulation::Para(FILELIST) {"D:/docs/FPGA/Oscillator/DAC_SPI_Out.v" "D:/docs/FPGA/Oscillator/ADC_SPI_In.v" "D:/docs/FPGA/Oscillator/SineLUT.v" "D:/docs/FPGA/Oscillator/OscPll.v" "D:/docs/FPGA/Oscillator/top.v" "D:/docs/FPGA/Oscillator/TestBench_Top.v" }
+set ::bali::simulation::Para(PROJECT) {addatone_sim}
+set ::bali::simulation::Para(PROJECTPATH) {D:/Eurorack/Addatone/Addatone_MachX03}
+set ::bali::simulation::Para(FILELIST) {"D:/Eurorack/Addatone/Addatone_MachX03/src/TestBench_Top.v" "D:/Eurorack/Addatone/Addatone_MachX03/SineLUT.v" "D:/Eurorack/Addatone/Addatone_MachX03/OscPll.v" "D:/Eurorack/Addatone/Addatone_MachX03/src/top.v" "D:/Eurorack/Addatone/Addatone_MachX03/src/ADC_SPI_In.v" "D:/Eurorack/Addatone/Addatone_MachX03/src/DAC_SPI_Out.v" "D:/Eurorack/Addatone/Addatone_MachX03/src/Fraction.v" "D:/Eurorack/Addatone/Addatone_MachX03/src/sample_pos_RAM.v" }
 set ::bali::simulation::Para(GLBINCLIST) {}
-set ::bali::simulation::Para(INCLIST) {"none" "none" "none" "none" "none" "none"}
-set ::bali::simulation::Para(WORKLIBLIST) {"work" "work" "work" "work" "work" "work" }
-set ::bali::simulation::Para(COMPLIST) {"VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" }
+set ::bali::simulation::Para(INCLIST) {"none" "none" "none" "none" "none" "none" "none" "none"}
+set ::bali::simulation::Para(WORKLIBLIST) {"work" "work" "work" "work" "work" "work" "work" "work" }
+set ::bali::simulation::Para(COMPLIST) {"VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" "VERILOG" }
 set ::bali::simulation::Para(SIMLIBLIST) {pmi_work ovi_machxo3l}
 set ::bali::simulation::Para(MACROLIST) {}
 set ::bali::simulation::Para(SIMULATIONTOPMODULE) {TestBench_Top}

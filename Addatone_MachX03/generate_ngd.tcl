@@ -50,8 +50,8 @@ set Para(install_dir) $env(TOOLRTF)
 set Para(FPGAPath) "[file join $Para(install_dir) ispfpga bin $platformpath]"
 set Para(bin_dir) "[file join $Para(install_dir) bin $platformpath]"
 
-set Para(ModuleName) "OscPll"
-set Para(Module) "PLL"
+set Para(ModuleName) "SineLUT"
+set Para(Module) "ROM"
 set Para(libname) machxo3lf
 set Para(arch_name) xo3c00f
 set Para(PartType) "LCMXO3LF-6900C"

@@ -1,0 +1,66 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=4
+Current Config=compile
+
+[Configurations]
+compile=work
+
+[Library]
+addatone_sim=.\addatone_sim\addatone_sim.lib
+work=.\work\work.lib
+
+[Settings]
+AccessRead=1
+AccessReadWrite=0
+AccessACCB=0
+AccessACCR=0
+AccessReadWriteSLP=0
+AccessReadTopLevel=0
+DisableC=1
+ENABLE_ADV_DATAFLOW=0
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+REFRESH_FLOW=1
+fileopenfolder=D:\Eurorack\Addatone\Addatone_MachX03\src
+
+[LocalVerilogSets]
+EnableSLP=0
+EnableDebug=1
+PriorityLibNames=pmi_work
+LibNames=ovi_machxo3l
+
+[LocalVhdlSets]
+CompileWithDebug=0
+
+[$LibMap$]
+addatone_sim=.
+work=.
+
+[LocalVerilogDirs]
+Count=0
+
+[DefineMacro]
+Global=
+
+[Files]
+/..\..\SineLUT.v=-1
+/..\..\OscPll.v=-1
+/..\..\src\top.v=-1
+/..\..\src\ADC_SPI_In.v=-1
+/..\..\src\DAC_SPI_Out.v=-1
+/..\..\src\Fraction.v=-1
+/..\..\src\sample_pos_RAM.v=-1
+/..\..\src\TestBench_Top.v=-1
+
+[Files.Data]
+.\..\src\TestBench_Top.v=Verilog Source Code
+.\..\SineLUT.v=Verilog Source Code
+.\..\OscPll.v=Verilog Source Code
+.\..\src\top.v=Verilog Source Code
+.\..\src\ADC_SPI_In.v=Verilog Source Code
+.\..\src\DAC_SPI_Out.v=Verilog Source Code
+.\..\src\Fraction.v=Verilog Source Code
+.\..\src\sample_pos_RAM.v=Verilog Source Code
+

@@ -21,7 +21,7 @@ module tb;
        Address <= 0;
       #100;
       @(Reset == 1'b0);
-      for (i1 = 0; i1 < 1503; i1 = i1 + 1) begin
+      for (i1 = 0; i1 < 2051; i1 = i1 + 1) begin
         @(posedge OutClock);
         #1  Address <= Address + 1'b1;
       end

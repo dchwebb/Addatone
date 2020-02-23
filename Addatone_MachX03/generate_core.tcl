@@ -85,7 +85,7 @@ set Para(install_dir) $env(TOOLRTF)
 set Para(FPGAPath) "[file join $Para(install_dir) ispfpga bin $platformpath]"
 
 set scuba "$Para(FPGAPath)/scuba"
-set modulename "OscPll"
+set modulename "SineLUT"
 set lang "verilog"
 set lpcfile "$Para(sbp_path)/$modulename.lpc"
 set arch "xo3c00f"

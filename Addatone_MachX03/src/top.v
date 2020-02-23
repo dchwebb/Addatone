@@ -82,12 +82,13 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	localparam sm_scale_sample = 4'd8;
 	localparam sm_ready_to_send = 4'd9;
 	localparam sm_prep = 4'd10;
+	localparam sm_test = 4'd11;
 
 	always @(posedge adc_data_received) begin
 //		err_out <=  ~err_out;
 		frequency <= adc_data0;
-		if (adc_data1 != 16'h5533)
-			debug_out <= ~debug_out;
+		//if (adc_data1 != 16'h5533)
+			//debug_out <= ~debug_out;
 		//harmonic_scale <= adc_data1;
 	end
 
@@ -112,12 +113,13 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 					adder_start <= 1'b0;
 					adder_mult <= 7'd127;
 					state_machine <= sm_harm0;
+					debug_out <= ~debug_out;					
 				end
 
 				sm_harm0:
 				begin
-					// increment next sample position by frequency: number of items in sine LUT is 1500 (32*1500=48000Hz) which means that we can divide by 32 to get correct position
-					sample_pos <= (sp_readdata + freq_increment) % SAMPLERATE;
+					// increment next sample position by frequency: number of items in sine LUT is 2048 (32*2048=65536) which means that we can divide by 32 to get correct position
+					sample_pos <= (sp_readdata + freq_increment);
 
 					adder_start <= 1'b0;
 					state_machine <= sm_harm1;
@@ -141,33 +143,31 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 					// Load up next sample position
 					sp_write <= 1'b0;
 					harmonic <= harmonic + 1'b1;
-					//state_machine <= sm_wait_adder;
-					state_machine <= sm_harm3;
-				end
 
-				
-				sm_harm3:
-				begin
-					//harmonic <= harmonic + 1'b1;								// harmonic incremented here to resolve timing issues through pipelining
+					// decrease harmonic scaler
 					if (adder_mult > 10)
 						adder_mult <= adder_mult - 10;
+					
 					state_machine <= sm_wait_adder;
 				end
-				
+
 				sm_wait_adder:
 				if (adder_ready) begin
 					// Wait until the adder is free and then start the next calculation
 					
 					adder_start <= 1'b1;												// Tell the adder the next sample is ready
-					state_machine <= (harmonic > 10) ? sm_calc_done : sm_harm0;
+					state_machine <= (harmonic > 0) ? sm_test : sm_harm0;
 				end
+				
+				sm_test:
+					state_machine <= sm_calc_done;
 
-				sm_calc_done:
+				sm_calc_done:		// 7
 				begin
 					if (adder_ready) begin
 						// all harmonics calculated - offset output for sending to DAC
 						adder_start <= 1'b0;
-						output_sample <= 32'h1FFFF + adder_total;			// Add extra 2^17 to cancel divide by two on final value
+						output_sample <= 32'h21000 + adder_total;			// Add extra 2^17 (approx) to cancel divide by two on final value
 						state_machine <= sm_scale_sample;
 					end
 				end
@@ -180,6 +180,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 					
 				sm_ready_to_send:
 					if (sample_timer == SAMPLEINTERVAL) begin
+					
 						//debug_sample <= output_sample;
 						//dac_data <= {SEND_CHANNEL_A, output_sample[17:2]};	// effectively divide output sample by 2 to avoid overflow caused by adding multiple sine waves
 						dac_data <= {SEND_CHANNEL_A, dac_sample};	// effectively divide output sample by 2 to avoid overflow caused by adding multiple sine waves

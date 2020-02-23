@@ -1,0 +1,8 @@
+D:/Eurorack/Addatone/Addatone_MachX03/src/Fraction.v
+D:/Eurorack/Addatone/Addatone_MachX03/SineLUT.v
+D:/Eurorack/Addatone/Addatone_MachX03/src/ADC_SPI_In.v
+D:/Eurorack/Addatone/Addatone_MachX03/src/DAC_SPI_Out.v
+D:/Eurorack/Addatone/Addatone_MachX03/src/sample_pos_RAM.v
+D:/Eurorack/Addatone/Addatone_MachX03/OscPll.v
+D:/Eurorack/Addatone/Addatone_MachX03/src/top.v
+D:/Eurorack/Addatone/Addatone_MachX03/src/TestBench_Top.v

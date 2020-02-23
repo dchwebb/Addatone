@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DiamondModule name="SineLUT" module="SineLUT" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2020 02 07 12:38:37.368" version="5.4" type="Module" synthesis="lse" source_format="Verilog HDL">
+<DiamondModule name="SineLUT" module="SineLUT" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2020 02 23 16:33:58.545" version="5.4" type="Module" synthesis="lse" source_format="Verilog HDL">
   <Package>
-		<File name="" type="" modified="2020 02 07 12:38:37.227"/>
-		<File name="SineLUT.lpc" type="lpc" modified="2020 02 07 12:38:33.612"/>
-		<File name="SineLUT.v" type="top_level_verilog" modified="2020 02 07 12:38:33.659"/>
-		<File name="SineLUT_tmpl.v" type="template_verilog" modified="2020 02 07 12:38:33.691"/>
-		<File name="d:/docs/fpga/oscillator/sin_lut_2c_1500.mem" type="mem" modified="2020 02 07 12:37:39.455"/>
-		<File name="tb_SineLUT_tmpl.v" type="testbench_verilog" modified="2020 02 07 12:38:33.706"/>
+		<File name="" type="" modified="2020 02 23 16:33:58.402"/>
+		<File name="SineLUT.lpc" type="lpc" modified="2020 02 23 16:33:56.114"/>
+		<File name="SineLUT.v" type="top_level_verilog" modified="2020 02 23 16:33:56.164"/>
+		<File name="SineLUT_tmpl.v" type="template_verilog" modified="2020 02 23 16:33:56.171"/>
+		<File name="d:/eurorack/addatone/addatone_machx03/sine_lut/sin_lut2048.mem" type="mem" modified="2020 02 23 16:33:26.946"/>
+		<File name="tb_SineLUT_tmpl.v" type="testbench_verilog" modified="2020 02 23 16:33:56.205"/>
   </Package>
 </DiamondModule>

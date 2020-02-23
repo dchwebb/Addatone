@@ -16,8 +16,8 @@ CoreRevision=5.4
 ModuleName=SineLUT
 SourceFormat=Verilog HDL
 ParameterFileVersion=1.0
-Date=02/07/2020
-Time=12:38:33
+Date=02/23/2020
+Time=16:33:56
 
 [Parameters]
 Verilog=1
@@ -27,7 +27,7 @@ Destination=Synplicity
 Expression=BusA(0 to 7)
 Order=Big Endian [MSB:LSB]
 IO=0
-Address=1500
+Address=2048
 Data=16
 enByte=0
 ByteSize=9
@@ -37,7 +37,7 @@ Optimization=Speed
 Reset=Sync
 Reset1=Sync
 Init=0
-MemFile=d:/docs/fpga/oscillator/sin_lut_2c_1500.mem
+MemFile=d:/eurorack/addatone/addatone_machx03/sine_lut/sin_lut2048.mem
 MemFormat=hex
 EnECC=0
 Pipeline=0
@@ -46,7 +46,7 @@ init_data=0
 no_init=0
 
 [FilesGenerated]
-d:/docs/fpga/oscillator/sin_lut_2c_1500.mem=mem
+d:/eurorack/addatone/addatone_machx03/sine_lut/sin_lut2048.mem=mem
 
 [Command]
-cmd_line= -w -n SineLUT -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type romblk -device LCMXO3LF-6900C -addr_width 11 -data_width 16 -num_words 1500 -cascade -1 -memfile "d:/docs/fpga/oscillator/sin_lut_2c_1500.mem" -memformat hex
+cmd_line= -w -n SineLUT -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type romblk -device LCMXO3LF-6900C -addr_width 11 -data_width 16 -num_words 2048 -cascade -1 -memfile "d:/eurorack/addatone/addatone_machx03/sine_lut/sin_lut2048.mem" -memformat hex
