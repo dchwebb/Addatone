@@ -91,7 +91,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 		//harmonic_scale <= adc_data1;
 	end
 
-	always @(posedge fpga_clock or posedge reset) begin
+	always @(posedge fpga_clock) begin
 		if (reset) begin
 			sample_timer <= 1'b0;
 			dac_send <= 1'b0;

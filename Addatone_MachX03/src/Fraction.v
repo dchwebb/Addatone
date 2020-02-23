@@ -19,7 +19,7 @@ module Fraction
 	reg signed [31:0] working_total;
 	reg [4:0] counter;
 
-	always @(posedge clock or posedge reset or posedge clear_accumulator) begin
+	always @(posedge clock) begin
 		if (reset) begin
 			counter <= 1'b0;
 			done <= 1'b1;

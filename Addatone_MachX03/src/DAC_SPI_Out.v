@@ -28,7 +28,7 @@ module DAC_SPI_Out (clock_in, reset, data_in, send, spi_cs_out, spi_clock_out, s
 	end
 
 
-	always @(posedge clock_in or posedge reset) begin
+	always @(posedge clock_in) begin
 		if (reset) begin
 			dac_state <= dac_state_idle;
 			spi_cs_out <= 1'b1;

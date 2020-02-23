@@ -29,7 +29,7 @@ module ADC_SPI_In
 	//reg CS_stable;
 
 	// Check for false triggers using main clock to count negative clock pulses and noise on the nss line
-	always @(posedge i_clock or posedge i_reset) begin
+	always @(posedge i_clock) begin
 		if (i_reset) begin
 			neg_clock_counter <= 1'b0;
 			pos_clock_counter <= 1'b0;
