@@ -4,14 +4,13 @@ void TIM3_IRQHandler(void) {
 	TIM3->SR &= ~TIM_SR_UIF;					// clear UIF flag
 
 	// Pitch calculations
-	//freq1 = 2299.0f * std::pow(2.0f, (float)Pitch / -583.0f);	// Increase 2299 to increase pitch; Reduce ABS(583) to increase spread
+	//freq1 = 2270.0f * std::pow(2.0f, (float)Pitch / -610.0f);	// Increase 2270 to increase pitch; Reduce ABS(610) to increase spread
 
-//	m.Offset = 2000			&& 2299
-//	m.Spread = -690			&& -583
 	pitch = (float)((ADC_array[0] + ADC_array[2] + ADC_array[4] + ADC_array[6]) >> 2);
-	freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);
-//	freq += fup ? .01 : -.01;
-//	if (freq > 230 || freq < 220) fup = !fup;
+
+
+	//freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);			// for cycle length matching sample rate (48k)
+	freq = 3150.0f * std::pow(2.0f, pitch / -608.0f);			// for cycle length of 65k
 
 //	freq = 200;
 	sendSPIData((uint16_t)freq);

@@ -64,3 +64,9 @@ Global=
 .\..\src\Fraction.v=Verilog Source Code
 .\..\src\sample_pos_RAM.v=Verilog Source Code
 
+[SpecTracer]
+WindowVisible=0
+[HierarchyViewer]
+HierarchyInformation=
+ShowHide=ShowTopLevel
+Selected=

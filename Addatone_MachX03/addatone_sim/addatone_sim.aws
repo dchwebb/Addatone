@@ -6,3 +6,9 @@ addatone_sim=addatone_sim.adf
 Active=addatone_sim
 [Expand]
 addatone_sim=1
+[Browser]
+sort=order
+mode=none
+[Order]
+order=1
+macro=
