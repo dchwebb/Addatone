@@ -6,3 +6,4 @@ i<>.\..\src\DAC_SPI_Out.v
 i<>.\..\src\Fraction.v
 i<>.\..\src\sample_pos_RAM.v
 i<>.\..\src\TestBench_Top.v
+i<>.\..\src\SamplePosition.v

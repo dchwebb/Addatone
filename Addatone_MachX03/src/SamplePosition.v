@@ -4,6 +4,7 @@ module SamplePosition
 		input wire clock,
 		input wire [15:0] frequency,
 		input wire [7:0] harmonic,
+		output reg sample_ready,				// Tells top module that sample position has been loaded
 		input wire next_sample,					// Trigger from top module to say current value has been read and ready for next sample
 		output reg [15:0] sample_position
 	);
@@ -23,6 +24,7 @@ module SamplePosition
 	always @(posedge clock) begin
 		if (reset) begin
 			sp_write <= 1'b0;
+			sample_ready <= 1'b0;
 			state_machine <= sm_init;
 		end
 		else begin
@@ -30,26 +32,32 @@ module SamplePosition
 				sm_init:
 					begin
 						accumulated_frequency <= frequency;
+						sample_ready <= 1'b0;
 						sp_write <= 1'b0;
 						state_machine <= sm_write;
 					end
 					
 				sm_write:
 					begin
+						// increment next sample position by frequency: number of items in sine LUT is 2048 (32*2048=65536) which means that we can divide by 32 to get correct position
 						sample_position <= sp_readdata + accumulated_frequency;
 						sp_write <= 1'b1;
+						sample_ready <= 1'b1;
 						state_machine <= sm_ready;
 					end
 
 				sm_ready:
 					begin
 						sp_write <= 1'b0;
-						if (next_sample)
+						if (next_sample) begin
+							sample_ready <= 1'b0;
 							state_machine <= (harmonic == 1'b0) ? sm_init : sm_next;
+						end
 					end
 				
 				sm_next:
 					begin
+						
 						accumulated_frequency <= accumulated_frequency + frequency;
 						state_machine <= sm_write;
 					end

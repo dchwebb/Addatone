@@ -43,7 +43,6 @@ module Fraction
 				if (mult_reg == 0) begin
 					// Multiplication complete - divide by bit count and add to accumulator, retaining negative bits
 					accumulator <= accumulator + {{DIVISOR_BITS{working_total[31]}}, working_total[31:DIVISOR_BITS]};
-					//accumulator <= accumulator + working_total >> (DIVISOR_BITS);
 					done <= 1'b1;
 					counter <= 0;
 				end

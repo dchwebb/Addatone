@@ -53,6 +53,7 @@ Global=
 /..\..\src\Fraction.v=-1
 /..\..\src\sample_pos_RAM.v=-1
 /..\..\src\TestBench_Top.v=-1
+/..\..\src\SamplePosition.v=-1
 
 [Files.Data]
 .\..\src\TestBench_Top.v=Verilog Source Code
@@ -63,10 +64,13 @@ Global=
 .\..\src\DAC_SPI_Out.v=Verilog Source Code
 .\..\src\Fraction.v=Verilog Source Code
 .\..\src\sample_pos_RAM.v=Verilog Source Code
+.\..\src\SamplePosition.v=Verilog Source Code
 
 [SpecTracer]
 WindowVisible=0
+
 [HierarchyViewer]
 HierarchyInformation=
 ShowHide=ShowTopLevel
 Selected=
+

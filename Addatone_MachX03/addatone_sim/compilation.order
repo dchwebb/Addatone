@@ -6,3 +6,4 @@
 .\..\src\Fraction.v
 .\..\src\sample_pos_RAM.v
 .\..\src\TestBench_Top.v
+.\..\src\SamplePosition.v
