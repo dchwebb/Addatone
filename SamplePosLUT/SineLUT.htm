@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+canvas {
+	border: 2px solid black;
+	position: absolute;
+	left: 10px;
+}
+p, label, div, textarea {
+  font-family: "Arial";
+  font-size: 13px;
+}
+</style>
+</head>
+<body>
+
+<form action="javascript: offsetCalculator.redraw();" name="theForm">
+
+	<p>
+		<label>Harmonics</label>
+		<input type="text" id="harmonics" value = "10" />
+		<input type="checkbox" id="calcOffsets" checked="1" style="vertical-align: top" onclick="offsetCalculator.redraw();"/> <label>Best Offsets </label>
+		<button type="submit" onclick="offsetCalculator.redraw();">Update</button>
+
+	</p>
+	<p>
+		<div id="spread">Spread: </div>
+	</p>
+	<p>		
+		<label>Offsets: </label>
+		<textarea style="vertical-align: top;" id="offsetList" rows="4" cols="50"></textarea>
+		<button type="submit" onclick="offsetCalculator.copyVals();">Copy to Clipboard</button>
+	</p>
+</form>
+
+<canvas id = "canvas" ></canvas>
+<script src = "functions.js"></script>
+
+</body>
+</html>
