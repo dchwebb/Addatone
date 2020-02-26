@@ -1,5 +1,5 @@
 SCUBA, Version Diamond (64-bit) 3.11.2.446
-Sun Feb 23 16:33:56 2020
+Tue Feb 25 11:09:01 2020
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -7,7 +7,7 @@ Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
 
-    Issued command   : C:\lscc\diamond\3.11_x64\ispfpga\bin\nt64\scuba.exe -w -n SineLUT -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type romblk -device LCMXO3LF-6900C -addr_width 11 -data_width 16 -num_words 2048 -cascade -1 -memfile d:/eurorack/addatone/addatone_machx03/sine_lut/sin_lut2048.mem -memformat hex 
+    Issued command   : C:\lscc\diamond\3.11_x64\ispfpga\bin\nt64\scuba.exe -w -n SineLUT -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type romblk -device LCMXO3LF-6900C -addr_width 11 -data_width 16 -num_words 2048 -cascade -1 -memfile d:/eurorack/addatone/addatone_machx03/lut/sin_lut2048.mem -memformat hex 
     Circuit name     : SineLUT
     Module type      : EBR_ROM
     Module Version   : 5.4
@@ -15,7 +15,7 @@ Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
 	Inputs       : Address[10:0], OutClock, OutClockEn, Reset
 	Outputs      : Q[15:0]
     I/O buffer       : not inserted
-    Memory file      : d:/eurorack/addatone/addatone_machx03/sine_lut/sin_lut2048.mem
+    Memory file      : d:/eurorack/addatone/addatone_machx03/lut/sin_lut2048.mem
     EDIF output      : SineLUT.edn
     Verilog output   : SineLUT.v
     Verilog template : SineLUT_tmpl.v

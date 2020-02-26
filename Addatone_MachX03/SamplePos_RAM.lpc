@@ -11,13 +11,13 @@ Status=S
 VendorName=Lattice Semiconductor Corporation
 CoreType=LPM
 CoreStatus=Demo
-CoreName=ROM
-CoreRevision=5.4
-ModuleName=SineLUT
+CoreName=RAM_DQ
+CoreRevision=7.5
+ModuleName=SamplePos_RAM
 SourceFormat=Verilog HDL
 ParameterFileVersion=1.0
 Date=02/25/2020
-Time=11:09:01
+Time=11:42:39
 
 [Parameters]
 Verilog=1
@@ -27,7 +27,7 @@ Destination=Synplicity
 Expression=BusA(0 to 7)
 Order=Big Endian [MSB:LSB]
 IO=0
-Address=2048
+Address=256
 Data=16
 enByte=0
 ByteSize=9
@@ -36,8 +36,8 @@ ClockEn=0
 Optimization=Speed
 Reset=Sync
 Reset1=Sync
-Init=0
-MemFile=d:/eurorack/addatone/addatone_machx03/lut/sin_lut2048.mem
+Init=mem
+MemFile=d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut.mem
 MemFormat=hex
 EnECC=0
 Pipeline=0
@@ -46,7 +46,7 @@ init_data=0
 no_init=0
 
 [FilesGenerated]
-d:/eurorack/addatone/addatone_machx03/lut/sin_lut2048.mem=mem
+d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut.mem=mem
 
 [Command]
-cmd_line= -w -n SineLUT -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type romblk -device LCMXO3LF-6900C -addr_width 11 -data_width 16 -num_words 2048 -cascade -1 -memfile "d:/eurorack/addatone/addatone_machx03/lut/sin_lut2048.mem" -memformat hex
+cmd_line= -w -n SamplePos_RAM -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type ramdq -device LCMXO3LF-6900C -addr_width 8 -data_width 16 -num_words 256 -cascade -1 -memfile d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut.mem -memformat hex -writemode NORMAL

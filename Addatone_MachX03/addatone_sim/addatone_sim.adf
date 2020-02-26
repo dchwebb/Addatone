@@ -23,7 +23,7 @@ ENABLE_ADV_DATAFLOW=0
 FLOW_TYPE=HDL
 LANGUAGE=VHDL
 REFRESH_FLOW=1
-fileopenfolder=D:\Eurorack\Addatone\Addatone_MachX03\src
+fileopenfolder=D:\Eurorack\Addatone\Addatone_MachX03
 
 [LocalVerilogSets]
 EnableSLP=0
@@ -44,28 +44,6 @@ Count=0
 [DefineMacro]
 Global=
 
-[Files]
-/..\..\SineLUT.v=-1
-/..\..\OscPll.v=-1
-/..\..\src\top.v=-1
-/..\..\src\ADC_SPI_In.v=-1
-/..\..\src\DAC_SPI_Out.v=-1
-/..\..\src\Fraction.v=-1
-/..\..\src\sample_pos_RAM.v=-1
-/..\..\src\TestBench_Top.v=-1
-/..\..\src\SamplePosition.v=-1
-
-[Files.Data]
-.\..\src\TestBench_Top.v=Verilog Source Code
-.\..\SineLUT.v=Verilog Source Code
-.\..\OscPll.v=Verilog Source Code
-.\..\src\top.v=Verilog Source Code
-.\..\src\ADC_SPI_In.v=Verilog Source Code
-.\..\src\DAC_SPI_Out.v=Verilog Source Code
-.\..\src\Fraction.v=Verilog Source Code
-.\..\src\sample_pos_RAM.v=Verilog Source Code
-.\..\src\SamplePosition.v=Verilog Source Code
-
 [SpecTracer]
 WindowVisible=0
 
@@ -73,4 +51,26 @@ WindowVisible=0
 HierarchyInformation=
 ShowHide=ShowTopLevel
 Selected=
+
+[Files]
+/..\..\SineLUT.v=-1
+/..\..\OscPll.v=-1
+/..\..\src\top.v=-1
+/..\..\src\ADC_SPI_In.v=-1
+/..\..\src\DAC_SPI_Out.v=-1
+/..\..\src\Fraction.v=-1
+/..\..\src\TestBench_Top.v=-1
+/..\..\src\SamplePosition.v=-1
+/..\..\SamplePos_RAM.v=-1
+
+[Files.Data]
+.\..\SineLUT.v=Verilog Source Code
+.\..\OscPll.v=Verilog Source Code
+.\..\src\top.v=Verilog Source Code
+.\..\src\ADC_SPI_In.v=Verilog Source Code
+.\..\src\DAC_SPI_Out.v=Verilog Source Code
+.\..\src\Fraction.v=Verilog Source Code
+.\..\src\TestBench_Top.v=Verilog Source Code
+.\..\src\SamplePosition.v=Verilog Source Code
+.\..\SamplePos_RAM.v=Verilog Source Code
 

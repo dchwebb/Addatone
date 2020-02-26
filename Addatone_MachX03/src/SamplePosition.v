@@ -11,9 +11,11 @@ module SamplePosition
 
 	reg sp_write;
 	wire [15:0] sp_readdata;
-	// Initialise Sample Position RAM
-	Sample_Pos_RAM sample_pos_ram(.din(sample_position), .addr(harmonic), .write_en(sp_write), .clk(clock), .dout(sp_readdata));
-
+	// Initialise Sample Position RAM (inferred)
+	//Sample_Pos_RAM sample_pos_ram(.din(sample_position), .addr(harmonic), .write_en(sp_write), .clk(clock), .dout(sp_readdata));
+	// Initialise Sample Position RAM (IP)
+	SamplePos_RAM sample_pos_ram(.Clock(clock), .ClockEn(1'b1), .Reset(reset), .WE(sp_write), .Address(harmonic), .Data(sample_position), .Q(sp_readdata));
+	
 	reg [16:0] accumulated_frequency;
 	reg [2:0] state_machine;
 	localparam [2:0] sm_init = 3'd0;

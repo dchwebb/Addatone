@@ -2,7 +2,7 @@
 <BaliProject version="3.2" title="Addatone" device="LCMXO3LF-6900C-5BG256C" default_implementation="impl1">
     <Options/>
     <Implementation title="impl1" dir="impl1" description="impl1" synthesis="lse" default_strategy="Strategy1">
-        <Options def_top="top" top="top"/>
+        <Options def_top="Sample_Pos_RAM" top="top"/>
         <Source name="SineLUT.ipx" type="IPX_Module" type_short="IPX">
             <Options/>
         </Source>
@@ -37,6 +37,12 @@
             <Options/>
         </Source>
         <Source name="SineLUT.v" type="Verilog" type_short="Verilog" excluded="TRUE">
+            <Options/>
+        </Source>
+        <Source name="src/SamplePosition.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="SamplePos_RAM.ipx" type="IPX_Module" type_short="IPX">
             <Options/>
         </Source>
         <Source name="adc_sim/adc_sim.spf" type="Simulation Project File" type_short="SPF">

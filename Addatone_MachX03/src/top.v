@@ -72,14 +72,13 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	reg [3:0] state_machine;
 	localparam sm_idle = 4'd0;
 	localparam sm_init = 4'd1;
-	localparam sm_harm0 = 4'd2;
-	localparam sm_harm1 = 4'd3;
-	localparam sm_harm2 = 4'd4;
-	localparam sm_adder_start = 4'd5;
-	localparam sm_adder_wait = 4'd6;
-	localparam sm_calc_done = 4'd7;
-	localparam sm_scale_sample = 4'd8;
-	localparam sm_ready_to_send = 4'd9;
+	localparam sm_sine_lookup = 4'd2;
+	localparam sm_next_harm = 4'd3;
+	localparam sm_adder_start = 4'd4;
+	localparam sm_adder_wait = 4'd5;
+	localparam sm_calc_done = 4'd6;
+	localparam sm_scale_sample = 4'd7;
+	localparam sm_ready_to_send = 4'd8;
 
 	always @(posedge adc_data_received) begin
 //		err_out <=  ~err_out;
@@ -108,28 +107,28 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 					next_sample <= 1'b0;
 					adder_clear <= 1'b0;
 					adder_mult <= 7'd127;
-					state_machine <= sm_harm0;
+					state_machine <= sm_sine_lookup;
 				end
 
-				sm_harm0:
+				sm_sine_lookup:
 				begin
 					adder_start <= 1'b0;
 					if (sample_ready) begin
 						lut_addr <= sample_pos >> 5;									// offset sample position to generate sine LUT address
 
-						state_machine <= sm_harm1;
+						state_machine <= sm_next_harm;
 					end
 				end
 
-				sm_harm1:
+				sm_next_harm:
 				begin
 					// Load up next sample position
 					harmonic <= harmonic + 1'b1;
 					next_sample <= 1'b1;
 
 					// decrease harmonic scaler
-					if (adder_mult > 10)
-						adder_mult <= adder_mult - 10;
+					if (adder_mult > 5)
+						adder_mult <= adder_mult - 5;
 					state_machine <= sm_adder_start;
 				end
 
@@ -139,7 +138,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 					if (adder_ready) begin
 						// Wait until the adder is free and then start the next calculation
 						adder_start <= 1'b1;											// Tell the adder the next sample is ready
-						state_machine <= (harmonic > 20) ? sm_adder_wait : sm_harm0;
+						state_machine <= (harmonic > 20) ? sm_adder_wait : sm_sine_lookup;
 					end
 				end
 				
@@ -153,14 +152,14 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 				begin
 					if (adder_ready) begin
 						// all harmonics calculated - offset output for sending to DAC
-						output_sample <= 32'h21000 + adder_total;			// Add extra 2^17 (approx) to cancel divide by 4 on final value
+						output_sample <= 32'h31000 + adder_total;			// Add extra 2^18 (approx) to cancel divide by 4 on final value
 						state_machine <= sm_scale_sample;
 					end
 				end
 
 				sm_scale_sample:
 				begin
-					dac_sample <= output_sample >> 2;							// scale output sample to send to DAC
+					dac_sample <= output_sample >> 3;							// scale output sample to send to DAC
 					state_machine <= sm_ready_to_send;
 				end
 					

@@ -14,11 +14,16 @@ module Sample_Pos_RAM (din, addr, write_en, clk, dout);
 
 	initial
 	begin
-		for (i = 0; i < 256; i = i + 1)
-		begin
-			mem[i] = 1'b0;
-		end
+		$readmemh("lut/sample_pos_lut.mem", mem);
 	end
+
+//initial
+	//begin
+		//for (i = 0; i < 256; i = i + 1)
+		//begin
+			//mem[i] = 1'b0;
+		//end
+	//end
 
 	always @(posedge clk)	// Control with a clock edge.
 	begin

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<userSetting name="D:/Eurorack/Addatone/Addatone_MachX03/promote.xml" version="Diamond (64-bit) 3.11.2.446" date="Sun Feb 23 20:31:55 2020" vendor="Lattice Semiconductor Corporation" >
+<userSetting name="D:/Eurorack/Addatone/Addatone_MachX03/promote.xml" version="Diamond (64-bit) 3.11.2.446" date="Tue Feb 25 17:48:50 2020" vendor="Lattice Semiconductor Corporation" >
   <msg mid="35931002" type="Warning" />
   <msg mid="35901010" type="Error" />
   <msg mid="35901320" type="Warning" />
+  <msg mid="35901012" type="Error" />
   <msg mid="35909000" type="Info" />
   <msg mid="35901466" type="Warning" />
   <msg mid="35901209" type="Warning" />

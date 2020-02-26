@@ -4,9 +4,9 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timestamp 2020 2 23 16 33 56)
+      (timestamp 2020 2 25 11 9 1)
       (program "SCUBA" (version "Diamond (64-bit) 3.11.2.446"))))
-      (comment "C:\lscc\diamond\3.11_x64\ispfpga\bin\nt64\scuba.exe -w -n SineLUT -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type bram -wp 00 -rp 1100 -addr_width 11 -data_width 16 -num_rows 2048 -cascade -1 -memfile d:/eurorack/addatone/addatone_machx03/sine_lut/sin_lut2048.mem -memformat hex ")
+      (comment "C:\lscc\diamond\3.11_x64\ispfpga\bin\nt64\scuba.exe -w -n SineLUT -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type bram -wp 00 -rp 1100 -addr_width 11 -data_width 16 -num_rows 2048 -cascade -1 -memfile d:/eurorack/addatone/addatone_machx03/lut/sin_lut2048.mem -memformat hex ")
   (library ORCLIB
     (edifLevel 0)
     (technology
