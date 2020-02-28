@@ -16,7 +16,11 @@ void InitADC(void);
 void InitIO(void);
 void InitSysTick();
 void InitCoverageTimer();
+
 void InitSPI();
 void InitSPITimer();
 void sendSPIData(uint16_t data);
 void clearSPI();
+
+void InitI2S();
+void sendI2SData(uint32_t data);

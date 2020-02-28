@@ -24,13 +24,23 @@ int main(void)
 	SystemClock_Config();					// Configure the clock and PLL
 	SystemCoreClockUpdate();				// Update SystemCoreClock (system clock frequency) derived from settings of oscillators, prescalers and PLL
 	InitADC();								// Configure ADC for analog controls
+	InitI2S();
 	InitSPI();								// SPI on PB3 (SPI3_SCK pin 55) and PB5 (SPI3_MOSI pin 57)
-	InitSPITimer();
+//	InitSPITimer();
 
-	int i = 0;
+	uint32_t i = 0;
 
 
 	while (1) {
 		i++;
+		uint16_t s = (uint16_t)(i >> 3);
+		while ((SPI2->SR & SPI_SR_TXE) == 0);
+		SPI2->DR = s;
+		while ((SPI2->SR & SPI_SR_TXE) == 0);
+		SPI2->DR = 0xAABB;
+		while ((SPI2->SR & SPI_SR_TXE) == 0);
+		SPI2->DR = 0x3799;
+		while ((SPI2->SR & SPI_SR_TXE) == 0);
+		SPI2->DR = 0xCCDD;
 	}
 }

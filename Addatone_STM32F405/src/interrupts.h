@@ -20,6 +20,8 @@ void TIM3_IRQHandler(void) {
 //	sendSPIData((uint16_t)0b0101010100110011);
 
 	clearSPI();
+
+	//sendI2SData((uint32_t)0x5533AABB);
 }
 
 void SysTick_Handler(void) {

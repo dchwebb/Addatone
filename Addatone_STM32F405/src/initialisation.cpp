@@ -199,6 +199,83 @@ void InitSPI()
 	SPI3->CR1 |= SPI_CR1_SPE;						// Enable SPI
 }
 
+void InitI2S()
+{
+	/* All AF5
+	PC3 I2S2_SD
+	PC6 I2S2_MCK
+	[PC9 I2S_CKIN]
+
+	62 PB9 I2S2_WS
+	PB10 I2S2_CK
+	33 PB12 I2S2_WS
+	34 PB13 I2S2_CK
+	[PB14 I2S2ext_SD]
+	36 PB15 I2S2_SD
+
+	*/
+	//	Enable GPIO and SPI clocks
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;			// reset and clock control - advanced high performance bus - GPIO port B
+	RCC->APB1ENR |= RCC_APB1ENR_SPI2EN;
+
+/*
+	// PB12: I2S2_WS [alternate function AF5]
+	GPIOB->MODER |= GPIO_MODER_MODER12_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
+	GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR12;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
+	GPIOB->AFR[1] |= 0b0101 << 16;					// 0b0101 = Alternate Function 5 (I2S2); 16 is position of Pin 12
+*/
+
+	// PB9: I2S2_WS [alternate function AF5]
+	GPIOB->MODER |= GPIO_MODER_MODER9_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
+	GPIOB->AFR[1] |= 0b0101 << 4;					// 0b0101 = Alternate Function 5 (I2S2); 4 is position of Pin 9
+
+	// PB13 I2S2_CK [alternate function AF5]
+	GPIOB->MODER |= GPIO_MODER_MODER13_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
+	//GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR13;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
+	GPIOB->AFR[1] |= 0b0101 << 20;					// 0b0101 = Alternate Function 6 (I2S2); 20 is position of Pin 13
+
+	// PB15 I2S2_SD [alternate function AF5]
+	GPIOB->MODER |= GPIO_MODER_MODER15_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
+	//GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR15;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
+	GPIOB->AFR[1] |= 0b0101 << 28;					// 0b0101 = Alternate Function 6 (I2S2); 28 is position of Pin 15
+
+	// Configure SPI
+	SPI2->I2SCFGR |= SPI_I2SCFGR_I2SMOD;			// I2S Mode
+	SPI2->I2SCFGR |= SPI_I2SCFGR_I2SCFG_1;			// I2S configuration mode: 00=Slave transmit; 01=Slave receive; 10=Master transmit; 11=Master receive
+//	SPI2->I2SCFGR |= SPI2_I2SCFGR_I2SSTD;			// I2S standard selection:	00=Philips; 01=MSB justified; 10=LSB justified; 11=PCM
+	SPI2->I2SCFGR |= SPI_I2SCFGR_DATLEN_1;			// Data Length 00=16-bit; 01=24-bit; 10=32-bit
+	SPI2->I2SCFGR |= SPI_I2SCFGR_CHLEN;				// Channel Length = 32bits
+
+	/* RCC Clock calculations:
+	f[VCO clock] = f[PLLI2S clock input] × (PLLI2SN / PLLM)		Eg (8MHz osc) * (192 / 4) = 384MHz
+	f[PLL I2S clock output] = f[VCO clock] / PLLI2SR			Eg 384 / 5 = 76.8MHz
+	*/
+	RCC->CFGR &= ~RCC_CFGR_I2SSRC;					// Set I2S PLL source to internal
+	RCC->PLLI2SCFGR = (RCC_PLLI2SCFGR_PLLI2SN & (192 << 6)) | (RCC_PLLI2SCFGR_PLLI2SR & (5 << 28));
+	RCC->CR |= RCC_CR_PLLI2SON;
+
+	/* I2S Prescaler Clock calculations:
+	FS = I2SxCLK / [(32*2)*((2*I2SDIV)+ODD))]					Eg  76.8 / (64 * ((2 * 12) + 1)) = 48kHz
+	*/
+	SPI2->I2SPR = (SPI_I2SPR_I2SDIV & 12) | SPI_I2SPR_ODD;		// Set Linear prescaler to 12 and enable Odd factor prescaler
+
+	SPI2->I2SCFGR |= SPI_I2SCFGR_I2SE;				// Enable I2S
+}
+
+void sendI2SData(uint32_t data) {
+	//while (((SPI2->SR & SPI_SR_TXE) == 0) | ((SPI2->SR & SPI_SR_BSY) == SPI_SR_BSY) );
+	while ((SPI2->SR & SPI_SR_TXE) == 0);
+	SPI2->DR = 0x5533;
+	while ((SPI2->SR & SPI_SR_TXE) == 0);
+	SPI2->DR = 0xAABB;
+	while ((SPI2->SR & SPI_SR_TXE) == 0);
+	SPI2->DR = 0x5533;
+	while ((SPI2->SR & SPI_SR_TXE) == 0);
+	SPI2->DR = 0xAABB;
+
+}
+
+
 void sendSPIData(uint16_t data) {
 	while (((SPI3->SR & SPI_SR_TXE) == 0) | ((SPI3->SR & SPI_SR_BSY) == SPI_SR_BSY) );
 	GPIOA->BSRR |= GPIO_BSRR_BR_15;
