@@ -12,6 +12,13 @@ p, label, div, textarea {
   font-family: "Arial";
   font-size: 13px;
 }
+input[type=text] {
+	width: 100px;
+}
+
+label, input[type=text] {
+    padding-right: 10px;
+}
 </style>
 </head>
 <body>
@@ -19,8 +26,8 @@ p, label, div, textarea {
 <form action="javascript: offsetCalculator.redraw();" name="theForm">
 
 	<p>
-		<label>Harmonics</label>
-		<input type="text" id="harmonics" value = "10" />
+		<label>Harmonics</label><input type="text" id="harmonics" value = "10" />
+		<label>LUT positions</label><input type="text" id="lutPositions" value = "256" />
 		<input type="checkbox" id="calcOffsets" checked="1" style="vertical-align: top" onclick="offsetCalculator.redraw();"/> <label>Best Offsets </label>
 		<button type="submit" onclick="offsetCalculator.redraw();">Update</button>
 
@@ -31,6 +38,7 @@ p, label, div, textarea {
 	<p>		
 		<label>Offsets: </label>
 		<textarea style="vertical-align: top;" id="offsetList" rows="4" cols="50"></textarea>
+		<input type="checkbox" id="outputHex" checked="1" style="vertical-align: top" onclick="offsetCalculator.redraw();"/> <label>Hex</label>
 		<button type="submit" onclick="offsetCalculator.copyVals();">Copy to Clipboard</button>
 	</p>
 </form>

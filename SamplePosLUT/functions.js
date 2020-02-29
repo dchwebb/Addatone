@@ -14,9 +14,7 @@ var viewport = new viewPort();
 
 offsetCalculator = function() {
 	this.cycleSize = 400;
-	this.samplecount = 128;
 	this.samples = [];
-
 
 	this.redraw = function() {
 		offsetCalculator.sineWave();
@@ -25,9 +23,11 @@ offsetCalculator = function() {
 
 	this.sineWave = function() {
 		var harmonicCount = document.getElementById("harmonics").value;
+		var lutPositions = document.getElementById("lutPositions").value;
 		var offsetList = document.getElementById("offsetList");
 		var calcOffsets = document.getElementById("calcOffsets").checked;
-		offsetList.innerHTML = '';
+		var outputHex = document.getElementById("outputHex").checked;
+		offsetList.innerHTML = (outputHex ? '0000\r': '0,');;
 			
 		// Build master list of samples - each time an offset for the next harmonic is found it will be added to this list
 		this.samples.length = 0;
@@ -35,7 +35,7 @@ offsetCalculator = function() {
 			this.samples.push(Math.sin(s * (Math.PI * 2) / this.cycleSize)); 
 		}
 
-		// locate best position to minimise crest
+		// locate best position to minimise crest by testing each position for minimum vertical spread
 		for (var harmonic = 2; harmonic <= harmonicCount; harmonic++) {
 			var bestSpread = 999;
 			var bestSpreadOffset = 0;
@@ -63,7 +63,12 @@ offsetCalculator = function() {
 			}
 			
 			// add to offset list
-			offsetList.innerHTML += bestSpreadOffset + ',';
+			bestSpreadOffset = Math.floor((lutPositions / this.cycleSize) * bestSpreadOffset);
+
+			var hex = bestSpreadOffset.toString(16).toUpperCase();
+			hex = "0000".substr(0, 4 - hex.length) + hex;
+		  
+			offsetList.innerHTML += (outputHex ? hex + '\r': bestSpreadOffset + ',');
 
 			//setTimeout(function() {offsetCalculator.drawWaves();}, 1000);
 		}
