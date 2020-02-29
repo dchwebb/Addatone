@@ -1,5 +1,5 @@
 SCUBA, Version Diamond (64-bit) 3.11.2.446
-Tue Feb 25 11:42:39 2020
+Sat Feb 29 16:06:41 2020
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -7,7 +7,7 @@ Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
 
-    Issued command   : C:\lscc\diamond\3.11_x64\ispfpga\bin\nt64\scuba.exe -w -n SamplePos_RAM -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type ramdq -device LCMXO3LF-6900C -addr_width 8 -data_width 16 -num_words 256 -cascade -1 -memfile d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut.mem -memformat hex -writemode NORMAL 
+    Issued command   : C:\lscc\diamond\3.11_x64\ispfpga\bin\nt64\scuba.exe -w -n SamplePos_RAM -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type ramdq -device LCMXO3LF-6900C -addr_width 8 -data_width 16 -num_words 256 -cascade -1 -memfile d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut_optimised.mem -memformat hex -writemode NORMAL 
     Circuit name     : SamplePos_RAM
     Module type      : RAM_DQ
     Module Version   : 7.5
@@ -15,7 +15,7 @@ Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
 	Inputs       : Clock, ClockEn, Reset, WE, Address[7:0], Data[15:0]
 	Outputs      : Q[15:0]
     I/O buffer       : not inserted
-    Memory file      : d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut.mem
+    Memory file      : d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut_optimised.mem
     EDIF output      : SamplePos_RAM.edn
     Verilog output   : SamplePos_RAM.v
     Verilog template : SamplePos_RAM_tmpl.v

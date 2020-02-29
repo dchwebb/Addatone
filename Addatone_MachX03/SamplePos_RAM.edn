@@ -4,9 +4,9 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timestamp 2020 2 25 11 42 39)
+      (timestamp 2020 2 29 16 6 41)
       (program "SCUBA" (version "Diamond (64-bit) 3.11.2.446"))))
-      (comment "C:\lscc\diamond\3.11_x64\ispfpga\bin\nt64\scuba.exe -w -n SamplePos_RAM -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type bram -wp 10 -rp 1000 -addr_width 8 -data_width 16 -num_rows 256 -cascade -1 -memfile d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut.mem -memformat hex -writemode NORMAL ")
+      (comment "C:\lscc\diamond\3.11_x64\ispfpga\bin\nt64\scuba.exe -w -n SamplePos_RAM -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type bram -wp 10 -rp 1000 -addr_width 8 -data_width 16 -num_rows 256 -cascade -1 -memfile d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut_optimised.mem -memformat hex -writemode NORMAL ")
   (library ORCLIB
     (edifLevel 0)
     (technology
@@ -223,7 +223,7 @@
             (property MEM_LPC_FILE
               (string "SamplePos_RAM.lpc"))
             (property MEM_INIT_FILE
-              (string "sample_pos_lut.mem"))
+              (string "sample_pos_lut_optimised.mem"))
             (property INITVAL_1F
               (string "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000"))
             (property INITVAL_1E

@@ -16,8 +16,8 @@ CoreRevision=7.5
 ModuleName=SamplePos_RAM
 SourceFormat=Verilog HDL
 ParameterFileVersion=1.0
-Date=02/25/2020
-Time=11:42:39
+Date=02/29/2020
+Time=16:06:41
 
 [Parameters]
 Verilog=1
@@ -37,7 +37,7 @@ Optimization=Speed
 Reset=Sync
 Reset1=Sync
 Init=mem
-MemFile=d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut.mem
+MemFile=d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut_optimised.mem
 MemFormat=hex
 EnECC=0
 Pipeline=0
@@ -46,7 +46,7 @@ init_data=0
 no_init=0
 
 [FilesGenerated]
-d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut.mem=mem
+d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut_optimised.mem=mem
 
 [Command]
-cmd_line= -w -n SamplePos_RAM -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type ramdq -device LCMXO3LF-6900C -addr_width 8 -data_width 16 -num_words 256 -cascade -1 -memfile d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut.mem -memformat hex -writemode NORMAL
+cmd_line= -w -n SamplePos_RAM -lang verilog -synth lse -bus_exp 7 -bb -arch xo3c00f -type ramdq -device LCMXO3LF-6900C -addr_width 8 -data_width 16 -num_words 256 -cascade -1 -memfile d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut_optimised.mem -memformat hex -writemode NORMAL

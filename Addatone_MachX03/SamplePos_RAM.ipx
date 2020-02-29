@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DiamondModule name="SamplePos_RAM" module="SamplePos_RAM" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2020 02 25 11:42:41.434" version="7.5" type="Module" synthesis="lse" source_format="Verilog HDL">
+<DiamondModule name="SamplePos_RAM" module="SamplePos_RAM" VendorName="Lattice Semiconductor Corporation" generator="IPexpress" date="2020 02 29 16:06:43.227" version="7.5" type="Module" synthesis="lse" source_format="Verilog HDL">
   <Package>
-		<File name="" type="" modified="2020 02 25 11:42:41.324"/>
-		<File name="SamplePos_RAM.lpc" type="lpc" modified="2020 02 25 11:42:39.154"/>
-		<File name="SamplePos_RAM.v" type="top_level_verilog" modified="2020 02 25 11:42:39.206"/>
-		<File name="SamplePos_RAM_tmpl.v" type="template_verilog" modified="2020 02 25 11:42:39.212"/>
-		<File name="d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut.mem" type="mem" modified="2020 02 25 11:08:03.702"/>
-		<File name="tb_SamplePos_RAM_tmpl.v" type="testbench_verilog" modified="2020 02 25 11:42:39.225"/>
+		<File name="" type="" modified="2020 02 29 16:06:43.133"/>
+		<File name="SamplePos_RAM.lpc" type="lpc" modified="2020 02 29 16:06:41.477"/>
+		<File name="SamplePos_RAM.v" type="top_level_verilog" modified="2020 02 29 16:06:41.571"/>
+		<File name="SamplePos_RAM_tmpl.v" type="template_verilog" modified="2020 02 29 16:06:41.571"/>
+		<File name="d:/eurorack/addatone/addatone_machx03/lut/sample_pos_lut_optimised.mem" type="mem" modified="2020 02 25 11:08:03.702"/>
+		<File name="tb_SamplePos_RAM_tmpl.v" type="testbench_verilog" modified="2020 02 29 16:06:41.587"/>
   </Package>
 </DiamondModule>

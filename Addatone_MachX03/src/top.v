@@ -22,7 +22,6 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	wire sample_ready;
 	SamplePosition sample_position(.reset(reset), .clock(fpga_clock), .frequency(frequency), .harmonic(harmonic), .sample_ready(sample_ready), .next_sample(next_sample),	.sample_position(sample_pos));
 
-
 	// DAC settings
 	output wire dac_spi_cs;
 	output wire dac_spi_data;
@@ -48,9 +47,8 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	parameter SEND_CHANNEL_A = 8'b00110001;		// Write to DAC Channel A
 
 	// Timing and Sine LUT settings
-	//reg [15:0] sample_pos;								// Temporary register to hold position of current cycle
 	reg [15:0] sample_timer = 1'b0;					// Counts up to SAMPLEINTERVAL to set sample rate interval
-//	reg [15:0] freq_increment;						// Sample position offset incrementing by n * freqency for each harmonic	parameter SAMPLERATE = 16'd48000;
+	parameter SAMPLERATE = 16'd48000;
 	parameter SAMPLEINTERVAL = 16'd1500;			// Clock frequency / sample rate - eg 88.67Mhz / 44khz = 2015 OR 72MHz / 48kHz = 1500
 	// SinLUT settings
 	reg [15:0] harmonic_scale;
