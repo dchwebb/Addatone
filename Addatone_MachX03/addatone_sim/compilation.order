@@ -1,9 +1,9 @@
+.\..\src\TestBench_Top.v
 .\..\SineLUT.v
 .\..\OscPll.v
 .\..\src\top.v
 .\..\src\ADC_SPI_In.v
 .\..\src\DAC_SPI_Out.v
 .\..\src\Fraction.v
-.\..\src\TestBench_Top.v
 .\..\src\SamplePosition.v
 .\..\SamplePos_RAM.v

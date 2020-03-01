@@ -1,2 +1,5 @@
-[OPENDOC|Aldec.Hde.HdePlugIn.7|.\..\src\SamplePosition.v|]
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\..\src\TestBench_Top.v|]
 TemplateId=2
+[OPENDOC|Aldec.WaveFormASDB.7|.\src\addatone.awc|]
+TemplateId=1
+ActiveDocument=1

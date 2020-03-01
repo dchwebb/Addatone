@@ -1,5 +1,7 @@
 module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, adc_spi_clock, rstn, crystal_osc, err_out, debug_out);
 
+	parameter NO_OF_HARMONICS = 8'd20;
+	
 	input wire rstn;       // from SW1 pushbutton
 	wire reset;
 	assign reset = ~rstn;
@@ -16,11 +18,11 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 
 	// Sample position RAM - memory array to store current position in cycle of each harmonic
 	reg [7:0] harmonic = 1'b0;						// Number of harmonic being calculated
-	reg next_sample;				// Trigger from top module to say current value has been read and ready for next sample
-	wire [15:0] sample_pos;
+	reg next_sample;										// Trigger from top module to say current value has been read and ready for next sample
+	wire signed [15:0] lut_value;
 	reg [15:0] frequency = 16'd1000;
 	wire sample_ready;
-	SamplePosition sample_position(.reset(reset), .clock(fpga_clock), .frequency(frequency), .harmonic(harmonic), .sample_ready(sample_ready), .next_sample(next_sample),	.sample_position(sample_pos));
+	SamplePosition sample_position(.i_reset(reset), .i_clock(fpga_clock), .i_frequency(frequency), .i_harmonic(harmonic), .o_sample_ready(sample_ready), .i_next_sample(next_sample),	.o_sample_value(lut_value));
 
 	// DAC settings
 	output wire dac_spi_cs;
@@ -50,17 +52,10 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	reg [15:0] sample_timer = 1'b0;					// Counts up to SAMPLEINTERVAL to set sample rate interval
 	parameter SAMPLERATE = 16'd48000;
 	parameter SAMPLEINTERVAL = 16'd1500;			// Clock frequency / sample rate - eg 88.67Mhz / 44khz = 2015 OR 72MHz / 48kHz = 1500
-	// SinLUT settings
-	reg [15:0] harmonic_scale;
-	reg [10:0] lut_addr = 11'b0;
-	wire signed [15:0] lut_value;
-	// Initialise Sine LUT
-	SineLUT sin_lut (.Address(lut_addr), .OutClock(fpga_clock), .OutClockEn(1'b1), .Reset(reset), .Q(lut_value));
-
-
-	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
+	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
 	parameter DIV_BIT = 7;			// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
 	reg adder_start, adder_clear;
+	reg [15:0] harmonic_scale;
 	wire adder_ready;
 	reg [DIV_BIT - 1:0] adder_mult;
 	wire signed [31:0] adder_total;
@@ -68,15 +63,15 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 
 	// State Machine settings - used to control calculation of amplitude of each harmonic sample
 	reg [3:0] state_machine;
-	localparam sm_idle = 4'd0;
 	localparam sm_init = 4'd1;
+	localparam sm_adder_mult = 4'd3;
 	localparam sm_sine_lookup = 4'd2;
-	localparam sm_next_harm = 4'd3;
 	localparam sm_adder_start = 4'd4;
 	localparam sm_adder_wait = 4'd5;
 	localparam sm_calc_done = 4'd6;
 	localparam sm_scale_sample = 4'd7;
 	localparam sm_ready_to_send = 4'd8;
+
 
 	always @(posedge adc_data_received) begin
 //		err_out <=  ~err_out;
@@ -90,7 +85,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 		if (reset) begin
 			sample_timer <= 1'b0;
 			dac_send <= 1'b0;
-			lut_addr <= 1'b0;
+			//lut_addr <= 1'b0;
 			adder_start <= 1'b0;
 			harmonic <= 8'b0;
 			state_machine <= sm_init;
@@ -105,43 +100,34 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 					next_sample <= 1'b0;
 					adder_clear <= 1'b0;
 					adder_mult <= 7'd127;
-					state_machine <= sm_sine_lookup;
+					state_machine <= sm_adder_mult;
 				end
 
-				sm_sine_lookup:
+				sm_adder_mult:
 				begin
+					next_sample <= 1'b0;
 					adder_start <= 1'b0;
-					if (sample_ready) begin
-						lut_addr <= sample_pos >> 5;									// offset sample position to generate sine LUT address
-
-						state_machine <= sm_next_harm;
-					end
-				end
-
-				sm_next_harm:
-				begin
-					// Load up next sample position
-					harmonic <= harmonic + 1'b1;
-					next_sample <= 1'b1;
-
+					
 					// decrease harmonic scaler
 					if (adder_mult > 5)
 						adder_mult <= adder_mult - 5;
 					state_machine <= sm_adder_start;
 				end
-
 				sm_adder_start:
 				begin
-					next_sample <= 1'b0;
-					if (adder_ready) begin
-						// Wait until the adder is free and then start the next calculation
+					// Wait until the sample value is ready and Adder is free and then start the next calculation
+					if (sample_ready && adder_ready) begin
+						harmonic <= harmonic + 1'b1;								// Load up next sample position
+						next_sample <= 1'b1;	
+
 						adder_start <= 1'b1;											// Tell the adder the next sample is ready
-						state_machine <= (harmonic > 20) ? sm_adder_wait : sm_sine_lookup;
+						state_machine <= (harmonic > NO_OF_HARMONICS) ? sm_adder_wait : sm_adder_mult;
 					end
 				end
 				
 				sm_adder_wait:
 				begin
+					next_sample <= 1'b0;
 					adder_start <= 1'b0;
 					state_machine <= sm_calc_done;								// Pause to let adder clear adder_ready state
 				end
