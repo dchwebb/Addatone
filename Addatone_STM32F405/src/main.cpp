@@ -10,6 +10,7 @@ volatile uint16_t& ADC_PITCH = ADC_array[0];	// PB0 ADC12_IN8   Pin 26
 volatile uint16_t& ADC_FTUNE = ADC_array[1];	// PB1 ADC12_IN9   Pin 27
 volatile float pitch;
 volatile float freq = 220;
+volatile uint16_t harmonicScale;
 volatile bool fup = 1;
 
 extern "C" {

@@ -173,18 +173,18 @@ void InitSPI()
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;			// reset and clock control - advanced high performance bus - GPIO port B
 	RCC->APB1ENR |= RCC_APB1ENR_SPI3EN;
 
-	// PB5: SPI_MOSI [alternate function AF6]
+	// PB5 (57): SPI_MOSI [alternate function AF6]
 	GPIOB->MODER |= GPIO_MODER_MODER5_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
 	GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR5;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
 	GPIOB->AFR[0] |= 0b0110 << 20;					// 0b0110 = Alternate Function 6 (SPI3); 20 is position of Pin 5
 
-	// PB3 SPI_SCK [alternate function AF6]
+	// PB3 (55) SPI_SCK [alternate function AF6]
 	GPIOB->MODER &= ~GPIO_MODER_MODER3;				// Reset value of PB3 is 0b10
 	GPIOB->MODER |= GPIO_MODER_MODER3_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
 	GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR3;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
 	GPIOB->AFR[0] |= 0b0110 << 12;					// 0b0110 = Alternate Function 6 (SPI3); 12 is position of Pin 3
 
-	// Software NSS - use PA15 on pin 50
+	// PA15 (50) Software NSS
 	GPIOA->MODER |= GPIO_MODER_MODER15_0;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
 	GPIOA->MODER &= ~GPIO_MODER_MODER15_1;
 	GPIOA->BSRR |= GPIO_BSRR_BS_15;

@@ -1,49 +1,46 @@
-module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, adc_spi_clock, rstn, crystal_osc, err_out, debug_out);
+module top
+	(
+		output wire dac_cs, 
+		output wire dac_bit, 
+		output wire dac_clock, 
+		input wire adc_cs, 
+		input wire adc_data, 
+		input wire adc_clock,
+		input wire rstn,
+		input wire crystal_osc,
+		output wire err_out,
+		output reg debug_out
+	);
 
 	parameter NO_OF_HARMONICS = 8'd20;
 	
-	input wire rstn;       // from SW1 pushbutton
 	wire reset;
 	assign reset = ~rstn;
 
 	//	Initialise 72MHz PLL clock from dev board 12 MHz crystal (dev board pin C8)
-	input wire crystal_osc;
 	wire fpga_clock;
 	OscPll pll(.CLKI(crystal_osc), .CLKOP(fpga_clock));
-
-	// Debug settings
-	output wire err_out;
-	output reg debug_out;
-	reg [31:0] debug_sample;
 
 	// Sample position RAM - memory array to store current position in cycle of each harmonic
 	reg [7:0] harmonic = 1'b0;						// Number of harmonic being calculated
 	reg next_sample;										// Trigger from top module to say current value has been read and ready for next sample
-	wire signed [15:0] lut_value;
+	wire signed [15:0] sample_value;
 	reg [15:0] frequency = 16'd1000;
 	wire sample_ready;
-	SamplePosition sample_position(.i_reset(reset), .i_clock(fpga_clock), .i_frequency(frequency), .i_harmonic(harmonic), .o_sample_ready(sample_ready), .i_next_sample(next_sample),	.o_sample_value(lut_value));
+	SamplePosition sample_position(.i_reset(reset), .i_clock(fpga_clock), .i_frequency(frequency), .i_harmonic(harmonic), .o_sample_ready(sample_ready), .i_next_sample(next_sample),	.o_sample_value(sample_value));
 
-	// DAC settings
-	output wire dac_spi_cs;
-	output wire dac_spi_data;
-	output wire dac_spi_clock;
+	// initialise DAC SPI (Maxim5134)
 	reg [23:0] dac_data;
 	reg dac_send;
-	// initialise DAC SPI (Maxim5134)
-	DAC_SPI_Out dac(.clock_in(fpga_clock), .reset(reset), .data_in(dac_data), .send(dac_send), .spi_cs_out(dac_spi_cs), .spi_clock_out(dac_spi_clock), .spi_data_out(dac_spi_data));
+	DAC_SPI_Out dac(.i_clock(fpga_clock), .i_reset(reset), .i_data(dac_data), .i_send(dac_send), .o_SPI_CS(dac_cs), .o_SPI_clock(dac_clock), .o_SPI_data(dac_bit));
 
-	// ADC settings
-	input wire adc_spi_nss;
-	input wire adc_spi_clock;
-	input wire adc_spi_data;
+	// Initialise ADC SPI input microcontroller
 	wire [15:0] adc_data0;
 	wire [15:0] adc_data1;
 	wire adc_data_received;
-	// Initialise ADC SPI input microcontroller
-	ADC_SPI_In adc(.i_reset(reset), .i_clock(fpga_clock), .i_SPI_CS(adc_spi_nss), .i_SPI_clock(adc_spi_clock), .i_SPI_data(adc_spi_data), .o_data0(adc_data0), .o_data1(adc_data1), .o_data_received(adc_data_received), .CS_stable(err_out));
+	ADC_SPI_In adc(.i_reset(reset), .i_clock(fpga_clock), .i_SPI_CS(adc_cs), .i_SPI_clock(adc_clock), .i_SPI_data(adc_data), .o_data0(adc_data0), .o_data1(adc_data1), .o_data_received(adc_data_received), .CS_stable(err_out));
 
-	// output settings
+	// Output settings
 	reg signed [31:0] output_sample;
 	reg [15:0] dac_sample;								// Contains output sample scaled
 	parameter SEND_CHANNEL_A = 8'b00110001;		// Write to DAC Channel A
@@ -52,20 +49,27 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	reg [15:0] sample_timer = 1'b0;					// Counts up to SAMPLEINTERVAL to set sample rate interval
 	parameter SAMPLERATE = 16'd48000;
 	parameter SAMPLEINTERVAL = 16'd1500;			// Clock frequency / sample rate - eg 88.67Mhz / 44khz = 2015 OR 72MHz / 48kHz = 1500
-	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
-	parameter DIV_BIT = 7;			// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
+
+	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
+	parameter DIV_BIT = 7;								// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
 	reg adder_start, adder_clear;
-	reg [15:0] harmonic_scale;
+	reg [5:0] harmonic_scale;
 	wire adder_ready;
-	reg [DIV_BIT - 1:0] adder_mult;
+	wire [DIV_BIT - 1:0] adder_mult;
 	wire signed [31:0] adder_total;
-	Fraction #(.DIVISOR_BITS(DIV_BIT)) addSample (.clock(fpga_clock), .reset(reset), .start(adder_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .in(lut_value), .accumulator(adder_total), .done(adder_ready));
+	Fraction #(.DIVISOR_BITS(DIV_BIT)) addSample (.clock(fpga_clock), .reset(reset), .start(adder_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .in(sample_value), .accumulator(adder_total), .done(adder_ready));
+
+	// instantiate multiple scaler - this takes incoming ADC reading and uses it to reduce the level of harmonics scaled by the Adder
+	reg start_mult_scaler;
+	reg reset_mult_scaler;
+	scale_mult #(.DIV_BIT(DIV_BIT)) mult	(.i_clock(fpga_clock), .i_start(start_mult_scaler), .i_restart(reset_mult_scaler), .i_scale(harmonic_scale), .o_mult(adder_mult));
 
 	// State Machine settings - used to control calculation of amplitude of each harmonic sample
 	reg [3:0] state_machine;
 	localparam sm_init = 4'd1;
-	localparam sm_adder_mult = 4'd3;
-	localparam sm_sine_lookup = 4'd2;
+	localparam sm_adder_mult = 4'd2;
+	localparam sm_scale = 4'd9;
+	localparam sm_sine_lookup = 4'd3;
 	localparam sm_adder_start = 4'd4;
 	localparam sm_adder_wait = 4'd5;
 	localparam sm_calc_done = 4'd6;
@@ -76,16 +80,13 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 	always @(posedge adc_data_received) begin
 //		err_out <=  ~err_out;
 		frequency <= adc_data0;
-		//if (adc_data1 != 16'h5533)
-			//debug_out <= ~debug_out;
-		//harmonic_scale <= adc_data1;
+		harmonic_scale <= adc_data1 >> 11;			// currently coming in as 16 bit value - scale to 1-32
 	end
 
 	always @(posedge fpga_clock) begin
 		if (reset) begin
 			sample_timer <= 1'b0;
 			dac_send <= 1'b0;
-			//lut_addr <= 1'b0;
 			adder_start <= 1'b0;
 			harmonic <= 8'b0;
 			state_machine <= sm_init;
@@ -99,7 +100,7 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 					dac_send <= 1'b0;
 					next_sample <= 1'b0;
 					adder_clear <= 1'b0;
-					adder_mult <= 7'd127;
+					reset_mult_scaler <= 1'b1;
 					state_machine <= sm_adder_mult;
 				end
 
@@ -109,12 +110,15 @@ module top(dac_spi_cs, dac_spi_data, dac_spi_clock, adc_spi_nss, adc_spi_data, a
 					adder_start <= 1'b0;
 					
 					// decrease harmonic scaler
-					if (adder_mult > 5)
-						adder_mult <= adder_mult - 5;
+					reset_mult_scaler <= 1'b0;
+					start_mult_scaler <= 1'b1;
 					state_machine <= sm_adder_start;
 				end
+				
 				sm_adder_start:
 				begin
+					start_mult_scaler <= 1'b0;
+					
 					// Wait until the sample value is ready and Adder is free and then start the next calculation
 					if (sample_ready && adder_ready) begin
 						harmonic <= harmonic + 1'b1;								// Load up next sample position
