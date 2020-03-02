@@ -10,13 +10,23 @@ void TIM3_IRQHandler(void) {
 
 
 	//freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);			// for cycle length matching sample rate (48k)
-	freq = 3150.0f * std::pow(2.0f, pitch / -608.0f);			// for cycle length of 65k
+	//freq = 3150.0f * std::pow(2.0f, pitch / -608.0f);			// for cycle length of 65k
 
-//	freq = 200;
+	freq = 150;
 	sendSPIData((uint16_t)freq);
 
 	// Send fine tune data as sum of four values (4 * 1024 = 4096) left shifted to create 16bit value (4096 << 2 = 65k)
-	harmonicScale = (uint16_t)(ADC_array[1] + ADC_array[3] + ADC_array[5] + ADC_array[7]) << 2;
+	//harmonicScale = (uint16_t)(ADC_array[1] + ADC_array[3] + ADC_array[5] + ADC_array[7]) << 2;
+	if (harmonicScale < 12000) {
+		//harmonicScale = 39000;
+		harmonicDir = true;
+	}
+	else if (harmonicScale > 65000) {
+		harmonicDir = false;
+	}
+	harmonicScale += harmonicDir ? 2 : -2;
+
+	harmonicScale = 65000;
 	sendSPIData(harmonicScale);
 //	sendSPIData((uint16_t)0b0101010100110011);
 

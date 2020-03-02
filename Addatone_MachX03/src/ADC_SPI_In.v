@@ -8,8 +8,7 @@ module ADC_SPI_In
 		input wire i_SPI_data,
 		output wire [15:0] o_data0,
 		output wire [15:0] o_data1,
-		output reg o_data_received,
-		output reg CS_stable
+		output reg o_data_received
 	);
 
 	reg [3:0] receive_bit;
@@ -17,65 +16,49 @@ module ADC_SPI_In
 	reg [0:15] bytes_in[$clog2(RECEIVEBYTES):0];
 
 	reg [1:0] SPISlaveState;
-	localparam state_waiting = 2'b00;
-	localparam state_receiving = 2'b01;
+	localparam state_waiting = 2'd0;
+	localparam state_receiving = 2'd1;
 
 	// Settings to clean noise on SPI line
-	reg [5:0] pos_clock_counter;
-	reg [5:0] neg_clock_counter;
-	reg bit_read;
-	reg bit_ready;
-	reg CS_change;
-	//reg CS_stable;
+	reg clock_state;
+	reg clock_stable;
+	reg CS_state;
+	reg CS_stable;
+	reg data_state;
+	reg [2:0] count_stable;
 
-	// Check for false triggers using main clock to count negative clock pulses and noise on the nss line
+	// Check for false triggers using main clock to count three stable measures on clock, data and CS
 	always @(posedge i_clock) begin
-		if (i_reset) begin
-			neg_clock_counter <= 1'b0;
-			pos_clock_counter <= 1'b0;
-			bit_ready = 1'b0;
-		end
+		if (i_reset)
+			CS_stable <= 1'b1;
 		else begin
+			if (i_SPI_clock != clock_state) begin
+				clock_state <= i_SPI_clock;
+			end
+			if (i_SPI_data != data_state) begin
+				data_state <= i_SPI_data;
+			end
+			if (i_SPI_CS != CS_state) begin
+				CS_state <= i_SPI_CS;
+			end
 
-			if (i_SPI_clock) begin
-				neg_clock_counter <= 1'b0;
-				if (pos_clock_counter > 1'b0 && bit_read == i_SPI_data && !bit_ready) begin
-					bit_ready = 1'b1;
+			if (i_SPI_clock == clock_state && i_SPI_data == data_state && i_SPI_CS == CS_state) begin
+				count_stable <= count_stable + 1'b1;
+				if (count_stable == 2) begin
+					CS_stable <= i_SPI_CS;
+					clock_stable <= i_SPI_clock;
 				end
-
-				pos_clock_counter <= pos_clock_counter + 1'b1;
-				bit_read <= i_SPI_data;
 			end
 			else begin
-				neg_clock_counter <= neg_clock_counter + 1'b1;		// count negative spi clock duration to eliminate noise
-				if (neg_clock_counter > 0) begin
-					pos_clock_counter <= 1'b0;
-					bit_read <= 1'bx;
-					bit_ready = 1'b0;
-				end
+				count_stable <= 1'b0;
 			end
-
-			if (i_SPI_CS != CS_stable) begin
-				if (CS_change) begin
-					CS_stable <= i_SPI_CS;
-					CS_change <= 1'b0;
-				end
-				else
-					CS_change <= 1'b1;
-			end
-			else
-				CS_change <= 1'b0;
 		end
 	end
 
 
-	always @(posedge bit_ready or posedge CS_stable or posedge i_reset) begin
-		if (CS_stable || i_reset) begin
+	always @(posedge clock_stable or posedge CS_stable) begin
+		if (CS_stable) begin
 			SPISlaveState <= state_waiting;
-			//receive_byte <= 1'b0;
-			//receive_bit <= 1'b0;
-			//bytes_in[0] = 1'b0;
-			//bytes_in[1] = 1'b0;
 		end
 		else begin		//  check there have been at least two counts of negative pulse before recording a valid SPI clock cycle
 			case (SPISlaveState)
@@ -85,27 +68,26 @@ module ADC_SPI_In
 						receive_byte <= 1'b0;
 						receive_bit <= 1'b1;
 						o_data_received <= 1'b0;
-						bytes_in[0][0] <= i_SPI_data;
+						bytes_in[0][0] <= data_state;
 					end
 
 				state_receiving:
 					begin
-						bytes_in[receive_byte][receive_bit] <= i_SPI_data;
+						bytes_in[receive_byte][receive_bit] <= data_state;
 						receive_bit <= receive_bit + 1'b1;
 
 						if (receive_bit == 15) begin								// Byte received
 							receive_byte <= receive_byte + 1'b1;
 							if (receive_byte == RECEIVEBYTES - 1) begin		// If all bytes received set state back to waiting and activate received flag
-								SPISlaveState <= state_waiting;
 								o_data_received <= 1'b1;
 								receive_byte <= 1'b0;
+								SPISlaveState <= state_waiting;
 							end
 							else begin
 								receive_bit <= 0;
 							end
 						end
 					end
-
 			endcase
 		end
 	end

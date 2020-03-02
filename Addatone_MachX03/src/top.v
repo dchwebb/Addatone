@@ -38,7 +38,7 @@ module top
 	wire [15:0] adc_data0;
 	wire [15:0] adc_data1;
 	wire adc_data_received;
-	ADC_SPI_In adc(.i_reset(reset), .i_clock(fpga_clock), .i_SPI_CS(adc_cs), .i_SPI_clock(adc_clock), .i_SPI_data(adc_data), .o_data0(adc_data0), .o_data1(adc_data1), .o_data_received(adc_data_received), .CS_stable(err_out));
+	ADC_SPI_In adc(.i_reset(reset), .i_clock(fpga_clock), .i_SPI_CS(adc_cs), .i_SPI_clock(adc_clock), .i_SPI_data(adc_data), .o_data0(adc_data0), .o_data1(adc_data1), .o_data_received(adc_data_received));
 
 	// Output settings
 	reg signed [31:0] output_sample;
@@ -81,6 +81,7 @@ module top
 //		err_out <=  ~err_out;
 		frequency <= adc_data0;
 		harmonic_scale <= adc_data1 >> 11;			// currently coming in as 16 bit value - scale to 1-32
+		debug_out <= ~debug_out;
 	end
 
 	always @(posedge fpga_clock) begin
