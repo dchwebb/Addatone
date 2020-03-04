@@ -51,9 +51,10 @@ module top
 	parameter SAMPLEINTERVAL = 16'd1500;			// Clock frequency / sample rate - eg 88.67Mhz / 44khz = 2015 OR 72MHz / 48kHz = 1500
 
 	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
-	parameter DIV_BIT = 7;								// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
+	parameter DIV_BIT = 8;								// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
 	reg adder_start, adder_clear;
-	reg [5:0] harmonic_scale;
+	reg [DIV_BIT - 1:0] harmonic_scale;
+	reg [DIV_BIT - 1:0] scale_initial;
 	wire adder_ready;
 	wire [DIV_BIT - 1:0] adder_mult;
 	wire signed [31:0] adder_total;
@@ -62,7 +63,7 @@ module top
 	// instantiate multiple scaler - this takes incoming ADC reading and uses it to reduce the level of harmonics scaled by the Adder
 	reg start_mult_scaler;
 	reg reset_mult_scaler;
-	scale_mult #(.DIV_BIT(DIV_BIT)) mult	(.i_clock(fpga_clock), .i_start(start_mult_scaler), .i_restart(reset_mult_scaler), .i_scale(harmonic_scale), .o_mult(adder_mult));
+	scale_mult #(.DIV_BIT(DIV_BIT)) mult	(.i_clock(fpga_clock), .i_start(start_mult_scaler), .i_restart(reset_mult_scaler), .i_scale(harmonic_scale), .i_initial(scale_initial), .o_mult(adder_mult));
 
 	// State Machine settings - used to control calculation of amplitude of each harmonic sample
 	reg [3:0] state_machine;
@@ -80,7 +81,8 @@ module top
 	always @(posedge adc_data_received) begin
 //		err_out <=  ~err_out;
 		frequency <= adc_data0;
-		harmonic_scale <= adc_data1 >> 11;			// currently coming in as 16 bit value - scale to 1-32
+		harmonic_scale <= adc_data1[DIV_BIT - 1:0];			// bottom 8 bits are scale value
+		scale_initial <= adc_data1[15:DIV_BIT];					// top 8 bits are starting value for scaling (lower if there are more harmonics)
 		debug_out <= ~debug_out;
 	end
 
@@ -101,8 +103,8 @@ module top
 					dac_send <= 1'b0;
 					next_sample <= 1'b0;
 					adder_clear <= 1'b0;
-					reset_mult_scaler <= 1'b1;
-					state_machine <= sm_adder_mult;
+					reset_mult_scaler <= 1'b0;
+					state_machine <= sm_adder_start;
 				end
 
 				sm_adder_mult:
@@ -111,7 +113,6 @@ module top
 					adder_start <= 1'b0;
 					
 					// decrease harmonic scaler
-					reset_mult_scaler <= 1'b0;
 					start_mult_scaler <= 1'b1;
 					state_machine <= sm_adder_start;
 				end
@@ -163,6 +164,7 @@ module top
 						harmonic <= 8'b0;
 						next_sample <= 1'b1;
 						adder_clear <= 1'b1;
+						reset_mult_scaler <= 1'b1;
 						state_machine <= sm_init;
 					end				
 

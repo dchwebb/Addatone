@@ -10,25 +10,54 @@ void TIM3_IRQHandler(void) {
 
 
 	//freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);			// for cycle length matching sample rate (48k)
-	//freq = 3150.0f * std::pow(2.0f, pitch / -608.0f);			// for cycle length of 65k
+	freq = 3150.0f * std::pow(2.0f, pitch / -608.0f);			// for cycle length of 65k
 
-	freq = 150;
+	//freq = 150;
 	sendSPIData((uint16_t)freq);
 
-	// Send fine tune data as sum of four values (4 * 1024 = 4096) left shifted to create 16bit value (4096 << 2 = 65k)
+	// Send fine tune data as sum of four values (4 * 4096 = 163844) left shifted to create 16 bit value (16384 << 2 = 65k)
 	//harmonicScale = (uint16_t)(ADC_array[1] + ADC_array[3] + ADC_array[5] + ADC_array[7]) << 2;
-	if (harmonicScale < 12000) {
-		//harmonicScale = 39000;
+
+/*
+	if (harmonicScale < 30000) {
 		harmonicDir = true;
 	}
-	else if (harmonicScale > 65000) {
+	else if (harmonicScale > 60000) {
 		harmonicDir = false;
 	}
-	harmonicScale += harmonicDir ? 2 : -2;
+	harmonicScale += harmonicDir ? 1 : -1;
+*/
 
-	harmonicScale = 65000;
-	sendSPIData(harmonicScale);
-//	sendSPIData((uint16_t)0b0101010100110011);
+	//Crazy scaling formula: =2^(6*harmonicScale/65536-6)
+
+	//harmonicScale = 65000;
+	//harmScale = std::pow(2.0f, (6.0f * (float)harmonicScale / 65536.0f - 6.0f)) * (float)harmonicScale;
+
+
+
+	harmonicScale = (uint16_t)(ADC_array[1] + ADC_array[3] + ADC_array[5] + ADC_array[7]) >> 6;		// scale 0 to 255
+
+
+	/* Scaling logic
+	 * Pass the amount of reduction applied to each successive harmonic - this will create a linear reduction scale
+	 * However this causes too much of the scale to bunched around heavy attenuation of harmonics.
+	 * We therefore want to scale the reduction with the same start and end points (eg 0 and 255) but with an exponential shape:
+	 * Formula: y = 2^(x/c) - 1
+	 * Where y is the scaled output, x is the input, c is a constant used to keep the maximum value the same
+	 * To calculate c, set x = y = maximum (eg 255) and solve:
+	 * x/c = log2(y + 1)
+	 * x = c log2(y + 1 ) ; setting n = 255:
+	 * c = n / log2(n + 1) = 255/8 = 31.875
+	 */
+	harmScale = std::pow(2.0f, (float)harmonicScale / 31.875f) - 1;
+
+	// pass the start volume - signals with more harmonics will be attenuated progressively
+	uint16_t minLevel = 200;
+
+	startVol = minLevel + (harmScale * (255 - minLevel) / 255);
+
+	outputVal = ((uint8_t)harmScale) | (startVol << 8);
+	sendSPIData(outputVal);
 
 	clearSPI();
 
