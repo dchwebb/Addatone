@@ -6,7 +6,7 @@ void TIM3_IRQHandler(void) {
 	// Pitch calculations
 	//freq1 = 2270.0f * std::pow(2.0f, (float)Pitch / -610.0f);	// Increase 2270 to increase pitch; Reduce ABS(610) to increase spread
 
-	pitch = (float)((ADC_array[0] + ADC_array[2] + ADC_array[4] + ADC_array[6]) >> 2);
+	pitch = (float)((ADC_array[0] + ADC_array[3] + ADC_array[6] + ADC_array[9]) >> 2);
 
 
 	//freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);			// for cycle length matching sample rate (48k)
@@ -35,7 +35,8 @@ void TIM3_IRQHandler(void) {
 
 
 
-	harmonicScale = (uint16_t)(ADC_array[1] + ADC_array[3] + ADC_array[5] + ADC_array[7]) >> 6;		// scale 0 to 255
+	//harmonicScale = (uint16_t)(ADC_array[1] + ADC_array[4] + ADC_array[7] + ADC_array[10]) >> 6;		// scale 0 to 255
+	harmonicScale = (uint16_t)(ADC_array[2] + ADC_array[5] + ADC_array[8] + ADC_array[11]) >> 6;		// scale 0 to 255
 
 
 	/* Scaling logic
@@ -52,7 +53,7 @@ void TIM3_IRQHandler(void) {
 	harmScale = std::pow(2.0f, (float)harmonicScale / 31.875f) - 1;
 
 	// pass the start volume - signals with more harmonics will be attenuated progressively
-	uint16_t minLevel = 200;
+	uint16_t minLevel = 170;
 
 	startVol = minLevel + (harmScale * (255 - minLevel) / 255);
 
