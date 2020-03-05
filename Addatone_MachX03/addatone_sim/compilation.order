@@ -4,6 +4,7 @@
 .\..\src\top.v
 .\..\src\ADC_SPI_In.v
 .\..\src\DAC_SPI_Out.v
-.\..\src\Fraction.v
 .\..\src\SamplePosition.v
 .\..\SamplePos_RAM.v
+.\..\src\Adder.v
+.\..\src\scale_mult.v

@@ -1,10 +1,10 @@
 module top
 	(
-		output wire dac_cs, 
-		output wire dac_bit, 
-		output wire dac_clock, 
-		input wire adc_cs, 
-		input wire adc_data, 
+		output wire dac_cs,
+		output wire dac_bit,
+		output wire dac_clock,
+		input wire adc_cs,
+		input wire adc_data,
 		input wire adc_clock,
 		input wire rstn,
 		input wire crystal_osc,
@@ -13,7 +13,7 @@ module top
 	);
 
 	parameter NO_OF_HARMONICS = 8'd20;
-	
+
 	wire reset;
 	assign reset = ~rstn;
 
@@ -52,18 +52,20 @@ module top
 
 	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
 	parameter DIV_BIT = 8;								// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
-	reg adder_start, adder_clear;
-	reg [DIV_BIT - 1:0] harmonic_scale;
-	reg [DIV_BIT - 1:0] scale_initial;
-	wire adder_ready;
+	reg adder1_start, adder2_start, adder_clear;
+	reg [DIV_BIT - 1:0] harmonic_scale = 1'b0;
+	reg [DIV_BIT - 1:0] scale_initial = 255;
+	wire adder1_ready, adder2_ready;
 	wire [DIV_BIT - 1:0] adder_mult;
-	wire signed [31:0] adder_total;
-	Fraction #(.DIVISOR_BITS(DIV_BIT)) addSample (.clock(fpga_clock), .reset(reset), .start(adder_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .in(sample_value), .accumulator(adder_total), .done(adder_ready));
+	wire signed [31:0] adder1_total;
+	wire signed [31:0] adder2_total;
+	Adder #(.DIVISOR_BITS(DIV_BIT)) addSample1 (.clock(fpga_clock), .reset(reset), .start(adder1_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .i_sample(sample_value), .accumulator(adder1_total), .done(adder1_ready));
+	Adder #(.DIVISOR_BITS(DIV_BIT)) addSample2 (.clock(fpga_clock), .reset(reset), .start(adder2_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .i_sample(sample_value), .accumulator(adder2_total), .done(adder2_ready));
 
 	// instantiate multiple scaler - this takes incoming ADC reading and uses it to reduce the level of harmonics scaled by the Adder
 	reg start_mult_scaler;
 	reg reset_mult_scaler;
-	scale_mult #(.DIV_BIT(DIV_BIT)) mult	(.i_clock(fpga_clock), .i_start(start_mult_scaler), .i_restart(reset_mult_scaler), .i_scale(harmonic_scale), .i_initial(scale_initial), .o_mult(adder_mult));
+	scale_mult #(.DIV_BIT(DIV_BIT)) mult (.i_clock(fpga_clock), .i_start(start_mult_scaler), .i_restart(reset_mult_scaler), .i_scale(harmonic_scale), .i_initial(scale_initial), .o_mult(adder_mult));
 
 	// State Machine settings - used to control calculation of amplitude of each harmonic sample
 	reg [3:0] state_machine;
@@ -79,10 +81,9 @@ module top
 
 
 	always @(posedge adc_data_received) begin
-//		err_out <=  ~err_out;
 		frequency <= adc_data0;
 		harmonic_scale <= adc_data1[DIV_BIT - 1:0];			// bottom 8 bits are scale value
-		scale_initial <= adc_data1[15:DIV_BIT];					// top 8 bits are starting value for scaling (lower if there are more harmonics)
+		scale_initial <= adc_data1[15:DIV_BIT];				// top 8 bits are starting value for scaling (lower if there are more harmonics)
 		debug_out <= ~debug_out;
 	end
 
@@ -90,7 +91,8 @@ module top
 		if (reset) begin
 			sample_timer <= 1'b0;
 			dac_send <= 1'b0;
-			adder_start <= 1'b0;
+			adder1_start <= 1'b0;
+			adder2_start <= 1'b0;
 			harmonic <= 8'b0;
 			state_machine <= sm_init;
 		end
@@ -110,39 +112,44 @@ module top
 				sm_adder_mult:
 				begin
 					next_sample <= 1'b0;
-					adder_start <= 1'b0;
-					
+					adder1_start <= 1'b0;
+					adder2_start <= 1'b0;
+
 					// decrease harmonic scaler
 					start_mult_scaler <= 1'b1;
 					state_machine <= sm_adder_start;
 				end
-				
+
 				sm_adder_start:
 				begin
 					start_mult_scaler <= 1'b0;
-					
-					// Wait until the sample value is ready and Adder is free and then start the next calculation
-					if (sample_ready && adder_ready) begin
-						harmonic <= harmonic + 1'b1;								// Load up next sample position
-						next_sample <= 1'b1;	
 
-						adder_start <= 1'b1;											// Tell the adder the next sample is ready
+					// Wait until the sample value is ready and Adder is free and then start the next calculation
+					if (sample_ready && (harmonic[0] == 1'b0 ? adder1_ready : adder2_ready)) begin
+						harmonic <= harmonic + 2'b1;								// Load up next sample position
+						next_sample <= 1'b1;
+
+						if (harmonic[0] == 1'b0)		// even harmonics
+							adder1_start <= 1'b1;											// Tell the adder the next sample is ready
+						else
+							adder2_start <= 1'b1;
 						state_machine <= (harmonic > NO_OF_HARMONICS) ? sm_adder_wait : sm_adder_mult;
 					end
 				end
-				
+
 				sm_adder_wait:
 				begin
 					next_sample <= 1'b0;
-					adder_start <= 1'b0;
+					adder1_start <= 1'b0;
+					adder2_start <= 1'b0;
 					state_machine <= sm_calc_done;								// Pause to let adder clear adder_ready state
 				end
 
 				sm_calc_done:
 				begin
-					if (adder_ready) begin
+					if (adder1_ready) begin
 						// all harmonics calculated - offset output for sending to DAC
-						output_sample <= 32'h31000 + adder_total;			// Add extra 2^18 (approx) to cancel divide by 4 on final value
+						output_sample <= 32'h31000 + adder2_total;			// Add extra 2^18 (approx) to cancel divide by 4 on final value
 						state_machine <= sm_scale_sample;
 					end
 				end
@@ -152,13 +159,13 @@ module top
 					dac_sample <= output_sample >> 3;							// scale output sample to send to DAC
 					state_machine <= sm_ready_to_send;
 				end
-					
+
 				sm_ready_to_send:
 					if (sample_timer == SAMPLEINTERVAL) begin
 						// Send sample value to DAC
 						dac_data <= {SEND_CHANNEL_A, dac_sample};
 						dac_send <= 1'b1;
-						
+
 						// Clean state ready for next loop
 						sample_timer <= 1'b0;
 						harmonic <= 8'b0;
@@ -166,7 +173,7 @@ module top
 						adder_clear <= 1'b1;
 						reset_mult_scaler <= 1'b1;
 						state_machine <= sm_init;
-					end				
+					end
 
 			endcase
 

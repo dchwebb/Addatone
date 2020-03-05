@@ -1,14 +1,14 @@
 /*
- Module allows fractional calculations of 16 bit values. Set DIVISOR_BITS to control the resolution of fractions.
+ Module adding of scaled samples. Scaling allows fractional calculations of 16 bit values. Set DIVISOR_BITS to control the resolution of fractions.
  Increasing the divisor bits increases the resolution of the fractions at the cost of a clock cycle per bit; 7 gives 2^7 = 128 fractions
- Eg 7 gives 128 fractions: multiple must be a number between 0 and 127; the result is calculated as result = (multiple / 128) * in
+ Eg 7 gives 128 fractions: multiple must be a number between 0 and 127; the result is calculated as result = (multiple / 128) * i_sample
 */
-module Fraction
+module Adder
 	#(parameter DIVISOR_BITS = 7)
 	(
 		input wire clock, reset, start, clear_accumulator,
 		input wire [DIVISOR_BITS - 1:0] multiple,
-		input wire signed [15:0] in,
+		input wire signed [15:0] i_sample,
 		output reg [31:0] accumulator,
 		output reg done
 	);
@@ -18,6 +18,7 @@ module Fraction
 	reg [DIVISOR_BITS - 1:0] mult_reg;
 	reg signed [31:0] working_total;
 	reg [4:0] counter;
+
 
 	always @(posedge clock or posedge clear_accumulator) begin
 		if (reset) begin
@@ -32,10 +33,10 @@ module Fraction
 			if (start && counter == 1'b0) begin
 				counter <= 1'b1;
 				done <= 1'b0;
-				working_total <= multiple[0] ? in : 0;
+				working_total <= multiple[0] ? i_sample : 0;
 
 				// store input values to registers to preserve values
-				in_reg <= in;
+				in_reg <= i_sample;
 				mult_reg <= (multiple >> 1);
 			end
 			else if (counter > 0) begin

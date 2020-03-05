@@ -4,7 +4,7 @@ module SamplePosition
 		input wire i_clock,
 		input wire [15:0] i_frequency,
 		input wire [7:0] i_harmonic,
-		output reg o_sample_ready,				// Tells top module that sample position has been loaded
+		output reg o_sample_ready,					// Tells top module that sample position has been loaded
 		input wire i_next_sample,					// Trigger from top module to say current value has been read and ready for next sample
 		output wire [15:0] o_sample_value
 	);

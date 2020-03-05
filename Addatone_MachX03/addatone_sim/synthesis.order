@@ -3,7 +3,8 @@ i<>.\..\OscPll.v
 i<>.\..\src\top.v
 i<>.\..\src\ADC_SPI_In.v
 i<>.\..\src\DAC_SPI_Out.v
-i<>.\..\src\Fraction.v
 i<>.\..\src\TestBench_Top.v
 i<>.\..\src\SamplePosition.v
 i<>.\..\SamplePos_RAM.v
+i<>.\..\src\Adder.v
+i<>.\..\src\scale_mult.v

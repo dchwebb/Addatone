@@ -10,7 +10,7 @@ void TIM3_IRQHandler(void) {
 
 
 	//freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);			// for cycle length matching sample rate (48k)
-	freq = 3150.0f * std::pow(2.0f, pitch / -608.0f);			// for cycle length of 65k
+	freq = 2880.0f * std::pow(2.0f, pitch / -633.0f);			// for cycle length of 65k
 
 	//freq = 150;
 	sendSPIData((uint16_t)freq);
