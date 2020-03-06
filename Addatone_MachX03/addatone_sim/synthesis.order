@@ -8,3 +8,4 @@ i<>.\..\src\SamplePosition.v
 i<>.\..\SamplePos_RAM.v
 i<>.\..\src\Adder.v
 i<>.\..\src\scale_mult.v
+i<>.\..\src\Sample_Output.v

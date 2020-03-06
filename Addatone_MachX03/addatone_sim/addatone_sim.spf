@@ -1,12 +1,15 @@
 <BaliSimProject version="1.3" path="." stage="0" language="-1" name="addatone_sim" simType="Active-HDL">
-    <Source worklib="work" path="src/TestBench_Top.v" type="VERILOG" include="none"/>
+    <Source worklib="work" path="src/DAC_SPI_Out.v" type="VERILOG" include="none"/>
+    <Source worklib="work" path="src/Sample_Output.v" type="VERILOG" include="none"/>
+    <Source worklib="work" path="src/scale_mult.v" type="VERILOG" include="none"/>
+    <Source worklib="work" path="src/Adder.v" type="VERILOG" include="none"/>
+    <Source worklib="work" path="src/ADC_SPI_In.v" type="VERILOG" include="none"/>
     <Source worklib="work" path="SineLUT.v" type="VERILOG" include="none"/>
+    <Source worklib="work" path="SamplePos_RAM.v" type="VERILOG" include="none"/>
+    <Source worklib="work" path="src/SamplePosition.v" type="VERILOG" include="none"/>
     <Source worklib="work" path="OscPll.v" type="VERILOG" include="none"/>
     <Source worklib="work" path="src/top.v" type="VERILOG" include="none"/>
-    <Source worklib="work" path="src/ADC_SPI_In.v" type="VERILOG" include="none"/>
-    <Source worklib="work" path="src/DAC_SPI_Out.v" type="VERILOG" include="none"/>
-    <Source worklib="work" path="src/Fraction.v" type="VERILOG" include="none"/>
-    <Source worklib="work" path="src/sample_pos_RAM.v" type="VERILOG" include="none"/>
+    <Source worklib="work" path="src/TestBench_Top.v" type="VERILOG" include="none"/>
     <SimLib value="pmi_work ovi_machxo3l"/>
     <GlbInc value=""/>
     <Macro value=""/>

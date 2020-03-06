@@ -8,7 +8,7 @@ module top
 		input wire adc_clock,
 		input wire rstn,
 		input wire crystal_osc,
-		output wire err_out,
+		output reg err_out,
 		output reg debug_out
 	);
 
@@ -30,9 +30,9 @@ module top
 	SamplePosition sample_position(.i_reset(reset), .i_clock(fpga_clock), .i_frequency(frequency), .i_harmonic(harmonic), .o_sample_ready(sample_ready), .i_next_sample(next_sample),	.o_sample_value(sample_value));
 
 	// initialise DAC SPI (Maxim5134)
-	reg [23:0] dac_data;
-	reg dac_send;
-	DAC_SPI_Out dac(.i_clock(fpga_clock), .i_reset(reset), .i_data(dac_data), .i_send(dac_send), .o_SPI_CS(dac_cs), .o_SPI_clock(dac_clock), .o_SPI_data(dac_bit));
+	//reg [23:0] dac_data;
+	//reg dac_send;
+	//DAC_SPI_Out dac(.i_clock(fpga_clock), .i_reset(reset), .i_data(dac_data), .i_send(dac_send), .o_SPI_CS(dac_cs), .o_SPI_clock(dac_clock), .o_SPI_data(dac_bit));
 
 	// Initialise ADC SPI input microcontroller
 	wire [15:0] adc_data0;
@@ -67,6 +67,10 @@ module top
 	reg reset_mult_scaler;
 	scale_mult #(.DIV_BIT(DIV_BIT)) mult (.i_clock(fpga_clock), .i_start(start_mult_scaler), .i_restart(reset_mult_scaler), .i_scale(harmonic_scale), .i_initial(scale_initial), .o_mult(adder_mult));
 
+	// Instantiate Sample Output module which scales output and sends to DAC
+	reg dac_send;
+	Sample_Output sample_output(.i_Clock(fpga_clock), .i_Reset(reset), .i_Start(dac_send), .i_Sample_L(adder1_total), .i_Sample_R(adder2_total),.o_SPI_CS(dac_cs), .o_SPI_clock(dac_clock), .o_SPI_data(dac_bit));
+
 	// State Machine settings - used to control calculation of amplitude of each harmonic sample
 	reg [3:0] state_machine;
 	localparam sm_init = 4'd1;
@@ -78,7 +82,7 @@ module top
 	localparam sm_calc_done = 4'd6;
 	localparam sm_scale_sample = 4'd7;
 	localparam sm_ready_to_send = 4'd8;
-
+	localparam sm_cleanup = 4'd9;
 
 	always @(posedge adc_data_received) begin
 		frequency <= adc_data0;
@@ -149,32 +153,38 @@ module top
 				begin
 					if (adder1_ready) begin
 						// all harmonics calculated - offset output for sending to DAC
-						output_sample <= 32'h31000 + adder2_total;			// Add extra 2^18 (approx) to cancel divide by 4 on final value
+						//output_sample <= 32'h31000 + adder2_total;			// Add extra 2^18 (approx) to cancel divide by 4 on final value
 						state_machine <= sm_scale_sample;
 					end
 				end
 
 				sm_scale_sample:
 				begin
-					dac_sample <= output_sample >> 3;							// scale output sample to send to DAC
+					//dac_sample <= output_sample >> 3;							// scale output sample to send to DAC
 					state_machine <= sm_ready_to_send;
 				end
 
 				sm_ready_to_send:
 					if (sample_timer == SAMPLEINTERVAL) begin
 						// Send sample value to DAC
-						dac_data <= {SEND_CHANNEL_A, dac_sample};
+						//dac_data <= {SEND_CHANNEL_A, dac_sample};
+						err_out <= ~err_out;
 						dac_send <= 1'b1;
 
 						// Clean state ready for next loop
 						sample_timer <= 1'b0;
 						harmonic <= 8'b0;
 						next_sample <= 1'b1;
-						adder_clear <= 1'b1;
+						
 						reset_mult_scaler <= 1'b1;
+						state_machine <= sm_cleanup;
+					end
+				
+				sm_cleanup:
+					begin
+						adder_clear <= 1'b1;
 						state_machine <= sm_init;
 					end
-
 			endcase
 
 		end

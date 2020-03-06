@@ -20,7 +20,7 @@ module Adder
 	reg [4:0] counter;
 
 
-	always @(posedge clock or posedge clear_accumulator) begin
+	always @(posedge clock or posedge clear_accumulator) begin //
 		if (reset) begin
 			counter <= 1'b0;
 			done <= 1'b1;
