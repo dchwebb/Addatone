@@ -9,8 +9,9 @@ module Adder
 		input wire clock, reset, start, clear_accumulator,
 		input wire [DIVISOR_BITS - 1:0] multiple,
 		input wire signed [15:0] i_sample,
-		output reg [31:0] accumulator,
-		output reg done
+		output reg signed [31:0] accumulator,
+		output reg done,
+		output reg debug
 	);
 
 	// working registers
@@ -19,14 +20,17 @@ module Adder
 	reg signed [31:0] working_total;
 	reg [4:0] counter;
 
-
+	initial begin
+		counter <= 1'b0;
+		done <= 1'b1;
+		accumulator <= 1'b0;
+		debug <= 1'b0;
+	end
+	
 	always @(posedge clock or posedge clear_accumulator) begin //
-		if (reset) begin
+		if (clear_accumulator) begin		// reset || 
 			counter <= 1'b0;
 			done <= 1'b1;
-			accumulator <= 1'b0;
-		end
-		else if (clear_accumulator) begin
 			accumulator <= 1'b0;
 		end
 		else begin
@@ -40,7 +44,6 @@ module Adder
 				mult_reg <= (multiple >> 1);
 			end
 			else if (counter > 0) begin
-
 				if (mult_reg == 0) begin
 					// Multiplication complete - divide by bit count and add to accumulator, retaining negative bits
 					accumulator <= accumulator + {{DIVISOR_BITS{working_total[31]}}, working_total[31:DIVISOR_BITS]};

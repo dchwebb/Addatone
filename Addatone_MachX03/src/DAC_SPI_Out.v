@@ -16,11 +16,11 @@ module DAC_SPI_Out
 	reg [7:0] clock_counter;
 	parameter CLOCKCOUNT = 4'd10;			// number of internal clock events between each SPI clock transition
 
-	reg [2:0] dac_state;
-	parameter dac_state_idle = 2'b00;
-	parameter dac_state_sending = 2'b01;
-	parameter dac_state_sent = 2'b10;
-	parameter dac_state_cs_pulse = 2'b11;
+	reg [1:0] dac_state;
+	parameter dac_state_idle = 2'd0;
+	parameter dac_state_sending = 2'd1;
+	parameter dac_state_sent = 2'd2;
+	parameter dac_state_cs_pulse = 2'd3;
 
 	initial begin
 		dac_state = dac_state_idle;

@@ -35,8 +35,6 @@ void TIM3_IRQHandler(void) {
 
 
 
-	//harmonicScale = (uint16_t)(ADC_array[1] + ADC_array[4] + ADC_array[7] + ADC_array[10]) >> 6;		// scale 0 to 255
-	harmonicScale = (uint16_t)(ADC_array[2] + ADC_array[5] + ADC_array[8] + ADC_array[11]) >> 6;		// scale 0 to 255
 
 
 	/* Scaling logic
@@ -49,20 +47,35 @@ void TIM3_IRQHandler(void) {
 	 * x/c = log2(y + 1)
 	 * x = c log2(y + 1 ) ; setting n = 255:
 	 * c = n / log2(n + 1) = 255/8 = 31.875
+	 * or for 512: c = 511/9 = 56.777
 	 */
-	harmScale = std::pow(2.0f, (float)harmonicScale / 31.875f) - 1;
 
+	/* 255 levels
 	// pass the start volume - signals with more harmonics will be attenuated progressively
-	uint16_t minLevel = 170;
-
+	harmonicScale = (uint16_t)(ADC_array[2] + ADC_array[5] + ADC_array[8] + ADC_array[11]) >> 6;		// scale 0 to 255
+	dampedHarmonicScale = ((7 * dampedHarmonicScale) + harmonicScale) >> 3;
+	harmScale = ((31.0f * harmScale) + (std::pow(2.0f, (float)dampedHarmonicScale / 31.875f) - 1)) / 32.0f;
+	uint16_t minLevel = 140;
 	startVol = minLevel + (harmScale * (255 - minLevel) / 255);
-
 	outputVal = ((uint8_t)harmScale) | (startVol << 8);
 	sendSPIData(outputVal);
+	 */
+
+	harmonicScale = (uint16_t)(ADC_array[2] + ADC_array[5] + ADC_array[8] + ADC_array[11]) >> 5;		// scale 0 to 511
+	dampedHarmonicScale = ((15 * dampedHarmonicScale) + harmonicScale) >> 4;
+	harmScale = ((31.0f * harmScale) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScale / 56.777f) - 1)) / 32.0f;
+
+	// Create inverted exponential curve for volume reduction
+	float vol = (511.0f - (float)harmScale) / 511.0f;
+	startVol = ((0.7f - 0.7f * std::pow(vol, 4.0f)) + 0.3f) * 511.0f;
+	//startVol = ((1.0f - std::pow(vol, 3.0f)) + 0.0f) * 511.0f;
+	//uint16_t minLevel = 280;
+	//startVol = minLevel + (harmScale * (511 - minLevel) / 511);
+
+	sendSPIData((uint16_t)harmScale);
+	sendSPIData(startVol);
 
 	clearSPI();
-
-	//sendI2SData((uint32_t)0x5533AABB);
 }
 
 void SysTick_Handler(void) {

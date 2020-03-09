@@ -11,6 +11,7 @@ volatile uint16_t& ADC_FTUNE = ADC_array[1];	// PB1 ADC12_IN9   Pin 27
 volatile float pitch;
 volatile float freq = 220;
 volatile uint16_t harmonicScale;
+volatile uint16_t dampedHarmonicScale;
 volatile uint16_t startVol;
 volatile uint16_t outputVal;
 volatile float harmScale;

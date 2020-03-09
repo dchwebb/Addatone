@@ -12,7 +12,10 @@
         <Source name="src/DAC_SPI_Out.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="src/SamplePosition.v" type="Verilog" type_short="Verilog">
+        <Source name="src/Sample_Position.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/Sample_Output.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
         <Source name="src/Adder.v" type="Verilog" type_short="Verilog">
@@ -45,9 +48,6 @@
         <Source name="SineLUT.v" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options/>
         </Source>
-        <Source name="src/Sample_Output.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
         <Source name="adc_sim/adc_sim.spf" type="Simulation Project File" type_short="SPF">
             <Options/>
         </Source>
@@ -55,9 +55,6 @@
             <Options/>
         </Source>
         <Source name="addatone_sim/addatone_sim.spf" type="Simulation Project File" type_short="SPF">
-            <Options/>
-        </Source>
-        <Source name="addatone_sim/osc_sim.spf" type="Simulation Project File" type_short="SPF">
             <Options/>
         </Source>
         <Source name="dw_analyzer.rva" type="Reveal Analyzer Project File" type_short="RVA" excluded="TRUE">

@@ -1,5 +1,5 @@
 module ADC_SPI_In
-#(parameter RECEIVEBYTES = 2)
+#(parameter RECEIVEBYTES = 3)
 	(
 		input wire i_reset,
 		input wire i_clock,
@@ -8,14 +8,15 @@ module ADC_SPI_In
 		input wire i_SPI_data,
 		output wire [15:0] o_data0,
 		output wire [15:0] o_data1,
+		output wire [15:0] o_data2,
 		output reg o_data_received
 	);
 
 	reg [3:0] receive_bit;
 	reg [1:0] receive_byte;
-	reg [0:15] bytes_in[$clog2(RECEIVEBYTES):0];
+	reg [0:15] bytes_in[RECEIVEBYTES:0];
 
-	reg [1:0] SPISlaveState;
+	reg SPISlaveState;
 	localparam state_waiting = 2'd0;
 	localparam state_receiving = 2'd1;
 
@@ -95,4 +96,5 @@ module ADC_SPI_In
 	// Output bytes are continously assigned but only valid when received flag is high
 	assign o_data0 = bytes_in[0];
 	assign o_data1 = bytes_in[1];
+	assign o_data2 = bytes_in[2];
 endmodule

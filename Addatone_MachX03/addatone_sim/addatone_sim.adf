@@ -57,3 +57,9 @@ Global=
 .\..\OscPll.v=Verilog Source Code
 .\..\src\top.v=Verilog Source Code
 .\..\src\TestBench_Top.v=Verilog Source Code
+[SpecTracer]
+WindowVisible=0
+[HierarchyViewer]
+HierarchyInformation=
+ShowHide=ShowTopLevel
+Selected=

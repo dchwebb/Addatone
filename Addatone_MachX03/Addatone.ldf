@@ -45,6 +45,9 @@
         <Source name="SineLUT.v" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options/>
         </Source>
+        <Source name="src/Sample_Output.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
         <Source name="adc_sim/adc_sim.spf" type="Simulation Project File" type_short="SPF">
             <Options/>
         </Source>

@@ -1,5 +1,5 @@
 module Sample_Output
-	#(parameter SAMPLE_OFFSET = 32'h31000, parameter SEND_CHANNEL_A = 8'b00110001, parameter SEND_CHANNEL_B = 8'b00110010)
+	#(parameter SAMPLE_OFFSET = 32'h21000, parameter SEND_CHANNEL_A = 8'b00110001, parameter SEND_CHANNEL_B = 8'b00110010)
 	(
 		input wire i_Clock,
 		input wire i_Reset,
@@ -8,7 +8,8 @@ module Sample_Output
 		input wire [31:0] i_Sample_R,
 		output wire o_SPI_CS,
 		output wire o_SPI_clock,
-		output wire o_SPI_data
+		output wire o_SPI_data,
+		output reg debug
 	);
 	
 	reg [31:0] r_Sample_L;
@@ -36,12 +37,14 @@ module Sample_Output
 			State_Machine <= sm_waiting;
 		end
 		else begin
+			
 			case (State_Machine)
 			sm_waiting:
 				begin
 					DAC_Send <= 1'b0;
 					// add the required offset to the sample
 					if (i_Start && DAC_Ready) begin
+						debug = ~debug;
 						r_Sample_L <= i_Sample_L + SAMPLE_OFFSET;
 						r_Sample_R <= i_Sample_R + SAMPLE_OFFSET;
 						State_Machine <= sm_send_L;
@@ -51,7 +54,7 @@ module Sample_Output
 			// scale the sample and add DAC SPI channel information
 			sm_send_L:
 				begin
-					Output_Data <= {SEND_CHANNEL_A, r_Sample_L[18:3]};
+					Output_Data <= {SEND_CHANNEL_A, r_Sample_L[17:2]};
 					DAC_Send <= 1'b1;
 					State_Machine <= sm_delay_L;
 				end
@@ -67,7 +70,7 @@ module Sample_Output
 			// Wait until left sample has been sent then transmit right sample
 			sm_send_R:
 				if (DAC_Ready) begin
-					Output_Data <= {SEND_CHANNEL_B, r_Sample_R[18:3]};
+					Output_Data <= {SEND_CHANNEL_B, r_Sample_R[17:2]};
 					DAC_Send <= 1'b1;
 					State_Machine <= sm_delay_R;
 				end
@@ -78,8 +81,6 @@ module Sample_Output
 					State_Machine <= sm_waiting;
 				end
 			
-			default:
-				DAC_Send <= 1'b0;
 			endcase
 		end
 	end
