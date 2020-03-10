@@ -3,6 +3,7 @@ module Sample_Position
 		input wire i_Reset,
 		input wire i_Clock,
 		input wire [15:0] i_Frequency,
+		input wire [15:0] i_FreqOffset,			// Offset to allow cumulative freqeuncy shifting of higher harmonics
 		input wire [7:0] i_Harmonic,
 		output reg o_Sample_Ready,					// Tells top module that sample position has been loaded
 		input wire i_Next_Sample,					// Trigger from top module to say current value has been read and ready for next sample

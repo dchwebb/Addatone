@@ -1,5 +1,5 @@
 module ADC_SPI_In
-#(parameter RECEIVEBYTES = 3)
+#(parameter RECEIVEBYTES = 4)
 	(
 		input wire i_reset,
 		input wire i_clock,
@@ -9,6 +9,7 @@ module ADC_SPI_In
 		output wire [15:0] o_data0,
 		output wire [15:0] o_data1,
 		output wire [15:0] o_data2,
+		output wire [15:0] o_data3,
 		output reg o_data_received
 	);
 
@@ -27,6 +28,12 @@ module ADC_SPI_In
 	reg CS_stable;
 	reg data_state;
 	reg [2:0] count_stable;
+
+	// Output bytes are continously assigned but only valid when received flag is high
+	assign o_data0 = bytes_in[0];
+	assign o_data1 = bytes_in[1];
+	assign o_data2 = bytes_in[2];
+	assign o_data3 = bytes_in[3];
 
 	// Check for false triggers using main clock to count three stable measures on clock, data and CS
 	always @(posedge i_clock) begin
@@ -93,8 +100,4 @@ module ADC_SPI_In
 		end
 	end
 
-	// Output bytes are continously assigned but only valid when received flag is high
-	assign o_data0 = bytes_in[0];
-	assign o_data1 = bytes_in[1];
-	assign o_data2 = bytes_in[2];
 endmodule

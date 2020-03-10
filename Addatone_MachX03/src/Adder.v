@@ -10,8 +10,7 @@ module Adder
 		input wire [DIVISOR_BITS - 1:0] multiple,
 		input wire signed [15:0] i_sample,
 		output reg signed [31:0] accumulator,
-		output reg done,
-		output reg debug
+		output reg done
 	);
 
 	// working registers
@@ -24,7 +23,6 @@ module Adder
 		counter <= 1'b0;
 		done <= 1'b1;
 		accumulator <= 1'b0;
-		debug <= 1'b0;
 	end
 	
 	always @(posedge clock or posedge clear_accumulator) begin //

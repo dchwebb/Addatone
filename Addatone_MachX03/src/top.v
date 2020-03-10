@@ -9,7 +9,7 @@ module top
 		input wire rstn,
 		input wire crystal_osc,
 		output wire err_out,
-		output wire debug_out
+		output reg debug_out
 	);
 
 	parameter NO_OF_HARMONICS = 8'd50;
@@ -38,13 +38,14 @@ module top
 	wire [15:0] adc_data0;
 	wire [15:0] adc_data1;
 	wire [15:0] adc_data2;
+	wire [15:0] adc_data3;
 	wire adc_data_received;
-	ADC_SPI_In adc(.i_reset(reset), .i_clock(fpga_clock), .i_SPI_CS(adc_cs), .i_SPI_clock(adc_clock), .i_SPI_data(adc_data), .o_data0(adc_data0), .o_data2(adc_data2), .o_data1(adc_data1), .o_data_received(adc_data_received));
+	reg [15:0] Freq_Scale;
+	ADC_SPI_In adc(.i_reset(reset), .i_clock(fpga_clock), .i_SPI_CS(adc_cs), .i_SPI_clock(adc_clock), .i_SPI_data(adc_data), .o_data0(adc_data0), .o_data1(adc_data1), .o_data2(adc_data2), .o_data3(adc_data3), .o_data_received(adc_data_received));
 
 	// Output settings
 	reg signed [31:0] output_sample;
 	reg [15:0] dac_sample;								// Contains output sample scaled
-	parameter SEND_CHANNEL_A = 8'b00110001;		// Write to DAC Channel A
 
 	// Timing and Sine LUT settings
 	reg [15:0] sample_timer = 1'b0;					// Counts up to SAMPLEINTERVAL to set sample rate interval
@@ -62,7 +63,7 @@ module top
 	wire signed [31:0] adder2_total;
 	reg signed [31:0] r_adder1_total;
 	reg signed [31:0] r_adder2_total;
-	Adder #(.DIVISOR_BITS(DIV_BIT)) addSample1 (.clock(fpga_clock), .reset(reset), .start(adder1_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .i_sample(sample_value), .accumulator(adder1_total), .done(adder1_ready), .debug(debug_out));
+	Adder #(.DIVISOR_BITS(DIV_BIT)) addSample1 (.clock(fpga_clock), .reset(reset), .start(adder1_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .i_sample(sample_value), .accumulator(adder1_total), .done(adder1_ready));
 	Adder #(.DIVISOR_BITS(DIV_BIT)) addSample2 (.clock(fpga_clock), .reset(reset), .start(adder2_start), .clear_accumulator(adder_clear),  .multiple(adder_mult), .i_sample(sample_value), .accumulator(adder2_total), .done(adder2_ready));
 
 	// instantiate multiple scaler - this takes incoming ADC reading and uses it to reduce the level of harmonics scaled by the Adder
@@ -93,8 +94,8 @@ module top
 		//scale_initial <= adc_data1[15:DIV_BIT];				// top 8 bits are starting value for scaling (lower if there are more harmonics)
 		harmonic_scale <= adc_data1;
 		scale_initial <= adc_data2;								// Starting value for scaling (lower if there are more harmonics)
-
-//	debug_out <= ~debug_out;
+		Freq_Scale <= adc_data3;									// Frequency scaling offset - higher frequencies will be moved further from multiple of fundamental
+		debug_out <= ~debug_out;
 	end
 
 	assign err_out = adder_clear;

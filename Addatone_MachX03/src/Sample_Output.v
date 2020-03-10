@@ -8,8 +8,7 @@ module Sample_Output
 		input wire [31:0] i_Sample_R,
 		output wire o_SPI_CS,
 		output wire o_SPI_clock,
-		output wire o_SPI_data,
-		output reg debug
+		output wire o_SPI_data
 	);
 	
 	reg [31:0] r_Sample_L;
@@ -44,7 +43,6 @@ module Sample_Output
 					DAC_Send <= 1'b0;
 					// add the required offset to the sample
 					if (i_Start && DAC_Ready) begin
-						debug = ~debug;
 						r_Sample_L <= i_Sample_L + SAMPLE_OFFSET;
 						r_Sample_R <= i_Sample_R + SAMPLE_OFFSET;
 						State_Machine <= sm_send_L;

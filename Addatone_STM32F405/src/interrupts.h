@@ -3,38 +3,11 @@ void TIM3_IRQHandler(void) {
 
 	TIM3->SR &= ~TIM_SR_UIF;					// clear UIF flag
 
-	// Pitch calculations
-	//freq1 = 2270.0f * std::pow(2.0f, (float)Pitch / -610.0f);	// Increase 2270 to increase pitch; Reduce ABS(610) to increase spread
-
+	// Pitch calculations - Increase 2270 to increase pitch; Reduce ABS(610) to increase spread
 	pitch = (float)((ADC_array[0] + ADC_array[3] + ADC_array[6] + ADC_array[9]) >> 2);
-
-
 	//freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);			// for cycle length matching sample rate (48k)
 	freq = 2880.0f * std::pow(2.0f, pitch / -633.0f);			// for cycle length of 65k
-
-	//freq = 150;
 	sendSPIData((uint16_t)freq);
-
-	// Send fine tune data as sum of four values (4 * 4096 = 163844) left shifted to create 16 bit value (16384 << 2 = 65k)
-	//harmonicScale = (uint16_t)(ADC_array[1] + ADC_array[3] + ADC_array[5] + ADC_array[7]) << 2;
-
-/*
-	if (harmonicScale < 30000) {
-		harmonicDir = true;
-	}
-	else if (harmonicScale > 60000) {
-		harmonicDir = false;
-	}
-	harmonicScale += harmonicDir ? 1 : -1;
-*/
-
-	//Crazy scaling formula: =2^(6*harmonicScale/65536-6)
-
-	//harmonicScale = 65000;
-	//harmScale = std::pow(2.0f, (6.0f * (float)harmonicScale / 65536.0f - 6.0f)) * (float)harmonicScale;
-
-
-
 
 
 	/* Scaling logic
@@ -64,16 +37,16 @@ void TIM3_IRQHandler(void) {
 	harmonicScale = (uint16_t)(ADC_array[2] + ADC_array[5] + ADC_array[8] + ADC_array[11]) >> 5;		// scale 0 to 511
 	dampedHarmonicScale = ((15 * dampedHarmonicScale) + harmonicScale) >> 4;
 	harmScale = ((31.0f * harmScale) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScale / 56.777f) - 1)) / 32.0f;
+	sendSPIData((uint16_t)harmScale);
 
 	// Create inverted exponential curve for volume reduction
 	float vol = (511.0f - (float)harmScale) / 511.0f;
 	startVol = ((0.7f - 0.7f * std::pow(vol, 4.0f)) + 0.3f) * 511.0f;
-	//startVol = ((1.0f - std::pow(vol, 3.0f)) + 0.0f) * 511.0f;
-	//uint16_t minLevel = 280;
-	//startVol = minLevel + (harmScale * (511 - minLevel) / 511);
-
-	sendSPIData((uint16_t)harmScale);
 	sendSPIData(startVol);
+
+	// Send potentiometer value for frequency scaling
+	freqScale = (ADC_array[1] + ADC_array[4] + ADC_array[7] + ADC_array[10]) >> 8;		// scale to range 0-63
+	sendSPIData(freqScale);
 
 	clearSPI();
 }

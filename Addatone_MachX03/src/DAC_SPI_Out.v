@@ -78,7 +78,6 @@ module DAC_SPI_Out
 					
 				dac_state_cs_pulse:
 					begin
-						//o_SPI_clock <= 1;
 						o_Ready = 1'b1;
 						dac_state <= dac_state_idle;
 					end
