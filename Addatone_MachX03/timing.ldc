@@ -7,7 +7,7 @@
 # for assigning design logic to physical resources) for back-end flow.
 ################################################
 
-create_clock -period 13.888888 -name clock [ get_nets { fpga_clock } ]
+create_clock -period 13.888888 -name clock [ get_nets { Main_Clock } ]
 
 ################################################
 # This section describes the HDL Attributes that are supported
