@@ -1,3 +1,10 @@
+/*
+	Module is responsible for supplying the sample value of each harmonic as incremented by the top module.
+	This involves keeping track of the position of each harmonic's current sample in RAM (SamplePos_RAM module),
+	incrementing and adding the current frequency to the sample position, then looking up the sample value in the Sine LUT.
+	It also applies a frequency offset so higher harmonics can be increasingly detuned.
+	This works in two directions - odd harmonics are tuned down and even harmonics tuned up.
+*/
 module Sample_Position
 	(
 		input wire i_Reset,
@@ -30,6 +37,7 @@ module Sample_Position
 	localparam [2:0] sm_sine_lut = 3'd2;
 	localparam [2:0] sm_waiting = 3'd3;
 	localparam [2:0] sm_offset = 3'd4;
+	localparam [2:0] sm_offset2 = 3'd5;
 	
 	always @(posedge i_Clock) begin
 		if (i_Reset) begin
@@ -45,7 +53,7 @@ module Sample_Position
 				sm_init:
 					begin
 						Accumulated_Frequency <= i_Frequency;
-						Accumulated_Freq_Scale <= i_Freq_Scale;
+						Accumulated_Freq_Scale <= 1'b0;
 						o_Sample_Ready <= 1'b0;
 						Sample_Pos_WE <= 1'b0;
 						o_Freq_Too_High <= 1'b0;
@@ -85,12 +93,19 @@ module Sample_Position
 				
 				sm_offset:
 					begin
-						if (i_Harmonic[0])
+						State_Machine <= (i_Harmonic == 1'b0) ? sm_init : sm_sample_pos;
+						if (i_Harmonic[0]) begin
 							Accumulated_Freq_Scale <= Accumulated_Freq_Scale + i_Freq_Scale;
-						if (i_Harmonic[0])
 							Accumulated_Frequency <= Accumulated_Frequency + Accumulated_Freq_Scale;
-						else
-							Accumulated_Frequency <= Accumulated_Frequency - Accumulated_Freq_Scale;
+						end
+						else if (Accumulated_Freq_Scale < Accumulated_Frequency)
+							State_Machine <= sm_offset2;
+					end
+
+				sm_offset2:
+					begin
+						//Accumulated_Freq_Scale <= Accumulated_Freq_Scale + i_Freq_Scale;
+						Accumulated_Frequency <= Accumulated_Frequency - Accumulated_Freq_Scale;
 						State_Machine <= (i_Harmonic == 1'b0) ? sm_init : sm_sample_pos;
 					end
 

@@ -25,8 +25,8 @@ module top
 	reg [7:0] harmonic = 1'b0;						// Number of harmonic being calculated
 	reg next_sample;										// Trigger from top module to say current value has been read and ready for next sample
 	wire signed [15:0] sample_value;
-	reg [15:0] Frequency = 16'd1000;
-	reg [15:0] Freq_Scale = 1'b0;
+	reg [15:0] Frequency = 16'd50;
+	reg [15:0] Freq_Scale = 16'd120;
 	wire sample_ready, Freq_Too_High;
 	Sample_Position sample_position(.i_Reset(reset), .i_Clock(fpga_clock), .i_Frequency(Frequency), .i_Freq_Scale(Freq_Scale), .i_Harmonic(harmonic), .o_Sample_Ready(sample_ready), .i_Next_Sample(next_sample), .o_Sample_Value(sample_value), .o_Freq_Too_High(Freq_Too_High));
 
@@ -50,7 +50,7 @@ module top
 	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
 	parameter DIV_BIT = 9;								// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
 	reg adder1_start, adder2_start, adder_clear;
-	reg [DIV_BIT - 1:0] harmonic_scale = 1'b0;
+	reg [DIV_BIT - 1:0] harmonic_scale = 270;	// Level at which higher harmonics are attenuated
 	reg [DIV_BIT - 1:0] scale_initial = 511;
 	wire adder1_ready, adder2_ready;
 	wire [DIV_BIT - 1:0] adder_mult;
