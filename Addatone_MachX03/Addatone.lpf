@@ -1,3 +1,4 @@
+rvl_alias "fpga_clock" "fpga_clock";
 RVL_ALIAS "fpga_clock" "fpga_clock"; 
 RVL_ALIAS "fpga_clock" "fpga_clock"; 
 RVL_ALIAS "fpga_clock" "fpga_clock"; 

@@ -22,24 +22,24 @@ module DAC_SPI_Out
 	parameter dac_state_sent = 2'd2;
 	parameter dac_state_cs_pulse = 2'd3;
 
-	initial begin
-		dac_state = dac_state_idle;
-		o_Ready = 1'b1;
-		o_SPI_CS = 1'b1;
-		o_SPI_data = 1'b0;
-		o_SPI_clock = 1'b1;
-		clock_counter = 1'b0;
-	end
-
+	//initial begin
+		//dac_state = dac_state_idle;
+		//o_Ready = 1'b1;
+		//o_SPI_CS = 1'b1;
+		//o_SPI_data = 1'b0;
+		//o_SPI_clock = 1'b1;
+		//clock_counter = 1'b0;
+	//end
 
 	always @(posedge i_clock) begin
 		if (i_reset) begin
-			dac_state <= dac_state_idle;
 			o_SPI_CS <= 1'b1;
 			o_SPI_data <= 1'b0;
 			o_SPI_clock <= 1'b1;
 			clock_counter <= 1'b0;
-			o_Ready = 1'b1;
+			o_Ready <= 1'b1;
+			dac_state <= dac_state_idle;
+
 		end
 		else if (clock_counter == 0) begin		// only transition state on first clock counter - otherwise increment SPI clock
 			if (dac_state != dac_state_idle) begin
@@ -47,16 +47,19 @@ module DAC_SPI_Out
 			end
 			
 			if (i_send)
-				o_Ready = 1'b0;
+				o_Ready <= 1'b0;
 
 			case (dac_state)
 				dac_state_idle:
-					if (i_send) begin
-						dac_state <= dac_state_sending;
-						o_Ready = 1'b0;
-						o_SPI_CS <= 1'b0;
-						data_to_send <= i_data;
-						current_bit <= 1'b0;
+					begin
+						o_Ready <= 1'b1;
+						if (i_send) begin
+							o_Ready <= 1'b0;
+							o_SPI_CS <= 1'b0;
+							data_to_send <= i_data;
+							current_bit <= 1'b0;
+							dac_state <= dac_state_sending;
+						end
 					end
 					
 				dac_state_sending:
@@ -72,13 +75,14 @@ module DAC_SPI_Out
 					begin
 						o_SPI_CS <= 1'b1;
 						o_SPI_data <= 1'b0;
-						o_SPI_clock <= 1;
+						o_SPI_clock <= 1'b1;
 						dac_state <= dac_state_cs_pulse;
 					end
 					
 				dac_state_cs_pulse:
 					begin
-						o_Ready = 1'b1;
+						o_Ready <= 1'b1;
+						clock_counter <= 1'b0;
 						dac_state <= dac_state_idle;
 					end
 

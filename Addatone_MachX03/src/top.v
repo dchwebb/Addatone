@@ -25,14 +25,10 @@ module top
 	reg [7:0] harmonic = 1'b0;						// Number of harmonic being calculated
 	reg next_sample;										// Trigger from top module to say current value has been read and ready for next sample
 	wire signed [15:0] sample_value;
-	reg [15:0] frequency = 16'd1000;
+	reg [15:0] Frequency = 16'd1000;
+	reg [15:0] Freq_Scale = 1'b0;
 	wire sample_ready, Freq_Too_High;
-	Sample_Position sample_position(.i_Reset(reset), .i_Clock(fpga_clock), .i_Frequency(frequency), .i_Harmonic(harmonic), .o_Sample_Ready(sample_ready), .i_Next_Sample(next_sample),	.o_Sample_Value(sample_value), .o_Freq_Too_High(Freq_Too_High));
-
-	// initialise DAC SPI (Maxim5134)
-	//reg [23:0] dac_data;
-	//reg dac_send;
-	//DAC_SPI_Out dac(.i_clock(fpga_clock), .i_reset(reset), .i_data(dac_data), .i_send(dac_send), .o_SPI_CS(dac_cs), .o_SPI_clock(dac_clock), .o_SPI_data(dac_bit));
+	Sample_Position sample_position(.i_Reset(reset), .i_Clock(fpga_clock), .i_Frequency(Frequency), .i_Freq_Scale(Freq_Scale), .i_Harmonic(harmonic), .o_Sample_Ready(sample_ready), .i_Next_Sample(next_sample), .o_Sample_Value(sample_value), .o_Freq_Too_High(Freq_Too_High));
 
 	// Initialise ADC SPI input microcontroller
 	wire [15:0] adc_data0;
@@ -40,7 +36,6 @@ module top
 	wire [15:0] adc_data2;
 	wire [15:0] adc_data3;
 	wire adc_data_received;
-	reg [15:0] Freq_Scale;
 	ADC_SPI_In adc(.i_reset(reset), .i_clock(fpga_clock), .i_SPI_CS(adc_cs), .i_SPI_clock(adc_clock), .i_SPI_data(adc_data), .o_data0(adc_data0), .o_data1(adc_data1), .o_data2(adc_data2), .o_data3(adc_data3), .o_data_received(adc_data_received));
 
 	// Output settings
@@ -89,16 +84,16 @@ module top
 	localparam sm_cleanup = 4'd9;
 
 	always @(posedge adc_data_received) begin
-		frequency <= adc_data0;
+		Frequency <= adc_data0;
 		//harmonic_scale <= adc_data1[DIV_BIT - 1:0];		// bottom 8 bits are scale value
 		//scale_initial <= adc_data1[15:DIV_BIT];				// top 8 bits are starting value for scaling (lower if there are more harmonics)
 		harmonic_scale <= adc_data1;
 		scale_initial <= adc_data2;								// Starting value for scaling (lower if there are more harmonics)
 		Freq_Scale <= adc_data3;									// Frequency scaling offset - higher frequencies will be moved further from multiple of fundamental
-		debug_out <= ~debug_out;
+		//debug_out <= ~debug_out;
 	end
 
-	assign err_out = adder_clear;
+	assign err_out = dac_send;
 	
 	always @(posedge fpga_clock) begin
 		if (reset) begin

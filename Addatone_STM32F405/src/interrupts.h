@@ -45,7 +45,7 @@ void TIM3_IRQHandler(void) {
 	sendSPIData(startVol);
 
 	// Send potentiometer value for frequency scaling
-	freqScale = (ADC_array[1] + ADC_array[4] + ADC_array[7] + ADC_array[10]) >> 8;		// scale to range 0-63
+	freqScale = (ADC_array[1] + ADC_array[4] + ADC_array[7] + ADC_array[10]) >> 7;		// scale to range 0-127
 	sendSPIData(freqScale);
 
 	clearSPI();

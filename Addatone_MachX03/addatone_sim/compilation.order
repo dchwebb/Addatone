@@ -5,7 +5,7 @@
 .\..\src\ADC_SPI_In.v
 .\..\SineLUT.v
 .\..\SamplePos_RAM.v
-.\..\src\SamplePosition.v
 .\..\OscPll.v
 .\..\src\top.v
 .\..\src\TestBench_Top.v
+.\..\src\Sample_Position.v
