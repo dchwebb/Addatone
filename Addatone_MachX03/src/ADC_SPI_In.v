@@ -1,98 +1,101 @@
+/*
+	Receives scaled and cleaned CV data from Microcontroller ADC using SPI
+*/
 module ADC_SPI_In
 #(parameter RECEIVEBYTES = 4)
 	(
-		input wire i_reset,
-		input wire i_clock,
+		input wire i_Reset,
+		input wire i_Clock,
 		input wire i_SPI_CS,
-		input wire i_SPI_clock,
-		input wire i_SPI_data,
-		output wire [15:0] o_data0,
-		output wire [15:0] o_data1,
-		output wire [15:0] o_data2,
-		output wire [15:0] o_data3,
-		output reg o_data_received
+		input wire i_SPI_Clock,
+		input wire i_SPI_Data,
+		output wire [15:0] o_Data0,
+		output wire [15:0] o_Data1,
+		output wire [15:0] o_Data2,
+		output wire [15:0] o_Data3,
+		output reg o_Data_Received
 	);
 
-	reg [3:0] receive_bit;
-	reg [1:0] receive_byte;
-	reg [0:15] bytes_in[RECEIVEBYTES:0];
+	reg [3:0] Receive_Bit;
+	reg [1:0] Receive_Byte;
+	reg [0:15] r_Bytes_In[RECEIVEBYTES:0];
 
-	reg SPISlaveState;
-	localparam state_waiting = 2'd0;
-	localparam state_receiving = 2'd1;
+	reg SM_ADC_In;
+	localparam sm_waiting = 2'd0;
+	localparam sm_receiving = 2'd1;
 
 	// Settings to clean noise on SPI line
-	reg clock_state;
-	reg clock_stable;
-	reg CS_state;
-	reg CS_stable;
-	reg data_state;
-	reg [2:0] count_stable;
+	reg Clock_State;
+	reg Clock_Stable;
+	reg CS_State;
+	reg CS_Stable;
+	reg Data_State;
+	reg [2:0] Count_Stable;
 
 	// Output bytes are continously assigned but only valid when received flag is high
-	assign o_data0 = bytes_in[0];
-	assign o_data1 = bytes_in[1];
-	assign o_data2 = bytes_in[2];
-	assign o_data3 = bytes_in[3];
+	assign o_Data0 = r_Bytes_In[0];
+	assign o_Data1 = r_Bytes_In[1];
+	assign o_Data2 = r_Bytes_In[2];
+	assign o_Data3 = r_Bytes_In[3];
 
 	// Check for false triggers using main clock to count three stable measures on clock, data and CS
-	always @(posedge i_clock) begin
-		if (i_reset)
-			CS_stable <= 1'b1;
+	always @(posedge i_Clock) begin
+		if (i_Reset)
+			CS_Stable <= 1'b1;
 		else begin
-			if (i_SPI_clock != clock_state) begin
-				clock_state <= i_SPI_clock;
+			if (i_SPI_Clock != Clock_State) begin
+				Clock_State <= i_SPI_Clock;
 			end
-			if (i_SPI_data != data_state) begin
-				data_state <= i_SPI_data;
+			if (i_SPI_Data != Data_State) begin
+				Data_State <= i_SPI_Data;
 			end
-			if (i_SPI_CS != CS_state) begin
-				CS_state <= i_SPI_CS;
+			if (i_SPI_CS != CS_State) begin
+				CS_State <= i_SPI_CS;
 			end
 
-			if (i_SPI_clock == clock_state && i_SPI_data == data_state && i_SPI_CS == CS_state) begin
-				count_stable <= count_stable + 1'b1;
-				if (count_stable == 2) begin
-					CS_stable <= i_SPI_CS;
-					clock_stable <= i_SPI_clock;
+			if (i_SPI_Clock == Clock_State && i_SPI_Data == Data_State && i_SPI_CS == CS_State) begin
+				Count_Stable <= Count_Stable + 1'b1;
+				if (Count_Stable == 2) begin
+					CS_Stable <= i_SPI_CS;
+					Clock_Stable <= i_SPI_Clock;
 				end
 			end
 			else begin
-				count_stable <= 1'b0;
+				Count_Stable <= 1'b0;
 			end
 		end
 	end
 
 
-	always @(posedge clock_stable or posedge CS_stable) begin
-		if (CS_stable) begin
-			SPISlaveState <= state_waiting;
+	always @(posedge Clock_Stable or posedge CS_Stable) begin
+		if (CS_Stable) begin
+			SM_ADC_In <= sm_waiting;
 		end
 		else begin		//  check there have been at least two counts of negative pulse before recording a valid SPI clock cycle
-			case (SPISlaveState)
-				state_waiting:
+			case (SM_ADC_In)
+				sm_waiting:
 					begin
-						SPISlaveState <= state_receiving;
-						receive_byte <= 1'b0;
-						receive_bit <= 1'b1;
-						o_data_received <= 1'b0;
-						bytes_in[0][0] <= data_state;
+						SM_ADC_In <= sm_receiving;
+						Receive_Byte <= 1'b0;
+						Receive_Bit <= 1'b1;
+						o_Data_Received <= 1'b0;
+						r_Bytes_In[0][0] <= Data_State;
 					end
 
-				state_receiving:
+				sm_receiving:
 					begin
-						bytes_in[receive_byte][receive_bit] <= data_state;
-						receive_bit <= receive_bit + 1'b1;
+						r_Bytes_In[Receive_Byte][Receive_Bit] <= Data_State;
+						Receive_Bit <= Receive_Bit + 1'b1;
 
-						if (receive_bit == 15) begin								// Byte received
-							receive_byte <= receive_byte + 1'b1;
-							if (receive_byte == RECEIVEBYTES - 1) begin		// If all bytes received set state back to waiting and activate received flag
-								o_data_received <= 1'b1;
-								receive_byte <= 1'b0;
-								SPISlaveState <= state_waiting;
+						if (Receive_Bit == 15) begin								// Byte received
+							Receive_Byte <= Receive_Byte + 1'b1;
+							if (Receive_Byte == RECEIVEBYTES - 1) begin		// If all bytes received set state back to waiting and activate received flag
+								o_Data_Received <= 1'b1;
+								Receive_Byte <= 1'b0;
+								SM_ADC_In <= sm_waiting;
 							end
 							else begin
-								receive_bit <= 0;
+								Receive_Bit <= 0;
 							end
 						end
 					end

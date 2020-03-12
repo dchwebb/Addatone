@@ -7,8 +7,8 @@ module Sample_Output
 		input wire [31:0] i_Sample_L,
 		input wire [31:0] i_Sample_R,
 		output wire o_SPI_CS,
-		output wire o_SPI_clock,
-		output wire o_SPI_data
+		output wire o_SPI_Clock,
+		output wire o_SPI_Data
 	);
 	
 	reg [31:0] r_Sample_L;
@@ -17,9 +17,9 @@ module Sample_Output
 	wire DAC_Ready;
 	
 	reg DAC_Send;
-	DAC_SPI_Out dac(.i_clock(i_Clock), .i_reset(i_Reset), .i_data(Output_Data), .i_send(DAC_Send), .o_SPI_CS(o_SPI_CS), .o_SPI_clock(o_SPI_clock), .o_SPI_data(o_SPI_data), .o_Ready(DAC_Ready));
+	DAC_SPI_Out dac(.i_Clock(i_Clock), .i_Reset(i_Reset), .i_Data(Output_Data), .i_Send(DAC_Send), .o_SPI_CS(o_SPI_CS), .o_SPI_Clock(o_SPI_Clock), .o_SPI_Data(o_SPI_Data), .o_Ready(DAC_Ready));
 
-	reg [3:0] State_Machine;
+	reg [3:0] SM_Sample_Output;
 	localparam sm_waiting = 3'd0;
 	localparam sm_send_L = 3'd1;
 	localparam sm_delay_L = 3'd2;
@@ -33,11 +33,11 @@ module Sample_Output
 			DAC_Send <= 1'b0;
 			r_Sample_L <= 1'b0;
 			r_Sample_R <= 1'b0;
-			State_Machine <= sm_waiting;
+			SM_Sample_Output <= sm_waiting;
 		end
 		else begin
 			
-			case (State_Machine)
+			case (SM_Sample_Output)
 			sm_waiting:
 				begin
 					DAC_Send <= 1'b0;
@@ -45,7 +45,7 @@ module Sample_Output
 					if (i_Start && DAC_Ready) begin
 						r_Sample_L <= i_Sample_L + SAMPLE_OFFSET;
 						r_Sample_R <= i_Sample_R + SAMPLE_OFFSET;
-						State_Machine <= sm_send_L;
+						SM_Sample_Output <= sm_send_L;
 					end
 				end
 				
@@ -54,14 +54,14 @@ module Sample_Output
 				begin
 					Output_Data <= {SEND_CHANNEL_A, r_Sample_L[17:2]};
 					DAC_Send <= 1'b1;
-					State_Machine <= sm_delay_L;
+					SM_Sample_Output <= sm_delay_L;
 				end
 				
 			// delay until DAC updates DAC_Ready status
 			sm_delay_L:
 				if (!DAC_Ready) begin
 					DAC_Send <= 1'b0;
-					State_Machine <= sm_send_R;
+					SM_Sample_Output <= sm_send_R;
 				end
 				
 			
@@ -70,13 +70,13 @@ module Sample_Output
 				if (DAC_Ready) begin
 					Output_Data <= {SEND_CHANNEL_B, r_Sample_R[17:2]};
 					DAC_Send <= 1'b1;
-					State_Machine <= sm_delay_R;
+					SM_Sample_Output <= sm_delay_R;
 				end
 
 			sm_delay_R:
 				if (!DAC_Ready) begin
 					DAC_Send <= 1'b0;
-					State_Machine <= sm_waiting;
+					SM_Sample_Output <= sm_waiting;
 				end
 			
 			endcase
