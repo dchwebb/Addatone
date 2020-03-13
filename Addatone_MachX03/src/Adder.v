@@ -38,8 +38,8 @@ module Adder
 				Working_Total <= i_Multiple[0] ? i_Sample : 0;
 
 				// store input values to registers to preserve values
-				r_Sample_In <= i_Sample;
 				r_Multiple <= (i_Multiple >> 1);
+				r_Sample_In <= i_Sample;
 			end
 			else if (Counter > 0) begin
 				if (r_Multiple == 0) begin

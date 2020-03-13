@@ -32,6 +32,7 @@ module TestBench_Top;
 		begin
 			for (i = 0; i < 16; i = i + 1) begin
 				#375
+				//Comb_Interval <= 1'b1;
 				spi_clock_in <= 1'b0;
 				spi_data_in <= packet[i];
 				#375

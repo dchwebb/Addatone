@@ -1,5 +1,6 @@
-FREQUENCY NET "fpga_clock" 72.004608 MHz ;
+FREQUENCY NET "Main_Clock" 72.004608 MHz ;
 FREQUENCY NET "crystal_osc_c" 12.000000 MHz ;
+RVL_ALIAS "fpga_clock" "fpga_clock"; 
 RVL_ALIAS "fpga_clock" "fpga_clock"; 
 RVL_ALIAS "fpga_clock" "fpga_clock"; 
 RVL_ALIAS "fpga_clock" "fpga_clock"; 
