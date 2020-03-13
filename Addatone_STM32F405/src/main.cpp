@@ -15,6 +15,7 @@ volatile uint16_t dampedHarmonicScale;
 volatile uint16_t startVol;
 volatile uint16_t outputVal;
 volatile uint16_t freqScale;
+volatile uint16_t combInterval;
 volatile float harmScale;
 volatile bool harmonicDir;
 volatile bool fup = 1;

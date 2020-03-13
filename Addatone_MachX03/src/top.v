@@ -19,7 +19,10 @@ module top
 
 	//	Initialise 72MHz PLL clock from dev board 12 MHz crystal (dev board pin C8)
 	wire Main_Clock;
-	OscPll pll(.CLKI(crystal_osc), .CLKOP(Main_Clock));
+	OscPll pll (
+		.CLKI(crystal_osc),
+		.CLKOP(Main_Clock)
+	);
 
 	// Sample position RAM - memory array to store current position in cycle of each harmonic
 	parameter SAMPLERATE = 16'd48000;
@@ -31,18 +34,41 @@ module top
 	wire signed [15:0] Sample_Value;
 	reg [15:0] Frequency = 16'd50;
 	reg [15:0] Freq_Scale = 16'd120;
+	reg [15:0] Comb_Interval = 16'd0;
 	wire Sample_Ready, Freq_Too_High;
-	Sample_Position sample_position(.i_Reset(Reset), .i_Clock(Main_Clock), .i_Frequency(Frequency), .i_Freq_Offset(Freq_Scale), .i_Harmonic(Harmonic), .o_Sample_Ready(Sample_Ready), .i_Next_Sample(Next_Sample), .o_Sample_Value(Sample_Value), .o_Freq_Too_High(Freq_Too_High));
+	Sample_Position sample_position(
+		.i_Reset(Reset), 
+		.i_Clock(Main_Clock), 
+		.i_Frequency(Frequency), 
+		.i_Freq_Offset(Freq_Scale), 
+		.i_Harmonic(Harmonic), 
+		.o_Sample_Ready(Sample_Ready), 
+		.i_Next_Sample(Next_Sample), 
+		.o_Sample_Value(Sample_Value), 
+		.o_Freq_Too_High(Freq_Too_High)
+	);
 
 	// Initialise ADC SPI input microcontroller
-	wire [15:0] ADC_Data[3:0];
+	wire [15:0] ADC_Data[4:0];
 	wire ADC_Data_Received;
-	ADC_SPI_In adc(.i_Reset(Reset), .i_Clock(Main_Clock), .i_SPI_CS(adc_cs), .i_SPI_Clock(adc_clock), .i_SPI_Data(adc_data), .o_Data0(ADC_Data[0]), .o_Data1(ADC_Data[1]), .o_Data2(ADC_Data[2]), .o_Data3(ADC_Data[3]), .o_Data_Received(ADC_Data_Received));
+	ADC_SPI_In adc (
+		.i_Reset(Reset),
+		.i_Clock(Main_Clock),
+		.i_SPI_CS(adc_cs),
+		.i_SPI_Clock(adc_clock),
+		.i_SPI_Data(adc_data),
+		.o_Data0(ADC_Data[0]),
+		.o_Data1(ADC_Data[1]),
+		.o_Data2(ADC_Data[2]),
+		.o_Data3(ADC_Data[3]),
+		//.o_Data4(ADC_Data[4]),
+		.o_Data_Received(ADC_Data_Received)
+	);
 
 	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
-	parameter DIV_BIT = 9;								// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
+	parameter DIV_BIT = 9;									// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
 	reg Adder1_Start, Adder2_Start, Adder_Clear;
-	reg [DIV_BIT - 1:0] Harmonic_Scale = 270;	// Level at which higher harmonics are attenuated
+	reg [DIV_BIT - 1:0] Harmonic_Scale = 270;		// Level at which higher harmonics are attenuated
 	reg [DIV_BIT - 1:0] Scale_Initial = 511;
 	wire Adder1_Ready, Adder2_Ready;
 	wire [DIV_BIT - 1:0] Adder_Mult;
@@ -54,14 +80,29 @@ module top
 	Adder #(.DIVISOR_BITS(DIV_BIT)) adder2 (.i_Clock(Main_Clock), .i_Reset(Reset), .i_Start(Adder2_Start), .i_Clear_Accumulator(Adder_Clear), .i_Multiple(Adder_Mult), .i_Sample(Sample_Value), .o_Accumulator(Adder2_Total), .o_Done(Adder2_Ready));
 
 	// instantiate multiple scaler - this takes incoming ADC reading and uses it to reduce the level of harmonics scaled by the Adder
-	reg Start_Mult_Scaler;
-	reg Reset_Mult_Scaler;
-	Scale_Mult #(.DIV_BIT(DIV_BIT)) mult (.i_Clock(Main_Clock), .i_Start(Start_Mult_Scaler), .i_Restart(Reset_Mult_Scaler), .i_Scale(Harmonic_Scale), .i_Initial(Scale_Initial), .o_Mult(Adder_Mult));
+	reg Start_Mult_Scaler, Reset_Mult_Scaler;
+	Scale_Mult #(.DIV_BIT(DIV_BIT)) mult (
+		.i_Clock(Main_Clock),
+		.i_Start(Start_Mult_Scaler),
+		.i_Restart(Reset_Mult_Scaler),
+		.i_Scale(Harmonic_Scale),
+		.i_Initial(Scale_Initial),
+		.o_Mult(Adder_Mult)
+	);
 
 	// Instantiate Sample Output module which scales output and sends to DAC
 	reg DAC_Send;
 	reg signed [31:0] Output_Sample;
-	Sample_Output sample_output(.i_Clock(Main_Clock), .i_Reset(Reset), .i_Start(DAC_Send), .i_Sample_L(r_Adder1_Total), .i_Sample_R(r_Adder2_Total), .o_SPI_CS(dac_cs), .o_SPI_Clock(dac_clock), .o_SPI_Data(dac_bit));
+	Sample_Output sample_output (
+		.i_Clock(Main_Clock),
+		.i_Reset(Reset),
+		.i_Start(DAC_Send),
+		.i_Sample_L(r_Adder1_Total),
+		.i_Sample_R(r_Adder2_Total),
+		.o_SPI_CS(dac_cs),
+		.o_SPI_Clock(dac_clock),
+		.o_SPI_Data(dac_bit)
+	);
 
 
 	// State Machine settings - used to control calculation of amplitude of each harmonic sample
@@ -82,6 +123,7 @@ module top
 		Harmonic_Scale <= ADC_Data[1][DIV_BIT - 1:0];			// Rate of attenuation of harmonic scaling (lower means more harmonics)
 		Scale_Initial <= ADC_Data[2][DIV_BIT - 1:0];			// Starting value for scaling (lower if there are more harmonics)
 		Freq_Scale <= ADC_Data[3];									// Frequency scaling offset - higher frequencies will be moved further from multiple of fundamental
+		Comb_Interval <= ADC_Data[4];								// Comb filter interval - ie which harmonics will muted
 		debug_out <= ~debug_out;
 	end
 

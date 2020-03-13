@@ -13,12 +13,13 @@ module ADC_SPI_In
 		output wire [15:0] o_Data1,
 		output wire [15:0] o_Data2,
 		output wire [15:0] o_Data3,
+		//output wire [15:0] o_Data4,
 		output reg o_Data_Received
 	);
 
 	reg [3:0] Receive_Bit;
 	reg [1:0] Receive_Byte;
-	reg [0:15] r_Bytes_In[RECEIVEBYTES:0];
+	reg [0:15] r_Bytes_In[RECEIVEBYTES - 1:0];
 
 	reg SM_ADC_In;
 	localparam sm_waiting = 2'd0;
@@ -37,6 +38,7 @@ module ADC_SPI_In
 	assign o_Data1 = r_Bytes_In[1];
 	assign o_Data2 = r_Bytes_In[2];
 	assign o_Data3 = r_Bytes_In[3];
+	//assign o_Data4 = r_Bytes_In[4];
 
 	// Check for false triggers using main clock to count three stable measures on clock, data and CS
 	always @(posedge i_Clock) begin
@@ -71,7 +73,7 @@ module ADC_SPI_In
 		if (CS_Stable) begin
 			SM_ADC_In <= sm_waiting;
 		end
-		else begin		//  check there have been at least two counts of negative pulse before recording a valid SPI clock cycle
+		else begin
 			case (SM_ADC_In)
 				sm_waiting:
 					begin
