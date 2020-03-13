@@ -1,10 +1,12 @@
 // SPI Send timer
 void TIM3_IRQHandler(void) {
+	// create macro to enable summing of four most recent values of ADC regardless of how many ADC samples are in the buffer
+	#define ADC_SUM(x) (ADC_array[x] + ADC_array[ADC_BUFFER_LENGTH + x] + ADC_array[ADC_BUFFER_LENGTH * 2 + x] + ADC_array[ADC_BUFFER_LENGTH * 3 + x])
 
 	TIM3->SR &= ~TIM_SR_UIF;					// clear UIF flag
 
 	// Pitch calculations - Increase 2270 to increase pitch; Reduce ABS(610) to increase spread
-	pitch = (float)((ADC_array[0] + ADC_array[3] + ADC_array[6] + ADC_array[9]) >> 2);
+	pitch = (float)((ADC_SUM(0)) >> 2);
 	//freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);			// for cycle length matching sample rate (48k)
 	freq = 2880.0f * std::pow(2.0f, pitch / -633.0f);			// for cycle length of 65k
 	sendSPIData((uint16_t)freq);
@@ -34,7 +36,8 @@ void TIM3_IRQHandler(void) {
 	sendSPIData(outputVal);
 	 */
 
-	harmonicScale = (uint16_t)(ADC_array[2] + ADC_array[5] + ADC_array[8] + ADC_array[11]) >> 5;		// scale 0 to 511
+	//harmonicScale = (uint16_t)(ADC_array[2] + ADC_array[5] + ADC_array[8] + ADC_array[11]) >> 5;		// scale 0 to 511
+	harmonicScale = (uint16_t)(ADC_SUM(2)) >> 5;		// scale 0 to 511
 	dampedHarmonicScale = ((15 * dampedHarmonicScale) + harmonicScale) >> 4;
 	harmScale = ((31.0f * harmScale) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScale / 56.777f) - 1)) / 32.0f;
 	sendSPIData((uint16_t)harmScale);
@@ -44,8 +47,14 @@ void TIM3_IRQHandler(void) {
 	startVol = ((0.7f - 0.7f * std::pow(vol, 4.0f)) + 0.3f) * 511.0f;
 	sendSPIData(startVol);
 
+/*
 	// Send potentiometer value for frequency scaling
-	freqScale = (ADC_array[1] + ADC_array[4] + ADC_array[7] + ADC_array[10]) >> 7;		// scale to range 0-127
+	freqScale = (ADC_SUM(1)) >> 7;		// scale to range 0-127
+	sendSPIData(freqScale);
+*/
+
+	// Send CV value for frequency scaling
+	freqScale = 127 - ((ADC_SUM(3)) >> 7);		// scale to range 0-127
 	sendSPIData(freqScale);
 
 	clearSPI();

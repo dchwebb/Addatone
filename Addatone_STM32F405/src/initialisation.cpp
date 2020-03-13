@@ -65,7 +65,7 @@ void InitADC(void)
 	GPIOB->MODER |= GPIO_MODER_MODER0;				// Set PB0 to Analog mode (0b11)
 	GPIOB->MODER |= GPIO_MODER_MODER1;				// Set PB1 to Analog mode (0b11)
 	GPIOA->MODER |= GPIO_MODER_MODER1;				// Set PA1 to Analog mode (0b11)
-//	GPIOA->MODER |= GPIO_MODER_MODER2;				// Set PA2 to Analog mode (0b11)
+	GPIOA->MODER |= GPIO_MODER_MODER2;				// Set PA2 to Analog mode (0b11)
 //	GPIOA->MODER |= GPIO_MODER_MODER3;				// Set PA3 to Analog mode (0b11)
 //	GPIOC->MODER |= GPIO_MODER_MODER0;				// Set PC0 to Analog mode (0b11)
 //	GPIOC->MODER |= GPIO_MODER_MODER2;				// Set PC2 to Analog mode (0b11)
@@ -78,7 +78,7 @@ void InitADC(void)
 	ADC2->SQR3 |= 8 << 0;							// Set IN8  1st conversion in sequence
 	ADC2->SQR3 |= 9 << 5;							// Set IN9  2nd conversion in sequence
 	ADC2->SQR3 |= 1 << 10;							// Set IN1  3rd conversion in sequence
-//	ADC2->SQR3 |= 2 << 15;							// Set IN2  4th conversion in sequence
+	ADC2->SQR3 |= 2 << 15;							// Set IN2  4th conversion in sequence
 //	ADC2->SQR3 |= 3 << 20;							// Set IN3  5th conversion in sequence
 //	ADC2->SQR3 |= 10 << 25;							// Set IN10 6th conversion in sequence
 //	ADC2->SQR2 |= 12 << 0;							// Set IN12 7th conversion in sequence
@@ -91,7 +91,7 @@ void InitADC(void)
 	ADC2->SMPR2 |= 0b110 << 24;						// Set speed of IN8
 	ADC2->SMPR2 |= 0b110 << 27;						// Set speed of IN9
 	ADC2->SMPR2 |= 0b110 << 3;						// Set speed of IN1
-//	ADC2->SMPR2 |= 0b110 << 6;						// Set speed of IN2
+	ADC2->SMPR2 |= 0b110 << 6;						// Set speed of IN2
 //	ADC2->SMPR2 |= 0b110 << 9;						// Set speed of IN3
 //	ADC2->SMPR1 |= 0b110 << 0;						// Set speed of IN10
 //	ADC2->SMPR1 |= 0b110 << 6;						// Set speed of IN12
