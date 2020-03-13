@@ -2,7 +2,7 @@
 	Receives scaled and cleaned CV data from Microcontroller ADC using SPI
 */
 module ADC_SPI_In
-#(parameter RECEIVEBYTES = 4)
+#(parameter RECEIVEBYTES = 5)
 	(
 		input wire i_Reset,
 		input wire i_Clock,
@@ -13,12 +13,12 @@ module ADC_SPI_In
 		output wire [15:0] o_Data1,
 		output wire [15:0] o_Data2,
 		output wire [15:0] o_Data3,
-		//output wire [15:0] o_Data4,
+		output wire [15:0] o_Data4,
 		output reg o_Data_Received
 	);
 
 	reg [3:0] Receive_Bit;
-	reg [1:0] Receive_Byte;
+	reg [3:0] Receive_Byte;
 	reg [0:15] r_Bytes_In[RECEIVEBYTES - 1:0];
 
 	reg SM_ADC_In;
@@ -38,7 +38,7 @@ module ADC_SPI_In
 	assign o_Data1 = r_Bytes_In[1];
 	assign o_Data2 = r_Bytes_In[2];
 	assign o_Data3 = r_Bytes_In[3];
-	//assign o_Data4 = r_Bytes_In[4];
+	assign o_Data4 = r_Bytes_In[4];
 
 	// Check for false triggers using main clock to count three stable measures on clock, data and CS
 	always @(posedge i_Clock) begin

@@ -61,23 +61,22 @@ module top
 		.o_Data1(ADC_Data[1]),
 		.o_Data2(ADC_Data[2]),
 		.o_Data3(ADC_Data[3]),
-		//.o_Data4(ADC_Data[4]),
+		.o_Data4(ADC_Data[4]),
 		.o_Data_Received(ADC_Data_Received)
 	);
 
 	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
 	parameter DIV_BIT = 9;									// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
-	reg Adder1_Start, Adder2_Start, Adder_Clear;
+	reg [1:0] Adder_Start;
+	reg Adder_Clear;
 	reg [DIV_BIT - 1:0] Harmonic_Scale = 270;		// Level at which higher harmonics are attenuated
 	reg [DIV_BIT - 1:0] Scale_Initial = 511;
-	wire Adder1_Ready, Adder2_Ready;
+	wire [1:0] Adder_Ready;
 	wire [DIV_BIT - 1:0] Adder_Mult;
-	wire signed [31:0] Adder1_Total;
-	wire signed [31:0] Adder2_Total;
-	reg signed [31:0] r_Adder1_Total;
-	reg signed [31:0] r_Adder2_Total;
-	Adder #(.DIVISOR_BITS(DIV_BIT)) adder1 (.i_Clock(Main_Clock), .i_Reset(Reset), .i_Start(Adder1_Start), .i_Clear_Accumulator(Adder_Clear), .i_Multiple(Adder_Mult), .i_Sample(Sample_Value), .o_Accumulator(Adder1_Total), .o_Done(Adder1_Ready));
-	Adder #(.DIVISOR_BITS(DIV_BIT)) adder2 (.i_Clock(Main_Clock), .i_Reset(Reset), .i_Start(Adder2_Start), .i_Clear_Accumulator(Adder_Clear), .i_Multiple(Adder_Mult), .i_Sample(Sample_Value), .o_Accumulator(Adder2_Total), .o_Done(Adder2_Ready));
+	wire signed [31:0] Adder_Total[1:0];
+	reg signed [31:0] r_Adder_Total[1:0];
+	Adder #(.DIVISOR_BITS(DIV_BIT)) adder1 (.i_Clock(Main_Clock), .i_Reset(Reset), .i_Start(Adder_Start[0]), .i_Clear_Accumulator(Adder_Clear), .i_Multiple(Adder_Mult), .i_Sample(Sample_Value), .o_Accumulator(Adder_Total[0]), .o_Done(Adder_Ready[0]));
+	Adder #(.DIVISOR_BITS(DIV_BIT)) adder2 (.i_Clock(Main_Clock), .i_Reset(Reset), .i_Start(Adder_Start[1]), .i_Clear_Accumulator(Adder_Clear), .i_Multiple(Adder_Mult), .i_Sample(Sample_Value), .o_Accumulator(Adder_Total[1]), .o_Done(Adder_Ready[1]));
 
 	// instantiate multiple scaler - this takes incoming ADC reading and uses it to reduce the level of harmonics scaled by the Adder
 	reg Start_Mult_Scaler, Reset_Mult_Scaler;
@@ -97,8 +96,8 @@ module top
 		.i_Clock(Main_Clock),
 		.i_Reset(Reset),
 		.i_Start(DAC_Send),
-		.i_Sample_L(r_Adder1_Total),
-		.i_Sample_R(r_Adder2_Total),
+		.i_Sample_L(r_Adder_Total[0]),
+		.i_Sample_R(r_Adder_Total[1]),
 		.o_SPI_CS(dac_cs),
 		.o_SPI_Clock(dac_clock),
 		.o_SPI_Data(dac_bit)
@@ -133,8 +132,8 @@ module top
 		if (Reset) begin
 			Sample_Timer <= 1'b0;
 			DAC_Send <= 1'b0;
-			Adder1_Start <= 1'b0;
-			Adder2_Start <= 1'b0;
+			Adder_Start[0] <= 1'b0;
+			Adder_Start[1] <= 1'b0;
 			Harmonic <= 8'b0;
 			SM_Top <= sm_init;
 		end
@@ -154,8 +153,8 @@ module top
 				sm_adder_mult:
 				begin
 					Next_Sample <= 1'b0;
-					Adder1_Start <= 1'b0;
-					Adder2_Start <= 1'b0;
+					Adder_Start[0] <= 1'b0;
+					Adder_Start[1] <= 1'b0;
 
 					// decrease harmonic scaler
 					Start_Mult_Scaler <= 1'b1;
@@ -167,16 +166,14 @@ module top
 					Start_Mult_Scaler <= 1'b0;
 
 					// Wait until the sample value is ready and Adder is free and then start the next calculation
-					if (Sample_Ready && (Harmonic[0] == 1'b0 ? Adder1_Ready : Adder2_Ready)) begin
-					//if (Sample_Ready && Adder1_Ready) begin
-						Harmonic <= Harmonic + 2'b1;								// Load up next sample position
+					if (Sample_Ready && (Harmonic[0] == 1'b0 ? Adder_Ready[0] : Adder_Ready[1])) begin
+						Harmonic <= Harmonic + 2'b1;						// Load up next sample position
 						Next_Sample <= 1'b1;
-						Adder1_Start <= 1'b1;
 
-						if (Harmonic[0] == 1'b0)		// even harmonics
-							Adder1_Start <= 1'b1;											// Tell the adder the next sample is ready
+						if (Harmonic[0] == 1'b0)							// even harmonics
+							Adder_Start[0] <= 1'b1;						// Tell the adder the next sample is ready
 						else
-							Adder2_Start <= 1'b1;
+							Adder_Start[1] <= 1'b1;
 						SM_Top <= (Harmonic >= NO_OF_HARMONICS || Freq_Too_High) ? sm_adder_wait : sm_adder_mult;
 					end
 				end
@@ -184,18 +181,18 @@ module top
 				sm_adder_wait:
 				begin
 					Next_Sample <= 1'b0;
-					Adder1_Start <= 1'b0;
-					Adder2_Start <= 1'b0;
-					SM_Top <= sm_calc_done;								// Pause to let adder clear adder_Ready state
+					Adder_Start[0] <= 1'b0;
+					Adder_Start[1] <= 1'b0;
+					SM_Top <= sm_calc_done;									// Pause to let adder clear adder_Ready state
 				end
 
 				sm_calc_done:
 				begin
-					if (Adder1_Ready && Adder2_Ready) begin
+					if (Adder_Ready[0] && Adder_Ready[1]) begin
 						// all harmonics calculated - offset output for sending to DAC
-						//Output_Sample <= 32'h31000 + Adder2_Total;			// Add extra 2^18 (approx) to cancel divide by 4 on final value
-						r_Adder1_Total <= Adder1_Total;
-						r_Adder2_Total <= Adder2_Total;
+						//Output_Sample <= 32'h31000 + Adder_Total[1];			// Add extra 2^18 (approx) to cancel divide by 4 on final value
+						r_Adder_Total[0] <= Adder_Total[0];
+						r_Adder_Total[1] <= Adder_Total[1];
 						SM_Top <= sm_scale_sample;
 					end
 				end
