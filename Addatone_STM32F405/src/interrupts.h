@@ -52,7 +52,9 @@ void TIM3_IRQHandler(void) {
 	sendSPIData(freqScale);
 
 	// Send potentiometer value for Comb Filter Interval
-	combInterval = (ADC_SUM(1)) >> 9;		// scale to range 0-31
+	if (combIntervalTemp > ADC_SUM(1) + 500 || combIntervalTemp < ADC_SUM(1) - 500)
+		combIntervalTemp = ADC_SUM(1);
+	combInterval = combIntervalTemp >> 9;		// scale to range 0-31
 	sendSPIData(combInterval);
 
 	clearSPI();

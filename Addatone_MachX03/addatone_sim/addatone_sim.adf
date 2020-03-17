@@ -63,6 +63,7 @@ Selected=
 /..\..\src\top.v=-1
 /..\..\src\TestBench_Top.v=-1
 /..\..\src\Sample_Position.v=-1
+/test.do=-1
 
 [Files.Data]
 .\..\src\DAC_SPI_Out.v=Verilog Source Code
@@ -77,3 +78,4 @@ Selected=
 .\..\src\TestBench_Top.v=Verilog Source Code
 .\..\src\Sample_Position.v=Verilog Source Code
 
+.\src\test.do=Macro

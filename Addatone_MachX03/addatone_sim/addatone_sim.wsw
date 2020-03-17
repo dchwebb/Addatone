@@ -7,3 +7,5 @@ ActiveDocument=1
 TemplateId=2
 [OPENDOC|Aldec.Hde.HdePlugIn.7|.\..\src\Adder.v|]
 TemplateId=2
+[OPENDOC|Aldec.Hde.HdePlugIn.7|.\..\src\scale_mult.v|]
+TemplateId=2

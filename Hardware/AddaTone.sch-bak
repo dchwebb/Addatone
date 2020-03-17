@@ -337,13 +337,13 @@ F 3 "" H 11450 3750 50  0001 C CNN
 $EndComp
 $Comp
 L Amplifier_Operational:MCP6004 U2
-U 2 1 5C61BC1D
+U 1 1 5C61BC1D
 P 6050 2150
 F 0 "U2" H 6050 1783 50  0000 C CNN
 F 1 "MCP6004" H 6050 1874 50  0000 C CNN
 F 2 "SMD_Packages:SOIC-14_N" H 6000 2250 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 6100 2350 50  0001 C CNN
-	2    6050 2150
+	1    6050 2150
 	1    0    0    1   
 $EndComp
 $Comp
@@ -508,13 +508,13 @@ Wire Wire Line
 	5300 1600 5350 1600
 $Comp
 L Amplifier_Operational:MCP6004 U2
-U 1 1 5C76CA95
+U 2 1 5C76CA95
 P 6050 3950
 F 0 "U2" H 6050 3583 50  0000 C CNN
 F 1 "MCP6004" H 6050 3674 50  0000 C CNN
 F 2 "SMD_Packages:SOIC-14_N" H 6000 4050 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 6100 4150 50  0001 C CNN
-	1    6050 3950
+	2    6050 3950
 	1    0    0    1   
 $EndComp
 $Comp
@@ -591,7 +591,7 @@ F 3 "~" H 6050 3000 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text GLabel 6700 3950 2    50   Input ~ 0
-PD1_CV
+HARM1_CV
 Wire Wire Line
 	6700 3950 6350 3950
 Connection ~ 6350 3950
@@ -746,7 +746,7 @@ $EndComp
 Wire Wire Line
 	3250 6900 3250 7050
 Text GLabel 3400 2100 2    50   Input ~ 0
-PD1_TYPE
+HARM1_CV
 Wire Wire Line
 	3250 3800 3400 3800
 Wire Wire Line

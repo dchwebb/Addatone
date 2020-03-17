@@ -10,7 +10,7 @@ module Scale_Mult
 		input wire [DIV_BIT - 1:0] i_Scale,
 		input wire [DIV_BIT - 1:0] i_Initial,
 		input wire [7:0] i_Comb_Interval,
-		input wire i_Comb_Active,
+		output reg o_Comb_Muted = 1'b0,
 		output reg [DIV_BIT - 1:0] o_Mult,
 		output reg o_Mult_Ready = 1'b1
 	);
@@ -21,7 +21,7 @@ module Scale_Mult
 	reg [1:0] SM_Scale_Mult;
 	localparam sm_ready = 2'd0;
 	localparam sm_comb = 2'd1;
-	localparam sm_scaled = 2'd2;
+	localparam sm_done = 2'd2;
 	localparam sm_mute = 2'd3;
 
 	initial begin
@@ -30,8 +30,9 @@ module Scale_Mult
 
 	always @(posedge i_Clock) begin
 		if (i_Restart) begin
-			r_Mult_Out <= i_Initial;
+			o_Mult <= i_Initial;
 			Comb_Counter <= 1'b0;
+			o_Comb_Muted <= 1'b0;
 			o_Mult_Ready <= 1'b1;
 			SM_Scale_Mult <= sm_ready;
 		end
@@ -41,17 +42,18 @@ module Scale_Mult
 				sm_ready:
 					if (i_Start) begin
 						o_Mult_Ready <= 1'b0;
-						if (r_Mult_Out >= i_Scale)
-							r_Mult_Out <= r_Mult_Out - i_Scale;
+						o_Comb_Muted <= 1'b0;
+						if (o_Mult >= i_Scale)
+							o_Mult <= o_Mult - i_Scale;
 						else
-							r_Mult_Out <= 1'b0;
+							o_Mult <= 1'b0;
 						
-						SM_Scale_Mult <= i_Comb_Active ? sm_comb : sm_scaled;
+						SM_Scale_Mult <= i_Comb_Interval > 0 ? sm_comb : sm_done;
 					end
 					
 				sm_comb:
 					begin
-						SM_Scale_Mult <= sm_scaled;
+						SM_Scale_Mult <= sm_done;
 						
 						Comb_Counter <= Comb_Counter + 1'b1;
 						if (Comb_Counter == i_Comb_Interval) begin
@@ -62,14 +64,13 @@ module Scale_Mult
 				sm_mute:
 					begin
 						Comb_Counter <= 1'b0;
+						o_Comb_Muted <= 1'b1;
 						o_Mult_Ready <= 1'b1;
-						o_Mult <= 1'b0;
 						SM_Scale_Mult <= sm_ready;
 					end
 					
-				sm_scaled:
+				sm_done:
 					begin
-						o_Mult <= r_Mult_Out;
 						o_Mult_Ready <= 1'b1;
 						SM_Scale_Mult <= sm_ready;
 					end

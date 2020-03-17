@@ -34,9 +34,7 @@ module top
 	wire signed [15:0] Sample_Value;
 	reg [15:0] Frequency = 16'd90;
 	reg [15:0] Freq_Scale = 16'd0;
-	reg [7:0] Comb_Interval = 1'd1;
-	//reg [7:0] Comb_Counter = 1'b1;
-	reg Comb_Active = 1'b0;
+	reg [7:0] Comb_Interval = 1'd0;
 	wire Sample_Ready, Freq_Too_High;
 	Sample_Position sample_position(
 		.i_Reset(Reset),
@@ -74,6 +72,7 @@ module top
 	reg [1:0] Adder_Start;
 	wire [1:0] Adder_Ready;
 	reg Adder_Clear;
+	reg Active_Adder = 1'b0;
 	wire [DIV_BIT - 1:0] Adder_Mult;
 	wire signed [31:0] Adder_Total[1:0];
 	reg signed [31:0] r_Adder_Total[1:0];
@@ -95,7 +94,7 @@ module top
 
 	// instantiate multiple scaler - this takes incoming ADC reading and uses it to reduce the level of harmonics scaled by the Adder
 	reg Start_Mult_Scaler, Reset_Mult_Scaler;
-	wire Mult_Ready;
+	wire Mult_Ready, Comb_Muted;
 	Scale_Mult #(.DIV_BIT(DIV_BIT)) mult (
 		.i_Clock(Main_Clock),
 		.i_Start(Start_Mult_Scaler),
@@ -103,7 +102,7 @@ module top
 		.i_Scale(Harmonic_Scale),
 		.i_Initial(Scale_Initial),
 		.i_Comb_Interval(Comb_Interval),
-		.i_Comb_Active(Comb_Active),
+		.o_Comb_Muted(Comb_Muted),
 		.o_Mult(Adder_Mult),
 		.o_Mult_Ready(Mult_Ready)
 	);
@@ -125,9 +124,9 @@ module top
 
 	// State Machine settings - used to control calculation of amplitude of each harmonic sample
 	reg [3:0] SM_Top;
-	localparam sm_init = 4'd1;
-	localparam sm_adder_mult = 4'd2;
-	localparam sm_scale = 4'd9;
+	localparam sm_init = 4'd0;
+	localparam sm_adder_mult = 4'd1;
+	localparam sm_scale = 4'd2;
 	localparam sm_sine_lookup = 4'd3;
 	localparam sm_adder_start = 4'd4;
 	localparam sm_adder_wait = 4'd5;
@@ -135,6 +134,9 @@ module top
 	localparam sm_scale_sample = 4'd7;
 	localparam sm_ready_to_send = 4'd8;
 	localparam sm_cleanup = 4'd9;
+	localparam sm_check_mute = 4'd10;
+	localparam sm_next_harmonic = 4'd11;
+
 
 	// Assign values from ADC bytes received to respective control registers
 	always @(posedge ADC_Data_Received) begin
@@ -154,7 +156,6 @@ module top
 			DAC_Send <= 1'b0;
 			Adder_Start <= 1'b0;
 			Harmonic <= 8'b0;
-			//Comb_Counter <= 1'b1;
 			SM_Top <= sm_init;
 		end
 		else begin
@@ -175,42 +176,51 @@ module top
 					begin
 						Next_Sample <= 1'b0;
 						Adder_Start <= 1'b0;
-						Comb_Active <= (Comb_Interval > 0);
 						Start_Mult_Scaler <= 1'b1;								// decrease harmonic scaler
-						SM_Top <= sm_adder_start;
+						SM_Top <= sm_check_mute;
+					end
+
+				sm_check_mute:
+					begin
+						Start_Mult_Scaler <= 1'b0;
+						if (Mult_Ready) begin
+							SM_Top <= Comb_Muted ? sm_next_harmonic : sm_adder_start;
+						end
 					end
 
 				sm_adder_start:
 					begin
-						Start_Mult_Scaler <= 1'b0;
-
 						// Wait until the sample value is ready and Adder is free and then start the next calculation
-						if (Mult_Ready && Sample_Ready && Adder_Ready[Harmonic[0]]) begin
-							Harmonic <= Harmonic + 2'b1;						// Load up next sample position
-							Next_Sample <= 1'b1;									// Trigger for sample_position module to start looking up next sample value
-							Adder_Start[Harmonic[0]] <= 1'b1;				// Tell the even/odd adder the next sample is ready
-
-							SM_Top <= (Harmonic >= NO_OF_HARMONICS || Freq_Too_High) ? sm_adder_wait : sm_adder_mult;
+						if (Sample_Ready && Adder_Ready[Harmonic[0]]) begin
+							Adder_Start[Harmonic[0]] <= 1'b1;			// Tell the even/odd adder the next sample is ready
+							SM_Top <= sm_adder_wait;
 						end
 					end
 
 				sm_adder_wait:
 					begin
-						//Comb_Active <= 1'b0;
-						Next_Sample <= 1'b0;
+						Active_Adder <= ~Active_Adder;
 						Adder_Start <= 1'b0;
-						SM_Top <= sm_calc_done;									// Pause to let adder clear adder_Ready state
+						SM_Top <= sm_next_harmonic;
+					end
+
+				sm_next_harmonic:
+					begin
+						Harmonic <= Harmonic + 2'b1;						// Load up next sample position
+						Next_Sample <= 1'b1;									// Trigger for sample_position module to start looking up next sample value
+						SM_Top <= (Harmonic >= NO_OF_HARMONICS || Freq_Too_High) ? sm_calc_done : sm_adder_mult;
 					end
 
 				sm_calc_done:
-				begin
-					// all harmonics calculated - read accumulated output levels into registers for sending to DAC
-					if (Adder_Ready[0] && Adder_Ready[1]) begin
-						r_Adder_Total[0] <= Adder_Total[0];
-						r_Adder_Total[1] <= Adder_Total[1];
-						SM_Top <= sm_scale_sample;
+					begin
+						Next_Sample <= 1'b0;
+						// all harmonics calculated - read accumulated output levels into registers for sending to DAC
+						if (Adder_Ready[0] && Adder_Ready[1]) begin
+							r_Adder_Total[0] <= Adder_Total[0];
+							r_Adder_Total[1] <= Adder_Total[1];
+							SM_Top <= sm_scale_sample;
+						end
 					end
-				end
 
 				sm_scale_sample:
 					begin
@@ -231,10 +241,10 @@ module top
 
 						// Clean state ready for next loop
 						Sample_Timer <= 1'b0;
-						//Comb_Counter <= 1'b1;
 						Harmonic <= 8'b0;
 						Next_Sample <= 1'b1;
 						Reset_Mult_Scaler <= 1'b1;
+						Active_Adder <= 1'b0;
 
 						SM_Top <=  sm_init;
 					end

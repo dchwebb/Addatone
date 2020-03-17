@@ -2491,4 +2491,8 @@ F 3 "" H -4350 3200 50  0001 C CNN
 	1    -4350 3200
 	1    0    0    -1  
 $EndComp
+Text Notes 6600 3650 0    50   ~ 0
+Maps 1V to 2.58V\n5V to 0.3V\n5.5V to 0V
+Text Notes 6600 1700 0    50   ~ 0
+Maps 1V to 2.44V\n5V to 0.55V\n5.5V to 0V
 $EndSCHEMATC
