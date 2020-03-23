@@ -5,7 +5,7 @@ Target Device:        iCE40UP5KSG48
 Target Performance:   High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2.0.1.281.2
-Mapped on: Mon Mar 23 14:51:20 2020
+Mapped on: Mon Mar 23 16:31:56 2020
 
 Design Information
 ------------------
@@ -18,13 +18,13 @@ Command line:   map Addatone_ICE40_impl_1_syn.udb
 Design Summary
 --------------
 
-   Number of slice registers:  85 out of  5280 (2%)
+   Number of slice registers: 318 out of  5280 (6%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           157 out of  5280 (3%)
-      Number of logic LUT4s:             112
-      Number of inserted feedthru LUT4s:  22
-      Number of replicated LUT4s:          1
-      Number of ripple logic:             11 (22 LUT4s)
+   Number of LUT4s:           665 out of  5280 (13%)
+      Number of logic LUT4s:             423
+      Number of inserted feedthru LUT4s: 138
+      Number of replicated LUT4s:          2
+      Number of ripple logic:             51 (102 LUT4s)
    Number of IO sites used:   10 out of 39 (26%)
       Number of IO sites used for general PIOs: 10
       Number of IO sites used for I3Cs: 0 out of 2 (0%)
@@ -41,25 +41,25 @@ Design Summary
    Number of SRAMs:            0 out of 4 (0%)
    Number of WARMBOOTs:        0 out of 1 (0%)
    Number of SPIs:             0 out of 2 (0%)
-   Number of EBRs:             8 out of 30 (26%)
+   Number of EBRs:             0 out of 30 (0%)
    Number of PLLs:             1 out of 1 (100%)
    Number of Clocks:  4
-      Net Clock_48MHz: 81 loads, 81 rising, 0 falling (Driver: Pin
-     pll_48.lscc_pll_inst.u_PLL_B/OUTCORE)
-      Net ADC_Data_Received: 1 loads, 1 rising, 0 falling (Driver: Pin
-     adc.o_Data_Received/Q)
       Net i_Clock_c: 1 loads, 1 rising, 0 falling (Driver: Port i_Clock)
-      Net adc.Clock_Stable: 10 loads, 10 rising, 0 falling (Driver: Pin
+      Net Main_Clock: 164 loads, 164 rising, 0 falling (Driver: Pin
+     pll_48.lscc_pll_inst.u_PLL_B/OUTCORE)
+      Net ADC_Data_Received: 59 loads, 59 rising, 0 falling (Driver: Pin
+     adc.o_Data_Received/Q)
+      Net adc.Clock_Stable: 68 loads, 68 rising, 0 falling (Driver: Pin
      adc.Clock_Stable_c/Q)
-   Number of Clock Enables:  16
-      Net VCC_net: 24 loads, 0 SLICEs
-      Net n872: 6 loads, 6 SLICEs
-      Pin reset_n: 3 loads, 3 SLICEs (Net: reset_n_c)
-      Net dac.n870: 16 loads, 16 SLICEs
-      Net dac.n2003: 1 loads, 1 SLICEs
-      Net dac.n1276: 5 loads, 5 SLICEs
-      Net dac.n12: 1 loads, 1 SLICEs
-      Net n1834: 1 loads, 1 SLICEs
+   Number of Clock Enables:  87
+      Pin reset_n: 10 loads, 10 SLICEs (Net: reset_n_c)
+      Net n4642: 3 loads, 3 SLICEs
+      Net n7519: 1 loads, 1 SLICEs
+      Net sample_position.n6094: 16 loads, 16 SLICEs
+      Net sample_position.n4628: 1 loads, 1 SLICEs
+      Net sample_position.n9_adj_1069: 1 loads, 1 SLICEs
+      Net n4717: 9 loads, 9 SLICEs
+      Net n4716: 9 loads, 9 SLICEs
 
                                     Page 1
 
@@ -69,33 +69,135 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net n1385: 3 loads, 3 SLICEs
-      Net adc.n1065: 1 loads, 1 SLICEs
-      Net adc.n1073: 1 loads, 1 SLICEs
-      Net adc.n2035: 1 loads, 1 SLICEs
-      Net adc.n1067: 1 loads, 1 SLICEs
-      Net adc.n1260: 4 loads, 4 SLICEs
-      Net adc.n1925: 1 loads, 1 SLICEs
-      Net adc.n883: 4 loads, 4 SLICEs
-   Number of LSRs:  7
-      Net reset_n_N_91: 18 loads, 18 SLICEs
-      Net dac.n1327: 5 loads, 5 SLICEs
+      Net n7901: 1 loads, 1 SLICEs
+      Net n5063: 3 loads, 3 SLICEs
+      Net n2875: 5 loads, 5 SLICEs
+      Net n7587: 1 loads, 1 SLICEs
+      Net n4758: 1 loads, 1 SLICEs
+      Net genadder[0].adder.n4645: 8 loads, 8 SLICEs
+      Net genadder[0].adder.n2868: 4 loads, 4 SLICEs
+      Net adc.n3537: 1 loads, 1 SLICEs
+      Net adc.n4560: 1 loads, 1 SLICEs
+      Net adc.n4582: 1 loads, 1 SLICEs
+      Net adc.n4575: 1 loads, 1 SLICEs
+      Net adc.n2857: 4 loads, 4 SLICEs
+      Net adc.n4553: 1 loads, 1 SLICEs
+      Net adc.n4556: 1 loads, 1 SLICEs
+      Net adc.n4611: 1 loads, 1 SLICEs
+      Net adc.n7911: 1 loads, 1 SLICEs
+      Net adc.n4561: 1 loads, 1 SLICEs
+      Net adc.n4562: 1 loads, 1 SLICEs
+      Net adc.n4579: 1 loads, 1 SLICEs
+      Net adc.n4576: 1 loads, 1 SLICEs
+      Net adc.n7363: 1 loads, 1 SLICEs
+      Net adc.n7368: 1 loads, 1 SLICEs
+      Net adc.n4583: 1 loads, 1 SLICEs
+      Net adc.n4552: 1 loads, 1 SLICEs
+      Net adc.n4554: 1 loads, 1 SLICEs
+      Net adc.n4601: 1 loads, 1 SLICEs
+      Net adc.n3531: 1 loads, 1 SLICEs
+      Net adc.n3944: 1 loads, 1 SLICEs
+      Net adc.n4595: 1 loads, 1 SLICEs
+      Net adc.n4563: 1 loads, 1 SLICEs
+      Net adc.n4573: 1 loads, 1 SLICEs
+      Net adc.n3984: 1 loads, 1 SLICEs
+      Net adc.n4557: 1 loads, 1 SLICEs
+      Net adc.n4571: 1 loads, 1 SLICEs
+      Net adc.n4591: 1 loads, 1 SLICEs
+      Net adc.n4590: 1 loads, 1 SLICEs
+      Net adc.n4592: 1 loads, 1 SLICEs
+      Net adc.n4600: 1 loads, 1 SLICEs
+      Net adc.n4555: 1 loads, 1 SLICEs
+      Net adc.n4593: 1 loads, 1 SLICEs
+      Net adc.n4613: 1 loads, 1 SLICEs
+      Net adc.n4610: 1 loads, 1 SLICEs
+      Net adc.n4612: 1 loads, 1 SLICEs
+      Net adc.n4578: 1 loads, 1 SLICEs
+      Net adc.n4568: 1 loads, 1 SLICEs
+      Net adc.n4598: 1 loads, 1 SLICEs
+      Net adc.n4566: 1 loads, 1 SLICEs
+      Net adc.n4558: 1 loads, 1 SLICEs
+      Net adc.n4565: 1 loads, 1 SLICEs
+      Net adc.n4602: 1 loads, 1 SLICEs
+      Net adc.n4607: 1 loads, 1 SLICEs
+      Net adc.n4603: 1 loads, 1 SLICEs
+      Net adc.n4570: 1 loads, 1 SLICEs
+      Net adc.n4585: 1 loads, 1 SLICEs
+      Net adc.n4586: 1 loads, 1 SLICEs
+      Net adc.n4597: 1 loads, 1 SLICEs
+      Net adc.n4587: 1 loads, 1 SLICEs
+
+                                    Page 2
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net adc.n4596: 1 loads, 1 SLICEs
+      Net adc.n4608: 1 loads, 1 SLICEs
+      Net adc.n4588: 1 loads, 1 SLICEs
+      Net adc.n4618: 1 loads, 1 SLICEs
+      Net adc.n4617: 1 loads, 1 SLICEs
+      Net adc.n4616: 1 loads, 1 SLICEs
+      Net adc.n4615: 1 loads, 1 SLICEs
+      Net adc.n4564: 1 loads, 1 SLICEs
+      Net adc.n4580: 1 loads, 1 SLICEs
+      Net adc.n4572: 1 loads, 1 SLICEs
+      Net adc.n4605: 1 loads, 1 SLICEs
+      Net adc.n4606: 1 loads, 1 SLICEs
+      Net adc.n4581: 1 loads, 1 SLICEs
+      Net adc.n7708: 1 loads, 1 SLICEs
+      Net mult.n4650: 9 loads, 9 SLICEs
+      Net mult.n7744: 1 loads, 1 SLICEs
+      Net genadder[1].adder.n4652: 8 loads, 8 SLICEs
+      Net genadder[1].adder.n4896: 4 loads, 4 SLICEs
+      Net sample_output.dac.n4719: 5 loads, 5 SLICEs
+      Net sample_output.dac.n2837: 7 loads, 7 SLICEs
+      Net sample_output.dac.n12: 1 loads, 1 SLICEs
+      Net sample_output.dac.n4673: 1 loads, 1 SLICEs
+   Number of LSRs:  20
+      Net reset_n_N_191: 35 loads, 35 SLICEs
+      Net n4921: 3 loads, 3 SLICEs
+      Net sample_position.n2897: 16 loads, 16 SLICEs
+      Net sample_position.n4940: 9 loads, 9 SLICEs
+      Net n7591: 1 loads, 1 SLICEs
+      Net n2660: 9 loads, 9 SLICEs
       Net CS_Stable: 1 loads, 1 SLICEs
-      Net adc.n1316: 3 loads, 3 SLICEs
-      Net adc.n1331: 4 loads, 4 SLICEs
-      Net adc.n1333: 3 loads, 3 SLICEs
-      Net adc.n1485: 1 loads, 1 SLICEs
+      Net Reset_Mult_Scaler: 5 loads, 5 SLICEs
+      Net Adder_Clear: 12 loads, 12 SLICEs
+      Net n7593: 1 loads, 1 SLICEs
+      Net genadder[0].adder.n6058: 1 loads, 1 SLICEs
+      Net adc.n5962: 1 loads, 1 SLICEs
+      Net adc.n4926: 3 loads, 3 SLICEs
+      Net adc.n4948: 3 loads, 3 SLICEs
+      Net mult.n2914: 5 loads, 5 SLICEs
+      Net genadder[1].adder.n6038: 1 loads, 1 SLICEs
+      Net sample_output.n7334: 1 loads, 1 SLICEs
+      Net sample_output.n4902: 3 loads, 3 SLICEs
+      Net sample_output.n7601: 1 loads, 1 SLICEs
+      Net sample_output.dac.n4916: 5 loads, 5 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net reset_n_c: 37 loads
-      Net VCC_net: 26 loads
-      Net DAC_Send_N_93: 18 loads
-      Net reset_n_N_91: 18 loads
+      Net adc.Data_State: 60 loads
+      Net reset_n_c: 52 loads
+      Net adc.Receive_Bit[0]: 37 loads
+      Net reset_n_N_191: 35 loads
+      Net o_Freq_Too_High_N_366: 28 loads
+      Net adc.n4481: 26 loads
+      Net Harmonic[0]: 22 loads
+      Net Receive_Byte[0]: 20 loads
+      Net Reset_Mult_Scaler: 20 loads
       Net SM_DAC_Out[0]: 18 loads
-      Net outcount[0]: 17 loads
-      Net outcount[10]: 17 loads
-      Net outcount[7]: 17 loads
-      Net outcount[8]: 17 loads
-      Net outcount[9]: 17 loads
+
+
+
+
+                                    Page 3
+
+
+
+
 
 
 
@@ -117,34 +219,25 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
 |                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| reset_n             | INPUT     | LVCMOS33  |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 | i_ADC_CS            | INPUT     | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| i_Clock             | INPUT     | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| o_DAC_CS            | OUTPUT    | LVCMOS33  |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | o_DAC_SCK           | OUTPUT    | LVCMOS33  |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | o_DAC_MOSI          | OUTPUT    | LVCMOS33  |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | test                | OUTPUT    | LVCMOS33  |       |       |           |
-
-                                    Page 2
-
-
-
-
-
-IO (PIO) Attributes (cont)
---------------------------
 +---------------------+-----------+-----------+-------+-------+-----------+
-| led                 | OUTPUT    | LVCMOS33  |       |       |           |
+| debug               | OUTPUT    | LVCMOS33  |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | i_ADC_Clock         | INPUT     | LVCMOS33  |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | i_ADC_Data          | INPUT     | LVCMOS33  |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| i_Clock             | INPUT     | LVCMOS33  |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| o_DAC_CS            | OUTPUT    | LVCMOS33  |       |       |           |
+| reset_n             | INPUT     | LVCMOS33  |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 PLL/DLL Summary
@@ -154,7 +247,7 @@ PLL 1:                                 Pin/Node Value
   PLL Instance Name:                            pll_48.lscc_pll_inst.u_PLL_B
   PLL Type:                                     PLL_B
   Input Reference Clock:               PIN      i_Clock_c
-  Output Clock(CoreA):                 NODE     Clock_48MHz
+  Output Clock(CoreA):                 NODE     Main_Clock
   Output Clock(GlobalA):                        NONE
   Output Clock(CoreB):                          NONE
   Output Clock(GlobalB):                        NONE
@@ -165,6 +258,15 @@ PLL 1:                                 Pin/Node Value
   Lock Signal:                                  NONE
   Input Clock Frequency (MHz):                  NA
   Reference Divider:                            0
+
+                                    Page 4
+
+
+
+
+
+PLL/DLL Summary (cont)
+----------------------
   Feedback Divider:                             0
   VCO Divider:                                  1
   ENABLE_ICEGATE_PORTA:                         0
@@ -186,46 +288,13 @@ ASIC Components
 
 Instance Name: pll_48.lscc_pll_inst.u_PLL_B
          Type: PLL
-Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[7].mem_file.mem0.
-     iCE40UP.sp4k
-         Type: EBR
-Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[6].mem_file.mem0.
-     iCE40UP.sp4k
-         Type: EBR
-
-                                    Page 3
-
-
-
-
-
-ASIC Components (cont)
-----------------------
-Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[5].mem_file.mem0.
-     iCE40UP.sp4k
-         Type: EBR
-Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[4].mem_file.mem0.
-     iCE40UP.sp4k
-         Type: EBR
-Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[3].mem_file.mem0.
-     iCE40UP.sp4k
-         Type: EBR
-Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[2].mem_file.mem0.
-     iCE40UP.sp4k
-         Type: EBR
-Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[1].mem_file.mem0.
-     iCE40UP.sp4k
-         Type: EBR
-Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0.
-     iCE40UP.sp4k
-         Type: EBR
 
 Run Time and Memory Usage
 -------------------------
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 61 MB
+   Peak Memory Usage: 68 MB
 
 
 
@@ -256,10 +325,7 @@ Run Time and Memory Usage
 
 
 
-
-
-
-                                    Page 4
+                                    Page 5
 
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.

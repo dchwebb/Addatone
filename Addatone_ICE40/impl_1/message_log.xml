@@ -1056,6 +1056,322 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(10): </Dynamic>
+            <Dynamic>SamplePos_RAM</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v</Navigation>
+            <Navigation>10</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(171): </Dynamic>
+            <Dynamic>SamplePos_RAM_ipgen_lscc_ram_dq(FAMILY=&quot;iCE40UP&quot;,ADDR_DEPTH=256,ADDR_WIDTH=8,DATA_WIDTH=16,REGMODE=&quot;noreg&quot;,INIT_FILE=&quot;misc/sample_pos_lut_optimised_SamplePos_RAM_copy.mem&quot;,INIT_FILE_FORMAT=&quot;hex&quot;,INIT_MODE=&quot;mem_file&quot;,BYTE_WIDTH=2,MEM_SIZE=&quot;16,256&quot;,MEM_ID=&quot;SamplePos_RAM&quot;,INIT_VALUE_00=&quot;0x8C28451EB28F58F59AE12333466655C267AE00   ....   NIT_VALUE_0E=&quot;0xC0A3151E48F5F28FA47A370A0A3D628FA851EA3D5AE1CCCC98F5DB85B999D51E&quot;,INIT_VALUE_0F=&quot;0x851E07AE0F5C9333D28FEA3D90A3751EB333D000D8F54AE1E000D51E4EB853D7&quot;)</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v</Navigation>
+            <Navigation>171</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(422): </Dynamic>
+            <Dynamic>SamplePos_RAM_ipgen_lscc_write_through(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=16)</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v</Navigation>
+            <Navigation>422</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(536): </Dynamic>
+            <Dynamic>SamplePos_RAM_ipgen_lscc_ram_dq_inst(FAMILY=&quot;iCE40UP&quot;,ADDR_DEPTH=256,ADDR_WIDTH=8,DATA_WIDTH=16,REGMODE=&quot;noreg&quot;,INIT_FILE=&quot;misc/sample_pos_lut_optimised_SamplePos_RAM_copy.mem&quot;,INIT_FILE_FORMAT=&quot;hex&quot;,INIT_MODE=&quot;mem_file&quot;,BYTE_SIZE=10'b01000,BYTE_WIDTH=2,MEM_SIZE=&quot;16,256&quot;,MEM_ID=&quot;SamplePos_RAM&quot;,INIT_VALUE_00=&quot;0x8C28451EB28F5   ....   NIT_VALUE_0E=&quot;0xC0A3151E48F5F28FA47A370A0A3D628FA851EA3D5AE1CCCC98F5DB85B999D51E&quot;,INIT_VALUE_0F=&quot;0x851E07AE0F5C9333D28FEA3D90A3751EB333D000D8F54AE1E000D51E4EB853D7&quot;)</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v</Navigation>
+            <Navigation>536</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(1416): </Dynamic>
+            <Dynamic>SamplePos_RAM_ipgen_lscc_ram_dq_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010000,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b0,POSy=32'b0,MEM_SIZE=&quot;16,256&quot;,MEM_ID=&quot;SamplePos_RAM&quot;,INIT_VALUE_00=&quot;0x8C28451EB28F58F59AE12333466655C267AE0000A00000003000000020000000&quot;,INIT_VALUE_01=&quot;0xD5C210A38EB83999F70A2F5CD28F98F53EB881EB50A313D7CE146C28A9   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v</Navigation>
+            <Navigation>1416</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
+            <Dynamic>PDP4K(INITVAL_0=&quot;0x8C28451EB28F58F59AE12333466655C267AE0000A00000003000000020000000&quot;,INITVAL_1=&quot;0xD5C210A38EB83999F70A2F5CD28F98F53EB881EB50A313D7CE146C28A999E51E&quot;,INITVAL_2=&quot;0x4AE1614727AECC28551EB70AFB853AE17F5CAA3DE0A3099925C2447AB1EB2C28&quot;,INITVAL_3=&quot;0x847A566627AE428F4F5C1666347A0147A8F51A3DAEB815C26CCC50A3F0A3CB85&quot;,INI   ....   A47A370A0A3D628FA851EA3D5AE1CCCC98F5DB85B999D51E&quot;,INITVAL_F=&quot;0x851E07AE0F5C9333D28FEA3D90A3751EB333D000D8F54AE1E000D51E4EB853D7&quot;,DATA_WIDTH_W=&quot;16&quot;,DATA_WIDTH_R=&quot;16&quot;)</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
+            <Navigation>693</Navigation>
+        </Message>
+        <Message>
+            <ID>35831026</ID>
+            <Severity>2</Severity>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(1): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>1</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v(40): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v</Navigation>
+            <Navigation>40</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(2): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>2</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v(50): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/adder/rtl/lscc_adder.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v</Navigation>
+            <Navigation>50</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(3): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>3</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v(52): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v</Navigation>
+            <Navigation>52</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(4): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>4</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v(39): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/counter/rtl/lscc_cntr.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v</Navigation>
+            <Navigation>39</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(5): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v(44): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/fifo/rtl/lscc_fifo.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v</Navigation>
+            <Navigation>44</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(6): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>6</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v(47): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v</Navigation>
+            <Navigation>47</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(7): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>7</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v(52): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v</Navigation>
+            <Navigation>52</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(8): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>8</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v(53): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v</Navigation>
+            <Navigation>53</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(9): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>9</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v(52): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v</Navigation>
+            <Navigation>52</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(10): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>10</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v(51): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v</Navigation>
+            <Navigation>51</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(11): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>11</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v(48): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v</Navigation>
+            <Navigation>48</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(12): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>12</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v(45): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v</Navigation>
+            <Navigation>45</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(13): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>13</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v(45): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/rom/rtl/lscc_rom.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v</Navigation>
+            <Navigation>45</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(14): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>14</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v(50): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v</Navigation>
+            <Navigation>50</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(15): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>15</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v(49): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v</Navigation>
+            <Navigation>49</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(16): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>16</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v(45): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v</Navigation>
+            <Navigation>45</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(17): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_dsp.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>17</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
             <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(1): </Dynamic>
             <Dynamic>top</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v</Navigation>
@@ -1072,18 +1388,18 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/ADC_SPI_In.v(4): </Dynamic>
-            <Dynamic>ADC_SPI_In</Dynamic>
-            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/ADC_SPI_In.v</Navigation>
-            <Navigation>4</Navigation>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Position.v(8): </Dynamic>
+            <Dynamic>Sample_Position</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Position.v</Navigation>
+            <Navigation>8</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/DAC_SPI_Out.v(1): </Dynamic>
-            <Dynamic>DAC_SPI_Out</Dynamic>
-            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/DAC_SPI_Out.v</Navigation>
-            <Navigation>1</Navigation>
+            <Dynamic>SamplePos_RAM.v(60): </Dynamic>
+            <Dynamic>SamplePos_RAM</Dynamic>
+            <Navigation>SamplePos_RAM.v</Navigation>
+            <Navigation>60</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
@@ -1094,12 +1410,84 @@
             <Navigation>60</Navigation>
         </Message>
         <Message>
-            <ID>35935013</ID>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/ADC_SPI_In.v(4): </Dynamic>
+            <Dynamic>ADC_SPI_In</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/ADC_SPI_In.v</Navigation>
+            <Navigation>4</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v(6): </Dynamic>
+            <Dynamic>Adder(DIVISOR_BITS=9)</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v</Navigation>
+            <Navigation>6</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(135): </Dynamic>
-            <Dynamic>led</Dynamic>
-            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v</Navigation>
-            <Navigation>135</Navigation>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v(38): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>24</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v</Navigation>
+            <Navigation>38</Navigation>
+        </Message>
+        <Message>
+            <ID>35908216</ID>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v(47): </Dynamic>
+            <Dynamic>31</Dynamic>
+            <Dynamic>23</Dynamic>
+            <Dynamic>0</Dynamic>
+            <Dynamic>Working_Total</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v</Navigation>
+            <Navigation>47</Navigation>
+        </Message>
+        <Message>
+            <ID>35908216</ID>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v(47): </Dynamic>
+            <Dynamic>31</Dynamic>
+            <Dynamic>23</Dynamic>
+            <Dynamic>0</Dynamic>
+            <Dynamic>Working_Total</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v</Navigation>
+            <Navigation>47</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v(56): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>24</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v</Navigation>
+            <Navigation>56</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Scale_Mult.v(4): </Dynamic>
+            <Dynamic>Scale_Mult(DIV_BIT=9)</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Scale_Mult.v</Navigation>
+            <Navigation>4</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Output.v(1): </Dynamic>
+            <Dynamic>Sample_Output</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Output.v</Navigation>
+            <Navigation>1</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/DAC_SPI_Out.v(1): </Dynamic>
+            <Dynamic>DAC_SPI_Out</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/DAC_SPI_Out.v</Navigation>
+            <Navigation>1</Navigation>
         </Message>
         <Message>
             <ID>35001786</ID>
@@ -1434,18 +1822,58 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adc_spi_in.v(4): </Dynamic>
-            <Dynamic>ADC_SPI_In</Dynamic>
-            <Navigation>d:/eurorack/addatone/addatone_ice40/src/adc_spi_in.v</Navigation>
-            <Navigation>4</Navigation>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_position.v(8): </Dynamic>
+            <Dynamic>Sample_Position</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_position.v</Navigation>
+            <Navigation>8</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(1): </Dynamic>
-            <Dynamic>DAC_SPI_Out</Dynamic>
-            <Navigation>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v</Navigation>
-            <Navigation>1</Navigation>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(10): </Dynamic>
+            <Dynamic>SamplePos_RAM</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v</Navigation>
+            <Navigation>10</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(171): </Dynamic>
+            <Dynamic>SamplePos_RAM_ipgen_lscc_ram_dq(FAMILY=&quot;iCE40UP&quot;,ADDR_DEPTH=256,ADDR_WIDTH=8,DATA_WIDTH=16,REGMODE=&quot;noreg&quot;,INIT_FILE=&quot;misc/sample_pos_lut_optimised_SamplePos_RAM_copy.mem&quot;,INIT_FILE_FORMAT=&quot;hex&quot;,INIT_MODE=&quot;mem_file&quot;,BYTE_WIDTH=2,MEM_SIZE=&quot;16,256&quot;,MEM_ID=&quot;SamplePos_RAM&quot;,INIT_VALUE_00=&quot;0x8C28451EB28F58F59AE12333466655C267AE00   ....   NIT_VALUE_0E=&quot;0xC0A3151E48F5F28FA47A370A0A3D628FA851EA3D5AE1CCCC98F5DB85B999D51E&quot;,INIT_VALUE_0F=&quot;0x851E07AE0F5C9333D28FEA3D90A3751EB333D000D8F54AE1E000D51E4EB853D7&quot;)</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v</Navigation>
+            <Navigation>171</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(422): </Dynamic>
+            <Dynamic>SamplePos_RAM_ipgen_lscc_write_through(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=16)</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v</Navigation>
+            <Navigation>422</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(536): </Dynamic>
+            <Dynamic>SamplePos_RAM_ipgen_lscc_ram_dq_inst(FAMILY=&quot;iCE40UP&quot;,ADDR_DEPTH=256,ADDR_WIDTH=8,DATA_WIDTH=16,REGMODE=&quot;noreg&quot;,INIT_FILE=&quot;misc/sample_pos_lut_optimised_SamplePos_RAM_copy.mem&quot;,INIT_FILE_FORMAT=&quot;hex&quot;,INIT_MODE=&quot;mem_file&quot;,BYTE_SIZE=10'b01000,BYTE_WIDTH=2,MEM_SIZE=&quot;16,256&quot;,MEM_ID=&quot;SamplePos_RAM&quot;,INIT_VALUE_00=&quot;0x8C28451EB28F5   ....   NIT_VALUE_0E=&quot;0xC0A3151E48F5F28FA47A370A0A3D628FA851EA3D5AE1CCCC98F5DB85B999D51E&quot;,INIT_VALUE_0F=&quot;0x851E07AE0F5C9333D28FEA3D90A3751EB333D000D8F54AE1E000D51E4EB853D7&quot;)</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v</Navigation>
+            <Navigation>536</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(1416): </Dynamic>
+            <Dynamic>SamplePos_RAM_ipgen_lscc_ram_dq_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010000,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b0,POSy=32'b0,MEM_SIZE=&quot;16,256&quot;,MEM_ID=&quot;SamplePos_RAM&quot;,INIT_VALUE_00=&quot;0x8C28451EB28F58F59AE12333466655C267AE0000A00000003000000020000000&quot;,INIT_VALUE_01=&quot;0xD5C210A38EB83999F70A2F5CD28F98F53EB881EB50A313D7CE146C28A9   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v</Navigation>
+            <Navigation>1416</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
+            <Dynamic>PDP4K(INITVAL_0=&quot;0x8C28451EB28F58F59AE12333466655C267AE0000A00000003000000020000000&quot;,INITVAL_1=&quot;0xD5C210A38EB83999F70A2F5CD28F98F53EB881EB50A313D7CE146C28A999E51E&quot;,INITVAL_2=&quot;0x4AE1614727AECC28551EB70AFB853AE17F5CAA3DE0A3099925C2447AB1EB2C28&quot;,INITVAL_3=&quot;0x847A566627AE428F4F5C1666347A0147A8F51A3DAEB815C26CCC50A3F0A3CB85&quot;,INI   ....   A47A370A0A3D628FA851EA3D5AE1CCCC98F5DB85B999D51E&quot;,INITVAL_F=&quot;0x851E07AE0F5C9333D28FEA3D90A3751EB333D000D8F54AE1E000D51E4EB853D7&quot;,DATA_WIDTH_W=&quot;16&quot;,DATA_WIDTH_R=&quot;16&quot;)</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
+            <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
@@ -1664,12 +2092,84 @@
             <Navigation>1608</Navigation>
         </Message>
         <Message>
-            <ID>35935013</ID>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adc_spi_in.v(4): </Dynamic>
+            <Dynamic>ADC_SPI_In</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/adc_spi_in.v</Navigation>
+            <Navigation>4</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(6): </Dynamic>
+            <Dynamic>Adder(DIVISOR_BITS=9)</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/adder.v</Navigation>
+            <Navigation>6</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(135): </Dynamic>
-            <Dynamic>led</Dynamic>
-            <Navigation>d:/eurorack/addatone/addatone_ice40/src/top.v</Navigation>
-            <Navigation>135</Navigation>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(38): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>24</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/adder.v</Navigation>
+            <Navigation>38</Navigation>
+        </Message>
+        <Message>
+            <ID>35908216</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(47): </Dynamic>
+            <Dynamic>31</Dynamic>
+            <Dynamic>23</Dynamic>
+            <Dynamic>0</Dynamic>
+            <Dynamic>Working_Total</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/adder.v</Navigation>
+            <Navigation>47</Navigation>
+        </Message>
+        <Message>
+            <ID>35908216</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(47): </Dynamic>
+            <Dynamic>31</Dynamic>
+            <Dynamic>23</Dynamic>
+            <Dynamic>0</Dynamic>
+            <Dynamic>Working_Total</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/adder.v</Navigation>
+            <Navigation>47</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(56): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>24</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/adder.v</Navigation>
+            <Navigation>56</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/scale_mult.v(4): </Dynamic>
+            <Dynamic>Scale_Mult(DIV_BIT=9)</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/scale_mult.v</Navigation>
+            <Navigation>4</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(1): </Dynamic>
+            <Dynamic>Sample_Output</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
+            <Navigation>1</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(1): </Dynamic>
+            <Dynamic>DAC_SPI_Out</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v</Navigation>
+            <Navigation>1</Navigation>
         </Message>
         <Message>
             <ID>35931013</ID>
@@ -1690,6 +2190,19 @@
         <Message>
             <ID>35931002</ID>
             <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608): </Dynamic>
+            <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
+            <Navigation>1608</Navigation>
+        </Message>
+        <Message>
+            <ID>35002028</ID>
+            <Severity>16</Severity>
+            <Dynamic>debug</Dynamic>
+        </Message>
+        <Message>
+            <ID>35931002</ID>
+            <Severity>16</Severity>
             <Dynamic>d:/eurorack/addatone/addatone_ice40/src/pll_48mhz/rtl/pll_48mhz.v(137): </Dynamic>
             <Dynamic>\pll_48/lscc_pll_inst/sclk_i</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/pll_48mhz/rtl/pll_48mhz.v</Navigation>
@@ -1704,243 +2217,887 @@
             <Navigation>138</Navigation>
         </Message>
         <Message>
-            <ID>35001747</ID>
-            <Severity>16</Severity>
-            <Dynamic>0</Dynamic>
-            <Dynamic>DAC_Data</Dynamic>
+            <ID>35001774</ID>
+            <Severity>1</Severity>
+            <Dynamic>SM_Top</Dynamic>
+            <Dynamic>one-hot</Dynamic>
         </Message>
         <Message>
-            <ID>35001747</ID>
-            <Severity>16</Severity>
-            <Dynamic>1</Dynamic>
-            <Dynamic>DAC_Data</Dynamic>
+            <ID>35001774</ID>
+            <Severity>1</Severity>
+            <Dynamic>\sample_position/SM_Sample_Position</Dynamic>
+            <Dynamic>one-hot</Dynamic>
         </Message>
         <Message>
-            <ID>35001748</ID>
-            <Severity>16</Severity>
-            <Dynamic>2</Dynamic>
-            <Dynamic>DAC_Data</Dynamic>
+            <ID>35001774</ID>
+            <Severity>1</Severity>
+            <Dynamic>\mult/SM_Scale_Mult</Dynamic>
+            <Dynamic>one-hot</Dynamic>
         </Message>
         <Message>
-            <ID>35001748</ID>
-            <Severity>16</Severity>
-            <Dynamic>3</Dynamic>
-            <Dynamic>DAC_Data</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>16</Severity>
-            <Dynamic>4</Dynamic>
-            <Dynamic>DAC_Data</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>16</Severity>
-            <Dynamic>5</Dynamic>
-            <Dynamic>DAC_Data</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001747</ID>
-            <Severity>16</Severity>
-            <Dynamic>6</Dynamic>
-            <Dynamic>DAC_Data</Dynamic>
-        </Message>
-        <Message>
-            <ID>35001748</ID>
-            <Severity>16</Severity>
-            <Dynamic>7</Dynamic>
-            <Dynamic>DAC_Data</Dynamic>
+            <ID>35001774</ID>
+            <Severity>1</Severity>
+            <Dynamic>\sample_output/SM_Sample_Output</Dynamic>
+            <Dynamic>one-hot</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>16</Severity>
             <Dynamic>0</Dynamic>
-            <Dynamic>\dac/r_Data_To_Send</Dynamic>
+            <Dynamic>\genadder[0].adder/r_Multiple</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>0</Dynamic>
+            <Dynamic>\genadder[1].adder/r_Multiple</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>0</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>16</Severity>
             <Dynamic>1</Dynamic>
-            <Dynamic>\dac/r_Data_To_Send</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
         </Message>
         <Message>
-            <ID>35001748</ID>
+            <ID>35001747</ID>
             <Severity>16</Severity>
             <Dynamic>2</Dynamic>
-            <Dynamic>\dac/r_Data_To_Send</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
         </Message>
         <Message>
-            <ID>35001748</ID>
+            <ID>35001747</ID>
             <Severity>16</Severity>
             <Dynamic>3</Dynamic>
-            <Dynamic>\dac/r_Data_To_Send</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>16</Severity>
             <Dynamic>4</Dynamic>
-            <Dynamic>\dac/r_Data_To_Send</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>16</Severity>
             <Dynamic>5</Dynamic>
-            <Dynamic>\dac/r_Data_To_Send</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
         </Message>
         <Message>
             <ID>35001747</ID>
             <Severity>16</Severity>
             <Dynamic>6</Dynamic>
-            <Dynamic>\dac/r_Data_To_Send</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
         </Message>
         <Message>
-            <ID>35001748</ID>
+            <ID>35001747</ID>
             <Severity>16</Severity>
             <Dynamic>7</Dynamic>
-            <Dynamic>\dac/r_Data_To_Send</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>8</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>9</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>10</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>11</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>12</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>13</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>14</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>15</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>16</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>17</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>18</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>19</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>20</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>21</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>22</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>23</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>24</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>25</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>26</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>27</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>28</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>29</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>30</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>31</Dynamic>
+            <Dynamic>\genadder[0].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>0</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>1</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>2</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>3</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>4</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>5</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>6</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>7</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>8</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>9</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>10</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>11</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>12</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>13</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>14</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>15</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>16</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>17</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>18</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>19</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>20</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>21</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>22</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>23</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>24</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>25</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>26</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>27</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>28</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>29</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>30</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>31</Dynamic>
+            <Dynamic>\genadder[1].adder/o_Accumulator</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>0</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>1</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>2</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>3</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>4</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>5</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>6</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>7</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>8</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>9</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>10</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>11</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>12</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>13</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>14</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>15</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>16</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>17</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>18</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>19</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>20</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>21</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>22</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>23</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>24</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>25</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>26</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>27</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>28</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>29</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>30</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>31</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>32</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>33</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>34</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>35</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>36</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>37</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>38</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>39</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>40</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>41</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>42</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>43</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>44</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>45</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>46</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>47</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>48</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>49</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>50</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>51</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>52</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>53</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>54</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>55</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>56</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>57</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>58</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>59</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>60</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>61</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>62</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35001747</ID>
+            <Severity>16</Severity>
+            <Dynamic>63</Dynamic>
+            <Dynamic>r_Adder_Total[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35935013</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_position.v(126): </Dynamic>
+            <Dynamic>\sample_position/SM_Sample_Position_FSM_i6</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_position.v</Navigation>
+            <Navigation>126</Navigation>
         </Message>
         <Message>
             <ID>35935013</ID>
             <Severity>16</Severity>
             <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(83): </Dynamic>
-            <Dynamic>\dac/SM_DAC_Out_i4</Dynamic>
+            <Dynamic>\sample_output/dac/SM_DAC_Out_i4</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v</Navigation>
             <Navigation>83</Navigation>
         </Message>
         <Message>
+            <ID>35935013</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(84): </Dynamic>
+            <Dynamic>\sample_output/r_Sample_L__i17</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
+            <Navigation>84</Navigation>
+        </Message>
+        <Message>
             <ID>35001779</ID>
             <Severity>16</Severity>
-            <Dynamic>\dac/SM_DAC_Out_i0</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+            <Dynamic>\sample_output/dac/SM_DAC_Out_i0</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>dac/r_Data_To_Send[0]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[0]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>dac/r_Data_To_Send[1]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[1]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>dac/r_Data_To_Send[2]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[4]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>dac/r_Data_To_Send[3]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[5]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>dac/r_Data_To_Send[4]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[9]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>dac/r_Data_To_Send[5]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[10]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>dac/r_Data_To_Send[6]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[11]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>dac/r_Data_To_Send[7]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[12]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>DAC_Data[23]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[13]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>DAC_Data[22]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[14]</Dynamic>
         </Message>
         <Message>
             <ID>35811149</ID>

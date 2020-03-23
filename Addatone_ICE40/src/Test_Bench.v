@@ -2,31 +2,34 @@
 
 module Test_Bench;
 
-	//SB_HFOSC OSCInst0 (
-		//.CLKHFEN(ENCLKHF),
-		//.CLKHFPU(CLKHF_POWERUP),
-		//.CLKHF(CLKHF)
-	//);
-
-	//defparam OSCInst0.CLKHF_DIV = 2'b00;
-
-	wire led, test;
-	reg clock = 1'b0;
+	wire debug, test;
+	wire clock = 1'b0;
 	reg reset_n = 1'b0;
 	wire o_DAC_MOSI, o_DAC_SCK, o_DAC_CS;
+	reg i_ADC_Data, i_ADC_Clock, i_ADC_CS;
+
+
+//	HSOSC	#(.CLKHF_DIV (2'b00)) int_osc (
+//		.CLKHFPU (1'b1),  // I
+//		.CLKHFEN (1'b1),  // I
+//		.CLKHF   (clock)   // O
+//	);
 
 	top dut (
-		//.i_Clock(clock),
+		.i_Clock(clock),
 		.reset_n(reset_n),
-		.led(led),
+		.debug(debug),
 		.test(test),
+		.i_ADC_Data(i_ADC_Data),
+		.i_ADC_Clock(i_ADC_Clock),
+		.i_ADC_CS(i_ADC_CS),
 		.o_DAC_MOSI(o_DAC_MOSI),
 		.o_DAC_SCK(o_DAC_SCK),
 		.o_DAC_CS(o_DAC_CS)
 	);
 
 	always
-		#41.6666666 clock = !clock;			// 12MHz clock
+		#10.41 clock = !clock;			// 48MHz clock
 
 	initial begin
 		reset_n = 1'b0;

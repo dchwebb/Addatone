@@ -4,9 +4,9 @@ module DAC_SPI_Out
 		input wire i_Reset,
 		input wire [23:0] i_Data,
 		input wire i_Send,
-		output reg o_SPI_CS,
+		output reg o_SPI_CS = 1'b1,
 		output wire o_SPI_Clock,
-		output reg o_SPI_Data,
+		output reg o_SPI_Data = 1'b0,
 		output reg o_Ready
 	);
 	
@@ -14,11 +14,11 @@ module DAC_SPI_Out
 	reg [4:0] Current_Bit = 1'b0;
 	reg Clock_Counter = 1'b0;
 
-	reg [4:0] SM_DAC_Out = 4'd0;
 	localparam sm_idle = 4'b0001;
 	localparam sm_sending = 4'b0010;
 	localparam sm_sent = 4'b0100;
 	localparam sm_cs_pulse = 4'b1000;
+	reg [4:0] SM_DAC_Out = sm_idle;
 
 	assign o_SPI_Clock = SM_DAC_Out == sm_idle || SM_DAC_Out == sm_cs_pulse || Current_Bit == 1'b0 ? 1'b1 : ~Clock_Counter;
 

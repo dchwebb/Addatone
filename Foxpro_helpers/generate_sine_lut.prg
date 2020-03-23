@@ -7,6 +7,6 @@ FOR m.x = 0 TO m.samples - 1
 	m.sinlut_dec = m.sinlut_dec + TRANSFORM(ROUND(m.val, 0)) + CHR(13) + CHR(10)
 ENDFOR
 
-_cliptext = m.sinlut
+_cliptext = m.sinlut_dec
 
-= STRTOFILE(m.sinlut, "D:\Eurorack\Addatone\Addatone_MachX03\sine_lut\sin_lut" + TRANSFORM(m.samples) + ".mem")
+*= STRTOFILE(m.sinlut, "D:\Eurorack\Addatone\Addatone_MachX03\sine_lut\sin_lut" + TRANSFORM(m.samples) + ".mem")

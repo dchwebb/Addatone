@@ -36,6 +36,7 @@
 -resolve_mixed_drivers 0
 -sdc "Addatone_ICE40_impl_1_cpe.ldc"
 -path "D:/Eurorack/Addatone/Addatone_ICE40/src/PLL_48MHz"
+-path "D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM"
 -path "D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT"
 -path "C:/lscc/radiant/2.0/ispfpga/ice40tp/data" "D:/Eurorack/Addatone/Addatone_ICE40/impl_1" "D:/Eurorack/Addatone/Addatone_ICE40"
 -ver "C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v"
@@ -43,8 +44,13 @@
 -ver "D:/Eurorack/Addatone/Addatone_ICE40/src/top.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/DAC_SPI_Out.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/ADC_SPI_In.v"
+"D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Position.v"
+"D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v"
+"D:/Eurorack/Addatone/Addatone_ICE40/src/Scale_Mult.v"
+"D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Output.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/PLL_48MHz/rtl/PLL_48MHz.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v"
+"D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v"
 
 
 -path "D:/Eurorack/Addatone/Addatone_ICE40"

@@ -6,21 +6,21 @@ Performance Grade:      High-Performance_1.2V
 PACKAGE:          SG48
 Package Status:                     Preliminary    Version 1.5
 
-Mon Mar 23 14:51:27 2020
+Mon Mar 23 16:32:09 2020
 
 Pinout by Port Name:
 +-------------+----------+--------------+-------+--------------------+
 | Port Name   | Pin/Bank | Buffer Type  | Site  | Properties         |
 +-------------+----------+--------------+-------+--------------------+
+| debug       | 2/2      | LVCMOS33_OUT | PL9A  | DRIVE:8mA PULL:NA  |
 | i_ADC_CS    | 10/1     | LVCMOS33_IN  | PL17A | PULL:NA            |
 | i_ADC_Clock | 9/1      | LVCMOS33_IN  | PL16A | PULL:NA            |
 | i_ADC_Data  | 6/1      | LVCMOS33_IN  | PL14B | PULL:NA            |
 | i_Clock     | 35/0     | LVCMOS33_IN  | PR13B | PULL:100K          |
-| led         | 2/2      | LVCMOS33_OUT | PL9A  | DRIVE:8mA PULL:NA  |
 | o_DAC_CS    | 48/2     | LVCMOS33_OUT | PL8A  | DRIVE:8mA PULL:NA  |
 | o_DAC_MOSI  | 3/2      | LVCMOS33_OUT | PL10B | DRIVE:8mA PULL:NA  |
 | o_DAC_SCK   | 4/2      | LVCMOS33_OUT | PL10A | DRIVE:8mA PULL:NA  |
-| reset_n     | 27/0     | LVCMOS33_IN  | PR19B | PULL:100K          |
+| reset_n     | 32/0     | LVCMOS33_IN  | PR17A | PULL:100K          |
 | test        | 46/2     | LVCMOS33_OUT | PL6A  | DRIVE:8mA PULL:NA  |
 +-------------+----------+--------------+-------+--------------------+
 
@@ -37,7 +37,7 @@ Pinout by Pin Number:
 +----------+---------------------+------------+--------------+-------+------------------+
 | Pin/Bank | Pin Info            | Constraint | Buffer Type  | Site  | Dual Function    |
 +----------+---------------------+------------+--------------+-------+------------------+
-| 2/2      | led                 | LOCATED    | LVCMOS33_OUT | PL9A  |                  |
+| 2/2      | debug               | LOCATED    | LVCMOS33_OUT | PL9A  |                  |
 | 3/2      | o_DAC_MOSI          | LOCATED    | LVCMOS33_OUT | PL10B |                  |
 | 4/2      | o_DAC_SCK           | LOCATED    | LVCMOS33_OUT | PL10A |                  |
 | 6/1      | i_ADC_Data          | LOCATED    | LVCMOS33_IN  | PL14B |                  |
@@ -57,10 +57,10 @@ Pinout by Pin Number:
 | 23/0     |     unused, PULL:UP |            |              | PR20A |                  |
 | 25/0     |     unused, PULL:UP |            |              | PR20B |                  |
 | 26/0     |     unused, PULL:UP |            |              | PR19A |                  |
-| 27/0     | reset_n             |            | LVCMOS33_IN  | PR19B |                  |
+| 27/0     |     unused, PULL:UP |            |              | PR19B |                  |
 | 28/0     |     unused, PULL:UP |            |              | PR18A |                  |
 | 31/0     |     unused, PULL:UP |            |              | PR17B |                  |
-| 32/0     |     unused, PULL:UP |            |              | PR17A |                  |
+| 32/0     | reset_n             |            | LVCMOS33_IN  | PR17A |                  |
 | 34/0     |     unused, PULL:UP |            |              | PR14B |                  |
 | 35/0     | i_Clock             |            | LVCMOS33_IN  | PR13B | GPLL_IN/PCLKT0_1 |
 | 36/0     |     unused, PULL:UP |            |              | PR10B |                  |
@@ -98,15 +98,15 @@ Pinout by Pin Number:
 
 Locate Constraints for each Pin: 
 
+ldc_set_location -site {2} [ get_ports {debug} ]
 ldc_set_location -site {10} [ get_ports {i_ADC_CS} ]
 ldc_set_location -site {9} [ get_ports {i_ADC_Clock} ]
 ldc_set_location -site {6} [ get_ports {i_ADC_Data} ]
 ldc_set_location -site {35} [ get_ports {i_Clock} ]
-ldc_set_location -site {2} [ get_ports {led} ]
 ldc_set_location -site {48} [ get_ports {o_DAC_CS} ]
 ldc_set_location -site {3} [ get_ports {o_DAC_MOSI} ]
 ldc_set_location -site {4} [ get_ports {o_DAC_SCK} ]
-ldc_set_location -site {27} [ get_ports {reset_n} ]
+ldc_set_location -site {32} [ get_ports {reset_n} ]
 ldc_set_location -site {46} [ get_ports {test} ]
 
 
@@ -114,5 +114,5 @@ ldc_set_location -site {46} [ get_ports {test} ]
 
 
 Copyright 2015 Lattice Semiconductor Corporation, All Rights Reserved
-Mon Mar 23 14:51:27 2020
+Mon Mar 23 16:32:09 2020
 

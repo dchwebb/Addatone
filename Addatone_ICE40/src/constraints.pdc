@@ -1,4 +1,4 @@
-ldc_set_location -site {2} [get_ports led]
+ldc_set_location -site {2} [get_ports debug]
 ldc_set_location -site {4} [get_ports o_DAC_SCK]
 ldc_set_location -site {46} [get_ports test]
 ldc_set_location -site {3} [get_ports o_DAC_MOSI]

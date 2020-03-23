@@ -10,7 +10,7 @@ set para(prj_dir) "D:/Eurorack/Addatone/Addatone_ICE40"
 # synthesize VMs
 # propgate constraints
 file delete -force -- Addatone_ICE40_impl_1_cpe.ldc
-run_engine_newmsg cpe -f "Addatone_ICE40_impl_1.cprj" "PLL_48MHz.cprj" "Sine_LUT.cprj" -a "iCE40UP" -o Addatone_ICE40_impl_1_cpe.ldc
+run_engine_newmsg cpe -f "Addatone_ICE40_impl_1.cprj" "PLL_48MHz.cprj" "Sine_LUT.cprj" "SamplePos_RAM.cprj" -a "iCE40UP" -o Addatone_ICE40_impl_1_cpe.ldc
 # synthesize top design
 file delete -force -- Addatone_ICE40_impl_1.vm Addatone_ICE40_impl_1.ldc
 run_engine_newmsg synthesis -f "Addatone_ICE40_impl_1_lattice.synproj"

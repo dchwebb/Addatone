@@ -12,6 +12,18 @@
         <Source name="src/ADC_SPI_In.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
+        <Source name="src/Sample_Position.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/Adder.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/Scale_Mult.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/Sample_Output.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
         <Source name="src/Test_Bench.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
             <Options/>
         </Source>
@@ -21,13 +33,16 @@
         <Source name="src/Sine_LUT/Sine_LUT.ipx" type="IPX_Module" type_short="IPX">
             <Options/>
         </Source>
+        <Source name="src/SamplePos_RAM/SamplePos_RAM.ipx" type="IPX_Module" type_short="IPX">
+            <Options/>
+        </Source>
+        <Source name="Addaton_Sim/Addaton_Sim.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
         <Source name="src/constraints.pdc" type="Physical Constraints File" type_short="PDC">
             <Options/>
         </Source>
         <Source name="src/SRAM_Prog.xcf" type="Programming Project File" type_short="Programming">
-            <Options/>
-        </Source>
-        <Source name="src/timing.ldc" type="LSE Design Constraints File" type_short="LDC">
             <Options/>
         </Source>
     </Implementation>
