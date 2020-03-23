@@ -1,4 +1,4 @@
-363170927333087
+363452569965350
 Battery_Holders
 Bulgin_BX0036_1xC
 
@@ -19740,6 +19740,13 @@ mounting hole 7mm
 0
 0
 Custom_Footprints
+CP_Elec_4x5.8_Big_pad
+SMT capacitor, aluminium electrolytic, 4x5.8
+
+0
+2
+2
+Custom_Footprints
 Cliff_3.5mm_Stereo_Jack
 
 
@@ -19837,13 +19844,6 @@ mounting hole 6mm no annular
 0
 0
 0
-Custom_Footprints
-QFN-72-1EP_10x10mm_Pitch0.5mm
-64-Lead Plastic Quad Flat, No Lead Package (MR) - 9x9x0.9 mm Body [QFN]; (see Microchip Packaging Specification 00000049BS.pdf)
-QFN 0.5
-0
-88
-73
 Custom_Footprints
 SPDTSubMiniature
 SPDT Sub Miniature Switch

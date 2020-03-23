@@ -1,0 +1,273 @@
+    Lattice Mapping Report File for Design Module 'Addatone_ICE40_impl_1'
+
+Target Vendor:        LATTICE
+Target Device:        iCE40UP5KSG48
+Target Performance:   High-Performance_1.2V
+
+Mapper:    version Radiant Software (64-bit) 2.0.1.281.2
+Mapped on: Mon Mar 23 14:51:20 2020
+
+Design Information
+------------------
+
+Command line:   map Addatone_ICE40_impl_1_syn.udb
+     D:/Eurorack/Addatone/Addatone_ICE40/src/constraints.pdc -o
+     Addatone_ICE40_impl_1_map.udb -mp Addatone_ICE40_impl_1.mrp -hierrpt -gui
+     -msgset D:/Eurorack/Addatone/Addatone_ICE40/promote.xml
+
+Design Summary
+--------------
+
+   Number of slice registers:  85 out of  5280 (2%)
+   Number of I/O registers:      0 out of   117 (0%)
+   Number of LUT4s:           157 out of  5280 (3%)
+      Number of logic LUT4s:             112
+      Number of inserted feedthru LUT4s:  22
+      Number of replicated LUT4s:          1
+      Number of ripple logic:             11 (22 LUT4s)
+   Number of IO sites used:   10 out of 39 (26%)
+      Number of IO sites used for general PIOs: 10
+      Number of IO sites used for I3Cs: 0 out of 2 (0%)
+      Number of IO sites used for PIOs+I3Cs: 10 out of 36 (28%)
+      (note: If I3C is not used, its site can be used as general PIO)
+      Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
+   Number of DSPs:             0 out of 8 (0%)
+   Number of I2Cs:             0 out of 2 (0%)
+   Number of High Speed OSCs:  0 out of 1 (0%)
+   Number of Low Speed OSCs:   0 out of 1 (0%)
+   Number of RGB PWM:          0 out of 1 (0%)
+   Number of RGB Drivers:      0 out of 1 (0%)
+   Number of SCL FILTERs:      0 out of 2 (0%)
+   Number of SRAMs:            0 out of 4 (0%)
+   Number of WARMBOOTs:        0 out of 1 (0%)
+   Number of SPIs:             0 out of 2 (0%)
+   Number of EBRs:             8 out of 30 (26%)
+   Number of PLLs:             1 out of 1 (100%)
+   Number of Clocks:  4
+      Net Clock_48MHz: 81 loads, 81 rising, 0 falling (Driver: Pin
+     pll_48.lscc_pll_inst.u_PLL_B/OUTCORE)
+      Net ADC_Data_Received: 1 loads, 1 rising, 0 falling (Driver: Pin
+     adc.o_Data_Received/Q)
+      Net i_Clock_c: 1 loads, 1 rising, 0 falling (Driver: Port i_Clock)
+      Net adc.Clock_Stable: 10 loads, 10 rising, 0 falling (Driver: Pin
+     adc.Clock_Stable_c/Q)
+   Number of Clock Enables:  16
+      Net VCC_net: 24 loads, 0 SLICEs
+      Net n872: 6 loads, 6 SLICEs
+      Pin reset_n: 3 loads, 3 SLICEs (Net: reset_n_c)
+      Net dac.n870: 16 loads, 16 SLICEs
+      Net dac.n2003: 1 loads, 1 SLICEs
+      Net dac.n1276: 5 loads, 5 SLICEs
+      Net dac.n12: 1 loads, 1 SLICEs
+      Net n1834: 1 loads, 1 SLICEs
+
+                                    Page 1
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net n1385: 3 loads, 3 SLICEs
+      Net adc.n1065: 1 loads, 1 SLICEs
+      Net adc.n1073: 1 loads, 1 SLICEs
+      Net adc.n2035: 1 loads, 1 SLICEs
+      Net adc.n1067: 1 loads, 1 SLICEs
+      Net adc.n1260: 4 loads, 4 SLICEs
+      Net adc.n1925: 1 loads, 1 SLICEs
+      Net adc.n883: 4 loads, 4 SLICEs
+   Number of LSRs:  7
+      Net reset_n_N_91: 18 loads, 18 SLICEs
+      Net dac.n1327: 5 loads, 5 SLICEs
+      Net CS_Stable: 1 loads, 1 SLICEs
+      Net adc.n1316: 3 loads, 3 SLICEs
+      Net adc.n1331: 4 loads, 4 SLICEs
+      Net adc.n1333: 3 loads, 3 SLICEs
+      Net adc.n1485: 1 loads, 1 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net reset_n_c: 37 loads
+      Net VCC_net: 26 loads
+      Net DAC_Send_N_93: 18 loads
+      Net reset_n_N_91: 18 loads
+      Net SM_DAC_Out[0]: 18 loads
+      Net outcount[0]: 17 loads
+      Net outcount[10]: 17 loads
+      Net outcount[7]: 17 loads
+      Net outcount[8]: 17 loads
+      Net outcount[9]: 17 loads
+
+
+
+
+   Number of warnings:  1
+   Number of errors:    0
+
+Design Errors/Warnings
+----------------------
+
+WARNING - map: The clock port [i_ADC_CS] is assigned to a non clock dedicated
+     pin [10], which might affect the clock performance. Use dedicated clock
+     resources for the port.
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+-------+-------+-----------+
+| IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
+|                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
++---------------------+-----------+-----------+-------+-------+-----------+
+| reset_n             | INPUT     | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| i_ADC_CS            | INPUT     | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| o_DAC_SCK           | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| o_DAC_MOSI          | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| test                | OUTPUT    | LVCMOS33  |       |       |           |
+
+                                    Page 2
+
+
+
+
+
+IO (PIO) Attributes (cont)
+--------------------------
++---------------------+-----------+-----------+-------+-------+-----------+
+| led                 | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| i_ADC_Clock         | INPUT     | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| i_ADC_Data          | INPUT     | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| i_Clock             | INPUT     | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| o_DAC_CS            | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+PLL/DLL Summary
+---------------
+
+PLL 1:                                 Pin/Node Value
+  PLL Instance Name:                            pll_48.lscc_pll_inst.u_PLL_B
+  PLL Type:                                     PLL_B
+  Input Reference Clock:               PIN      i_Clock_c
+  Output Clock(CoreA):                 NODE     Clock_48MHz
+  Output Clock(GlobalA):                        NONE
+  Output Clock(CoreB):                          NONE
+  Output Clock(GlobalB):                        NONE
+  Feedback input:                      NODE     pll_48.lscc_pll_inst.feedback_w
+  Internal Feedback output:            NODE     pll_48.lscc_pll_inst.feedback_w
+  BYPASS signal:                                GND
+  LATCH signal:                                 GND
+  Lock Signal:                                  NONE
+  Input Clock Frequency (MHz):                  NA
+  Reference Divider:                            0
+  Feedback Divider:                             0
+  VCO Divider:                                  1
+  ENABLE_ICEGATE_PORTA:                         0
+  ENABLE_ICEGATE_PORTB:                         0
+  PLLOUT_SELECT_PORTA:                          SHIFTREG_0deg
+  PLLOUT_SELECT_PORTB:                          SHIFTREG_0deg
+  SHIFTREG_DIV_MODE:                            0
+  DELAY_ADJUSTMENT_MODE_RELATIVE:               FIXED
+  FDA_RELATIVE:                                 0
+  FEEDBACK_PATH:                                SIMPLE
+  DELAY_ADJUSTMENT_MODE_FEEDBACK:               FIXED
+  FDA_FEEDBACK:                                 0
+  FILTER_RANGE:                                 0
+  EXTERNAL_DIVIDE_FACTOR:                       NONE
+  TEST Mode:                                    0
+
+ASIC Components
+---------------
+
+Instance Name: pll_48.lscc_pll_inst.u_PLL_B
+         Type: PLL
+Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[7].mem_file.mem0.
+     iCE40UP.sp4k
+         Type: EBR
+Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[6].mem_file.mem0.
+     iCE40UP.sp4k
+         Type: EBR
+
+                                    Page 3
+
+
+
+
+
+ASIC Components (cont)
+----------------------
+Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[5].mem_file.mem0.
+     iCE40UP.sp4k
+         Type: EBR
+Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[4].mem_file.mem0.
+     iCE40UP.sp4k
+         Type: EBR
+Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[3].mem_file.mem0.
+     iCE40UP.sp4k
+         Type: EBR
+Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[2].mem_file.mem0.
+     iCE40UP.sp4k
+         Type: EBR
+Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[1].mem_file.mem0.
+     iCE40UP.sp4k
+         Type: EBR
+Instance Name: __.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0.
+     iCE40UP.sp4k
+         Type: EBR
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 0 secs
+   Total REAL Time: 0 secs
+   Peak Memory Usage: 61 MB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Page 4
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor
+     Corporation,  All rights reserved.

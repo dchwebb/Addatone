@@ -1,0 +1,6 @@
+-ver "C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v"
+-lib pmi -vhd "C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.vhd"
+-ver "D:/Eurorack/Addatone/Addatone_ICE40/src/PLL_48MHz/rtl/PLL_48MHz.v"
+-path "D:/Eurorack/Addatone/Addatone_ICE40/src/PLL_48MHz"
+-top PLL_48MHz
+-a "iCE40UP"

@@ -1,32 +1,18 @@
-<Project ModBy="Analyzer" Name="D:/Eurorack/Addatone/Addatone_MachX03/dw_reveal.rvs" Date="2020-03-10">
- <Core Name="top_LA0">
-  <Setting>
-   <Capture SamplesPerTrig="4096" NumTrigsCap="1"/>
-   <Event EventCnt="0" CntEnableRun="0"/>
-   <TrigSetting PreTrgSamples="" AND_ALL="0" PostTrgSamples="" TURadix="0"/>
-  </Setting>
-  <Dataset Name="Base">
-   <Trace>
-    <Bus Name="sample_output/dac/dac_state" Radix="0">
-     <Sig Name="sample_output/dac/dac_state:0"/>
-     <Sig Name="sample_output/dac/dac_state:1"/>
-    </Bus>
-    <Bus Name="sample_output/dac/clock_counter" Radix="0">
-     <Sig Name="sample_output/dac/clock_counter:0"/>
-     <Sig Name="sample_output/dac/clock_counter:1"/>
-     <Sig Name="sample_output/dac/clock_counter:2"/>
-     <Sig Name="sample_output/dac/clock_counter:3"/>
-     <Sig Name="sample_output/dac/clock_counter:4"/>
-     <Sig Name="sample_output/dac/clock_counter:5"/>
-     <Sig Name="sample_output/dac/clock_counter:6"/>
-     <Sig Name="sample_output/dac/clock_counter:7"/>
-    </Bus>
-    <Sig Name="sample_output/dac/o_Ready"/>
-   </Trace>
-   <Trigger>
-    <TU Operator="0" Name="TU1" ID="1" Value="1" Radix="0"/>
-    <TE Enable="1" Expression="TU1" Name="TE1" ID="1"/>
-   </Trigger>
-  </Dataset>
- </Core>
+<Project ModBy="Inserter" Name="D:/Eurorack/Addatone/Addatone_MachX03/dw_reveal.rvl" Date="2020-03-20">
+    <Core Name="top_LA0">
+        <Setting>
+            <Capture SamplesPerTrig="4096" NumTrigsCap="1"/>
+            <Event EventCnt="0" CntEnableRun="0"/>
+            <TrigSetting PreTrgSamples="" AND_ALL="0" PostTrgSamples="" TURadix="0"/>
+        </Setting>
+        <Dataset Name="Base">
+            <Trace>
+                <Sig Name="sample_output/dac/o_Ready"/>
+            </Trace>
+            <Trigger>
+                <TU Operator="0" Name="TU1" ID="1" Value="1" Radix="0"/>
+                <TE Enable="1" Expression="TU1" Name="TE1" ID="1"/>
+            </Trigger>
+        </Dataset>
+    </Core>
 </Project>

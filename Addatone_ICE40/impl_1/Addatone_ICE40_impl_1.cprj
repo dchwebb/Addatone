@@ -1,0 +1,7 @@
+-ver "C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v"
+-lib pmi -vhd "C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.vhd"
+-ver "D:/Eurorack/Addatone/Addatone_ICE40/src/top.v" "D:/Eurorack/Addatone/Addatone_ICE40/src/DAC_SPI_Out.v" "D:/Eurorack/Addatone/Addatone_ICE40/src/ADC_SPI_In.v"
+-sdc "D:/Eurorack/Addatone/Addatone_ICE40/src/timing.ldc"
+-top top
+-isTop
+-a "iCE40UP"
