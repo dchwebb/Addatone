@@ -7,58 +7,56 @@ module Adder
 	#(parameter DIVISOR_BITS = 7)
 	(
 		input wire i_Clock, i_Reset, i_Start, i_Clear_Accumulator,
-		input wire [DIVISOR_BITS - 1:0] i_Multiple,
+		input wire signed [DIVISOR_BITS - 1:0] i_Multiple,
 		input wire signed [15:0] i_Sample,
 		output reg signed [31:0] o_Accumulator,
-		output reg o_Done
+		output reg o_Done,
+		output reg debug
 	);
 
-	// working registers
-	reg signed [31:0] r_Sample_In;
-	reg [DIVISOR_BITS - 1:0] r_Multiple;
+	//localparam WTSIZE = 15 + DIVISOR_BITS;
+	//reg signed [WTSIZE:0] Working_Total;			// Working total must be one larger than size of sample + size of multiple
 	reg signed [31:0] Working_Total;
-	reg [4:0] Counter;
+
+	localparam sm_wait = 2'b00;
+	localparam sm_mult = 2'b01;
+	reg [1:0] SM_Adder = sm_wait;
 
 	initial begin
-		Counter <= 1'b0;
 		o_Done <= 1'b1;
 		o_Accumulator <= 1'b0;
 	end
-	
+
 	always @(posedge i_Clock or posedge i_Clear_Accumulator) begin //
-		if (i_Clear_Accumulator) begin		// i_Reset || 
-			Counter <= 1'b0;
+		if (i_Reset || i_Clear_Accumulator) begin		// 
+			SM_Adder = sm_wait;
 			o_Done <= 1'b1;
 			o_Accumulator <= 1'b0;
 		end
 		else begin
-			if (i_Start && Counter == 1'b0) begin
-				Counter <= 1'b1;
-				o_Done <= 1'b0;
-				Working_Total <= i_Multiple[0] ? i_Sample : 0;
-
-				// store input values to registers to preserve values
-				r_Multiple <= (i_Multiple >> 1);
-				r_Sample_In <= i_Sample;
-			end
-			else if (Counter > 0) begin
-				if (r_Multiple == 0) begin
-					// Multiplication complete - divide by bit count and add to o_Accumulator, retaining negative bits
-					o_Accumulator <= o_Accumulator + {{DIVISOR_BITS{Working_Total[31]}}, Working_Total[31:DIVISOR_BITS]};
-					o_Done <= 1'b1;
-					Counter <= 0;
-				end
-				else begin
-					// if bit is set in multiplier bit shift the input and add to the Working_Total
-					Counter <= Counter + 1'b1;
-					r_Multiple <= r_Multiple >> 1;
-					if (r_Multiple[0] == 1'b1) begin
-						Working_Total <= Working_Total + (r_Sample_In << Counter);
+			case (SM_Adder)
+				sm_wait:
+					begin
+						
+						if (i_Start) begin
+							o_Done <= 1'b1;
+							Working_Total <= i_Multiple * i_Sample;
+							SM_Adder = sm_mult;
+						end
 					end
-				end
-			end
-		end
 
+				sm_mult:
+					begin
+						debug = ~debug;
+						// Divide by bit count and add to o_Accumulator, retaining negative bits
+						//o_Accumulator <= o_Accumulator + {{DIVISOR_BITS + (31 - WTSIZE){Working_Total[WTSIZE]}}, Working_Total[WTSIZE:DIVISOR_BITS]};
+						o_Accumulator <= o_Accumulator + {{DIVISOR_BITS{Working_Total[31]}}, Working_Total[31:DIVISOR_BITS]};
+						o_Done <= 1'b1;
+						SM_Adder = sm_wait;
+					end
+
+			endcase
+		end
 	end
 
 endmodule

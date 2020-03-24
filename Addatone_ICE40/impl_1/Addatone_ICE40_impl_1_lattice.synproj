@@ -17,7 +17,7 @@
 -remove_duplicate_regs 1
 
 -max_fanout 1000
--fsm_encoding_style Auto
+-fsm_encoding_style Binary
 -twr_paths 3
 -fix_gated_clocks 1
 -loop_limit 1950

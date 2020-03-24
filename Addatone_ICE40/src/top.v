@@ -2,7 +2,7 @@ module top
 	(
 		input wire i_Clock,
 		input wire reset_n,
-		output reg debug,
+		output wire debug,
 		output reg test,
 		input wire i_ADC_Data,
 		input wire i_ADC_Clock,
@@ -77,6 +77,7 @@ module top
 	wire [DIV_BIT - 1:0] Adder_Mult;
 	wire signed [31:0] Adder_Total[1:0];
 	reg signed [31:0] r_Adder_Total[1:0];
+	wire [1:0] AdderDebug;
 
 	// Use generate block to create two adders (odd and even harmonics)
 	genvar a;
@@ -89,9 +90,11 @@ module top
 			.i_Multiple(Adder_Mult),
 			.i_Sample(Sample_Value),
 			.o_Accumulator(Adder_Total[a]),
-			.o_Done(Adder_Ready[a])
+			.o_Done(Adder_Ready[a]),
+			.debug(AdderDebug[a])
 		);
 	end
+	assign debug = (Sample_Timer == 2);
 
 	// instantiate multiple scaler - this takes incoming ADC reading and uses it to reduce the level of harmonics scaled by the Adder
 	reg Start_Mult_Scaler, Reset_Mult_Scaler;
@@ -146,6 +149,7 @@ module top
 		Freq_Scale <= ADC_Data[3];										// Frequency scaling offset - higher frequencies will be moved further from multiple of fundamental
 		Comb_Interval <= ADC_Data[4][7:0];							// Comb filter interval - ie which harmonics will muted
 		test <= ~test;
+
 	end
 
 	always @(posedge Main_Clock) begin
@@ -162,6 +166,7 @@ module top
 			case (SM_Top)
 				sm_init:
 					begin
+						
 						DAC_Send <= 1'b0;
 						Next_Sample <= 1'b0;
 						Adder_Clear <= 1'b0;
@@ -187,9 +192,12 @@ module top
 					end
 
 				sm_adder_start:
+					
 					begin
 						// Wait until the sample value is ready and Adder is free and then start the next calculation
-						if (Sample_Ready && Adder_Ready[Harmonic[0]]) begin
+						//if (Sample_Ready && Adder_Ready[Harmonic[0]]) begin
+						if (Sample_Ready) begin
+							
 							Adder_Start[Harmonic[0]] <= 1'b1;			// Tell the even/odd adder the next sample is ready
 							SM_Top <= sm_adder_wait;
 						end
@@ -213,11 +221,11 @@ module top
 					begin
 						Next_Sample <= 1'b0;
 						// all harmonics calculated - read accumulated output levels into registers for sending to DAC
-						if (Adder_Ready[0] && Adder_Ready[1]) begin
+						//if (Adder_Ready[0] && Adder_Ready[1]) begin
 							r_Adder_Total[0] <= Adder_Total[0];
 							r_Adder_Total[1] <= Adder_Total[1];
 							SM_Top <= sm_scale_sample;
-						end
+						//end
 					end
 
 				sm_scale_sample:

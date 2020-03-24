@@ -3,7 +3,7 @@
 module Test_Bench;
 
 	wire debug, test;
-	wire clock = 1'b0;
+	reg clock = 1'b0;
 	reg reset_n = 1'b0;
 	wire o_DAC_MOSI, o_DAC_SCK, o_DAC_CS;
 	reg i_ADC_Data, i_ADC_Clock, i_ADC_CS;
@@ -29,7 +29,7 @@ module Test_Bench;
 	);
 
 	always
-		#10.41 clock = !clock;			// 48MHz clock
+		#41.6666666 clock = !clock;			// 48MHz clock
 
 	initial begin
 		reset_n = 1'b0;

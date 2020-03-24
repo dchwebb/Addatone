@@ -39,6 +39,9 @@
         <Source name="Addaton_Sim/Addaton_Sim.spf" type="Simulation Project File" type_short="SPF">
             <Options/>
         </Source>
+        <Source name="Addatone_Sim/Addatone_Sim.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
         <Source name="src/constraints.pdc" type="Physical Constraints File" type_short="PDC">
             <Options/>
         </Source>
