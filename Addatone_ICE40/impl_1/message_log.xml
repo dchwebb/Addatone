@@ -1421,15 +1421,35 @@
             <ID>35901018</ID>
             <Severity>1</Severity>
             <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v(6): </Dynamic>
-            <Dynamic>Adder(DIVISOR_BITS=9)</Dynamic>
+            <Dynamic>Adder</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v</Navigation>
             <Navigation>6</Navigation>
+        </Message>
+        <Message>
+            <ID>35901330</ID>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(90): </Dynamic>
+            <Dynamic>9</Dynamic>
+            <Dynamic>16</Dynamic>
+            <Dynamic>i_Multiple</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v</Navigation>
+            <Navigation>90</Navigation>
+        </Message>
+        <Message>
+            <ID>35901330</ID>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(90): </Dynamic>
+            <Dynamic>9</Dynamic>
+            <Dynamic>16</Dynamic>
+            <Dynamic>i_Multiple</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v</Navigation>
+            <Navigation>90</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
             <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Scale_Mult.v(4): </Dynamic>
-            <Dynamic>Scale_Mult(DIV_BIT=9)</Dynamic>
+            <Dynamic>Scale_Mult</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Scale_Mult.v</Navigation>
             <Navigation>4</Navigation>
         </Message>
@@ -2063,15 +2083,35 @@
             <ID>35901018</ID>
             <Severity>1</Severity>
             <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(6): </Dynamic>
-            <Dynamic>Adder(DIVISOR_BITS=9)</Dynamic>
+            <Dynamic>Adder</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/adder.v</Navigation>
             <Navigation>6</Navigation>
+        </Message>
+        <Message>
+            <ID>35901330</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(90): </Dynamic>
+            <Dynamic>9</Dynamic>
+            <Dynamic>16</Dynamic>
+            <Dynamic>i_Multiple</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/top.v</Navigation>
+            <Navigation>90</Navigation>
+        </Message>
+        <Message>
+            <ID>35901330</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(90): </Dynamic>
+            <Dynamic>9</Dynamic>
+            <Dynamic>16</Dynamic>
+            <Dynamic>i_Multiple</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/top.v</Navigation>
+            <Navigation>90</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
             <Dynamic>d:/eurorack/addatone/addatone_ice40/src/scale_mult.v(4): </Dynamic>
-            <Dynamic>Scale_Mult(DIV_BIT=9)</Dynamic>
+            <Dynamic>Scale_Mult</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/scale_mult.v</Navigation>
             <Navigation>4</Navigation>
         </Message>
@@ -2116,6 +2156,11 @@
             <Navigation>1608</Navigation>
         </Message>
         <Message>
+            <ID>35002028</ID>
+            <Severity>16</Severity>
+            <Dynamic>debug</Dynamic>
+        </Message>
+        <Message>
             <ID>35931002</ID>
             <Severity>16</Severity>
             <Dynamic>d:/eurorack/addatone/addatone_ice40/src/pll_48mhz/rtl/pll_48mhz.v(137): </Dynamic>
@@ -2130,12 +2175,6 @@
             <Dynamic>\pll_48/lscc_pll_inst/sdi_i</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/pll_48mhz/rtl/pll_48mhz.v</Navigation>
             <Navigation>138</Navigation>
-        </Message>
-        <Message>
-            <ID>35001774</ID>
-            <Severity>1</Severity>
-            <Dynamic>SM_Top</Dynamic>
-            <Dynamic>sequential</Dynamic>
         </Message>
         <Message>
             <ID>35001774</ID>
@@ -2160,18 +2199,18 @@
         <Message>
             <ID>35935013</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(59): </Dynamic>
-            <Dynamic>\genadder[1].adder/SM_Adder__i1</Dynamic>
-            <Navigation>d:/eurorack/addatone/addatone_ice40/src/adder.v</Navigation>
-            <Navigation>59</Navigation>
-        </Message>
-        <Message>
-            <ID>35935013</ID>
-            <Severity>16</Severity>
             <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(82): </Dynamic>
             <Dynamic>\sample_output/Output_Data__i18</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
             <Navigation>82</Navigation>
+        </Message>
+        <Message>
+            <ID>35935013</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(58): </Dynamic>
+            <Dynamic>\genadder[0].adder/SM_Adder__i1</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/adder.v</Navigation>
+            <Navigation>58</Navigation>
         </Message>
         <Message>
             <ID>35001779</ID>
@@ -2179,54 +2218,59 @@
             <Dynamic>\sample_output/dac/SM_DAC_Out_i0</Dynamic>
         </Message>
         <Message>
-            <ID>35811146</ID>
-            <Severity>1</Severity>
-            <Dynamic>adc/Receive_Byte[0]_2</Dynamic>
+            <ID>35001779</ID>
+            <Severity>16</Severity>
+            <Dynamic>\adc/CS_Stable</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>mult/SM_Scale_Mult[0]_2</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][31]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][31]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][30]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][30]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][29]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][29]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][28]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][28]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][27]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][27]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][26]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][26]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][25]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][25]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][24]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][24]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][23]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35811146</ID>
+            <Severity>1</Severity>
+            <Dynamic>genadder[1].adder/Adder_Total[1][22]</Dynamic>
         </Message>
         <Message>
             <ID>35811149</ID>

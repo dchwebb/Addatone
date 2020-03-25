@@ -21,17 +21,17 @@ module ADC_SPI_In
 	reg [3:0] Receive_Byte;
 	reg [0:15] r_Bytes_In[RECEIVEBYTES - 1:0];
 
-	reg SM_ADC_In;
 	localparam sm_waiting = 2'd0;
 	localparam sm_receiving = 2'd1;
+	reg SM_ADC_In = sm_waiting;
 
 	// Settings to clean noise on SPI line
-	reg Clock_State;
-	reg Clock_Stable;
-	reg CS_State;
-	reg CS_Stable;
-	reg Data_State;
-	reg [2:0] Count_Stable;
+	reg Clock_State = 1'b0;
+	reg Clock_Stable = 1'b0;
+	reg CS_State = 1'b0;
+	reg CS_Stable = 1'b0;
+	reg Data_State = 1'b0;
+	reg [2:0] Count_Stable = 1'b0;
 
 	// Output bytes are continously assigned but only valid when received flag is high
 	assign o_Data0 = r_Bytes_In[0];

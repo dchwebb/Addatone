@@ -2,7 +2,7 @@ module top
 	(
 		input wire i_Clock,
 		input wire reset_n,
-		output wire debug,
+		output reg debug,
 		output reg test,
 		input wire i_ADC_Data,
 		input wire i_ADC_Clock,
@@ -94,7 +94,7 @@ module top
 			.debug(AdderDebug[a])
 		);
 	end
-	assign debug = (Sample_Timer == 2);
+//	assign debug = Adder_Ready[0];
 
 	// instantiate multiple scaler - this takes incoming ADC reading and uses it to reduce the level of harmonics scaled by the Adder
 	reg Start_Mult_Scaler, Reset_Mult_Scaler;
@@ -134,9 +134,7 @@ module top
 	localparam sm_adder_start = 4'd4;
 	localparam sm_adder_wait = 4'd5;
 	localparam sm_calc_done = 4'd6;
-	localparam sm_scale_sample = 4'd7;
 	localparam sm_ready_to_send = 4'd8;
-	localparam sm_cleanup = 4'd9;
 	localparam sm_check_mute = 4'd10;
 	localparam sm_next_harmonic = 4'd11;
 
@@ -187,17 +185,15 @@ module top
 					begin
 						Start_Mult_Scaler <= 1'b0;
 						if (Mult_Ready) begin
-							SM_Top <= Comb_Muted ? sm_next_harmonic : sm_adder_start;
+							//SM_Top <= Comb_Muted ? sm_next_harmonic : sm_adder_start;
+							SM_Top <= sm_adder_start;
 						end
 					end
 
 				sm_adder_start:
-					
 					begin
-						// Wait until the sample value is ready and Adder is free and then start the next calculation
-						//if (Sample_Ready && Adder_Ready[Harmonic[0]]) begin
+						// Wait until the sample value is ready and then start the next calculation
 						if (Sample_Ready) begin
-							
 							Adder_Start[Harmonic[0]] <= 1'b1;			// Tell the even/odd adder the next sample is ready
 							SM_Top <= sm_adder_wait;
 						end
@@ -219,24 +215,13 @@ module top
 
 				sm_calc_done:
 					begin
-						Next_Sample <= 1'b0;
 						// all harmonics calculated - read accumulated output levels into registers for sending to DAC
-						//if (Adder_Ready[0] && Adder_Ready[1]) begin
-							r_Adder_Total[0] <= Adder_Total[0];
-							r_Adder_Total[1] <= Adder_Total[1];
-							SM_Top <= sm_scale_sample;
-						//end
-					end
+						r_Adder_Total[0] <= Adder_Total[0];
+						r_Adder_Total[1] <= Adder_Total[1];
 
-				sm_scale_sample:
-					begin
+						Next_Sample <= 1'b0;
 						Adder_Clear <= 1'b1;
-						SM_Top <= sm_cleanup;
-					end
-
-				sm_cleanup:
-					begin
-						Adder_Clear <= 1'b0;
+						
 						SM_Top <= sm_ready_to_send;
 					end
 
@@ -246,6 +231,7 @@ module top
 						DAC_Send <= 1'b1;
 
 						// Clean state ready for next loop
+						Adder_Clear <= 1'b0;
 						Sample_Timer <= 1'b0;
 						Harmonic <= 8'b0;
 						Next_Sample <= 1'b1;

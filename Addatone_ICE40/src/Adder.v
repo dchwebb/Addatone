@@ -4,18 +4,18 @@
  Eg 7 gives 128 fractions: multiple must be a number between 0 and 127; the result is calculated as result = (i_Multiple / 128) * i_Sample
 */
 module Adder
-	#(parameter DIVISOR_BITS = 7)
+	#(parameter DIVISOR_BITS = 9)
 	(
 		input wire i_Clock, i_Reset, i_Start, i_Clear_Accumulator,
-		input wire signed [DIVISOR_BITS - 1:0] i_Multiple,
+		input wire signed [15:0] i_Multiple,
 		input wire signed [15:0] i_Sample,
 		output reg signed [31:0] o_Accumulator,
 		output reg o_Done,
-		output reg debug
+		output wire debug
 	);
 
-	//localparam WTSIZE = 15 + DIVISOR_BITS;
-	//reg signed [WTSIZE:0] Working_Total;			// Working total must be one larger than size of sample + size of multiple
+	assign debug = o_Done;
+
 	reg signed [31:0] Working_Total;
 
 	localparam sm_wait = 2'b00;
@@ -39,7 +39,7 @@ module Adder
 					begin
 						
 						if (i_Start) begin
-							o_Done <= 1'b1;
+							o_Done <= 1'b0;
 							Working_Total <= i_Multiple * i_Sample;
 							SM_Adder = sm_mult;
 						end
@@ -47,7 +47,6 @@ module Adder
 
 				sm_mult:
 					begin
-						debug = ~debug;
 						// Divide by bit count and add to o_Accumulator, retaining negative bits
 						//o_Accumulator <= o_Accumulator + {{DIVISOR_BITS + (31 - WTSIZE){Working_Total[WTSIZE]}}, Working_Total[WTSIZE:DIVISOR_BITS]};
 						o_Accumulator <= o_Accumulator + {{DIVISOR_BITS{Working_Total[31]}}, Working_Total[31:DIVISOR_BITS]};

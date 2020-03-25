@@ -52,7 +52,8 @@ void TIM3_IRQHandler(void) {
 	startVol = ((0.7f - 0.7f * std::pow(vol, 4.0f)) + 0.3f) * 511.0f;
 
 	// Send CV value for frequency scaling
-	freqScale = 127 - ((ADC_SUM(2)) >> 7);		// scale to range 0-127
+	freqScale = 126 - std::max(
+			((int16_t)ADC_SUM(2)) >> 7, 0);		// scale to range 0-127
 	//freqScale = 0;
 
 	// Send potentiometer value for Comb Filter Interval

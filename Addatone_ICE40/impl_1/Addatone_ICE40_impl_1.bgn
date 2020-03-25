@@ -4,7 +4,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
-Tue Mar 24 18:31:37 2020
+Wed Mar 25 21:37:50 2020
 
 
 Command: bitgen -w -freq 0 Addatone_ICE40_impl_1.udb 

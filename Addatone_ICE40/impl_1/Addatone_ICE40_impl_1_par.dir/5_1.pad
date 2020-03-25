@@ -6,7 +6,7 @@ Performance Grade:      High-Performance_1.2V
 PACKAGE:          SG48
 Package Status:                     Preliminary    Version 1.5
 
-Tue Mar 24 18:31:16 2020
+Wed Mar 25 21:37:41 2020
 
 Pinout by Port Name:
 +-------------+----------+--------------+-------+--------------------+
@@ -20,7 +20,7 @@ Pinout by Port Name:
 | o_DAC_CS    | 48/2     | LVCMOS33_OUT | PL8A  | DRIVE:8mA PULL:NA  |
 | o_DAC_MOSI  | 3/2      | LVCMOS33_OUT | PL10B | DRIVE:8mA PULL:NA  |
 | o_DAC_SCK   | 4/2      | LVCMOS33_OUT | PL10A | DRIVE:8mA PULL:NA  |
-| reset_n     | 42/0     | LVCMOS33_IN  | PR9A  | PULL:100K          |
+| reset_n     | 38/0     | LVCMOS33_IN  | PR9B  | PULL:100K          |
 | test        | 46/2     | LVCMOS33_OUT | PL6A  | DRIVE:8mA PULL:NA  |
 +-------------+----------+--------------+-------+--------------------+
 
@@ -65,11 +65,11 @@ Pinout by Pin Number:
 | 35/0     | i_Clock             |            | LVCMOS33_IN  | PR13B | GPLL_IN/PCLKT0_1 |
 | 36/0     |     unused, PULL:UP |            |              | PR10B |                  |
 | 37/0     |     unused, PULL:UP |            |              | PR14A | PCLKT0_0         |
-| 38/0     |     unused, PULL:UP |            |              | PR9B  |                  |
+| 38/0     | reset_n             |            | LVCMOS33_IN  | PR9B  |                  |
 | 39/0     |                     |            |              | PR5A  | RGB0             |
 | 40/0     |                     |            |              | PR6A  | RGB1             |
 | 41/0     |                     |            |              | PR7A  | RGB2             |
-| 42/0     | reset_n             |            | LVCMOS33_IN  | PR9A  |                  |
+| 42/0     |     unused, PULL:UP |            |              | PR9A  |                  |
 | 43/0     |     unused, PULL:UP |            |              | PR10A |                  |
 | 44/2     |     unused, PULL:UP |            |              | PL7B  | PCLKT2_0         |
 | 45/2     |     unused, PULL:UP |            |              | PL8B  |                  |
@@ -106,7 +106,7 @@ ldc_set_location -site {35} [ get_ports {i_Clock} ]
 ldc_set_location -site {48} [ get_ports {o_DAC_CS} ]
 ldc_set_location -site {3} [ get_ports {o_DAC_MOSI} ]
 ldc_set_location -site {4} [ get_ports {o_DAC_SCK} ]
-ldc_set_location -site {42} [ get_ports {reset_n} ]
+ldc_set_location -site {38} [ get_ports {reset_n} ]
 ldc_set_location -site {46} [ get_ports {test} ]
 
 
@@ -114,5 +114,5 @@ ldc_set_location -site {46} [ get_ports {test} ]
 
 
 Copyright 2015 Lattice Semiconductor Corporation, All Rights Reserved
-Tue Mar 24 18:31:16 2020
+Wed Mar 25 21:37:41 2020
 

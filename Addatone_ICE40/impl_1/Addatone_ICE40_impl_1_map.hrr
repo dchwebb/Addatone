@@ -3,27 +3,27 @@ Report for cell top
    Instance path: top
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        919        100.0
+                                  LUT4	        918        100.0
                                  IOBUF	         10        100.0
-                                PFUREG	        465        100.0
+                                PFUREG	        470        100.0
                                    EBR	          9        100.0
                                    DSP	          1        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                            ADC_SPI_In	          1        11.1
-                 Adder(DIVISOR_BITS=9)	          1         4.5
-              Adder(DIVISOR_BITS=9)_U0	          1         4.2
+                            ADC_SPI_In	          1        10.5
+                                 Adder	          1         4.5
+                              Adder_U0	          1         4.7
                              PLL_48MHz	          1         0.0
-                         Sample_Output	          1        11.6
-                       Sample_Position	          1        20.7
-                 Scale_Mult(DIV_BIT=9)	          1         6.5
+                         Sample_Output	          1        11.5
+                       Sample_Position	          1        20.6
+                            Scale_Mult	          1         6.3
 ---------------------------------------------------
 Report for cell Sample_Position
    Instance path: top/sample_position
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        190        20.7
-                                PFUREG	         81        17.4
+                                  LUT4	        189        20.6
+                                PFUREG	         81        17.2
                                    EBR	          9        100.0
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
@@ -166,47 +166,46 @@ Report for cell Sample_Output
    Instance path: top/sample_output
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        107        11.6
+                                  LUT4	        106        11.5
                                  IOBUF	          1        10.0
-                                PFUREG	         89        19.1
+                                PFUREG	         89        18.9
 SUB MODULES
                                   cell	      count    LUT4 Usage(%)
-                           DAC_SPI_Out	          1         5.9
+                           DAC_SPI_Out	          1         5.8
 ---------------------------------------------------
 Report for cell DAC_SPI_Out
    Instance path: top/sample_output/dac
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	         54         5.9
-                                 IOBUF	          1        10.0
-                                PFUREG	         33         7.1
----------------------------------------------------
-Report for cell Adder(DIVISOR_BITS=9)
-   Instance path: top/genadder[1].adder
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	         41         4.5
-                                PFUREG	         36         7.7
----------------------------------------------------
-Report for cell Adder(DIVISOR_BITS=9)_U0
-   Instance path: top/genadder[0].adder
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	         39         4.2
-                                PFUREG	         36         7.7
-                                   DSP	          1        100.0
----------------------------------------------------
-Report for cell Scale_Mult(DIV_BIT=9)
-   Instance path: top/mult
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	         60         6.5
-                                PFUREG	         21         4.5
+                                  LUT4	         53         5.8
+                                PFUREG	         33         7.0
 ---------------------------------------------------
 Report for cell ADC_SPI_In
    Instance path: top/adc
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        102        11.1
+                                  LUT4	         96        10.5
                                  IOBUF	          1        10.0
-                                PFUREG	         76        16.3
+                                PFUREG	         76        16.2
+---------------------------------------------------
+Report for cell Adder_U0
+   Instance path: top/genadder[0].adder
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         43         4.7
+                                PFUREG	         39         8.3
+                                   DSP	          1        100.0
+---------------------------------------------------
+Report for cell Scale_Mult
+   Instance path: top/mult
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         58         6.3
+                                PFUREG	         20         4.3
+---------------------------------------------------
+Report for cell Adder
+   Instance path: top/genadder[1].adder
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         41         4.5
+                                PFUREG	         39         8.3
