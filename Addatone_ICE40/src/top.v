@@ -67,7 +67,6 @@ module top
 	reg [1:0] Adder_Start;
 	wire [1:0] Adder_Ready;
 	reg Adder_Clear;
-	reg Active_Adder = 1'b0;
 	wire [DIV_BIT - 1:0] Adder_Mult[1:0];
 	wire signed [31:0] Adder_Total[1:0];
 	reg signed [31:0] r_Adder_Total[1:0];
@@ -81,7 +80,7 @@ module top
 			.i_Reset(Reset),
 			.i_Start(Adder_Start[a]),
 			.i_Clear_Accumulator(Adder_Clear),
-			.i_Multiple(Adder_Mult[0]),
+			.i_Multiple(Adder_Mult[a]),
 			.i_Sample(Sample_Value),
 			.o_Accumulator(Adder_Total[a]),
 			.o_Done(Adder_Ready[a])
@@ -169,14 +168,14 @@ module top
 					begin
 						Next_Sample <= 1'b0;
 						Adder_Start <= 1'b0;
-						Scaler_Start[0] <= 1'b1;							// decrease harmonic scaler
+						Scaler_Start[Harmonic[0]] <= 1'b1;							// decrease harmonic scaler
 						SM_Top <= sm_check_mute;
 					end
 
 				sm_check_mute:
 					begin
-						Scaler_Start[0] <= 1'b0;
-						if (Scaler_Ready[0]) begin
+						Scaler_Start[Harmonic[0]] <= 1'b0;
+						if (Scaler_Ready[Harmonic[0]]) begin
 							SM_Top <= sm_adder_start;
 						end
 					end
@@ -192,7 +191,6 @@ module top
 
 				sm_adder_wait:
 					begin
-						Active_Adder <= ~Active_Adder;
 						Adder_Start <= 1'b0;
 						SM_Top <= sm_next_harmonic;
 					end
@@ -206,6 +204,7 @@ module top
 
 				sm_calc_done:
 					begin
+						debug <= 1'b1;
 						// all harmonics calculated - read accumulated output levels into registers for sending to DAC
 						r_Adder_Total[0] <= Adder_Total[0] + Adder_Total[1];
 						r_Adder_Total[1] <= Adder_Total[1];
@@ -227,11 +226,10 @@ module top
 						Harmonic <= 8'b0;
 						Next_Sample <= 1'b1;
 						Scaler_Reset <= 1'b1;
-						Active_Adder <= 1'b0;
-
+						debug <= 1'b0;
+						
 						SM_Top <=  sm_init;
 					end
-
 
 			endcase
 

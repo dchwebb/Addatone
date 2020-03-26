@@ -7,16 +7,16 @@ Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V 
 Reading input file 'Addatone_ICE40_impl_1.vm' ...
 Reading constraint file 'D:/Eurorack/Addatone/Addatone_ICE40/impl_1/Addatone_ICE40_impl_1.ldc' ...
 Removing unused logic...
-INFO - Signal sample_position/Accumulated_Frequency[15]_2 undriven or does not drive anything - clipped
-INFO - Signal sample_position/Accumulated_Frequency[14]_2 undriven or does not drive anything - clipped
-INFO - Signal sample_position/Accumulated_Frequency[13]_2 undriven or does not drive anything - clipped
-INFO - Signal sample_position/Accumulated_Frequency[12]_2 undriven or does not drive anything - clipped
-INFO - Signal sample_position/Accumulated_Frequency[11]_2 undriven or does not drive anything - clipped
-INFO - Signal sample_position/Accumulated_Frequency[10]_2 undriven or does not drive anything - clipped
-INFO - Signal sample_position/Accumulated_Frequency[9]_2 undriven or does not drive anything - clipped
-INFO - Signal sample_position/Accumulated_Frequency[8]_2 undriven or does not drive anything - clipped
-INFO - Signal sample_position/Accumulated_Frequency[7]_2 undriven or does not drive anything - clipped
-INFO - Signal sample_position/Accumulated_Frequency[6]_2 undriven or does not drive anything - clipped
+INFO - Signal genadder[0].adder/SM_Adder[1] undriven or does not drive anything - clipped
+INFO - Signal genadder[0].adder/Adder_Total[0][31] undriven or does not drive anything - clipped
+INFO - Signal genadder[0].adder/Adder_Total[0][30] undriven or does not drive anything - clipped
+INFO - Signal genadder[0].adder/Adder_Total[0][29] undriven or does not drive anything - clipped
+INFO - Signal genadder[0].adder/Adder_Total[0][28] undriven or does not drive anything - clipped
+INFO - Signal genadder[0].adder/Adder_Total[0][27] undriven or does not drive anything - clipped
+INFO - Signal genadder[0].adder/Adder_Total[0][26] undriven or does not drive anything - clipped
+INFO - Signal genadder[0].adder/Adder_Total[0][25] undriven or does not drive anything - clipped
+INFO - Signal genadder[0].adder/Adder_Total[0][24] undriven or does not drive anything - clipped
+INFO - Signal genadder[0].adder/Adder_Total[0][23] undriven or does not drive anything - clipped
 INFO - ... More signals are undriven or does not drive anything - clipped
 Starting design annotation....
 INFO - The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
@@ -24,4 +24,4 @@ Writing output file 'Addatone_ICE40_impl_1_syn.udb'.
 POSTSYN finished successfully.
 Total CPU Time: 0 secs 
 Total REAL Time: 0 secs 
-Peak Memory Usage: 38 MB
+Peak Memory Usage: 39 MB
