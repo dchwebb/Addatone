@@ -10,11 +10,8 @@ module Adder
 		input wire signed [15:0] i_Multiple,
 		input wire signed [15:0] i_Sample,
 		output reg signed [31:0] o_Accumulator,
-		output reg o_Done,
-		output wire debug
+		output reg o_Done
 	);
-
-	assign debug = o_Done;
 
 	reg signed [31:0] Working_Total;
 

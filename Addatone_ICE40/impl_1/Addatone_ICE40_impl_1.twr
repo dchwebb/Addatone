@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2.0.1.281.2
 
-Thu Mar 26 11:30:35 2020
+Thu Mar 26 11:54:10 2020
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -267,16 +267,16 @@ Define the clock for these registers.
 -------------------------------------------------------------------
          Listing 10 Instance(s)         |           Type           
 -------------------------------------------------------------------
-Frequency_i13                           |                  No Clock
-Frequency_i11                           |                  No Clock
-Frequency_i15                           |                  No Clock
 test_i0                                 |                  No Clock
 Comb_Interval_i2                        |                  No Clock
-Frequency_i7                            |                  No Clock
-Frequency_i9                            |                  No Clock
-Frequency_i3                            |                  No Clock
-Frequency_i5                            |                  No Clock
 Harmonic_Scale_i1                       |                  No Clock
+Frequency_i3                            |                  No Clock
+Frequency_i11                           |                  No Clock
+Frequency_i9                            |                  No Clock
+Frequency_i7                            |                  No Clock
+Frequency_i5                            |                  No Clock
+Frequency_i1                            |                  No Clock
+Frequency_i13                           |                  No Clock
 -------------------------------------------------------------------
                                         |                          
 Number of registers without clock defin |                          
@@ -377,7 +377,7 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY        0.305        27.959  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           SLICE_R11C8D    C1_TO_F1_DELAY   0.450        28.409  8       
-sample_position/n5290 ( CE )                              NET DELAY        3.920        32.329  1       
+sample_position/n5288 ( CE )                              NET DELAY        3.920        32.329  1       
 
 
 
@@ -476,7 +476,7 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY        0.305        27.959  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           SLICE_R11C8D    C1_TO_F1_DELAY   0.450        28.409  8       
-sample_position/n5290 ( CE )                              NET DELAY        3.920        32.329  1       
+sample_position/n5288 ( CE )                              NET DELAY        3.920        32.329  1       
 
 
 
@@ -575,7 +575,7 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY        0.305        27.959  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           SLICE_R11C8D    C1_TO_F1_DELAY   0.450        28.409  8       
-sample_position/n5290 ( CE )                              NET DELAY        3.920        32.329  1       
+sample_position/n5288 ( CE )                              NET DELAY        3.920        32.329  1       
 
 
 
@@ -674,7 +674,7 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY        0.305        27.959  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           SLICE_R11C8D    C1_TO_F1_DELAY   0.450        28.409  8       
-sample_position/n5290 ( CE )                              NET DELAY        3.324        31.733  1       
+sample_position/n5288 ( CE )                              NET DELAY        3.324        31.733  1       
 
 
 
@@ -773,7 +773,7 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY        0.305        27.959  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           SLICE_R11C8D    C1_TO_F1_DELAY   0.450        28.409  8       
-sample_position/n5290 ( CE )                              NET DELAY        3.324        31.733  1       
+sample_position/n5288 ( CE )                              NET DELAY        3.324        31.733  1       
 
 
 
@@ -827,11 +827,11 @@ Sample_Timer[2]                                           NET DELAY        2.146
 i6_4_lut_adj_423/D->i6_4_lut_adj_423/Z    SLICE_R22C14B   A0_TO_F0_DELAY   0.450        15.991  1       
 n16_adj_1211                                              NET DELAY        2.768        18.759  1       
 i9_4_lut/C->i9_4_lut/Z                    SLICE_R19C14A   D1_TO_F1_DELAY   0.450        19.209  2       
-n7590                                                     NET DELAY        2.768        21.977  1       
+n7588                                                     NET DELAY        2.768        21.977  1       
 i6_4_lut/C->i6_4_lut/Z                    SLICE_R18C12A   D0_TO_F0_DELAY   0.450        22.427  6       
 n31                                                       NET DELAY        3.801        26.228  1       
 i5938_4_lut/A->i5938_4_lut/Z              SLICE_R13C13A   D0_TO_F0_DELAY   0.450        26.678  9       
-n5634 ( LSR )                                             NET DELAY        4.371        31.049  1       
+n5632 ( LSR )                                             NET DELAY        4.371        31.049  1       
 
 
 
@@ -885,11 +885,11 @@ Sample_Timer[2]                                           NET DELAY        2.146
 i6_4_lut_adj_423/D->i6_4_lut_adj_423/Z    SLICE_R22C14B   A0_TO_F0_DELAY   0.450        15.991  1       
 n16_adj_1211                                              NET DELAY        2.768        18.759  1       
 i9_4_lut/C->i9_4_lut/Z                    SLICE_R19C14A   D1_TO_F1_DELAY   0.450        19.209  2       
-n7590                                                     NET DELAY        2.768        21.977  1       
+n7588                                                     NET DELAY        2.768        21.977  1       
 i6_4_lut/C->i6_4_lut/Z                    SLICE_R18C12A   D0_TO_F0_DELAY   0.450        22.427  6       
 n31                                                       NET DELAY        3.801        26.228  1       
 i5938_4_lut/A->i5938_4_lut/Z              SLICE_R13C13A   D0_TO_F0_DELAY   0.450        26.678  9       
-n5634 ( LSR )                                             NET DELAY        4.371        31.049  1       
+n5632 ( LSR )                                             NET DELAY        4.371        31.049  1       
 
 
 
@@ -943,11 +943,11 @@ Sample_Timer[2]                                           NET DELAY        2.146
 i6_4_lut_adj_423/D->i6_4_lut_adj_423/Z    SLICE_R22C14B   A0_TO_F0_DELAY   0.450        15.991  1       
 n16_adj_1211                                              NET DELAY        2.768        18.759  1       
 i9_4_lut/C->i9_4_lut/Z                    SLICE_R19C14A   D1_TO_F1_DELAY   0.450        19.209  2       
-n7590                                                     NET DELAY        2.768        21.977  1       
+n7588                                                     NET DELAY        2.768        21.977  1       
 i6_4_lut/C->i6_4_lut/Z                    SLICE_R18C12A   D0_TO_F0_DELAY   0.450        22.427  6       
 n31                                                       NET DELAY        3.801        26.228  1       
 i5938_4_lut/A->i5938_4_lut/Z              SLICE_R13C13A   D0_TO_F0_DELAY   0.450        26.678  9       
-n5634 ( LSR )                                             NET DELAY        4.371        31.049  1       
+n5632 ( LSR )                                             NET DELAY        4.371        31.049  1       
 
 
 
@@ -1001,11 +1001,11 @@ Sample_Timer[2]                                           NET DELAY        2.146
 i6_4_lut_adj_423/D->i6_4_lut_adj_423/Z    SLICE_R22C14B   A0_TO_F0_DELAY   0.450        15.991  1       
 n16_adj_1211                                              NET DELAY        2.768        18.759  1       
 i9_4_lut/C->i9_4_lut/Z                    SLICE_R19C14A   D1_TO_F1_DELAY   0.450        19.209  2       
-n7590                                                     NET DELAY        2.768        21.977  1       
+n7588                                                     NET DELAY        2.768        21.977  1       
 i6_4_lut/C->i6_4_lut/Z                    SLICE_R18C12A   D0_TO_F0_DELAY   0.450        22.427  6       
 n31                                                       NET DELAY        3.801        26.228  1       
 i5938_4_lut/A->i5938_4_lut/Z              SLICE_R13C13A   D0_TO_F0_DELAY   0.450        26.678  9       
-n5634 ( LSR )                                             NET DELAY        4.371        31.049  1       
+n5632 ( LSR )                                             NET DELAY        4.371        31.049  1       
 
 
 
@@ -1059,11 +1059,11 @@ Sample_Timer[2]                                           NET DELAY        2.146
 i6_4_lut_adj_423/D->i6_4_lut_adj_423/Z    SLICE_R22C14B   A0_TO_F0_DELAY   0.450        15.991  1       
 n16_adj_1211                                              NET DELAY        2.768        18.759  1       
 i9_4_lut/C->i9_4_lut/Z                    SLICE_R19C14A   D1_TO_F1_DELAY   0.450        19.209  2       
-n7590                                                     NET DELAY        2.768        21.977  1       
+n7588                                                     NET DELAY        2.768        21.977  1       
 i6_4_lut/C->i6_4_lut/Z                    SLICE_R18C12A   D0_TO_F0_DELAY   0.450        22.427  6       
 n31                                                       NET DELAY        3.801        26.228  1       
 i5938_4_lut/A->i5938_4_lut/Z              SLICE_R13C13A   D0_TO_F0_DELAY   0.450        26.678  9       
-n5634 ( LSR )                                             NET DELAY        4.371        31.049  1       
+n5632 ( LSR )                                             NET DELAY        4.371        31.049  1       
 
 
 
@@ -1447,7 +1447,7 @@ sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file
 SM_Top__i0/CK->SM_Top__i0/Q               SLICE_R9C14A    CLK_TO_Q1_DELAY  1.391        13.395  18      
 SM_Top[0]                                                 NET DELAY        1.271        14.666  1       
 i6138_3_lut_4_lut/C->i6138_3_lut_4_lut/Z  SLICE_R9C14A    D1_TO_F1_DELAY   0.450        15.116  1       
-n6495 ( DI1 )                                             NET DELAY        0.000        15.116  1       
+n6493 ( DI1 )                                             NET DELAY        0.000        15.116  1       
 
 
 
@@ -1500,7 +1500,7 @@ mult/SM_Scale_Mult__i1/CK->mult/SM_Scale_Mult__i1/Q
                                           SLICE_R12C16B   CLK_TO_Q0_DELAY  1.391        13.395  11      
 mult/SM_Scale_Mult[1]                                     NET DELAY        1.271        14.666  1       
 mult/i4068_2_lut/B->mult/i4068_2_lut/Z    SLICE_R11C16B   D0_TO_F0_DELAY   0.450        15.116  1       
-mult/n4113 ( DI0 )                                        NET DELAY        0.000        15.116  1       
+mult/n4111 ( DI0 )                                        NET DELAY        0.000        15.116  1       
 
 
 
@@ -1553,7 +1553,7 @@ mult/SM_Scale_Mult__i1/CK->mult/SM_Scale_Mult__i1/Q
                                           SLICE_R12C16B   CLK_TO_Q0_DELAY  1.391        13.395  11      
 mult/SM_Scale_Mult[1]                                     NET DELAY        1.271        14.666  1       
 mult/i4072_2_lut/B->mult/i4072_2_lut/Z    SLICE_R11C16C   D0_TO_F0_DELAY   0.450        15.116  1       
-mult/n4105 ( DI0 )                                        NET DELAY        0.000        15.116  1       
+mult/n4103 ( DI0 )                                        NET DELAY        0.000        15.116  1       
 
 
 

@@ -1,6 +1,6 @@
 
 Lattice Place and Route Report for Design "Addatone_ICE40_impl_1_map.udb"
-Thu Mar 26 11:30:11 2020
+Thu Mar 26 11:53:46 2020
 
 PAR: Place And Route Radiant Software (64-bit) 2.0.1.281.2.
 Command Line: par -w -t 1 -cores 1 -exp parPathBased=ON \
@@ -46,13 +46,13 @@ Device utilization summary:
 Pin Constraint Summary:
    8 out of 10 pins locked (80% locked).
 .
-.............Finished Placer Phase 0 (HIER).  CPU time: 1 secs , REAL time: 2 secs 
+.............Finished Placer Phase 0 (HIER).  CPU time: 1 secs , REAL time: 0 secs 
 
 
 .........................
-Finished Placer Phase 0 (AP).  CPU time: 4 secs , REAL time: 5 secs 
+Finished Placer Phase 0 (AP).  CPU time: 4 secs , REAL time: 4 secs 
 
-Starting Placer Phase 1. REAL time: 5 secs 
+Starting Placer Phase 1. REAL time: 4 secs 
 ..  ..
 ....................
 
@@ -62,13 +62,13 @@ Device SLICE utilization summary after final SLICE packing:
    SLICE            499/2640         18% used
 
 INFO - par: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
-Finished Placer Phase 1.  CPU time: 15 secs , REAL time: 16 secs 
+Finished Placer Phase 1.  CPU time: 16 secs , REAL time: 16 secs 
 
 Starting Placer Phase 2.
 .
 
 Placer score =  355405
-Finished Placer Phase 2.  CPU time: 15 secs , REAL time: 16 secs 
+Finished Placer Phase 2.  CPU time: 16 secs , REAL time: 17 secs 
 
 
 ------------------ Clock Report ------------------
@@ -98,13 +98,13 @@ I/O Bank Usage Summary:
 | 2        | 5 / 8 ( 62%)  | 3.3V       |            |            |
 +----------+---------------+------------+------------+------------+
 
-Total Placer CPU time: 15 secs , REAL time: 16 secs 
+Total Placer CPU time: 16 secs , REAL time: 17 secs 
 
 Writing design to file Addatone_ICE40_impl_1_par.dir/5_1.udb ...
 
 INFO - par: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
 
-Start NBR router at 11:30:28 03/26/20
+Start NBR router at 11:54:03 03/26/20
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -120,7 +120,7 @@ Note: NBR uses a different method to calculate timing slacks. The
 *****************************************************************
 
 INFO - par: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
-Start NBR router at 11:30:28 03/26/20
+Start NBR router at 11:54:03 03/26/20
 
 Starting routing resource preassignment
 Preassignment Summary:
@@ -148,7 +148,7 @@ Other clocks:
 Completed routing resource preassignment
 INFO - par: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
 
-Start NBR section for initial routing at 11:30:29 03/26/20
+Start NBR section for initial routing at 11:54:05 03/26/20
 Level 1, iteration 1
 10(0.00%) conflicts; 2742(73.71%) untouched conns; 0 (nbr) score; 
 Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 2 secs 
@@ -165,7 +165,7 @@ Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 4
 Info: Initial congestion level at 75% usage is 0
 Info: Initial congestion area  at 75% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 11:30:32 03/26/20
+Start NBR section for normal routing at 11:54:07 03/26/20
 Level 1, iteration 1
 0(0.00%) conflict; 50(1.34%) untouched conns; 0 (nbr) score; 
 Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 4 secs 
@@ -182,14 +182,14 @@ Level 4, iteration 2
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
 Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 4 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 11:30:32 03/26/20
+Start NBR section for setup/hold timing optimization with effort level 3 at 11:54:07 03/26/20
 
-Start NBR section for re-routing at 11:30:32 03/26/20
+Start NBR section for re-routing at 11:54:08 03/26/20
 Level 4, iteration 1
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 4 secs 
+Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 5 secs 
 
-Start NBR section for post-routing at 11:30:32 03/26/20
+Start NBR section for post-routing at 11:54:08 03/26/20
 INFO - par: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
 
 End NBR router with 0 unrouted connection

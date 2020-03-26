@@ -85,11 +85,9 @@ module top
 			.i_Multiple(Adder_Mult),
 			.i_Sample(Sample_Value),
 			.o_Accumulator(Adder_Total[a]),
-			.o_Done(Adder_Ready[a]),
-			.debug(AdderDebug[a])
+			.o_Done(Adder_Ready[a])
 		);
 	end
-//	assign debug = Adder_Ready[0];
 
 	// instantiate multiple scaler - this takes incoming ADC reading and uses it to reduce the level of harmonics scaled by the Adder
 	reg Start_Mult_Scaler, Reset_Mult_Scaler;
@@ -139,7 +137,6 @@ module top
 		Freq_Scale <= ADC_Data[3];										// Frequency scaling offset - higher frequencies will be moved further from multiple of fundamental
 		Comb_Interval <= ADC_Data[4][7:0];							// Comb filter interval - ie which harmonics will muted
 		test <= ~test;
-
 	end
 
 	always @(posedge Main_Clock) begin

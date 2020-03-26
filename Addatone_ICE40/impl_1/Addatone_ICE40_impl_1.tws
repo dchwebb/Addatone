@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2.0.1.281.2
 
-Thu Mar 26 11:30:08 2020
+Thu Mar 26 11:53:43 2020
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -263,16 +263,16 @@ Define the clock for these registers.
 -------------------------------------------------------------------
          Listing 10 Instance(s)         |           Type           
 -------------------------------------------------------------------
-Harmonic_Scale_i0                       |                  No Clock
-Frequency_i5                            |                  No Clock
 test_i0                                 |                  No Clock
-Frequency_i2                            |                  No Clock
+Harmonic_Scale_i0                       |                  No Clock
 Frequency_i1                            |                  No Clock
+Frequency_i2                            |                  No Clock
+Frequency_i5                            |                  No Clock
 Frequency_i4                            |                  No Clock
 Frequency_i0                            |                  No Clock
 Comb_Interval_i3                        |                  No Clock
+Frequency_i6                            |                  No Clock
 Frequency_i3                            |                  No Clock
-Frequency_i7                            |                  No Clock
 -------------------------------------------------------------------
                                         |                          
 Number of registers without clock defin |                          
@@ -367,10 +367,10 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5290                                     NET DELAY      2.075        61.328  1       
+sample_position/n5288                                     NET DELAY      2.075        61.328  1       
 sample_position/i3321_2_lut/A->sample_position/i3321_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5666 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5664 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
@@ -457,10 +457,10 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5290                                     NET DELAY      2.075        61.328  1       
+sample_position/n5288                                     NET DELAY      2.075        61.328  1       
 sample_position/i3321_2_lut/A->sample_position/i3321_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5666 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5664 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
@@ -547,10 +547,10 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5290                                     NET DELAY      2.075        61.328  1       
+sample_position/n5288                                     NET DELAY      2.075        61.328  1       
 sample_position/i3321_2_lut/A->sample_position/i3321_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5666 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5664 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
@@ -637,10 +637,10 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5290                                     NET DELAY      2.075        61.328  1       
+sample_position/n5288                                     NET DELAY      2.075        61.328  1       
 sample_position/i3321_2_lut/A->sample_position/i3321_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5666 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5664 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
@@ -727,10 +727,10 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5290                                     NET DELAY      2.075        61.328  1       
+sample_position/n5288                                     NET DELAY      2.075        61.328  1       
 sample_position/i3321_2_lut/A->sample_position/i3321_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5666 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5664 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
@@ -817,10 +817,10 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5290                                     NET DELAY      2.075        61.328  1       
+sample_position/n5288                                     NET DELAY      2.075        61.328  1       
 sample_position/i3321_2_lut/A->sample_position/i3321_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5666 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5664 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
@@ -907,10 +907,10 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5290                                     NET DELAY      2.075        61.328  1       
+sample_position/n5288                                     NET DELAY      2.075        61.328  1       
 sample_position/i3321_2_lut/A->sample_position/i3321_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5666 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5664 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
@@ -997,10 +997,10 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5290                                     NET DELAY      2.075        61.328  1       
+sample_position/n5288                                     NET DELAY      2.075        61.328  1       
 sample_position/i3321_2_lut/A->sample_position/i3321_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5666 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5664 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
@@ -1087,10 +1087,10 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5290                                     NET DELAY      2.075        61.328  1       
+sample_position/n5288                                     NET DELAY      2.075        61.328  1       
 sample_position/i3321_2_lut/A->sample_position/i3321_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5666 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5664 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
@@ -1177,10 +1177,10 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5290                                     NET DELAY      2.075        61.328  1       
+sample_position/n5288                                     NET DELAY      2.075        61.328  1       
 sample_position/i3321_2_lut/A->sample_position/i3321_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5666 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5664 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 

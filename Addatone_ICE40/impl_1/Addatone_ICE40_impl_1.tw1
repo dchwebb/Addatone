@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2.0.1.281.2
 
-Thu Mar 26 11:30:10 2020
+Thu Mar 26 11:53:45 2020
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -266,15 +266,15 @@ Define the clock for these registers.
 -------------------------------------------------------------------
          Listing 10 Instance(s)         |           Type           
 -------------------------------------------------------------------
-Frequency_i0                            |                  No Clock
-Harmonic_Scale_i0                       |                  No Clock
-Frequency_i1                            |                  No Clock
 test_i0                                 |                  No Clock
 Comb_Interval_i3                        |                  No Clock
-Frequency_i3                            |                  No Clock
 Frequency_i5                            |                  No Clock
-Frequency_i4                            |                  No Clock
+Harmonic_Scale_i0                       |                  No Clock
+Frequency_i7                            |                  No Clock
+Frequency_i1                            |                  No Clock
+Frequency_i0                            |                  No Clock
 Frequency_i2                            |                  No Clock
+Frequency_i4                            |                  No Clock
 Frequency_i6                            |                  No Clock
 -------------------------------------------------------------------
                                         |                          
@@ -331,64 +331,64 @@ genadder[0].adder/o_Accumulator__i0/CK->genadder[0].adder/o_Accumulator__i0/Q
 genadder[0].adder/Adder_Total[0][0]                       NET DELAY            2.075        20.216  1       
 genadder[0].adder/add_7_add_5_1/B1->genadder[0].adder/add_7_add_5_1/CO1
                                           SLICE           B1_TO_COUT1_DELAY    0.358        20.574  2       
-genadder[0].adder/n6738                                   NET DELAY            2.075        22.649  1       
+genadder[0].adder/n6736                                   NET DELAY            2.075        22.649  1       
 genadder[0].adder/add_7_add_5_3/CI0->genadder[0].adder/add_7_add_5_3/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        22.927  2       
-genadder[0].adder/n9921                                   NET DELAY            2.075        25.002  1       
+genadder[0].adder/n9919                                   NET DELAY            2.075        25.002  1       
 genadder[0].adder/add_7_add_5_3/CI1->genadder[0].adder/add_7_add_5_3/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        25.280  2       
-genadder[0].adder/n6740                                   NET DELAY            2.075        27.355  1       
+genadder[0].adder/n6738                                   NET DELAY            2.075        27.355  1       
 genadder[0].adder/add_7_add_5_5/CI0->genadder[0].adder/add_7_add_5_5/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        27.633  2       
-genadder[0].adder/n9924                                   NET DELAY            2.075        29.708  1       
+genadder[0].adder/n9922                                   NET DELAY            2.075        29.708  1       
 genadder[0].adder/add_7_add_5_5/CI1->genadder[0].adder/add_7_add_5_5/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        29.986  2       
-genadder[0].adder/n6742                                   NET DELAY            2.075        32.061  1       
+genadder[0].adder/n6740                                   NET DELAY            2.075        32.061  1       
 genadder[0].adder/add_7_add_5_7/CI0->genadder[0].adder/add_7_add_5_7/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        32.339  2       
-genadder[0].adder/n9930                                   NET DELAY            2.075        34.414  1       
+genadder[0].adder/n9928                                   NET DELAY            2.075        34.414  1       
 genadder[0].adder/add_7_add_5_7/CI1->genadder[0].adder/add_7_add_5_7/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        34.692  2       
-genadder[0].adder/n6744                                   NET DELAY            2.075        36.767  1       
+genadder[0].adder/n6742                                   NET DELAY            2.075        36.767  1       
 genadder[0].adder/add_7_add_5_9/CI0->genadder[0].adder/add_7_add_5_9/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        37.045  2       
-genadder[0].adder/n9933                                   NET DELAY            2.075        39.120  1       
+genadder[0].adder/n9931                                   NET DELAY            2.075        39.120  1       
 genadder[0].adder/add_7_add_5_9/CI1->genadder[0].adder/add_7_add_5_9/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        39.398  2       
-genadder[0].adder/n6746                                   NET DELAY            2.075        41.473  1       
+genadder[0].adder/n6744                                   NET DELAY            2.075        41.473  1       
 genadder[0].adder/add_7_add_5_11/CI0->genadder[0].adder/add_7_add_5_11/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        41.751  2       
-genadder[0].adder/n9936                                   NET DELAY            2.075        43.826  1       
+genadder[0].adder/n9934                                   NET DELAY            2.075        43.826  1       
 genadder[0].adder/add_7_add_5_11/CI1->genadder[0].adder/add_7_add_5_11/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        44.104  2       
-genadder[0].adder/n6748                                   NET DELAY            2.075        46.179  1       
+genadder[0].adder/n6746                                   NET DELAY            2.075        46.179  1       
 genadder[0].adder/add_7_add_5_13/CI0->genadder[0].adder/add_7_add_5_13/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        46.457  2       
-genadder[0].adder/n9984                                   NET DELAY            2.075        48.532  1       
+genadder[0].adder/n9982                                   NET DELAY            2.075        48.532  1       
 genadder[0].adder/add_7_add_5_13/CI1->genadder[0].adder/add_7_add_5_13/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        48.810  2       
-genadder[0].adder/n6750                                   NET DELAY            2.075        50.885  1       
+genadder[0].adder/n6748                                   NET DELAY            2.075        50.885  1       
 genadder[0].adder/add_7_add_5_15/CI0->genadder[0].adder/add_7_add_5_15/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        51.163  2       
-genadder[0].adder/n9987                                   NET DELAY            2.075        53.238  1       
+genadder[0].adder/n9985                                   NET DELAY            2.075        53.238  1       
 genadder[0].adder/add_7_add_5_15/CI1->genadder[0].adder/add_7_add_5_15/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        53.516  2       
-genadder[0].adder/n6752                                   NET DELAY            2.075        55.591  1       
+genadder[0].adder/n6750                                   NET DELAY            2.075        55.591  1       
 genadder[0].adder/add_7_add_5_17/CI0->genadder[0].adder/add_7_add_5_17/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        55.869  2       
-genadder[0].adder/n10008                                  NET DELAY            2.075        57.944  1       
+genadder[0].adder/n10006                                  NET DELAY            2.075        57.944  1       
 genadder[0].adder/add_7_add_5_17/CI1->genadder[0].adder/add_7_add_5_17/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        58.222  2       
-genadder[0].adder/n6754                                   NET DELAY            2.075        60.297  1       
+genadder[0].adder/n6752                                   NET DELAY            2.075        60.297  1       
 genadder[0].adder/add_7_add_5_19/CI0->genadder[0].adder/add_7_add_5_19/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        60.575  2       
-genadder[0].adder/n10014                                  NET DELAY            2.075        62.650  1       
+genadder[0].adder/n10012                                  NET DELAY            2.075        62.650  1       
 genadder[0].adder/add_7_add_5_19/D1->genadder[0].adder/add_7_add_5_19/S1
                                           SLICE           D1_TO_F1_DELAY       0.477        63.127  1       
 genadder[0].adder/n167[18]                                NET DELAY            2.075        65.202  1       
 genadder[0].adder/i3903_2_lut/A->genadder[0].adder/i3903_2_lut/Z
                                           SLICE           A0_TO_F0_DELAY       0.477        65.679  1       
-genadder[0].adder/n5706 ( DI0 )                           NET DELAY            2.075        67.754  1       
+genadder[0].adder/n5704 ( DI0 )                           NET DELAY            2.075        67.754  1       
 
 
 
@@ -442,64 +442,64 @@ genadder[1].adder/o_Accumulator__i0/CK->genadder[1].adder/o_Accumulator__i0/Q
 genadder[1].adder/Adder_Total[1][0]                       NET DELAY            2.075        20.216  1       
 genadder[1].adder/add_7_add_5_1/B1->genadder[1].adder/add_7_add_5_1/CO1
                                           SLICE           B1_TO_COUT1_DELAY    0.358        20.574  2       
-genadder[1].adder/n6771                                   NET DELAY            2.075        22.649  1       
+genadder[1].adder/n6769                                   NET DELAY            2.075        22.649  1       
 genadder[1].adder/add_7_add_5_3/CI0->genadder[1].adder/add_7_add_5_3/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        22.927  2       
-genadder[1].adder/n9900                                   NET DELAY            2.075        25.002  1       
+genadder[1].adder/n9898                                   NET DELAY            2.075        25.002  1       
 genadder[1].adder/add_7_add_5_3/CI1->genadder[1].adder/add_7_add_5_3/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        25.280  2       
-genadder[1].adder/n6773                                   NET DELAY            2.075        27.355  1       
+genadder[1].adder/n6771                                   NET DELAY            2.075        27.355  1       
 genadder[1].adder/add_7_add_5_5/CI0->genadder[1].adder/add_7_add_5_5/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        27.633  2       
-genadder[1].adder/n9903                                   NET DELAY            2.075        29.708  1       
+genadder[1].adder/n9901                                   NET DELAY            2.075        29.708  1       
 genadder[1].adder/add_7_add_5_5/CI1->genadder[1].adder/add_7_add_5_5/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        29.986  2       
-genadder[1].adder/n6775                                   NET DELAY            2.075        32.061  1       
+genadder[1].adder/n6773                                   NET DELAY            2.075        32.061  1       
 genadder[1].adder/add_7_add_5_7/CI0->genadder[1].adder/add_7_add_5_7/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        32.339  2       
-genadder[1].adder/n9906                                   NET DELAY            2.075        34.414  1       
+genadder[1].adder/n9904                                   NET DELAY            2.075        34.414  1       
 genadder[1].adder/add_7_add_5_7/CI1->genadder[1].adder/add_7_add_5_7/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        34.692  2       
-genadder[1].adder/n6777                                   NET DELAY            2.075        36.767  1       
+genadder[1].adder/n6775                                   NET DELAY            2.075        36.767  1       
 genadder[1].adder/add_7_add_5_9/CI0->genadder[1].adder/add_7_add_5_9/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        37.045  2       
-genadder[1].adder/n10005                                  NET DELAY            2.075        39.120  1       
+genadder[1].adder/n10003                                  NET DELAY            2.075        39.120  1       
 genadder[1].adder/add_7_add_5_9/CI1->genadder[1].adder/add_7_add_5_9/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        39.398  2       
-genadder[1].adder/n6779                                   NET DELAY            2.075        41.473  1       
+genadder[1].adder/n6777                                   NET DELAY            2.075        41.473  1       
 genadder[1].adder/add_7_add_5_11/CI0->genadder[1].adder/add_7_add_5_11/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        41.751  2       
-genadder[1].adder/n10128                                  NET DELAY            2.075        43.826  1       
+genadder[1].adder/n10126                                  NET DELAY            2.075        43.826  1       
 genadder[1].adder/add_7_add_5_11/CI1->genadder[1].adder/add_7_add_5_11/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        44.104  2       
-genadder[1].adder/n6781                                   NET DELAY            2.075        46.179  1       
+genadder[1].adder/n6779                                   NET DELAY            2.075        46.179  1       
 genadder[1].adder/add_7_add_5_13/CI0->genadder[1].adder/add_7_add_5_13/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        46.457  2       
-genadder[1].adder/n10158                                  NET DELAY            2.075        48.532  1       
+genadder[1].adder/n10156                                  NET DELAY            2.075        48.532  1       
 genadder[1].adder/add_7_add_5_13/CI1->genadder[1].adder/add_7_add_5_13/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        48.810  2       
-genadder[1].adder/n6783                                   NET DELAY            2.075        50.885  1       
+genadder[1].adder/n6781                                   NET DELAY            2.075        50.885  1       
 genadder[1].adder/add_7_add_5_15/CI0->genadder[1].adder/add_7_add_5_15/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        51.163  2       
-genadder[1].adder/n10161                                  NET DELAY            2.075        53.238  1       
+genadder[1].adder/n10159                                  NET DELAY            2.075        53.238  1       
 genadder[1].adder/add_7_add_5_15/CI1->genadder[1].adder/add_7_add_5_15/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        53.516  2       
-genadder[1].adder/n6785                                   NET DELAY            2.075        55.591  1       
+genadder[1].adder/n6783                                   NET DELAY            2.075        55.591  1       
 genadder[1].adder/add_7_add_5_17/CI0->genadder[1].adder/add_7_add_5_17/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        55.869  2       
-genadder[1].adder/n10164                                  NET DELAY            2.075        57.944  1       
+genadder[1].adder/n10162                                  NET DELAY            2.075        57.944  1       
 genadder[1].adder/add_7_add_5_17/CI1->genadder[1].adder/add_7_add_5_17/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        58.222  2       
-genadder[1].adder/n6787                                   NET DELAY            2.075        60.297  1       
+genadder[1].adder/n6785                                   NET DELAY            2.075        60.297  1       
 genadder[1].adder/add_7_add_5_19/CI0->genadder[1].adder/add_7_add_5_19/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        60.575  2       
-genadder[1].adder/n10167                                  NET DELAY            2.075        62.650  1       
+genadder[1].adder/n10165                                  NET DELAY            2.075        62.650  1       
 genadder[1].adder/add_7_add_5_19/D1->genadder[1].adder/add_7_add_5_19/S1
                                           SLICE           D1_TO_F1_DELAY       0.477        63.127  1       
 genadder[1].adder/n167[18]                                NET DELAY            2.075        65.202  1       
 genadder[1].adder/i4040_2_lut/A->genadder[1].adder/i4040_2_lut/Z
                                           SLICE           A0_TO_F0_DELAY       0.477        65.679  1       
-genadder[1].adder/n5849 ( DI0 )                           NET DELAY            2.075        67.754  1       
+genadder[1].adder/n5847 ( DI0 )                           NET DELAY            2.075        67.754  1       
 
 
 
@@ -553,61 +553,61 @@ genadder[0].adder/o_Accumulator__i0/CK->genadder[0].adder/o_Accumulator__i0/Q
 genadder[0].adder/Adder_Total[0][0]                       NET DELAY            2.075        20.216  1       
 genadder[0].adder/add_7_add_5_1/B1->genadder[0].adder/add_7_add_5_1/CO1
                                           SLICE           B1_TO_COUT1_DELAY    0.358        20.574  2       
-genadder[0].adder/n6738                                   NET DELAY            2.075        22.649  1       
+genadder[0].adder/n6736                                   NET DELAY            2.075        22.649  1       
 genadder[0].adder/add_7_add_5_3/CI0->genadder[0].adder/add_7_add_5_3/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        22.927  2       
-genadder[0].adder/n9921                                   NET DELAY            2.075        25.002  1       
+genadder[0].adder/n9919                                   NET DELAY            2.075        25.002  1       
 genadder[0].adder/add_7_add_5_3/CI1->genadder[0].adder/add_7_add_5_3/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        25.280  2       
-genadder[0].adder/n6740                                   NET DELAY            2.075        27.355  1       
+genadder[0].adder/n6738                                   NET DELAY            2.075        27.355  1       
 genadder[0].adder/add_7_add_5_5/CI0->genadder[0].adder/add_7_add_5_5/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        27.633  2       
-genadder[0].adder/n9924                                   NET DELAY            2.075        29.708  1       
+genadder[0].adder/n9922                                   NET DELAY            2.075        29.708  1       
 genadder[0].adder/add_7_add_5_5/CI1->genadder[0].adder/add_7_add_5_5/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        29.986  2       
-genadder[0].adder/n6742                                   NET DELAY            2.075        32.061  1       
+genadder[0].adder/n6740                                   NET DELAY            2.075        32.061  1       
 genadder[0].adder/add_7_add_5_7/CI0->genadder[0].adder/add_7_add_5_7/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        32.339  2       
-genadder[0].adder/n9930                                   NET DELAY            2.075        34.414  1       
+genadder[0].adder/n9928                                   NET DELAY            2.075        34.414  1       
 genadder[0].adder/add_7_add_5_7/CI1->genadder[0].adder/add_7_add_5_7/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        34.692  2       
-genadder[0].adder/n6744                                   NET DELAY            2.075        36.767  1       
+genadder[0].adder/n6742                                   NET DELAY            2.075        36.767  1       
 genadder[0].adder/add_7_add_5_9/CI0->genadder[0].adder/add_7_add_5_9/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        37.045  2       
-genadder[0].adder/n9933                                   NET DELAY            2.075        39.120  1       
+genadder[0].adder/n9931                                   NET DELAY            2.075        39.120  1       
 genadder[0].adder/add_7_add_5_9/CI1->genadder[0].adder/add_7_add_5_9/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        39.398  2       
-genadder[0].adder/n6746                                   NET DELAY            2.075        41.473  1       
+genadder[0].adder/n6744                                   NET DELAY            2.075        41.473  1       
 genadder[0].adder/add_7_add_5_11/CI0->genadder[0].adder/add_7_add_5_11/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        41.751  2       
-genadder[0].adder/n9936                                   NET DELAY            2.075        43.826  1       
+genadder[0].adder/n9934                                   NET DELAY            2.075        43.826  1       
 genadder[0].adder/add_7_add_5_11/CI1->genadder[0].adder/add_7_add_5_11/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        44.104  2       
-genadder[0].adder/n6748                                   NET DELAY            2.075        46.179  1       
+genadder[0].adder/n6746                                   NET DELAY            2.075        46.179  1       
 genadder[0].adder/add_7_add_5_13/CI0->genadder[0].adder/add_7_add_5_13/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        46.457  2       
-genadder[0].adder/n9984                                   NET DELAY            2.075        48.532  1       
+genadder[0].adder/n9982                                   NET DELAY            2.075        48.532  1       
 genadder[0].adder/add_7_add_5_13/CI1->genadder[0].adder/add_7_add_5_13/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        48.810  2       
-genadder[0].adder/n6750                                   NET DELAY            2.075        50.885  1       
+genadder[0].adder/n6748                                   NET DELAY            2.075        50.885  1       
 genadder[0].adder/add_7_add_5_15/CI0->genadder[0].adder/add_7_add_5_15/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        51.163  2       
-genadder[0].adder/n9987                                   NET DELAY            2.075        53.238  1       
+genadder[0].adder/n9985                                   NET DELAY            2.075        53.238  1       
 genadder[0].adder/add_7_add_5_15/CI1->genadder[0].adder/add_7_add_5_15/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        53.516  2       
-genadder[0].adder/n6752                                   NET DELAY            2.075        55.591  1       
+genadder[0].adder/n6750                                   NET DELAY            2.075        55.591  1       
 genadder[0].adder/add_7_add_5_17/CI0->genadder[0].adder/add_7_add_5_17/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        55.869  2       
-genadder[0].adder/n10008                                  NET DELAY            2.075        57.944  1       
+genadder[0].adder/n10006                                  NET DELAY            2.075        57.944  1       
 genadder[0].adder/add_7_add_5_17/CI1->genadder[0].adder/add_7_add_5_17/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        58.222  2       
-genadder[0].adder/n6754                                   NET DELAY            2.075        60.297  1       
+genadder[0].adder/n6752                                   NET DELAY            2.075        60.297  1       
 genadder[0].adder/add_7_add_5_19/D0->genadder[0].adder/add_7_add_5_19/S0
                                           SLICE           D0_TO_F0_DELAY       0.477        60.774  1       
 genadder[0].adder/n167[17]                                NET DELAY            2.075        62.849  1       
 genadder[0].adder/i3904_2_lut/A->genadder[0].adder/i3904_2_lut/Z
                                           SLICE           A0_TO_F0_DELAY       0.477        63.326  1       
-genadder[0].adder/n5708 ( DI0 )                           NET DELAY            2.075        65.401  1       
+genadder[0].adder/n5706 ( DI0 )                           NET DELAY            2.075        65.401  1       
 
 
 
@@ -661,61 +661,61 @@ genadder[1].adder/o_Accumulator__i0/CK->genadder[1].adder/o_Accumulator__i0/Q
 genadder[1].adder/Adder_Total[1][0]                       NET DELAY            2.075        20.216  1       
 genadder[1].adder/add_7_add_5_1/B1->genadder[1].adder/add_7_add_5_1/CO1
                                           SLICE           B1_TO_COUT1_DELAY    0.358        20.574  2       
-genadder[1].adder/n6771                                   NET DELAY            2.075        22.649  1       
+genadder[1].adder/n6769                                   NET DELAY            2.075        22.649  1       
 genadder[1].adder/add_7_add_5_3/CI0->genadder[1].adder/add_7_add_5_3/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        22.927  2       
-genadder[1].adder/n9900                                   NET DELAY            2.075        25.002  1       
+genadder[1].adder/n9898                                   NET DELAY            2.075        25.002  1       
 genadder[1].adder/add_7_add_5_3/CI1->genadder[1].adder/add_7_add_5_3/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        25.280  2       
-genadder[1].adder/n6773                                   NET DELAY            2.075        27.355  1       
+genadder[1].adder/n6771                                   NET DELAY            2.075        27.355  1       
 genadder[1].adder/add_7_add_5_5/CI0->genadder[1].adder/add_7_add_5_5/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        27.633  2       
-genadder[1].adder/n9903                                   NET DELAY            2.075        29.708  1       
+genadder[1].adder/n9901                                   NET DELAY            2.075        29.708  1       
 genadder[1].adder/add_7_add_5_5/CI1->genadder[1].adder/add_7_add_5_5/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        29.986  2       
-genadder[1].adder/n6775                                   NET DELAY            2.075        32.061  1       
+genadder[1].adder/n6773                                   NET DELAY            2.075        32.061  1       
 genadder[1].adder/add_7_add_5_7/CI0->genadder[1].adder/add_7_add_5_7/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        32.339  2       
-genadder[1].adder/n9906                                   NET DELAY            2.075        34.414  1       
+genadder[1].adder/n9904                                   NET DELAY            2.075        34.414  1       
 genadder[1].adder/add_7_add_5_7/CI1->genadder[1].adder/add_7_add_5_7/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        34.692  2       
-genadder[1].adder/n6777                                   NET DELAY            2.075        36.767  1       
+genadder[1].adder/n6775                                   NET DELAY            2.075        36.767  1       
 genadder[1].adder/add_7_add_5_9/CI0->genadder[1].adder/add_7_add_5_9/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        37.045  2       
-genadder[1].adder/n10005                                  NET DELAY            2.075        39.120  1       
+genadder[1].adder/n10003                                  NET DELAY            2.075        39.120  1       
 genadder[1].adder/add_7_add_5_9/CI1->genadder[1].adder/add_7_add_5_9/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        39.398  2       
-genadder[1].adder/n6779                                   NET DELAY            2.075        41.473  1       
+genadder[1].adder/n6777                                   NET DELAY            2.075        41.473  1       
 genadder[1].adder/add_7_add_5_11/CI0->genadder[1].adder/add_7_add_5_11/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        41.751  2       
-genadder[1].adder/n10128                                  NET DELAY            2.075        43.826  1       
+genadder[1].adder/n10126                                  NET DELAY            2.075        43.826  1       
 genadder[1].adder/add_7_add_5_11/CI1->genadder[1].adder/add_7_add_5_11/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        44.104  2       
-genadder[1].adder/n6781                                   NET DELAY            2.075        46.179  1       
+genadder[1].adder/n6779                                   NET DELAY            2.075        46.179  1       
 genadder[1].adder/add_7_add_5_13/CI0->genadder[1].adder/add_7_add_5_13/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        46.457  2       
-genadder[1].adder/n10158                                  NET DELAY            2.075        48.532  1       
+genadder[1].adder/n10156                                  NET DELAY            2.075        48.532  1       
 genadder[1].adder/add_7_add_5_13/CI1->genadder[1].adder/add_7_add_5_13/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        48.810  2       
-genadder[1].adder/n6783                                   NET DELAY            2.075        50.885  1       
+genadder[1].adder/n6781                                   NET DELAY            2.075        50.885  1       
 genadder[1].adder/add_7_add_5_15/CI0->genadder[1].adder/add_7_add_5_15/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        51.163  2       
-genadder[1].adder/n10161                                  NET DELAY            2.075        53.238  1       
+genadder[1].adder/n10159                                  NET DELAY            2.075        53.238  1       
 genadder[1].adder/add_7_add_5_15/CI1->genadder[1].adder/add_7_add_5_15/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        53.516  2       
-genadder[1].adder/n6785                                   NET DELAY            2.075        55.591  1       
+genadder[1].adder/n6783                                   NET DELAY            2.075        55.591  1       
 genadder[1].adder/add_7_add_5_17/CI0->genadder[1].adder/add_7_add_5_17/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        55.869  2       
-genadder[1].adder/n10164                                  NET DELAY            2.075        57.944  1       
+genadder[1].adder/n10162                                  NET DELAY            2.075        57.944  1       
 genadder[1].adder/add_7_add_5_17/CI1->genadder[1].adder/add_7_add_5_17/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        58.222  2       
-genadder[1].adder/n6787                                   NET DELAY            2.075        60.297  1       
+genadder[1].adder/n6785                                   NET DELAY            2.075        60.297  1       
 genadder[1].adder/add_7_add_5_19/D0->genadder[1].adder/add_7_add_5_19/S0
                                           SLICE           D0_TO_F0_DELAY       0.477        60.774  1       
 genadder[1].adder/n167[17]                                NET DELAY            2.075        62.849  1       
 genadder[1].adder/i4039_2_lut/A->genadder[1].adder/i4039_2_lut/Z
                                           SLICE           A0_TO_F0_DELAY       0.477        63.326  1       
-genadder[1].adder/n5847 ( DI0 )                           NET DELAY            2.075        65.401  1       
+genadder[1].adder/n5845 ( DI0 )                           NET DELAY            2.075        65.401  1       
 
 
 
@@ -773,49 +773,49 @@ sample_position/unary_minus_6_inv_0_i1_1_lut/A->sample_position/unary_minus_6_in
 sample_position/n1[0]                                     NET DELAY            2.075        22.768  1       
 sample_position/unary_minus_6_add_3_add_5_1/C1->sample_position/unary_minus_6_add_3_add_5_1/CO1
                                           SLICE           C1_TO_COUT1_DELAY    0.344        23.112  2       
-sample_position/n6813                                     NET DELAY            2.075        25.187  1       
+sample_position/n6811                                     NET DELAY            2.075        25.187  1       
 sample_position/unary_minus_6_add_3_add_5_3/CI0->sample_position/unary_minus_6_add_3_add_5_3/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        25.465  2       
-sample_position/n10071                                    NET DELAY            2.075        27.540  1       
+sample_position/n10069                                    NET DELAY            2.075        27.540  1       
 sample_position/unary_minus_6_add_3_add_5_3/CI1->sample_position/unary_minus_6_add_3_add_5_3/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        27.818  2       
-sample_position/n6815                                     NET DELAY            2.075        29.893  1       
+sample_position/n6813                                     NET DELAY            2.075        29.893  1       
 sample_position/unary_minus_6_add_3_add_5_5/CI0->sample_position/unary_minus_6_add_3_add_5_5/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        30.171  2       
-sample_position/n10074                                    NET DELAY            2.075        32.246  1       
+sample_position/n10072                                    NET DELAY            2.075        32.246  1       
 sample_position/unary_minus_6_add_3_add_5_5/CI1->sample_position/unary_minus_6_add_3_add_5_5/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        32.524  2       
-sample_position/n6817                                     NET DELAY            2.075        34.599  1       
+sample_position/n6815                                     NET DELAY            2.075        34.599  1       
 sample_position/unary_minus_6_add_3_add_5_7/CI0->sample_position/unary_minus_6_add_3_add_5_7/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        34.877  2       
-sample_position/n10077                                    NET DELAY            2.075        36.952  1       
+sample_position/n10075                                    NET DELAY            2.075        36.952  1       
 sample_position/unary_minus_6_add_3_add_5_7/CI1->sample_position/unary_minus_6_add_3_add_5_7/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        37.230  2       
-sample_position/n6819                                     NET DELAY            2.075        39.305  1       
+sample_position/n6817                                     NET DELAY            2.075        39.305  1       
 sample_position/unary_minus_6_add_3_add_5_9/CI0->sample_position/unary_minus_6_add_3_add_5_9/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        39.583  2       
-sample_position/n10080                                    NET DELAY            2.075        41.658  1       
+sample_position/n10078                                    NET DELAY            2.075        41.658  1       
 sample_position/unary_minus_6_add_3_add_5_9/CI1->sample_position/unary_minus_6_add_3_add_5_9/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        41.936  2       
-sample_position/n6821                                     NET DELAY            2.075        44.011  1       
+sample_position/n6819                                     NET DELAY            2.075        44.011  1       
 sample_position/unary_minus_6_add_3_add_5_11/CI0->sample_position/unary_minus_6_add_3_add_5_11/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        44.289  2       
-sample_position/n10083                                    NET DELAY            2.075        46.364  1       
+sample_position/n10081                                    NET DELAY            2.075        46.364  1       
 sample_position/unary_minus_6_add_3_add_5_11/CI1->sample_position/unary_minus_6_add_3_add_5_11/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        46.642  2       
-sample_position/n6823                                     NET DELAY            2.075        48.717  1       
+sample_position/n6821                                     NET DELAY            2.075        48.717  1       
 sample_position/unary_minus_6_add_3_add_5_13/CI0->sample_position/unary_minus_6_add_3_add_5_13/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        48.995  2       
-sample_position/n10086                                    NET DELAY            2.075        51.070  1       
+sample_position/n10084                                    NET DELAY            2.075        51.070  1       
 sample_position/unary_minus_6_add_3_add_5_13/CI1->sample_position/unary_minus_6_add_3_add_5_13/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        51.348  2       
-sample_position/n6825                                     NET DELAY            2.075        53.423  1       
+sample_position/n6823                                     NET DELAY            2.075        53.423  1       
 sample_position/unary_minus_6_add_3_add_5_15/CI0->sample_position/unary_minus_6_add_3_add_5_15/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        53.701  2       
-sample_position/n10089                                    NET DELAY            2.075        55.776  1       
+sample_position/n10087                                    NET DELAY            2.075        55.776  1       
 sample_position/unary_minus_6_add_3_add_5_15/CI1->sample_position/unary_minus_6_add_3_add_5_15/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        56.054  2       
-sample_position/n6827                                     NET DELAY            2.075        58.129  1       
+sample_position/n6825                                     NET DELAY            2.075        58.129  1       
 sample_position/unary_minus_6_add_3_add_5_17/D0->sample_position/unary_minus_6_add_3_add_5_17/S0
                                           SLICE           D0_TO_F0_DELAY       0.477        58.606  1       
 sample_position/n87_adj_1157[15]                          NET DELAY            2.075        60.681  1       
@@ -878,52 +878,52 @@ sample_position/i5924_2_lut_3_lut_4_lut/A->sample_position/i5924_2_lut_3_lut_4_l
 sample_position/n7_adj_1092                               NET DELAY            2.075        22.768  1       
 sample_position/i4523_2_lut/B->sample_position/i4523_2_lut/Z
                                           SLICE           B0_TO_F0_DELAY       0.477        23.245  1       
-sample_position/n6624                                     NET DELAY            2.075        25.320  1       
+sample_position/n6622                                     NET DELAY            2.075        25.320  1       
 sample_position/Accumulated_Frequency_849_add_4_1/C1->sample_position/Accumulated_Frequency_849_add_4_1/CO1
                                           SLICE           C1_TO_COUT1_DELAY    0.344        25.664  2       
-sample_position/n6704                                     NET DELAY            2.075        27.739  1       
+sample_position/n6702                                     NET DELAY            2.075        27.739  1       
 sample_position/Accumulated_Frequency_849_add_4_3/CI0->sample_position/Accumulated_Frequency_849_add_4_3/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        28.017  2       
-sample_position/n10134                                    NET DELAY            2.075        30.092  1       
+sample_position/n10132                                    NET DELAY            2.075        30.092  1       
 sample_position/Accumulated_Frequency_849_add_4_3/CI1->sample_position/Accumulated_Frequency_849_add_4_3/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        30.370  2       
-sample_position/n6706                                     NET DELAY            2.075        32.445  1       
+sample_position/n6704                                     NET DELAY            2.075        32.445  1       
 sample_position/Accumulated_Frequency_849_add_4_5/CI0->sample_position/Accumulated_Frequency_849_add_4_5/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        32.723  2       
-sample_position/n10137                                    NET DELAY            2.075        34.798  1       
+sample_position/n10135                                    NET DELAY            2.075        34.798  1       
 sample_position/Accumulated_Frequency_849_add_4_5/CI1->sample_position/Accumulated_Frequency_849_add_4_5/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        35.076  2       
-sample_position/n6708                                     NET DELAY            2.075        37.151  1       
+sample_position/n6706                                     NET DELAY            2.075        37.151  1       
 sample_position/Accumulated_Frequency_849_add_4_7/CI0->sample_position/Accumulated_Frequency_849_add_4_7/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        37.429  2       
-sample_position/n10140                                    NET DELAY            2.075        39.504  1       
+sample_position/n10138                                    NET DELAY            2.075        39.504  1       
 sample_position/Accumulated_Frequency_849_add_4_7/CI1->sample_position/Accumulated_Frequency_849_add_4_7/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        39.782  2       
-sample_position/n6710                                     NET DELAY            2.075        41.857  1       
+sample_position/n6708                                     NET DELAY            2.075        41.857  1       
 sample_position/Accumulated_Frequency_849_add_4_9/CI0->sample_position/Accumulated_Frequency_849_add_4_9/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        42.135  2       
-sample_position/n10143                                    NET DELAY            2.075        44.210  1       
+sample_position/n10141                                    NET DELAY            2.075        44.210  1       
 sample_position/Accumulated_Frequency_849_add_4_9/CI1->sample_position/Accumulated_Frequency_849_add_4_9/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        44.488  2       
-sample_position/n6712                                     NET DELAY            2.075        46.563  1       
+sample_position/n6710                                     NET DELAY            2.075        46.563  1       
 sample_position/Accumulated_Frequency_849_add_4_11/CI0->sample_position/Accumulated_Frequency_849_add_4_11/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        46.841  2       
-sample_position/n10146                                    NET DELAY            2.075        48.916  1       
+sample_position/n10144                                    NET DELAY            2.075        48.916  1       
 sample_position/Accumulated_Frequency_849_add_4_11/CI1->sample_position/Accumulated_Frequency_849_add_4_11/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        49.194  2       
-sample_position/n6714                                     NET DELAY            2.075        51.269  1       
+sample_position/n6712                                     NET DELAY            2.075        51.269  1       
 sample_position/Accumulated_Frequency_849_add_4_13/CI0->sample_position/Accumulated_Frequency_849_add_4_13/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        51.547  2       
-sample_position/n10149                                    NET DELAY            2.075        53.622  1       
+sample_position/n10147                                    NET DELAY            2.075        53.622  1       
 sample_position/Accumulated_Frequency_849_add_4_13/CI1->sample_position/Accumulated_Frequency_849_add_4_13/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        53.900  2       
-sample_position/n6716                                     NET DELAY            2.075        55.975  1       
+sample_position/n6714                                     NET DELAY            2.075        55.975  1       
 sample_position/Accumulated_Frequency_849_add_4_15/CI0->sample_position/Accumulated_Frequency_849_add_4_15/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        56.253  2       
-sample_position/n10152                                    NET DELAY            2.075        58.328  1       
+sample_position/n10150                                    NET DELAY            2.075        58.328  1       
 sample_position/Accumulated_Frequency_849_add_4_15/CI1->sample_position/Accumulated_Frequency_849_add_4_15/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        58.606  2       
-sample_position/n6718                                     NET DELAY            2.075        60.681  1       
+sample_position/n6716                                     NET DELAY            2.075        60.681  1       
 sample_position/Accumulated_Frequency_849_add_4_17/D0->sample_position/Accumulated_Frequency_849_add_4_17/S0
                                           SLICE           D0_TO_F0_DELAY       0.477        61.158  1       
 sample_position/n69[15] ( DI0 )                           NET DELAY            2.075        63.233  1       
@@ -980,58 +980,58 @@ genadder[0].adder/o_Accumulator__i0/CK->genadder[0].adder/o_Accumulator__i0/Q
 genadder[0].adder/Adder_Total[0][0]                       NET DELAY            2.075        20.216  1       
 genadder[0].adder/add_7_add_5_1/B1->genadder[0].adder/add_7_add_5_1/CO1
                                           SLICE           B1_TO_COUT1_DELAY    0.358        20.574  2       
-genadder[0].adder/n6738                                   NET DELAY            2.075        22.649  1       
+genadder[0].adder/n6736                                   NET DELAY            2.075        22.649  1       
 genadder[0].adder/add_7_add_5_3/CI0->genadder[0].adder/add_7_add_5_3/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        22.927  2       
-genadder[0].adder/n9921                                   NET DELAY            2.075        25.002  1       
+genadder[0].adder/n9919                                   NET DELAY            2.075        25.002  1       
 genadder[0].adder/add_7_add_5_3/CI1->genadder[0].adder/add_7_add_5_3/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        25.280  2       
-genadder[0].adder/n6740                                   NET DELAY            2.075        27.355  1       
+genadder[0].adder/n6738                                   NET DELAY            2.075        27.355  1       
 genadder[0].adder/add_7_add_5_5/CI0->genadder[0].adder/add_7_add_5_5/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        27.633  2       
-genadder[0].adder/n9924                                   NET DELAY            2.075        29.708  1       
+genadder[0].adder/n9922                                   NET DELAY            2.075        29.708  1       
 genadder[0].adder/add_7_add_5_5/CI1->genadder[0].adder/add_7_add_5_5/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        29.986  2       
-genadder[0].adder/n6742                                   NET DELAY            2.075        32.061  1       
+genadder[0].adder/n6740                                   NET DELAY            2.075        32.061  1       
 genadder[0].adder/add_7_add_5_7/CI0->genadder[0].adder/add_7_add_5_7/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        32.339  2       
-genadder[0].adder/n9930                                   NET DELAY            2.075        34.414  1       
+genadder[0].adder/n9928                                   NET DELAY            2.075        34.414  1       
 genadder[0].adder/add_7_add_5_7/CI1->genadder[0].adder/add_7_add_5_7/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        34.692  2       
-genadder[0].adder/n6744                                   NET DELAY            2.075        36.767  1       
+genadder[0].adder/n6742                                   NET DELAY            2.075        36.767  1       
 genadder[0].adder/add_7_add_5_9/CI0->genadder[0].adder/add_7_add_5_9/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        37.045  2       
-genadder[0].adder/n9933                                   NET DELAY            2.075        39.120  1       
+genadder[0].adder/n9931                                   NET DELAY            2.075        39.120  1       
 genadder[0].adder/add_7_add_5_9/CI1->genadder[0].adder/add_7_add_5_9/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        39.398  2       
-genadder[0].adder/n6746                                   NET DELAY            2.075        41.473  1       
+genadder[0].adder/n6744                                   NET DELAY            2.075        41.473  1       
 genadder[0].adder/add_7_add_5_11/CI0->genadder[0].adder/add_7_add_5_11/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        41.751  2       
-genadder[0].adder/n9936                                   NET DELAY            2.075        43.826  1       
+genadder[0].adder/n9934                                   NET DELAY            2.075        43.826  1       
 genadder[0].adder/add_7_add_5_11/CI1->genadder[0].adder/add_7_add_5_11/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        44.104  2       
-genadder[0].adder/n6748                                   NET DELAY            2.075        46.179  1       
+genadder[0].adder/n6746                                   NET DELAY            2.075        46.179  1       
 genadder[0].adder/add_7_add_5_13/CI0->genadder[0].adder/add_7_add_5_13/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        46.457  2       
-genadder[0].adder/n9984                                   NET DELAY            2.075        48.532  1       
+genadder[0].adder/n9982                                   NET DELAY            2.075        48.532  1       
 genadder[0].adder/add_7_add_5_13/CI1->genadder[0].adder/add_7_add_5_13/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        48.810  2       
-genadder[0].adder/n6750                                   NET DELAY            2.075        50.885  1       
+genadder[0].adder/n6748                                   NET DELAY            2.075        50.885  1       
 genadder[0].adder/add_7_add_5_15/CI0->genadder[0].adder/add_7_add_5_15/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        51.163  2       
-genadder[0].adder/n9987                                   NET DELAY            2.075        53.238  1       
+genadder[0].adder/n9985                                   NET DELAY            2.075        53.238  1       
 genadder[0].adder/add_7_add_5_15/CI1->genadder[0].adder/add_7_add_5_15/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        53.516  2       
-genadder[0].adder/n6752                                   NET DELAY            2.075        55.591  1       
+genadder[0].adder/n6750                                   NET DELAY            2.075        55.591  1       
 genadder[0].adder/add_7_add_5_17/CI0->genadder[0].adder/add_7_add_5_17/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        55.869  2       
-genadder[0].adder/n10008                                  NET DELAY            2.075        57.944  1       
+genadder[0].adder/n10006                                  NET DELAY            2.075        57.944  1       
 genadder[0].adder/add_7_add_5_17/D1->genadder[0].adder/add_7_add_5_17/S1
                                           SLICE           D1_TO_F1_DELAY       0.477        58.421  1       
 genadder[0].adder/n167[16]                                NET DELAY            2.075        60.496  1       
 genadder[0].adder/i3905_2_lut/A->genadder[0].adder/i3905_2_lut/Z
                                           SLICE           A0_TO_F0_DELAY       0.477        60.973  1       
-genadder[0].adder/n5710 ( DI0 )                           NET DELAY            2.075        63.048  1       
+genadder[0].adder/n5708 ( DI0 )                           NET DELAY            2.075        63.048  1       
 
 
 
@@ -1085,58 +1085,58 @@ genadder[1].adder/o_Accumulator__i0/CK->genadder[1].adder/o_Accumulator__i0/Q
 genadder[1].adder/Adder_Total[1][0]                       NET DELAY            2.075        20.216  1       
 genadder[1].adder/add_7_add_5_1/B1->genadder[1].adder/add_7_add_5_1/CO1
                                           SLICE           B1_TO_COUT1_DELAY    0.358        20.574  2       
-genadder[1].adder/n6771                                   NET DELAY            2.075        22.649  1       
+genadder[1].adder/n6769                                   NET DELAY            2.075        22.649  1       
 genadder[1].adder/add_7_add_5_3/CI0->genadder[1].adder/add_7_add_5_3/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        22.927  2       
-genadder[1].adder/n9900                                   NET DELAY            2.075        25.002  1       
+genadder[1].adder/n9898                                   NET DELAY            2.075        25.002  1       
 genadder[1].adder/add_7_add_5_3/CI1->genadder[1].adder/add_7_add_5_3/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        25.280  2       
-genadder[1].adder/n6773                                   NET DELAY            2.075        27.355  1       
+genadder[1].adder/n6771                                   NET DELAY            2.075        27.355  1       
 genadder[1].adder/add_7_add_5_5/CI0->genadder[1].adder/add_7_add_5_5/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        27.633  2       
-genadder[1].adder/n9903                                   NET DELAY            2.075        29.708  1       
+genadder[1].adder/n9901                                   NET DELAY            2.075        29.708  1       
 genadder[1].adder/add_7_add_5_5/CI1->genadder[1].adder/add_7_add_5_5/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        29.986  2       
-genadder[1].adder/n6775                                   NET DELAY            2.075        32.061  1       
+genadder[1].adder/n6773                                   NET DELAY            2.075        32.061  1       
 genadder[1].adder/add_7_add_5_7/CI0->genadder[1].adder/add_7_add_5_7/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        32.339  2       
-genadder[1].adder/n9906                                   NET DELAY            2.075        34.414  1       
+genadder[1].adder/n9904                                   NET DELAY            2.075        34.414  1       
 genadder[1].adder/add_7_add_5_7/CI1->genadder[1].adder/add_7_add_5_7/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        34.692  2       
-genadder[1].adder/n6777                                   NET DELAY            2.075        36.767  1       
+genadder[1].adder/n6775                                   NET DELAY            2.075        36.767  1       
 genadder[1].adder/add_7_add_5_9/CI0->genadder[1].adder/add_7_add_5_9/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        37.045  2       
-genadder[1].adder/n10005                                  NET DELAY            2.075        39.120  1       
+genadder[1].adder/n10003                                  NET DELAY            2.075        39.120  1       
 genadder[1].adder/add_7_add_5_9/CI1->genadder[1].adder/add_7_add_5_9/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        39.398  2       
-genadder[1].adder/n6779                                   NET DELAY            2.075        41.473  1       
+genadder[1].adder/n6777                                   NET DELAY            2.075        41.473  1       
 genadder[1].adder/add_7_add_5_11/CI0->genadder[1].adder/add_7_add_5_11/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        41.751  2       
-genadder[1].adder/n10128                                  NET DELAY            2.075        43.826  1       
+genadder[1].adder/n10126                                  NET DELAY            2.075        43.826  1       
 genadder[1].adder/add_7_add_5_11/CI1->genadder[1].adder/add_7_add_5_11/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        44.104  2       
-genadder[1].adder/n6781                                   NET DELAY            2.075        46.179  1       
+genadder[1].adder/n6779                                   NET DELAY            2.075        46.179  1       
 genadder[1].adder/add_7_add_5_13/CI0->genadder[1].adder/add_7_add_5_13/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        46.457  2       
-genadder[1].adder/n10158                                  NET DELAY            2.075        48.532  1       
+genadder[1].adder/n10156                                  NET DELAY            2.075        48.532  1       
 genadder[1].adder/add_7_add_5_13/CI1->genadder[1].adder/add_7_add_5_13/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        48.810  2       
-genadder[1].adder/n6783                                   NET DELAY            2.075        50.885  1       
+genadder[1].adder/n6781                                   NET DELAY            2.075        50.885  1       
 genadder[1].adder/add_7_add_5_15/CI0->genadder[1].adder/add_7_add_5_15/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        51.163  2       
-genadder[1].adder/n10161                                  NET DELAY            2.075        53.238  1       
+genadder[1].adder/n10159                                  NET DELAY            2.075        53.238  1       
 genadder[1].adder/add_7_add_5_15/CI1->genadder[1].adder/add_7_add_5_15/CO1
                                           SLICE           CIN1_TO_COUT1_DELAY  0.278        53.516  2       
-genadder[1].adder/n6785                                   NET DELAY            2.075        55.591  1       
+genadder[1].adder/n6783                                   NET DELAY            2.075        55.591  1       
 genadder[1].adder/add_7_add_5_17/CI0->genadder[1].adder/add_7_add_5_17/CO0
                                           SLICE           CIN0_TO_COUT0_DELAY  0.278        55.869  2       
-genadder[1].adder/n10164                                  NET DELAY            2.075        57.944  1       
+genadder[1].adder/n10162                                  NET DELAY            2.075        57.944  1       
 genadder[1].adder/add_7_add_5_17/D1->genadder[1].adder/add_7_add_5_17/S1
                                           SLICE           D1_TO_F1_DELAY       0.477        58.421  1       
 genadder[1].adder/n167[16]                                NET DELAY            2.075        60.496  1       
 genadder[1].adder/i4038_2_lut/A->genadder[1].adder/i4038_2_lut/Z
                                           SLICE           A0_TO_F0_DELAY       0.477        60.973  1       
-genadder[1].adder/n5845 ( DI0 )                           NET DELAY            2.075        63.048  1       
+genadder[1].adder/n5843 ( DI0 )                           NET DELAY            2.075        63.048  1       
 
 
 
@@ -1236,7 +1236,7 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY        2.075        58.496  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           SLICE           D0_TO_F0_DELAY   0.477        58.973  16      
-sample_position/n5290 ( CE )                              NET DELAY        2.075        61.048  1       
+sample_position/n5288 ( CE )                              NET DELAY        2.075        61.048  1       
 
 
 
@@ -1336,7 +1336,7 @@ sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
 sample_position/n4_adj_1133                               NET DELAY        2.075        58.496  1       
 sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
                                           SLICE           D0_TO_F0_DELAY   0.477        58.973  16      
-sample_position/n5290 ( CE )                              NET DELAY        2.075        61.048  1       
+sample_position/n5288 ( CE )                              NET DELAY        2.075        61.048  1       
 
 
 

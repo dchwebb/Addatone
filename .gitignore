@@ -17,3 +17,8 @@ Addatone_ICE40/Addatone_Sim/*
 *.zip
 *.dmp
 
+*.par
+*.tw1
+*.twr
+*.tws
+*.mrp
