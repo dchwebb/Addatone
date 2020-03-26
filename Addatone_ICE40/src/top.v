@@ -63,8 +63,8 @@ module top
 
 	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
 	parameter DIV_BIT = 9;									// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
-	reg [DIV_BIT - 1:0] Harmonic_Scale = 270;			// Level at which higher harmonics are attenuated
-	reg [DIV_BIT - 1:0] Scale_Initial = 511;
+	reg [DIV_BIT - 1:0] Harmonic_Scale[1:0];			// Level at which higher harmonics are attenuated
+	reg [DIV_BIT - 1:0] Scale_Initial[1:0];
 	reg [1:0] Adder_Start;
 	wire [1:0] Adder_Ready;
 	reg Adder_Clear;
@@ -96,8 +96,8 @@ module top
 		.i_Clock(Main_Clock),
 		.i_Start(Start_Mult_Scaler),
 		.i_Restart(Reset_Mult_Scaler),
-		.i_Scale(Harmonic_Scale),
-		.i_Initial(Scale_Initial),
+		.i_Scale(Harmonic_Scale[0]),
+		.i_Initial(Scale_Initial[0]),
 		.i_Comb_Interval(Comb_Interval),
 		.o_Comb_Muted(Comb_Muted),
 		.o_Mult(Adder_Mult),
@@ -132,10 +132,12 @@ module top
 	// Assign values from ADC bytes received to respective control registers
 	always @(posedge ADC_Data_Received) begin
 		Frequency <= ADC_Data[0];
-		Harmonic_Scale <= ADC_Data[1][DIV_BIT - 1:0];			// Rate of attenuation of harmonic scaling (lower means more harmonics)
-		Scale_Initial <= ADC_Data[2][DIV_BIT - 1:0];				// Starting value for scaling (lower if there are more harmonics)
-		Freq_Scale <= ADC_Data[3];										// Frequency scaling offset - higher frequencies will be moved further from multiple of fundamental
-		Comb_Interval <= ADC_Data[4][7:0];							// Comb filter interval - ie which harmonics will muted
+		Harmonic_Scale[0] <= ADC_Data[1][DIV_BIT - 1:0];			// Rate of attenuation of harmonic scaling (lower means more harmonics)
+		Scale_Initial[0] <= ADC_Data[2][DIV_BIT - 1:0];				// Starting value for scaling (lower if there are more harmonics)
+		Harmonic_Scale[1] <= ADC_Data[3][DIV_BIT - 1:0];			// Rate of attenuation of harmonic scaling (lower means more harmonics)
+		Scale_Initial[1] <= ADC_Data[4][DIV_BIT - 1:0];				// Starting value for scaling (lower if there are more harmonics)
+		Freq_Scale <= ADC_Data[5];										// Frequency scaling offset - higher frequencies will be moved further from multiple of fundamental
+//		Comb_Interval <= ADC_Data[6][7:0];							// Comb filter interval - ie which harmonics will muted
 		test <= ~test;
 	end
 
@@ -205,7 +207,7 @@ module top
 				sm_calc_done:
 					begin
 						// all harmonics calculated - read accumulated output levels into registers for sending to DAC
-						r_Adder_Total[0] <= Adder_Total[0];
+						r_Adder_Total[0] <= Adder_Total[0] + Adder_Total[1];
 						r_Adder_Total[1] <= Adder_Total[1];
 
 						Next_Sample <= 1'b0;

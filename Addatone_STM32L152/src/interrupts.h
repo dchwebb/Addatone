@@ -43,30 +43,41 @@ void TIM3_IRQHandler(void) {
 	 */
 
 	//harmonicScale = (uint16_t)(ADC_array[2] + ADC_array[5] + ADC_array[8] + ADC_array[11]) >> 5;		// scale 0 to 511
-	harmonicScale = (uint16_t)(ADC_SUM(1)) >> 5;		// scale 0 to 511
-	dampedHarmonicScale = ((15 * dampedHarmonicScale) + harmonicScale) >> 4;
-	harmScale = ((31.0f * harmScale) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScale / 56.777f) - 1)) / 32.0f;
+	harmonicScaleOdd = (uint16_t)(ADC_SUM(1)) >> 5;		// scale 0 to 511
+	dampedHarmonicScaleOdd = ((15 * dampedHarmonicScaleOdd) + harmonicScaleOdd) >> 4;
+	harmScaleOdd = ((31.0f * harmScaleOdd) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScaleOdd / 56.777f) - 1)) / 32.0f;
+
+	harmonicScaleEven = (uint16_t)(ADC_SUM(2)) >> 5;		// scale 0 to 511
+	dampedHarmonicScaleEven = ((15 * dampedHarmonicScaleEven) + harmonicScaleEven) >> 4;
+	harmScaleEven = ((31.0f * harmScaleEven) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScaleEven / 56.777f) - 1)) / 32.0f;
 
 	// Create inverted exponential curve for volume reduction
-	float vol = (511.0f - (float)harmScale) / 511.0f;
-	startVol = ((0.7f - 0.7f * std::pow(vol, 4.0f)) + 0.3f) * 511.0f;
+	float volOdd = (511.0f - (float)harmScaleOdd) / 511.0f;
+	startVolOdd = ((0.7f - 0.7f * std::pow(volOdd, 4.0f)) + 0.3f) * 511.0f;
+
+	// Create inverted exponential curve for volume reduction
+	float volEven = (511.0f - (float)harmScaleEven) / 511.0f;
+	startVolEven = ((0.7f - 0.7f * std::pow(volEven, 4.0f)) + 0.3f) * 511.0f;
 
 	// Send CV value for frequency scaling
-	freqScale = 126 - std::max(
-			((int16_t)ADC_SUM(2)) >> 7, 0);		// scale to range 0-127
-	//freqScale = 0;
+	freqScale = 126 - std::max(((int16_t)ADC_SUM(3)) >> 7, 0);		// scale to range 0-127
 
+
+/*
 	// Send potentiometer value for Comb Filter Interval
-	if (combIntervalTemp > ADC_SUM(3) + 500 || combIntervalTemp < ADC_SUM(3) - 500)
-		combIntervalTemp = ADC_SUM(3);
+	if (combIntervalTemp > ADC_SUM(4) + 500 || combIntervalTemp < ADC_SUM(4) - 500)
+		combIntervalTemp = ADC_SUM(4);
 	combInterval = combIntervalTemp >> 9;		// scale to range 0-31
+*/
 
 
 	sendSPIData((uint16_t)freq);
-	sendSPIData((uint16_t)harmScale);
-	sendSPIData(startVol);
+	sendSPIData((uint16_t)harmScaleOdd);
+	sendSPIData(startVolOdd);
+	sendSPIData((uint16_t)harmScaleEven);
+	sendSPIData(startVolEven);
 	sendSPIData(freqScale);
-	sendSPIData(combInterval);
+//	sendSPIData(combInterval);
 
 	clearSPI();
 }

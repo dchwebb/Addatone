@@ -10,20 +10,41 @@ volatile uint16_t& ADC_PITCH = ADC_array[0];	// PB0 ADC12_IN8   Pin 26
 volatile uint16_t& ADC_FTUNE = ADC_array[1];	// PB1 ADC12_IN9   Pin 27
 volatile float pitch;
 volatile float freq = 220;
-volatile uint16_t harmonicScale;
-volatile uint16_t dampedHarmonicScale;
-volatile uint16_t startVol;
-volatile uint16_t outputVal;
+
+volatile uint16_t harmonicScaleOdd;
+volatile uint16_t dampedHarmonicScaleOdd;
+volatile uint16_t startVolOdd;
+volatile float harmScaleOdd;
+
+volatile uint16_t harmonicScaleEven;
+volatile uint16_t dampedHarmonicScaleEven;
+volatile uint16_t startVolEven;
+volatile float harmScaleEven;
+
 volatile int16_t freqScale;
 volatile uint16_t combInterval;
 volatile uint16_t combIntervalTemp;				// Temporary value used for hysteresis
-volatile float harmScale;
-volatile bool harmonicDir;
+
+//volatile bool harmonicDir;
 volatile bool fup = 1;
 
 extern "C" {
 #include "interrupts.h"
 }
+
+/*
+#define LUTSIZE 1024
+float PitchLUT[LUTSIZE];
+
+void CreateLUTs(void)
+{
+	// Generate pitch lookup table
+	for (int p = 0; p < LUTSIZE; p++){
+		PitchLUT[p] = 3750.0f * std::pow(2.0f, pitch / -590.0f);			// for cycle length of 65k
+	}
+}
+*/
+
 
 int main(void)
 {
