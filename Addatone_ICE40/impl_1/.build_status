@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BuildStatus>
     <Strategy name="Strategy1">
-        <Milestone name="Export" build_result="2" build_time="1585172270">
-            <Task name="Bitgen" build_result="2" update_result="0" update_time="1585172270"/>
-            <Task name="IBIS" build_result="2" update_result="0" update_time="1585172271"/>
+        <Milestone name="Export" build_result="2" build_time="1585173641">
+            <Task name="Bitgen" build_result="2" update_result="0" update_time="1585173641"/>
+            <Task name="IBIS" build_result="2" update_result="0" update_time="1585173641"/>
             <Task name="TimingSimFileVlg" build_result="0" update_result="2" update_time="1585077419"/>
         </Milestone>
-        <Milestone name="Map" build_result="2" build_time="1585172244">
-            <Task name="Map" build_result="2" update_result="0" update_time="1585172244"/>
-            <Task name="MapTrace" build_result="2" update_result="0" update_time="1585172246"/>
+        <Milestone name="Map" build_result="2" build_time="1585173613">
+            <Task name="Map" build_result="2" update_result="0" update_time="1585173613"/>
+            <Task name="MapTrace" build_result="2" update_result="0" update_time="1585173615"/>
         </Milestone>
-        <Milestone name="PAR" build_result="2" build_time="1585172267">
-            <Task name="PAR" build_result="2" update_result="0" update_time="1585172267"/>
-            <Task name="PARTrace" build_result="2" update_result="0" update_time="1585172269"/>
+        <Milestone name="PAR" build_result="2" build_time="1585173637">
+            <Task name="PAR" build_result="2" update_result="0" update_time="1585173637"/>
+            <Task name="PARTrace" build_result="2" update_result="0" update_time="1585173639"/>
             <Task name="IOTiming" build_result="0" update_result="3" update_time="0"/>
         </Milestone>
-        <Milestone name="Synthesis" build_result="2" build_time="1585172243">
-            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1585172243"/>
-            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1585172271"/>
-            <Task name="SynTrace" build_result="2" update_result="0" update_time="1585172244"/>
+        <Milestone name="Synthesis" build_result="2" build_time="1585173612">
+            <Task name="Lattice_Synthesis" build_result="2" update_result="0" update_time="1585173612"/>
+            <Task name="LSE_Compile" build_result="2" update_result="0" update_time="1585173612"/>
+            <Task name="SynTrace" build_result="2" update_result="0" update_time="1585173612"/>
             <Task name="SynVerilogSimFile" build_result="0" update_result="2" update_time="1584978675"/>
         </Milestone>
         <Milestone name="TOOL_Report" build_result="0" build_time="0">
@@ -28,19 +28,19 @@
             <Task name="PIODRC" build_result="0" update_result="2" update_time="1584967881"/>
             <Task name="DEC" build_result="0" update_result="2" update_time="1584966081"/>
         </Milestone>
-        <Report name="Addatone_ICE40_impl_1.bgn" last_build_time="1585172270" last_build_size="992"/>
-        <Report name="Addatone_ICE40_impl_1.bin" last_build_time="1585172270" last_build_size="104156"/>
+        <Report name="Addatone_ICE40_impl_1.bgn" last_build_time="1585173640" last_build_size="992"/>
+        <Report name="Addatone_ICE40_impl_1.bin" last_build_time="1585173640" last_build_size="104156"/>
         <Report name="Addatone_ICE40_impl_1.lsedata" last_build_time="0" last_build_size="0"/>
-        <Report name="Addatone_ICE40_impl_1.tw1.html" last_build_time="1585172246" last_build_size="360276"/>
-        <Report name="Addatone_ICE40_impl_1.twr.html" last_build_time="1585172269" last_build_size="314762"/>
-        <Report name="Addatone_ICE40_impl_1.tws.html" last_build_time="1585172244" last_build_size="283021"/>
-        <Report name="Addatone_ICE40_impl_1.udb" last_build_time="1585172267" last_build_size="137899"/>
-        <Report name="Addatone_ICE40_impl_1_map.udb" last_build_time="1585172244" last_build_size="86081"/>
-        <Report name="Addatone_ICE40_impl_1_rtl.udb" last_build_time="1585172241" last_build_size="109277"/>
-        <Report name="Addatone_ICE40_impl_1_syn.udb" last_build_time="1585172243" last_build_size="74641"/>
+        <Report name="Addatone_ICE40_impl_1.tw1.html" last_build_time="1585173615" last_build_size="359737"/>
+        <Report name="Addatone_ICE40_impl_1.twr.html" last_build_time="1585173639" last_build_size="314845"/>
+        <Report name="Addatone_ICE40_impl_1.tws.html" last_build_time="1585173612" last_build_size="283451"/>
+        <Report name="Addatone_ICE40_impl_1.udb" last_build_time="1585173637" last_build_size="137488"/>
+        <Report name="Addatone_ICE40_impl_1_map.udb" last_build_time="1585173613" last_build_size="85590"/>
+        <Report name="Addatone_ICE40_impl_1_rtl.udb" last_build_time="1585173610" last_build_size="109277"/>
+        <Report name="Addatone_ICE40_impl_1_syn.udb" last_build_time="1585173612" last_build_size="74715"/>
         <Report name="Addatone_ICE40_impl_1_vo.sdf" last_build_time="1585077064" last_build_size="781812"/>
         <Report name="Addatone_ICE40_impl_1_vo.vo" last_build_time="1585077064" last_build_size="790702"/>
-        <Report name="IBIS/Addatone_ICE40_impl_1.ibs" last_build_time="1585172271" last_build_size="63812"/>
+        <Report name="IBIS/Addatone_ICE40_impl_1.ibs" last_build_time="1585173641" last_build_size="63812"/>
     </Strategy>
 </BuildStatus>
-                  
+           

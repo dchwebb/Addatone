@@ -5,7 +5,7 @@ Target Device:        iCE40UP5KSG48
 Target Performance:   High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2.0.1.281.2
-Mapped on: Wed Mar 25 21:37:24 2020
+Mapped on: Wed Mar 25 22:00:13 2020
 
 Design Information
 ------------------
@@ -18,12 +18,12 @@ Command line:   map Addatone_ICE40_impl_1_syn.udb
 Design Summary
 --------------
 
-   Number of slice registers: 470 out of  5280 (9%)
+   Number of slice registers: 469 out of  5280 (9%)
    Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           918 out of  5280 (17%)
-      Number of logic LUT4s:             521
-      Number of inserted feedthru LUT4s: 210
-      Number of replicated LUT4s:          3
+   Number of LUT4s:           911 out of  5280 (17%)
+      Number of logic LUT4s:             511
+      Number of inserted feedthru LUT4s: 214
+      Number of replicated LUT4s:          2
       Number of ripple logic:             92 (184 LUT4s)
    Number of IO sites used:   10 out of 39 (26%)
       Number of IO sites used for general PIOs: 10
@@ -46,20 +46,20 @@ Design Summary
    Number of Clocks:  4
       Net ADC_Data_Received: 59 loads, 59 rising, 0 falling (Driver: Pin
      adc.o_Data_Received/Q)
-      Net Main_Clock: 328 loads, 328 rising, 0 falling (Driver: Pin
+      Net Main_Clock: 329 loads, 329 rising, 0 falling (Driver: Pin
      pll_48.lscc_pll_inst.u_PLL_B/OUTCORE)
       Net i_Clock_c: 1 loads, 1 rising, 0 falling (Driver: Port i_Clock)
       Net adc.Clock_Stable: 68 loads, 68 rising, 0 falling (Driver: Pin
      adc.Clock_Stable_c/Q)
-   Number of Clock Enables:  101
+   Number of Clock Enables:  100
       Net VCC_net: 26 loads, 0 SLICEs
-      Net n6196: 8 loads, 8 SLICEs
-      Net n5476: 17 loads, 17 SLICEs
-      Net n3120: 8 loads, 8 SLICEs
-      Net n5658: 1 loads, 1 SLICEs
+      Net n2960: 8 loads, 8 SLICEs
+      Net n6049: 1 loads, 1 SLICEs
+      Net n5526: 3 loads, 3 SLICEs
       Pin reset_n: 3 loads, 3 SLICEs (Net: reset_n_c)
-      Net n7890: 1 loads, 1 SLICEs
-      Net n8546: 1 loads, 1 SLICEs
+      Net n6010: 11 loads, 11 SLICEs
+      Net n7_adj_1207: 1 loads, 1 SLICEs
+      Net sample_position.Sample_Pos_WE: 1 loads, 0 SLICEs
 
                                     Page 1
 
@@ -69,63 +69,63 @@ Design Summary
 
 Design Summary (cont)
 ---------------------
-      Net n6194: 9 loads, 9 SLICEs
-      Net n6179: 11 loads, 11 SLICEs
-      Net sample_position.n5263: 1 loads, 1 SLICEs
-      Net n7_adj_1205: 1 loads, 1 SLICEs
-      Net sample_position.Sample_Pos_WE: 1 loads, 0 SLICEs
-      Net n7953: 1 loads, 1 SLICEs
-      Net sample_position.n5464: 1 loads, 1 SLICEs
-      Net sample_position.n5586: 11 loads, 11 SLICEs
-      Net sample_position.n5499: 16 loads, 16 SLICEs
-      Net sample_position.n5490: 1 loads, 1 SLICEs
-      Net sample_position.n5617: 9 loads, 9 SLICEs
+      Net n7657: 1 loads, 1 SLICEs
+      Net n4681: 4 loads, 4 SLICEs
+      Net sample_position.n5295: 1 loads, 1 SLICEs
+      Net sample_position.n5386: 16 loads, 16 SLICEs
+      Net sample_position.n5293: 1 loads, 1 SLICEs
+      Net n6026: 9 loads, 9 SLICEs
+      Net sample_position.n5460: 9 loads, 9 SLICEs
+      Net sample_position.n5423: 10 loads, 10 SLICEs
       Net sample_position.sp_ram.lscc_ram_dq_inst.inst0.PRIM_MODE.xADDR[0].xDATA
      [0].mem_file.mem0.wr_en_i_N_387: 1 loads, 0 SLICEs
-      Net n3112: 32 loads, 32 SLICEs
-      Net n6206: 3 loads, 3 SLICEs
-      Net n3157: 24 loads, 24 SLICEs
-      Net sample_output.dac.n3118: 20 loads, 20 SLICEs
-      Net sample_output.dac.n5690: 5 loads, 5 SLICEs
-      Net n5489: 2 loads, 2 SLICEs
-      Net sample_output.dac.n5487: 1 loads, 1 SLICEs
-      Net n6227: 1 loads, 1 SLICEs
-      Net sample_output.dac.n5626: 1 loads, 1 SLICEs
-      Net n13: 1 loads, 1 SLICEs
-      Net n3122: 4 loads, 4 SLICEs
-      Net n5373: 1 loads, 1 SLICEs
-      Net n5609: 9 loads, 9 SLICEs
-      Net adc.n3887: 1 loads, 1 SLICEs
-      Net adc.n5437: 1 loads, 1 SLICEs
-      Net adc.n5398: 1 loads, 1 SLICEs
-      Net adc.n5423: 1 loads, 1 SLICEs
-      Net adc.n5428: 1 loads, 1 SLICEs
-      Net adc.n5306: 1 loads, 1 SLICEs
-      Net adc.n7854: 1 loads, 1 SLICEs
-      Net adc.n5303: 1 loads, 1 SLICEs
-      Net adc.n5307: 1 loads, 1 SLICEs
-      Net adc.n5301: 1 loads, 1 SLICEs
-      Net adc.n5387: 1 loads, 1 SLICEs
-      Net adc.n5397: 1 loads, 1 SLICEs
-      Net adc.n5415: 1 loads, 1 SLICEs
-      Net adc.n5406: 1 loads, 1 SLICEs
-      Net adc.n5304: 1 loads, 1 SLICEs
-      Net adc.n5305: 1 loads, 1 SLICEs
-      Net adc.n5308: 1 loads, 1 SLICEs
-      Net adc.n5302: 1 loads, 1 SLICEs
-      Net adc.n5411: 1 loads, 1 SLICEs
-      Net adc.n5425: 1 loads, 1 SLICEs
-      Net adc.n5436: 1 loads, 1 SLICEs
-      Net adc.n5417: 1 loads, 1 SLICEs
-      Net adc.n5435: 1 loads, 1 SLICEs
-      Net adc.n5385: 1 loads, 1 SLICEs
-      Net adc.n5392: 1 loads, 1 SLICEs
-      Net adc.n5386: 1 loads, 1 SLICEs
-      Net adc.n5426: 1 loads, 1 SLICEs
-      Net adc.n5418: 1 loads, 1 SLICEs
-      Net adc.n5399: 1 loads, 1 SLICEs
-      Net adc.n5422: 1 loads, 1 SLICEs
-      Net adc.n5427: 1 loads, 1 SLICEs
+      Net n5493: 1 loads, 1 SLICEs
+      Net n2997: 24 loads, 24 SLICEs
+      Net n13_adj_1205: 1 loads, 1 SLICEs
+      Net n5314: 17 loads, 17 SLICEs
+      Net n6047: 3 loads, 3 SLICEs
+      Net sample_output.dac.n2958: 20 loads, 20 SLICEs
+      Net sample_output.dac.n5469: 1 loads, 1 SLICEs
+      Net sample_output.dac.n5540: 5 loads, 5 SLICEs
+      Net n1860: 2 loads, 2 SLICEs
+      Net sample_output.dac.n5325: 1 loads, 1 SLICEs
+      Net n5452: 9 loads, 9 SLICEs
+      Net n2952: 32 loads, 32 SLICEs
+      Net n7913: 1 loads, 1 SLICEs
+      Net n5303: 1 loads, 1 SLICEs
+      Net n5310: 3 loads, 3 SLICEs
+      Net n6056: 8 loads, 8 SLICEs
+      Net genadder[1].adder.n2992: 19 loads, 19 SLICEs
+      Net adc.n5252: 1 loads, 1 SLICEs
+      Net adc.n5234: 1 loads, 1 SLICEs
+      Net adc.n5214: 1 loads, 1 SLICEs
+      Net adc.n5225: 1 loads, 1 SLICEs
+      Net adc.n7571: 1 loads, 1 SLICEs
+      Net adc.n5230: 1 loads, 1 SLICEs
+      Net adc.n5204: 1 loads, 1 SLICEs
+      Net adc.n5253: 1 loads, 1 SLICEs
+      Net adc.n5254: 1 loads, 1 SLICEs
+      Net adc.n5255: 1 loads, 1 SLICEs
+      Net adc.n5216: 1 loads, 1 SLICEs
+      Net adc.n5248: 1 loads, 1 SLICEs
+      Net adc.n7572: 1 loads, 1 SLICEs
+      Net adc.n5232: 1 loads, 1 SLICEs
+      Net adc.n5257: 1 loads, 1 SLICEs
+      Net adc.n5208: 1 loads, 1 SLICEs
+      Net adc.n5258: 1 loads, 1 SLICEs
+      Net adc.n5233: 1 loads, 1 SLICEs
+      Net adc.n5259: 1 loads, 1 SLICEs
+      Net adc.n5260: 1 loads, 1 SLICEs
+      Net adc.n5212: 1 loads, 1 SLICEs
+      Net adc.n5247: 1 loads, 1 SLICEs
+      Net adc.n5265: 1 loads, 1 SLICEs
+      Net adc.n5262: 1 loads, 1 SLICEs
+      Net adc.n5209: 1 loads, 1 SLICEs
+      Net adc.n5263: 1 loads, 1 SLICEs
+      Net adc.n5264: 1 loads, 1 SLICEs
+      Net adc.n5217: 1 loads, 1 SLICEs
+      Net adc.n5249: 1 loads, 1 SLICEs
+      Net adc.n5267: 1 loads, 1 SLICEs
 
                                     Page 2
 
@@ -135,63 +135,63 @@ Design Summary (cont)
 
 Design Summary (cont)
 ---------------------
-      Net n5468: 3 loads, 3 SLICEs
-      Net adc.n8506: 1 loads, 1 SLICEs
-      Net adc.n5429: 1 loads, 1 SLICEs
-      Net adc.n5395: 1 loads, 1 SLICEs
-      Net adc.n5391: 1 loads, 1 SLICEs
-      Net adc.n3139: 4 loads, 4 SLICEs
-      Net adc.n5430: 1 loads, 1 SLICEs
-      Net adc.n3878: 1 loads, 1 SLICEs
-      Net adc.n5389: 1 loads, 1 SLICEs
-      Net adc.n5431: 1 loads, 1 SLICEs
-      Net adc.n4349: 1 loads, 1 SLICEs
-      Net adc.n5396: 1 loads, 1 SLICEs
-      Net adc.n5433: 1 loads, 1 SLICEs
-      Net adc.n5434: 1 loads, 1 SLICEs
-      Net adc.n5419: 1 loads, 1 SLICEs
-      Net adc.n5438: 1 loads, 1 SLICEs
-      Net adc.n5439: 1 loads, 1 SLICEs
-      Net adc.n5420: 1 loads, 1 SLICEs
-      Net adc.n5408: 1 loads, 1 SLICEs
-      Net adc.n5400: 1 loads, 1 SLICEs
-      Net adc.n5401: 1 loads, 1 SLICEs
-      Net adc.n5413: 1 loads, 1 SLICEs
-      Net adc.n5404: 1 loads, 1 SLICEs
-      Net adc.n5405: 1 loads, 1 SLICEs
-      Net adc.n5407: 1 loads, 1 SLICEs
-      Net adc.n5409: 1 loads, 1 SLICEs
-      Net adc.n5388: 1 loads, 1 SLICEs
-      Net adc.n5390: 1 loads, 1 SLICEs
-      Net adc.n5421: 1 loads, 1 SLICEs
-      Net adc.n4683: 1 loads, 1 SLICEs
-      Net adc.n3889: 1 loads, 1 SLICEs
-      Net adc.n5403: 1 loads, 1 SLICEs
-      Net adc.n5394: 1 loads, 1 SLICEs
-      Net adc.n7853: 1 loads, 1 SLICEs
-      Net genadder[0].adder.n3147: 19 loads, 19 SLICEs
-      Net mult.n5474: 2 loads, 2 SLICEs
-      Net genadder[1].adder.n3152: 19 loads, 19 SLICEs
-   Number of LSRs:  21
+      Net adc.n5210: 1 loads, 1 SLICEs
+      Net adc.n8226: 1 loads, 1 SLICEs
+      Net adc.n5268: 1 loads, 1 SLICEs
+      Net adc.n5228: 1 loads, 1 SLICEs
+      Net adc.n5269: 1 loads, 1 SLICEs
+      Net adc.n5270: 1 loads, 1 SLICEs
+      Net adc.n5218: 1 loads, 1 SLICEs
+      Net adc.n5239: 1 loads, 1 SLICEs
+      Net adc.n5238: 1 loads, 1 SLICEs
+      Net adc.n5250: 1 loads, 1 SLICEs
+      Net adc.n2979: 4 loads, 4 SLICEs
+      Net adc.n5237: 1 loads, 1 SLICEs
+      Net adc.n5236: 1 loads, 1 SLICEs
+      Net adc.n5207: 1 loads, 1 SLICEs
+      Net adc.n5224: 1 loads, 1 SLICEs
+      Net adc.n5206: 1 loads, 1 SLICEs
+      Net adc.n3710: 1 loads, 1 SLICEs
+      Net adc.n5223: 1 loads, 1 SLICEs
+      Net adc.n5222: 1 loads, 1 SLICEs
+      Net adc.n5205: 1 loads, 1 SLICEs
+      Net adc.n5220: 1 loads, 1 SLICEs
+      Net adc.n5221: 1 loads, 1 SLICEs
+      Net adc.n4199: 1 loads, 1 SLICEs
+      Net adc.n5241: 1 loads, 1 SLICEs
+      Net adc.n5213: 1 loads, 1 SLICEs
+      Net adc.n5242: 1 loads, 1 SLICEs
+      Net adc.n5243: 1 loads, 1 SLICEs
+      Net adc.n5244: 1 loads, 1 SLICEs
+      Net adc.n5245: 1 loads, 1 SLICEs
+      Net adc.n5227: 1 loads, 1 SLICEs
+      Net adc.n4543: 1 loads, 1 SLICEs
+      Net adc.n3708: 1 loads, 1 SLICEs
+      Net adc.n3702: 1 loads, 1 SLICEs
+      Net adc.n5215: 1 loads, 1 SLICEs
+      Net genadder[0].adder.n2987: 19 loads, 19 SLICEs
+      Net mult.n5461: 2 loads, 2 SLICEs
+   Number of LSRs:  20
+      Net reset_n_N_191: 70 loads, 70 SLICEs
+      Net sample_position.n7_c: 4 loads, 4 SLICEs
+      Net sample_position.n5750: 10 loads, 10 SLICEs
+      Net sample_position.n7867: 1 loads, 1 SLICEs
+      Net sample_position.n5671: 16 loads, 16 SLICEs
+      Net sample_position.n7807: 1 loads, 1 SLICEs
+      Net n7928: 1 loads, 1 SLICEs
+      Net sample_output.n5768: 1 loads, 1 SLICEs
+      Net sample_output.dac.n5767: 5 loads, 5 SLICEs
+      Net sample_output.dac.n6231: 1 loads, 1 SLICEs
+      Net n5638: 1 loads, 1 SLICEs
       Net Reset_Mult_Scaler: 8 loads, 8 SLICEs
-      Net reset_n_N_191: 71 loads, 71 SLICEs
-      Net n5866: 1 loads, 1 SLICEs
-      Net sample_position.n5819: 11 loads, 11 SLICEs
-      Net sample_position.n5785: 16 loads, 16 SLICEs
-      Net sample_position.n8115: 1 loads, 1 SLICEs
-      Net sample_position.n8159: 1 loads, 1 SLICEs
-      Net sample_position.n7_adj_1149: 1 loads, 1 SLICEs
-      Net sample_output.n5839: 1 loads, 1 SLICEs
-      Net sample_output.dac.n5838: 5 loads, 5 SLICEs
-      Net sample_output.dac.n6382: 1 loads, 1 SLICEs
-      Net n5775: 1 loads, 1 SLICEs
-      Net n5872: 1 loads, 1 SLICEs
-      Net n5773: 9 loads, 9 SLICEs
       Net o_Mult_Ready_N_795: 2 loads, 2 SLICEs
+      Net n5634: 9 loads, 9 SLICEs
       Net Adder_Clear: 40 loads, 40 SLICEs
       Net CS_Stable: 1 loads, 1 SLICEs
-      Net adc.n6349: 1 loads, 1 SLICEs
-      Net adc.n6014: 3 loads, 3 SLICEs
+      Net n5763: 3 loads, 3 SLICEs
+      Net adc.n6211: 1 loads, 1 SLICEs
+      Net adc.n5772: 3 loads, 3 SLICEs
+      Net adc.n5877: 3 loads, 3 SLICEs
 
                                     Page 3
 
@@ -201,19 +201,17 @@ Design Summary (cont)
 
 Design Summary (cont)
 ---------------------
-      Net adc.n5834: 3 loads, 3 SLICEs
-      Net n5815: 3 loads, 3 SLICEs
    Top 10 highest fanout non-clock nets:
-      Net reset_n_c: 89 loads
-      Net reset_n_N_191: 72 loads
+      Net reset_n_c: 91 loads
+      Net reset_n_N_191: 71 loads
       Net adc.Data_State: 60 loads
-      Net adc.Receive_Bit[0]: 53 loads
-      Net SM_Sample_Position[2]: 48 loads
       Net Adder_Clear: 43 loads
+      Net CS_Stable: 39 loads
+      Net SM_ADC_In: 39 loads
       Net VCC_net: 37 loads
-      Net adc.Receive_Bit[1]: 34 loads
-      Net adc.Receive_Bit[2]: 33 loads
-      Net n3112: 32 loads
+      Net SM_Sample_Position[2]: 35 loads
+      Net n2952: 32 loads
+      Net SM_Sample_Output[0]: 30 loads
 
 
 
@@ -235,8 +233,6 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
 |                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| reset_n             | INPUT     | LVCMOS33  |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
 | i_ADC_CS            | INPUT     | LVCMOS33  |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | o_DAC_MOSI          | OUTPUT    | LVCMOS33  |       |       |           |
@@ -249,6 +245,8 @@ IO (PIO) Attributes
 +---------------------+-----------+-----------+-------+-------+-----------+
 | i_ADC_Data          | INPUT     | LVCMOS33  |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
+| reset_n             | INPUT     | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
 | i_Clock             | INPUT     | LVCMOS33  |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 | o_DAC_CS            | OUTPUT    | LVCMOS33  |       |       |           |
@@ -256,8 +254,10 @@ IO (PIO) Attributes
 | o_DAC_SCK           | OUTPUT    | LVCMOS33  |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
+PLL/DLL Summary
+---------------
 
-
+PLL 1:                                 Pin/Node Value
 
                                     Page 4
 
@@ -265,10 +265,8 @@ IO (PIO) Attributes
 
 
 
-PLL/DLL Summary
----------------
-
-PLL 1:                                 Pin/Node Value
+PLL/DLL Summary (cont)
+----------------------
   PLL Instance Name:                            pll_48.lscc_pll_inst.u_PLL_B
   PLL Type:                                     PLL_B
   Input Reference Clock:               PIN      i_Clock_c
@@ -324,6 +322,8 @@ Instance Name: sample_position.sin_lut.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xD
      ATA[2].mem_file.mem0.iCE40UP.sp4k
          Type: EBR
 Instance Name: sample_position.sin_lut.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xD
+     ATA[1].mem_file.mem0.iCE40UP.sp4k
+         Type: EBR
 
                                     Page 5
 
@@ -333,8 +333,6 @@ Instance Name: sample_position.sin_lut.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xD
 
 ASIC Components (cont)
 ----------------------
-     ATA[1].mem_file.mem0.iCE40UP.sp4k
-         Type: EBR
 Instance Name: sample_position.sin_lut.lscc_rom_inst.u_rom.PRIM_MODE.xADDR[0].xD
      ATA[0].mem_file.mem0.iCE40UP.sp4k
          Type: EBR
@@ -348,7 +346,9 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 75 MB
+   Peak Memory Usage: 74 MB
+
+
 
 
 

@@ -126,18 +126,15 @@ module top
 
 
 	// State Machine settings - used to control calculation of amplitude of each harmonic sample
-	reg [3:0] SM_Top = 4'd0;
 	localparam sm_init = 4'd0;
 	localparam sm_adder_mult = 4'd1;
-	localparam sm_scale = 4'd2;
-	localparam sm_sine_lookup = 4'd3;
-	localparam sm_adder_start = 4'd4;
-	localparam sm_adder_wait = 4'd5;
+	localparam sm_check_mute = 4'd2;
+	localparam sm_adder_start = 4'd3;
+	localparam sm_adder_wait = 4'd4;
+	localparam sm_next_harmonic = 4'd5;
 	localparam sm_calc_done = 4'd6;
-	localparam sm_ready_to_send = 4'd8;
-	localparam sm_check_mute = 4'd10;
-	localparam sm_next_harmonic = 4'd11;
-
+	localparam sm_ready_to_send = 4'd7;
+	reg [3:0] SM_Top = sm_init;
 
 	// Assign values from ADC bytes received to respective control registers
 	always @(posedge ADC_Data_Received) begin

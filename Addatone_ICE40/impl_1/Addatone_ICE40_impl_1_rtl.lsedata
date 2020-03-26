@@ -3,11 +3,11 @@
 <clocks>
     <clockitem name = "Main_Clock"  type = "net" />
     <clockitem name = "i_Clock"  type = "port" />
-    <clockitem name = "ADC_Data_Received"  type = "net" />
-    <clockitem name = "pll_48/lscc_pll_inst/outglobalb_o"  type = "net" />
-    <clockitem name = "pll_48/lscc_pll_inst/outcoreb_o"  type = "net" />
-    <clockitem name = "pll_48/outglobal_o"  type = "net" />
     <clockitem name = "adc/Clock_Stable"  type = "net" />
+    <clockitem name = "ADC_Data_Received"  type = "net" />
+    <clockitem name = "pll_48/lscc_pll_inst/outcoreb_o"  type = "net" />
+    <clockitem name = "pll_48/lscc_pll_inst/outglobalb_o"  type = "net" />
+    <clockitem name = "pll_48/outglobal_o"  type = "net" />
 </clocks>
 
 <!--
@@ -1562,8 +1562,8 @@
         <nitem  name = "SM_Top[2]"  />
         <nitem  name = "SM_Top[1]"  />
         <nitem  name = "SM_Top[0]"  />
-        <nitem  name = "pwr"  />
         <nitem  name = "gnd"  />
+        <nitem  name = "pwr"  />
         <nitem  name = "Next_Sample_N_199"  />
         </nets>
     </instance>
@@ -1634,8 +1634,8 @@
         <nitem  name = "SM_Top[2]"  />
         <nitem  name = "SM_Top[1]"  />
         <nitem  name = "SM_Top[0]"  />
-        <nitem  name = "pwr"  />
         <nitem  name = "gnd"  />
+        <nitem  name = "pwr"  />
         <nitem  name = "Next_Sample_N_203"  />
         </nets>
     </instance>
@@ -1682,8 +1682,8 @@
         <nitem  name = "SM_Top[2]"  />
         <nitem  name = "SM_Top[1]"  />
         <nitem  name = "SM_Top[0]"  />
-        <nitem  name = "pwr"  />
         <nitem  name = "gnd"  />
+        <nitem  name = "pwr"  />
         <nitem  name = "Next_Sample_N_204"  />
         </nets>
     </instance>

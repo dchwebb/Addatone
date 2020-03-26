@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2.0.1.281.2
 
-Wed Mar 25 21:37:23 2020
+Wed Mar 25 22:00:12 2020
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -118,7 +118,7 @@ Clock Domain Crossing
 
 3.1.1  Constraint Coverage
 ---------------------------
-Constraint Coverage: 73.3526%
+Constraint Coverage: 72.9063%
 
 3.1.2  Timing Errors
 ---------------------
@@ -216,21 +216,21 @@ Clocked but unconstrained timing end points
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
 Harmonic__i0/SR                         |           No arrival time
-DAC_Send_c/SR                           |           No arrival time
+SM_Top__i2/SR                           |           No arrival time
+SM_Top__i1/SR                           |           No arrival time
 sample_position/LUT_Pos__i0/SR          |           No arrival time
-sample_position/Sample_Pos_WE_c/SR      |           No arrival time
 sample_position/SM_Sample_Position__i0/SR                           
                                         |           No arrival time
+sample_position/Sample_Pos_WE_c/SR      |           No arrival time
 sample_position/o_Freq_Too_High/SR      |           No arrival time
 sample_position/SM_Sample_Position__i1/SR                           
                                         |           No arrival time
-sample_position/Sample_Position__i15/SR |           No arrival time
-sample_position/Sample_Position__i14/SR |           No arrival time
 sample_position/LUT_Pos__i10/SR         |           No arrival time
+sample_position/LUT_Pos__i9/SR          |           No arrival time
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
-ts                                      |                       235
+ts                                      |                       234
                                         |                          
 -------------------------------------------------------------------
 
@@ -265,20 +265,20 @@ Define the clock for these registers.
 -------------------------------------------------------------------
          Listing 10 Instance(s)         |           Type           
 -------------------------------------------------------------------
-Comb_Interval_i0                        |                  No Clock
-Harmonic_Scale_i0                       |                  No Clock
-test_i0                                 |                  No Clock
-Comb_Interval_i4                        |                  No Clock
 Frequency_i2                            |                  No Clock
-Frequency_i5                            |                  No Clock
+test_i0                                 |                  No Clock
 Frequency_i1                            |                  No Clock
-Frequency_i3                            |                  No Clock
-Frequency_i4                            |                  No Clock
 Frequency_i0                            |                  No Clock
+Harmonic_Scale_i0                       |                  No Clock
+Comb_Interval_i3                        |                  No Clock
+Frequency_i5                            |                  No Clock
+Frequency_i4                            |                  No Clock
+Frequency_i6                            |                  No Clock
+Frequency_i7                            |                  No Clock
 -------------------------------------------------------------------
                                         |                          
 Number of registers without clock defin |                          
-ition                                   |                       153
+ition                                   |                       201
                                         |                          
 -------------------------------------------------------------------
 
@@ -302,7 +302,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_1027__i0/Q  (FD1P3XZ)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (FD1P3XZ)
 Path End         : sample_position/Accumulated_Offset_i0_i10/SR  (FD1P3XZ)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
@@ -314,35 +314,35 @@ Path Slack       : -24.724 ns  (Failed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
 
-sample_position/Accumulated_Frequency_1027__i0/CK->sample_position/Accumulated_Frequency_1027__i0/Q
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
                                           FD1P3XZ         CK_TO_Q_DELAY  1.391        20.216  4       
 sample_position/Accumulated_Frequency[0]                  NET DELAY      0.280        20.496  1       
 sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        20.973  1       
-sample_position/n4_adj_1114                               NET DELAY      2.075        23.048  1       
+sample_position/n4_adj_1154                               NET DELAY      2.075        23.048  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        23.525  1       
-sample_position/n6_adj_1112                               NET DELAY      2.075        25.600  1       
+sample_position/n6_adj_1153                               NET DELAY      2.075        25.600  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        26.077  1       
-sample_position/n8                                        NET DELAY      2.075        28.152  1       
+sample_position/n8_adj_1152                               NET DELAY      2.075        28.152  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        28.629  1       
-sample_position/n10                                       NET DELAY      2.075        30.704  1       
+sample_position/n10_adj_1151                              NET DELAY      2.075        30.704  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        31.181  1       
-sample_position/n12_adj_1111                              NET DELAY      2.075        33.256  1       
+sample_position/n12_adj_1150                              NET DELAY      2.075        33.256  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        33.733  1       
-sample_position/n14_adj_1110                              NET DELAY      2.075        35.808  1       
+sample_position/n14_adj_1149                              NET DELAY      2.075        35.808  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        36.285  1       
-sample_position/n16_adj_1109                              NET DELAY      2.075        38.360  1       
+sample_position/n16_adj_1148                              NET DELAY      2.075        38.360  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        38.837  1       
 sample_position/n18                                       NET DELAY      2.075        40.912  1       
@@ -366,18 +366,18 @@ sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
 sample_position/n30                                       NET DELAY      2.075        56.224  1       
 sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
                                           LUT4            A_TO_Z_DELAY   0.477        56.701  1       
-sample_position/n4                                        NET DELAY      2.075        58.776  1       
+sample_position/n4_adj_1144                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5499                                     NET DELAY      2.075        61.328  1       
-sample_position/i3441_2_lut/A->sample_position/i3441_2_lut/Z
+sample_position/n5386                                     NET DELAY      2.075        61.328  1       
+sample_position/i3325_2_lut/A->sample_position/i3325_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5785 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5671 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  360     
 Main_Clock ( CK )                                         NET DELAY      16.600        39.658  1       
                                                           Uncertainty     0.000        39.658  
                                                           Setup time      0.530        39.128  
@@ -392,7 +392,7 @@ Path Slack  (Failed)                                                            
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_1027__i0/Q  (FD1P3XZ)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (FD1P3XZ)
 Path End         : sample_position/Accumulated_Offset_i0_i9/SR  (FD1P3XZ)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
@@ -404,35 +404,35 @@ Path Slack       : -24.724 ns  (Failed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
 
-sample_position/Accumulated_Frequency_1027__i0/CK->sample_position/Accumulated_Frequency_1027__i0/Q
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
                                           FD1P3XZ         CK_TO_Q_DELAY  1.391        20.216  4       
 sample_position/Accumulated_Frequency[0]                  NET DELAY      0.280        20.496  1       
 sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        20.973  1       
-sample_position/n4_adj_1114                               NET DELAY      2.075        23.048  1       
+sample_position/n4_adj_1154                               NET DELAY      2.075        23.048  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        23.525  1       
-sample_position/n6_adj_1112                               NET DELAY      2.075        25.600  1       
+sample_position/n6_adj_1153                               NET DELAY      2.075        25.600  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        26.077  1       
-sample_position/n8                                        NET DELAY      2.075        28.152  1       
+sample_position/n8_adj_1152                               NET DELAY      2.075        28.152  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        28.629  1       
-sample_position/n10                                       NET DELAY      2.075        30.704  1       
+sample_position/n10_adj_1151                              NET DELAY      2.075        30.704  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        31.181  1       
-sample_position/n12_adj_1111                              NET DELAY      2.075        33.256  1       
+sample_position/n12_adj_1150                              NET DELAY      2.075        33.256  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        33.733  1       
-sample_position/n14_adj_1110                              NET DELAY      2.075        35.808  1       
+sample_position/n14_adj_1149                              NET DELAY      2.075        35.808  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        36.285  1       
-sample_position/n16_adj_1109                              NET DELAY      2.075        38.360  1       
+sample_position/n16_adj_1148                              NET DELAY      2.075        38.360  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        38.837  1       
 sample_position/n18                                       NET DELAY      2.075        40.912  1       
@@ -456,18 +456,18 @@ sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
 sample_position/n30                                       NET DELAY      2.075        56.224  1       
 sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
                                           LUT4            A_TO_Z_DELAY   0.477        56.701  1       
-sample_position/n4                                        NET DELAY      2.075        58.776  1       
+sample_position/n4_adj_1144                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5499                                     NET DELAY      2.075        61.328  1       
-sample_position/i3441_2_lut/A->sample_position/i3441_2_lut/Z
+sample_position/n5386                                     NET DELAY      2.075        61.328  1       
+sample_position/i3325_2_lut/A->sample_position/i3325_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5785 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5671 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  360     
 Main_Clock ( CK )                                         NET DELAY      16.600        39.658  1       
                                                           Uncertainty     0.000        39.658  
                                                           Setup time      0.530        39.128  
@@ -482,7 +482,7 @@ Path Slack  (Failed)                                                            
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_1027__i0/Q  (FD1P3XZ)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (FD1P3XZ)
 Path End         : sample_position/Accumulated_Offset_i0_i8/SR  (FD1P3XZ)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
@@ -494,35 +494,35 @@ Path Slack       : -24.724 ns  (Failed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
 
-sample_position/Accumulated_Frequency_1027__i0/CK->sample_position/Accumulated_Frequency_1027__i0/Q
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
                                           FD1P3XZ         CK_TO_Q_DELAY  1.391        20.216  4       
 sample_position/Accumulated_Frequency[0]                  NET DELAY      0.280        20.496  1       
 sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        20.973  1       
-sample_position/n4_adj_1114                               NET DELAY      2.075        23.048  1       
+sample_position/n4_adj_1154                               NET DELAY      2.075        23.048  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        23.525  1       
-sample_position/n6_adj_1112                               NET DELAY      2.075        25.600  1       
+sample_position/n6_adj_1153                               NET DELAY      2.075        25.600  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        26.077  1       
-sample_position/n8                                        NET DELAY      2.075        28.152  1       
+sample_position/n8_adj_1152                               NET DELAY      2.075        28.152  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        28.629  1       
-sample_position/n10                                       NET DELAY      2.075        30.704  1       
+sample_position/n10_adj_1151                              NET DELAY      2.075        30.704  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        31.181  1       
-sample_position/n12_adj_1111                              NET DELAY      2.075        33.256  1       
+sample_position/n12_adj_1150                              NET DELAY      2.075        33.256  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        33.733  1       
-sample_position/n14_adj_1110                              NET DELAY      2.075        35.808  1       
+sample_position/n14_adj_1149                              NET DELAY      2.075        35.808  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        36.285  1       
-sample_position/n16_adj_1109                              NET DELAY      2.075        38.360  1       
+sample_position/n16_adj_1148                              NET DELAY      2.075        38.360  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        38.837  1       
 sample_position/n18                                       NET DELAY      2.075        40.912  1       
@@ -546,18 +546,18 @@ sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
 sample_position/n30                                       NET DELAY      2.075        56.224  1       
 sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
                                           LUT4            A_TO_Z_DELAY   0.477        56.701  1       
-sample_position/n4                                        NET DELAY      2.075        58.776  1       
+sample_position/n4_adj_1144                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5499                                     NET DELAY      2.075        61.328  1       
-sample_position/i3441_2_lut/A->sample_position/i3441_2_lut/Z
+sample_position/n5386                                     NET DELAY      2.075        61.328  1       
+sample_position/i3325_2_lut/A->sample_position/i3325_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5785 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5671 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  360     
 Main_Clock ( CK )                                         NET DELAY      16.600        39.658  1       
                                                           Uncertainty     0.000        39.658  
                                                           Setup time      0.530        39.128  
@@ -572,7 +572,7 @@ Path Slack  (Failed)                                                            
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_1027__i0/Q  (FD1P3XZ)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (FD1P3XZ)
 Path End         : sample_position/Accumulated_Offset_i0_i7/SR  (FD1P3XZ)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
@@ -584,35 +584,35 @@ Path Slack       : -24.724 ns  (Failed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
 
-sample_position/Accumulated_Frequency_1027__i0/CK->sample_position/Accumulated_Frequency_1027__i0/Q
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
                                           FD1P3XZ         CK_TO_Q_DELAY  1.391        20.216  4       
 sample_position/Accumulated_Frequency[0]                  NET DELAY      0.280        20.496  1       
 sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        20.973  1       
-sample_position/n4_adj_1114                               NET DELAY      2.075        23.048  1       
+sample_position/n4_adj_1154                               NET DELAY      2.075        23.048  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        23.525  1       
-sample_position/n6_adj_1112                               NET DELAY      2.075        25.600  1       
+sample_position/n6_adj_1153                               NET DELAY      2.075        25.600  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        26.077  1       
-sample_position/n8                                        NET DELAY      2.075        28.152  1       
+sample_position/n8_adj_1152                               NET DELAY      2.075        28.152  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        28.629  1       
-sample_position/n10                                       NET DELAY      2.075        30.704  1       
+sample_position/n10_adj_1151                              NET DELAY      2.075        30.704  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        31.181  1       
-sample_position/n12_adj_1111                              NET DELAY      2.075        33.256  1       
+sample_position/n12_adj_1150                              NET DELAY      2.075        33.256  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        33.733  1       
-sample_position/n14_adj_1110                              NET DELAY      2.075        35.808  1       
+sample_position/n14_adj_1149                              NET DELAY      2.075        35.808  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        36.285  1       
-sample_position/n16_adj_1109                              NET DELAY      2.075        38.360  1       
+sample_position/n16_adj_1148                              NET DELAY      2.075        38.360  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        38.837  1       
 sample_position/n18                                       NET DELAY      2.075        40.912  1       
@@ -636,18 +636,18 @@ sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
 sample_position/n30                                       NET DELAY      2.075        56.224  1       
 sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
                                           LUT4            A_TO_Z_DELAY   0.477        56.701  1       
-sample_position/n4                                        NET DELAY      2.075        58.776  1       
+sample_position/n4_adj_1144                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5499                                     NET DELAY      2.075        61.328  1       
-sample_position/i3441_2_lut/A->sample_position/i3441_2_lut/Z
+sample_position/n5386                                     NET DELAY      2.075        61.328  1       
+sample_position/i3325_2_lut/A->sample_position/i3325_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5785 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5671 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  360     
 Main_Clock ( CK )                                         NET DELAY      16.600        39.658  1       
                                                           Uncertainty     0.000        39.658  
                                                           Setup time      0.530        39.128  
@@ -662,7 +662,7 @@ Path Slack  (Failed)                                                            
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_1027__i0/Q  (FD1P3XZ)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (FD1P3XZ)
 Path End         : sample_position/Accumulated_Offset_i0_i6/SR  (FD1P3XZ)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
@@ -674,35 +674,35 @@ Path Slack       : -24.724 ns  (Failed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
 
-sample_position/Accumulated_Frequency_1027__i0/CK->sample_position/Accumulated_Frequency_1027__i0/Q
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
                                           FD1P3XZ         CK_TO_Q_DELAY  1.391        20.216  4       
 sample_position/Accumulated_Frequency[0]                  NET DELAY      0.280        20.496  1       
 sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        20.973  1       
-sample_position/n4_adj_1114                               NET DELAY      2.075        23.048  1       
+sample_position/n4_adj_1154                               NET DELAY      2.075        23.048  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        23.525  1       
-sample_position/n6_adj_1112                               NET DELAY      2.075        25.600  1       
+sample_position/n6_adj_1153                               NET DELAY      2.075        25.600  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        26.077  1       
-sample_position/n8                                        NET DELAY      2.075        28.152  1       
+sample_position/n8_adj_1152                               NET DELAY      2.075        28.152  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        28.629  1       
-sample_position/n10                                       NET DELAY      2.075        30.704  1       
+sample_position/n10_adj_1151                              NET DELAY      2.075        30.704  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        31.181  1       
-sample_position/n12_adj_1111                              NET DELAY      2.075        33.256  1       
+sample_position/n12_adj_1150                              NET DELAY      2.075        33.256  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        33.733  1       
-sample_position/n14_adj_1110                              NET DELAY      2.075        35.808  1       
+sample_position/n14_adj_1149                              NET DELAY      2.075        35.808  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        36.285  1       
-sample_position/n16_adj_1109                              NET DELAY      2.075        38.360  1       
+sample_position/n16_adj_1148                              NET DELAY      2.075        38.360  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        38.837  1       
 sample_position/n18                                       NET DELAY      2.075        40.912  1       
@@ -726,18 +726,18 @@ sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
 sample_position/n30                                       NET DELAY      2.075        56.224  1       
 sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
                                           LUT4            A_TO_Z_DELAY   0.477        56.701  1       
-sample_position/n4                                        NET DELAY      2.075        58.776  1       
+sample_position/n4_adj_1144                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5499                                     NET DELAY      2.075        61.328  1       
-sample_position/i3441_2_lut/A->sample_position/i3441_2_lut/Z
+sample_position/n5386                                     NET DELAY      2.075        61.328  1       
+sample_position/i3325_2_lut/A->sample_position/i3325_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5785 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5671 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  360     
 Main_Clock ( CK )                                         NET DELAY      16.600        39.658  1       
                                                           Uncertainty     0.000        39.658  
                                                           Setup time      0.530        39.128  
@@ -752,7 +752,7 @@ Path Slack  (Failed)                                                            
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_1027__i0/Q  (FD1P3XZ)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (FD1P3XZ)
 Path End         : sample_position/Accumulated_Offset_i0_i5/SR  (FD1P3XZ)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
@@ -764,35 +764,35 @@ Path Slack       : -24.724 ns  (Failed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
 
-sample_position/Accumulated_Frequency_1027__i0/CK->sample_position/Accumulated_Frequency_1027__i0/Q
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
                                           FD1P3XZ         CK_TO_Q_DELAY  1.391        20.216  4       
 sample_position/Accumulated_Frequency[0]                  NET DELAY      0.280        20.496  1       
 sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        20.973  1       
-sample_position/n4_adj_1114                               NET DELAY      2.075        23.048  1       
+sample_position/n4_adj_1154                               NET DELAY      2.075        23.048  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        23.525  1       
-sample_position/n6_adj_1112                               NET DELAY      2.075        25.600  1       
+sample_position/n6_adj_1153                               NET DELAY      2.075        25.600  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        26.077  1       
-sample_position/n8                                        NET DELAY      2.075        28.152  1       
+sample_position/n8_adj_1152                               NET DELAY      2.075        28.152  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        28.629  1       
-sample_position/n10                                       NET DELAY      2.075        30.704  1       
+sample_position/n10_adj_1151                              NET DELAY      2.075        30.704  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        31.181  1       
-sample_position/n12_adj_1111                              NET DELAY      2.075        33.256  1       
+sample_position/n12_adj_1150                              NET DELAY      2.075        33.256  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        33.733  1       
-sample_position/n14_adj_1110                              NET DELAY      2.075        35.808  1       
+sample_position/n14_adj_1149                              NET DELAY      2.075        35.808  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        36.285  1       
-sample_position/n16_adj_1109                              NET DELAY      2.075        38.360  1       
+sample_position/n16_adj_1148                              NET DELAY      2.075        38.360  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        38.837  1       
 sample_position/n18                                       NET DELAY      2.075        40.912  1       
@@ -816,18 +816,18 @@ sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
 sample_position/n30                                       NET DELAY      2.075        56.224  1       
 sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
                                           LUT4            A_TO_Z_DELAY   0.477        56.701  1       
-sample_position/n4                                        NET DELAY      2.075        58.776  1       
+sample_position/n4_adj_1144                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5499                                     NET DELAY      2.075        61.328  1       
-sample_position/i3441_2_lut/A->sample_position/i3441_2_lut/Z
+sample_position/n5386                                     NET DELAY      2.075        61.328  1       
+sample_position/i3325_2_lut/A->sample_position/i3325_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5785 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5671 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  360     
 Main_Clock ( CK )                                         NET DELAY      16.600        39.658  1       
                                                           Uncertainty     0.000        39.658  
                                                           Setup time      0.530        39.128  
@@ -842,7 +842,7 @@ Path Slack  (Failed)                                                            
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_1027__i0/Q  (FD1P3XZ)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (FD1P3XZ)
 Path End         : sample_position/Accumulated_Offset_i0_i4/SR  (FD1P3XZ)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
@@ -854,35 +854,35 @@ Path Slack       : -24.724 ns  (Failed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
 
-sample_position/Accumulated_Frequency_1027__i0/CK->sample_position/Accumulated_Frequency_1027__i0/Q
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
                                           FD1P3XZ         CK_TO_Q_DELAY  1.391        20.216  4       
 sample_position/Accumulated_Frequency[0]                  NET DELAY      0.280        20.496  1       
 sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        20.973  1       
-sample_position/n4_adj_1114                               NET DELAY      2.075        23.048  1       
+sample_position/n4_adj_1154                               NET DELAY      2.075        23.048  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        23.525  1       
-sample_position/n6_adj_1112                               NET DELAY      2.075        25.600  1       
+sample_position/n6_adj_1153                               NET DELAY      2.075        25.600  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        26.077  1       
-sample_position/n8                                        NET DELAY      2.075        28.152  1       
+sample_position/n8_adj_1152                               NET DELAY      2.075        28.152  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        28.629  1       
-sample_position/n10                                       NET DELAY      2.075        30.704  1       
+sample_position/n10_adj_1151                              NET DELAY      2.075        30.704  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        31.181  1       
-sample_position/n12_adj_1111                              NET DELAY      2.075        33.256  1       
+sample_position/n12_adj_1150                              NET DELAY      2.075        33.256  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        33.733  1       
-sample_position/n14_adj_1110                              NET DELAY      2.075        35.808  1       
+sample_position/n14_adj_1149                              NET DELAY      2.075        35.808  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        36.285  1       
-sample_position/n16_adj_1109                              NET DELAY      2.075        38.360  1       
+sample_position/n16_adj_1148                              NET DELAY      2.075        38.360  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        38.837  1       
 sample_position/n18                                       NET DELAY      2.075        40.912  1       
@@ -906,18 +906,18 @@ sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
 sample_position/n30                                       NET DELAY      2.075        56.224  1       
 sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
                                           LUT4            A_TO_Z_DELAY   0.477        56.701  1       
-sample_position/n4                                        NET DELAY      2.075        58.776  1       
+sample_position/n4_adj_1144                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5499                                     NET DELAY      2.075        61.328  1       
-sample_position/i3441_2_lut/A->sample_position/i3441_2_lut/Z
+sample_position/n5386                                     NET DELAY      2.075        61.328  1       
+sample_position/i3325_2_lut/A->sample_position/i3325_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5785 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5671 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  360     
 Main_Clock ( CK )                                         NET DELAY      16.600        39.658  1       
                                                           Uncertainty     0.000        39.658  
                                                           Setup time      0.530        39.128  
@@ -932,7 +932,7 @@ Path Slack  (Failed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_1027__i0/Q  (FD1P3XZ)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (FD1P3XZ)
 Path End         : sample_position/Accumulated_Offset_i0_i3/SR  (FD1P3XZ)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
@@ -944,35 +944,35 @@ Path Slack       : -24.724 ns  (Failed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
 
-sample_position/Accumulated_Frequency_1027__i0/CK->sample_position/Accumulated_Frequency_1027__i0/Q
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
                                           FD1P3XZ         CK_TO_Q_DELAY  1.391        20.216  4       
 sample_position/Accumulated_Frequency[0]                  NET DELAY      0.280        20.496  1       
 sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        20.973  1       
-sample_position/n4_adj_1114                               NET DELAY      2.075        23.048  1       
+sample_position/n4_adj_1154                               NET DELAY      2.075        23.048  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        23.525  1       
-sample_position/n6_adj_1112                               NET DELAY      2.075        25.600  1       
+sample_position/n6_adj_1153                               NET DELAY      2.075        25.600  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        26.077  1       
-sample_position/n8                                        NET DELAY      2.075        28.152  1       
+sample_position/n8_adj_1152                               NET DELAY      2.075        28.152  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        28.629  1       
-sample_position/n10                                       NET DELAY      2.075        30.704  1       
+sample_position/n10_adj_1151                              NET DELAY      2.075        30.704  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        31.181  1       
-sample_position/n12_adj_1111                              NET DELAY      2.075        33.256  1       
+sample_position/n12_adj_1150                              NET DELAY      2.075        33.256  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        33.733  1       
-sample_position/n14_adj_1110                              NET DELAY      2.075        35.808  1       
+sample_position/n14_adj_1149                              NET DELAY      2.075        35.808  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        36.285  1       
-sample_position/n16_adj_1109                              NET DELAY      2.075        38.360  1       
+sample_position/n16_adj_1148                              NET DELAY      2.075        38.360  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        38.837  1       
 sample_position/n18                                       NET DELAY      2.075        40.912  1       
@@ -996,18 +996,18 @@ sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
 sample_position/n30                                       NET DELAY      2.075        56.224  1       
 sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
                                           LUT4            A_TO_Z_DELAY   0.477        56.701  1       
-sample_position/n4                                        NET DELAY      2.075        58.776  1       
+sample_position/n4_adj_1144                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5499                                     NET DELAY      2.075        61.328  1       
-sample_position/i3441_2_lut/A->sample_position/i3441_2_lut/Z
+sample_position/n5386                                     NET DELAY      2.075        61.328  1       
+sample_position/i3325_2_lut/A->sample_position/i3325_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5785 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5671 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  360     
 Main_Clock ( CK )                                         NET DELAY      16.600        39.658  1       
                                                           Uncertainty     0.000        39.658  
                                                           Setup time      0.530        39.128  
@@ -1022,7 +1022,7 @@ Path Slack  (Failed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_1027__i0/Q  (FD1P3XZ)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (FD1P3XZ)
 Path End         : sample_position/Accumulated_Offset_i0_i2/SR  (FD1P3XZ)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
@@ -1034,35 +1034,35 @@ Path Slack       : -24.724 ns  (Failed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
 
-sample_position/Accumulated_Frequency_1027__i0/CK->sample_position/Accumulated_Frequency_1027__i0/Q
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
                                           FD1P3XZ         CK_TO_Q_DELAY  1.391        20.216  4       
 sample_position/Accumulated_Frequency[0]                  NET DELAY      0.280        20.496  1       
 sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        20.973  1       
-sample_position/n4_adj_1114                               NET DELAY      2.075        23.048  1       
+sample_position/n4_adj_1154                               NET DELAY      2.075        23.048  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        23.525  1       
-sample_position/n6_adj_1112                               NET DELAY      2.075        25.600  1       
+sample_position/n6_adj_1153                               NET DELAY      2.075        25.600  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        26.077  1       
-sample_position/n8                                        NET DELAY      2.075        28.152  1       
+sample_position/n8_adj_1152                               NET DELAY      2.075        28.152  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        28.629  1       
-sample_position/n10                                       NET DELAY      2.075        30.704  1       
+sample_position/n10_adj_1151                              NET DELAY      2.075        30.704  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        31.181  1       
-sample_position/n12_adj_1111                              NET DELAY      2.075        33.256  1       
+sample_position/n12_adj_1150                              NET DELAY      2.075        33.256  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        33.733  1       
-sample_position/n14_adj_1110                              NET DELAY      2.075        35.808  1       
+sample_position/n14_adj_1149                              NET DELAY      2.075        35.808  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        36.285  1       
-sample_position/n16_adj_1109                              NET DELAY      2.075        38.360  1       
+sample_position/n16_adj_1148                              NET DELAY      2.075        38.360  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        38.837  1       
 sample_position/n18                                       NET DELAY      2.075        40.912  1       
@@ -1086,18 +1086,18 @@ sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
 sample_position/n30                                       NET DELAY      2.075        56.224  1       
 sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
                                           LUT4            A_TO_Z_DELAY   0.477        56.701  1       
-sample_position/n4                                        NET DELAY      2.075        58.776  1       
+sample_position/n4_adj_1144                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5499                                     NET DELAY      2.075        61.328  1       
-sample_position/i3441_2_lut/A->sample_position/i3441_2_lut/Z
+sample_position/n5386                                     NET DELAY      2.075        61.328  1       
+sample_position/i3325_2_lut/A->sample_position/i3325_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5785 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5671 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  360     
 Main_Clock ( CK )                                         NET DELAY      16.600        39.658  1       
                                                           Uncertainty     0.000        39.658  
                                                           Setup time      0.530        39.128  
@@ -1112,7 +1112,7 @@ Path Slack  (Failed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_1027__i0/Q  (FD1P3XZ)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (FD1P3XZ)
 Path End         : sample_position/Accumulated_Offset_i0_i1/SR  (FD1P3XZ)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
@@ -1124,35 +1124,35 @@ Path Slack       : -24.724 ns  (Failed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
 
-sample_position/Accumulated_Frequency_1027__i0/CK->sample_position/Accumulated_Frequency_1027__i0/Q
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
                                           FD1P3XZ         CK_TO_Q_DELAY  1.391        20.216  4       
 sample_position/Accumulated_Frequency[0]                  NET DELAY      0.280        20.496  1       
 sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        20.973  1       
-sample_position/n4_adj_1114                               NET DELAY      2.075        23.048  1       
+sample_position/n4_adj_1154                               NET DELAY      2.075        23.048  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        23.525  1       
-sample_position/n6_adj_1112                               NET DELAY      2.075        25.600  1       
+sample_position/n6_adj_1153                               NET DELAY      2.075        25.600  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        26.077  1       
-sample_position/n8                                        NET DELAY      2.075        28.152  1       
+sample_position/n8_adj_1152                               NET DELAY      2.075        28.152  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        28.629  1       
-sample_position/n10                                       NET DELAY      2.075        30.704  1       
+sample_position/n10_adj_1151                              NET DELAY      2.075        30.704  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        31.181  1       
-sample_position/n12_adj_1111                              NET DELAY      2.075        33.256  1       
+sample_position/n12_adj_1150                              NET DELAY      2.075        33.256  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        33.733  1       
-sample_position/n14_adj_1110                              NET DELAY      2.075        35.808  1       
+sample_position/n14_adj_1149                              NET DELAY      2.075        35.808  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        36.285  1       
-sample_position/n16_adj_1109                              NET DELAY      2.075        38.360  1       
+sample_position/n16_adj_1148                              NET DELAY      2.075        38.360  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.477        38.837  1       
 sample_position/n18                                       NET DELAY      2.075        40.912  1       
@@ -1176,18 +1176,18 @@ sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
 sample_position/n30                                       NET DELAY      2.075        56.224  1       
 sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
                                           LUT4            A_TO_Z_DELAY   0.477        56.701  1       
-sample_position/n4                                        NET DELAY      2.075        58.776  1       
+sample_position/n4_adj_1144                               NET DELAY      2.075        58.776  1       
 sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
                                           LUT4            D_TO_Z_DELAY   0.477        59.253  17      
-sample_position/n5499                                     NET DELAY      2.075        61.328  1       
-sample_position/i3441_2_lut/A->sample_position/i3441_2_lut/Z
+sample_position/n5386                                     NET DELAY      2.075        61.328  1       
+sample_position/i3325_2_lut/A->sample_position/i3325_2_lut/Z
                                           LUT4            A_TO_Z_DELAY   0.450        61.778  16      
-sample_position/n5785 ( SR )                              NET DELAY      2.075        63.853  1       
+sample_position/n5671 ( SR )                              NET DELAY      2.075        63.853  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225        23.058  360     
 Main_Clock ( CK )                                         NET DELAY      16.600        39.658  1       
                                                           Uncertainty     0.000        39.658  
                                                           Setup time      0.530        39.128  
@@ -1234,7 +1234,7 @@ Path Slack       : 1.565 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
@@ -1246,7 +1246,7 @@ sample_position/LUT_Pos[9] ( RADDR9 )                     NET DELAY      0.280  
 
 
                                                           CONSTRAINT      0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock ( RCLK )                                       NET DELAY      16.600        18.825  1       
                                                           Uncertainty     0.000        18.825  
                                                           Hold time       0.106        18.931  
@@ -1273,7 +1273,7 @@ Path Slack       : 1.565 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
@@ -1285,7 +1285,7 @@ sample_position/LUT_Pos[10] ( RADDR10 )                   NET DELAY      0.280  
 
 
                                                           CONSTRAINT      0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock ( RCLK )                                       NET DELAY      16.600        18.825  1       
                                                           Uncertainty     0.000        18.825  
                                                           Hold time       0.106        18.931  
@@ -1312,7 +1312,7 @@ Path Slack       : 1.565 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
@@ -1323,7 +1323,7 @@ Harmonic[0] ( RADDR0 )                                    NET DELAY      0.280  
 
 
                                                           CONSTRAINT      0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock ( RCLK )                                       NET DELAY      16.600        18.825  1       
                                                           Uncertainty     0.000        18.825  
                                                           Hold time       0.106        18.931  
@@ -1350,7 +1350,7 @@ Path Slack       : 1.565 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
@@ -1361,7 +1361,7 @@ Harmonic[1] ( RADDR1 )                                    NET DELAY      0.280  
 
 
                                                           CONSTRAINT      0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock ( RCLK )                                       NET DELAY      16.600        18.825  1       
                                                           Uncertainty     0.000        18.825  
                                                           Hold time       0.106        18.931  
@@ -1388,7 +1388,7 @@ Path Slack       : 1.565 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
@@ -1399,7 +1399,7 @@ Harmonic[2] ( RADDR2 )                                    NET DELAY      0.280  
 
 
                                                           CONSTRAINT      0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock ( RCLK )                                       NET DELAY      16.600        18.825  1       
                                                           Uncertainty     0.000        18.825  
                                                           Hold time       0.106        18.931  
@@ -1426,7 +1426,7 @@ Path Slack       : 1.565 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
@@ -1437,7 +1437,7 @@ Harmonic[3] ( RADDR3 )                                    NET DELAY      0.280  
 
 
                                                           CONSTRAINT      0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock ( RCLK )                                       NET DELAY      16.600        18.825  1       
                                                           Uncertainty     0.000        18.825  
                                                           Hold time       0.106        18.931  
@@ -1464,7 +1464,7 @@ Path Slack       : 1.565 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
@@ -1475,7 +1475,7 @@ Harmonic[4] ( RADDR4 )                                    NET DELAY      0.280  
 
 
                                                           CONSTRAINT      0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock ( RCLK )                                       NET DELAY      16.600        18.825  1       
                                                           Uncertainty     0.000        18.825  
                                                           Hold time       0.106        18.931  
@@ -1502,7 +1502,7 @@ Path Slack       : 1.565 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
@@ -1513,7 +1513,7 @@ Harmonic[5] ( RADDR5 )                                    NET DELAY      0.280  
 
 
                                                           CONSTRAINT      0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock ( RCLK )                                       NET DELAY      16.600        18.825  1       
                                                           Uncertainty     0.000        18.825  
                                                           Hold time       0.106        18.931  
@@ -1540,7 +1540,7 @@ Path Slack       : 1.565 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
@@ -1551,7 +1551,7 @@ Harmonic[6] ( RADDR6 )                                    NET DELAY      0.280  
 
 
                                                           CONSTRAINT      0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock ( RCLK )                                       NET DELAY      16.600        18.825  1       
                                                           Uncertainty     0.000        18.825  
                                                           Hold time       0.106        18.931  
@@ -1578,7 +1578,7 @@ Path Slack       : 1.565 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock                                                NET DELAY      16.600        18.825  1       
 
 
@@ -1589,7 +1589,7 @@ Harmonic[7] ( RADDR7 )                                    NET DELAY      0.280  
 
 
                                                           CONSTRAINT      0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  361     
+pll_48/lscc_pll_inst/u_PLL_B/OUTCORE      PLL_B           CLOCK LATENCY   2.225         2.225  360     
 Main_Clock ( RCLK )                                       NET DELAY      16.600        18.825  1       
                                                           Uncertainty     0.000        18.825  
                                                           Hold time       0.106        18.931  
