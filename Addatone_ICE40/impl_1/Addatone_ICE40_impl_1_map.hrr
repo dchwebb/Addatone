@@ -3,7 +3,7 @@ Report for cell top
    Instance path: top
                      Cell usage:
                                   cell	      count    Res Usage(%)
-                                  LUT4	        911        100.0
+                                  LUT4	        909        100.0
                                  IOBUF	         10        100.0
                                 PFUREG	        469        100.0
                                    EBR	          9        100.0
@@ -13,10 +13,62 @@ SUB MODULES
                             ADC_SPI_In	          1        10.8
                                  Adder	          1         4.7
                               Adder_U0	          1         4.5
-                             PLL_48MHz	          1         0.0
-                         Sample_Output	          1        11.9
+                   PLL_Primitive_48MHz	          1         0.0
+                         Sample_Output	          1        11.7
                        Sample_Position	          1        21.0
                             Scale_Mult	          1         6.4
+---------------------------------------------------
+Report for cell Scale_Mult
+   Instance path: top/mult
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         58         6.4
+                                PFUREG	         20         4.3
+---------------------------------------------------
+Report for cell PLL_Primitive_48MHz
+   Instance path: top/pll_48
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+---------------------------------------------------
+Report for cell Sample_Output
+   Instance path: top/sample_output
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	        106        11.7
+                                PFUREG	         89        19.0
+SUB MODULES
+                                  cell	      count    LUT4 Usage(%)
+                           DAC_SPI_Out	          1         5.7
+---------------------------------------------------
+Report for cell DAC_SPI_Out
+   Instance path: top/sample_output/dac
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         52         5.7
+                                PFUREG	         33         7.0
+---------------------------------------------------
+Report for cell Adder
+   Instance path: top/genadder[1].adder
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         43         4.7
+                                PFUREG	         39         8.3
+---------------------------------------------------
+Report for cell Adder_U0
+   Instance path: top/genadder[0].adder
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         41         4.5
+                                PFUREG	         39         8.3
+                                   DSP	          1        100.0
+---------------------------------------------------
+Report for cell ADC_SPI_In
+   Instance path: top/adc
+                     Cell usage:
+                                  cell	      count    Res Usage(%)
+                                  LUT4	         98        10.8
+                                 IOBUF	          1        10.0
+                                PFUREG	         76        16.2
 ---------------------------------------------------
 Report for cell Sample_Position
    Instance path: top/sample_position
@@ -148,63 +200,3 @@ Report for cell Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY="iCE40UP",DATA_WIDTH=32
                      Cell usage:
                                   cell	      count    Res Usage(%)
                                    EBR	          1        11.1
----------------------------------------------------
-Report for cell PLL_48MHz
-   Instance path: top/pll_48
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-SUB MODULES
-                                  cell	      count    LUT4 Usage(%)
-PLL_48MHz_ipgen_lscc_pll(DIVR="0",DIVF="63",DIVQ="4",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")	          1         0.0
----------------------------------------------------
-Report for cell PLL_48MHz_ipgen_lscc_pll(DIVR="0",DIVF="63",DIVQ="4",FILTER_RANGE="1",PLLOUT_SELECT_PORTA="GENCLK",PLLOUT_SELECT_PORTB="GENCLK",FREQUENCY_PIN_REFERENCECLK="12.000000")
-   Instance path: top/pll_48/lscc_pll_inst
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
----------------------------------------------------
-Report for cell Sample_Output
-   Instance path: top/sample_output
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	        108        11.9
-                                PFUREG	         89        19.0
-SUB MODULES
-                                  cell	      count    LUT4 Usage(%)
-                           DAC_SPI_Out	          1         5.9
----------------------------------------------------
-Report for cell DAC_SPI_Out
-   Instance path: top/sample_output/dac
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	         54         5.9
-                                PFUREG	         33         7.0
----------------------------------------------------
-Report for cell Adder
-   Instance path: top/genadder[1].adder
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	         43         4.7
-                                PFUREG	         39         8.3
----------------------------------------------------
-Report for cell ADC_SPI_In
-   Instance path: top/adc
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	         98        10.8
-                                 IOBUF	          1        10.0
-                                PFUREG	         76        16.2
----------------------------------------------------
-Report for cell Adder_U0
-   Instance path: top/genadder[0].adder
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	         41         4.5
-                                PFUREG	         39         8.3
-                                   DSP	          1        100.0
----------------------------------------------------
-Report for cell Scale_Mult
-   Instance path: top/mult
-                     Cell usage:
-                                  cell	      count    Res Usage(%)
-                                  LUT4	         58         6.4
-                                PFUREG	         20         4.3

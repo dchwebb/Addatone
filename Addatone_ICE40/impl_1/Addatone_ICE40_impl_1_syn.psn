@@ -7,6 +7,7 @@ Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V 
 Reading input file 'Addatone_ICE40_impl_1.vm' ...
 Reading constraint file 'D:/Eurorack/Addatone/Addatone_ICE40/impl_1/Addatone_ICE40_impl_1.ldc' ...
 Removing unused logic...
+INFO - Signal adc/Receive_Byte[0]_2 undriven or does not drive anything - clipped
 INFO - Signal genadder[0].adder/Adder_Total[0][31] undriven or does not drive anything - clipped
 INFO - Signal genadder[0].adder/Adder_Total[0][30] undriven or does not drive anything - clipped
 INFO - Signal genadder[0].adder/Adder_Total[0][29] undriven or does not drive anything - clipped
@@ -16,7 +17,6 @@ INFO - Signal genadder[0].adder/Adder_Total[0][26] undriven or does not drive an
 INFO - Signal genadder[0].adder/Adder_Total[0][25] undriven or does not drive anything - clipped
 INFO - Signal genadder[0].adder/Adder_Total[0][24] undriven or does not drive anything - clipped
 INFO - Signal genadder[0].adder/Adder_Total[0][23] undriven or does not drive anything - clipped
-INFO - Signal genadder[0].adder/Adder_Total[0][22] undriven or does not drive anything - clipped
 INFO - ... More signals are undriven or does not drive anything - clipped
 Starting design annotation....
 INFO - The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.

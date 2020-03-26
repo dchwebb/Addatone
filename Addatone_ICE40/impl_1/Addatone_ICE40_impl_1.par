@@ -1,5 +1,5 @@
 Copyright 2015 Lattice Semiconductor Corporation, All Rights Reserved
-Wed Mar 25 22:00:15 2020
+Thu Mar 26 11:30:11 2020
 
 Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -exp parPathBased=ON \
 	Addatone_ICE40_impl_1_map.udb Addatone_ICE40_impl_1.udb 
@@ -8,16 +8,16 @@ Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -exp parPathBased=ON \
 Level/       Number       Worst        Timing       Worst        Timing       Run          Run
 Cost [udb]   Unrouted     Slack        Score        Slack(hold)  Score(hold)  Time         Status
 ----------   --------     -----        ------       -----------  -----------  ----         ------
-5_1   *      0            0.917        0            2.556        0            22           Completed
+5_1   *      0            0.309        0            2.596        0            22           Completed
 
 * : Design saved.
 
-Total (real) run time for 1-seed: 22 secs 
+Total (real) run time for 1-seed: 23 secs 
 
 par done!
 
 Lattice Place and Route Report for Design "Addatone_ICE40_impl_1_map.udb"
-Wed Mar 25 22:00:15 2020
+Thu Mar 26 11:30:11 2020
 
 PAR: Place And Route Radiant Software (64-bit) 2.0.1.281.2.
 Command Line: par -w -t 1 -cores 1 -exp parPathBased=ON \
@@ -34,12 +34,12 @@ Package: SG48
 Performance Grade:   High-Performance_1.2V
 INFO - par: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
 INFO - par: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
-Number of Signals: 1590
-Number of Connections: 4028
+Number of Signals: 1588
+Number of Connections: 4018
 Device utilization summary:
 
-   SLICE (est.)     508/2640         19% used
-     LUT            911/5280         17% used
+   SLICE (est.)     504/2640         19% used
+     LUT            909/5280         17% used
      REG            469/5280          8% used
    PIO               10/56           17% used
                      10/36           27% bonded
@@ -63,17 +63,17 @@ Device utilization summary:
 Pin Constraint Summary:
    8 out of 10 pins locked (80% locked).
 .
-..............Finished Placer Phase 0 (HIER).  CPU time: 1 secs , REAL time: 2 secs 
+.............Finished Placer Phase 0 (HIER).  CPU time: 1 secs , REAL time: 2 secs 
 
 
-........................
-Finished Placer Phase 0 (AP).  CPU time: 4 secs , REAL time: 4 secs 
+.........................
+Finished Placer Phase 0 (AP).  CPU time: 4 secs , REAL time: 5 secs 
 
-Starting Placer Phase 1. REAL time: 4 secs 
+Starting Placer Phase 1. REAL time: 5 secs 
 ..  ..
 ....................
 
-Placer score = 456345.
+Placer score = 464951.
 
 Device SLICE utilization summary after final SLICE packing:
    SLICE            499/2640         18% used
@@ -84,16 +84,16 @@ Finished Placer Phase 1.  CPU time: 15 secs , REAL time: 16 secs
 Starting Placer Phase 2.
 .
 
-Placer score =  324012
+Placer score =  355405
 Finished Placer Phase 2.  CPU time: 15 secs , REAL time: 16 secs 
 
 
 ------------------ Clock Report ------------------
 
 Global Clocks :
-  PRIMARY "Main_Clock" from OUTCORE on comp "pll_48.lscc_pll_inst.u_PLL_B" on site "PLL_R13C32", clk load = 215, ce load = 0, sr load = 0
-  PRIMARY "adc.Clock_Stable" from Q0 on comp "SLICE_417" on site "R13C2A", clk load = 66, ce load = 0, sr load = 0
-  PRIMARY "ADC_Data_Received" from Q0 on comp "SLICE_425" on site "R13C31C", clk load = 31, ce load = 0, sr load = 0
+  PRIMARY "Main_Clock" from OUTCORE on comp "pll_48.u_PLL_B" on site "PLL_R13C32", clk load = 214, ce load = 0, sr load = 0
+  PRIMARY "adc.Clock_Stable" from Q0 on comp "SLICE_431" on site "R13C2C", clk load = 66, ce load = 0, sr load = 0
+  PRIMARY "ADC_Data_Received" from Q1 on comp "adc.SLICE_651" on site "R16C27A", clk load = 31, ce load = 0, sr load = 0
 
   PRIMARY  : 3 out of 8 (37%)
 
@@ -121,7 +121,7 @@ Writing design to file Addatone_ICE40_impl_1_par.dir/5_1.udb ...
 
 INFO - par: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
 
-Start NBR router at 22:00:31 03/25/20
+Start NBR router at 11:30:28 03/26/20
 
 *****************************************************************
 Info: NBR allows conflicts(one node used by more than one signal)
@@ -137,20 +137,20 @@ Note: NBR uses a different method to calculate timing slacks. The
 *****************************************************************
 
 INFO - par: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
-Start NBR router at 22:00:31 03/25/20
+Start NBR router at 11:30:28 03/26/20
 
 Starting routing resource preassignment
 Preassignment Summary:
 --------------------------------------------------------------------------------
 624 connections routed with dedicated routing resources
 3 global clock signals routed
-936 connections routed (of 3731 total) (25.09%)
+935 connections routed (of 3720 total) (25.13%)
 ---------------------------------------------------------
 Clock routing summary:
 Primary clocks (3 used out of 8 available):
 #0  Signal "Main_Clock"
-       Clock   loads: 215   out of   215 routed (100.00%)
-#4  Signal "ADC_Data_Received"
+       Clock   loads: 214   out of   214 routed (100.00%)
+#1  Signal "ADC_Data_Received"
        Clock   loads: 31    out of    31 routed (100.00%)
        Data    loads: 0     out of     1 routed (  0.00%)
 #5  Signal "adc.Clock_Stable"
@@ -158,55 +158,55 @@ Primary clocks (3 used out of 8 available):
 Other clocks:
     Signal "i_Clock_c"
        Clock   loads: 1     out of     1 routed (100.00%)
-    Signal "pll_48.lscc_pll_inst.feedback_w"
+    Signal "pll_48.Feedback"
        Clock   loads: 1     out of     1 routed (100.00%)
 ---------------------------------------------------------
 --------------------------------------------------------------------------------
 Completed routing resource preassignment
 INFO - par: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
 
-Start NBR section for initial routing at 22:00:33 03/25/20
+Start NBR section for initial routing at 11:30:29 03/26/20
 Level 1, iteration 1
-14(0.01%) conflicts; 2752(73.76%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.301ns/0.000ns; real time: 2 secs 
+10(0.00%) conflicts; 2742(73.71%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 2 secs 
 Level 2, iteration 1
-2(0.00%) conflicts; 2759(73.95%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 1.037ns/0.000ns; real time: 2 secs 
+1(0.00%) conflict; 2748(73.87%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 2 secs 
 Level 3, iteration 1
-0(0.00%) conflict; 2692(72.15%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 0.917ns/0.000ns; real time: 3 secs 
+1(0.00%) conflict; 2641(70.99%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 2 secs 
 Level 4, iteration 1
 24(0.01%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 0.917ns/0.000ns; real time: 4 secs 
+Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 4 secs 
 
 Info: Initial congestion level at 75% usage is 0
 Info: Initial congestion area  at 75% usage is 0 (0.00%)
 
-Start NBR section for normal routing at 22:00:35 03/25/20
+Start NBR section for normal routing at 11:30:32 03/26/20
 Level 1, iteration 1
-0(0.00%) conflict; 29(0.78%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 0.917ns/0.000ns; real time: 4 secs 
+0(0.00%) conflict; 50(1.34%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 4 secs 
 Level 2, iteration 1
-0(0.00%) conflict; 29(0.78%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 0.917ns/0.000ns; real time: 4 secs 
+0(0.00%) conflict; 50(1.34%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 4 secs 
 Level 3, iteration 1
-0(0.00%) conflict; 29(0.78%) untouched conns; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 0.917ns/0.000ns; real time: 4 secs 
+0(0.00%) conflict; 48(1.29%) untouched conns; 0 (nbr) score; 
+Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 4 secs 
 Level 4, iteration 1
 2(0.00%) conflicts; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 0.917ns/0.000ns; real time: 5 secs 
+Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 4 secs 
 Level 4, iteration 2
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 0.917ns/0.000ns; real time: 5 secs 
+Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 4 secs 
 
-Start NBR section for setup/hold timing optimization with effort level 3 at 22:00:36 03/25/20
+Start NBR section for setup/hold timing optimization with effort level 3 at 11:30:32 03/26/20
 
-Start NBR section for re-routing at 22:00:36 03/25/20
+Start NBR section for re-routing at 11:30:32 03/26/20
 Level 4, iteration 1
 0(0.00%) conflict; 0(0.00%) untouched conn; 0 (nbr) score; 
-Estimated worst slack/total negative slack<setup>: 0.917ns/0.000ns; real time: 5 secs 
+Estimated worst slack/total negative slack<setup>: 0.309ns/0.000ns; real time: 4 secs 
 
-Start NBR section for post-routing at 22:00:36 03/25/20
+Start NBR section for post-routing at 11:30:32 03/26/20
 INFO - par: The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
 
 End NBR router with 0 unrouted connection
@@ -215,16 +215,16 @@ NBR Summary
 -----------
   Number of unrouted connections : 0 (0.00%)
   Number of connections with timing violations : 0 (0.00%)
-  Estimated worst slack<setup> : 0.917ns
+  Estimated worst slack<setup> : 0.309ns
   Timing score<setup> : 0
 -----------
 Notes: The timing info is calculated for SETUP only.
 
 
-Total CPU time 4 secs 
-Total REAL time: 6 secs 
+Total CPU time 5 secs 
+Total REAL time: 5 secs 
 Completely routed.
-End of route.  3731 routed (100.00%); 0 unrouted.
+End of route.  3720 routed (100.00%); 0 unrouted.
 
 Writing design to file Addatone_ICE40_impl_1_par.dir/5_1.udb ...
 
@@ -234,14 +234,14 @@ All signals are completely routed.
 
 PAR_SUMMARY::Run status = Completed
 PAR_SUMMARY::Number of unrouted conns = 0
-PAR_SUMMARY::Worst  slack<setup/<ns>> = 0.917
+PAR_SUMMARY::Worst  slack<setup/<ns>> = 0.309
 PAR_SUMMARY::Timing score<setup/<ns>> = 0.000
-PAR_SUMMARY::Worst  slack<hold /<ns>> = 2.556
+PAR_SUMMARY::Worst  slack<hold /<ns>> = 2.596
 PAR_SUMMARY::Timing score<hold /<ns>> = 0.000
 PAR_SUMMARY::Number of errors = 0
 
-Total CPU  Time: 21 secs 
-Total REAL Time: 22 secs 
+Total CPU  Time: 22 secs 
+Total REAL Time: 23 secs 
 Peak Memory Usage: 140 MB
 
 

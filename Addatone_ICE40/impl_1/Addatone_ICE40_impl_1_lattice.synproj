@@ -51,6 +51,7 @@
 "D:/Eurorack/Addatone/Addatone_ICE40/src/PLL_48MHz/rtl/PLL_48MHz.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v"
+"D:/Eurorack/Addatone/Addatone_ICE40/src/PLL_Primitive_48MHz.v"
 
 
 -path "D:/Eurorack/Addatone/Addatone_ICE40"

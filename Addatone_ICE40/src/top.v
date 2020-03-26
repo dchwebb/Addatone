@@ -17,14 +17,9 @@ module top
 	assign Reset = ~reset_n;
 	wire Main_Clock;
 
-	PLL_48MHz pll_48 (.ref_clk_i(i_Clock), .rst_n_i(reset_n), .outcore_o(Main_Clock), .outglobal_o());
+	// Wrapper for PLL primitive generating 48MHz from 12MHz oscillator
+	PLL_Primitive_48MHz pll_48 (.i_Reset(Reset), .i_Clock(i_Clock), .o_PLL_Clock(Main_Clock));
 	
-	//HSOSC	#(.CLKHF_DIV (2'b01)) int_osc (
-		//.CLKHFPU (1'b1),  // I
-		//.CLKHFEN (1'b1),  // I
-		//.CLKHF   (Main_Clock)   // O
-	//);
-
 	// Sample position RAM - memory array to store current position in cycle of each harmonic
 	parameter SAMPLERATE = 16'd48000;
 	parameter SAMPLEINTERVAL = 16'd1000;			// Clock frequency / sample rate - eg 48Mhz / 48khz = 1000
@@ -68,7 +63,7 @@ module top
 
 	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
 	parameter DIV_BIT = 9;									// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
-	reg [DIV_BIT - 1:0] Harmonic_Scale = 270;		// Level at which higher harmonics are attenuated
+	reg [DIV_BIT - 1:0] Harmonic_Scale = 270;			// Level at which higher harmonics are attenuated
 	reg [DIV_BIT - 1:0] Scale_Initial = 511;
 	reg [1:0] Adder_Start;
 	wire [1:0] Adder_Ready;
@@ -174,7 +169,7 @@ module top
 					begin
 						Next_Sample <= 1'b0;
 						Adder_Start <= 1'b0;
-						Start_Mult_Scaler <= 1'b1;								// decrease harmonic scaler
+						Start_Mult_Scaler <= 1'b1;							// decrease harmonic scaler
 						SM_Top <= sm_check_mute;
 					end
 

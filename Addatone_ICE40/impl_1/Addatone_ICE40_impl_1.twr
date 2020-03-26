@@ -1,6 +1,6 @@
 Lattice Timing Report -  Setup  and Hold, Version Radiant Software (64-bit) 2.0.1.281.2
 
-Wed Mar 25 22:00:39 2020
+Thu Mar 26 11:30:35 2020
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -27,7 +27,7 @@ Performance:     High-Performance_1.2V
         1.2  Combinational Loop
     2  CLOCK SUMMARY
         2.1  Clock Main_Clock
-        2.2  Clock pll_48/lscc_pll_inst/i_Clock_c
+        2.2  Clock pll_48/i_Clock_c
     3  TIMING ANALYSIS SUMMARY
         3.1  Overall (Setup and Hold)
             3.1.1  Constraint Coverage
@@ -52,8 +52,8 @@ Performance:     High-Performance_1.2V
 
 1.1  SDC Constraints
 =====================
-create_generated_clock -name {Main_Clock} -source [get_pins {pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 4 [get_pins {pll_48/lscc_pll_inst/u_PLL_B/OUTCORE }] 
-create_clock -name {pll_48/lscc_pll_inst/i_Clock_c} -period 83.3333333333333 [get_nets i_Clock_c]
+create_generated_clock -name {Main_Clock} -source [get_pins {pll_48/u_PLL_B/REFERENCECLK}] -multiply_by 4 [get_pins {pll_48/u_PLL_B/OUTCORE }] 
+create_clock -name {pll_48/i_Clock_c} -period 83.3333333333333 [get_nets i_Clock_c]
 
 1.2  Combinational Loop
 ========================
@@ -65,14 +65,14 @@ None
 
 2.1 Clock "Main_Clock"
 =======================
-create_generated_clock -name {Main_Clock} -source [get_pins {pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK}] -multiply_by 4 [get_pins {pll_48/lscc_pll_inst/u_PLL_B/OUTCORE }] 
+create_generated_clock -name {Main_Clock} -source [get_pins {pll_48/u_PLL_B/REFERENCECLK}] -multiply_by 4 [get_pins {pll_48/u_PLL_B/OUTCORE }] 
 
 Single Clock Domain
 -------------------------------------------------------------------------------------------------------
             Clock Main_Clock            |                    |       Period       |     Frequency      
 -------------------------------------------------------------------------------------------------------
  From Main_Clock                        |             Target |          20.833 ns |         48.001 MHz 
-                                        | Actual (all paths) |          19.916 ns |         50.211 MHz 
+                                        | Actual (all paths) |          20.524 ns |         48.723 MHz 
 Minimum Pulse Width Period              |                                                              
 -------------------------               |                                                              
 sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/RCLK (MPW)                                                                
@@ -83,18 +83,18 @@ Clock Domain Crossing
 ------------------------------------------------------------------------------------------------------
             Clock Main_Clock            |   Worst Time Between Edges   |           Comment            
 ------------------------------------------------------------------------------------------------------
- From pll_48/lscc_pll_inst/i_Clock_c    |                         ---- |                      No path 
+ From pll_48/i_Clock_c                  |                         ---- |                      No path 
 ------------------------------------------------------------------------------------------------------
 
-2.2 Clock "pll_48/lscc_pll_inst/i_Clock_c"
+2.2 Clock "pll_48/i_Clock_c"
 =======================
-create_clock -name {pll_48/lscc_pll_inst/i_Clock_c} -period 83.3333333333333 [get_nets i_Clock_c]
+create_clock -name {pll_48/i_Clock_c} -period 83.3333333333333 [get_nets i_Clock_c]
 
 Single Clock Domain
 -------------------------------------------------------------------------------------------------------
-  Clock pll_48/lscc_pll_inst/i_Clock_c  |                    |       Period       |     Frequency      
+         Clock pll_48/i_Clock_c         |                    |       Period       |     Frequency      
 -------------------------------------------------------------------------------------------------------
- From pll_48/lscc_pll_inst/i_Clock_c    |             Target |          83.333 ns |         12.000 MHz 
+ From pll_48/i_Clock_c                  |             Target |          83.333 ns |         12.000 MHz 
                                         | Actual (all paths) |           1.340 ns |        746.269 MHz 
 Minimum Pulse Width Period              |                                                              
 -------------------------               |                                                              
@@ -104,7 +104,7 @@ sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_fi
 
 Clock Domain Crossing
 ------------------------------------------------------------------------------------------------------
-  Clock pll_48/lscc_pll_inst/i_Clock_c  |   Worst Time Between Edges   |           Comment            
+         Clock pll_48/i_Clock_c         |   Worst Time Between Edges   |           Comment            
 ------------------------------------------------------------------------------------------------------
  From Main_Clock                        |                         ---- |                      No path 
 ------------------------------------------------------------------------------------------------------
@@ -118,7 +118,7 @@ Clock Domain Crossing
 
 3.1.1  Constraint Coverage
 ---------------------------
-Constraint Coverage: 71.0758%
+Constraint Coverage: 71.1675%
 
 3.1.2  Timing Errors
 ---------------------
@@ -134,24 +134,25 @@ Total Negative Slack: 0.000 ns (setup), 0.000 ns (hold)
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-{sample_position/Accumulated_Offset_i0_i14/SP   sample_position/Accumulated_Offset_i0_i15/SP}              
-                                         |    0.917 ns 
 {sample_position/Accumulated_Offset_i0_i12/SP   sample_position/Accumulated_Offset_i0_i13/SP}              
-                                         |    0.917 ns 
+                                         |    0.309 ns 
 {sample_position/Accumulated_Offset_i0_i8/SP   sample_position/Accumulated_Offset_i0_i9/SP}              
-                                         |    0.917 ns 
+                                         |    0.309 ns 
 {sample_position/Accumulated_Offset_i0_i6/SP   sample_position/Accumulated_Offset_i0_i7/SP}              
-                                         |    0.917 ns 
+                                         |    0.309 ns 
 {sample_position/Accumulated_Offset_i0_i4/SP   sample_position/Accumulated_Offset_i0_i5/SP}              
-                                         |    0.917 ns 
+                                         |    0.905 ns 
 {sample_position/Accumulated_Offset_i0_i2/SP   sample_position/Accumulated_Offset_i0_i3/SP}              
-                                         |    0.917 ns 
-{sample_position/Accumulated_Offset_i0_i1/SP   sample_position/Accumulated_Offset_i0_i0/SP}              
-                                         |    0.917 ns 
-{sample_position/Accumulated_Offset_i0_i10/SP   sample_position/Accumulated_Offset_i0_i11/SP}              
-                                         |    2.109 ns 
-genadder[1].adder/Working_Total__i19/D   |    2.544 ns 
-genadder[0].adder/Working_Total__i19/D   |    2.544 ns 
+                                         |    0.905 ns 
+{Sample_Timer__i7/SR   Sample_Timer__i8/SR}              
+                                         |    1.258 ns 
+{Sample_Timer__i13/SR   Sample_Timer__i14/SR}              
+                                         |    1.258 ns 
+{Sample_Timer__i9/SR   Sample_Timer__i10/SR}              
+                                         |    1.258 ns 
+{Sample_Timer__i11/SR   Sample_Timer__i12/SR}              
+                                         |    1.258 ns 
+Sample_Timer__i15/SR                     |    1.258 ns 
 -------------------------------------------------------
                                          |             
 Setup # of endpoints with negative slack:|           0 
@@ -164,21 +165,22 @@ Setup # of endpoints with negative slack:|           0
 -------------------------------------------------------
           Listing 10 End Points          |    Slack    
 -------------------------------------------------------
-sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/RADDR3              
-                                         |    2.556 ns 
-sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/RADDR5              
-                                         |    2.556 ns 
-sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/RADDR7              
-                                         |    2.556 ns 
-sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WADDR5              
+sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WDATA7              
                                          |    2.596 ns 
-sample_output/SM_Sample_Output__i1/D     |    3.112 ns 
-sample_position/Accumulated_Offset_i0_i2/D              
-                                         |    3.112 ns 
-sample_position/SM_Sample_Position__i0/D |    3.112 ns 
-sample_position/SM_Sample_Position__i1/D |    3.112 ns 
-SM_Top__i1/D                             |    3.112 ns 
+sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WDATA9              
+                                         |    2.596 ns 
+sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WDATA10              
+                                         |    2.596 ns 
+sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WDATA11              
+                                         |    2.596 ns 
+sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WDATA12              
+                                         |    2.596 ns 
+sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WDATA13              
+                                         |    2.596 ns 
 SM_Top__i0/D                             |    3.112 ns 
+mult/Comb_Counter__i3/D                  |    3.112 ns 
+mult/Comb_Counter__i7/D                  |    3.112 ns 
+mult/SM_Scale_Mult__i0/D                 |    3.112 ns 
 -------------------------------------------------------
                                          |             
 Hold # of endpoints with negative slack: |           0 
@@ -195,9 +197,9 @@ Clocked but unconstrained timing start points
 -------------------------------------------------------------------
          Listing 4 Start Points         |           Type           
 -------------------------------------------------------------------
-sample_output/dac/o_SPI_CS/Q            |          No required time
 adc/Clock_Stable_c/Q                    |          No required time
 sample_output/dac/o_SPI_Data/Q          |          No required time
+sample_output/dac/o_SPI_CS/Q            |          No required time
 adc/CS_Stable_c/Q                       |          No required time
 -------------------------------------------------------------------
                                         |                          
@@ -210,23 +212,23 @@ Clocked but unconstrained timing end points
 -------------------------------------------------------------------
          Listing 10 End Points          |           Type           
 -------------------------------------------------------------------
-sample_position/Sample_Position__i15/SR |           No arrival time
-{sample_position/Sample_Position__i13/SR   sample_position/Sample_Position__i14/SR}                           
-                                        |           No arrival time
-{sample_position/Sample_Position__i11/SR   sample_position/Sample_Position__i12/SR}                           
-                                        |           No arrival time
-{sample_position/Sample_Position__i9/SR   sample_position/Sample_Position__i10/SR}                           
-                                        |           No arrival time
-{sample_position/Sample_Position__i7/SR   sample_position/Sample_Position__i8/SR}                           
-                                        |           No arrival time
-{sample_position/Sample_Position__i5/SR   sample_position/Sample_Position__i6/SR}                           
-                                        |           No arrival time
-{sample_position/Sample_Position__i3/SR   sample_position/Sample_Position__i4/SR}                           
-                                        |           No arrival time
-{sample_position/Sample_Position__i1/SR   sample_position/Sample_Position__i2/SR}                           
-                                        |           No arrival time
-sample_position/Sample_Position__i0/SR  |           No arrival time
 sample_output/r_Sample_R__i18/SR        |           No arrival time
+{sample_output/r_Sample_R__i16/SR   sample_output/r_Sample_R__i17/SR}                           
+                                        |           No arrival time
+{sample_output/r_Sample_R__i14/SR   sample_output/r_Sample_R__i15/SR}                           
+                                        |           No arrival time
+{sample_output/r_Sample_R__i12/SR   sample_output/r_Sample_R__i13/SR}                           
+                                        |           No arrival time
+{sample_output/r_Sample_R__i10/SR   sample_output/r_Sample_R__i11/SR}                           
+                                        |           No arrival time
+sample_output/r_Sample_R__i9/SR         |           No arrival time
+sample_output/r_Sample_L__i18/SR        |           No arrival time
+{sample_output/r_Sample_L__i16/SR   sample_output/r_Sample_L__i17/SR}                           
+                                        |           No arrival time
+{sample_output/r_Sample_L__i14/SR   sample_output/r_Sample_L__i15/SR}                           
+                                        |           No arrival time
+{sample_output/r_Sample_L__i12/SR   sample_output/r_Sample_L__i13/SR}                           
+                                        |           No arrival time
 -------------------------------------------------------------------
                                         |                          
 Number of unconstrained timing end poin |                          
@@ -265,20 +267,20 @@ Define the clock for these registers.
 -------------------------------------------------------------------
          Listing 10 Instance(s)         |           Type           
 -------------------------------------------------------------------
-Frequency_i1                            |                  No Clock
-test_i0                                 |                  No Clock
-Harmonic_Scale_i1                       |                  No Clock
-Comb_Interval_i2                        |                  No Clock
-Frequency_i11                           |                  No Clock
 Frequency_i13                           |                  No Clock
-Frequency_i5                            |                  No Clock
-Frequency_i9                            |                  No Clock
+Frequency_i11                           |                  No Clock
+Frequency_i15                           |                  No Clock
+test_i0                                 |                  No Clock
+Comb_Interval_i2                        |                  No Clock
 Frequency_i7                            |                  No Clock
+Frequency_i9                            |                  No Clock
 Frequency_i3                            |                  No Clock
+Frequency_i5                            |                  No Clock
+Harmonic_Scale_i1                       |                  No Clock
 -------------------------------------------------------------------
                                         |                          
 Number of registers without clock defin |                          
-ition                                   |                       640
+ition                                   |                       650
                                         |                          
 -------------------------------------------------------------------
 
@@ -302,884 +304,785 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_849__i1/Q  (SLICE_R14C5B)
-Path End         : {sample_position/Accumulated_Offset_i0_i14/SP   sample_position/Accumulated_Offset_i0_i15/SP}  (SLICE_R16C8B)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (SLICE_R11C4A)
+Path End         : {sample_position/Accumulated_Offset_i0_i12/SP   sample_position/Accumulated_Offset_i0_i13/SP}  (SLICE_R12C9D)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
 Logic Level      : 17
-Delay Ratio      : 54.4% (route), 45.6% (logic)
+Delay Ratio      : 55.7% (route), 44.3% (logic)
 Clock Skew       : 0.000 ns
 Setup Constraint : 20.833 ns 
-Path Slack       : 0.917 ns  (Passed)
+Path Slack       : 0.309 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/Accumulated_Frequency_849__i1/CK->sample_position/Accumulated_Frequency_849__i1/Q
-                                          SLICE_R14C5B    CLK_TO_Q0_DELAY  1.391        13.395  4       
-sample_position/Accumulated_Frequency[1]                  NET DELAY        2.146        15.541  1       
-sample_position/LessThan_5_i4_4_lut/B->sample_position/LessThan_5_i4_4_lut/Z
-                                          SLICE_R15C6A    A0_TO_F0_DELAY   0.477        16.018  1       
-sample_position/n4_adj_1154                               NET DELAY        0.305        16.323  1       
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
+                                          SLICE_R11C4A    CLK_TO_Q1_DELAY  1.391        13.395  4       
+sample_position/Accumulated_Frequency[0]                  NET DELAY        2.834        16.229  1       
+sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
+                                          SLICE_R11C7A    D0_TO_F0_DELAY   0.477        16.706  1       
+sample_position/n4_adj_1141                               NET DELAY        0.305        17.011  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
-                                          SLICE_R15C6A    C1_TO_F1_DELAY   0.477        16.800  1       
-sample_position/n6_adj_1153                               NET DELAY        0.305        17.105  1       
+                                          SLICE_R11C7A    C1_TO_F1_DELAY   0.477        17.488  1       
+sample_position/n6_adj_1140                               NET DELAY        0.305        17.793  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
-                                          SLICE_R15C6B    C0_TO_F0_DELAY   0.477        17.582  1       
-sample_position/n8_adj_1152                               NET DELAY        0.305        17.887  1       
+                                          SLICE_R11C7B    C0_TO_F0_DELAY   0.477        18.270  1       
+sample_position/n8_adj_1139                               NET DELAY        0.305        18.575  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
-                                          SLICE_R15C6B    C1_TO_F1_DELAY   0.477        18.364  1       
-sample_position/n10_adj_1151                              NET DELAY        0.305        18.669  1       
+                                          SLICE_R11C7B    C1_TO_F1_DELAY   0.477        19.052  1       
+sample_position/n10_adj_1138                              NET DELAY        0.305        19.357  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
-                                          SLICE_R15C6C    C0_TO_F0_DELAY   0.477        19.146  1       
-sample_position/n12_adj_1150                              NET DELAY        0.305        19.451  1       
+                                          SLICE_R11C7C    C0_TO_F0_DELAY   0.477        19.834  1       
+sample_position/n12_adj_1137                              NET DELAY        0.305        20.139  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
-                                          SLICE_R15C6C    C1_TO_F1_DELAY   0.477        19.928  1       
-sample_position/n14_adj_1149                              NET DELAY        0.305        20.233  1       
+                                          SLICE_R11C7C    C1_TO_F1_DELAY   0.477        20.616  1       
+sample_position/n14_adj_1136                              NET DELAY        0.305        20.921  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
-                                          SLICE_R15C6D    C0_TO_F0_DELAY   0.477        20.710  1       
-sample_position/n16_adj_1148                              NET DELAY        0.305        21.015  1       
+                                          SLICE_R11C7D    C0_TO_F0_DELAY   0.477        21.398  1       
+sample_position/n16_adj_1135                              NET DELAY        0.305        21.703  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
-                                          SLICE_R15C6D    C1_TO_F1_DELAY   0.477        21.492  1       
-sample_position/n18                                       NET DELAY        0.305        21.797  1       
+                                          SLICE_R11C7D    C1_TO_F1_DELAY   0.477        22.180  1       
+sample_position/n18                                       NET DELAY        0.305        22.485  1       
 sample_position/LessThan_5_i20_3_lut/A->sample_position/LessThan_5_i20_3_lut/Z
-                                          SLICE_R15C7A    C0_TO_F0_DELAY   0.477        22.274  1       
-sample_position/n20                                       NET DELAY        0.305        22.579  1       
+                                          SLICE_R11C8A    C0_TO_F0_DELAY   0.477        22.962  1       
+sample_position/n20                                       NET DELAY        0.305        23.267  1       
 sample_position/LessThan_5_i22_3_lut/A->sample_position/LessThan_5_i22_3_lut/Z
-                                          SLICE_R15C7A    C1_TO_F1_DELAY   0.477        23.056  1       
-sample_position/n22                                       NET DELAY        0.305        23.361  1       
+                                          SLICE_R11C8A    C1_TO_F1_DELAY   0.477        23.744  1       
+sample_position/n22                                       NET DELAY        0.305        24.049  1       
 sample_position/LessThan_5_i24_3_lut/A->sample_position/LessThan_5_i24_3_lut/Z
-                                          SLICE_R15C7B    C0_TO_F0_DELAY   0.477        23.838  1       
-sample_position/n24                                       NET DELAY        0.305        24.143  1       
+                                          SLICE_R11C8B    C0_TO_F0_DELAY   0.477        24.526  1       
+sample_position/n24                                       NET DELAY        0.305        24.831  1       
 sample_position/LessThan_5_i26_3_lut/A->sample_position/LessThan_5_i26_3_lut/Z
-                                          SLICE_R15C7B    C1_TO_F1_DELAY   0.477        24.620  1       
-sample_position/n26                                       NET DELAY        0.305        24.925  1       
+                                          SLICE_R11C8B    C1_TO_F1_DELAY   0.477        25.308  1       
+sample_position/n26                                       NET DELAY        0.305        25.613  1       
 sample_position/LessThan_5_i28_3_lut/A->sample_position/LessThan_5_i28_3_lut/Z
-                                          SLICE_R15C7C    C0_TO_F0_DELAY   0.477        25.402  1       
-sample_position/n28                                       NET DELAY        0.305        25.707  1       
+                                          SLICE_R11C8C    C0_TO_F0_DELAY   0.477        26.090  1       
+sample_position/n28                                       NET DELAY        0.305        26.395  1       
 sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
-                                          SLICE_R15C7C    C1_TO_F1_DELAY   0.477        26.184  1       
-sample_position/n30                                       NET DELAY        0.305        26.489  1       
-sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
-                                          SLICE_R15C7D    C0_TO_F0_DELAY   0.477        26.966  1       
-sample_position/n4_adj_1144                               NET DELAY        0.305        27.271  1       
-sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
-                                          SLICE_R15C7D    C1_TO_F1_DELAY   0.450        27.721  8       
-sample_position/n5386 ( CE )                              NET DELAY        4.000        31.721  1       
+                                          SLICE_R11C8C    C1_TO_F1_DELAY   0.477        26.872  1       
+sample_position/n30                                       NET DELAY        0.305        27.177  1       
+sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
+                                          SLICE_R11C8D    C0_TO_F0_DELAY   0.477        27.654  1       
+sample_position/n4_adj_1133                               NET DELAY        0.305        27.959  1       
+sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
+                                          SLICE_R11C8D    C1_TO_F1_DELAY   0.450        28.409  8       
+sample_position/n5290 ( CE )                              NET DELAY        3.920        32.329  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000        20.833  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( CLK )                                   NET DELAY      11.854        32.837  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000        20.833  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( CLK )
+                                                          NET DELAY      11.854        32.837  1       
                                                           Uncertainty     0.000        32.837  
                                                           Setup time      0.199        32.638  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 Required Time                                                                          32.638  
-Arrival Time                                                                          -31.721  
+Arrival Time                                                                          -32.329  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    0.917  
+Path Slack  (Passed)                                                                    0.309  
 
 
 
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_849__i1/Q  (SLICE_R14C5B)
-Path End         : {sample_position/Accumulated_Offset_i0_i12/SP   sample_position/Accumulated_Offset_i0_i13/SP}  (SLICE_R16C8D)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (SLICE_R11C4A)
+Path End         : {sample_position/Accumulated_Offset_i0_i8/SP   sample_position/Accumulated_Offset_i0_i9/SP}  (SLICE_R12C9B)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
 Logic Level      : 17
-Delay Ratio      : 54.4% (route), 45.6% (logic)
+Delay Ratio      : 55.7% (route), 44.3% (logic)
 Clock Skew       : 0.000 ns
 Setup Constraint : 20.833 ns 
-Path Slack       : 0.917 ns  (Passed)
+Path Slack       : 0.309 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/Accumulated_Frequency_849__i1/CK->sample_position/Accumulated_Frequency_849__i1/Q
-                                          SLICE_R14C5B    CLK_TO_Q0_DELAY  1.391        13.395  4       
-sample_position/Accumulated_Frequency[1]                  NET DELAY        2.146        15.541  1       
-sample_position/LessThan_5_i4_4_lut/B->sample_position/LessThan_5_i4_4_lut/Z
-                                          SLICE_R15C6A    A0_TO_F0_DELAY   0.477        16.018  1       
-sample_position/n4_adj_1154                               NET DELAY        0.305        16.323  1       
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
+                                          SLICE_R11C4A    CLK_TO_Q1_DELAY  1.391        13.395  4       
+sample_position/Accumulated_Frequency[0]                  NET DELAY        2.834        16.229  1       
+sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
+                                          SLICE_R11C7A    D0_TO_F0_DELAY   0.477        16.706  1       
+sample_position/n4_adj_1141                               NET DELAY        0.305        17.011  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
-                                          SLICE_R15C6A    C1_TO_F1_DELAY   0.477        16.800  1       
-sample_position/n6_adj_1153                               NET DELAY        0.305        17.105  1       
+                                          SLICE_R11C7A    C1_TO_F1_DELAY   0.477        17.488  1       
+sample_position/n6_adj_1140                               NET DELAY        0.305        17.793  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
-                                          SLICE_R15C6B    C0_TO_F0_DELAY   0.477        17.582  1       
-sample_position/n8_adj_1152                               NET DELAY        0.305        17.887  1       
+                                          SLICE_R11C7B    C0_TO_F0_DELAY   0.477        18.270  1       
+sample_position/n8_adj_1139                               NET DELAY        0.305        18.575  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
-                                          SLICE_R15C6B    C1_TO_F1_DELAY   0.477        18.364  1       
-sample_position/n10_adj_1151                              NET DELAY        0.305        18.669  1       
+                                          SLICE_R11C7B    C1_TO_F1_DELAY   0.477        19.052  1       
+sample_position/n10_adj_1138                              NET DELAY        0.305        19.357  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
-                                          SLICE_R15C6C    C0_TO_F0_DELAY   0.477        19.146  1       
-sample_position/n12_adj_1150                              NET DELAY        0.305        19.451  1       
+                                          SLICE_R11C7C    C0_TO_F0_DELAY   0.477        19.834  1       
+sample_position/n12_adj_1137                              NET DELAY        0.305        20.139  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
-                                          SLICE_R15C6C    C1_TO_F1_DELAY   0.477        19.928  1       
-sample_position/n14_adj_1149                              NET DELAY        0.305        20.233  1       
+                                          SLICE_R11C7C    C1_TO_F1_DELAY   0.477        20.616  1       
+sample_position/n14_adj_1136                              NET DELAY        0.305        20.921  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
-                                          SLICE_R15C6D    C0_TO_F0_DELAY   0.477        20.710  1       
-sample_position/n16_adj_1148                              NET DELAY        0.305        21.015  1       
+                                          SLICE_R11C7D    C0_TO_F0_DELAY   0.477        21.398  1       
+sample_position/n16_adj_1135                              NET DELAY        0.305        21.703  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
-                                          SLICE_R15C6D    C1_TO_F1_DELAY   0.477        21.492  1       
-sample_position/n18                                       NET DELAY        0.305        21.797  1       
+                                          SLICE_R11C7D    C1_TO_F1_DELAY   0.477        22.180  1       
+sample_position/n18                                       NET DELAY        0.305        22.485  1       
 sample_position/LessThan_5_i20_3_lut/A->sample_position/LessThan_5_i20_3_lut/Z
-                                          SLICE_R15C7A    C0_TO_F0_DELAY   0.477        22.274  1       
-sample_position/n20                                       NET DELAY        0.305        22.579  1       
+                                          SLICE_R11C8A    C0_TO_F0_DELAY   0.477        22.962  1       
+sample_position/n20                                       NET DELAY        0.305        23.267  1       
 sample_position/LessThan_5_i22_3_lut/A->sample_position/LessThan_5_i22_3_lut/Z
-                                          SLICE_R15C7A    C1_TO_F1_DELAY   0.477        23.056  1       
-sample_position/n22                                       NET DELAY        0.305        23.361  1       
+                                          SLICE_R11C8A    C1_TO_F1_DELAY   0.477        23.744  1       
+sample_position/n22                                       NET DELAY        0.305        24.049  1       
 sample_position/LessThan_5_i24_3_lut/A->sample_position/LessThan_5_i24_3_lut/Z
-                                          SLICE_R15C7B    C0_TO_F0_DELAY   0.477        23.838  1       
-sample_position/n24                                       NET DELAY        0.305        24.143  1       
+                                          SLICE_R11C8B    C0_TO_F0_DELAY   0.477        24.526  1       
+sample_position/n24                                       NET DELAY        0.305        24.831  1       
 sample_position/LessThan_5_i26_3_lut/A->sample_position/LessThan_5_i26_3_lut/Z
-                                          SLICE_R15C7B    C1_TO_F1_DELAY   0.477        24.620  1       
-sample_position/n26                                       NET DELAY        0.305        24.925  1       
+                                          SLICE_R11C8B    C1_TO_F1_DELAY   0.477        25.308  1       
+sample_position/n26                                       NET DELAY        0.305        25.613  1       
 sample_position/LessThan_5_i28_3_lut/A->sample_position/LessThan_5_i28_3_lut/Z
-                                          SLICE_R15C7C    C0_TO_F0_DELAY   0.477        25.402  1       
-sample_position/n28                                       NET DELAY        0.305        25.707  1       
+                                          SLICE_R11C8C    C0_TO_F0_DELAY   0.477        26.090  1       
+sample_position/n28                                       NET DELAY        0.305        26.395  1       
 sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
-                                          SLICE_R15C7C    C1_TO_F1_DELAY   0.477        26.184  1       
-sample_position/n30                                       NET DELAY        0.305        26.489  1       
-sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
-                                          SLICE_R15C7D    C0_TO_F0_DELAY   0.477        26.966  1       
-sample_position/n4_adj_1144                               NET DELAY        0.305        27.271  1       
-sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
-                                          SLICE_R15C7D    C1_TO_F1_DELAY   0.450        27.721  8       
-sample_position/n5386 ( CE )                              NET DELAY        4.000        31.721  1       
+                                          SLICE_R11C8C    C1_TO_F1_DELAY   0.477        26.872  1       
+sample_position/n30                                       NET DELAY        0.305        27.177  1       
+sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
+                                          SLICE_R11C8D    C0_TO_F0_DELAY   0.477        27.654  1       
+sample_position/n4_adj_1133                               NET DELAY        0.305        27.959  1       
+sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
+                                          SLICE_R11C8D    C1_TO_F1_DELAY   0.450        28.409  8       
+sample_position/n5290 ( CE )                              NET DELAY        3.920        32.329  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000        20.833  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( CLK )                                   NET DELAY      11.854        32.837  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000        20.833  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( CLK )
+                                                          NET DELAY      11.854        32.837  1       
                                                           Uncertainty     0.000        32.837  
                                                           Setup time      0.199        32.638  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 Required Time                                                                          32.638  
-Arrival Time                                                                          -31.721  
+Arrival Time                                                                          -32.329  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    0.917  
+Path Slack  (Passed)                                                                    0.309  
 
 
 
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_849__i1/Q  (SLICE_R14C5B)
-Path End         : {sample_position/Accumulated_Offset_i0_i8/SP   sample_position/Accumulated_Offset_i0_i9/SP}  (SLICE_R16C8C)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (SLICE_R11C4A)
+Path End         : {sample_position/Accumulated_Offset_i0_i6/SP   sample_position/Accumulated_Offset_i0_i7/SP}  (SLICE_R12C9C)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
 Logic Level      : 17
-Delay Ratio      : 54.4% (route), 45.6% (logic)
+Delay Ratio      : 55.7% (route), 44.3% (logic)
 Clock Skew       : 0.000 ns
 Setup Constraint : 20.833 ns 
-Path Slack       : 0.917 ns  (Passed)
+Path Slack       : 0.309 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/Accumulated_Frequency_849__i1/CK->sample_position/Accumulated_Frequency_849__i1/Q
-                                          SLICE_R14C5B    CLK_TO_Q0_DELAY  1.391        13.395  4       
-sample_position/Accumulated_Frequency[1]                  NET DELAY        2.146        15.541  1       
-sample_position/LessThan_5_i4_4_lut/B->sample_position/LessThan_5_i4_4_lut/Z
-                                          SLICE_R15C6A    A0_TO_F0_DELAY   0.477        16.018  1       
-sample_position/n4_adj_1154                               NET DELAY        0.305        16.323  1       
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
+                                          SLICE_R11C4A    CLK_TO_Q1_DELAY  1.391        13.395  4       
+sample_position/Accumulated_Frequency[0]                  NET DELAY        2.834        16.229  1       
+sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
+                                          SLICE_R11C7A    D0_TO_F0_DELAY   0.477        16.706  1       
+sample_position/n4_adj_1141                               NET DELAY        0.305        17.011  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
-                                          SLICE_R15C6A    C1_TO_F1_DELAY   0.477        16.800  1       
-sample_position/n6_adj_1153                               NET DELAY        0.305        17.105  1       
+                                          SLICE_R11C7A    C1_TO_F1_DELAY   0.477        17.488  1       
+sample_position/n6_adj_1140                               NET DELAY        0.305        17.793  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
-                                          SLICE_R15C6B    C0_TO_F0_DELAY   0.477        17.582  1       
-sample_position/n8_adj_1152                               NET DELAY        0.305        17.887  1       
+                                          SLICE_R11C7B    C0_TO_F0_DELAY   0.477        18.270  1       
+sample_position/n8_adj_1139                               NET DELAY        0.305        18.575  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
-                                          SLICE_R15C6B    C1_TO_F1_DELAY   0.477        18.364  1       
-sample_position/n10_adj_1151                              NET DELAY        0.305        18.669  1       
+                                          SLICE_R11C7B    C1_TO_F1_DELAY   0.477        19.052  1       
+sample_position/n10_adj_1138                              NET DELAY        0.305        19.357  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
-                                          SLICE_R15C6C    C0_TO_F0_DELAY   0.477        19.146  1       
-sample_position/n12_adj_1150                              NET DELAY        0.305        19.451  1       
+                                          SLICE_R11C7C    C0_TO_F0_DELAY   0.477        19.834  1       
+sample_position/n12_adj_1137                              NET DELAY        0.305        20.139  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
-                                          SLICE_R15C6C    C1_TO_F1_DELAY   0.477        19.928  1       
-sample_position/n14_adj_1149                              NET DELAY        0.305        20.233  1       
+                                          SLICE_R11C7C    C1_TO_F1_DELAY   0.477        20.616  1       
+sample_position/n14_adj_1136                              NET DELAY        0.305        20.921  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
-                                          SLICE_R15C6D    C0_TO_F0_DELAY   0.477        20.710  1       
-sample_position/n16_adj_1148                              NET DELAY        0.305        21.015  1       
+                                          SLICE_R11C7D    C0_TO_F0_DELAY   0.477        21.398  1       
+sample_position/n16_adj_1135                              NET DELAY        0.305        21.703  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
-                                          SLICE_R15C6D    C1_TO_F1_DELAY   0.477        21.492  1       
-sample_position/n18                                       NET DELAY        0.305        21.797  1       
+                                          SLICE_R11C7D    C1_TO_F1_DELAY   0.477        22.180  1       
+sample_position/n18                                       NET DELAY        0.305        22.485  1       
 sample_position/LessThan_5_i20_3_lut/A->sample_position/LessThan_5_i20_3_lut/Z
-                                          SLICE_R15C7A    C0_TO_F0_DELAY   0.477        22.274  1       
-sample_position/n20                                       NET DELAY        0.305        22.579  1       
+                                          SLICE_R11C8A    C0_TO_F0_DELAY   0.477        22.962  1       
+sample_position/n20                                       NET DELAY        0.305        23.267  1       
 sample_position/LessThan_5_i22_3_lut/A->sample_position/LessThan_5_i22_3_lut/Z
-                                          SLICE_R15C7A    C1_TO_F1_DELAY   0.477        23.056  1       
-sample_position/n22                                       NET DELAY        0.305        23.361  1       
+                                          SLICE_R11C8A    C1_TO_F1_DELAY   0.477        23.744  1       
+sample_position/n22                                       NET DELAY        0.305        24.049  1       
 sample_position/LessThan_5_i24_3_lut/A->sample_position/LessThan_5_i24_3_lut/Z
-                                          SLICE_R15C7B    C0_TO_F0_DELAY   0.477        23.838  1       
-sample_position/n24                                       NET DELAY        0.305        24.143  1       
+                                          SLICE_R11C8B    C0_TO_F0_DELAY   0.477        24.526  1       
+sample_position/n24                                       NET DELAY        0.305        24.831  1       
 sample_position/LessThan_5_i26_3_lut/A->sample_position/LessThan_5_i26_3_lut/Z
-                                          SLICE_R15C7B    C1_TO_F1_DELAY   0.477        24.620  1       
-sample_position/n26                                       NET DELAY        0.305        24.925  1       
+                                          SLICE_R11C8B    C1_TO_F1_DELAY   0.477        25.308  1       
+sample_position/n26                                       NET DELAY        0.305        25.613  1       
 sample_position/LessThan_5_i28_3_lut/A->sample_position/LessThan_5_i28_3_lut/Z
-                                          SLICE_R15C7C    C0_TO_F0_DELAY   0.477        25.402  1       
-sample_position/n28                                       NET DELAY        0.305        25.707  1       
+                                          SLICE_R11C8C    C0_TO_F0_DELAY   0.477        26.090  1       
+sample_position/n28                                       NET DELAY        0.305        26.395  1       
 sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
-                                          SLICE_R15C7C    C1_TO_F1_DELAY   0.477        26.184  1       
-sample_position/n30                                       NET DELAY        0.305        26.489  1       
-sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
-                                          SLICE_R15C7D    C0_TO_F0_DELAY   0.477        26.966  1       
-sample_position/n4_adj_1144                               NET DELAY        0.305        27.271  1       
-sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
-                                          SLICE_R15C7D    C1_TO_F1_DELAY   0.450        27.721  8       
-sample_position/n5386 ( CE )                              NET DELAY        4.000        31.721  1       
+                                          SLICE_R11C8C    C1_TO_F1_DELAY   0.477        26.872  1       
+sample_position/n30                                       NET DELAY        0.305        27.177  1       
+sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
+                                          SLICE_R11C8D    C0_TO_F0_DELAY   0.477        27.654  1       
+sample_position/n4_adj_1133                               NET DELAY        0.305        27.959  1       
+sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
+                                          SLICE_R11C8D    C1_TO_F1_DELAY   0.450        28.409  8       
+sample_position/n5290 ( CE )                              NET DELAY        3.920        32.329  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000        20.833  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( CLK )                                   NET DELAY      11.854        32.837  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000        20.833  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( CLK )
+                                                          NET DELAY      11.854        32.837  1       
                                                           Uncertainty     0.000        32.837  
                                                           Setup time      0.199        32.638  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 Required Time                                                                          32.638  
-Arrival Time                                                                          -31.721  
+Arrival Time                                                                          -32.329  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    0.917  
+Path Slack  (Passed)                                                                    0.309  
 
 
 
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_849__i1/Q  (SLICE_R14C5B)
-Path End         : {sample_position/Accumulated_Offset_i0_i6/SP   sample_position/Accumulated_Offset_i0_i7/SP}  (SLICE_R16C7D)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (SLICE_R11C4A)
+Path End         : {sample_position/Accumulated_Offset_i0_i4/SP   sample_position/Accumulated_Offset_i0_i5/SP}  (SLICE_R12C7C)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
 Logic Level      : 17
 Delay Ratio      : 54.4% (route), 45.6% (logic)
 Clock Skew       : 0.000 ns
 Setup Constraint : 20.833 ns 
-Path Slack       : 0.917 ns  (Passed)
+Path Slack       : 0.905 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/Accumulated_Frequency_849__i1/CK->sample_position/Accumulated_Frequency_849__i1/Q
-                                          SLICE_R14C5B    CLK_TO_Q0_DELAY  1.391        13.395  4       
-sample_position/Accumulated_Frequency[1]                  NET DELAY        2.146        15.541  1       
-sample_position/LessThan_5_i4_4_lut/B->sample_position/LessThan_5_i4_4_lut/Z
-                                          SLICE_R15C6A    A0_TO_F0_DELAY   0.477        16.018  1       
-sample_position/n4_adj_1154                               NET DELAY        0.305        16.323  1       
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
+                                          SLICE_R11C4A    CLK_TO_Q1_DELAY  1.391        13.395  4       
+sample_position/Accumulated_Frequency[0]                  NET DELAY        2.834        16.229  1       
+sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
+                                          SLICE_R11C7A    D0_TO_F0_DELAY   0.477        16.706  1       
+sample_position/n4_adj_1141                               NET DELAY        0.305        17.011  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
-                                          SLICE_R15C6A    C1_TO_F1_DELAY   0.477        16.800  1       
-sample_position/n6_adj_1153                               NET DELAY        0.305        17.105  1       
+                                          SLICE_R11C7A    C1_TO_F1_DELAY   0.477        17.488  1       
+sample_position/n6_adj_1140                               NET DELAY        0.305        17.793  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
-                                          SLICE_R15C6B    C0_TO_F0_DELAY   0.477        17.582  1       
-sample_position/n8_adj_1152                               NET DELAY        0.305        17.887  1       
+                                          SLICE_R11C7B    C0_TO_F0_DELAY   0.477        18.270  1       
+sample_position/n8_adj_1139                               NET DELAY        0.305        18.575  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
-                                          SLICE_R15C6B    C1_TO_F1_DELAY   0.477        18.364  1       
-sample_position/n10_adj_1151                              NET DELAY        0.305        18.669  1       
+                                          SLICE_R11C7B    C1_TO_F1_DELAY   0.477        19.052  1       
+sample_position/n10_adj_1138                              NET DELAY        0.305        19.357  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
-                                          SLICE_R15C6C    C0_TO_F0_DELAY   0.477        19.146  1       
-sample_position/n12_adj_1150                              NET DELAY        0.305        19.451  1       
+                                          SLICE_R11C7C    C0_TO_F0_DELAY   0.477        19.834  1       
+sample_position/n12_adj_1137                              NET DELAY        0.305        20.139  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
-                                          SLICE_R15C6C    C1_TO_F1_DELAY   0.477        19.928  1       
-sample_position/n14_adj_1149                              NET DELAY        0.305        20.233  1       
+                                          SLICE_R11C7C    C1_TO_F1_DELAY   0.477        20.616  1       
+sample_position/n14_adj_1136                              NET DELAY        0.305        20.921  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
-                                          SLICE_R15C6D    C0_TO_F0_DELAY   0.477        20.710  1       
-sample_position/n16_adj_1148                              NET DELAY        0.305        21.015  1       
+                                          SLICE_R11C7D    C0_TO_F0_DELAY   0.477        21.398  1       
+sample_position/n16_adj_1135                              NET DELAY        0.305        21.703  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
-                                          SLICE_R15C6D    C1_TO_F1_DELAY   0.477        21.492  1       
-sample_position/n18                                       NET DELAY        0.305        21.797  1       
+                                          SLICE_R11C7D    C1_TO_F1_DELAY   0.477        22.180  1       
+sample_position/n18                                       NET DELAY        0.305        22.485  1       
 sample_position/LessThan_5_i20_3_lut/A->sample_position/LessThan_5_i20_3_lut/Z
-                                          SLICE_R15C7A    C0_TO_F0_DELAY   0.477        22.274  1       
-sample_position/n20                                       NET DELAY        0.305        22.579  1       
+                                          SLICE_R11C8A    C0_TO_F0_DELAY   0.477        22.962  1       
+sample_position/n20                                       NET DELAY        0.305        23.267  1       
 sample_position/LessThan_5_i22_3_lut/A->sample_position/LessThan_5_i22_3_lut/Z
-                                          SLICE_R15C7A    C1_TO_F1_DELAY   0.477        23.056  1       
-sample_position/n22                                       NET DELAY        0.305        23.361  1       
+                                          SLICE_R11C8A    C1_TO_F1_DELAY   0.477        23.744  1       
+sample_position/n22                                       NET DELAY        0.305        24.049  1       
 sample_position/LessThan_5_i24_3_lut/A->sample_position/LessThan_5_i24_3_lut/Z
-                                          SLICE_R15C7B    C0_TO_F0_DELAY   0.477        23.838  1       
-sample_position/n24                                       NET DELAY        0.305        24.143  1       
+                                          SLICE_R11C8B    C0_TO_F0_DELAY   0.477        24.526  1       
+sample_position/n24                                       NET DELAY        0.305        24.831  1       
 sample_position/LessThan_5_i26_3_lut/A->sample_position/LessThan_5_i26_3_lut/Z
-                                          SLICE_R15C7B    C1_TO_F1_DELAY   0.477        24.620  1       
-sample_position/n26                                       NET DELAY        0.305        24.925  1       
+                                          SLICE_R11C8B    C1_TO_F1_DELAY   0.477        25.308  1       
+sample_position/n26                                       NET DELAY        0.305        25.613  1       
 sample_position/LessThan_5_i28_3_lut/A->sample_position/LessThan_5_i28_3_lut/Z
-                                          SLICE_R15C7C    C0_TO_F0_DELAY   0.477        25.402  1       
-sample_position/n28                                       NET DELAY        0.305        25.707  1       
+                                          SLICE_R11C8C    C0_TO_F0_DELAY   0.477        26.090  1       
+sample_position/n28                                       NET DELAY        0.305        26.395  1       
 sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
-                                          SLICE_R15C7C    C1_TO_F1_DELAY   0.477        26.184  1       
-sample_position/n30                                       NET DELAY        0.305        26.489  1       
-sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
-                                          SLICE_R15C7D    C0_TO_F0_DELAY   0.477        26.966  1       
-sample_position/n4_adj_1144                               NET DELAY        0.305        27.271  1       
-sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
-                                          SLICE_R15C7D    C1_TO_F1_DELAY   0.450        27.721  8       
-sample_position/n5386 ( CE )                              NET DELAY        4.000        31.721  1       
+                                          SLICE_R11C8C    C1_TO_F1_DELAY   0.477        26.872  1       
+sample_position/n30                                       NET DELAY        0.305        27.177  1       
+sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
+                                          SLICE_R11C8D    C0_TO_F0_DELAY   0.477        27.654  1       
+sample_position/n4_adj_1133                               NET DELAY        0.305        27.959  1       
+sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
+                                          SLICE_R11C8D    C1_TO_F1_DELAY   0.450        28.409  8       
+sample_position/n5290 ( CE )                              NET DELAY        3.324        31.733  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000        20.833  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( CLK )                                   NET DELAY      11.854        32.837  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000        20.833  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( CLK )
+                                                          NET DELAY      11.854        32.837  1       
                                                           Uncertainty     0.000        32.837  
                                                           Setup time      0.199        32.638  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 Required Time                                                                          32.638  
-Arrival Time                                                                          -31.721  
+Arrival Time                                                                          -31.733  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    0.917  
+Path Slack  (Passed)                                                                    0.905  
 
 
 
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_849__i1/Q  (SLICE_R14C5B)
-Path End         : {sample_position/Accumulated_Offset_i0_i4/SP   sample_position/Accumulated_Offset_i0_i5/SP}  (SLICE_R16C7B)
+Path Begin       : sample_position/Accumulated_Frequency_849__i0/Q  (SLICE_R11C4A)
+Path End         : {sample_position/Accumulated_Offset_i0_i2/SP   sample_position/Accumulated_Offset_i0_i3/SP}  (SLICE_R12C7D)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
 Logic Level      : 17
 Delay Ratio      : 54.4% (route), 45.6% (logic)
 Clock Skew       : 0.000 ns
 Setup Constraint : 20.833 ns 
-Path Slack       : 0.917 ns  (Passed)
+Path Slack       : 0.905 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/Accumulated_Frequency_849__i1/CK->sample_position/Accumulated_Frequency_849__i1/Q
-                                          SLICE_R14C5B    CLK_TO_Q0_DELAY  1.391        13.395  4       
-sample_position/Accumulated_Frequency[1]                  NET DELAY        2.146        15.541  1       
-sample_position/LessThan_5_i4_4_lut/B->sample_position/LessThan_5_i4_4_lut/Z
-                                          SLICE_R15C6A    A0_TO_F0_DELAY   0.477        16.018  1       
-sample_position/n4_adj_1154                               NET DELAY        0.305        16.323  1       
+sample_position/Accumulated_Frequency_849__i0/CK->sample_position/Accumulated_Frequency_849__i0/Q
+                                          SLICE_R11C4A    CLK_TO_Q1_DELAY  1.391        13.395  4       
+sample_position/Accumulated_Frequency[0]                  NET DELAY        2.834        16.229  1       
+sample_position/LessThan_5_i4_4_lut/D->sample_position/LessThan_5_i4_4_lut/Z
+                                          SLICE_R11C7A    D0_TO_F0_DELAY   0.477        16.706  1       
+sample_position/n4_adj_1141                               NET DELAY        0.305        17.011  1       
 sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
-                                          SLICE_R15C6A    C1_TO_F1_DELAY   0.477        16.800  1       
-sample_position/n6_adj_1153                               NET DELAY        0.305        17.105  1       
+                                          SLICE_R11C7A    C1_TO_F1_DELAY   0.477        17.488  1       
+sample_position/n6_adj_1140                               NET DELAY        0.305        17.793  1       
 sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
-                                          SLICE_R15C6B    C0_TO_F0_DELAY   0.477        17.582  1       
-sample_position/n8_adj_1152                               NET DELAY        0.305        17.887  1       
+                                          SLICE_R11C7B    C0_TO_F0_DELAY   0.477        18.270  1       
+sample_position/n8_adj_1139                               NET DELAY        0.305        18.575  1       
 sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
-                                          SLICE_R15C6B    C1_TO_F1_DELAY   0.477        18.364  1       
-sample_position/n10_adj_1151                              NET DELAY        0.305        18.669  1       
+                                          SLICE_R11C7B    C1_TO_F1_DELAY   0.477        19.052  1       
+sample_position/n10_adj_1138                              NET DELAY        0.305        19.357  1       
 sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
-                                          SLICE_R15C6C    C0_TO_F0_DELAY   0.477        19.146  1       
-sample_position/n12_adj_1150                              NET DELAY        0.305        19.451  1       
+                                          SLICE_R11C7C    C0_TO_F0_DELAY   0.477        19.834  1       
+sample_position/n12_adj_1137                              NET DELAY        0.305        20.139  1       
 sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
-                                          SLICE_R15C6C    C1_TO_F1_DELAY   0.477        19.928  1       
-sample_position/n14_adj_1149                              NET DELAY        0.305        20.233  1       
+                                          SLICE_R11C7C    C1_TO_F1_DELAY   0.477        20.616  1       
+sample_position/n14_adj_1136                              NET DELAY        0.305        20.921  1       
 sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
-                                          SLICE_R15C6D    C0_TO_F0_DELAY   0.477        20.710  1       
-sample_position/n16_adj_1148                              NET DELAY        0.305        21.015  1       
+                                          SLICE_R11C7D    C0_TO_F0_DELAY   0.477        21.398  1       
+sample_position/n16_adj_1135                              NET DELAY        0.305        21.703  1       
 sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
-                                          SLICE_R15C6D    C1_TO_F1_DELAY   0.477        21.492  1       
-sample_position/n18                                       NET DELAY        0.305        21.797  1       
+                                          SLICE_R11C7D    C1_TO_F1_DELAY   0.477        22.180  1       
+sample_position/n18                                       NET DELAY        0.305        22.485  1       
 sample_position/LessThan_5_i20_3_lut/A->sample_position/LessThan_5_i20_3_lut/Z
-                                          SLICE_R15C7A    C0_TO_F0_DELAY   0.477        22.274  1       
-sample_position/n20                                       NET DELAY        0.305        22.579  1       
+                                          SLICE_R11C8A    C0_TO_F0_DELAY   0.477        22.962  1       
+sample_position/n20                                       NET DELAY        0.305        23.267  1       
 sample_position/LessThan_5_i22_3_lut/A->sample_position/LessThan_5_i22_3_lut/Z
-                                          SLICE_R15C7A    C1_TO_F1_DELAY   0.477        23.056  1       
-sample_position/n22                                       NET DELAY        0.305        23.361  1       
+                                          SLICE_R11C8A    C1_TO_F1_DELAY   0.477        23.744  1       
+sample_position/n22                                       NET DELAY        0.305        24.049  1       
 sample_position/LessThan_5_i24_3_lut/A->sample_position/LessThan_5_i24_3_lut/Z
-                                          SLICE_R15C7B    C0_TO_F0_DELAY   0.477        23.838  1       
-sample_position/n24                                       NET DELAY        0.305        24.143  1       
+                                          SLICE_R11C8B    C0_TO_F0_DELAY   0.477        24.526  1       
+sample_position/n24                                       NET DELAY        0.305        24.831  1       
 sample_position/LessThan_5_i26_3_lut/A->sample_position/LessThan_5_i26_3_lut/Z
-                                          SLICE_R15C7B    C1_TO_F1_DELAY   0.477        24.620  1       
-sample_position/n26                                       NET DELAY        0.305        24.925  1       
+                                          SLICE_R11C8B    C1_TO_F1_DELAY   0.477        25.308  1       
+sample_position/n26                                       NET DELAY        0.305        25.613  1       
 sample_position/LessThan_5_i28_3_lut/A->sample_position/LessThan_5_i28_3_lut/Z
-                                          SLICE_R15C7C    C0_TO_F0_DELAY   0.477        25.402  1       
-sample_position/n28                                       NET DELAY        0.305        25.707  1       
+                                          SLICE_R11C8C    C0_TO_F0_DELAY   0.477        26.090  1       
+sample_position/n28                                       NET DELAY        0.305        26.395  1       
 sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
-                                          SLICE_R15C7C    C1_TO_F1_DELAY   0.477        26.184  1       
-sample_position/n30                                       NET DELAY        0.305        26.489  1       
-sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
-                                          SLICE_R15C7D    C0_TO_F0_DELAY   0.477        26.966  1       
-sample_position/n4_adj_1144                               NET DELAY        0.305        27.271  1       
-sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
-                                          SLICE_R15C7D    C1_TO_F1_DELAY   0.450        27.721  8       
-sample_position/n5386 ( CE )                              NET DELAY        4.000        31.721  1       
+                                          SLICE_R11C8C    C1_TO_F1_DELAY   0.477        26.872  1       
+sample_position/n30                                       NET DELAY        0.305        27.177  1       
+sample_position/i1_4_lut_adj_395/A->sample_position/i1_4_lut_adj_395/Z
+                                          SLICE_R11C8D    C0_TO_F0_DELAY   0.477        27.654  1       
+sample_position/n4_adj_1133                               NET DELAY        0.305        27.959  1       
+sample_position/i3_4_lut_adj_393/D->sample_position/i3_4_lut_adj_393/Z
+                                          SLICE_R11C8D    C1_TO_F1_DELAY   0.450        28.409  8       
+sample_position/n5290 ( CE )                              NET DELAY        3.324        31.733  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000        20.833  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( CLK )                                   NET DELAY      11.854        32.837  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000        20.833  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( CLK )
+                                                          NET DELAY      11.854        32.837  1       
                                                           Uncertainty     0.000        32.837  
                                                           Setup time      0.199        32.638  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 Required Time                                                                          32.638  
-Arrival Time                                                                          -31.721  
+Arrival Time                                                                          -31.733  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    0.917  
+Path Slack  (Passed)                                                                    0.905  
 
 
 
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_849__i1/Q  (SLICE_R14C5B)
-Path End         : {sample_position/Accumulated_Offset_i0_i2/SP   sample_position/Accumulated_Offset_i0_i3/SP}  (SLICE_R16C7A)
+Path Begin       : Sample_Timer__i2/Q  (SLICE_R21C13B)
+Path End         : {Sample_Timer__i7/SR   Sample_Timer__i8/SR}  (SLICE_R21C14A)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
-Logic Level      : 17
-Delay Ratio      : 54.4% (route), 45.6% (logic)
+Logic Level      : 5
+Delay Ratio      : 83.2% (route), 16.8% (logic)
 Clock Skew       : 0.000 ns
 Setup Constraint : 20.833 ns 
-Path Slack       : 0.917 ns  (Passed)
+Path Slack       : 1.258 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/Accumulated_Frequency_849__i1/CK->sample_position/Accumulated_Frequency_849__i1/Q
-                                          SLICE_R14C5B    CLK_TO_Q0_DELAY  1.391        13.395  4       
-sample_position/Accumulated_Frequency[1]                  NET DELAY        2.146        15.541  1       
-sample_position/LessThan_5_i4_4_lut/B->sample_position/LessThan_5_i4_4_lut/Z
-                                          SLICE_R15C6A    A0_TO_F0_DELAY   0.477        16.018  1       
-sample_position/n4_adj_1154                               NET DELAY        0.305        16.323  1       
-sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
-                                          SLICE_R15C6A    C1_TO_F1_DELAY   0.477        16.800  1       
-sample_position/n6_adj_1153                               NET DELAY        0.305        17.105  1       
-sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
-                                          SLICE_R15C6B    C0_TO_F0_DELAY   0.477        17.582  1       
-sample_position/n8_adj_1152                               NET DELAY        0.305        17.887  1       
-sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
-                                          SLICE_R15C6B    C1_TO_F1_DELAY   0.477        18.364  1       
-sample_position/n10_adj_1151                              NET DELAY        0.305        18.669  1       
-sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
-                                          SLICE_R15C6C    C0_TO_F0_DELAY   0.477        19.146  1       
-sample_position/n12_adj_1150                              NET DELAY        0.305        19.451  1       
-sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
-                                          SLICE_R15C6C    C1_TO_F1_DELAY   0.477        19.928  1       
-sample_position/n14_adj_1149                              NET DELAY        0.305        20.233  1       
-sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
-                                          SLICE_R15C6D    C0_TO_F0_DELAY   0.477        20.710  1       
-sample_position/n16_adj_1148                              NET DELAY        0.305        21.015  1       
-sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
-                                          SLICE_R15C6D    C1_TO_F1_DELAY   0.477        21.492  1       
-sample_position/n18                                       NET DELAY        0.305        21.797  1       
-sample_position/LessThan_5_i20_3_lut/A->sample_position/LessThan_5_i20_3_lut/Z
-                                          SLICE_R15C7A    C0_TO_F0_DELAY   0.477        22.274  1       
-sample_position/n20                                       NET DELAY        0.305        22.579  1       
-sample_position/LessThan_5_i22_3_lut/A->sample_position/LessThan_5_i22_3_lut/Z
-                                          SLICE_R15C7A    C1_TO_F1_DELAY   0.477        23.056  1       
-sample_position/n22                                       NET DELAY        0.305        23.361  1       
-sample_position/LessThan_5_i24_3_lut/A->sample_position/LessThan_5_i24_3_lut/Z
-                                          SLICE_R15C7B    C0_TO_F0_DELAY   0.477        23.838  1       
-sample_position/n24                                       NET DELAY        0.305        24.143  1       
-sample_position/LessThan_5_i26_3_lut/A->sample_position/LessThan_5_i26_3_lut/Z
-                                          SLICE_R15C7B    C1_TO_F1_DELAY   0.477        24.620  1       
-sample_position/n26                                       NET DELAY        0.305        24.925  1       
-sample_position/LessThan_5_i28_3_lut/A->sample_position/LessThan_5_i28_3_lut/Z
-                                          SLICE_R15C7C    C0_TO_F0_DELAY   0.477        25.402  1       
-sample_position/n28                                       NET DELAY        0.305        25.707  1       
-sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
-                                          SLICE_R15C7C    C1_TO_F1_DELAY   0.477        26.184  1       
-sample_position/n30                                       NET DELAY        0.305        26.489  1       
-sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
-                                          SLICE_R15C7D    C0_TO_F0_DELAY   0.477        26.966  1       
-sample_position/n4_adj_1144                               NET DELAY        0.305        27.271  1       
-sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
-                                          SLICE_R15C7D    C1_TO_F1_DELAY   0.450        27.721  8       
-sample_position/n5386 ( CE )                              NET DELAY        4.000        31.721  1       
+Sample_Timer__i2/CK->Sample_Timer__i2/Q   SLICE_R21C13B   CLK_TO_Q1_DELAY  1.391        13.395  2       
+Sample_Timer[2]                                           NET DELAY        2.146        15.541  1       
+i6_4_lut_adj_423/D->i6_4_lut_adj_423/Z    SLICE_R22C14B   A0_TO_F0_DELAY   0.450        15.991  1       
+n16_adj_1211                                              NET DELAY        2.768        18.759  1       
+i9_4_lut/C->i9_4_lut/Z                    SLICE_R19C14A   D1_TO_F1_DELAY   0.450        19.209  2       
+n7590                                                     NET DELAY        2.768        21.977  1       
+i6_4_lut/C->i6_4_lut/Z                    SLICE_R18C12A   D0_TO_F0_DELAY   0.450        22.427  6       
+n31                                                       NET DELAY        3.801        26.228  1       
+i5938_4_lut/A->i5938_4_lut/Z              SLICE_R13C13A   D0_TO_F0_DELAY   0.450        26.678  9       
+n5634 ( LSR )                                             NET DELAY        4.371        31.049  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000        20.833  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( CLK )                                   NET DELAY      11.854        32.837  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000        20.833  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( CLK )
+                                                          NET DELAY      11.854        32.837  1       
                                                           Uncertainty     0.000        32.837  
-                                                          Setup time      0.199        32.638  
+                                                          Setup time      0.530        32.307  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Required Time                                                                          32.638  
-Arrival Time                                                                          -31.721  
+Required Time                                                                          32.307  
+Arrival Time                                                                          -31.049  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    0.917  
+Path Slack  (Passed)                                                                    1.258  
 
 
 
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_849__i1/Q  (SLICE_R14C5B)
-Path End         : {sample_position/Accumulated_Offset_i0_i1/SP   sample_position/Accumulated_Offset_i0_i0/SP}  (SLICE_R16C7C)
+Path Begin       : Sample_Timer__i2/Q  (SLICE_R21C13B)
+Path End         : {Sample_Timer__i13/SR   Sample_Timer__i14/SR}  (SLICE_R21C14D)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
-Logic Level      : 17
-Delay Ratio      : 54.4% (route), 45.6% (logic)
+Logic Level      : 5
+Delay Ratio      : 83.2% (route), 16.8% (logic)
 Clock Skew       : 0.000 ns
 Setup Constraint : 20.833 ns 
-Path Slack       : 0.917 ns  (Passed)
+Path Slack       : 1.258 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/Accumulated_Frequency_849__i1/CK->sample_position/Accumulated_Frequency_849__i1/Q
-                                          SLICE_R14C5B    CLK_TO_Q0_DELAY  1.391        13.395  4       
-sample_position/Accumulated_Frequency[1]                  NET DELAY        2.146        15.541  1       
-sample_position/LessThan_5_i4_4_lut/B->sample_position/LessThan_5_i4_4_lut/Z
-                                          SLICE_R15C6A    A0_TO_F0_DELAY   0.477        16.018  1       
-sample_position/n4_adj_1154                               NET DELAY        0.305        16.323  1       
-sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
-                                          SLICE_R15C6A    C1_TO_F1_DELAY   0.477        16.800  1       
-sample_position/n6_adj_1153                               NET DELAY        0.305        17.105  1       
-sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
-                                          SLICE_R15C6B    C0_TO_F0_DELAY   0.477        17.582  1       
-sample_position/n8_adj_1152                               NET DELAY        0.305        17.887  1       
-sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
-                                          SLICE_R15C6B    C1_TO_F1_DELAY   0.477        18.364  1       
-sample_position/n10_adj_1151                              NET DELAY        0.305        18.669  1       
-sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
-                                          SLICE_R15C6C    C0_TO_F0_DELAY   0.477        19.146  1       
-sample_position/n12_adj_1150                              NET DELAY        0.305        19.451  1       
-sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
-                                          SLICE_R15C6C    C1_TO_F1_DELAY   0.477        19.928  1       
-sample_position/n14_adj_1149                              NET DELAY        0.305        20.233  1       
-sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
-                                          SLICE_R15C6D    C0_TO_F0_DELAY   0.477        20.710  1       
-sample_position/n16_adj_1148                              NET DELAY        0.305        21.015  1       
-sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
-                                          SLICE_R15C6D    C1_TO_F1_DELAY   0.477        21.492  1       
-sample_position/n18                                       NET DELAY        0.305        21.797  1       
-sample_position/LessThan_5_i20_3_lut/A->sample_position/LessThan_5_i20_3_lut/Z
-                                          SLICE_R15C7A    C0_TO_F0_DELAY   0.477        22.274  1       
-sample_position/n20                                       NET DELAY        0.305        22.579  1       
-sample_position/LessThan_5_i22_3_lut/A->sample_position/LessThan_5_i22_3_lut/Z
-                                          SLICE_R15C7A    C1_TO_F1_DELAY   0.477        23.056  1       
-sample_position/n22                                       NET DELAY        0.305        23.361  1       
-sample_position/LessThan_5_i24_3_lut/A->sample_position/LessThan_5_i24_3_lut/Z
-                                          SLICE_R15C7B    C0_TO_F0_DELAY   0.477        23.838  1       
-sample_position/n24                                       NET DELAY        0.305        24.143  1       
-sample_position/LessThan_5_i26_3_lut/A->sample_position/LessThan_5_i26_3_lut/Z
-                                          SLICE_R15C7B    C1_TO_F1_DELAY   0.477        24.620  1       
-sample_position/n26                                       NET DELAY        0.305        24.925  1       
-sample_position/LessThan_5_i28_3_lut/A->sample_position/LessThan_5_i28_3_lut/Z
-                                          SLICE_R15C7C    C0_TO_F0_DELAY   0.477        25.402  1       
-sample_position/n28                                       NET DELAY        0.305        25.707  1       
-sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
-                                          SLICE_R15C7C    C1_TO_F1_DELAY   0.477        26.184  1       
-sample_position/n30                                       NET DELAY        0.305        26.489  1       
-sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
-                                          SLICE_R15C7D    C0_TO_F0_DELAY   0.477        26.966  1       
-sample_position/n4_adj_1144                               NET DELAY        0.305        27.271  1       
-sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
-                                          SLICE_R15C7D    C1_TO_F1_DELAY   0.450        27.721  8       
-sample_position/n5386 ( CE )                              NET DELAY        4.000        31.721  1       
+Sample_Timer__i2/CK->Sample_Timer__i2/Q   SLICE_R21C13B   CLK_TO_Q1_DELAY  1.391        13.395  2       
+Sample_Timer[2]                                           NET DELAY        2.146        15.541  1       
+i6_4_lut_adj_423/D->i6_4_lut_adj_423/Z    SLICE_R22C14B   A0_TO_F0_DELAY   0.450        15.991  1       
+n16_adj_1211                                              NET DELAY        2.768        18.759  1       
+i9_4_lut/C->i9_4_lut/Z                    SLICE_R19C14A   D1_TO_F1_DELAY   0.450        19.209  2       
+n7590                                                     NET DELAY        2.768        21.977  1       
+i6_4_lut/C->i6_4_lut/Z                    SLICE_R18C12A   D0_TO_F0_DELAY   0.450        22.427  6       
+n31                                                       NET DELAY        3.801        26.228  1       
+i5938_4_lut/A->i5938_4_lut/Z              SLICE_R13C13A   D0_TO_F0_DELAY   0.450        26.678  9       
+n5634 ( LSR )                                             NET DELAY        4.371        31.049  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000        20.833  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( CLK )                                   NET DELAY      11.854        32.837  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000        20.833  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( CLK )
+                                                          NET DELAY      11.854        32.837  1       
                                                           Uncertainty     0.000        32.837  
-                                                          Setup time      0.199        32.638  
+                                                          Setup time      0.530        32.307  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Required Time                                                                          32.638  
-Arrival Time                                                                          -31.721  
+Required Time                                                                          32.307  
+Arrival Time                                                                          -31.049  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    0.917  
+Path Slack  (Passed)                                                                    1.258  
 
 
 
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Frequency_849__i1/Q  (SLICE_R14C5B)
-Path End         : {sample_position/Accumulated_Offset_i0_i10/SP   sample_position/Accumulated_Offset_i0_i11/SP}  (SLICE_R14C8B)
+Path Begin       : Sample_Timer__i2/Q  (SLICE_R21C13B)
+Path End         : {Sample_Timer__i9/SR   Sample_Timer__i10/SR}  (SLICE_R21C14B)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
-Logic Level      : 17
-Delay Ratio      : 51.4% (route), 48.6% (logic)
+Logic Level      : 5
+Delay Ratio      : 83.2% (route), 16.8% (logic)
 Clock Skew       : 0.000 ns
 Setup Constraint : 20.833 ns 
-Path Slack       : 2.109 ns  (Passed)
+Path Slack       : 1.258 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/Accumulated_Frequency_849__i1/CK->sample_position/Accumulated_Frequency_849__i1/Q
-                                          SLICE_R14C5B    CLK_TO_Q0_DELAY  1.391        13.395  4       
-sample_position/Accumulated_Frequency[1]                  NET DELAY        2.146        15.541  1       
-sample_position/LessThan_5_i4_4_lut/B->sample_position/LessThan_5_i4_4_lut/Z
-                                          SLICE_R15C6A    A0_TO_F0_DELAY   0.477        16.018  1       
-sample_position/n4_adj_1154                               NET DELAY        0.305        16.323  1       
-sample_position/LessThan_5_i6_3_lut/A->sample_position/LessThan_5_i6_3_lut/Z
-                                          SLICE_R15C6A    C1_TO_F1_DELAY   0.477        16.800  1       
-sample_position/n6_adj_1153                               NET DELAY        0.305        17.105  1       
-sample_position/LessThan_5_i8_3_lut/A->sample_position/LessThan_5_i8_3_lut/Z
-                                          SLICE_R15C6B    C0_TO_F0_DELAY   0.477        17.582  1       
-sample_position/n8_adj_1152                               NET DELAY        0.305        17.887  1       
-sample_position/LessThan_5_i10_3_lut/A->sample_position/LessThan_5_i10_3_lut/Z
-                                          SLICE_R15C6B    C1_TO_F1_DELAY   0.477        18.364  1       
-sample_position/n10_adj_1151                              NET DELAY        0.305        18.669  1       
-sample_position/LessThan_5_i12_3_lut/A->sample_position/LessThan_5_i12_3_lut/Z
-                                          SLICE_R15C6C    C0_TO_F0_DELAY   0.477        19.146  1       
-sample_position/n12_adj_1150                              NET DELAY        0.305        19.451  1       
-sample_position/LessThan_5_i14_3_lut/A->sample_position/LessThan_5_i14_3_lut/Z
-                                          SLICE_R15C6C    C1_TO_F1_DELAY   0.477        19.928  1       
-sample_position/n14_adj_1149                              NET DELAY        0.305        20.233  1       
-sample_position/LessThan_5_i16_3_lut/A->sample_position/LessThan_5_i16_3_lut/Z
-                                          SLICE_R15C6D    C0_TO_F0_DELAY   0.477        20.710  1       
-sample_position/n16_adj_1148                              NET DELAY        0.305        21.015  1       
-sample_position/LessThan_5_i18_3_lut/A->sample_position/LessThan_5_i18_3_lut/Z
-                                          SLICE_R15C6D    C1_TO_F1_DELAY   0.477        21.492  1       
-sample_position/n18                                       NET DELAY        0.305        21.797  1       
-sample_position/LessThan_5_i20_3_lut/A->sample_position/LessThan_5_i20_3_lut/Z
-                                          SLICE_R15C7A    C0_TO_F0_DELAY   0.477        22.274  1       
-sample_position/n20                                       NET DELAY        0.305        22.579  1       
-sample_position/LessThan_5_i22_3_lut/A->sample_position/LessThan_5_i22_3_lut/Z
-                                          SLICE_R15C7A    C1_TO_F1_DELAY   0.477        23.056  1       
-sample_position/n22                                       NET DELAY        0.305        23.361  1       
-sample_position/LessThan_5_i24_3_lut/A->sample_position/LessThan_5_i24_3_lut/Z
-                                          SLICE_R15C7B    C0_TO_F0_DELAY   0.477        23.838  1       
-sample_position/n24                                       NET DELAY        0.305        24.143  1       
-sample_position/LessThan_5_i26_3_lut/A->sample_position/LessThan_5_i26_3_lut/Z
-                                          SLICE_R15C7B    C1_TO_F1_DELAY   0.477        24.620  1       
-sample_position/n26                                       NET DELAY        0.305        24.925  1       
-sample_position/LessThan_5_i28_3_lut/A->sample_position/LessThan_5_i28_3_lut/Z
-                                          SLICE_R15C7C    C0_TO_F0_DELAY   0.477        25.402  1       
-sample_position/n28                                       NET DELAY        0.305        25.707  1       
-sample_position/LessThan_5_i30_3_lut/A->sample_position/LessThan_5_i30_3_lut/Z
-                                          SLICE_R15C7C    C1_TO_F1_DELAY   0.477        26.184  1       
-sample_position/n30                                       NET DELAY        0.305        26.489  1       
-sample_position/i1_4_lut_adj_409/A->sample_position/i1_4_lut_adj_409/Z
-                                          SLICE_R15C7D    C0_TO_F0_DELAY   0.477        26.966  1       
-sample_position/n4_adj_1144                               NET DELAY        0.305        27.271  1       
-sample_position/i3_4_lut/D->sample_position/i3_4_lut/Z
-                                          SLICE_R15C7D    C1_TO_F1_DELAY   0.450        27.721  8       
-sample_position/n5386 ( CE )                              NET DELAY        2.808        30.529  1       
+Sample_Timer__i2/CK->Sample_Timer__i2/Q   SLICE_R21C13B   CLK_TO_Q1_DELAY  1.391        13.395  2       
+Sample_Timer[2]                                           NET DELAY        2.146        15.541  1       
+i6_4_lut_adj_423/D->i6_4_lut_adj_423/Z    SLICE_R22C14B   A0_TO_F0_DELAY   0.450        15.991  1       
+n16_adj_1211                                              NET DELAY        2.768        18.759  1       
+i9_4_lut/C->i9_4_lut/Z                    SLICE_R19C14A   D1_TO_F1_DELAY   0.450        19.209  2       
+n7590                                                     NET DELAY        2.768        21.977  1       
+i6_4_lut/C->i6_4_lut/Z                    SLICE_R18C12A   D0_TO_F0_DELAY   0.450        22.427  6       
+n31                                                       NET DELAY        3.801        26.228  1       
+i5938_4_lut/A->i5938_4_lut/Z              SLICE_R13C13A   D0_TO_F0_DELAY   0.450        26.678  9       
+n5634 ( LSR )                                             NET DELAY        4.371        31.049  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000        20.833  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( CLK )                                   NET DELAY      11.854        32.837  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000        20.833  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( CLK )
+                                                          NET DELAY      11.854        32.837  1       
                                                           Uncertainty     0.000        32.837  
-                                                          Setup time      0.199        32.638  
+                                                          Setup time      0.530        32.307  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Required Time                                                                          32.638  
-Arrival Time                                                                          -30.529  
+Required Time                                                                          32.307  
+Arrival Time                                                                          -31.049  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    2.109  
+Path Slack  (Passed)                                                                    1.258  
 
 
 
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[5].mem_file.mem0/iCE40UP.sp4k/RDATA11  (EBR_EBR_R7C22)
-Path End         : genadder[1].adder/Working_Total__i19/D  (SLICE_R3C13A)
+Path Begin       : Sample_Timer__i2/Q  (SLICE_R21C13B)
+Path End         : {Sample_Timer__i11/SR   Sample_Timer__i12/SR}  (SLICE_R21C14C)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
-Logic Level      : 3
-Delay Ratio      : 46.9% (route), 53.1% (logic)
+Logic Level      : 5
+Delay Ratio      : 83.2% (route), 16.8% (logic)
 Clock Skew       : 0.000 ns
 Setup Constraint : 20.833 ns 
-Path Slack       : 2.544 ns  (Passed)
+Path Slack       : 1.258 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[5].mem_file.mem0/iCE40UP.sp4k/RCLK->sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[5].mem_file.mem0/iCE40UP.sp4k/RDATA11
-                                          EBR_EBR_R7C22   RCLK_TO_RDATA_DELAY  1.179        13.183  1       
-genadder[0].adder/Sample_Value[11]                        NET DELAY            4.463        17.646  1       
-genadder[0].adder/mult_3/B11->genadder[0].adder/mult_3/O27
-                                          DSP_DSP_R1C11   B_TO_O_DELAY         7.958        25.604  2       
-genadder[0].adder/n7                                      NET DELAY            4.013        29.617  1       
-i3521_3_lut/B->i3521_3_lut/Z              SLICE_R3C13A    D0_TO_F0_DELAY       0.477        30.094  1       
-genadder[1].adder/n5886 ( DI0 )                           NET DELAY            0.000        30.094  1       
+Sample_Timer__i2/CK->Sample_Timer__i2/Q   SLICE_R21C13B   CLK_TO_Q1_DELAY  1.391        13.395  2       
+Sample_Timer[2]                                           NET DELAY        2.146        15.541  1       
+i6_4_lut_adj_423/D->i6_4_lut_adj_423/Z    SLICE_R22C14B   A0_TO_F0_DELAY   0.450        15.991  1       
+n16_adj_1211                                              NET DELAY        2.768        18.759  1       
+i9_4_lut/C->i9_4_lut/Z                    SLICE_R19C14A   D1_TO_F1_DELAY   0.450        19.209  2       
+n7590                                                     NET DELAY        2.768        21.977  1       
+i6_4_lut/C->i6_4_lut/Z                    SLICE_R18C12A   D0_TO_F0_DELAY   0.450        22.427  6       
+n31                                                       NET DELAY        3.801        26.228  1       
+i5938_4_lut/A->i5938_4_lut/Z              SLICE_R13C13A   D0_TO_F0_DELAY   0.450        26.678  9       
+n5634 ( LSR )                                             NET DELAY        4.371        31.049  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000        20.833  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( CLK )                                   NET DELAY      11.854        32.837  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000        20.833  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( CLK )
+                                                          NET DELAY      11.854        32.837  1       
                                                           Uncertainty     0.000        32.837  
-                                                          Setup time      0.199        32.638  
+                                                          Setup time      0.530        32.307  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Required Time                                                                          32.638  
-Arrival Time                                                                          -30.094  
+Required Time                                                                          32.307  
+Arrival Time                                                                          -31.049  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    2.544  
+Path Slack  (Passed)                                                                    1.258  
 
 
 
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[5].mem_file.mem0/iCE40UP.sp4k/RDATA11  (EBR_EBR_R7C22)
-Path End         : genadder[0].adder/Working_Total__i19/D  (SLICE_R3C13A)
+Path Begin       : Sample_Timer__i2/Q  (SLICE_R21C13B)
+Path End         : Sample_Timer__i15/SR  (SLICE_R21C15A)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
-Logic Level      : 3
-Delay Ratio      : 46.9% (route), 53.1% (logic)
+Logic Level      : 5
+Delay Ratio      : 83.2% (route), 16.8% (logic)
 Clock Skew       : 0.000 ns
 Setup Constraint : 20.833 ns 
-Path Slack       : 2.544 ns  (Passed)
+Path Slack       : 1.258 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[5].mem_file.mem0/iCE40UP.sp4k/RCLK->sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[5].mem_file.mem0/iCE40UP.sp4k/RDATA11
-                                          EBR_EBR_R7C22   RCLK_TO_RDATA_DELAY  1.179        13.183  1       
-genadder[0].adder/Sample_Value[11]                        NET DELAY            4.463        17.646  1       
-genadder[0].adder/mult_3/B11->genadder[0].adder/mult_3/O27
-                                          DSP_DSP_R1C11   B_TO_O_DELAY         7.958        25.604  2       
-genadder[0].adder/n7                                      NET DELAY            4.013        29.617  1       
-i3553_3_lut/B->i3553_3_lut/Z              SLICE_R3C13A    D1_TO_F1_DELAY       0.477        30.094  1       
-genadder[0].adder/n5918 ( DI1 )                           NET DELAY            0.000        30.094  1       
+Sample_Timer__i2/CK->Sample_Timer__i2/Q   SLICE_R21C13B   CLK_TO_Q1_DELAY  1.391        13.395  2       
+Sample_Timer[2]                                           NET DELAY        2.146        15.541  1       
+i6_4_lut_adj_423/D->i6_4_lut_adj_423/Z    SLICE_R22C14B   A0_TO_F0_DELAY   0.450        15.991  1       
+n16_adj_1211                                              NET DELAY        2.768        18.759  1       
+i9_4_lut/C->i9_4_lut/Z                    SLICE_R19C14A   D1_TO_F1_DELAY   0.450        19.209  2       
+n7590                                                     NET DELAY        2.768        21.977  1       
+i6_4_lut/C->i6_4_lut/Z                    SLICE_R18C12A   D0_TO_F0_DELAY   0.450        22.427  6       
+n31                                                       NET DELAY        3.801        26.228  1       
+i5938_4_lut/A->i5938_4_lut/Z              SLICE_R13C13A   D0_TO_F0_DELAY   0.450        26.678  9       
+n5634 ( LSR )                                             NET DELAY        4.371        31.049  1       
 
 
 
                                                           CONSTRAINT      0.000        20.833  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000        20.833  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000        20.833  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( CLK )                                   NET DELAY      11.854        32.837  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000        20.833  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( CLK )
+                                                          NET DELAY      11.854        32.837  1       
                                                           Uncertainty     0.000        32.837  
-                                                          Setup time      0.199        32.638  
+                                                          Setup time      0.530        32.307  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Required Time                                                                          32.638  
-Arrival Time                                                                          -30.094  
+Required Time                                                                          32.307  
+Arrival Time                                                                          -31.049  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    2.544  
+Path Slack  (Passed)                                                                    1.258  
 
 
 
@@ -1206,155 +1109,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : Harmonic__i3/Q  (SLICE_R8C7B)
-Path End         : sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/RADDR3  (EBR_EBR_R7C6)
-Source Clock     : Main_Clock
-Destination Clock: Main_Clock
-Logic Level      : 1
-Delay Ratio      : 47.7% (route), 52.3% (logic)
-Clock Skew       : 0.000 ns
-Hold Constraint  : 0.000 ns 
-Path Slack       : 2.556 ns  (Passed)
-
-Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
-----------------------------------------  --------------  -------------  ------  ------------  ------  
-i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
-
-
-
-Harmonic__i3/CK->Harmonic__i3/Q           SLICE_R8C7B     CLK_TO_Q0_DELAY  1.391        13.395  5       
-sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Harmonic[3] ( RADDR3 )
-                                                          NET DELAY        1.271        14.666  1       
-
-
-
-                                                          CONSTRAINT      0.000         0.000  1       
-i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( RCLK )                                  NET DELAY      11.854        12.004  1       
-                                                          Uncertainty     0.000        12.004  
-                                                          Hold time       0.106        12.110  
-----------------------------------------  --------------  -------------  ------  ------------  ------  
-Required Time                                                                         -12.110  
-Arrival Time                                                                           14.666  
-----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    2.556  
-
-
-
-
-++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
-Path Begin       : Harmonic__i5/Q  (SLICE_R8C7D)
-Path End         : sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/RADDR5  (EBR_EBR_R7C6)
-Source Clock     : Main_Clock
-Destination Clock: Main_Clock
-Logic Level      : 1
-Delay Ratio      : 47.7% (route), 52.3% (logic)
-Clock Skew       : 0.000 ns
-Hold Constraint  : 0.000 ns 
-Path Slack       : 2.556 ns  (Passed)
-
-Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
-----------------------------------------  --------------  -------------  ------  ------------  ------  
-i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
-
-
-
-Harmonic__i5/CK->Harmonic__i5/Q           SLICE_R8C7D     CLK_TO_Q0_DELAY  1.391        13.395  5       
-sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Harmonic[5] ( RADDR5 )
-                                                          NET DELAY        1.271        14.666  1       
-
-
-
-                                                          CONSTRAINT      0.000         0.000  1       
-i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( RCLK )                                  NET DELAY      11.854        12.004  1       
-                                                          Uncertainty     0.000        12.004  
-                                                          Hold time       0.106        12.110  
-----------------------------------------  --------------  -------------  ------  ------------  ------  
-Required Time                                                                         -12.110  
-Arrival Time                                                                           14.666  
-----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    2.556  
-
-
-
-
-++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
-Path Begin       : Harmonic__i7/Q  (SLICE_R8C7C)
-Path End         : sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/RADDR7  (EBR_EBR_R7C6)
-Source Clock     : Main_Clock
-Destination Clock: Main_Clock
-Logic Level      : 1
-Delay Ratio      : 47.7% (route), 52.3% (logic)
-Clock Skew       : 0.000 ns
-Hold Constraint  : 0.000 ns 
-Path Slack       : 2.556 ns  (Passed)
-
-Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
-----------------------------------------  --------------  -------------  ------  ------------  ------  
-i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
-
-
-
-Harmonic__i7/CK->Harmonic__i7/Q           SLICE_R8C7C     CLK_TO_Q0_DELAY  1.391        13.395  5       
-sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Harmonic[7] ( RADDR7 )
-                                                          NET DELAY        1.271        14.666  1       
-
-
-
-                                                          CONSTRAINT      0.000         0.000  1       
-i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( RCLK )                                  NET DELAY      11.854        12.004  1       
-                                                          Uncertainty     0.000        12.004  
-                                                          Hold time       0.106        12.110  
-----------------------------------------  --------------  -------------  ------  ------------  ------  
-Required Time                                                                         -12.110  
-Arrival Time                                                                           14.666  
-----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    2.556  
-
-
-
-
-++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
-Path Begin       : Harmonic__i5/Q  (SLICE_R8C7D)
-Path End         : sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WADDR5  (EBR_EBR_R7C6)
+Path Begin       : sample_position/Sample_Position__i7/Q  (SLICE_R6C6A)
+Path End         : sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WDATA7  (EBR_EBR_R7C6)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
 Logic Level      : 1
@@ -1366,29 +1122,188 @@ Path Slack       : 2.596 ns  (Passed)
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-Harmonic__i5/CK->Harmonic__i5/Q           SLICE_R8C7D     CLK_TO_Q0_DELAY  1.391        13.395  5       
-sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Harmonic[5] ( WADDR5 )
+sample_position/Sample_Position__i7/CK->sample_position/Sample_Position__i7/Q
+                                          SLICE_R6C6A     CLK_TO_Q0_DELAY  1.391        13.395  2       
+sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Sample_Position[7] ( WDATA7 )
                                                           NET DELAY        1.271        14.666  1       
 
 
 
                                                           CONSTRAINT      0.000         0.000  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( WCLK )                                  NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( WCLK )
+                                                          NET DELAY      11.854        12.004  1       
+                                                          Uncertainty     0.000        12.004  
+                                                          Hold time       0.066        12.070  
+----------------------------------------  --------------  -------------  ------  ------------  ------  
+Required Time                                                                         -12.070  
+Arrival Time                                                                           14.666  
+----------------------------------------  --------------  -------------  ------  ------------  ------  
+Path Slack  (Passed)                                                                    2.596  
+
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : sample_position/Sample_Position__i9/Q  (SLICE_R6C6B)
+Path End         : sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WDATA9  (EBR_EBR_R7C6)
+Source Clock     : Main_Clock
+Destination Clock: Main_Clock
+Logic Level      : 1
+Delay Ratio      : 47.7% (route), 52.3% (logic)
+Clock Skew       : 0.000 ns
+Hold Constraint  : 0.000 ns 
+Path Slack       : 2.596 ns  (Passed)
+
+Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
+----------------------------------------  --------------  -------------  ------  ------------  ------  
+i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
+
+
+
+sample_position/Sample_Position__i9/CK->sample_position/Sample_Position__i9/Q
+                                          SLICE_R6C6B     CLK_TO_Q0_DELAY  1.391        13.395  2       
+sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Sample_Position[9] ( WDATA9 )
+                                                          NET DELAY        1.271        14.666  1       
+
+
+
+                                                          CONSTRAINT      0.000         0.000  1       
+i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( WCLK )
+                                                          NET DELAY      11.854        12.004  1       
+                                                          Uncertainty     0.000        12.004  
+                                                          Hold time       0.066        12.070  
+----------------------------------------  --------------  -------------  ------  ------------  ------  
+Required Time                                                                         -12.070  
+Arrival Time                                                                           14.666  
+----------------------------------------  --------------  -------------  ------  ------------  ------  
+Path Slack  (Passed)                                                                    2.596  
+
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : sample_position/Sample_Position__i10/Q  (SLICE_R6C6B)
+Path End         : sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WDATA10  (EBR_EBR_R7C6)
+Source Clock     : Main_Clock
+Destination Clock: Main_Clock
+Logic Level      : 1
+Delay Ratio      : 47.7% (route), 52.3% (logic)
+Clock Skew       : 0.000 ns
+Hold Constraint  : 0.000 ns 
+Path Slack       : 2.596 ns  (Passed)
+
+Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
+----------------------------------------  --------------  -------------  ------  ------------  ------  
+i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
+
+
+
+sample_position/Sample_Position__i10/CK->sample_position/Sample_Position__i10/Q
+                                          SLICE_R6C6B     CLK_TO_Q1_DELAY  1.391        13.395  2       
+sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Sample_Position[10] ( WDATA10 )
+                                                          NET DELAY        1.271        14.666  1       
+
+
+
+                                                          CONSTRAINT      0.000         0.000  1       
+i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( WCLK )
+                                                          NET DELAY      11.854        12.004  1       
+                                                          Uncertainty     0.000        12.004  
+                                                          Hold time       0.066        12.070  
+----------------------------------------  --------------  -------------  ------  ------------  ------  
+Required Time                                                                         -12.070  
+Arrival Time                                                                           14.666  
+----------------------------------------  --------------  -------------  ------  ------------  ------  
+Path Slack  (Passed)                                                                    2.596  
+
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : sample_position/Sample_Position__i11/Q  (SLICE_R6C6C)
+Path End         : sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WDATA11  (EBR_EBR_R7C6)
+Source Clock     : Main_Clock
+Destination Clock: Main_Clock
+Logic Level      : 1
+Delay Ratio      : 47.7% (route), 52.3% (logic)
+Clock Skew       : 0.000 ns
+Hold Constraint  : 0.000 ns 
+Path Slack       : 2.596 ns  (Passed)
+
+Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
+----------------------------------------  --------------  -------------  ------  ------------  ------  
+i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
+
+
+
+sample_position/Sample_Position__i11/CK->sample_position/Sample_Position__i11/Q
+                                          SLICE_R6C6C     CLK_TO_Q0_DELAY  1.391        13.395  2       
+sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Sample_Position[11] ( WDATA11 )
+                                                          NET DELAY        1.271        14.666  1       
+
+
+
+                                                          CONSTRAINT      0.000         0.000  1       
+i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( WCLK )
+                                                          NET DELAY      11.854        12.004  1       
                                                           Uncertainty     0.000        12.004  
                                                           Hold time       0.066        12.070  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
@@ -1402,113 +1317,112 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_output/SM_Sample_Output__i1/Q  (SLICE_R10C23D)
-Path End         : sample_output/SM_Sample_Output__i1/D  (SLICE_R10C23D)
+Path Begin       : sample_position/Sample_Position__i12/Q  (SLICE_R6C6C)
+Path End         : sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WDATA12  (EBR_EBR_R7C6)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
-Logic Level      : 2
-Delay Ratio      : 40.8% (route), 59.2% (logic)
+Logic Level      : 1
+Delay Ratio      : 47.7% (route), 52.3% (logic)
 Clock Skew       : 0.000 ns
 Hold Constraint  : 0.000 ns 
-Path Slack       : 3.112 ns  (Passed)
+Path Slack       : 2.596 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_output/SM_Sample_Output__i1/CK->sample_output/SM_Sample_Output__i1/Q
-                                          SLICE_R10C23D   CLK_TO_Q1_DELAY  1.391        13.395  10      
-sample_output/SM_Sample_Output[1]                         NET DELAY        1.271        14.666  1       
-sample_output/i15_2_lut/A->sample_output/i15_2_lut/Z
-                                          SLICE_R10C23D   D1_TO_F1_DELAY   0.450        15.116  1       
-sample_output/n7849 ( DI1 )                               NET DELAY        0.000        15.116  1       
+sample_position/Sample_Position__i12/CK->sample_position/Sample_Position__i12/Q
+                                          SLICE_R6C6C     CLK_TO_Q1_DELAY  1.391        13.395  2       
+sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Sample_Position[12] ( WDATA12 )
+                                                          NET DELAY        1.271        14.666  1       
 
 
 
                                                           CONSTRAINT      0.000         0.000  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( WCLK )
+                                                          NET DELAY      11.854        12.004  1       
                                                           Uncertainty     0.000        12.004  
-                                                          Hold time       0.000        12.004  
+                                                          Hold time       0.066        12.070  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Required Time                                                                         -12.004  
-Arrival Time                                                                           15.116  
+Required Time                                                                         -12.070  
+Arrival Time                                                                           14.666  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    3.112  
+Path Slack  (Passed)                                                                    2.596  
 
 
 
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/Accumulated_Freq_Offset_i0_i2/Q  (SLICE_R16C6D)
-Path End         : sample_position/Accumulated_Offset_i0_i2/D  (SLICE_R16C7A)
+Path Begin       : sample_position/Sample_Position__i13/Q  (SLICE_R6C6D)
+Path End         : sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/iCE40UP.sp4k/WDATA13  (EBR_EBR_R7C6)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
-Logic Level      : 2
-Delay Ratio      : 40.8% (route), 59.2% (logic)
+Logic Level      : 1
+Delay Ratio      : 47.7% (route), 52.3% (logic)
 Clock Skew       : 0.000 ns
 Hold Constraint  : 0.000 ns 
-Path Slack       : 3.112 ns  (Passed)
+Path Slack       : 2.596 ns  (Passed)
 
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/Accumulated_Freq_Offset_i0_i2/CK->sample_position/Accumulated_Freq_Offset_i0_i2/Q
-                                          SLICE_R16C6D    CLK_TO_Q1_DELAY  1.391        13.395  4       
-sample_position/Accumulated_Freq_Offset[2]
+sample_position/Sample_Position__i13/CK->sample_position/Sample_Position__i13/Q
+                                          SLICE_R6C6D     CLK_TO_Q0_DELAY  1.391        13.395  2       
+sample_position/sp_ram/lscc_ram_dq_inst/inst0/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Sample_Position[13] ( WDATA13 )
                                                           NET DELAY        1.271        14.666  1       
-sample_position/mux_8_i3_3_lut/B->sample_position/mux_8_i3_3_lut/Z
-                                          SLICE_R16C7A    D0_TO_F0_DELAY   0.450        15.116  1       
-sample_position/n105[2] ( DI0 )                           NET DELAY        0.000        15.116  1       
 
 
 
                                                           CONSTRAINT      0.000         0.000  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( CLK )                                   NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( WCLK )
+                                                          NET DELAY      11.854        12.004  1       
                                                           Uncertainty     0.000        12.004  
-                                                          Hold time       0.000        12.004  
+                                                          Hold time       0.066        12.070  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Required Time                                                                         -12.004  
-Arrival Time                                                                           15.116  
+Required Time                                                                         -12.070  
+Arrival Time                                                                           14.666  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
-Path Slack  (Passed)                                                                    3.112  
+Path Slack  (Passed)                                                                    2.596  
 
 
 
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/SM_Sample_Position__i0/Q  (SLICE_R12C7A)
-Path End         : sample_position/SM_Sample_Position__i0/D  (SLICE_R12C7A)
+Path Begin       : SM_Top__i0/Q  (SLICE_R9C14A)
+Path End         : SM_Top__i0/D  (SLICE_R9C14A)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
 Logic Level      : 2
@@ -1520,33 +1434,32 @@ Path Slack       : 3.112 ns  (Passed)
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/SM_Sample_Position__i0/CK->sample_position/SM_Sample_Position__i0/Q
-                                          SLICE_R12C7A    CLK_TO_Q0_DELAY  1.391        13.395  17      
-sample_output/SM_Sample_Position[0]                       NET DELAY        1.271        14.666  1       
-sample_position/i30_4_lut/A->sample_position/i30_4_lut/Z
-                                          SLICE_R12C7A    D0_TO_F0_DELAY   0.450        15.116  1       
-sample_position/SM_Sample_Position_2__N_326[0] ( DI0 )
-                                                          NET DELAY        0.000        15.116  1       
+SM_Top__i0/CK->SM_Top__i0/Q               SLICE_R9C14A    CLK_TO_Q1_DELAY  1.391        13.395  18      
+SM_Top[0]                                                 NET DELAY        1.271        14.666  1       
+i6138_3_lut_4_lut/C->i6138_3_lut_4_lut/Z  SLICE_R9C14A    D1_TO_F1_DELAY   0.450        15.116  1       
+n6495 ( DI1 )                                             NET DELAY        0.000        15.116  1       
 
 
 
                                                           CONSTRAINT      0.000         0.000  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
                                                           Uncertainty     0.000        12.004  
                                                           Hold time       0.000        12.004  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
@@ -1560,8 +1473,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : sample_position/SM_Sample_Position__i1/Q  (SLICE_R12C7A)
-Path End         : sample_position/SM_Sample_Position__i1/D  (SLICE_R12C7A)
+Path Begin       : mult/SM_Scale_Mult__i1/Q  (SLICE_R12C16B)
+Path End         : mult/Comb_Counter__i3/D  (SLICE_R11C16B)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
 Logic Level      : 2
@@ -1573,33 +1486,33 @@ Path Slack       : 3.112 ns  (Passed)
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-sample_position/SM_Sample_Position__i1/CK->sample_position/SM_Sample_Position__i1/Q
-                                          SLICE_R12C7A    CLK_TO_Q1_DELAY  1.391        13.395  19      
-sample_output/SM_Sample_Position[1]                       NET DELAY        1.271        14.666  1       
-sample_position/mux_23_Mux_1_i7_3_lut/B->sample_position/mux_23_Mux_1_i7_3_lut/Z
-                                          SLICE_R12C7A    D1_TO_F1_DELAY   0.450        15.116  1       
-sample_position/SM_Sample_Position_2__N_326[1] ( DI1 )
-                                                          NET DELAY        0.000        15.116  1       
+mult/SM_Scale_Mult__i1/CK->mult/SM_Scale_Mult__i1/Q
+                                          SLICE_R12C16B   CLK_TO_Q0_DELAY  1.391        13.395  11      
+mult/SM_Scale_Mult[1]                                     NET DELAY        1.271        14.666  1       
+mult/i4068_2_lut/B->mult/i4068_2_lut/Z    SLICE_R11C16B   D0_TO_F0_DELAY   0.450        15.116  1       
+mult/n4113 ( DI0 )                                        NET DELAY        0.000        15.116  1       
 
 
 
                                                           CONSTRAINT      0.000         0.000  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( CLK )
+                                                          NET DELAY      11.854        12.004  1       
                                                           Uncertainty     0.000        12.004  
                                                           Hold time       0.000        12.004  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
@@ -1613,8 +1526,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : SM_Top__i1/Q  (SLICE_R9C19B)
-Path End         : SM_Top__i1/D  (SLICE_R9C19B)
+Path Begin       : mult/SM_Scale_Mult__i1/Q  (SLICE_R12C16B)
+Path End         : mult/Comb_Counter__i7/D  (SLICE_R11C16C)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
 Logic Level      : 2
@@ -1626,30 +1539,33 @@ Path Slack       : 3.112 ns  (Passed)
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-SM_Top__i1/CK->SM_Top__i1/Q               SLICE_R9C19B    CLK_TO_Q0_DELAY  1.391        13.395  26      
-SM_Top[1]                                                 NET DELAY        1.271        14.666  1       
-i3258_4_lut/B->i3258_4_lut/Z              SLICE_R9C19B    D0_TO_F0_DELAY   0.450        15.116  1       
-n5623 ( DI0 )                                             NET DELAY        0.000        15.116  1       
+mult/SM_Scale_Mult__i1/CK->mult/SM_Scale_Mult__i1/Q
+                                          SLICE_R12C16B   CLK_TO_Q0_DELAY  1.391        13.395  11      
+mult/SM_Scale_Mult[1]                                     NET DELAY        1.271        14.666  1       
+mult/i4072_2_lut/B->mult/i4072_2_lut/Z    SLICE_R11C16C   D0_TO_F0_DELAY   0.450        15.116  1       
+mult/n4105 ( DI0 )                                        NET DELAY        0.000        15.116  1       
 
 
 
                                                           CONSTRAINT      0.000         0.000  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock ( CLK )
+                                                          NET DELAY      11.854        12.004  1       
                                                           Uncertainty     0.000        12.004  
                                                           Hold time       0.000        12.004  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
@@ -1663,8 +1579,8 @@ Path Slack  (Passed)                                                            
 
 ++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin       : SM_Top__i2/Q  (SLICE_R9C19D)
-Path End         : SM_Top__i0/D  (SLICE_R9C19B)
+Path Begin       : mult/SM_Scale_Mult__i0/Q  (SLICE_R12C16B)
+Path End         : mult/SM_Scale_Mult__i0/D  (SLICE_R12C16B)
 Source Clock     : Main_Clock
 Destination Clock: Main_Clock
 Logic Level      : 2
@@ -1676,30 +1592,34 @@ Path Slack       : 3.112 ns  (Passed)
 Name                                      Cell/Site Name  Delay Name     Delay   Arrival Time  Fanout  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock                                           NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
 
 
 
-SM_Top__i2/CK->SM_Top__i2/Q               SLICE_R9C19D    CLK_TO_Q1_DELAY  1.391        13.395  19      
-SM_Top[2]                                                 NET DELAY        1.271        14.666  1       
-i6140_3_lut_4_lut/B->i6140_3_lut_4_lut/Z  SLICE_R9C19B    D1_TO_F1_DELAY   0.450        15.116  1       
-n6493 ( DI1 )                                             NET DELAY        0.000        15.116  1       
+mult/SM_Scale_Mult__i0/CK->mult/SM_Scale_Mult__i0/Q
+                                          SLICE_R12C16B   CLK_TO_Q1_DELAY  1.391        13.395  6       
+mult/SM_Scale_Mult[0]                                     NET DELAY        1.271        14.666  1       
+mult/mux_18_Mux_0_i1_3_lut/C->mult/mux_18_Mux_0_i1_3_lut/Z
+                                          SLICE_R12C16B   D1_TO_F1_DELAY   0.450        15.116  1       
+mult/n1_adj_1170 ( DI1 )                                  NET DELAY        0.000        15.116  1       
 
 
 
                                                           CONSTRAINT      0.000         0.000  1       
 i_Clock_pad.bb_inst/PADDI                 PIO_35          CLOCK LATENCY   0.000         0.000  1       
-pll_48/lscc_pll_inst/i_Clock_c                            NET DELAY       0.000         0.000  1       
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE
-                                          PLL_PLL_R13C32                  0.000         0.000  215     
-pll_48/lscc_pll_inst/u_PLL_B/REFERENCECLK->pll_48/lscc_pll_inst/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
-                                          PLL_PLL_R13C32                  0.150         0.150  215     
-mult/Main_Clock ( CLK )                                   NET DELAY      11.854        12.004  1       
+pll_48/i_Clock_c                                          NET DELAY       0.000         0.000  1       
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE
+                                          PLL_PLL_R13C32                  0.000         0.000  214     
+pll_48/u_PLL_B/REFERENCECLK->pll_48/u_PLL_B/OUTCORE (TOTAL_ADJUSTMENTS)
+                                          PLL_PLL_R13C32                  0.150         0.150  214     
+sample_position/sin_lut/lscc_rom_inst/u_rom/PRIM_MODE.xADDR[0].xDATA[0].mem_file.mem0/Main_Clock
+                                                          NET DELAY      11.854        12.004  1       
                                                           Uncertainty     0.000        12.004  
                                                           Hold time       0.000        12.004  
 ----------------------------------------  --------------  -------------  ------  ------------  ------  
