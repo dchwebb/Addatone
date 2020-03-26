@@ -30,7 +30,6 @@ module top
 	wire signed [15:0] Sample_Value;
 	reg [15:0] Frequency = 16'd90;
 	reg [15:0] Freq_Scale = 16'd0;
-	reg [7:0] Comb_Interval = 1'd0;
 	wire Sample_Ready, Freq_Too_High;
 	Sample_Position sample_position(
 		.i_Reset(Reset),
@@ -69,7 +68,7 @@ module top
 	wire [1:0] Adder_Ready;
 	reg Adder_Clear;
 	reg Active_Adder = 1'b0;
-	wire [DIV_BIT - 1:0] Adder_Mult;
+	wire [DIV_BIT - 1:0] Adder_Mult[1:0];
 	wire signed [31:0] Adder_Total[1:0];
 	reg signed [31:0] r_Adder_Total[1:0];
 	wire [1:0] AdderDebug;
@@ -82,27 +81,30 @@ module top
 			.i_Reset(Reset),
 			.i_Start(Adder_Start[a]),
 			.i_Clear_Accumulator(Adder_Clear),
-			.i_Multiple(Adder_Mult),
+			.i_Multiple(Adder_Mult[0]),
 			.i_Sample(Sample_Value),
 			.o_Accumulator(Adder_Total[a]),
 			.o_Done(Adder_Ready[a])
 		);
 	end
 
-	// instantiate multiple scaler - this takes incoming ADC reading and uses it to reduce the level of harmonics scaled by the Adder
-	reg Start_Mult_Scaler, Reset_Mult_Scaler;
-	wire Mult_Ready, Comb_Muted;
-	Scale_Mult #(.DIV_BIT(DIV_BIT)) mult (
-		.i_Clock(Main_Clock),
-		.i_Start(Start_Mult_Scaler),
-		.i_Restart(Reset_Mult_Scaler),
-		.i_Scale(Harmonic_Scale[0]),
-		.i_Initial(Scale_Initial[0]),
-		.i_Comb_Interval(Comb_Interval),
-		.o_Comb_Muted(Comb_Muted),
-		.o_Mult(Adder_Mult),
-		.o_Mult_Ready(Mult_Ready)
-	);
+	// instantiate scaler - this takes incoming ADC reading and uses it to reduce the level of harmonics scaled by the Adder
+	reg [1:0] Scaler_Start;
+	reg Scaler_Reset;
+	wire [1:0] Scaler_Ready;
+	
+	genvar s;
+	for (s = 0; s < 2; s = s + 1) begin:genscaler
+		Scale_Mult #(.DIV_BIT(DIV_BIT)) scaler (
+			.i_Clock(Main_Clock),
+			.i_Start(Scaler_Start[s]),
+			.i_Restart(Scaler_Reset),
+			.i_Scale(Harmonic_Scale[s]),
+			.i_Initial(Scale_Initial[s]),
+			.o_Mult(Adder_Mult[s]),
+			.o_Mult_Ready(Scaler_Ready[s])
+		);
+	end
 	// Instantiate Sample Output module which scales output and sends to DAC
 	reg DAC_Send;
 	reg signed [31:0] Output_Sample;
@@ -136,8 +138,7 @@ module top
 		Scale_Initial[0] <= ADC_Data[2][DIV_BIT - 1:0];				// Starting value for scaling (lower if there are more harmonics)
 		Harmonic_Scale[1] <= ADC_Data[3][DIV_BIT - 1:0];			// Rate of attenuation of harmonic scaling (lower means more harmonics)
 		Scale_Initial[1] <= ADC_Data[4][DIV_BIT - 1:0];				// Starting value for scaling (lower if there are more harmonics)
-		Freq_Scale <= ADC_Data[5];										// Frequency scaling offset - higher frequencies will be moved further from multiple of fundamental
-//		Comb_Interval <= ADC_Data[6][7:0];							// Comb filter interval - ie which harmonics will muted
+		Freq_Scale <= ADC_Data[5];											// Frequency scaling offset - higher frequencies will be moved further from multiple of fundamental
 		test <= ~test;
 	end
 
@@ -159,24 +160,23 @@ module top
 						DAC_Send <= 1'b0;
 						Next_Sample <= 1'b0;
 						Adder_Clear <= 1'b0;
-						Reset_Mult_Scaler <= 1'b0;
+						Scaler_Reset <= 1'b0;
 						SM_Top <= sm_adder_start;
 					end
 
 				sm_adder_mult:
-					// Start the multplier scaler to calculate the harmonic attenuation level and increment the comb filter counter
+					// Start the multplier scaler to calculate the harmonic attenuation level
 					begin
 						Next_Sample <= 1'b0;
 						Adder_Start <= 1'b0;
-						Start_Mult_Scaler <= 1'b1;							// decrease harmonic scaler
+						Scaler_Start[0] <= 1'b1;							// decrease harmonic scaler
 						SM_Top <= sm_check_mute;
 					end
 
 				sm_check_mute:
 					begin
-						Start_Mult_Scaler <= 1'b0;
-						if (Mult_Ready) begin
-							//SM_Top <= Comb_Muted ? sm_next_harmonic : sm_adder_start;
+						Scaler_Start[0] <= 1'b0;
+						if (Scaler_Ready[0]) begin
 							SM_Top <= sm_adder_start;
 						end
 					end
@@ -226,7 +226,7 @@ module top
 						Sample_Timer <= 1'b0;
 						Harmonic <= 8'b0;
 						Next_Sample <= 1'b1;
-						Reset_Mult_Scaler <= 1'b1;
+						Scaler_Reset <= 1'b1;
 						Active_Adder <= 1'b0;
 
 						SM_Top <=  sm_init;
