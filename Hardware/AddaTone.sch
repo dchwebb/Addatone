@@ -993,8 +993,8 @@ F 3 "~" H 6050 4900 50  0001 C CNN
 	1    6050 4900
 	0    -1   -1   0   
 $EndComp
-Text GLabel 6700 5850 2    50   Input ~ 0
-PD2_CV
+Text GLabel 6700 7750 2    50   Input ~ 0
+FREQ_SCALE
 Wire Wire Line
 	6700 5850 6350 5850
 Connection ~ 6350 5850
@@ -1097,8 +1097,8 @@ F 3 "~" H 6050 6800 50  0001 C CNN
 	1    6050 6800
 	0    -1   -1   0   
 $EndComp
-Text GLabel 6700 7750 2    50   Input ~ 0
-VCA
+Text GLabel 6700 5850 2    50   Input ~ 0
+HARM2_CV
 Wire Wire Line
 	6700 7750 6350 7750
 Connection ~ 6350 7750

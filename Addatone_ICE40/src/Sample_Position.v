@@ -10,9 +10,9 @@ module Sample_Position
 		input wire i_Reset,
 		input wire i_Clock,
 		input wire [15:0] i_Frequency,
-		input wire [15:0] i_Freq_Offset,			// Offset to allow cumulative frequency shifting of higher harmonics
+		input wire [15:0] i_Freq_Offset,				// Offset to allow cumulative frequency shifting of higher harmonics
 		input wire [7:0] i_Harmonic,
-		output reg o_Sample_Ready = 1'b0,						// Tells top module that sample position has been loaded
+		output reg o_Sample_Ready = 1'b0,			// Tells top module that sample position has been loaded
 		input wire i_Next_Sample,						// Trigger from top module to say current value has been read and ready for next sample
 		output wire [15:0] o_Sample_Value,
 		output reg o_Freq_Too_High
@@ -119,6 +119,7 @@ module Sample_Position
 						if (i_Next_Sample) begin
 							Accumulated_Frequency <= Accumulated_Frequency + Accumulated_Offset;
 							Accumulated_Freq_Offset <= Accumulated_Freq_Offset + i_Freq_Offset;
+							//Accumulated_Freq_Offset <= Accumulated_Freq_Offset + 100;
 							o_Sample_Ready <= 1'b0;
 							SM_Sample_Position <= (i_Harmonic == 1'b0) ? sm_init : sm_sample_pos;
 						end

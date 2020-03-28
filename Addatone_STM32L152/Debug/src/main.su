@@ -1,14 +1,14 @@
 cmath:388:3:constexpr float std::pow(float, float)	16	static
 interrupts.h:1:6:void ADC1_IRQHandler()	16	static
-interrupts.h:8:6:void TIM3_IRQHandler()	32	static
-interrupts.h:85:6:void SysTick_Handler()	4	static
-interrupts.h:89:6:void NMI_Handler()	4	static
-interrupts.h:91:6:void HardFault_Handler()	4	static
-interrupts.h:95:6:void MemManage_Handler()	4	static
-interrupts.h:99:6:void BusFault_Handler()	4	static
-interrupts.h:103:6:void UsageFault_Handler()	4	static
-interrupts.h:107:6:void SVC_Handler()	4	static
-interrupts.h:109:6:void DebugMon_Handler()	4	static
-interrupts.h:111:6:void PendSV_Handler()	4	static
+interrupts.h:8:6:void TIM3_IRQHandler()	48	static
+interrupts.h:89:6:void SysTick_Handler()	4	static
+interrupts.h:93:6:void NMI_Handler()	4	static
+interrupts.h:95:6:void HardFault_Handler()	4	static
+interrupts.h:99:6:void MemManage_Handler()	4	static
+interrupts.h:103:6:void BusFault_Handler()	4	static
+interrupts.h:107:6:void UsageFault_Handler()	4	static
+interrupts.h:111:6:void SVC_Handler()	4	static
+interrupts.h:113:6:void DebugMon_Handler()	4	static
+interrupts.h:115:6:void PendSV_Handler()	4	static
 main.cpp:49:5:int main()	16	static
 stl_algobase.h:219:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = int]	16	static

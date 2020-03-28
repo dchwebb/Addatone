@@ -26,9 +26,10 @@ void TIM3_IRQHandler(void) {
 	 * Where y is the scaled output, x is the input, c is a constant used to keep the maximum value the same
 	 * To calculate c, set x = y = maximum (eg 255) and solve:
 	 * x/c = log2(y + 1)
-	 * x = c log2(y + 1 ) ; setting n = 255:
-	 * c = n / log2(n + 1) = 255/8 = 31.875
+	 * x = c log2(y + 1 ) ; setting m = 255:
+	 * c = m / log2(m + 1) = 255/8 = 31.875
 	 * or for 512: c = 511/9 = 56.777
+	 * for 2048: c = 2047/11 = 186.09
 	 */
 
 	/* 255 levels
@@ -41,26 +42,29 @@ void TIM3_IRQHandler(void) {
 	outputVal = ((uint8_t)harmScale) | (startVol << 8);
 	sendSPIData(outputVal);
 	 */
+	constexpr float maxScale = 2047.0f;
+	constexpr uint8_t scaleInit = std::log2(std::pow(2, 14) / (maxScale + 1));
+	constexpr float scaleDivisor = maxScale / std::log2(maxScale + 1);
 
-	//harmonicScale = (uint16_t)(ADC_array[2] + ADC_array[5] + ADC_array[8] + ADC_array[11]) >> 5;		// scale 0 to 511
-	harmonicScaleOdd = (uint16_t)(ADC_SUM(1)) >> 5;		// scale 0 to 511
+	harmonicScaleOdd = (uint16_t)(ADC_SUM(1)) >> scaleInit;		// scale 0 to 511
 	dampedHarmonicScaleOdd = ((15 * dampedHarmonicScaleOdd) + harmonicScaleOdd) >> 4;
-	harmScaleOdd = ((31.0f * harmScaleOdd) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScaleOdd / 56.777f) - 1)) / 32.0f;
+	harmScaleOdd = ((31.0f * harmScaleOdd) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScaleOdd / scaleDivisor) - 1)) / 32.0f;
 
-	harmonicScaleEven = (uint16_t)(ADC_SUM(2)) >> 5;		// scale 0 to 511
+	harmonicScaleEven = (uint16_t)(ADC_SUM(2)) >> scaleInit;		// scale 2^16 to maxScale
 	dampedHarmonicScaleEven = ((15 * dampedHarmonicScaleEven) + harmonicScaleEven) >> 4;
-	harmScaleEven = ((31.0f * harmScaleEven) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScaleEven / 56.777f) - 1)) / 32.0f;
+	harmScaleEven = ((31.0f * harmScaleEven) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScaleEven / scaleDivisor) - 1)) / 32.0f;
 
 	// Create inverted exponential curve for volume reduction
-	float volOdd = (511.0f - (float)harmScaleOdd) / 511.0f;
-	startVolOdd = ((0.7f - 0.7f * std::pow(volOdd, 4.0f)) + 0.3f) * 511.0f;
+	float volOdd = (maxScale - (float)harmScaleOdd) / maxScale;
+	startVolOdd = ((0.7f - 0.7f * std::pow(volOdd, 4.0f)) + 0.3f) * maxScale;
 
 	// Create inverted exponential curve for volume reduction
-	float volEven = (511.0f - (float)harmScaleEven) / 511.0f;
-	startVolEven = ((0.7f - 0.7f * std::pow(volEven, 4.0f)) + 0.3f) * 511.0f;
+	float volEven = (maxScale - (float)harmScaleEven) / maxScale;
+	startVolEven = ((0.7f - 0.7f * std::pow(volEven, 4.0f)) + 0.3f) * maxScale;
 
 	// Send CV value for frequency scaling
-	freqScale = 126 - std::max(((int16_t)ADC_SUM(3)) >> 7, 0);		// scale to range 0-127
+	//freqScale = std::max((int16_t)126 - ((int16_t)ADC_SUM(3)) >> 7, 0);		// scale to range 0-127
+	freqScale = std::max(126 - ((int16_t)ADC_SUM(3) >> 7), 0);		// scale to range 0-127
 
 
 /*

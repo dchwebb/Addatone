@@ -11,7 +11,7 @@ module top
 		output wire o_DAC_SCK,
 		output wire o_DAC_CS
 	);
-	parameter NO_OF_HARMONICS = 8'd50;
+	parameter NO_OF_HARMONICS = 8'd100;
 
 	wire Reset;
 	assign Reset = ~reset_n;
@@ -44,7 +44,7 @@ module top
 	);
 	
 	// Initialise ADC SPI input microcontroller
-	wire [15:0] ADC_Data[4:0];
+	wire [15:0] ADC_Data[5:0];
 	wire ADC_Data_Received;
 	ADC_SPI_In adc (
 		.i_Reset(Reset),
@@ -57,11 +57,12 @@ module top
 		.o_Data2(ADC_Data[2]),
 		.o_Data3(ADC_Data[3]),
 		.o_Data4(ADC_Data[4]),
+		.o_Data5(ADC_Data[5]),		
 		.o_Data_Received(ADC_Data_Received)
 	);
 
 	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
-	parameter DIV_BIT = 9;									// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
+	parameter DIV_BIT = 11;									// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
 	reg [DIV_BIT - 1:0] Harmonic_Scale[1:0];			// Level at which higher harmonics are attenuated
 	reg [DIV_BIT - 1:0] Scale_Initial[1:0];
 	reg [1:0] Adder_Start;

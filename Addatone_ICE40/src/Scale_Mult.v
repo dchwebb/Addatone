@@ -2,7 +2,7 @@
 	Reduces the scaling multiple as each harmonic is progressively attenuated by i_Scale from initial value of i_Initial
 */
 module Scale_Mult
-	#(parameter DIV_BIT = 9)
+	#(parameter DIV_BIT = 11)
 	(
 		input i_Clock,
 		input wire i_Start,
