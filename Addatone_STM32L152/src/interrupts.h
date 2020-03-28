@@ -66,13 +66,11 @@ void TIM3_IRQHandler(void) {
 	//freqScale = std::max((int16_t)126 - ((int16_t)ADC_SUM(3)) >> 7, 0);		// scale to range 0-127
 	freqScale = std::max(126 - ((int16_t)ADC_SUM(3) >> 7), 0);		// scale to range 0-127
 
-
-/*
-	// Send potentiometer value for Comb Filter Interval
-	if (combIntervalTemp > ADC_SUM(4) + 500 || combIntervalTemp < ADC_SUM(4) - 500)
-		combIntervalTemp = ADC_SUM(4);
-	combInterval = combIntervalTemp >> 9;		// scale to range 0-31
-*/
+	// Send potentiometer value for number of harmonics
+	if (harmCountTemp > ADC_SUM(4) + 100 || harmCountTemp < ADC_SUM(4) - 100)
+		harmCountTemp = ADC_SUM(4);
+	//harmCount = harmCountTemp >> 7;		// scale to range 0-127
+	harmCount = std::max(126 - ((int16_t)harmCountTemp >> 7), 0);		// scale to range 0-127
 
 
 	sendSPIData((uint16_t)freq);
@@ -81,7 +79,7 @@ void TIM3_IRQHandler(void) {
 	sendSPIData((uint16_t)harmScaleEven);
 	sendSPIData(startVolEven);
 	sendSPIData(freqScale);
-//	sendSPIData(combInterval);
+	sendSPIData(harmCount);
 
 	clearSPI();
 }

@@ -22,8 +22,8 @@ volatile uint16_t startVolEven;
 volatile float harmScaleEven;
 
 volatile int16_t freqScale;
-volatile uint16_t combInterval;
-volatile uint16_t combIntervalTemp;				// Temporary value used for hysteresis
+volatile uint16_t harmCount;
+volatile uint16_t harmCountTemp;				// Temporary value used for hysteresis
 
 //volatile bool harmonicDir;
 volatile bool fup = 1;

@@ -111,11 +111,11 @@ void InitADC(void)
 
 	ADC1->CR1 |= ADC_CR1_SCAN;						// Activate scan mode
 	ADC1->SQR1 = (ADC_BUFFER_LENGTH - 1) << 20;		// Number of conversions in sequence
-	ADC1->SQR5 |= 18 << 0;							// Set IN8  1st conversion in sequence
-	ADC1->SQR5 |= 19 << 5;							// Set IN9  2nd conversion in sequence
-	ADC1->SQR5 |= 20 << 10;							// Set IN1  3rd conversion in sequence
-	ADC1->SQR5 |= 9 << 15;							// Set IN2  4th conversion in sequence
-//	ADC1->SQR5 |= 3 << 20;							// Set IN3  5th conversion in sequence
+	ADC1->SQR5 |= 18 << 0;							// Set IN18  1st conversion in sequence
+	ADC1->SQR5 |= 19 << 5;							// Set IN19  2nd conversion in sequence
+	ADC1->SQR5 |= 20 << 10;							// Set IN20  3rd conversion in sequence
+	ADC1->SQR5 |= 9 << 15;							// Set IN9  4th conversion in sequence
+	ADC1->SQR5 |= 8 << 20;							// Set IN8  5th conversion in sequence
 //	xx ADC1->SQR5 |= 10 << 25;						// Set IN10 6th conversion in sequence
 //	ADC1->SQR4 |= 12 << 0;							// Set IN12 7th conversion in sequence
 //	ADC1->SQR4 |= 14 << 5;							// Set IN14 8th conversion in sequence
@@ -124,11 +124,11 @@ void InitADC(void)
 
 	//	Set to 56 cycles (0b11) sampling speed (SMPR2 Left shift speed 3 x ADC_INx up to input 9; use SMPR1 from 0 for ADC_IN10+)
 	// 000: 3 cycles; 001: 15 cycles; 010: 28 cycles; 011: 56 cycles; 100: 84 cycles; 101: 112 cycles; 110: 144 cycles; 111: 480 cycles
-	ADC1->SMPR2 |= 0b110 << 24;						// Set speed of IN8
-	ADC1->SMPR2 |= 0b110 << 27;						// Set speed of IN9
-	ADC1->SMPR2 |= 0b110 << 3;						// Set speed of IN1
-	ADC1->SMPR2 |= 0b110 << 6;						// Set speed of IN2
-//	ADC1->SMPR2 |= 0b110 << 9;						// Set speed of IN3
+	ADC1->SMPR2 |= 0b110 << 24;						// Set speed of IN18
+	ADC1->SMPR2 |= 0b110 << 27;						// Set speed of IN19
+	ADC1->SMPR1 |= 0b110 << 0;						// Set speed of IN20
+	ADC1->SMPR3 |= 0b110 << 27;						// Set speed of IN9
+	ADC1->SMPR3 |= 0b110 << 24;						// Set speed of IN8
 //	ADC1->SMPR1 |= 0b110 << 0;						// Set speed of IN10
 //	ADC1->SMPR1 |= 0b110 << 6;						// Set speed of IN12
 //	ADC1->SMPR1 |= 0b110 << 12;						// Set speed of IN14

@@ -26,6 +26,7 @@ module top
 
 	reg [15:0] Sample_Timer = 1'b0;					// Counts up to SAMPLEINTERVAL to set sample rate interval
 	reg [7:0] Harmonic = 1'b0;							// Number of harmonic being calculated
+	reg [7:0] Harmonic_Count;							// Number of harmonics produced (before scaling)
 	reg Next_Sample;										// Trigger from top module to say current value has been read and ready for next sample
 	wire signed [15:0] Sample_Value;
 	reg [15:0] Frequency = 16'd90;
@@ -44,7 +45,7 @@ module top
 	);
 	
 	// Initialise ADC SPI input microcontroller
-	wire [15:0] ADC_Data[5:0];
+	wire [15:0] ADC_Data[6:0];
 	wire ADC_Data_Received;
 	ADC_SPI_In adc (
 		.i_Reset(Reset),
@@ -57,7 +58,8 @@ module top
 		.o_Data2(ADC_Data[2]),
 		.o_Data3(ADC_Data[3]),
 		.o_Data4(ADC_Data[4]),
-		.o_Data5(ADC_Data[5]),		
+		.o_Data5(ADC_Data[5]),
+		.o_Data6(ADC_Data[6]),
 		.o_Data_Received(ADC_Data_Received)
 	);
 
@@ -139,6 +141,7 @@ module top
 		Harmonic_Scale[1] <= ADC_Data[3][DIV_BIT - 1:0];			// Rate of attenuation of harmonic scaling (lower means more harmonics)
 		Scale_Initial[1] <= ADC_Data[4][DIV_BIT - 1:0];				// Starting value for scaling (lower if there are more harmonics)
 		Freq_Scale <= ADC_Data[5];											// Frequency scaling offset - higher frequencies will be moved further from multiple of fundamental
+		Harmonic_Count <= ADC_Data[6];									// Number of harmonics before scaling
 		test <= ~test;
 	end
 
@@ -200,7 +203,7 @@ module top
 					begin
 						Harmonic <= Harmonic + 2'b1;						// Load up next sample position
 						Next_Sample <= 1'b1;									// Trigger for sample_position module to start looking up next sample value
-						SM_Top <= (Harmonic >= NO_OF_HARMONICS || Freq_Too_High) ? sm_calc_done : sm_adder_mult;
+						SM_Top <= (Harmonic >= Harmonic_Count || Freq_Too_High) ? sm_calc_done : sm_adder_mult;
 					end
 
 				sm_calc_done:
