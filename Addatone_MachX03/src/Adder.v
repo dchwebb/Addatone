@@ -44,7 +44,8 @@ module Adder
 			else if (Counter > 0) begin
 				if (r_Multiple == 0) begin
 					// Multiplication complete - divide by bit count and add to o_Accumulator, retaining negative bits
-					o_Accumulator <= o_Accumulator + {{DIVISOR_BITS{Working_Total[31]}}, Working_Total[31:DIVISOR_BITS]};
+					//o_Accumulator <= o_Accumulator + {{DIVISOR_BITS{Working_Total[31]}}, Working_Total[31:DIVISOR_BITS]};
+					o_Accumulator <= o_Accumulator + (Working_Total >>> DIVISOR_BITS);
 					o_Done <= 1'b1;
 					Counter <= 0;
 				end

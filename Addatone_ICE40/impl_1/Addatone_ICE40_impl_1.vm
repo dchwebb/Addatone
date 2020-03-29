@@ -1,5 +1,5 @@
 // Verilog netlist produced by program LSE :  version Radiant Software (64-bit) 2.0.1.281.2
-// Netlist written on Sat Mar 28 14:13:19 2020
+// Netlist written on Sun Mar 29 12:29:01 2020
 // Source file index table: 
 // Object locations will have the form @<file_index>(<first_ line>[<left_column>],<last_line>[<right_column>])
 // file 0 "c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v"
@@ -200,7 +200,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
     defparam Frequency_i0.REGSET = "RESET";
     defparam Frequency_i0.SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4103_3_lut (.A(_71), 
-            .B(n5_adj_1243), .C(n3324), .Z(n6781));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n5_adj_1243), .C(n3324), .Z(n6781));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4103_3_lut.INIT = "0xcaca";
     (* lse_init_val=1 *) FD1P3XZ Frequency_i1 (.D(\ADC_Data[0] [1]), .SP(VCC_net), 
             .CK(ADC_Data_Received), .SR(GND_net), .Q(Frequency[1]));   /* synthesis lineinfo="@11(137[9],146[5])"*/
@@ -282,7 +282,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
             .Z(n9193));
     defparam i1_2_lut.INIT = "0x2222";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4102_3_lut (.A(_72), 
-            .B(n6_adj_1244), .C(n3324), .Z(n6780));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n6_adj_1244), .C(n3324), .Z(n6780));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4102_3_lut.INIT = "0xcaca";
     (* lut_function="(A+!(B))" *) LUT4 i4631_2_lut (.A(SM_Top[0]), .B(SM_Top[1]), 
             .Z(n6));   /* synthesis lineinfo="@11(159[4],238[11])"*/
@@ -351,7 +351,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
             .Z(n6739));   /* synthesis lineinfo="@4(25[9],83[5])"*/
     defparam i4061_2_lut.INIT = "0x2222";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4110_3_lut (.A(_53), 
-            .B(n19), .C(n3322), .Z(n6788));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n19), .C(n3322), .Z(n6788));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4110_3_lut.INIT = "0xcaca";
     FD1P3XZ \Harmonic_Scale[0]_i13  (.D(\ADC_Data[3] [1]), .SP(VCC_net), 
             .CK(ADC_Data_Received), .SR(GND_net), .Q(\Harmonic_Scale[1] [1]));   /* synthesis lineinfo="@11(137[9],146[5])"*/
@@ -362,10 +362,10 @@ module top (input i_Clock, input reset_n, output debug, output test,
     defparam Sample_Timer__i2.REGSET = "RESET";
     defparam Sample_Timer__i2.SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4109_3_lut (.A(_54), 
-            .B(n20), .C(n3322), .Z(n6787));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n20), .C(n3322), .Z(n6787));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4109_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4108_3_lut (.A(_55), 
-            .B(n21), .C(n3322), .Z(n6786));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n21), .C(n3322), .Z(n6786));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4108_3_lut.INIT = "0xcaca";
     (* lse_init_val=0 *) FD1P3XZ Sample_Timer__i1 (.D(n85), .SP(VCC_net), 
             .CK(Main_Clock), .SR(n6521), .Q(Sample_Timer[1]));   /* synthesis lineinfo="@11(148[9],241[5])"*/
@@ -398,7 +398,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
     defparam SM_Top__i1.REGSET = "RESET";
     defparam SM_Top__i1.SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4106_3_lut (.A(_56), 
-            .B(n22), .C(n3322), .Z(n6784));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n22), .C(n3322), .Z(n6784));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4106_3_lut.INIT = "0xcaca";
     (* lse_init_val=0 *) FD1P3XZ SM_Top__i2 (.D(n2353), .SP(n6276), .CK(Main_Clock), 
             .SR(reset_n_N_209), .Q(SM_Top[2]));   /* synthesis lineinfo="@11(148[9],241[5])"*/
@@ -428,13 +428,13 @@ module top (input i_Clock, input reset_n, output debug, output test,
             .Z(n4256));   /* synthesis lineinfo="@11(190[7],193[10])"*/
     defparam i1626_2_lut.INIT = "0xbbbb";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4101_3_lut (.A(_73), 
-            .B(n7_adj_1245), .C(n3324), .Z(n6779));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n7_adj_1245), .C(n3324), .Z(n6779));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4101_3_lut.INIT = "0xcaca";
     (* lut_function="(A+(B (C)))" *) LUT4 i1_3_lut (.A(reset_n_N_209), .B(n10), 
             .C(n9180), .Z(n6814));
     defparam i1_3_lut.INIT = "0xeaea";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4100_3_lut (.A(_74), 
-            .B(n8_adj_1246), .C(n3324), .Z(n6778));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n8_adj_1246), .C(n3324), .Z(n6778));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4100_3_lut.INIT = "0xcaca";
     (* lut_function="(!(A (B (C))+!A (B+!(C))))" *) LUT4 i23_3_lut (.A(SM_DAC_Out[2]), 
             .B(SM_DAC_Out[0]), .C(n2618), .Z(n10));
@@ -472,13 +472,13 @@ module top (input i_Clock, input reset_n, output debug, output test,
     defparam \Harmonic_Scale[0]_i8 .REGSET = "RESET";
     defparam \Harmonic_Scale[0]_i8 .SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4099_3_lut (.A(_75), 
-            .B(n9_adj_1247), .C(n3324), .Z(n6777));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n9_adj_1247), .C(n3324), .Z(n6777));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4099_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B))" *) LUT4 i1_2_lut_adj_511 (.A(n24), .B(Clock_Counter), 
             .Z(n9180));
     defparam i1_2_lut_adj_511.INIT = "0x8888";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4098_3_lut (.A(_76), 
-            .B(n10_adj_1248), .C(n3324), .Z(n6776));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n10_adj_1248), .C(n3324), .Z(n6776));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4098_3_lut.INIT = "0xcaca";
     (* lut_function="(!(A (B)))" *) LUT4 i7160_2_lut (.A(reset_n_c), .B(n15), 
             .Z(n13_adj_1233));   /* synthesis lineinfo="@7(29[9],82[5])"*/
@@ -634,7 +634,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
     defparam \r_Adder_Total[0]__i6 .REGSET = "RESET";
     defparam \r_Adder_Total[0]__i6 .SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4097_3_lut (.A(_77), 
-            .B(n11_adj_1249), .C(n3324), .Z(n6775));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n11_adj_1249), .C(n3324), .Z(n6775));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4097_3_lut.INIT = "0xcaca";
     FD1P3XZ \r_Adder_Total[0]__i5  (.D(n6407), .SP(n3320), .CK(Main_Clock), 
             .SR(GND_net), .Q(\r_Adder_Total[0] [4]));   /* synthesis lineinfo="@11(148[9],241[5])"*/
@@ -663,7 +663,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
     defparam \Harmonic_Scale[0]_i6 .REGSET = "RESET";
     defparam \Harmonic_Scale[0]_i6 .SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4096_3_lut (.A(_78), 
-            .B(n12_adj_1250), .C(n3324), .Z(n6774));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n12_adj_1250), .C(n3324), .Z(n6774));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4096_3_lut.INIT = "0xcaca";
     IB i_ADC_Clock_pad (.I(i_ADC_Clock), .O(i_ADC_Clock_c));   /* synthesis lineinfo="@11(8[14],8[25])"*/
     IB i_ADC_Data_pad (.I(i_ADC_Data), .O(i_ADC_Data_c));   /* synthesis lineinfo="@11(7[14],7[24])"*/
@@ -748,7 +748,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
     defparam Harmonic_Count_i5.REGSET = "RESET";
     defparam Harmonic_Count_i5.SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4095_3_lut (.A(_79), 
-            .B(n13_adj_1251), .C(n3324), .Z(n6773));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n13_adj_1251), .C(n3324), .Z(n6773));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4095_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B (C+(D))+!B !(C (D)+!C !(D)))+!A (B (C)+!B !((D)+!C)))" *) LUT4 i36_4_lut (.A(Sample_Ready), 
             .B(n9992), .C(SM_Top[2]), .D(SM_Top[0]), .Z(n30));
@@ -1028,10 +1028,10 @@ module top (input i_Clock, input reset_n, output debug, output test,
     defparam \Harmonic_Scale[0]_i1 .REGSET = "RESET";
     defparam \Harmonic_Scale[0]_i1 .SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4124_3_lut (.A(_39), 
-            .B(n5), .C(n3322), .Z(n6802));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n5), .C(n3322), .Z(n6802));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4124_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4094_3_lut (.A(_80), 
-            .B(n14_adj_1252), .C(n3324), .Z(n6772));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n14_adj_1252), .C(n3324), .Z(n6772));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4094_3_lut.INIT = "0xcaca";
     (* lut_function="(!(A (B)+!A (B ((D)+!C))))" *) LUT4 i4227_4_lut_4_lut (.A(SM_Sample_Position[1]), 
             .B(reset_n_c), .C(SM_Sample_Position[0]), .D(SM_Sample_Position[2]), 
@@ -1040,16 +1040,16 @@ module top (input i_Clock, input reset_n, output debug, output test,
     (* lut_function="(!(A))" *) LUT4 test_I_110_1_lut (.A(test_c), .Z(test_N_208));   /* synthesis lineinfo="@11(145[11],145[16])"*/
     defparam test_I_110_1_lut.INIT = "0x5555";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4123_3_lut (.A(_40), 
-            .B(n6_adj_1234), .C(n3322), .Z(n6801));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n6_adj_1234), .C(n3322), .Z(n6801));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4123_3_lut.INIT = "0xcaca";
     (* lut_function="(!(A (B (C+!(D))+!B !(D))))" *) LUT4 i1_3_lut_4_lut (.A(SM_Top[2]), 
             .B(SM_Top[0]), .C(n31), .D(SM_Top[1]), .Z(n9225));
     defparam i1_3_lut_4_lut.INIT = "0x7f55";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4122_3_lut (.A(_41), 
-            .B(n7_adj_1235), .C(n3322), .Z(n6800));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n7_adj_1235), .C(n3322), .Z(n6800));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4122_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4121_3_lut (.A(_42), 
-            .B(n8_2), .C(n3322), .Z(n6799));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n8_2), .C(n3322), .Z(n6799));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4121_3_lut.INIT = "0xcaca";
     (* lut_function="(!((B)+!A))" *) LUT4 i4817_2_lut (.A(n39), .B(SM_Top[1]), 
             .Z(n2891));
@@ -1062,22 +1062,22 @@ module top (input i_Clock, input reset_n, output debug, output test,
     defparam Scaler_Reset_c.REGSET = "RESET";
     defparam Scaler_Reset_c.SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4120_3_lut (.A(_43), 
-            .B(n9_adj_1236), .C(n3322), .Z(n6798));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n9_adj_1236), .C(n3322), .Z(n6798));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4120_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4119_3_lut (.A(_44), 
-            .B(n10_adj_1237), .C(n3322), .Z(n6797));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n10_adj_1237), .C(n3322), .Z(n6797));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4119_3_lut.INIT = "0xcaca";
     (* lut_function="(!((B)+!A))" *) LUT4 i4815_2_lut (.A(n41), .B(SM_Top[1]), 
             .Z(n2893));
     defparam i4815_2_lut.INIT = "0x2222";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4118_3_lut (.A(_45), 
-            .B(n11), .C(n3322), .Z(n6796));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n11), .C(n3322), .Z(n6796));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4118_3_lut.INIT = "0xcaca";
     (* lut_function="(!((B)+!A))" *) LUT4 i4814_2_lut (.A(n42), .B(SM_Top[1]), 
             .Z(n2894));
     defparam i4814_2_lut.INIT = "0x2222";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4093_3_lut (.A(_81), 
-            .B(n15_adj_1253), .C(n3324), .Z(n6771));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n15_adj_1253), .C(n3324), .Z(n6771));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4093_3_lut.INIT = "0xcaca";
     (* lut_function="(!((B)+!A))" *) LUT4 i4813_2_lut (.A(n43), .B(SM_Top[1]), 
             .Z(n2895));
@@ -1090,32 +1090,32 @@ module top (input i_Clock, input reset_n, output debug, output test,
             .Z(n2896));
     defparam i4812_2_lut.INIT = "0x2222";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4092_3_lut (.A(_82), 
-            .B(n16_adj_1254), .C(n3324), .Z(n6770));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n16_adj_1254), .C(n3324), .Z(n6770));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4092_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4117_3_lut (.A(_46), 
-            .B(n12_adj_1238), .C(n3322), .Z(n6795));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n12_adj_1238), .C(n3322), .Z(n6795));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4117_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4091_3_lut (.A(_83), 
-            .B(n17_adj_1255), .C(n3324), .Z(n6769));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n17_adj_1255), .C(n3324), .Z(n6769));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4091_3_lut.INIT = "0xcaca";
     FD1P3XZ \r_Adder_Total[0]_res3_i0_i0  (.D(\Adder_Total[1] [8]), .SP(n3320), 
             .CK(Main_Clock), .SR(GND_net), .Q(_25));   /* synthesis lineinfo="@11(148[9],241[5])"*/
     defparam \r_Adder_Total[0]_res3_i0_i0 .REGSET = "RESET";
     defparam \r_Adder_Total[0]_res3_i0_i0 .SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4116_3_lut (.A(_47), 
-            .B(n13_adj_1239), .C(n3322), .Z(n6794));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n13_adj_1239), .C(n3322), .Z(n6794));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4116_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4115_3_lut (.A(_48), 
-            .B(n14), .C(n3322), .Z(n6793));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n14), .C(n3322), .Z(n6793));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4115_3_lut.INIT = "0xcaca";
     (* lut_function="(!((B)+!A))" *) LUT4 i4811_2_lut (.A(n45), .B(SM_Top[1]), 
             .Z(n2897));
     defparam i4811_2_lut.INIT = "0x2222";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4114_3_lut (.A(_49), 
-            .B(n15_adj_1240), .C(n3322), .Z(n6792));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n15_adj_1240), .C(n3322), .Z(n6792));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4114_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4113_3_lut (.A(_50), 
-            .B(n16), .C(n3322), .Z(n6791));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n16), .C(n3322), .Z(n6791));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4113_3_lut.INIT = "0xcaca";
     FD1P3XZ \r_Adder_Total[0]_res6_i0_i1  (.D(n6402), .SP(n3320), .CK(Main_Clock), 
             .SR(GND_net), .Q(_112));   /* synthesis lineinfo="@11(148[9],241[5])"*/
@@ -1158,7 +1158,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
     defparam Scaler_Start_i0_i1.REGSET = "RESET";
     defparam Scaler_Start_i0_i1.SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4090_3_lut (.A(_84), 
-            .B(n18_adj_1256), .C(n3324), .Z(n6768));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n18_adj_1256), .C(n3324), .Z(n6768));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4090_3_lut.INIT = "0xcaca";
     FA2 add_25_add_5_3 (.A0(GND_net), .B0(Harmonic[1]), .C0(GND_net), 
         .D0(n7787), .CI0(n7787), .A1(GND_net), .B1(Harmonic[2]), .C1(GND_net), 
@@ -1183,13 +1183,13 @@ module top (input i_Clock, input reset_n, output debug, output test,
     defparam add_25_add_5_9.INIT0 = "0xc33c";
     defparam add_25_add_5_9.INIT1 = "0xc33c";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4112_3_lut (.A(_51), 
-            .B(n17_2), .C(n3322), .Z(n6790));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n17_2), .C(n3322), .Z(n6790));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4112_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4089_3_lut (.A(_85), 
-            .B(n19_adj_1257), .C(n3324), .Z(n6767));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n19_adj_1257), .C(n3324), .Z(n6767));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4089_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4088_3_lut (.A(_86), 
-            .B(n20_adj_1258), .C(n3324), .Z(n6766));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n20_adj_1258), .C(n3324), .Z(n6766));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4088_3_lut.INIT = "0xcaca";
     (* lut_function="(!((B)+!A))" *) LUT4 i4719_2_lut (.A(n46), .B(SM_Top[1]), 
             .Z(n2898));
@@ -1211,7 +1211,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
             .Z(n12));
     defparam i5_4_lut.INIT = "0x8000";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4111_3_lut (.A(_52), 
-            .B(n18), .C(n3322), .Z(n6789));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n18), .C(n3322), .Z(n6789));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4111_3_lut.INIT = "0xcaca";
     (* lut_function="(A+(B+(C+(D))))" *) LUT4 i9_4_lut (.A(n17_adj_1272), 
             .B(Sample_Timer[11]), .C(n16_adj_1273), .D(Sample_Timer[12]), 
@@ -1237,7 +1237,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
             .B(n9186), .C(SM_Top[2]), .D(n9193), .Z(n9187));
     defparam i1_4_lut_adj_521.INIT = "0x8c0c";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4087_3_lut (.A(_87), 
-            .B(n21_adj_1259), .C(n3324), .Z(n6765));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n21_adj_1259), .C(n3324), .Z(n6765));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4087_3_lut.INIT = "0xcaca";
     (* lse_init_val=0 *) FD1P3XZ SM_Top__i0 (.D(n7547), .SP(n6276), .CK(Main_Clock), 
             .SR(reset_n_N_209), .Q(SM_Top[0]));   /* synthesis lineinfo="@11(148[9],241[5])"*/
@@ -1247,7 +1247,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
             .B(Receive_Byte[0]), .C(n6187), .Z(n6764));   /* synthesis lineinfo="@2(77[3],109[6])"*/
     defparam i4086_3_lut.INIT = "0x1414";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4083_3_lut (.A(_88), 
-            .B(n22_adj_1260), .C(n3324), .Z(n6761));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n22_adj_1260), .C(n3324), .Z(n6761));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4083_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B (C+!(D))+!B (C)))" *) LUT4 i1_4_lut_adj_522 (.A(reset_n_c), 
             .B(SM_DAC_Out[1]), .C(n9), .D(Clock_Counter), .Z(n8922));   /* synthesis lineinfo="@4(25[9],83[5])"*/
@@ -1340,7 +1340,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
             .B(reset_n_c), .C(SM_Top[0]), .D(SM_Top[1]), .Z(n9199));
     defparam i2_4_lut_adj_524.INIT = "0x0440";
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4079_3_lut (.A(_57), 
-            .B(n23), .C(n3322), .Z(n6757));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n23), .C(n3322), .Z(n6757));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4079_3_lut.INIT = "0xcaca";
     (* lut_function="(!(A (B+!(C+!(D)))+!A (B+!(C))))" *) LUT4 i2_4_lut_adj_525 (.A(SM_Sample_Output[0]), 
             .B(SM_Sample_Output[2]), .C(n21_adj_1278), .D(SM_Sample_Output[1]), 
@@ -1348,7 +1348,7 @@ module top (input i_Clock, input reset_n, output debug, output test,
     defparam i2_4_lut_adj_525.INIT = "0x3032";
     VLO i1 (.Z(GND_net));
     (* lut_function="(A (B+!(C))+!A (B (C)))" *) LUT4 i4078_3_lut (.A(_89), 
-            .B(n23_adj_1261), .C(n3324), .Z(n6756));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(n23_adj_1261), .C(n3324), .Z(n6756));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4078_3_lut.INIT = "0xcaca";
     (* lut_function="(A (B (C+!(D))+!B (C)))" *) LUT4 i1_4_lut_adj_526 (.A(DAC_Ready), 
             .B(DAC_Send), .C(SM_Sample_Output[0]), .D(SM_Sample_Output[1]), 
@@ -5000,170 +5000,170 @@ module \Adder(DIVISOR_BITS=11)  (output \Adder_Total[1][11] , input Main_Clock,
         n6693, n6695, VCC_net, GND_net_c;
     
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i12 (.D(n6685), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][12] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][12] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i12.REGSET = "RESET";
     defparam o_Accumulator__i12.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i10 (.D(n6681), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][10] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][10] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i10.REGSET = "RESET";
     defparam o_Accumulator__i10.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i9 (.D(n6679), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][9] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][9] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i9.REGSET = "RESET";
     defparam o_Accumulator__i9.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i8 (.D(n6677), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][8] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][8] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i8.REGSET = "RESET";
     defparam o_Accumulator__i8.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i7 (.D(n6675), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][7] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][7] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i7.REGSET = "RESET";
     defparam o_Accumulator__i7.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i6 (.D(n6673), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][6] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][6] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i6.REGSET = "RESET";
     defparam o_Accumulator__i6.SRMODE = "ASYNC";
     (* lut_function="(!(A+!(B (C))))" *) LUT4 i4713_3_lut_3_lut (.A(SM_Adder[0]), 
-            .B(reset_n_c), .C(Adder_Start[1]), .Z(n8_c[0]));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(reset_n_c), .C(Adder_Start[1]), .Z(n8_c[0]));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4713_3_lut_3_lut.INIT = "0x4040";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i5 (.D(n6671), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][5] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][5] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i5.REGSET = "RESET";
     defparam o_Accumulator__i5.SRMODE = "ASYNC";
     (* lut_function="(A (B))" *) LUT4 i4781_2_lut (.A(n167[2]), .B(reset_n_c), 
-            .Z(n6665));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6665));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4781_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4780_2_lut (.A(n167[1]), .B(reset_n_c), 
-            .Z(n6663));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6663));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4780_2_lut.INIT = "0x8888";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i13 (.D(n6687), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][13] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][13] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i13.REGSET = "RESET";
     defparam o_Accumulator__i13.SRMODE = "ASYNC";
     FA2 add_7_add_5_19 (.A0(GND_net), .B0(\Adder_Total[1][17] ), .C0(_72), 
         .D0(n7896), .CI0(n7896), .A1(GND_net), .B1(\Adder_Total[1] [18]), 
         .C1(_71), .D1(n11664), .CI1(n11664), .CO0(n11664), .S0(n167[17]), 
-        .S1(n167[18]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S1(n167[18]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_19.INIT0 = "0xc33c";
     defparam add_7_add_5_19.INIT1 = "0xc33c";
     FA2 add_7_add_5_17 (.A0(GND_net), .B0(\Adder_Total[1][15] ), .C0(_74), 
         .D0(n7894), .CI0(n7894), .A1(GND_net), .B1(\Adder_Total[1][16] ), 
         .C1(_73), .D1(n11622), .CI1(n11622), .CO0(n11622), .CO1(n7896), 
-        .S0(n167[15]), .S1(n167[16]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[15]), .S1(n167[16]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_17.INIT0 = "0xc33c";
     defparam add_7_add_5_17.INIT1 = "0xc33c";
     FA2 add_7_add_5_15 (.A0(GND_net), .B0(\Adder_Total[1][13] ), .C0(_76), 
         .D0(n7892), .CI0(n7892), .A1(GND_net), .B1(\Adder_Total[1][14] ), 
         .C1(_75), .D1(n11436), .CI1(n11436), .CO0(n11436), .CO1(n7894), 
-        .S0(n167[13]), .S1(n167[14]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[13]), .S1(n167[14]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_15.INIT0 = "0xc33c";
     defparam add_7_add_5_15.INIT1 = "0xc33c";
     FA2 add_7_add_5_13 (.A0(GND_net), .B0(\Adder_Total[1][11] ), .C0(_78), 
         .D0(n7890), .CI0(n7890), .A1(GND_net), .B1(\Adder_Total[1][12] ), 
         .C1(_77), .D1(n11376), .CI1(n11376), .CO0(n11376), .CO1(n7892), 
-        .S0(n167[11]), .S1(n167[12]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[11]), .S1(n167[12]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_13.INIT0 = "0xc33c";
     defparam add_7_add_5_13.INIT1 = "0xc33c";
     FA2 add_7_add_5_11 (.A0(GND_net), .B0(\Adder_Total[1][9] ), .C0(_80), 
         .D0(n7888), .CI0(n7888), .A1(GND_net), .B1(\Adder_Total[1][10] ), 
         .C1(_79), .D1(n11373), .CI1(n11373), .CO0(n11373), .CO1(n7890), 
-        .S0(n167[9]), .S1(n167[10]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[9]), .S1(n167[10]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_11.INIT0 = "0xc33c";
     defparam add_7_add_5_11.INIT1 = "0xc33c";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i4 (.D(n6669), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][4] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][4] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i4.REGSET = "RESET";
     defparam o_Accumulator__i4.SRMODE = "ASYNC";
     FA2 add_7_add_5_9 (.A0(GND_net), .B0(\Adder_Total[1][7] ), .C0(_82), 
         .D0(n7886), .CI0(n7886), .A1(GND_net), .B1(\Adder_Total[1][8] ), 
         .C1(_81), .D1(n11370), .CI1(n11370), .CO0(n11370), .CO1(n7888), 
-        .S0(n167[7]), .S1(n167[8]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[7]), .S1(n167[8]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_9.INIT0 = "0xc33c";
     defparam add_7_add_5_9.INIT1 = "0xc33c";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i3 (.D(n6667), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][3] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][3] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i3.REGSET = "RESET";
     defparam o_Accumulator__i3.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i2 (.D(n6665), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][2] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][2] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i2.REGSET = "RESET";
     defparam o_Accumulator__i2.SRMODE = "ASYNC";
     FA2 add_7_add_5_7 (.A0(GND_net), .B0(\Adder_Total[1][5] ), .C0(_84), 
         .D0(n7884), .CI0(n7884), .A1(GND_net), .B1(\Adder_Total[1][6] ), 
         .C1(_83), .D1(n11367), .CI1(n11367), .CO0(n11367), .CO1(n7886), 
-        .S0(n167[5]), .S1(n167[6]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[5]), .S1(n167[6]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_7.INIT0 = "0xc33c";
     defparam add_7_add_5_7.INIT1 = "0xc33c";
     FA2 add_7_add_5_5 (.A0(GND_net), .B0(\Adder_Total[1][3] ), .C0(_86), 
         .D0(n7882), .CI0(n7882), .A1(GND_net), .B1(\Adder_Total[1][4] ), 
         .C1(_85), .D1(n11364), .CI1(n11364), .CO0(n11364), .CO1(n7884), 
-        .S0(n167[3]), .S1(n167[4]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[3]), .S1(n167[4]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_5.INIT0 = "0xc33c";
     defparam add_7_add_5_5.INIT1 = "0xc33c";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i1 (.D(n6663), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][1] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][1] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i1.REGSET = "RESET";
     defparam o_Accumulator__i1.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ SM_Adder__i0 (.D(n8_c[0]), 
-            .SP(VCC_net), .CK(Main_Clock), .SR(Adder_Clear), .Q(SM_Adder[0]));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(VCC_net), .CK(Main_Clock), .SR(Adder_Clear), .Q(SM_Adder[0]));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam SM_Adder__i0.REGSET = "RESET";
     defparam SM_Adder__i0.SRMODE = "ASYNC";
     (* lut_function="(A (B))" *) LUT4 i4794_2_lut (.A(n167[15]), .B(reset_n_c), 
-            .Z(n6691));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6691));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4794_2_lut.INIT = "0x8888";
     FA2 add_7_add_5_3 (.A0(GND_net), .B0(\Adder_Total[1][1] ), .C0(_88), 
         .D0(n7880), .CI0(n7880), .A1(GND_net), .B1(\Adder_Total[1][2] ), 
         .C1(_87), .D1(n11361), .CI1(n11361), .CO0(n11361), .CO1(n7882), 
-        .S0(n167[1]), .S1(n167[2]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[1]), .S1(n167[2]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_3.INIT0 = "0xc33c";
     defparam add_7_add_5_3.INIT1 = "0xc33c";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i14 (.D(n6689), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][14] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][14] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i14.REGSET = "RESET";
     defparam o_Accumulator__i14.SRMODE = "ASYNC";
     FA2 add_7_add_5_1 (.A0(GND_net), .B0(GND_net), .C0(GND_net), .A1(GND_net), 
         .B1(\Adder_Total[1][0] ), .C1(_89), .D1(n11358), .CI1(n11358), 
-        .CO0(n11358), .CO1(n7880), .S1(n167[0]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .CO0(n11358), .CO1(n7880), .S1(n167[0]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_1.INIT0 = "0xc33c";
     defparam add_7_add_5_1.INIT1 = "0xc33c";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i0 (.D(n6580), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][0] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][0] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i0.REGSET = "RESET";
     defparam o_Accumulator__i0.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i15 (.D(n6691), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][15] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][15] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i15.REGSET = "RESET";
     defparam o_Accumulator__i15.SRMODE = "ASYNC";
     (* lut_function="(A (B))" *) LUT4 i4797_2_lut (.A(n167[18]), .B(reset_n_c), 
-            .Z(n6697));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6697));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4797_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4788_2_lut (.A(n167[9]), .B(reset_n_c), 
-            .Z(n6679));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6679));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4788_2_lut.INIT = "0x8888";
     (* lut_function="(A+!(B))" *) LUT4 i1017_2_lut_2_lut (.A(SM_Adder[0]), 
             .B(reset_n_c), .Z(n3361));
     defparam i1017_2_lut_2_lut.INIT = "0xbbbb";
     (* lut_function="(A (B))" *) LUT4 i4793_2_lut (.A(n167[14]), .B(reset_n_c), 
-            .Z(n6689));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6689));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4793_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4795_2_lut (.A(n167[16]), .B(reset_n_c), 
-            .Z(n6693));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6693));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4795_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4716_2_lut (.A(n167[0]), .B(reset_n_c), 
-            .Z(n6580));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6580));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4716_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4790_2_lut (.A(n167[11]), .B(reset_n_c), 
-            .Z(n6683));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6683));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4790_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4791_2_lut (.A(n167[12]), .B(reset_n_c), 
-            .Z(n6685));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6685));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4791_2_lut.INIT = "0x8888";
     FD1P3XZ Working_Total_res2_res5__i19 (.D(n6781), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_71));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_71));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i19.REGSET = "RESET";
     defparam Working_Total_res2_res5__i19.SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B))" *) LUT4 i4787_2_lut (.A(n167[8]), .B(reset_n_c), 
-            .Z(n6677));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6677));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4787_2_lut.INIT = "0x8888";
     MAC16 mult_3 (.CLK(GND_net), .CE(GND_net), .C15(GND_net), .C14(GND_net), 
           .C13(GND_net), .C12(GND_net), .C11(GND_net), .C10(GND_net), 
@@ -5212,100 +5212,100 @@ module \Adder(DIVISOR_BITS=11)  (output \Adder_Total[1][11] , input Main_Clock,
     defparam mult_3.A_SIGNED = "0b1";
     defparam mult_3.B_SIGNED = "0b1";
     FD1P3XZ Working_Total_res2_res5__i18 (.D(n6780), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_72));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_72));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i18.REGSET = "RESET";
     defparam Working_Total_res2_res5__i18.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i17 (.D(n6779), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_73));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_73));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i17.REGSET = "RESET";
     defparam Working_Total_res2_res5__i17.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i16 (.D(n6778), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_74));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_74));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i16.REGSET = "RESET";
     defparam Working_Total_res2_res5__i16.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i15 (.D(n6777), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_75));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_75));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i15.REGSET = "RESET";
     defparam Working_Total_res2_res5__i15.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i14 (.D(n6776), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_76));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_76));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i14.REGSET = "RESET";
     defparam Working_Total_res2_res5__i14.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i13 (.D(n6775), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_77));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_77));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i13.REGSET = "RESET";
     defparam Working_Total_res2_res5__i13.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i12 (.D(n6774), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_78));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_78));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i12.REGSET = "RESET";
     defparam Working_Total_res2_res5__i12.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i11 (.D(n6773), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_79));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_79));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i11.REGSET = "RESET";
     defparam Working_Total_res2_res5__i11.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i10 (.D(n6772), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_80));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_80));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i10.REGSET = "RESET";
     defparam Working_Total_res2_res5__i10.SRMODE = "CE_OVER_LSR";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i16 (.D(n6693), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][16] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][16] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i16.REGSET = "RESET";
     defparam o_Accumulator__i16.SRMODE = "ASYNC";
     (* lut_function="(A (B))" *) LUT4 i4786_2_lut (.A(n167[7]), .B(reset_n_c), 
-            .Z(n6675));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6675));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4786_2_lut.INIT = "0x8888";
     FD1P3XZ Working_Total_res2_res5__i9 (.D(n6771), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_81));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_81));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i9.REGSET = "RESET";
     defparam Working_Total_res2_res5__i9.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i8 (.D(n6770), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_82));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_82));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i8.REGSET = "RESET";
     defparam Working_Total_res2_res5__i8.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i7 (.D(n6769), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_83));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_83));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i7.REGSET = "RESET";
     defparam Working_Total_res2_res5__i7.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i6 (.D(n6768), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_84));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_84));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i6.REGSET = "RESET";
     defparam Working_Total_res2_res5__i6.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i5 (.D(n6767), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_85));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_85));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i5.REGSET = "RESET";
     defparam Working_Total_res2_res5__i5.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i4 (.D(n6766), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_86));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_86));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i4.REGSET = "RESET";
     defparam Working_Total_res2_res5__i4.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i3 (.D(n6765), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_87));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_87));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i3.REGSET = "RESET";
     defparam Working_Total_res2_res5__i3.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res2_res5__i2 (.D(n6761), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_88));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_88));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i2.REGSET = "RESET";
     defparam Working_Total_res2_res5__i2.SRMODE = "CE_OVER_LSR";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i17 (.D(n6695), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][17] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][17] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i17.REGSET = "RESET";
     defparam o_Accumulator__i17.SRMODE = "ASYNC";
     FD1P3XZ Working_Total_res2_res5__i1 (.D(n6756), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_89));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_89));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res2_res5__i1.REGSET = "RESET";
     defparam Working_Total_res2_res5__i1.SRMODE = "CE_OVER_LSR";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i18 (.D(n6697), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1] [18]));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1] [18]));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i18.REGSET = "RESET";
     defparam o_Accumulator__i18.SRMODE = "ASYNC";
     (* lut_function="(A (B))" *) LUT4 i4785_2_lut (.A(n167[6]), .B(reset_n_c), 
-            .Z(n6673));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6673));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4785_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4796_2_lut (.A(n167[17]), .B(reset_n_c), 
-            .Z(n6695));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6695));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4796_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4784_2_lut (.A(n167[5]), .B(reset_n_c), 
-            .Z(n6671));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6671));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4784_2_lut.INIT = "0x8888";
     (* lut_function="(!((B+(C+!(D)))+!A))" *) LUT4 i2_3_lut_4_lut (.A(reset_n_c), 
             .B(Adder_Clear), .C(\SM_Adder[0] ), .D(Adder_Start[0]), .Z(n3322));
@@ -5314,19 +5314,19 @@ module \Adder(DIVISOR_BITS=11)  (output \Adder_Total[1][11] , input Main_Clock,
             .B(Adder_Clear), .C(SM_Adder[0]), .D(Adder_Start[1]), .Z(n3324));
     defparam i2_3_lut_4_lut_adj_457.INIT = "0x0200";
     (* lut_function="(A (B))" *) LUT4 i4789_2_lut (.A(n167[10]), .B(reset_n_c), 
-            .Z(n6681));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6681));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4789_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4792_2_lut (.A(n167[13]), .B(reset_n_c), 
-            .Z(n6687));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6687));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4792_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4783_2_lut (.A(n167[4]), .B(reset_n_c), 
-            .Z(n6669));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6669));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4783_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4782_2_lut (.A(n167[3]), .B(reset_n_c), 
-            .Z(n6667));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6667));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4782_2_lut.INIT = "0x8888";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i11 (.D(n6683), 
-            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][11] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3361), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[1][11] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i11.REGSET = "RESET";
     defparam o_Accumulator__i11.SRMODE = "ASYNC";
     VLO i2 (.Z(GND_net_c));
@@ -5565,245 +5565,245 @@ module \Adder(DIVISOR_BITS=11)_U1  (output \SM_Adder[0] , input Main_Clock,
         VCC_net, GND_net_c;
     
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i18 (.D(n6501), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0] [18]));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0] [18]));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i18.REGSET = "RESET";
     defparam o_Accumulator__i18.SRMODE = "ASYNC";
     (* lut_function="(A (B))" *) LUT4 i4681_2_lut (.A(n167[14]), .B(reset_n_c), 
-            .Z(n6486));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6486));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4681_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4680_2_lut (.A(n167[13]), .B(reset_n_c), 
-            .Z(n6484));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6484));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4680_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4679_2_lut (.A(n167[0]), .B(reset_n_c), 
-            .Z(n6482));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6482));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4679_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4662_2_lut (.A(n167[1]), .B(reset_n_c), 
-            .Z(n6458));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6458));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4662_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4677_2_lut (.A(n167[12]), .B(reset_n_c), 
-            .Z(n6480));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6480));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4677_2_lut.INIT = "0x8888";
     (* lut_function="(A+!(B))" *) LUT4 i1015_2_lut_2_lut (.A(\SM_Adder[0] ), 
             .B(reset_n_c), .Z(n3356));
     defparam i1015_2_lut_2_lut.INIT = "0xbbbb";
     (* lut_function="(A (B))" *) LUT4 i4676_2_lut (.A(n167[11]), .B(reset_n_c), 
-            .Z(n6478));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6478));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4676_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4675_2_lut (.A(n167[10]), .B(reset_n_c), 
-            .Z(n6476));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6476));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4675_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4674_2_lut (.A(n167[9]), .B(reset_n_c), 
-            .Z(n6474));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6474));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4674_2_lut.INIT = "0x8888";
     (* lut_function="(!(A+!(B (C))))" *) LUT4 i4721_3_lut_3_lut (.A(\SM_Adder[0] ), 
-            .B(reset_n_c), .C(\Adder_Start[0] ), .Z(n8_c[0]));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .B(reset_n_c), .C(\Adder_Start[0] ), .Z(n8_c[0]));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4721_3_lut_3_lut.INIT = "0x4040";
     (* lut_function="(A (B))" *) LUT4 i4673_2_lut (.A(n167[8]), .B(reset_n_c), 
-            .Z(n6472));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6472));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4673_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4672_2_lut (.A(n167[7]), .B(reset_n_c), 
-            .Z(n6470));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6470));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4672_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4669_2_lut (.A(n167[6]), .B(reset_n_c), 
-            .Z(n6468));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6468));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4669_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4667_2_lut (.A(n167[5]), .B(reset_n_c), 
-            .Z(n6466));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6466));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4667_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4666_2_lut (.A(n167[4]), .B(reset_n_c), 
-            .Z(n6464));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6464));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4666_2_lut.INIT = "0x8888";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i17 (.D(n6498), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][17] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][17] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i17.REGSET = "RESET";
     defparam o_Accumulator__i17.SRMODE = "ASYNC";
     FA2 add_7_add_5_19 (.A0(GND_net), .B0(\Adder_Total[0][17] ), .C0(_40), 
         .D0(n7863), .CI0(n7863), .A1(GND_net), .B1(\Adder_Total[0] [18]), 
         .C1(_39), .D1(n11574), .CI1(n11574), .CO0(n11574), .S0(n167[17]), 
-        .S1(n167[18]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S1(n167[18]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_19.INIT0 = "0xc33c";
     defparam add_7_add_5_19.INIT1 = "0xc33c";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i16 (.D(n6496), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][16] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][16] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i16.REGSET = "RESET";
     defparam o_Accumulator__i16.SRMODE = "ASYNC";
     FA2 add_7_add_5_17 (.A0(GND_net), .B0(\Adder_Total[0][15] ), .C0(_42), 
         .D0(n7861), .CI0(n7861), .A1(GND_net), .B1(\Adder_Total[0][16] ), 
         .C1(_41), .D1(n11571), .CI1(n11571), .CO0(n11571), .CO1(n7863), 
-        .S0(n167[15]), .S1(n167[16]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[15]), .S1(n167[16]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_17.INIT0 = "0xc33c";
     defparam add_7_add_5_17.INIT1 = "0xc33c";
     FA2 add_7_add_5_15 (.A0(GND_net), .B0(\Adder_Total[0][13] ), .C0(_44), 
         .D0(n7859), .CI0(n7859), .A1(GND_net), .B1(\Adder_Total[0][14] ), 
         .C1(_43), .D1(n11568), .CI1(n11568), .CO0(n11568), .CO1(n7861), 
-        .S0(n167[13]), .S1(n167[14]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[13]), .S1(n167[14]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_15.INIT0 = "0xc33c";
     defparam add_7_add_5_15.INIT1 = "0xc33c";
     FA2 add_7_add_5_13 (.A0(GND_net), .B0(\Adder_Total[0][11] ), .C0(_46), 
         .D0(n7857), .CI0(n7857), .A1(GND_net), .B1(\Adder_Total[0][12] ), 
         .C1(_45), .D1(n11565), .CI1(n11565), .CO0(n11565), .CO1(n7859), 
-        .S0(n167[11]), .S1(n167[12]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[11]), .S1(n167[12]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_13.INIT0 = "0xc33c";
     defparam add_7_add_5_13.INIT1 = "0xc33c";
     FA2 add_7_add_5_11 (.A0(GND_net), .B0(\Adder_Total[0][9] ), .C0(_48), 
         .D0(n7855), .CI0(n7855), .A1(GND_net), .B1(\Adder_Total[0][10] ), 
         .C1(_47), .D1(n11562), .CI1(n11562), .CO0(n11562), .CO1(n7857), 
-        .S0(n167[9]), .S1(n167[10]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[9]), .S1(n167[10]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_11.INIT0 = "0xc33c";
     defparam add_7_add_5_11.INIT1 = "0xc33c";
     FA2 add_7_add_5_9 (.A0(GND_net), .B0(\Adder_Total[0][7] ), .C0(_50), 
         .D0(n7853), .CI0(n7853), .A1(GND_net), .B1(\Adder_Total[0][8] ), 
         .C1(_49), .D1(n11559), .CI1(n11559), .CO0(n11559), .CO1(n7855), 
-        .S0(n167[7]), .S1(n167[8]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[7]), .S1(n167[8]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_9.INIT0 = "0xc33c";
     defparam add_7_add_5_9.INIT1 = "0xc33c";
     FA2 add_7_add_5_7 (.A0(GND_net), .B0(\Adder_Total[0][5] ), .C0(_52), 
         .D0(n7851), .CI0(n7851), .A1(GND_net), .B1(\Adder_Total[0][6] ), 
         .C1(_51), .D1(n11556), .CI1(n11556), .CO0(n11556), .CO1(n7853), 
-        .S0(n167[5]), .S1(n167[6]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[5]), .S1(n167[6]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_7.INIT0 = "0xc33c";
     defparam add_7_add_5_7.INIT1 = "0xc33c";
     FA2 add_7_add_5_5 (.A0(GND_net), .B0(\Adder_Total[0][3] ), .C0(_54), 
         .D0(n7849), .CI0(n7849), .A1(GND_net), .B1(\Adder_Total[0][4] ), 
         .C1(_53), .D1(n11553), .CI1(n11553), .CO0(n11553), .CO1(n7851), 
-        .S0(n167[3]), .S1(n167[4]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[3]), .S1(n167[4]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_5.INIT0 = "0xc33c";
     defparam add_7_add_5_5.INIT1 = "0xc33c";
     FA2 add_7_add_5_3 (.A0(GND_net), .B0(\Adder_Total[0][1] ), .C0(_56), 
         .D0(n7847), .CI0(n7847), .A1(GND_net), .B1(\Adder_Total[0][2] ), 
         .C1(_55), .D1(n11550), .CI1(n11550), .CO0(n11550), .CO1(n7849), 
-        .S0(n167[1]), .S1(n167[2]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .S0(n167[1]), .S1(n167[2]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_3.INIT0 = "0xc33c";
     defparam add_7_add_5_3.INIT1 = "0xc33c";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i15 (.D(n6494), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][15] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][15] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i15.REGSET = "RESET";
     defparam o_Accumulator__i15.SRMODE = "ASYNC";
     FA2 add_7_add_5_1 (.A0(GND_net), .B0(GND_net), .C0(GND_net), .A1(GND_net), 
         .B1(\Adder_Total[0][0] ), .C1(_57), .D1(n11547), .CI1(n11547), 
-        .CO0(n11547), .CO1(n7847), .S1(n167[0]));   /* synthesis lineinfo="@3(49[24],49[107])"*/
+        .CO0(n11547), .CO1(n7847), .S1(n167[0]));   /* synthesis lineinfo="@3(50[24],50[72])"*/
     defparam add_7_add_5_1.INIT0 = "0xc33c";
     defparam add_7_add_5_1.INIT1 = "0xc33c";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i14 (.D(n6486), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][14] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][14] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i14.REGSET = "RESET";
     defparam o_Accumulator__i14.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i13 (.D(n6484), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][13] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][13] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i13.REGSET = "RESET";
     defparam o_Accumulator__i13.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i0 (.D(n6482), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][0] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][0] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i0.REGSET = "RESET";
     defparam o_Accumulator__i0.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i12 (.D(n6480), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][12] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][12] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i12.REGSET = "RESET";
     defparam o_Accumulator__i12.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i11 (.D(n6478), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][11] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][11] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i11.REGSET = "RESET";
     defparam o_Accumulator__i11.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i10 (.D(n6476), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][10] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][10] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i10.REGSET = "RESET";
     defparam o_Accumulator__i10.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i9 (.D(n6474), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][9] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][9] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i9.REGSET = "RESET";
     defparam o_Accumulator__i9.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i8 (.D(n6472), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][8] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][8] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i8.REGSET = "RESET";
     defparam o_Accumulator__i8.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i7 (.D(n6470), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][7] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][7] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i7.REGSET = "RESET";
     defparam o_Accumulator__i7.SRMODE = "ASYNC";
     (* lut_function="(A (B))" *) LUT4 i4665_2_lut (.A(n167[3]), .B(reset_n_c), 
-            .Z(n6462));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6462));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4665_2_lut.INIT = "0x8888";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i6 (.D(n6468), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][6] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][6] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i6.REGSET = "RESET";
     defparam o_Accumulator__i6.SRMODE = "ASYNC";
     (* lut_function="(A (B))" *) LUT4 i4664_2_lut (.A(n167[2]), .B(reset_n_c), 
-            .Z(n6460));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6460));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4664_2_lut.INIT = "0x8888";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i5 (.D(n6466), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][5] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][5] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i5.REGSET = "RESET";
     defparam o_Accumulator__i5.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i4 (.D(n6464), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][4] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][4] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i4.REGSET = "RESET";
     defparam o_Accumulator__i4.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i3 (.D(n6462), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][3] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][3] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i3.REGSET = "RESET";
     defparam o_Accumulator__i3.SRMODE = "ASYNC";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i2 (.D(n6460), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][2] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][2] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i2.REGSET = "RESET";
     defparam o_Accumulator__i2.SRMODE = "ASYNC";
     FD1P3XZ Working_Total_res1_res4__i19 (.D(n6802), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_39));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_39));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i19.REGSET = "RESET";
     defparam Working_Total_res1_res4__i19.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i18 (.D(n6801), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_40));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_40));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i18.REGSET = "RESET";
     defparam Working_Total_res1_res4__i18.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i17 (.D(n6800), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_41));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_41));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i17.REGSET = "RESET";
     defparam Working_Total_res1_res4__i17.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i16 (.D(n6799), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_42));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_42));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i16.REGSET = "RESET";
     defparam Working_Total_res1_res4__i16.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i15 (.D(n6798), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_43));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_43));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i15.REGSET = "RESET";
     defparam Working_Total_res1_res4__i15.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i14 (.D(n6797), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_44));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_44));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i14.REGSET = "RESET";
     defparam Working_Total_res1_res4__i14.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i13 (.D(n6796), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_45));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_45));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i13.REGSET = "RESET";
     defparam Working_Total_res1_res4__i13.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i12 (.D(n6795), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_46));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_46));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i12.REGSET = "RESET";
     defparam Working_Total_res1_res4__i12.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i11 (.D(n6794), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_47));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_47));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i11.REGSET = "RESET";
     defparam Working_Total_res1_res4__i11.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i10 (.D(n6793), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_48));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_48));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i10.REGSET = "RESET";
     defparam Working_Total_res1_res4__i10.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i9 (.D(n6792), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_49));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_49));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i9.REGSET = "RESET";
     defparam Working_Total_res1_res4__i9.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i8 (.D(n6791), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_50));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_50));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i8.REGSET = "RESET";
     defparam Working_Total_res1_res4__i8.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i7 (.D(n6790), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_51));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_51));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i7.REGSET = "RESET";
     defparam Working_Total_res1_res4__i7.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i6 (.D(n6789), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_52));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_52));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i6.REGSET = "RESET";
     defparam Working_Total_res1_res4__i6.SRMODE = "CE_OVER_LSR";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ o_Accumulator__i1 (.D(n6458), 
-            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][1] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(n3356), .CK(Main_Clock), .SR(Adder_Clear), .Q(\Adder_Total[0][1] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam o_Accumulator__i1.REGSET = "RESET";
     defparam o_Accumulator__i1.SRMODE = "ASYNC";
     MAC16 mult_3 (.CLK(GND_net), .CE(GND_net), .C15(GND_net), .C14(GND_net), 
@@ -5853,39 +5853,39 @@ module \Adder(DIVISOR_BITS=11)_U1  (output \SM_Adder[0] , input Main_Clock,
     defparam mult_3.A_SIGNED = "0b1";
     defparam mult_3.B_SIGNED = "0b1";
     FD1P3XZ Working_Total_res1_res4__i5 (.D(n6788), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_53));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_53));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i5.REGSET = "RESET";
     defparam Working_Total_res1_res4__i5.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i4 (.D(n6787), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_54));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_54));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i4.REGSET = "RESET";
     defparam Working_Total_res1_res4__i4.SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B))" *) LUT4 i4686_2_lut (.A(n167[16]), .B(reset_n_c), 
-            .Z(n6496));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6496));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4686_2_lut.INIT = "0x8888";
     FD1P3XZ Working_Total_res1_res4__i3 (.D(n6786), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_55));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_55));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i3.REGSET = "RESET";
     defparam Working_Total_res1_res4__i3.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i2 (.D(n6784), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_56));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_56));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i2.REGSET = "RESET";
     defparam Working_Total_res1_res4__i2.SRMODE = "CE_OVER_LSR";
     FD1P3XZ Working_Total_res1_res4__i1 (.D(n6757), .SP(VCC_net), .CK(Main_Clock), 
-            .SR(GND_net_c), .Q(_57));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SR(GND_net_c), .Q(_57));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam Working_Total_res1_res4__i1.REGSET = "RESET";
     defparam Working_Total_res1_res4__i1.SRMODE = "CE_OVER_LSR";
     (* lut_function="(A (B))" *) LUT4 i4685_2_lut (.A(n167[15]), .B(reset_n_c), 
-            .Z(n6494));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6494));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4685_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4688_2_lut (.A(n167[18]), .B(reset_n_c), 
-            .Z(n6501));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6501));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4688_2_lut.INIT = "0x8888";
     (* lut_function="(A (B))" *) LUT4 i4687_2_lut (.A(n167[17]), .B(reset_n_c), 
-            .Z(n6498));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .Z(n6498));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam i4687_2_lut.INIT = "0x8888";
     (* lse_init_val=0, LSE_LINE_FILE_ID=55, LSE_LCOL=35, LSE_RCOL=4, LSE_LLINE=81, LSE_RLINE=90 *) FD1P3XZ SM_Adder__i0 (.D(n8_c[0]), 
-            .SP(VCC_net), .CK(Main_Clock), .SR(Adder_Clear), .Q(\SM_Adder[0] ));   /* synthesis lineinfo="@3(28[3],55[6])"*/
+            .SP(VCC_net), .CK(Main_Clock), .SR(Adder_Clear), .Q(\SM_Adder[0] ));   /* synthesis lineinfo="@3(28[3],56[6])"*/
     defparam SM_Adder__i0.REGSET = "RESET";
     defparam SM_Adder__i0.SRMODE = "ASYNC";
     VLO i2 (.Z(GND_net_c));

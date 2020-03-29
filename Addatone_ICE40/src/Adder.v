@@ -46,7 +46,8 @@ module Adder
 					begin
 						// Divide by bit count and add to o_Accumulator, retaining negative bits
 						//o_Accumulator <= o_Accumulator + {{DIVISOR_BITS + (31 - WTSIZE){Working_Total[WTSIZE]}}, Working_Total[WTSIZE:DIVISOR_BITS]};
-						o_Accumulator <= o_Accumulator + {{DIVISOR_BITS{Working_Total[31]}}, Working_Total[31:DIVISOR_BITS]};
+						//o_Accumulator <= o_Accumulator + {{DIVISOR_BITS{Working_Total[31]}}, Working_Total[31:DIVISOR_BITS]};
+						o_Accumulator <= o_Accumulator + (Working_Total >>> DIVISOR_BITS);		// Arithmetic shift to preserve negative bits
 						o_Done <= 1'b1;
 						SM_Adder = sm_wait;
 					end
