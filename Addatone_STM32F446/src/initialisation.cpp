@@ -162,6 +162,43 @@ void InitCoverageTimer() {
 
 }
 
+void InitFPGAProg()
+{
+	//	Enable GPIO and SPI clocks
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;			// reset and clock control - advanced high performance bus - GPIO port B
+	RCC->APB1ENR |= RCC_APB1ENR_SPI2EN;
+
+	// PB15: SPI_MOSI [alternate function AF5]
+	GPIOB->MODER |= GPIO_MODER_MODER15_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
+	GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR15;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
+	GPIOB->AFR[1] |= 0b0101 << 20;					// 0b0101 = Alternate Function 5 (SPI2); 20 is position of Pin 15
+
+	// PB13: SPI_SCK [alternate function AF5]
+	GPIOB->MODER |= GPIO_MODER_MODER13_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
+	GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR13;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
+	GPIOB->AFR[1] |= 0b0101 << 28;					// 0b0101 = Alternate Function 6 (SPI2); 28 is position of Pin 13
+
+	// PB12 Software NSS
+	GPIOB->MODER |= GPIO_MODER_MODER12_0;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
+	GPIOB->MODER &= ~GPIO_MODER_MODER12_1;
+	GPIOB->BSRR |= GPIO_BSRR_BS_12;
+
+	// PB8 Reset FPGA - configure as Open drain. This will only pull pin low when set to 0; otherwise output is high impedence
+	GPIOB->OTYPER |= GPIO_OTYPER_OT8;				// Configure as open drain
+	GPIOB->BSRR |= GPIO_BSRR_BS_8;
+	GPIOB->MODER |= GPIO_MODER_MODER8_0;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
+	GPIOB->MODER &= ~GPIO_MODER_MODER8_1;
+
+	// Configure SPI
+	//SPI2->CR1 |= SPI_CR1_DFF;						// Use 16 bit data frame (default 8 bit)
+	SPI2->CR1 |= SPI_CR1_SSM;						// Software slave management: When SSM bit is set, NSS pin input is replaced with the value from the SSI bit
+	SPI2->CR1 |= SPI_CR1_SSI;						// Internal slave select
+	SPI2->CR1 |= SPI_CR1_BR_2;						// Baud rate control prescaler: 0b001: fPCLK/4; 0b100: fPCLK/32
+	SPI2->CR1 |= SPI_CR1_MSTR;						// Master selection
+	SPI2->CR1 |= SPI_CR1_CPOL;						// Clock polarity (0: CK to 0 when idle; 1: CK to 1 when idle)
+
+	SPI2->CR1 |= SPI_CR1_SPE;						// Enable SPI
+}
 
 
 void InitSPI()

@@ -17,6 +17,7 @@ void InitIO(void);
 void InitSysTick();
 void InitCoverageTimer();
 
+void InitFPGAProg();
 void InitSPI();
 void InitSPITimer();
 void sendSPIData(uint16_t data);

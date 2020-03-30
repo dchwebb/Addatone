@@ -1,8 +1,8 @@
 <top name = "top"  library = "work"  arch = ""  entry = "Verilog">
 
 <clocks>
-    <clockitem name = "i_Clock"  type = "port" />
     <clockitem name = "Main_Clock"  type = "net" />
+    <clockitem name = "i_Clock"  type = "port" />
     <clockitem name = "ADC_Data_Received"  type = "net" />
     <clockitem name = "adc/Clock_Stable"  type = "net" />
 </clocks>
