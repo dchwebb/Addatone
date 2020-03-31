@@ -30,7 +30,7 @@ void programFPGA() {
 	// Drive SPI_SS high, wait 8 clock cycles then back to Low
 	GPIOB->BSRR |= GPIO_BSRR_BS_12;
 	SPI2->DR = 0;
-	SPI2->CR1 &= ~SPI_CR1_CPOL;						// Switch the clock polarity back to idle low to drive clock pin low
+	//SPI2->CR1 &= ~SPI_CR1_CPOL;						// Switch the clock polarity back to idle low to drive clock pin low
 	while (((SPI2->SR & SPI_SR_TXE) == 0) | ((SPI2->SR & SPI_SR_BSY) == SPI_SR_BSY) );
 	GPIOB->BSRR |= GPIO_BSRR_BR_12;
 
@@ -61,7 +61,7 @@ void programFPGA() {
 		while (((SPI2->SR & SPI_SR_TXE) == 0) | ((SPI2->SR & SPI_SR_BSY) == SPI_SR_BSY) );
 		SPI2->DR = 0;
 	}
-	SPI2->CR1 |= SPI_CR1_CPOL;						// Reset the clock polarity to idle high
+	//SPI2->CR1 |= SPI_CR1_CPOL;						// Reset the clock polarity to idle high
 
 }
 
