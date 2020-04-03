@@ -108,7 +108,7 @@ module top
 		);
 	end
 	// Instantiate Sample Output module which scales output and sends to DAC
-	reg DAC_Send;
+	reg DAC_Send, Sample_Mix;
 	reg signed [31:0] Output_Sample;
 	Sample_Output sample_output (
 		.i_Clock(Main_Clock),
@@ -116,6 +116,7 @@ module top
 		.i_Start(DAC_Send),
 		.i_Sample_L(r_Adder_Total[0]),
 		.i_Sample_R(r_Adder_Total[1]),
+		.i_Mix(Sample_Mix),
 		.o_SPI_CS(o_DAC_CS),
 		.o_SPI_Clock(o_DAC_SCK),
 		.o_SPI_Data(o_DAC_MOSI),
@@ -160,7 +161,7 @@ module top
 			case (SM_Top)
 				sm_init:
 					begin
-						
+						Sample_Mix <= 1'b1;
 						DAC_Send <= 1'b0;
 						Next_Sample <= 1'b0;
 						Adder_Clear <= 1'b0;

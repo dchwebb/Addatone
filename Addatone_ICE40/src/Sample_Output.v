@@ -6,6 +6,7 @@ module Sample_Output
 		input wire i_Start,
 		input wire signed [31:0] i_Sample_L,
 		input wire signed [31:0] i_Sample_R,
+		input wire i_Mix,
 		output wire o_SPI_CS,
 		output wire o_SPI_Clock,
 		output wire o_SPI_Data,
@@ -14,6 +15,7 @@ module Sample_Output
 	
 	reg signed [24:0] r_Sample_L;
 	reg signed [24:0] r_Sample_R;
+	reg signed [32:0] Sample_Mix;
 	reg [23:0] Output_Data;
 	wire DAC_Ready;
 	
@@ -27,6 +29,9 @@ module Sample_Output
 	localparam sm_delay_R = 4'd4;	
 	localparam sm_limit = 4'd5;
 	localparam sm_prepare = 4'd6;
+	localparam sm_mix1 = 4'd7;
+	localparam sm_mix2 = 4'd8;
+	localparam sm_offset = 4'd9;	
 	reg [4:0] SM_Sample_Output = sm_waiting;
 	
 	always @(posedge i_Clock) begin
@@ -45,12 +50,34 @@ module Sample_Output
 					o_Debug <= 1'b0;
 					// add the required offset to the sample, downscaling 32 bit to 24 bits as more computationally efficient
 					if (i_Start && DAC_Ready) begin
-						r_Sample_L <= i_Sample_L + SAMPLE_OFFSET;
-						r_Sample_R <= i_Sample_R + SAMPLE_OFFSET;
+						r_Sample_L <= i_Sample_L;
+						r_Sample_R <= i_Sample_R;
 
-						SM_Sample_Output <= sm_prepare;
+						SM_Sample_Output <= i_Mix ? sm_mix1 : sm_offset;
 					end
-				end
+				end
+
+			sm_mix1:
+				begin
+					Sample_Mix <= r_Sample_L + r_Sample_R;
+
+					SM_Sample_Output <= sm_mix2;
+				end
+
+			sm_mix2:
+				begin
+					r_Sample_L <= Sample_Mix;
+
+					SM_Sample_Output <= sm_offset;
+				end
+
+			sm_offset:
+				begin
+					r_Sample_L <= r_Sample_L + SAMPLE_OFFSET;
+					r_Sample_R <= r_Sample_R + SAMPLE_OFFSET;
+					SM_Sample_Output <= sm_prepare;			
+				end
+
 			sm_prepare:
 				begin
 					// if sample is still negative after applying offset set to zero - otherwise divide by 4
