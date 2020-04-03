@@ -1205,6 +1205,24 @@
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Output.v(48): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>25</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Output.v</Navigation>
+            <Navigation>48</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Output.v(49): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>25</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Output.v</Navigation>
+            <Navigation>49</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
             <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(145): </Dynamic>
             <Dynamic>16</Dynamic>
             <Dynamic>8</Dynamic>
@@ -1885,6 +1903,24 @@
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(48): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>25</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
+            <Navigation>48</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(49): </Dynamic>
+            <Dynamic>32</Dynamic>
+            <Dynamic>25</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
+            <Navigation>49</Navigation>
+        </Message>
+        <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
             <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(145): </Dynamic>
             <Dynamic>16</Dynamic>
             <Dynamic>8</Dynamic>
@@ -1932,14 +1968,6 @@
         <Message>
             <ID>35935013</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(128): </Dynamic>
-            <Dynamic>\sample_output/o_Debug</Dynamic>
-            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
-            <Navigation>128</Navigation>
-        </Message>
-        <Message>
-            <ID>35935013</ID>
-            <Severity>16</Severity>
             <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(83): </Dynamic>
             <Dynamic>\sample_output/dac/SM_DAC_Out_i4</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v</Navigation>
@@ -1948,18 +1976,26 @@
         <Message>
             <ID>35935013</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/scale_mult.v(55): </Dynamic>
-            <Dynamic>\genscaler[1].scaler/SM_Scale_Mult__i0</Dynamic>
-            <Navigation>d:/eurorack/addatone/addatone_ice40/src/scale_mult.v</Navigation>
-            <Navigation>55</Navigation>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(108): </Dynamic>
+            <Dynamic>\sample_output/Output_Data__i23</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
+            <Navigation>108</Navigation>
         </Message>
         <Message>
             <ID>35935013</ID>
             <Severity>16</Severity>
             <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(56): </Dynamic>
-            <Dynamic>\genadder[1].adder/SM_Adder__i1</Dynamic>
+            <Dynamic>\genadder[0].adder/SM_Adder__i1</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/adder.v</Navigation>
             <Navigation>56</Navigation>
+        </Message>
+        <Message>
+            <ID>35935013</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/scale_mult.v(55): </Dynamic>
+            <Dynamic>\genscaler[1].scaler/SM_Scale_Mult__i0</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/scale_mult.v</Navigation>
+            <Navigation>55</Navigation>
         </Message>
         <Message>
             <ID>35935013</ID>
@@ -1980,9 +2016,8 @@
             <Dynamic>\adc/CS_Stable</Dynamic>
         </Message>
         <Message>
-            <ID>35811146</ID>
+            <ID>35002039</ID>
             <Severity>1</Severity>
-            <Dynamic>adc/Receive_Byte[0]_2</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
@@ -1993,6 +2028,11 @@
             <ID>35811146</ID>
             <Severity>1</Severity>
             <Dynamic>sample_position/Accumulated_Offset[16]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35811146</ID>
+            <Severity>1</Severity>
+            <Dynamic>adc/Receive_Byte[0]_2</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
@@ -2027,7 +2067,7 @@
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>sample_output/Output_Data[23]</Dynamic>
+            <Dynamic>sample_output/r_Sample_R[23]_2</Dynamic>
         </Message>
         <Message>
             <ID>35811149</ID>
@@ -2089,32 +2129,32 @@
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData - createTaInstance - upMgr runs: 324 ms / size : 0 MB </Dynamic>
+            <Dynamic>loadTimingData - createTaInstance - upMgr runs: 309 ms / size : 0 MB </Dynamic>
         </Message>
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData - createTaInstance - timerIf runs: 324 ms / size : 0 MB</Dynamic>
+            <Dynamic>loadTimingData - createTaInstance - timerIf runs: 309 ms / size : 0 MB</Dynamic>
         </Message>
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData - createTaInstance - InitializeTimer runs: 324 ms/ size : 0 MB</Dynamic>
+            <Dynamic>loadTimingData - createTaInstance - InitializeTimer runs: 309 ms/ size : 0 MB</Dynamic>
         </Message>
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData - createTaInstance runs: 329 ms  / size : 0 MB</Dynamic>
+            <Dynamic>loadTimingData - createTaInstance runs: 314 ms  / size : 0 MB</Dynamic>
         </Message>
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData - load data runs: 399 ms  / size : 0 MB</Dynamic>
+            <Dynamic>loadTimingData - load data runs: 374 ms  / size : 0 MB</Dynamic>
         </Message>
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData runs: 729 ms / size : 0 MB</Dynamic>
+            <Dynamic>loadTimingData runs: 688 ms / size : 0 MB</Dynamic>
         </Message>
         <Message>
             <ID>70009502</ID>

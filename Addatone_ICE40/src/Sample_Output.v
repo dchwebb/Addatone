@@ -1,5 +1,5 @@
 module Sample_Output
-	#(parameter SAMPLE_OFFSET = 32'h1FFFF, parameter SEND_CHANNEL_A = 8'b00110001, parameter SEND_CHANNEL_B = 8'b00110010)
+	#(parameter SAMPLE_OFFSET = 24'h1FFFF, parameter SEND_CHANNEL_A = 8'b00110001, parameter SEND_CHANNEL_B = 8'b00110010)
 	(
 		input wire i_Clock,
 		input wire i_Reset,
@@ -12,8 +12,8 @@ module Sample_Output
 		output reg o_Debug
 	);
 	
-	reg signed [31:0] r_Sample_L;
-	reg signed [31:0] r_Sample_R;
+	reg signed [24:0] r_Sample_L;
+	reg signed [24:0] r_Sample_R;
 	reg [23:0] Output_Data;
 	wire DAC_Ready;
 	
@@ -25,10 +25,8 @@ module Sample_Output
 	localparam sm_delay_L = 4'd2;
 	localparam sm_send_R = 4'd3;
 	localparam sm_delay_R = 4'd4;	
-	localparam sm_test_L = 4'd5;
-	localparam sm_test_R = 4'd6;
-	localparam sm_prepare_L = 4'd7;
-	localparam sm_prepare_R = 4'd8;	
+	localparam sm_limit = 4'd5;
+	localparam sm_prepare = 4'd6;
 	reg [4:0] SM_Sample_Output = sm_waiting;
 	
 	always @(posedge i_Clock) begin
@@ -45,74 +43,56 @@ module Sample_Output
 				begin
 					DAC_Send <= 1'b0;
 					o_Debug <= 1'b0;
-					// add the required offset to the sample
+					// add the required offset to the sample, downscaling 32 bit to 24 bits as more computationally efficient
 					if (i_Start && DAC_Ready) begin
-						r_Sample_L <= i_Sample_L;
-						r_Sample_R <= i_Sample_R;
+						r_Sample_L <= i_Sample_L + SAMPLE_OFFSET;
+						r_Sample_R <= i_Sample_R + SAMPLE_OFFSET;
 
-						SM_Sample_Output <= sm_test_L;
+						SM_Sample_Output <= sm_prepare;
 					end
+				end
+			sm_prepare:
+				begin
+					// if sample is still negative after applying offset set to zero - otherwise divide by 4
+					r_Sample_L <= r_Sample_L[23] == 1'b1 ? 24'b0 : (r_Sample_L >>> 2);
+					r_Sample_R <= r_Sample_R[23] == 1'b1 ? 24'b0 : (r_Sample_R >>> 2);					
+					SM_Sample_Output <= sm_limit;
 				end
-			
-			sm_test_L:
+
+
+			sm_limit:
 				// Ensure that sample does not overflow when converted from 32 to 16 bit
 				begin
-					if (r_Sample_L > 32'sd131_071) begin
-						r_Sample_L <= 32'sd131_071;
+					if (r_Sample_L > 24'sd65535) begin
+						r_Sample_L <= 24'sd65535;
+						o_Debug <= 1'b1;
 					end
-					if (r_Sample_L < -32'sd131_071) begin
-						r_Sample_L <= -32'sd131_071;
-					end					
+					if (r_Sample_R > 24'sd65535) begin
+						r_Sample_R <= 24'sd65535;
+					end				
 				
-					
-					SM_Sample_Output <= sm_prepare_L;
-				end
-
-			sm_prepare_L:
-				begin
-					r_Sample_L <= r_Sample_L + SAMPLE_OFFSET;
 					SM_Sample_Output <= sm_send_L;
 				end
 				
-			// scale the sample and add DAC SPI channel information
+			// Add DAC SPI channel information and trigger send
 			sm_send_L:
 				begin
-					Output_Data <= {SEND_CHANNEL_A, r_Sample_L[17:2]};
+					Output_Data <= {SEND_CHANNEL_A, r_Sample_L[15:0]};
 					DAC_Send <= 1'b1;
 					SM_Sample_Output <= sm_delay_L;
 				end
 				
-			// delay until DAC updates DAC_Ready status
+			// Delay until DAC updates DAC_Ready status
 			sm_delay_L:
 				if (!DAC_Ready) begin
 					DAC_Send <= 1'b0;
-					if (r_Sample_R > 32'sd131_071) begin
-						r_Sample_R <= 32'sd131_071;
-					end
-
-					SM_Sample_Output <= sm_test_R;
-				end
-
-			sm_test_R:
-				begin
-					r_Sample_R <= r_Sample_R + SAMPLE_OFFSET;
-					SM_Sample_Output <= sm_prepare_R;
-				end
-
-			sm_prepare_R:
-				begin
-					//if (r_Sample_R[31] == 1'b1) begin
-						//r_Sample_R <= 32'b0;
-						//o_Debug <= 1'b1;
-					//end					
-
 					SM_Sample_Output <= sm_send_R;
 				end
-			
+
 			// Wait until left sample has been sent then transmit right sample
 			sm_send_R:
 				if (DAC_Ready) begin
-					Output_Data <= {SEND_CHANNEL_B, r_Sample_R[31] == 1'b1 ? 16'b0 : r_Sample_R[17:2]};		// Kludge to prevent timing errors - only right sample needs scaling here
+					Output_Data <= {SEND_CHANNEL_B, r_Sample_R[15:0]};
 					DAC_Send <= 1'b1;
 					SM_Sample_Output <= sm_delay_R;
 				end
