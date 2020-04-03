@@ -2,7 +2,7 @@ module top
 	(
 		input wire i_Clock,
 		input wire reset_n,
-		output reg debug,
+		output wire debug,
 		output reg test,
 		input wire i_ADC_Data,
 		input wire i_ADC_Clock,
@@ -118,7 +118,8 @@ module top
 		.i_Sample_R(r_Adder_Total[1]),
 		.o_SPI_CS(o_DAC_CS),
 		.o_SPI_Clock(o_DAC_SCK),
-		.o_SPI_Data(o_DAC_MOSI)
+		.o_SPI_Data(o_DAC_MOSI),
+		.o_Debug(debug)
 	);
 
 
@@ -208,9 +209,8 @@ module top
 
 				sm_calc_done:
 					begin
-						debug <= 1'b1;
 						// all harmonics calculated - read accumulated output levels into registers for sending to DAC
-						r_Adder_Total[0] <= Adder_Total[0] + Adder_Total[1];
+						r_Adder_Total[0] <= Adder_Total[0];
 						r_Adder_Total[1] <= Adder_Total[1];
 
 						Next_Sample <= 1'b0;
@@ -230,7 +230,6 @@ module top
 						Harmonic <= 8'b0;
 						Next_Sample <= 1'b1;
 						Scaler_Reset <= 1'b1;
-						debug <= 1'b0;
 						
 						SM_Top <=  sm_init;
 					end

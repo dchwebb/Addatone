@@ -1134,6 +1134,15 @@
             <Navigation>60</Navigation>
         </Message>
         <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Position.v(119): </Dynamic>
+            <Dynamic>18</Dynamic>
+            <Dynamic>16</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Position.v</Navigation>
+            <Navigation>119</Navigation>
+        </Message>
+        <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
             <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/ADC_SPI_In.v(4): </Dynamic>
@@ -1196,11 +1205,11 @@
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(144): </Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(145): </Dynamic>
             <Dynamic>16</Dynamic>
             <Dynamic>8</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v</Navigation>
-            <Navigation>144</Navigation>
+            <Navigation>145</Navigation>
         </Message>
         <Message>
             <ID>35001786</ID>
@@ -1805,6 +1814,15 @@
             <Navigation>1608</Navigation>
         </Message>
         <Message>
+            <ID>35901209</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_position.v(119): </Dynamic>
+            <Dynamic>18</Dynamic>
+            <Dynamic>16</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_position.v</Navigation>
+            <Navigation>119</Navigation>
+        </Message>
+        <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
             <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adc_spi_in.v(4): </Dynamic>
@@ -1867,11 +1885,11 @@
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(144): </Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(145): </Dynamic>
             <Dynamic>16</Dynamic>
             <Dynamic>8</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/top.v</Navigation>
-            <Navigation>144</Navigation>
+            <Navigation>145</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
@@ -1914,26 +1932,18 @@
         <Message>
             <ID>35935013</ID>
             <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(128): </Dynamic>
+            <Dynamic>\sample_output/o_Debug</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
+            <Navigation>128</Navigation>
+        </Message>
+        <Message>
+            <ID>35935013</ID>
+            <Severity>16</Severity>
             <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(83): </Dynamic>
             <Dynamic>\sample_output/dac/SM_DAC_Out_i4</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v</Navigation>
             <Navigation>83</Navigation>
-        </Message>
-        <Message>
-            <ID>35935013</ID>
-            <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(56): </Dynamic>
-            <Dynamic>\genadder[0].adder/SM_Adder__i1</Dynamic>
-            <Navigation>d:/eurorack/addatone/addatone_ice40/src/adder.v</Navigation>
-            <Navigation>56</Navigation>
-        </Message>
-        <Message>
-            <ID>35935013</ID>
-            <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(82): </Dynamic>
-            <Dynamic>\sample_output/Output_Data__i23</Dynamic>
-            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
-            <Navigation>82</Navigation>
         </Message>
         <Message>
             <ID>35935013</ID>
@@ -1946,10 +1956,18 @@
         <Message>
             <ID>35935013</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(241): </Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(56): </Dynamic>
+            <Dynamic>\genadder[1].adder/SM_Adder__i1</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/adder.v</Navigation>
+            <Navigation>56</Navigation>
+        </Message>
+        <Message>
+            <ID>35935013</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(240): </Dynamic>
             <Dynamic>SM_Top__i3</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/top.v</Navigation>
-            <Navigation>241</Navigation>
+            <Navigation>240</Navigation>
         </Message>
         <Message>
             <ID>35001779</ID>
@@ -1962,58 +1980,54 @@
             <Dynamic>\adc/CS_Stable</Dynamic>
         </Message>
         <Message>
-            <ID>35002039</ID>
+            <ID>35811146</ID>
             <Severity>1</Severity>
+            <Dynamic>adc/Receive_Byte[0]_2</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][31]</Dynamic>
+            <Dynamic>sample_position/Accumulated_Offset[17]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][30]</Dynamic>
+            <Dynamic>sample_position/Accumulated_Offset[16]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][29]</Dynamic>
+            <Dynamic>genadder[1].adder/SM_Adder[1]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][28]</Dynamic>
+            <Dynamic>genscaler[0].scaler/SM_Scale_Mult[0]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][27]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[0]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][26]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[1]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][25]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[4]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][24]</Dynamic>
+            <Dynamic>sample_output/dac/r_Data_To_Send[5]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][23]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35811146</ID>
-            <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][22]</Dynamic>
+            <Dynamic>sample_output/Output_Data[23]</Dynamic>
         </Message>
         <Message>
             <ID>35811149</ID>
@@ -2032,15 +2046,75 @@
     </Task>
     <Task name="Export">
         <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
             <ID>1191031</ID>
             <Severity>1</Severity>
         </Message>
     </Task>
     <Task name="PAR">
         <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
             <ID>70009502</ID>
             <Severity>2</Severity>
             <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>loadTimingData - createTaInstance - upMgr runs: 324 ms / size : 0 MB </Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>loadTimingData - createTaInstance - timerIf runs: 324 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>loadTimingData - createTaInstance - InitializeTimer runs: 324 ms/ size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>loadTimingData - createTaInstance runs: 329 ms  / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>loadTimingData - load data runs: 399 ms  / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>loadTimingData runs: 729 ms / size : 0 MB</Dynamic>
         </Message>
         <Message>
             <ID>70009502</ID>
@@ -2079,18 +2153,6 @@
         </Message>
     </Task>
     <Task name="Map">
-        <Message>
-            <ID>71003005</ID>
-            <Severity>16</Severity>
-            <Dynamic>i_ADC_Data</Dynamic>
-            <Dynamic>6</Dynamic>
-        </Message>
-        <Message>
-            <ID>71003005</ID>
-            <Severity>16</Severity>
-            <Dynamic>i_ADC_Clock</Dynamic>
-            <Dynamic>9</Dynamic>
-        </Message>
         <Message>
             <ID>71003005</ID>
             <Severity>16</Severity>

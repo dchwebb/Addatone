@@ -1,6 +1,23 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
+# Connector_Conn_01x01_Female
+#
+DEF Connector_Conn_01x01_Female J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Connector_Conn_01x01_Female" 0 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*
+$ENDFPLIST
+DRAW
+A 0 0 20 901 -901 1 1 6 N 0 20 0 -20
+P 2 1 1 6 -50 0 -20 0 N
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # Connector_Conn_01x04_Male
 #
 DEF Connector_Conn_01x04_Male J 0 40 Y N 1 F N
@@ -27,18 +44,17 @@ X Pin_4 4 200 -200 150 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Connector_Conn_01x20_Female
+# Connector_Conn_01x19_Female
 #
-DEF Connector_Conn_01x20_Female J 0 40 Y N 1 F N
+DEF Connector_Conn_01x19_Female J 0 40 Y N 1 F N
 F0 "J" 0 1000 50 H V C CNN
-F1 "Connector_Conn_01x20_Female" 0 -1100 50 H V C CNN
+F1 "Connector_Conn_01x19_Female" 0 -1000 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
  Connector*:*_1x??_*
 $ENDFPLIST
 DRAW
-A 0 -1000 20 901 -901 1 1 6 N 0 -980 0 -1020
 A 0 -900 20 901 -901 1 1 6 N 0 -880 0 -920
 A 0 -800 20 901 -901 1 1 6 N 0 -780 0 -820
 A 0 -700 20 901 -901 1 1 6 N 0 -680 0 -720
@@ -58,7 +74,6 @@ A 0 600 20 901 -901 1 1 6 N 0 620 0 580
 A 0 700 20 901 -901 1 1 6 N 0 720 0 680
 A 0 800 20 901 -901 1 1 6 N 0 820 0 780
 A 0 900 20 901 -901 1 1 6 N 0 920 0 880
-P 2 1 1 6 -50 -1000 -20 -1000 N
 P 2 1 1 6 -50 -900 -20 -900 N
 P 2 1 1 6 -50 -800 -20 -800 N
 P 2 1 1 6 -50 -700 -20 -700 N
@@ -90,7 +105,6 @@ X Pin_17 17 -200 -700 150 R 50 50 1 1 P
 X Pin_18 18 -200 -800 150 R 50 50 1 1 P
 X Pin_19 19 -200 -900 150 R 50 50 1 1 P
 X Pin_2 2 -200 800 150 R 50 50 1 1 P
-X Pin_20 20 -200 -1000 150 R 50 50 1 1 P
 X Pin_3 3 -200 700 150 R 50 50 1 1 P
 X Pin_4 4 -200 600 150 R 50 50 1 1 P
 X Pin_5 5 -200 500 150 R 50 50 1 1 P
@@ -101,18 +115,17 @@ X Pin_9 9 -200 100 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Connector_Conn_01x22_Female
+# Connector_Conn_01x21_Female
 #
-DEF Connector_Conn_01x22_Female J 0 40 Y N 1 F N
+DEF Connector_Conn_01x21_Female J 0 40 Y N 1 F N
 F0 "J" 0 1100 50 H V C CNN
-F1 "Connector_Conn_01x22_Female" 0 -1200 50 H V C CNN
+F1 "Connector_Conn_01x21_Female" 0 -1100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
  Connector*:*_1x??_*
 $ENDFPLIST
 DRAW
-A 0 -1100 20 901 -901 1 1 6 N 0 -1080 0 -1120
 A 0 -1000 20 901 -901 1 1 6 N 0 -980 0 -1020
 A 0 -900 20 901 -901 1 1 6 N 0 -880 0 -920
 A 0 -800 20 901 -901 1 1 6 N 0 -780 0 -820
@@ -134,7 +147,6 @@ A 0 700 20 901 -901 1 1 6 N 0 720 0 680
 A 0 800 20 901 -901 1 1 6 N 0 820 0 780
 A 0 900 20 901 -901 1 1 6 N 0 920 0 880
 A 0 1000 20 901 -901 1 1 6 N 0 1020 0 980
-P 2 1 1 6 -50 -1100 -20 -1100 N
 P 2 1 1 6 -50 -1000 -20 -1000 N
 P 2 1 1 6 -50 -900 -20 -900 N
 P 2 1 1 6 -50 -800 -20 -800 N
@@ -170,7 +182,6 @@ X Pin_19 19 -200 -800 150 R 50 50 1 1 P
 X Pin_2 2 -200 900 150 R 50 50 1 1 P
 X Pin_20 20 -200 -900 150 R 50 50 1 1 P
 X Pin_21 21 -200 -1000 150 R 50 50 1 1 P
-X Pin_22 22 -200 -1100 150 R 50 50 1 1 P
 X Pin_3 3 -200 800 150 R 50 50 1 1 P
 X Pin_4 4 -200 700 150 R 50 50 1 1 P
 X Pin_5 5 -200 600 150 R 50 50 1 1 P

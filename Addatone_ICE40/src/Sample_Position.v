@@ -24,7 +24,6 @@ module Sample_Position
 	reg [10:0] LUT_Pos;
 	
 	// Initialise Sample Position RAM (IP)
-	//	SamplePos_RAM sample_pos_ram(.Clock(i_Clock), .ClockEn(1'b1), .Reset(i_Reset), .WE(Sample_Pos_WE), .Address(i_Harmonic), .Data(Sample_Position), .Q(Sample_Pos_Read));
 	SamplePos_RAM sp_ram (
 		.clk_i(i_Clock),
 		.rst_i(i_Reset),
@@ -36,8 +35,7 @@ module Sample_Position
 	);
 		  
 	// Initialise Sine LUT
-	//SineLUT sin_lut (.Address(LUT_Pos), .OutClock(i_Clock), .OutClockEn(1'b1), .Reset(i_Reset), .Q(o_Sample_Value));
-		Sine_LUT sin_lut (
+	Sine_LUT sin_lut (
 		.rd_clk_i(i_Clock),
 		.rst_i(i_Reset),
 		.rd_en_i(1'b1),
@@ -48,7 +46,7 @@ module Sample_Position
 
 	reg [15:0] Accumulated_Frequency;
 	reg [15:0] Accumulated_Freq_Offset;
-	reg signed [15:0] Accumulated_Offset;
+	reg signed [17:0] Accumulated_Offset;		// Using a larger signed value reduces noise when frequencies drop very low
 	
 	localparam [2:0] sm_init = 3'd0;
 	localparam [2:0] sm_sample_pos = 3'd1;
@@ -101,11 +99,12 @@ module Sample_Position
 				sm_offset:
 					// Apply frequency offset adjustment, checking that when reducing frequency we are not reducing below zero
 					begin
-						if (i_Harmonic[0])
-							Accumulated_Offset <= Accumulated_Freq_Offset;
-						else if (Accumulated_Freq_Offset < Accumulated_Frequency)
-							Accumulated_Offset <= -Accumulated_Freq_Offset;
-
+						//if (Accumulated_Freq_Offset < Accumulated_Frequency) begin
+							if (i_Harmonic[0])
+								Accumulated_Offset <= Accumulated_Freq_Offset;
+							else //if (Accumulated_Freq_Offset < Accumulated_Frequency)
+								Accumulated_Offset <= -Accumulated_Freq_Offset;
+						//end
 						SM_Sample_Position <= sm_waiting;
 					end
 
@@ -119,7 +118,6 @@ module Sample_Position
 						if (i_Next_Sample) begin
 							Accumulated_Frequency <= Accumulated_Frequency + Accumulated_Offset;
 							Accumulated_Freq_Offset <= Accumulated_Freq_Offset + i_Freq_Offset;
-							//Accumulated_Freq_Offset <= Accumulated_Freq_Offset + 100;
 							o_Sample_Ready <= 1'b0;
 							SM_Sample_Position <= (i_Harmonic == 1'b0) ? sm_init : sm_sample_pos;
 						end
