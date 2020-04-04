@@ -7,11 +7,11 @@ Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V 
 Reading input file 'Addatone_ICE40_impl_1.vm' ...
 Reading constraint file 'D:/Eurorack/Addatone/Addatone_ICE40/impl_1/Addatone_ICE40_impl_1.ldc' ...
 Removing unused logic...
-INFO - Signal adc/Receive_Byte[0]_2 undriven or does not drive anything - clipped
+INFO - Signal genscaler[0].scaler/SM_Scale_Mult[0] undriven or does not drive anything - clipped
+INFO - Signal genadder[1].adder/SM_Adder[1] undriven or does not drive anything - clipped
 INFO - Signal sample_position/Accumulated_Offset[17] undriven or does not drive anything - clipped
 INFO - Signal sample_position/Accumulated_Offset[16] undriven or does not drive anything - clipped
-INFO - Signal genadder[1].adder/SM_Adder[1] undriven or does not drive anything - clipped
-INFO - Signal genscaler[0].scaler/SM_Scale_Mult[0] undriven or does not drive anything - clipped
+INFO - Signal adc/Receive_Byte[0]_2 undriven or does not drive anything - clipped
 INFO - Signal sample_output/dac/r_Data_To_Send[0] undriven or does not drive anything - clipped
 INFO - Signal sample_output/dac/r_Data_To_Send[1] undriven or does not drive anything - clipped
 INFO - Signal sample_output/dac/r_Data_To_Send[4] undriven or does not drive anything - clipped

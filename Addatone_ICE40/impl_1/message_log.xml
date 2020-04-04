@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
+    <Task name="Map">
+        <Message>
+            <ID>71003005</ID>
+            <Severity>16</Severity>
+            <Dynamic>i_ADC_CS</Dynamic>
+            <Dynamic>10</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+    </Task>
+    <Task name="Export">
+        <Message>
+            <ID>1191031</ID>
+            <Severity>1</Severity>
+        </Message>
+    </Task>
     <Task name="Synthesis">
         <Message>
             <ID>35901328</ID>
@@ -1161,22 +1180,22 @@
         <Message>
             <ID>35901330</ID>
             <Severity>16</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(86): </Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(87): </Dynamic>
             <Dynamic>11</Dynamic>
             <Dynamic>16</Dynamic>
             <Dynamic>i_Multiple</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v</Navigation>
-            <Navigation>86</Navigation>
+            <Navigation>87</Navigation>
         </Message>
         <Message>
             <ID>35901330</ID>
             <Severity>16</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(86): </Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(87): </Dynamic>
             <Dynamic>11</Dynamic>
             <Dynamic>16</Dynamic>
             <Dynamic>i_Multiple</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v</Navigation>
-            <Navigation>86</Navigation>
+            <Navigation>87</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
@@ -1232,11 +1251,11 @@
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(146): </Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(147): </Dynamic>
             <Dynamic>16</Dynamic>
             <Dynamic>8</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v</Navigation>
-            <Navigation>146</Navigation>
+            <Navigation>147</Navigation>
         </Message>
         <Message>
             <ID>35001786</ID>
@@ -1868,22 +1887,22 @@
         <Message>
             <ID>35901330</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(86): </Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(87): </Dynamic>
             <Dynamic>11</Dynamic>
             <Dynamic>16</Dynamic>
             <Dynamic>i_Multiple</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/top.v</Navigation>
-            <Navigation>86</Navigation>
+            <Navigation>87</Navigation>
         </Message>
         <Message>
             <ID>35901330</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(86): </Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(87): </Dynamic>
             <Dynamic>11</Dynamic>
             <Dynamic>16</Dynamic>
             <Dynamic>i_Multiple</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/top.v</Navigation>
-            <Navigation>86</Navigation>
+            <Navigation>87</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
@@ -1939,11 +1958,11 @@
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(146): </Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(147): </Dynamic>
             <Dynamic>16</Dynamic>
             <Dynamic>8</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/top.v</Navigation>
-            <Navigation>146</Navigation>
+            <Navigation>147</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
@@ -1982,14 +2001,6 @@
             <Severity>1</Severity>
             <Dynamic>\sample_position/SM_Sample_Position</Dynamic>
             <Dynamic>sequential</Dynamic>
-        </Message>
-        <Message>
-            <ID>35935014</ID>
-            <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(241): </Dynamic>
-            <Dynamic>Sample_Mix</Dynamic>
-            <Navigation>d:/eurorack/addatone/addatone_ice40/src/top.v</Navigation>
-            <Navigation>241</Navigation>
         </Message>
         <Message>
             <ID>35935013</ID>
@@ -2048,7 +2059,12 @@
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>adc/Receive_Byte[0]_2</Dynamic>
+            <Dynamic>genscaler[0].scaler/SM_Scale_Mult[0]</Dynamic>
+        </Message>
+        <Message>
+            <ID>35811146</ID>
+            <Severity>1</Severity>
+            <Dynamic>genadder[1].adder/SM_Adder[1]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
@@ -2063,12 +2079,7 @@
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[1].adder/SM_Adder[1]</Dynamic>
-        </Message>
-        <Message>
-            <ID>35811146</ID>
-            <Severity>1</Severity>
-            <Dynamic>genscaler[0].scaler/SM_Scale_Mult[0]</Dynamic>
+            <Dynamic>adc/Receive_Byte[0]_2</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
@@ -2110,12 +2121,6 @@
             <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
         </Message>
     </Task>
-    <Task name="Export">
-        <Message>
-            <ID>1191031</ID>
-            <Severity>1</Severity>
-        </Message>
-    </Task>
     <Task name="PAR">
         <Message>
             <ID>70009502</ID>
@@ -2151,19 +2156,6 @@
             <ID>70009502</ID>
             <Severity>2</Severity>
             <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-    </Task>
-    <Task name="Map">
-        <Message>
-            <ID>71003005</ID>
-            <Severity>16</Severity>
-            <Dynamic>i_ADC_CS</Dynamic>
-            <Dynamic>10</Dynamic>
         </Message>
         <Message>
             <ID>70009502</ID>

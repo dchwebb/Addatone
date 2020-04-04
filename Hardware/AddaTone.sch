@@ -543,10 +543,8 @@ Text GLabel 3400 3700 2    50   Input ~ 0
 V_OCT_CV
 Text GLabel 1650 3800 0    50   Input ~ 0
 HARM1_CV
-Text GLabel 1650 4200 0    50   Input ~ 0
-DAC1_RING_MOD
-Wire Wire Line
-	1650 4200 1850 4200
+Text GLabel 11450 5250 0    50   Input ~ 0
+MIX_SWITCH
 $Comp
 L Device:R_POT PD1Type?
 U 1 1 5C7E8920
@@ -985,57 +983,6 @@ Wire Wire Line
 	8350 7400 8400 7400
 Wire Wire Line
 	1650 3600 1850 3600
-$Comp
-L Switch:SW_SPDT_MSM SW?
-U 1 1 5C8C13F5
-P 11800 5450
-F 0 "SW?" H 11800 5735 50  0000 C CNN
-F 1 "Octave_Switch" H 11800 5644 50  0000 C CNN
-F 2 "Custom_Footprints:SPDTSubMiniature" H 11800 5450 50  0001 C CNN
-F 3 "" H 11800 5450 50  0001 C CNN
-	1    11800 5450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 5C8C15C8
-P 11300 5450
-F 0 "R?" V 11093 5450 50  0000 C CNN
-F 1 "680R" V 11184 5450 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 11230 5450 50  0001 C CNN
-F 3 "~" H 11300 5450 50  0001 C CNN
-	1    11300 5450
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	11450 5450 11600 5450
-$Comp
-L power:+3.3V #PWR0121
-U 1 1 5C8C94A6
-P 11000 5300
-F 0 "#PWR0121" H 11000 5150 50  0001 C CNN
-F 1 "+3.3V" H 11015 5473 50  0000 C CNN
-F 2 "" H 11000 5300 50  0001 C CNN
-F 3 "" H 11000 5300 50  0001 C CNN
-	1    11000 5300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	11000 5300 11000 5450
-Wire Wire Line
-	11000 5450 11150 5450
-Text GLabel 12200 5550 2    50   Input ~ 0
-OCTAVE_UP
-Text GLabel 12200 5350 2    50   Input ~ 0
-OCTAVE_DN
-Wire Wire Line
-	12000 5350 12200 5350
-Wire Wire Line
-	12000 5550 12200 5550
-Text GLabel 1650 4600 0    50   Input ~ 0
-OCTAVE_UP
-Text GLabel 1650 4800 0    50   Input ~ 0
-OCTAVE_DN
 $Comp
 L Amplifier_Operational:TL072 U?
 U 1 1 5C90A10F
@@ -2030,10 +1977,6 @@ F 3 "~" H 16100 1000 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	16100 1000 16100 1050
-Wire Wire Line
-	1650 4800 1850 4800
-Wire Wire Line
-	1650 4600 1850 4600
 NoConn ~ 3250 5000
 Text GLabel 4100 4300 2    50   Input ~ 0
 Calibration
@@ -3132,4 +3075,36 @@ Wire Wire Line
 Connection ~ 8150 7950
 Wire Wire Line
 	8150 7950 8150 8100
+$Comp
+L Switch:SW_SPST SW?
+U 1 1 5E8B1CBD
+P 11850 5250
+F 0 "SW?" H 11850 5485 50  0000 C CNN
+F 1 "SW_SPST" H 11850 5394 50  0000 C CNN
+F 2 "" H 11850 5250 50  0001 C CNN
+F 3 "~" H 11850 5250 50  0001 C CNN
+	1    11850 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E8B261E
+P 12250 5350
+F 0 "#PWR?" H 12250 5100 50  0001 C CNN
+F 1 "GND" H 12255 5177 50  0000 C CNN
+F 2 "" H 12250 5350 50  0001 C CNN
+F 3 "" H 12250 5350 50  0001 C CNN
+	1    12250 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11450 5250 11650 5250
+Wire Wire Line
+	12050 5250 12250 5250
+Wire Wire Line
+	12250 5250 12250 5350
+Text GLabel 3400 6350 1    50   Input ~ 0
+MIX_SWITCH
+Wire Wire Line
+	3400 6350 3400 6500
 $EndSCHEMATC
