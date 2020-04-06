@@ -13,7 +13,7 @@ module Adder
 		output reg o_Done
 	);
 
-	reg signed [31:0] Working_Total;
+	reg signed [27:0] Working_Total;
 
 	localparam sm_wait = 2'b00;
 	localparam sm_mult = 2'b01;

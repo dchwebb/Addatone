@@ -24,6 +24,9 @@
         <Source name="src/Sample_Output.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
+        <Source name="src/Ring_Mod.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
         <Source name="src/Test_Bench.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
             <Options/>
         </Source>

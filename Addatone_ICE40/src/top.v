@@ -8,6 +8,7 @@ module top
 		input wire i_ADC_Clock,
 		input wire i_ADC_CS,
 		input wire i_Mix,
+		input wire i_Ring_Mod,		
 		output wire o_DAC_MOSI,
 		output wire o_DAC_SCK,
 		output wire o_DAC_CS
@@ -118,6 +119,7 @@ module top
 		.i_Sample_L(r_Adder_Total[0]),
 		.i_Sample_R(r_Adder_Total[1]),
 		.i_Mix(i_Mix),
+		.i_Ring_Mod(i_Ring_Mod),
 		.o_SPI_CS(o_DAC_CS),
 		.o_SPI_Clock(o_DAC_SCK),
 		.o_SPI_Data(o_DAC_MOSI),

@@ -3,7 +3,7 @@
 -t SG48
 -sp "High-Performance_1.2V"
 -frequency 48
--optimization_goal Area
+-optimization_goal Timing
 -bram_utilization 100
 -ramstyle Auto
 -romstyle auto
@@ -47,6 +47,7 @@
 "D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/Scale_Mult.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Output.v"
+"D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/PLL_Primitive_48MHz.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v"
