@@ -24,6 +24,9 @@
         <Source name="src/Sample_Output.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
+        <Source name="src/Ring_Mod.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
         <Source name="src/Test_Bench.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
             <Options/>
         </Source>
@@ -34,9 +37,6 @@
             <Options/>
         </Source>
         <Source name="src/SamplePos_RAM/SamplePos_RAM.ipx" type="IPX_Module" type_short="IPX">
-            <Options/>
-        </Source>
-        <Source name="src/Ring_Mod.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
         <Source name="Addaton_Sim/Addaton_Sim.spf" type="Simulation Project File" type_short="SPF">

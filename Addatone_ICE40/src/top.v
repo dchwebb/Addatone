@@ -8,7 +8,7 @@ module top
 		input wire i_ADC_Clock,
 		input wire i_ADC_CS,
 		input wire i_Mix,
-		input wire i_Ring_Mod,		
+		input wire i_Ring_Mod,
 		output wire o_DAC_MOSI,
 		output wire o_DAC_SCK,
 		output wire o_DAC_CS
@@ -21,7 +21,7 @@ module top
 
 	// Wrapper for PLL primitive generating 48MHz from 12MHz oscillator
 	PLL_Primitive_48MHz pll_48 (.i_Reset(Reset), .i_Clock(i_Clock), .o_PLL_Clock(Main_Clock));
-	
+
 	// Sample position RAM - memory array to store current position in cycle of each harmonic
 	parameter SAMPLERATE = 16'd48000;
 	parameter SAMPLEINTERVAL = 16'd1000;			// Clock frequency / sample rate - eg 48Mhz / 48khz = 1000
@@ -45,7 +45,7 @@ module top
 		.o_Sample_Value(Sample_Value),
 		.o_Freq_Too_High(Freq_Too_High)
 	);
-	
+
 	// Initialise ADC SPI input microcontroller
 	wire [15:0] ADC_Data[6:0];
 	wire ADC_Data_Received;
@@ -96,7 +96,7 @@ module top
 	reg [1:0] Scaler_Start;
 	reg Scaler_Reset;
 	wire [1:0] Scaler_Ready;
-	
+
 	genvar s;
 	for (s = 0; s < 2; s = s + 1) begin:genscaler
 		Scale_Mult #(.DIV_BIT(DIV_BIT)) scaler (
@@ -109,7 +109,8 @@ module top
 			.o_Mult_Ready(Scaler_Ready[s])
 		);
 	end
-	// Instantiate Sample Output module which scales output and sends to DAC
+
+	// Instantiate Sample Output module which scales output and sends to DAC
 	reg DAC_Send;
 	reg signed [31:0] Output_Sample;
 	Sample_Output sample_output (
@@ -122,8 +123,7 @@ module top
 		.i_Ring_Mod(i_Ring_Mod),
 		.o_SPI_CS(o_DAC_CS),
 		.o_SPI_Clock(o_DAC_SCK),
-		.o_SPI_Data(o_DAC_MOSI),
-		.o_Debug(debug)
+		.o_SPI_Data(o_DAC_MOSI)
 	);
 
 
@@ -218,7 +218,7 @@ module top
 
 						Next_Sample <= 1'b0;
 						Adder_Clear <= 1'b1;
-						
+
 						SM_Top <= sm_ready_to_send;
 					end
 
@@ -233,7 +233,7 @@ module top
 						Harmonic <= 8'b0;
 						Next_Sample <= 1'b1;
 						Scaler_Reset <= 1'b1;
-						
+
 						SM_Top <=  sm_init;
 					end
 

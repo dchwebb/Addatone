@@ -116,7 +116,7 @@ module Sample_Position
 						end
 						
 						if (i_Next_Sample) begin
-							Accumulated_Frequency <= Accumulated_Frequency + Accumulated_Offset;
+							Accumulated_Frequency <= Accumulated_Frequency + Accumulated_Offset[15:0];
 							Accumulated_Freq_Offset <= Accumulated_Freq_Offset + i_Freq_Offset;
 							o_Sample_Ready <= 1'b0;
 							SM_Sample_Position <= (i_Harmonic == 1'b0) ? sm_init : sm_sample_pos;

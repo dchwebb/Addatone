@@ -39,15 +39,15 @@ module PLL_Primitive_48MHz (
 		.DYNAMICDELAY1(1'b0),
 		.DYNAMICDELAY0(1'b0),
 		.INTFBOUT(Feedback), 
-		.BYPASS(bypass_i), 
+		.BYPASS(1'b0), 
 		.LATCH(1'b0), 
 		.OUTCORE(o_PLL_Clock), 
 		.OUTGLOBAL(), 
 		.OUTCOREB(), 
 		.OUTGLOBALB(), 
 		.LOCK(), 
-		.SCLK(), 
-		.SDI(), 
+		.SCLK(1'b0), 
+		.SDI(1'b0), 
 		.SDO()
 	);
 

@@ -10,8 +10,7 @@ module Sample_Output
 		input wire i_Ring_Mod,		
 		output wire o_SPI_CS,
 		output wire o_SPI_Clock,
-		output wire o_SPI_Data,
-		output reg o_Debug
+		output wire o_SPI_Data
 	);
 	
 	reg r_Ring_Mod;
@@ -55,11 +54,11 @@ module Sample_Output
 			sm_waiting:
 				begin
 					DAC_Send <= 1'b0;
-					o_Debug <= 1'b0;
+
 					// Divide sample by 4
 					if (i_Start && DAC_Ready) begin
-						r_Sample_L <= i_Sample_L >>> 2;
-						r_Sample_R <= i_Sample_R >>> 2;
+						r_Sample_L <= i_Sample_L[21:0] >>> 2;
+						r_Sample_R <= i_Sample_R[21:0] >>> 2;
 						r_Ring_Mod <= i_Ring_Mod;
 						Ring_Mod_Start <= i_Ring_Mod;
 
@@ -76,7 +75,7 @@ module Sample_Output
 
 			sm_mix2:
 				begin
-					r_Sample_L <= Sample_Mix;
+					r_Sample_L <= Sample_Mix[19:0];
 	
 					SM_Sample_Output <= sm_limit_low;
 				end

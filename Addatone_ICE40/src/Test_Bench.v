@@ -52,6 +52,10 @@ module Test_Bench;
 		end
 	endtask
 
+	reg signed [11:0] mult1 = 11'd1234;
+	reg signed [15:0] mult2 = -16'sd22111;
+	reg signed [27:0] mult_result = 1'b0;
+
 
 	always
 		#41.6666666 clock = !clock;			// 48MHz clock
@@ -60,6 +64,7 @@ module Test_Bench;
 		i_ADC_CS = 1'b1;
 		i_ADC_Clock = 1'b0;
 		i_ADC_Data = 1'b0;
+		mult_result = mult2 * mult1;
 
 		data_packet[0] = {16'h007B};
 		data_packet[1] = {16'h0067};
@@ -70,6 +75,7 @@ module Test_Bench;
 		reset_n = 1'b0;
 		#1000
 		reset_n = 1'b1;
+		mult_result = mult2 * $signed({5'b00000, mult1});
 
 		#50
 		Send_ADC();

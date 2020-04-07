@@ -18,7 +18,7 @@ module DAC_SPI_Out
 	localparam sm_sending = 4'b0010;
 	localparam sm_sent = 4'b0100;
 	localparam sm_cs_pulse = 4'b1000;
-	reg [4:0] SM_DAC_Out = sm_idle;
+	reg [3:0] SM_DAC_Out = sm_idle;
 
 	assign o_SPI_Clock = SM_DAC_Out == sm_idle || SM_DAC_Out == sm_cs_pulse || Current_Bit == 1'b0 ? 1'b1 : ~Clock_Counter;
 

@@ -9,17 +9,15 @@ module Scale_Mult
 		input wire i_Restart,
 		input wire [DIV_BIT - 1:0] i_Scale,
 		input wire [DIV_BIT - 1:0] i_Initial,
-		output reg [DIV_BIT - 1:0] o_Mult,
+		output reg [DIV_BIT - 1:0] o_Mult = 1'b0,
 		output reg o_Mult_Ready = 1'b1
 	);
 
 	reg [DIV_BIT - 1:0] r_Mult_Out;
 
-	reg [1:0] SM_Scale_Mult;
-	localparam sm_ready = 2'd0;
-	localparam sm_comb = 2'd1;
-	localparam sm_done = 2'd2;
-	localparam sm_mute = 2'd3;
+	localparam sm_ready = 1'b0;
+	localparam sm_done = 1'b1;
+	reg SM_Scale_Mult = sm_ready;
 
 	initial begin
 		SM_Scale_Mult <= sm_ready;
@@ -41,10 +39,10 @@ module Scale_Mult
 							o_Mult <= o_Mult - i_Scale;
 						else
 							o_Mult <= 1'b0;
-						
+
 						SM_Scale_Mult <= sm_done;
 					end
-					
+
 				sm_done:
 					begin
 						o_Mult_Ready <= 1'b1;
