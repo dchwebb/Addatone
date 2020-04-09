@@ -14,11 +14,6 @@
             <Dynamic>19</Dynamic>
         </Message>
         <Message>
-            <ID>2469991</ID>
-            <Severity>16</Severity>
-            <Dynamic>Data has been modified. Timing Analysis View need be reloaded.</Dynamic>
-        </Message>
-        <Message>
             <ID>70009502</ID>
             <Severity>2</Severity>
             <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
@@ -73,7 +68,7 @@
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData runs: 786 ms / size : 0 MB</Dynamic>
+            <Dynamic>loadTimingData runs: 775 ms / size : 0 MB</Dynamic>
         </Message>
         <Message>
             <ID>70009502</ID>
@@ -1971,18 +1966,40 @@
             <Dynamic>sequential</Dynamic>
         </Message>
         <Message>
+            <ID>35001774</ID>
+            <Severity>1</Severity>
+            <Dynamic>\sample_output/SM_Sample_Output</Dynamic>
+            <Dynamic>sequential</Dynamic>
+        </Message>
+        <Message>
             <ID>35935013</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(157): </Dynamic>
-            <Dynamic>\sample_output/Output_Data__i18</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(148): </Dynamic>
+            <Dynamic>\sample_output/Output_Data_i0_i23</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
-            <Navigation>157</Navigation>
+            <Navigation>148</Navigation>
+        </Message>
+        <Message>
+            <ID>35935014</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(148): </Dynamic>
+            <Dynamic>\sample_output/Output_Data_i0_i21</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
+            <Navigation>148</Navigation>
         </Message>
         <Message>
             <ID>35935013</ID>
             <Severity>16</Severity>
             <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(83): </Dynamic>
             <Dynamic>\sample_output/dac/r_Data_To_Send_i23_i5</Dynamic>
+            <Navigation>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v</Navigation>
+            <Navigation>83</Navigation>
+        </Message>
+        <Message>
+            <ID>35935014</ID>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(83): </Dynamic>
+            <Dynamic>\sample_output/dac/r_Data_To_Send_i23_i3</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v</Navigation>
             <Navigation>83</Navigation>
         </Message>
@@ -2077,52 +2094,52 @@
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>sample_position/Accumulated_Offset[17]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][31]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>sample_position/Accumulated_Offset[16]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][30]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][31]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][29]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][30]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][28]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][29]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][27]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][28]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][26]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][27]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][25]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][26]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][24]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][25]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][23]</Dynamic>
         </Message>
         <Message>
             <ID>35811146</ID>
             <Severity>1</Severity>
-            <Dynamic>genadder[0].adder/Adder_Total[0][24]</Dynamic>
+            <Dynamic>genadder[1].adder/Adder_Total[1][21]_2</Dynamic>
         </Message>
         <Message>
             <ID>35811149</ID>

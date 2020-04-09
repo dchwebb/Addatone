@@ -29,17 +29,16 @@ module Sample_Output
 	DAC_SPI_Out dac(.i_Clock(i_Clock), .i_Reset(i_Reset), .i_Data(Output_Data), .i_Send(DAC_Send), .o_SPI_CS(o_SPI_CS), .o_SPI_Clock(o_SPI_Clock), .o_SPI_Data(o_SPI_Data), .o_Ready(DAC_Ready));
 
 	localparam sm_waiting = 4'd0;
-	localparam sm_send_L = 4'd1;
-	localparam sm_delay_L = 4'd2;
-	localparam sm_send_R = 4'd3;
-	localparam sm_delay_R = 4'd4;	
-	localparam sm_limit_low = 4'd5;
-	localparam sm_prepare = 4'd6;
-	localparam sm_mix1 = 4'd7;
-	localparam sm_mix2 = 4'd8;
-	localparam sm_offset = 4'd9;	
-	localparam sm_limit_high = 4'd10;
-	reg [4:0] SM_Sample_Output = sm_waiting;
+	localparam sm_mix1 = 4'd1;
+	localparam sm_mix2 = 4'd2;
+	localparam sm_limit_low = 4'd3;
+	localparam sm_limit_high = 4'd4;
+	localparam sm_offset = 4'd5;
+	localparam sm_send_L = 4'd6;
+	localparam sm_delay_L = 4'd7;
+	localparam sm_send_R = 4'd8;
+	localparam sm_delay_R = 4'd9;	
+	reg [3:0] SM_Sample_Output = sm_waiting;
 	
 	always @(posedge i_Clock) begin
 		if (i_Reset) begin
@@ -80,20 +79,12 @@ module Sample_Output
 					SM_Sample_Output <= sm_limit_low;
 				end
 
-
-
 			sm_limit_low:
 				begin
 					Ring_Mod_Start <= 1'b0;
 					// if sample is still negative after applying offset set to zero - otherwise divide by 4
 					r_Sample_L <= r_Sample_L < -SAMPLE_OFFSET ? -SAMPLE_OFFSET : r_Sample_L;
 					r_Sample_R <= r_Sample_R < -SAMPLE_OFFSET ? -SAMPLE_OFFSET : r_Sample_R;
-					//if (r_Sample_L < -SAMPLE_OFFSET) begin
-						//r_Sample_L <= -SAMPLE_OFFSET;
-					//end
-					//if (r_Sample_R < -SAMPLE_OFFSET) begin
-						//r_Sample_R <= -SAMPLE_OFFSET;
-					//end
 
 					SM_Sample_Output <= sm_limit_high;
 				end
