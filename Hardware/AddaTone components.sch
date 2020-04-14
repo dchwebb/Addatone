@@ -154,7 +154,7 @@ U 1 1 5C168D8F
 P 700 1350
 F 0 "C1" H 815 1396 50  0000 L CNN
 F 1 "100nF" H 815 1305 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 738 1200 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 738 1200 50  0001 C CNN
 F 3 "~" H 700 1350 50  0001 C CNN
 	1    700  1350
 	1    0    0    -1  
@@ -176,7 +176,7 @@ U 1 1 5C16995E
 P 1150 1350
 F 0 "C4" H 1265 1396 50  0000 L CNN
 F 1 "100nF" H 1265 1305 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 1188 1200 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 1188 1200 50  0001 C CNN
 F 3 "~" H 1150 1350 50  0001 C CNN
 	1    1150 1350
 	1    0    0    -1  
@@ -528,9 +528,7 @@ Text GLabel 8350 3600 0    50   Input ~ 0
 AREF_-5
 Wire Wire Line
 	8350 3600 8400 3600
-Text GLabel 3400 2400 2    50   Input ~ 0
-DAC1_OUT
-Text GLabel 3400 3700 2    50   Input ~ 0
+Text GLabel 3400 2600 2    50   Input ~ 0
 V_OCT_CV
 Text GLabel 1650 3900 0    50   Input ~ 0
 HARM1_CV
@@ -565,8 +563,6 @@ Wire Wire Line
 Connection ~ 14800 3500
 Wire Wire Line
 	14800 3500 14900 3500
-Text GLabel 3400 2100 2    50   Input ~ 0
-HARM1_CV
 Text GLabel 10750 3950 0    50   Input ~ 0
 DAC2_OUT
 Text GLabel 3400 2200 2    50   Input ~ 0
@@ -987,7 +983,7 @@ Text GLabel 3400 3800 2    50   Input ~ 0
 CTUNE
 Wire Wire Line
 	1650 4100 1850 4100
-Text GLabel 3400 2700 2    50   Input ~ 0
+Text GLabel 3400 3700 2    50   Input ~ 0
 HARM1_POT
 Wire Wire Line
 	8350 2250 8400 2250
@@ -1285,7 +1281,6 @@ Output Amplifiers
 NoConn ~ 1850 3400
 NoConn ~ 1850 3700
 NoConn ~ 1850 4200
-NoConn ~ 1850 4300
 NoConn ~ 1850 4400
 NoConn ~ 1850 4700
 NoConn ~ 1850 4900
@@ -1302,8 +1297,6 @@ NoConn ~ 3250 2800
 NoConn ~ 3250 2000
 Wire Wire Line
 	10800 3950 10750 3950
-Text GLabel 3400 2500 2    50   Input ~ 0
-DAC2_OUT
 $Comp
 L power:+12V #PWR088
 U 1 1 5D477E58
@@ -1436,10 +1429,6 @@ Wire Wire Line
 Wire Wire Line
 	3250 3300 3400 3300
 Wire Wire Line
-	3250 2100 3400 2100
-Wire Wire Line
-	3250 2400 3400 2400
-Wire Wire Line
 	3250 3800 3400 3800
 Wire Wire Line
 	3250 3700 3400 3700
@@ -1450,9 +1439,7 @@ Wire Wire Line
 Wire Wire Line
 	3250 2700 3400 2700
 Wire Wire Line
-	3250 4500 3400 4500
-Wire Wire Line
-	3250 2500 3400 2500
+	1650 4300 1850 4300
 Wire Wire Line
 	3250 4200 3400 4200
 Wire Wire Line
@@ -1583,7 +1570,7 @@ U 1 1 5EC71DEE
 P 700 7550
 F 0 "C7" H 550 7650 50  0000 L CNN
 F 1 "10nF" H 500 7450 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 738 7400 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 738 7400 50  0001 C CNN
 F 3 "~" H 700 7550 50  0001 C CNN
 	1    700  7550
 	1    0    0    -1  
@@ -1748,7 +1735,7 @@ U 1 1 5F03E2EE
 P 7050 7650
 F 0 "C15" H 7165 7696 50  0000 L CNN
 F 1 "100nF" H 7165 7605 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 7088 7500 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 7088 7500 50  0001 C CNN
 F 3 "~" H 7050 7650 50  0001 C CNN
 	1    7050 7650
 	1    0    0    -1  
@@ -1953,17 +1940,6 @@ F 3 "" H 4750 7700 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L ICE40UP5K:ICE40UP5K-SG48ITR-Merged U2
-U 1 1 5E8A9F02
-P 2750 7450
-F 0 "U2" H 3750 8300 50  0000 L CNN
-F 1 "ICE40UP5K-SG48ITR" H 2350 7450 50  0000 L CNN
-F 2 "Housings_DFN_QFN:QFN-48-1EP_7x7mm_Pitch0.5mm" H 2750 5500 50  0001 C CNN
-F 3 "http://www.latticesemi.com/Products/FPGAandCPLD/iCE40Ultra" H 2200 8250 50  0001 C CNN
-	1    2750 7450
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+3.3V #PWR018
 U 1 1 5EFA8BDD
 P 3800 8550
@@ -2033,7 +2009,7 @@ Text GLabel 3400 5100 2    50   Input ~ 0
 FPGA_SI
 Text GLabel 3400 2900 2    50   Input ~ 0
 FPGA_DONE
-Text GLabel 3400 4500 2    50   Input ~ 0
+Text GLabel 1650 4300 0    50   Input ~ 0
 FPGA_RESET
 Text GLabel 3400 4200 2    50   Input ~ 0
 ADC_Data
@@ -2057,39 +2033,16 @@ Text GLabel 1650 4500 0    50   Input ~ 0
 MCO2_CLOCK_OUT
 Wire Wire Line
 	1650 4500 1850 4500
-Text GLabel 3900 7100 2    50   Input ~ 0
+Text GLabel 2900 8750 3    50   Input ~ 0
 MCO2_CLOCK_OUT
-Wire Wire Line
-	3750 7100 3900 7100
-Text GLabel 2500 6300 1    50   Input ~ 0
+Text GLabel 3300 6300 1    50   Input ~ 0
 MIX_SWITCH
 Wire Wire Line
-	2500 6300 2500 6450
-Text GLabel 2800 8750 3    50   Input ~ 0
+	3300 6300 3300 6450
+Text GLabel 3900 8100 2    50   Input ~ 0
 RING_MOD
 Wire Wire Line
-	2800 8750 2800 8600
-Text GLabel 1650 4000 0    50   Input ~ 0
-RING_MOD
-Wire Wire Line
-	1650 4000 1850 4000
-Connection ~ 2650 5300
-Connection ~ 2450 5300
-Wire Wire Line
-	2450 5300 2350 5300
-Wire Wire Line
-	2550 5300 2450 5300
-Wire Wire Line
-	2650 5300 2750 5300
-Wire Wire Line
-	2550 5300 2650 5300
-Connection ~ 2650 1800
-Wire Wire Line
-	2550 1800 2650 1800
-Wire Wire Line
-	2650 1800 2750 1800
-Wire Wire Line
-	2550 1800 2550 1100
+	3900 8100 3750 8100
 $Comp
 L MCU_ST_STM32F4:STM32F446RETx U1
 U 1 1 5E841B6E
@@ -2121,14 +2074,12 @@ F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/da
 $EndComp
 NoConn ~ 3200 8600
 NoConn ~ 3000 8600
-NoConn ~ 2900 8600
 NoConn ~ 2700 8600
-NoConn ~ 2300 8600
+NoConn ~ 2800 8600
 NoConn ~ 2200 8600
 NoConn ~ 1750 8100
 NoConn ~ 1750 8000
 NoConn ~ 1750 7100
-NoConn ~ 3750 8100
 NoConn ~ 3750 8000
 NoConn ~ 3750 7900
 NoConn ~ 3750 7800
@@ -2145,7 +2096,7 @@ NoConn ~ 2900 6450
 NoConn ~ 3000 6450
 NoConn ~ 3100 6450
 NoConn ~ 3200 6450
-NoConn ~ 3300 6450
+NoConn ~ 2500 6450
 $Comp
 L Regulator_Linear:LM1117-3.3 U7
 U 1 1 5F0DD956
@@ -2206,7 +2157,7 @@ Wire Wire Line
 	14800 5000 15200 5000
 Wire Wire Line
 	15700 4600 15850 4600
-Text GLabel 3400 2600 2    50   Input ~ 0
+Text GLabel 3400 2700 2    50   Input ~ 0
 FREQ_SCALE
 Wire Wire Line
 	3250 2600 3400 2600
@@ -2250,7 +2201,7 @@ U 1 1 5FA45FDA
 P 950 7550
 F 0 "C9" H 850 7450 50  0000 L CNN
 F 1 "100nF" H 800 7350 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 988 7400 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 988 7400 50  0001 C CNN
 F 3 "~" H 950 7550 50  0001 C CNN
 	1    950  7550
 	1    0    0    -1  
@@ -2425,7 +2376,7 @@ U 1 1 5EC1842D
 P 12550 6500
 F 0 "C35" V 12350 6650 50  0000 C CNN
 F 1 "100nF" V 12450 6650 50  0000 C CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 12588 6350 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 12588 6350 50  0001 C CNN
 F 3 "~" H 12550 6500 50  0001 C CNN
 	1    12550 6500
 	0    1    1    0   
@@ -2724,64 +2675,20 @@ Connection ~ 11550 3550
 Connection ~ 11150 3950
 Wire Wire Line
 	11150 3950 11200 3950
-$Comp
-L power:+3.3VA #PWR0101
-U 1 1 5F602D1B
-P 6250 2700
-F 0 "#PWR0101" H 6250 2550 50  0001 C CNN
-F 1 "+3.3VA" V 6250 2950 50  0000 C CNN
-F 2 "" H 6250 2700 50  0001 C CNN
-F 3 "" H 6250 2700 50  0001 C CNN
-	1    6250 2700
-	0    -1   1    0   
-$EndComp
-$Comp
-L power:+1V2 #PWR0102
-U 1 1 5F6030A2
-P 6300 4000
-F 0 "#PWR0102" H 6300 3850 50  0001 C CNN
-F 1 "+1V2" V 6300 4100 50  0000 L CNN
-F 2 "" H 6300 4000 50  0001 C CNN
-F 3 "" H 6300 4000 50  0001 C CNN
-	1    6300 4000
-	0    -1   1    0   
-$EndComp
-Text GLabel 6300 3900 0    50   Input ~ 0
+Text GLabel 6300 3500 0    50   Input ~ 0
 CV_IN
-Text GLabel 6300 4400 0    50   Input ~ 0
-FREQ_SC_POT
-Text GLabel 6300 4200 0    50   Input ~ 0
-CTUNE
-Text GLabel 6300 4600 0    50   Input ~ 0
-HARM2_POT
-Text GLabel 6300 4300 0    50   Input ~ 0
-HARM_COUNT
 Text GLabel 6300 4100 0    50   Input ~ 0
-FTUNE
+FREQ_SC_POT
+Text GLabel 6250 1500 0    50   Input ~ 0
+CTUNE
 Text GLabel 6300 4500 0    50   Input ~ 0
+HARM2_POT
+Text GLabel 6250 1100 0    50   Input ~ 0
+HARM_COUNT
+Text GLabel 6250 1300 0    50   Input ~ 0
+FTUNE
+Text GLabel 6250 1400 0    50   Input ~ 0
 HARM1_POT
-$Comp
-L power:+3.3V #PWR0103
-U 1 1 5F657FD2
-P 6250 2600
-F 0 "#PWR0103" H 6250 2450 50  0001 C CNN
-F 1 "+3.3V" V 6250 2850 50  0000 C CNN
-F 2 "" H 6250 2600 50  0001 C CNN
-F 3 "" H 6250 2600 50  0001 C CNN
-	1    6250 2600
-	0    -1   1    0   
-$EndComp
-$Comp
-L power:GND #PWR0104
-U 1 1 5F6584EC
-P 6250 2500
-F 0 "#PWR0104" H 6250 2250 50  0001 C CNN
-F 1 "GND" V 6255 2372 50  0000 R CNN
-F 2 "" H 6250 2500 50  0001 C CNN
-F 3 "" H 6250 2500 50  0001 C CNN
-	1    6250 2500
-	0    1    -1   0   
-$EndComp
 Text GLabel 8350 2250 0    50   Input ~ 0
 PITCH_CVIN
 Text GLabel 8350 4050 0    50   Input ~ 0
@@ -2790,11 +2697,11 @@ Text GLabel 8350 5950 0    50   Input ~ 0
 HARM2_CVIN
 Text GLabel 8350 7850 0    50   Input ~ 0
 FREQ_SCALE_CVIN
-Text GLabel 6300 3700 0    50   Input ~ 0
+Text GLabel 6300 4000 0    50   Input ~ 0
 PITCH_CVIN
-Text GLabel 6300 3800 0    50   Input ~ 0
+Text GLabel 6300 3900 0    50   Input ~ 0
 HARM1_CVIN
-Text GLabel 6250 2400 0    50   Input ~ 0
+Text GLabel 6250 800  0    50   Input ~ 0
 HARM2_CVIN
 Wire Wire Line
 	8350 4050 8400 4050
@@ -2802,41 +2709,39 @@ Text GLabel 12600 2300 2    50   Input ~ 0
 AUDIO1_OUT
 Text GLabel 12650 4050 2    50   Input ~ 0
 AUDIO2_OUT
-Text GLabel 6300 5000 0    50   Input ~ 0
+Text GLabel 6300 5400 0    50   Input ~ 0
 AUDIO1_OUT
-Text GLabel 6300 5100 0    50   Input ~ 0
+Text GLabel 6300 5300 0    50   Input ~ 0
 AUDIO2_OUT
-Text GLabel 6300 4900 0    50   Input ~ 0
+Text GLabel 6250 2700 0    50   Input ~ 0
 MIX_SWITCH
-Text GLabel 6250 2200 0    50   Input ~ 0
+Text GLabel 6300 4400 0    50   Input ~ 0
 RESET
-Text GLabel 6300 4700 0    50   Input ~ 0
-Calibration
-Text GLabel 6300 4800 0    50   Input ~ 0
+Text GLabel 6250 2200 0    50   Input ~ 0
 RING_MOD
-Text GLabel 6250 1300 0    50   Input ~ 0
+Text GLabel 6250 1700 0    50   Input ~ 0
 FPGA_DONE
-Text GLabel 6250 1400 0    50   Input ~ 0
-FPGA_RESET
 Text GLabel 6250 1800 0    50   Input ~ 0
+FPGA_RESET
+Text GLabel 6300 4600 0    50   Input ~ 0
 ADC_Data
-Text GLabel 6250 1900 0    50   Input ~ 0
+Text GLabel 6300 4700 0    50   Input ~ 0
 ADC_Clock
-Text GLabel 6250 2000 0    50   Input ~ 0
+Text GLabel 6300 4800 0    50   Input ~ 0
 ADC_CS
-Text GLabel 6250 1600 0    50   Input ~ 0
+Text GLabel 6300 5000 0    50   Input ~ 0
 DAC_BCLK
-Text GLabel 6250 1500 0    50   Input ~ 0
+Text GLabel 6300 5100 0    50   Input ~ 0
 DAC_DATA
-Text GLabel 6250 1100 0    50   Input ~ 0
+Text GLabel 6250 1900 0    50   Input ~ 0
 FPGA_SS
-Text GLabel 6250 1000 0    50   Input ~ 0
+Text GLabel 6250 2000 0    50   Input ~ 0
 FPGA_SCK
-Text GLabel 6250 1200 0    50   Input ~ 0
+Text GLabel 6250 1600 0    50   Input ~ 0
 FPGA_SI
 Text GLabel 6250 2100 0    50   Input ~ 0
 MCO2_CLOCK_OUT
-Text GLabel 6250 1700 0    50   Input ~ 0
+Text GLabel 6300 5200 0    50   Input ~ 0
 DAC_LRCLK
 $Comp
 L Connector:Conn_01x20_Female J2
@@ -2859,83 +2764,6 @@ F 2 "Socket_Strips:Socket_Strip_Straight_1x20_Pitch2.54mm" H 6600 4400 50  0001 
 F 3 "~" H 6600 4400 50  0001 C CNN
 	1    6600 4400
 	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR0105
-U 1 1 5FE069D8
-P 6250 800
-F 0 "#PWR0105" H 6250 650 50  0001 C CNN
-F 1 "+3.3V" V 6250 1050 50  0000 C CNN
-F 2 "" H 6250 800 50  0001 C CNN
-F 3 "" H 6250 800 50  0001 C CNN
-	1    6250 800 
-	0    -1   1    0   
-$EndComp
-$Comp
-L power:GND #PWR0106
-U 1 1 5FE06DE1
-P 6250 900
-F 0 "#PWR0106" H 6250 650 50  0001 C CNN
-F 1 "GND" V 6255 772 50  0000 R CNN
-F 2 "" H 6250 900 50  0001 C CNN
-F 3 "" H 6250 900 50  0001 C CNN
-	1    6250 900 
-	0    1    -1   0   
-$EndComp
-$Comp
-L power:+3.3V #PWR0107
-U 1 1 5FE4D8A6
-P 6300 3500
-F 0 "#PWR0107" H 6300 3350 50  0001 C CNN
-F 1 "+3.3V" V 6300 3750 50  0000 C CNN
-F 2 "" H 6300 3500 50  0001 C CNN
-F 3 "" H 6300 3500 50  0001 C CNN
-	1    6300 3500
-	0    -1   1    0   
-$EndComp
-$Comp
-L power:GND #PWR0108
-U 1 1 5FE4D8AC
-P 6300 3600
-F 0 "#PWR0108" H 6300 3350 50  0001 C CNN
-F 1 "GND" V 6305 3472 50  0000 R CNN
-F 2 "" H 6300 3600 50  0001 C CNN
-F 3 "" H 6300 3600 50  0001 C CNN
-	1    6300 3600
-	0    1    -1   0   
-$EndComp
-$Comp
-L power:+3.3V #PWR0109
-U 1 1 5FE70EBB
-P 6300 5200
-F 0 "#PWR0109" H 6300 5050 50  0001 C CNN
-F 1 "+3.3V" V 6300 5450 50  0000 C CNN
-F 2 "" H 6300 5200 50  0001 C CNN
-F 3 "" H 6300 5200 50  0001 C CNN
-	1    6300 5200
-	0    -1   1    0   
-$EndComp
-$Comp
-L power:GND #PWR0110
-U 1 1 5FE70EC1
-P 6300 5300
-F 0 "#PWR0110" H 6300 5050 50  0001 C CNN
-F 1 "GND" V 6305 5172 50  0000 R CNN
-F 2 "" H 6300 5300 50  0001 C CNN
-F 3 "" H 6300 5300 50  0001 C CNN
-	1    6300 5300
-	0    1    -1   0   
-$EndComp
-$Comp
-L power:+3.3V #PWR0111
-U 1 1 5FE92D30
-P 6300 5400
-F 0 "#PWR0111" H 6300 5250 50  0001 C CNN
-F 1 "+3.3V" V 6300 5650 50  0000 C CNN
-F 2 "" H 6300 5400 50  0001 C CNN
-F 3 "" H 6300 5400 50  0001 C CNN
-	1    6300 5400
-	0    -1   1    0   
 $EndComp
 Wire Wire Line
 	6250 800  6350 800 
@@ -2977,10 +2805,6 @@ Wire Wire Line
 	6250 2600 6350 2600
 Wire Wire Line
 	6250 2700 6350 2700
-Wire Wire Line
-	6300 3500 6400 3500
-Wire Wire Line
-	6300 3600 6400 3600
 Wire Wire Line
 	6300 3700 6400 3700
 Wire Wire Line
@@ -3028,6 +2852,109 @@ Wire Wire Line
 	15200 5000 15200 5100
 Wire Wire Line
 	15200 5000 15700 5000
-Text GLabel 6250 2300 0    50   Input ~ 0
+Text GLabel 6250 900  0    50   Input ~ 0
 FREQ_SCALE_CVIN
+NoConn ~ 3250 2100
+NoConn ~ 3250 4500
+NoConn ~ 1850 4000
+NoConn ~ 3250 2400
+NoConn ~ 3250 2500
+Wire Wire Line
+	2650 1800 2750 1800
+Wire Wire Line
+	2450 5300 2550 5300
+Wire Wire Line
+	2650 5300 2750 5300
+Wire Wire Line
+	2550 1100 2550 1800
+Wire Wire Line
+	2550 1800 2650 1800
+Connection ~ 2650 1800
+Wire Wire Line
+	6300 3500 6400 3500
+$Comp
+L ICE40UP5K:ICE40UP5K-SG48ITR-Merged U2
+U 1 1 5E8A9F02
+P 2750 7450
+F 0 "U2" H 3750 8300 50  0000 L CNN
+F 1 "ICE40UP5K-SG48ITR" H 2350 7450 50  0000 L CNN
+F 2 "Housings_DFN_QFN:QFN-48-1EP_7x7mm_Pitch0.5mm" H 2750 5500 50  0001 C CNN
+F 3 "http://www.latticesemi.com/Products/FPGAandCPLD/iCE40Ultra" H 2200 8250 50  0001 C CNN
+	1    2750 7450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 8600 2900 8750
+NoConn ~ 3750 7100
+Wire Wire Line
+	2550 5300 2650 5300
+Connection ~ 2650 5300
+Wire Wire Line
+	2350 5300 2450 5300
+Connection ~ 2450 5300
+Text GLabel 6300 4900 0    50   Input ~ 0
+Calibration
+$Comp
+L power:+3.3V #PWR0101
+U 1 1 5F200B39
+P 6300 4300
+F 0 "#PWR0101" H 6300 4150 50  0001 C CNN
+F 1 "+3.3V" V 6300 4550 50  0000 C CNN
+F 2 "" H 6300 4300 50  0001 C CNN
+F 3 "" H 6300 4300 50  0001 C CNN
+	1    6300 4300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3.3VA #PWR0102
+U 1 1 5F2050BB
+P 6250 1000
+F 0 "#PWR0102" H 6250 850 50  0001 C CNN
+F 1 "+3.3VA" V 6250 1150 50  0000 L CNN
+F 2 "" H 6250 1000 50  0001 C CNN
+F 3 "" H 6250 1000 50  0001 C CNN
+	1    6250 1000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3.3VA #PWR0103
+U 1 1 5F210359
+P 6300 3600
+F 0 "#PWR0103" H 6300 3450 50  0001 C CNN
+F 1 "+3.3VA" V 6300 3750 50  0000 L CNN
+F 2 "" H 6300 3600 50  0001 C CNN
+F 3 "" H 6300 3600 50  0001 C CNN
+	1    6300 3600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6300 3600 6400 3600
+$Comp
+L power:GND #PWR0104
+U 1 1 5F23E21A
+P 6300 3700
+F 0 "#PWR0104" H 6300 3450 50  0001 C CNN
+F 1 "GND" V 6300 3500 50  0000 C CNN
+F 2 "" H 6300 3700 50  0001 C CNN
+F 3 "" H 6300 3700 50  0001 C CNN
+	1    6300 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5F23EF62
+P 6250 1200
+F 0 "#PWR0105" H 6250 950 50  0001 C CNN
+F 1 "GND" V 6250 1000 50  0000 C CNN
+F 2 "" H 6250 1200 50  0001 C CNN
+F 3 "" H 6250 1200 50  0001 C CNN
+	1    6250 1200
+	0    1    1    0   
+$EndComp
+Text GLabel 2300 8750 3    50   Input ~ 0
+FPGA_SO
+Wire Wire Line
+	2300 8750 2300 8600
+Text GLabel 6250 2300 0    50   Input ~ 0
+FPGA_SO
 $EndSCHEMATC
