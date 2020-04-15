@@ -1,5 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
+    <Task name="PAR">
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>loadTimingData - createTaInstance - upMgr runs: 354 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>loadTimingData - createTaInstance - timerIf runs: 354 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>loadTimingData - createTaInstance - InitializeTimer runs: 354 ms/ size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>loadTimingData - createTaInstance runs: 359 ms  / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>loadTimingData - load data runs: 415 ms  / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>loadTimingData runs: 775 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+    </Task>
+    <Task name="Map">
+        <Message>
+            <ID>71003005</ID>
+            <Severity>16</Severity>
+            <Dynamic>i_ADC_CS</Dynamic>
+            <Dynamic>10</Dynamic>
+        </Message>
+        <Message>
+            <ID>71003005</ID>
+            <Severity>16</Severity>
+            <Dynamic>i_Ring_Mod</Dynamic>
+            <Dynamic>19</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+    </Task>
+    <Task name="Export">
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>1191031</ID>
+            <Severity>1</Severity>
+        </Message>
+    </Task>
     <Task name="Synthesis">
         <Message>
             <ID>35901328</ID>
@@ -2017,133 +2144,6 @@
         <Message>
             <ID>35811149</ID>
             <Severity>1</Severity>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-    </Task>
-    <Task name="Map">
-        <Message>
-            <ID>71003005</ID>
-            <Severity>16</Severity>
-            <Dynamic>i_ADC_CS</Dynamic>
-            <Dynamic>10</Dynamic>
-        </Message>
-        <Message>
-            <ID>71003005</ID>
-            <Severity>16</Severity>
-            <Dynamic>i_Ring_Mod</Dynamic>
-            <Dynamic>19</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-    </Task>
-    <Task name="Export">
-        <Message>
-            <ID>2469992</ID>
-            <Severity>1</Severity>
-            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
-        </Message>
-        <Message>
-            <ID>2469992</ID>
-            <Severity>1</Severity>
-            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>1191031</ID>
-            <Severity>1</Severity>
-        </Message>
-    </Task>
-    <Task name="PAR">
-        <Message>
-            <ID>2469992</ID>
-            <Severity>1</Severity>
-            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
-        </Message>
-        <Message>
-            <ID>2469992</ID>
-            <Severity>1</Severity>
-            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>2469992</ID>
-            <Severity>1</Severity>
-            <Dynamic>loadTimingData - createTaInstance - upMgr runs: 354 ms / size : 0 MB</Dynamic>
-        </Message>
-        <Message>
-            <ID>2469992</ID>
-            <Severity>1</Severity>
-            <Dynamic>loadTimingData - createTaInstance - timerIf runs: 354 ms / size : 0 MB</Dynamic>
-        </Message>
-        <Message>
-            <ID>2469992</ID>
-            <Severity>1</Severity>
-            <Dynamic>loadTimingData - createTaInstance - InitializeTimer runs: 354 ms/ size : 0 MB</Dynamic>
-        </Message>
-        <Message>
-            <ID>2469992</ID>
-            <Severity>1</Severity>
-            <Dynamic>loadTimingData - createTaInstance runs: 359 ms  / size : 0 MB</Dynamic>
-        </Message>
-        <Message>
-            <ID>2469992</ID>
-            <Severity>1</Severity>
-            <Dynamic>loadTimingData - load data runs: 415 ms  / size : 0 MB</Dynamic>
-        </Message>
-        <Message>
-            <ID>2469992</ID>
-            <Severity>1</Severity>
-            <Dynamic>loadTimingData runs: 775 ms / size : 0 MB</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
         </Message>
         <Message>
             <ID>70009502</ID>

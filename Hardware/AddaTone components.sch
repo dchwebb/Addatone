@@ -340,7 +340,7 @@ F 3 "~" H 9100 1400 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text GLabel 9750 2350 2    50   Input ~ 0
-V_OCT_CV
+PITCH_CV
 Wire Wire Line
 	9750 2350 9400 2350
 Connection ~ 9400 2350
@@ -529,7 +529,7 @@ AREF_-5
 Wire Wire Line
 	8350 3600 8400 3600
 Text GLabel 3400 2600 2    50   Input ~ 0
-V_OCT_CV
+PITCH_CV
 Text GLabel 1650 3900 0    50   Input ~ 0
 HARM1_CV
 $Comp
@@ -566,7 +566,7 @@ Wire Wire Line
 Text GLabel 10750 3950 0    50   Input ~ 0
 DAC2_OUT
 Text GLabel 3400 2200 2    50   Input ~ 0
-HARM_COUNT
+HARM_COUNT_POT
 $Comp
 L Amplifier_Operational:MCP6004 U3
 U 3 1 5C83D6BA
@@ -652,7 +652,7 @@ F 3 "~" H 9100 5100 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text GLabel 9750 7950 2    50   Input ~ 0
-FREQ_SCALE
+FREQ_SCALE_CV
 Wire Wire Line
 	9750 6050 9400 6050
 Connection ~ 9400 6050
@@ -2158,7 +2158,7 @@ Wire Wire Line
 Wire Wire Line
 	15700 4600 15850 4600
 Text GLabel 3400 2700 2    50   Input ~ 0
-FREQ_SCALE
+FREQ_SCALE_CV
 Wire Wire Line
 	3250 2600 3400 2600
 Wire Wire Line
@@ -2684,7 +2684,7 @@ CTUNE
 Text GLabel 6300 4500 0    50   Input ~ 0
 HARM2_POT
 Text GLabel 6250 1100 0    50   Input ~ 0
-HARM_COUNT
+HARM_COUNT_POT
 Text GLabel 6250 1300 0    50   Input ~ 0
 FTUNE
 Text GLabel 6250 1400 0    50   Input ~ 0

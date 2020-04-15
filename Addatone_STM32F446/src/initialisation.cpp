@@ -42,6 +42,16 @@ void SystemClock_Config(void) {
 	while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS ) != RCC_CFGR_SWS_PLL);
 
 }
+
+void InitMCO2() {
+	// Initialise oscillator output on MCO2 pin PC9
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
+	GPIOC->MODER |= GPIO_MODER_MODER9_1;			// Set PC9 to Alternate function mode (0b10); Uses alternate function AF0 so set by default
+
+	RCC->CFGR |= RCC_CFGR_MCO2_1; 					// 00: System clock; 01: PLLI2S clock; 10: HSE; 11: PLL clock
+}
+
+
 void InitADC(void)
 {
 	//	Setup Timer 2 to trigger ADC
@@ -60,43 +70,75 @@ void InitADC(void)
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
 	RCC->APB2ENR |= RCC_APB2ENR_ADC2EN;
 
-	// Enable ADC - PB0: IN8; PB1: IN9; PA1: IN1; PA2: IN2; PA3: IN3; PC0: IN10, PC2: IN12, PC4: IN14; PA7: IN7, PC1: IN11
-	GPIOB->MODER |= GPIO_MODER_MODER0;				// Set PB0 to Analog mode (0b11)
-	GPIOB->MODER |= GPIO_MODER_MODER1;				// Set PB1 to Analog mode (0b11)
-	GPIOA->MODER |= GPIO_MODER_MODER1;				// Set PA1 to Analog mode (0b11)
+	// Enable ADC
+	GPIOA->MODER |= GPIO_MODER_MODER6;				// Set PA6 to Analog mode (0b11)
+	GPIOC->MODER |= GPIO_MODER_MODER3;				// Set PC3 to Analog mode (0b11)
+	GPIOA->MODER |= GPIO_MODER_MODER3;				// Set PA3 to Analog mode (0b11)
+	GPIOA->MODER |= GPIO_MODER_MODER7;				// Set PA7 to Analog mode (0b11)
 	GPIOA->MODER |= GPIO_MODER_MODER2;				// Set PA2 to Analog mode (0b11)
-//	GPIOA->MODER |= GPIO_MODER_MODER3;				// Set PA3 to Analog mode (0b11)
-//	GPIOC->MODER |= GPIO_MODER_MODER0;				// Set PC0 to Analog mode (0b11)
-//	GPIOC->MODER |= GPIO_MODER_MODER2;				// Set PC2 to Analog mode (0b11)
-//	GPIOC->MODER |= GPIO_MODER_MODER4;				// Set PC4 to Analog mode (0b11)
-//	GPIOA->MODER |= GPIO_MODER_MODER7;				// Set PA7 to Analog mode (0b11)
-//	GPIOC->MODER |= GPIO_MODER_MODER1;				// Set PA7 to Analog mode (0b11)
+	GPIOC->MODER |= GPIO_MODER_MODER5;				// Set PC5 to Analog mode (0b11)
+	GPIOB->MODER |= GPIO_MODER_MODER1;				// Set PB1 to Analog mode (0b11)
+	GPIOB->MODER |= GPIO_MODER_MODER0;				// Set PB0 to Analog mode (0b11)
+	GPIOC->MODER |= GPIO_MODER_MODER2;				// Set PC2 to Analog mode (0b11)
+	GPIOC->MODER |= GPIO_MODER_MODER0;				// Set PC0 to Analog mode (0b11)
+
+	/* 446:
+	PC0 ADC123_IN10
+	PC1 ADC123_IN11
+	PC2 ADC123_IN12
+	PC3 ADC123_IN13
+	PC4 ADC123_IN14
+	PC5 ADC123_IN15
+
+	PA0 ADC123_IN0
+	PA1 ADC123_IN1
+	PA2 ADC123_IN2
+	PA3 ADC123_IN3
+	PA4 ADC12_IN4
+	PA5 ADC12_IN5
+	PA6 ADC12_IN6
+	PA7 ADC12_IN7
+
+	PB0 ADC12_IN8
+	PB1 ADC12_IN9
+
+	0	PITCH_CV		PA6
+	1	HARM1_CV		PC3
+	2	HARM2_CV		PA3
+	3	FREQ_SCALE_CV	PA7
+	4	HARM_COUNT_POT	PA2
+	5	FTUNE			PC5
+	6	CTUNE			PB1
+	7	HARM1_POT		PB0
+	8	HARM2_POT		PC2
+	9	FREQ_SC_POT		PC0
+	*/
 
 	ADC2->CR1 |= ADC_CR1_SCAN;						// Activate scan mode
 	ADC2->SQR1 = (ADC_BUFFER_LENGTH - 1) << 20;		// Number of conversions in sequence
-	ADC2->SQR3 |= 8 << 0;							// Set IN8  1st conversion in sequence
-	ADC2->SQR3 |= 9 << 5;							// Set IN9  2nd conversion in sequence
-	ADC2->SQR3 |= 1 << 10;							// Set IN1  3rd conversion in sequence
-	ADC2->SQR3 |= 2 << 15;							// Set IN2  4th conversion in sequence
-//	ADC2->SQR3 |= 3 << 20;							// Set IN3  5th conversion in sequence
-//	ADC2->SQR3 |= 10 << 25;							// Set IN10 6th conversion in sequence
-//	ADC2->SQR2 |= 12 << 0;							// Set IN12 7th conversion in sequence
-//	ADC2->SQR2 |= 14 << 5;							// Set IN14 8th conversion in sequence
-//	ADC2->SQR2 |= 7 << 10;							// Set IN7  9th conversion in sequence
-//	ADC2->SQR2 |= 11 << 15;							// Set IN11 10th conversion in sequence
+	ADC2->SQR3 |= 6 << 0;							// Set IN6  1st conversion in sequence
+	ADC2->SQR3 |= 13 << 5;							// Set IN13 2nd conversion in sequence
+	ADC2->SQR3 |= 3 << 10;							// Set IN3  3rd conversion in sequence
+	ADC2->SQR3 |= 7 << 15;							// Set IN7  4th conversion in sequence
+	ADC2->SQR3 |= 2 << 20;							// Set IN2  5th conversion in sequence
+	ADC2->SQR3 |= 15 << 25;							// Set IN15 6th conversion in sequence
+	ADC2->SQR2 |= 9 << 0;							// Set IN9  7th conversion in sequence
+	ADC2->SQR2 |= 8 << 5;							// Set IN8  8th conversion in sequence
+	ADC2->SQR2 |= 12 << 10;							// Set IN12 9th conversion in sequence
+	ADC2->SQR2 |= 10 << 15;							// Set IN10 10th conversion in sequence
 
 	//	Set to 56 cycles (0b11) sampling speed (SMPR2 Left shift speed 3 x ADC_INx up to input 9; use SMPR1 from 0 for ADC_IN10+)
 	// 000: 3 cycles; 001: 15 cycles; 010: 28 cycles; 011: 56 cycles; 100: 84 cycles; 101: 112 cycles; 110: 144 cycles; 111: 480 cycles
-	ADC2->SMPR2 |= 0b110 << 24;						// Set speed of IN8
+	ADC2->SMPR2 |= 0b110 << 18;						// Set speed of IN6
+	ADC2->SMPR1 |= 0b110 << 9;						// Set speed of IN13
+	ADC2->SMPR2 |= 0b110 << 9;						// Set speed of IN3
+	ADC2->SMPR2 |= 0b110 << 21;						// Set speed of IN7
+	ADC2->SMPR2 |= 0b110 << 3;						// Set speed of IN2
+	ADC2->SMPR1 |= 0b110 << 15;						// Set speed of IN15
 	ADC2->SMPR2 |= 0b110 << 27;						// Set speed of IN9
-	ADC2->SMPR2 |= 0b110 << 3;						// Set speed of IN1
-	ADC2->SMPR2 |= 0b110 << 6;						// Set speed of IN2
-//	ADC2->SMPR2 |= 0b110 << 9;						// Set speed of IN3
-//	ADC2->SMPR1 |= 0b110 << 0;						// Set speed of IN10
-//	ADC2->SMPR1 |= 0b110 << 6;						// Set speed of IN12
-//	ADC2->SMPR1 |= 0b110 << 12;						// Set speed of IN14
-//	ADC2->SMPR2 |= 0b110 << 21;						// Set speed of IN7
-//	ADC2->SMPR1 |= 0b110 << 3;						// Set speed of IN11
+	ADC2->SMPR2 |= 0b110 << 24;						// Set speed of IN8
+	ADC2->SMPR1 |= 0b110 << 6;						// Set speed of IN12
+	ADC2->SMPR1 |= 0b110 << 0;						// Set speed of IN10
 
 	ADC2->CR2 |= ADC_CR2_EOCS;						// Trigger interrupt on end of each individual conversion
 	ADC2->CR2 |= ADC_CR2_EXTEN_0;					// ADC hardware trigger 00: Trigger detection disabled; 01: Trigger detection on the rising edge; 10: Trigger detection on the falling edge; 11: Trigger detection on both the rising and falling edges

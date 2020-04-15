@@ -1,8 +1,30 @@
 #include "initialisation.h"
 #include "bitstream.h"
 
-
 volatile uint32_t SysTickVal;
+
+extern uint32_t SystemCoreClock;
+volatile uint16_t ADC_array[ADC_BUFFER_LENGTH * 4];
+
+// Create aliases for ADC inputs
+volatile uint16_t& ADC_PITCH = ADC_array[0];	// PB0 ADC12_IN8   Pin 26
+volatile uint16_t& ADC_FTUNE = ADC_array[1];	// PB1 ADC12_IN9   Pin 27
+volatile float pitch;
+volatile float freq = 220;
+
+volatile uint16_t harmonicScaleOdd;
+volatile uint16_t dampedHarmonicScaleOdd;
+volatile uint16_t startVolOdd;
+volatile float harmScaleOdd;
+
+volatile uint16_t harmonicScaleEven;
+volatile uint16_t dampedHarmonicScaleEven;
+volatile uint16_t startVolEven;
+volatile float harmScaleEven;
+
+volatile int16_t freqScale;
+volatile uint16_t harmCount;
+volatile uint16_t harmCountTemp;				// Temporary value used for hysteresis
 
 extern "C" {
 #include "interrupts.h"
@@ -71,10 +93,12 @@ int main(void)
 	SystemInit();							// Activates floating point coprocessor and resets clock
 	SystemClock_Config();					// Configure the clock and PLL
 	SystemCoreClockUpdate();				// Update SystemCoreClock (system clock frequency) derived from settings of oscillators, prescalers and PLL
+	InitMCO2();								// Initialise output of HSE oscillator on pin PC9
 
 	InitSysTick();
 	InitFPGAProg();
 	programFPGA();
+	InitADC();
 
 	while (1)
 	{
