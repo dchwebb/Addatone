@@ -4000,10 +4000,10 @@
     )
   )
 
-  (gr_text "DAC I2C" (at 128 154.2) (layer F.SilkS) (tstamp 5E9C8EBB)
+  (gr_text "DAC I2C" (at 127.9 154.3) (layer F.SilkS) (tstamp 5E9C8EBB)
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
   )
-  (gr_text "ADC SPI" (at 150.3 117.6 90) (layer F.SilkS) (tstamp 5E9C8EB1)
+  (gr_text "ADC SPI" (at 150.4 117.6 90) (layer F.SilkS) (tstamp 5E9C8EB1)
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
   )
   (gr_text FSC (at 104.1 105) (layer F.SilkS) (tstamp 5E9BCA45)

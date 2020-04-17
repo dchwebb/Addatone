@@ -59,9 +59,9 @@ F 3 "" H 3600 1050 50  0001 C CNN
 	1    3600 1050
 	0    -1   -1   0   
 $EndComp
-Text GLabel 3600 1250 2    50   Input ~ 0
-SWCLK
 Text GLabel 3600 1150 2    50   Input ~ 0
+SWCLK
+Text GLabel 3600 1250 2    50   Input ~ 0
 SWDIO
 Text GLabel 3400 3300 2    50   Input ~ 0
 SWDIO
@@ -1283,11 +1283,11 @@ NoConn ~ 1850 3700
 NoConn ~ 1850 4200
 NoConn ~ 1850 4400
 NoConn ~ 1850 4700
-NoConn ~ 1850 4900
+NoConn ~ 3250 4400
 NoConn ~ 1850 5000
 NoConn ~ 1850 5100
 NoConn ~ 3250 4600
-NoConn ~ 3250 4400
+NoConn ~ 3250 3100
 NoConn ~ 3250 4300
 NoConn ~ 3250 4100
 NoConn ~ 3250 3900
@@ -1322,7 +1322,7 @@ $EndComp
 Wire Wire Line
 	16100 1000 16100 1050
 NoConn ~ 3250 5000
-Text GLabel 3400 3100 2    50   Input ~ 0
+Text GLabel 1700 4900 0    50   Input ~ 0
 Calibration
 $Comp
 L power:PWR_FLAG #FLG02
@@ -2055,8 +2055,6 @@ F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/da
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3250 3100 3400 3100
-Wire Wire Line
 	3250 2900 3400 2900
 NoConn ~ 3250 4700
 NoConn ~ 1850 4600
@@ -2675,13 +2673,13 @@ Connection ~ 11550 3550
 Connection ~ 11150 3950
 Wire Wire Line
 	11150 3950 11200 3950
-Text GLabel 6300 3500 0    50   Input ~ 0
+Text GLabel 6250 1950 0    50   Input ~ 0
 CV_IN
-Text GLabel 6300 4100 0    50   Input ~ 0
+Text GLabel 6250 2450 0    50   Input ~ 0
 FREQ_SC_POT
 Text GLabel 6250 1500 0    50   Input ~ 0
 CTUNE
-Text GLabel 6300 4500 0    50   Input ~ 0
+Text GLabel 6250 2750 0    50   Input ~ 0
 HARM2_POT
 Text GLabel 6250 1100 0    50   Input ~ 0
 HARM_COUNT_POT
@@ -2697,9 +2695,9 @@ Text GLabel 8350 5950 0    50   Input ~ 0
 HARM2_CVIN
 Text GLabel 8350 7850 0    50   Input ~ 0
 FREQ_SCALE_CVIN
-Text GLabel 6300 4000 0    50   Input ~ 0
+Text GLabel 6250 2350 0    50   Input ~ 0
 PITCH_CVIN
-Text GLabel 6300 3900 0    50   Input ~ 0
+Text GLabel 6250 2250 0    50   Input ~ 0
 HARM1_CVIN
 Text GLabel 6250 800  0    50   Input ~ 0
 HARM2_CVIN
@@ -2709,138 +2707,38 @@ Text GLabel 12600 2300 2    50   Input ~ 0
 AUDIO1_OUT
 Text GLabel 12650 4050 2    50   Input ~ 0
 AUDIO2_OUT
-Text GLabel 6300 5400 0    50   Input ~ 0
+Text GLabel 6250 3050 0    50   Input ~ 0
 AUDIO1_OUT
-Text GLabel 6300 5300 0    50   Input ~ 0
+Text GLabel 6250 2950 0    50   Input ~ 0
 AUDIO2_OUT
-Text GLabel 6250 2700 0    50   Input ~ 0
-MIX_SWITCH
-Text GLabel 6300 4400 0    50   Input ~ 0
-RESET
-Text GLabel 6250 2200 0    50   Input ~ 0
-RING_MOD
 Text GLabel 6250 1700 0    50   Input ~ 0
+MIX_SWITCH
+Text GLabel 6250 2650 0    50   Input ~ 0
+RESET
+Text GLabel 6250 4250 0    50   Input ~ 0
 FPGA_DONE
-Text GLabel 6250 1800 0    50   Input ~ 0
+Text GLabel 6250 3950 0    50   Input ~ 0
 FPGA_RESET
-Text GLabel 6300 4600 0    50   Input ~ 0
+Text GLabel 6250 4500 0    50   Input ~ 0
 ADC_Data
-Text GLabel 6300 4700 0    50   Input ~ 0
+Text GLabel 6250 4600 0    50   Input ~ 0
 ADC_Clock
-Text GLabel 6300 4800 0    50   Input ~ 0
+Text GLabel 6250 4700 0    50   Input ~ 0
 ADC_CS
-Text GLabel 6300 5000 0    50   Input ~ 0
+Text GLabel 6150 3300 0    50   Input ~ 0
 DAC_BCLK
-Text GLabel 6300 5100 0    50   Input ~ 0
+Text GLabel 6150 3400 0    50   Input ~ 0
 DAC_DATA
-Text GLabel 6250 1900 0    50   Input ~ 0
+Text GLabel 6250 3850 0    50   Input ~ 0
 FPGA_SS
-Text GLabel 6250 2000 0    50   Input ~ 0
+Text GLabel 6250 3750 0    50   Input ~ 0
 FPGA_SCK
-Text GLabel 6250 1600 0    50   Input ~ 0
+Text GLabel 6250 4050 0    50   Input ~ 0
 FPGA_SI
-Text GLabel 6250 2100 0    50   Input ~ 0
+Text GLabel 6250 5350 0    50   Input ~ 0
 MCO2_CLOCK_OUT
-Text GLabel 6300 5200 0    50   Input ~ 0
+Text GLabel 6150 3500 0    50   Input ~ 0
 DAC_LRCLK
-$Comp
-L Connector:Conn_01x20_Female J2
-U 1 1 5FC69D61
-P 6550 1700
-F 0 "J2" H 6578 1676 50  0000 L CNN
-F 1 "Conn_01x20_Female" H 6578 1585 50  0000 L CNN
-F 2 "Socket_Strips:Socket_Strip_Straight_1x20_Pitch2.54mm" H 6550 1700 50  0001 C CNN
-F 3 "~" H 6550 1700 50  0001 C CNN
-	1    6550 1700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x20_Female J3
-U 1 1 5FC8E5BE
-P 6600 4400
-F 0 "J3" H 6628 4376 50  0000 L CNN
-F 1 "Conn_01x20_Female" H 6628 4285 50  0000 L CNN
-F 2 "Socket_Strips:Socket_Strip_Straight_1x20_Pitch2.54mm" H 6600 4400 50  0001 C CNN
-F 3 "~" H 6600 4400 50  0001 C CNN
-	1    6600 4400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6250 800  6350 800 
-Wire Wire Line
-	6250 900  6350 900 
-Wire Wire Line
-	6250 1000 6350 1000
-Wire Wire Line
-	6250 1100 6350 1100
-Wire Wire Line
-	6250 1200 6350 1200
-Wire Wire Line
-	6250 1300 6350 1300
-Wire Wire Line
-	6250 1400 6350 1400
-Wire Wire Line
-	6250 1500 6350 1500
-Wire Wire Line
-	6250 1600 6350 1600
-Wire Wire Line
-	6250 1700 6350 1700
-Wire Wire Line
-	6250 1800 6350 1800
-Wire Wire Line
-	6250 1900 6350 1900
-Wire Wire Line
-	6250 2000 6350 2000
-Wire Wire Line
-	6250 2100 6350 2100
-Wire Wire Line
-	6250 2200 6350 2200
-Wire Wire Line
-	6250 2300 6350 2300
-Wire Wire Line
-	6250 2400 6350 2400
-Wire Wire Line
-	6250 2500 6350 2500
-Wire Wire Line
-	6250 2600 6350 2600
-Wire Wire Line
-	6250 2700 6350 2700
-Wire Wire Line
-	6300 3700 6400 3700
-Wire Wire Line
-	6300 3800 6400 3800
-Wire Wire Line
-	6300 3900 6400 3900
-Wire Wire Line
-	6300 4000 6400 4000
-Wire Wire Line
-	6300 4100 6400 4100
-Wire Wire Line
-	6300 4200 6400 4200
-Wire Wire Line
-	6300 4300 6400 4300
-Wire Wire Line
-	6300 4400 6400 4400
-Wire Wire Line
-	6300 4500 6400 4500
-Wire Wire Line
-	6300 4600 6400 4600
-Wire Wire Line
-	6300 4700 6400 4700
-Wire Wire Line
-	6300 4800 6400 4800
-Wire Wire Line
-	6300 4900 6400 4900
-Wire Wire Line
-	6300 5000 6400 5000
-Wire Wire Line
-	6300 5100 6400 5100
-Wire Wire Line
-	6300 5200 6400 5200
-Wire Wire Line
-	6300 5300 6400 5300
-Wire Wire Line
-	6300 5400 6400 5400
 Text Label 6800 6350 0    50   ~ 0
 3V3
 Text Label 6450 7500 0    50   ~ 0
@@ -2870,8 +2768,6 @@ Wire Wire Line
 Wire Wire Line
 	2550 1800 2650 1800
 Connection ~ 2650 1800
-Wire Wire Line
-	6300 3500 6400 3500
 $Comp
 L ICE40UP5K:ICE40UP5K-SG48ITR-Merged U2
 U 1 1 5E8A9F02
@@ -2892,17 +2788,17 @@ Connection ~ 2650 5300
 Wire Wire Line
 	2350 5300 2450 5300
 Connection ~ 2450 5300
-Text GLabel 6300 4900 0    50   Input ~ 0
+Text GLabel 6250 2550 0    50   Input ~ 0
 Calibration
 $Comp
 L power:+3.3V #PWR0101
 U 1 1 5F200B39
-P 6300 4300
-F 0 "#PWR0101" H 6300 4150 50  0001 C CNN
-F 1 "+3.3V" V 6300 4550 50  0000 C CNN
-F 2 "" H 6300 4300 50  0001 C CNN
-F 3 "" H 6300 4300 50  0001 C CNN
-	1    6300 4300
+P 6250 2850
+F 0 "#PWR0101" H 6250 2700 50  0001 C CNN
+F 1 "+3.3V" V 6250 3100 50  0000 C CNN
+F 2 "" H 6250 2850 50  0001 C CNN
+F 3 "" H 6250 2850 50  0001 C CNN
+	1    6250 2850
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -2919,25 +2815,23 @@ $EndComp
 $Comp
 L power:+3.3VA #PWR0103
 U 1 1 5F210359
-P 6300 3600
-F 0 "#PWR0103" H 6300 3450 50  0001 C CNN
-F 1 "+3.3VA" V 6300 3750 50  0000 L CNN
-F 2 "" H 6300 3600 50  0001 C CNN
-F 3 "" H 6300 3600 50  0001 C CNN
-	1    6300 3600
+P 6250 2050
+F 0 "#PWR0103" H 6250 1900 50  0001 C CNN
+F 1 "+3.3VA" V 6250 2200 50  0000 L CNN
+F 2 "" H 6250 2050 50  0001 C CNN
+F 3 "" H 6250 2050 50  0001 C CNN
+	1    6250 2050
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	6300 3600 6400 3600
 $Comp
 L power:GND #PWR0104
 U 1 1 5F23E21A
-P 6300 3700
-F 0 "#PWR0104" H 6300 3450 50  0001 C CNN
-F 1 "GND" V 6300 3500 50  0000 C CNN
-F 2 "" H 6300 3700 50  0001 C CNN
-F 3 "" H 6300 3700 50  0001 C CNN
-	1    6300 3700
+P 6250 2150
+F 0 "#PWR0104" H 6250 1900 50  0001 C CNN
+F 1 "GND" V 6250 1950 50  0000 C CNN
+F 2 "" H 6250 2150 50  0001 C CNN
+F 3 "" H 6250 2150 50  0001 C CNN
+	1    6250 2150
 	0    1    1    0   
 $EndComp
 $Comp
@@ -2955,6 +2849,82 @@ Text GLabel 2300 8750 3    50   Input ~ 0
 FPGA_SO
 Wire Wire Line
 	2300 8750 2300 8600
-Text GLabel 6250 2300 0    50   Input ~ 0
+Text GLabel 6250 4150 0    50   Input ~ 0
 FPGA_SO
+Wire Wire Line
+	6150 3300 6250 3300
+Wire Wire Line
+	6150 3400 6250 3400
+Wire Wire Line
+	6150 3500 6250 3500
+Text GLabel 6250 1600 0    50   Input ~ 0
+RING_MOD
+$Comp
+L Connector:Conn_01x10_Female J2
+U 1 1 5ED3A17C
+P 6450 1200
+F 0 "J2" H 6478 1176 50  0000 L CNN
+F 1 "Conn_01x10_Female" H 6478 1085 50  0000 L CNN
+F 2 "Socket_Strips:Socket_Strip_Straight_1x10_Pitch2.54mm" H 6450 1200 50  0001 C CNN
+F 3 "~" H 6450 1200 50  0001 C CNN
+	1    6450 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP1
+U 1 1 5EE3114E
+P 6250 5350
+F 0 "TP1" V 6204 5538 50  0000 L CNN
+F 1 "TestPoint" V 6295 5538 50  0000 L CNN
+F 2 "Socket_Strips:Socket_Strip_Straight_1x01_Pitch2.54mm" H 6450 5350 50  0001 C CNN
+F 3 "~" H 6450 5350 50  0001 C CNN
+	1    6250 5350
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Conn_01x03_Male J4
+U 1 1 5EE6191C
+P 6450 3400
+F 0 "J4" H 6422 3424 50  0000 R CNN
+F 1 "Conn_01x03_Male" H 6422 3333 50  0000 R CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 6450 3400 50  0001 C CNN
+F 3 "~" H 6450 3400 50  0001 C CNN
+	1    6450 3400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x06_Male J5
+U 1 1 5EE88B27
+P 6450 3950
+F 0 "J5" H 6422 3924 50  0000 R CNN
+F 1 "Conn_01x06_Male" H 6422 3833 50  0000 R CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x03_Pitch2.54mm" H 6450 3950 50  0001 C CNN
+F 3 "~" H 6450 3950 50  0001 C CNN
+	1    6450 3950
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 4900 1700 4900
+$Comp
+L Connector:Conn_01x03_Male J6
+U 1 1 5F0A5DC6
+P 6450 4600
+F 0 "J6" H 6422 4624 50  0000 R CNN
+F 1 "Conn_01x03_Male" H 6422 4533 50  0000 R CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 6450 4600 50  0001 C CNN
+F 3 "~" H 6450 4600 50  0001 C CNN
+	1    6450 4600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x12_Female J3
+U 1 1 5F14D77F
+P 6450 2450
+F 0 "J3" H 6478 2426 50  0000 L CNN
+F 1 "Conn_01x12_Female" H 6478 2335 50  0000 L CNN
+F 2 "Socket_Strips:Socket_Strip_Straight_1x12_Pitch2.54mm" H 6450 2450 50  0001 C CNN
+F 3 "~" H 6450 2450 50  0001 C CNN
+	1    6450 2450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
