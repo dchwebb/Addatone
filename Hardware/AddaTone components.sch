@@ -1991,7 +1991,7 @@ Wire Wire Line
 	1600 7900 1750 7900
 Text GLabel 1600 7300 0    50   Input ~ 0
 DAC_BCLK
-Text GLabel 2200 6300 1    50   Input ~ 0
+Text GLabel 2200 6350 1    50   Input ~ 0
 DAC_LRCLK
 Text GLabel 1600 7200 0    50   Input ~ 0
 DAC_DATA
@@ -2000,7 +2000,7 @@ Wire Wire Line
 Wire Wire Line
 	1600 7300 1750 7300
 Wire Wire Line
-	2200 6300 2200 6450
+	2200 6350 2200 6450
 Text GLabel 3400 4800 2    50   Input ~ 0
 FPGA_SS
 Text GLabel 3400 4900 2    50   Input ~ 0
@@ -2035,10 +2035,10 @@ Wire Wire Line
 	1650 4500 1850 4500
 Text GLabel 2900 8750 3    50   Input ~ 0
 MCO2_CLOCK_OUT
-Text GLabel 3300 6300 1    50   Input ~ 0
+Text GLabel 3300 6350 1    50   Input ~ 0
 MIX_SWITCH
 Wire Wire Line
-	3300 6300 3300 6450
+	3300 6350 3300 6450
 Text GLabel 3900 8100 2    50   Input ~ 0
 RING_MOD
 Wire Wire Line
@@ -2089,12 +2089,10 @@ NoConn ~ 2300 6450
 NoConn ~ 2400 6450
 NoConn ~ 2600 6450
 NoConn ~ 2700 6450
-NoConn ~ 2800 6450
 NoConn ~ 2900 6450
 NoConn ~ 3000 6450
 NoConn ~ 3100 6450
 NoConn ~ 3200 6450
-NoConn ~ 2500 6450
 $Comp
 L Regulator_Linear:LM1117-3.3 U7
 U 1 1 5F0DD956
@@ -2735,7 +2733,7 @@ Text GLabel 6250 3750 0    50   Input ~ 0
 FPGA_SCK
 Text GLabel 6250 4050 0    50   Input ~ 0
 FPGA_SI
-Text GLabel 6250 5350 0    50   Input ~ 0
+Text GLabel 4900 5200 0    50   Input ~ 0
 MCO2_CLOCK_OUT
 Text GLabel 6150 3500 0    50   Input ~ 0
 DAC_LRCLK
@@ -2873,12 +2871,12 @@ $EndComp
 $Comp
 L Connector:TestPoint TP1
 U 1 1 5EE3114E
-P 6250 5350
-F 0 "TP1" V 6204 5538 50  0000 L CNN
-F 1 "TestPoint" V 6295 5538 50  0000 L CNN
-F 2 "Socket_Strips:Socket_Strip_Straight_1x01_Pitch2.54mm" H 6450 5350 50  0001 C CNN
-F 3 "~" H 6450 5350 50  0001 C CNN
-	1    6250 5350
+P 4900 5200
+F 0 "TP1" V 4854 5388 50  0000 L CNN
+F 1 "TestPoint" V 4945 5388 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 5100 5200 50  0001 C CNN
+F 3 "~" H 5100 5200 50  0001 C CNN
+	1    4900 5200
 	0    1    1    0   
 $EndComp
 $Comp
@@ -2926,5 +2924,160 @@ F 2 "Socket_Strips:Socket_Strip_Straight_1x12_Pitch2.54mm" H 6450 2450 50  0001 
 F 3 "~" H 6450 2450 50  0001 C CNN
 	1    6450 2450
 	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 5E9F4A5B
+P 4900 5400
+F 0 "TP2" V 4854 5588 50  0000 L CNN
+F 1 "TestPoint" V 4945 5588 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 5100 5400 50  0001 C CNN
+F 3 "~" H 5100 5400 50  0001 C CNN
+	1    4900 5400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR0106
+U 1 1 5E9F4C8E
+P 4900 5400
+F 0 "#PWR0106" H 4900 5250 50  0001 C CNN
+F 1 "+3.3V" V 4900 5650 50  0000 C CNN
+F 2 "" H 4900 5400 50  0001 C CNN
+F 3 "" H 4900 5400 50  0001 C CNN
+	1    4900 5400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:VEE #PWR0107
+U 1 1 5E9F8A32
+P 4900 6000
+F 0 "#PWR0107" H 4900 5850 50  0001 C CNN
+F 1 "VEE" V 4900 6200 50  0000 C CNN
+F 2 "" H 4900 6000 50  0001 C CNN
+F 3 "" H 4900 6000 50  0001 C CNN
+	1    4900 6000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:VCC #PWR0108
+U 1 1 5E9F8A38
+P 4900 5800
+F 0 "#PWR0108" H 4900 5650 50  0001 C CNN
+F 1 "VCC" V 4900 6000 50  0000 C CNN
+F 2 "" H 4900 5800 50  0001 C CNN
+F 3 "" H 4900 5800 50  0001 C CNN
+	1    4900 5800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3.3VA #PWR0109
+U 1 1 5EA18F72
+P 4900 6200
+F 0 "#PWR0109" H 4900 6050 50  0001 C CNN
+F 1 "+3.3VA" V 4900 6350 50  0000 L CNN
+F 2 "" H 4900 6200 50  0001 C CNN
+F 3 "" H 4900 6200 50  0001 C CNN
+	1    4900 6200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+1V2 #PWR0110
+U 1 1 5EA1C9C4
+P 4900 5600
+F 0 "#PWR0110" H 4900 5450 50  0001 C CNN
+F 1 "+1V2" V 4900 5750 50  0000 L CNN
+F 2 "" H 4900 5600 50  0001 C CNN
+F 3 "" H 4900 5600 50  0001 C CNN
+	1    4900 5600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:TestPoint TP3
+U 1 1 5EAA1138
+P 4900 5600
+F 0 "TP3" V 4854 5788 50  0000 L CNN
+F 1 "TestPoint" V 4945 5788 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 5100 5600 50  0001 C CNN
+F 3 "~" H 5100 5600 50  0001 C CNN
+	1    4900 5600
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP4
+U 1 1 5EAA13A1
+P 4900 5800
+F 0 "TP4" V 4854 5988 50  0000 L CNN
+F 1 "TestPoint" V 4945 5988 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 5100 5800 50  0001 C CNN
+F 3 "~" H 5100 5800 50  0001 C CNN
+	1    4900 5800
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP5
+U 1 1 5EAA16DF
+P 4900 6000
+F 0 "TP5" V 4854 6188 50  0000 L CNN
+F 1 "TestPoint" V 4945 6188 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 5100 6000 50  0001 C CNN
+F 3 "~" H 5100 6000 50  0001 C CNN
+	1    4900 6000
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP6
+U 1 1 5EAA1941
+P 4900 6200
+F 0 "TP6" V 4854 6388 50  0000 L CNN
+F 1 "TestPoint" V 4945 6388 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm" H 5100 6200 50  0001 C CNN
+F 3 "~" H 5100 6200 50  0001 C CNN
+	1    4900 6200
+	0    1    1    0   
+$EndComp
+Text GLabel 2500 6350 1    50   Input ~ 0
+F_TEST2
+Text GLabel 2800 6350 1    50   Input ~ 0
+F_TEST1
+Wire Wire Line
+	2500 6350 2500 6450
+Wire Wire Line
+	2800 6350 2800 6450
+Text GLabel 6250 5050 0    50   Input ~ 0
+F_TEST2
+Text GLabel 6250 4950 0    50   Input ~ 0
+F_TEST1
+$Comp
+L Connector:Conn_01x02_Male J7
+U 1 1 5ED5DD59
+P 6450 4950
+F 0 "J7" H 6422 4924 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 6422 4833 50  0000 R CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 6450 4950 50  0001 C CNN
+F 3 "~" H 6450 4950 50  0001 C CNN
+	1    6450 4950
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP7
+U 1 1 5EDAD09E
+P 4900 6400
+F 0 "TP7" V 4854 6588 50  0000 L CNN
+F 1 "TestPoint" V 4945 6588 50  0000 L CNN
+F 2 "Measurement_Points:Test_Point_Keystone_5010-5014_Multipurpose" H 5100 6400 50  0001 C CNN
+F 3 "~" H 5100 6400 50  0001 C CNN
+	1    4900 6400
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR020
+U 1 1 5EDAD2B2
+P 4900 6400
+F 0 "#PWR020" H 4900 6150 50  0001 C CNN
+F 1 "GND" V 4900 6150 50  0000 C CNN
+F 2 "" H 4900 6400 50  0001 C CNN
+F 3 "" H 4900 6400 50  0001 C CNN
+	1    4900 6400
+	0    1    1    0   
 $EndComp
 $EndSCHEMATC
