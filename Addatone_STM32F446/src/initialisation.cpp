@@ -207,7 +207,8 @@ void InitCoverageTimer() {
 void InitFPGAProg()
 {
 	//	Enable GPIO and SPI clocks
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;			// reset and clock control - advanced high performance bus - GPIO port B
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
 	RCC->APB1ENR |= RCC_APB1ENR_SPI2EN;
 
 	// PB15: SPI_MOSI [alternate function AF5] to ICE_MOSI
@@ -225,11 +226,11 @@ void InitFPGAProg()
 	GPIOB->MODER &= ~GPIO_MODER_MODER12_1;
 	GPIOB->BSRR |= GPIO_BSRR_BS_12;
 
-	// PB8 Reset FPGA - configure as Open drain. This will only pull pin low when set to 0; otherwise output is high impedence
-	GPIOB->OTYPER |= GPIO_OTYPER_OT8;				// Configure as open drain
-	GPIOB->BSRR |= GPIO_BSRR_BS_8;
-	GPIOB->MODER |= GPIO_MODER_MODER8_0;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
-	GPIOB->MODER &= ~GPIO_MODER_MODER8_1;
+	// PC7 Reset FPGA - configure as Open drain. This will only pull pin low when set to 0; otherwise output is high impedence
+	GPIOC->OTYPER |= GPIO_OTYPER_OT7;				// Configure as open drain
+	GPIOC->BSRR |= GPIO_BSRR_BS_7;
+	GPIOC->MODER |= GPIO_MODER_MODER7_0;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
+	GPIOC->MODER &= ~GPIO_MODER_MODER7_1;
 
 	// Configure SPI
 	//SPI2->CR1 |= SPI_CR1_DFF;						// Use 16 bit data frame (default 8 bit)

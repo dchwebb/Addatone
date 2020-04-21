@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 46)
+    (drawings 48)
     (tracks 144)
     (zones 0)
     (modules 18)
@@ -867,7 +867,7 @@
     (descr https://www.omron.com/ecb/products/pdf/en-b3f.pdf)
     (tags "tact sw push 6mm")
     (path /5EA45426)
-    (fp_text reference SW1 (at 3.25 2) (layer B.SilkS)
+    (fp_text reference SW1 (at 3.25 2) (layer B.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
     )
     (fp_text value SW_Push (at 3.75 -6.7) (layer B.Fab)
@@ -918,7 +918,7 @@
     (descr "SPDT Sub Miniature Switch")
     (tags "Switch SPDT")
     (path /5EAA8228)
-    (fp_text reference SW3 (at 1.4 3.6 90) (layer B.SilkS)
+    (fp_text reference SW3 (at 1.4 3.6 90) (layer B.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
     )
     (fp_text value SW_SPST (at 2.54 -3.81 90) (layer B.Fab)
@@ -997,6 +997,12 @@
     )
   )
 
+  (gr_text Mix (at 150 91) (layer B.SilkS) (tstamp 5E9DDEA7)
+    (effects (font (size 1 1) (thickness 0.15)) (justify left mirror))
+  )
+  (gr_text "Ring Mod" (at 115 91) (layer B.SilkS) (tstamp 5E9DDEA3)
+    (effects (font (size 1 1) (thickness 0.15)) (justify left mirror))
+  )
   (gr_text "Audio 1" (at 155 143.6) (layer B.SilkS) (tstamp 5E9DDD59)
     (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
   )
@@ -1024,7 +1030,7 @@
   (gr_text H2CV (at 104.6 102.4) (layer F.SilkS) (tstamp 5E9DDB4B)
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
   )
-  (gr_text "FS Pot" (at 148.8 92.8) (layer F.SilkS) (tstamp 5E9DDAFB)
+  (gr_text "Warp Pot" (at 147 92.8) (layer F.SilkS) (tstamp 5E9DDAFB)
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
   )
   (gr_text 3V3A (at 104.6 107.4) (layer F.SilkS) (tstamp 5E9DDAB3)
@@ -1081,7 +1087,7 @@
   (gr_text 3.3V (at 158.4 104.4 90) (layer F.SilkS) (tstamp 5E9AC5CC)
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
   )
-  (gr_text FSCV (at 104.6 104.8) (layer F.SilkS) (tstamp 5E9AC5CC)
+  (gr_text WpCV (at 104.6 104.8) (layer F.SilkS) (tstamp 5E9AC5CC)
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
   )
   (gr_text "CV (J)" (at 149.4 90.2) (layer F.SilkS) (tstamp 5E9AC5CC)

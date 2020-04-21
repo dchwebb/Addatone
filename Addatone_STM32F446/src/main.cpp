@@ -33,8 +33,8 @@ extern "C" {
 void programFPGA() {
 	// SPI clock should be between 1 and 25MHz with minimum clock low/high time of 20ns)
 
-	// Pull reset low (PB8)
-	GPIOB->BSRR |= GPIO_BSRR_BR_8;
+	// Pull reset low (PC7)
+	GPIOC->BSRR |= GPIO_BSRR_BR_7;
 
 	// Drive SPI_SS low (PB12)
 	GPIOB->BSRR |= GPIO_BSRR_BR_12;
@@ -42,7 +42,7 @@ void programFPGA() {
 	// Hold the CRESET_B pin Low for at least 200 ns
 	// Clock of 144MHz gives tick of 6.94ns so wait 400/6.94 = 57 ticks (measured at 7500ns)
 	for (int i = 0; i < 60; ++i);
-	GPIOB->BSRR |= GPIO_BSRR_BS_8;
+	GPIOC->BSRR |= GPIO_BSRR_BS_7;
 
 	// After driving CRESET_B High the AP must wait a minimum of 1200 µs, to let the FPGA to clear its internal configuration memory
 	// SysTick is set to around 400us so allow four for safety (measured at 1453us)
@@ -56,7 +56,7 @@ void programFPGA() {
 	while (((SPI2->SR & SPI_SR_TXE) == 0) | ((SPI2->SR & SPI_SR_BSY) == SPI_SR_BSY) );
 	GPIOB->BSRR |= GPIO_BSRR_BR_12;
 
-	// Send thge bitstream MSB first, data clocked into FPGA on rising edge
+	// Send the bitstream MSB first, data clocked into FPGA on rising edge
 	for (int b = 0; b < bitstreamSize; ++b) {
 	//for (int b = 0; b < 30; ++b) {
 		while (((SPI2->SR & SPI_SR_TXE) == 0) | ((SPI2->SR & SPI_SR_BSY) == SPI_SR_BSY) );

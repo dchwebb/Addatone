@@ -652,7 +652,7 @@ F 3 "~" H 9100 5100 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text GLabel 9750 7950 2    50   Input ~ 0
-FREQ_SCALE_CV
+WARP_CV
 Wire Wire Line
 	9750 6050 9400 6050
 Connection ~ 9400 6050
@@ -2028,7 +2028,7 @@ Wire Wire Line
 Wire Wire Line
 	3250 3500 3400 3500
 Text GLabel 1650 3600 0    50   Input ~ 0
-FREQ_SC_POT
+WARP_POT
 Text GLabel 1650 4500 0    50   Input ~ 0
 MCO2_CLOCK_OUT
 Wire Wire Line
@@ -2154,7 +2154,7 @@ Wire Wire Line
 Wire Wire Line
 	15700 4600 15850 4600
 Text GLabel 3400 2700 2    50   Input ~ 0
-FREQ_SCALE_CV
+WARP_CV
 Wire Wire Line
 	3250 2600 3400 2600
 Wire Wire Line
@@ -2674,7 +2674,7 @@ Wire Wire Line
 Text GLabel 6250 1950 0    50   Input ~ 0
 CV_IN
 Text GLabel 6250 2450 0    50   Input ~ 0
-FREQ_SC_POT
+WARP_POT
 Text GLabel 6250 1500 0    50   Input ~ 0
 CTUNE
 Text GLabel 6250 2750 0    50   Input ~ 0
@@ -2692,7 +2692,7 @@ HARM1_CVIN
 Text GLabel 8350 5950 0    50   Input ~ 0
 HARM2_CVIN
 Text GLabel 8350 7850 0    50   Input ~ 0
-FREQ_SCALE_CVIN
+WARP_CVIN
 Text GLabel 6250 2350 0    50   Input ~ 0
 PITCH_CVIN
 Text GLabel 6250 2250 0    50   Input ~ 0
@@ -2749,7 +2749,7 @@ Wire Wire Line
 Wire Wire Line
 	15200 5000 15700 5000
 Text GLabel 6250 900  0    50   Input ~ 0
-FREQ_SCALE_CVIN
+WARP_CVIN
 NoConn ~ 3250 2100
 NoConn ~ 3250 4500
 NoConn ~ 1850 4000
