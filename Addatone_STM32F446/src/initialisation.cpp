@@ -210,7 +210,7 @@ void InitFPGAProg()
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;			// reset and clock control - advanced high performance bus - GPIO port B
 	RCC->APB1ENR |= RCC_APB1ENR_SPI2EN;
 
-	// PB15: SPI_MOSI [alternate function AF5]
+	// PB15: SPI_MOSI [alternate function AF5] to ICE_MOSI
 	GPIOB->MODER |= GPIO_MODER_MODER15_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
 	GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR15;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
 	GPIOB->AFR[1] |= 0b0101 << 20;					// 0b0101 = Alternate Function 5 (SPI2); 20 is position of Pin 15
