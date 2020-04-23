@@ -94,14 +94,27 @@ int main(void)
 	SystemClock_Config();					// Configure the clock and PLL
 	SystemCoreClockUpdate();				// Update SystemCoreClock (system clock frequency) derived from settings of oscillators, prescalers and PLL
 	InitMCO2();								// Initialise output of HSE oscillator on pin PC9
+	InitI2S();
 
 	InitSysTick();
 	InitFPGAProg();
 	programFPGA();
 	InitADC();
 
+	uint32_t i = 0;
+
 	while (1)
 	{
+		i++;
+		uint16_t s = (uint16_t)(i >> 3);
+		while ((SPI2->SR & SPI_SR_TXE) == 0);
+		SPI2->DR = s;
+		while ((SPI2->SR & SPI_SR_TXE) == 0);
+		SPI2->DR = s;
+/*		while ((SPI2->SR & SPI_SR_TXE) == 0);
+		SPI2->DR = 0x3799;
+		while ((SPI2->SR & SPI_SR_TXE) == 0);
+		SPI2->DR = 0xCCDD;*/
 	}
 }
 

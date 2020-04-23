@@ -24,32 +24,32 @@
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData - createTaInstance - upMgr runs: 354 ms / size : 0 MB</Dynamic>
+            <Dynamic>loadTimingData - createTaInstance - upMgr runs: 346 ms / size : 16 MB </Dynamic>
         </Message>
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData - createTaInstance - timerIf runs: 354 ms / size : 0 MB</Dynamic>
+            <Dynamic>loadTimingData - createTaInstance - timerIf runs: 346 ms / size : 16 MB</Dynamic>
         </Message>
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData - createTaInstance - InitializeTimer runs: 354 ms/ size : 0 MB</Dynamic>
+            <Dynamic>loadTimingData - createTaInstance - InitializeTimer runs: 346 ms/ size : 16 MB</Dynamic>
         </Message>
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData - createTaInstance runs: 359 ms  / size : 0 MB</Dynamic>
+            <Dynamic>loadTimingData - createTaInstance runs: 351 ms  / size : 16 MB</Dynamic>
         </Message>
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData - load data runs: 415 ms  / size : 0 MB</Dynamic>
+            <Dynamic>loadTimingData - load data runs: 388 ms  / size : 6 MB</Dynamic>
         </Message>
         <Message>
             <ID>2469992</ID>
             <Severity>1</Severity>
-            <Dynamic>loadTimingData runs: 775 ms / size : 0 MB</Dynamic>
+            <Dynamic>loadTimingData runs: 740 ms / size : 23 MB</Dynamic>
         </Message>
         <Message>
             <ID>70009502</ID>
@@ -85,53 +85,13 @@
             <ID>70009502</ID>
             <Severity>2</Severity>
             <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-    </Task>
-    <Task name="Map">
-        <Message>
-            <ID>71003005</ID>
-            <Severity>16</Severity>
-            <Dynamic>i_ADC_CS</Dynamic>
-            <Dynamic>10</Dynamic>
-        </Message>
-        <Message>
-            <ID>71003005</ID>
-            <Severity>16</Severity>
-            <Dynamic>i_Ring_Mod</Dynamic>
-            <Dynamic>19</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-    </Task>
-    <Task name="Export">
-        <Message>
-            <ID>2469992</ID>
-            <Severity>1</Severity>
-            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
-        </Message>
-        <Message>
-            <ID>2469992</ID>
-            <Severity>1</Severity>
-            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
-        </Message>
-        <Message>
-            <ID>70009502</ID>
-            <Severity>2</Severity>
-            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
-        </Message>
-        <Message>
-            <ID>1191031</ID>
-            <Severity>1</Severity>
         </Message>
     </Task>
     <Task name="Synthesis">
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(1):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(1): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>1</Navigation>
@@ -139,7 +99,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v(40):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v(40): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v</Navigation>
             <Navigation>40</Navigation>
@@ -147,7 +107,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(2):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(2): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>2</Navigation>
@@ -155,7 +115,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v(50):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v(50): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/adder/rtl/lscc_adder.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v</Navigation>
             <Navigation>50</Navigation>
@@ -163,7 +123,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(3):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(3): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>3</Navigation>
@@ -171,7 +131,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v(52):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v(52): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v</Navigation>
             <Navigation>52</Navigation>
@@ -179,7 +139,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(4):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(4): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>4</Navigation>
@@ -187,7 +147,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v(39):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v(39): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/counter/rtl/lscc_cntr.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v</Navigation>
             <Navigation>39</Navigation>
@@ -195,7 +155,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(5):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(5): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>5</Navigation>
@@ -203,7 +163,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v(44):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v(44): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/fifo/rtl/lscc_fifo.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v</Navigation>
             <Navigation>44</Navigation>
@@ -211,7 +171,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(6):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(6): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>6</Navigation>
@@ -219,7 +179,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v(47):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v(47): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v</Navigation>
             <Navigation>47</Navigation>
@@ -227,7 +187,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(7):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(7): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>7</Navigation>
@@ -235,7 +195,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v(52):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v(52): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v</Navigation>
             <Navigation>52</Navigation>
@@ -243,7 +203,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(8):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(8): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>8</Navigation>
@@ -251,7 +211,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v(53):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v(53): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v</Navigation>
             <Navigation>53</Navigation>
@@ -259,7 +219,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(9):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(9): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>9</Navigation>
@@ -267,7 +227,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v(52):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v(52): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v</Navigation>
             <Navigation>52</Navigation>
@@ -275,7 +235,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(10):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(10): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>10</Navigation>
@@ -283,7 +243,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v(51):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v(51): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v</Navigation>
             <Navigation>51</Navigation>
@@ -291,7 +251,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(11):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(11): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>11</Navigation>
@@ -299,7 +259,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v(48):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v(48): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v</Navigation>
             <Navigation>48</Navigation>
@@ -307,7 +267,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(12):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(12): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>12</Navigation>
@@ -315,7 +275,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v(45):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v(45): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v</Navigation>
             <Navigation>45</Navigation>
@@ -323,7 +283,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(13):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(13): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>13</Navigation>
@@ -331,7 +291,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v(45):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v(45): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/rom/rtl/lscc_rom.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v</Navigation>
             <Navigation>45</Navigation>
@@ -339,7 +299,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(14):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(14): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>14</Navigation>
@@ -347,7 +307,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v(50):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v(50): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v</Navigation>
             <Navigation>50</Navigation>
@@ -355,7 +315,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(15):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(15): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>15</Navigation>
@@ -363,7 +323,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v(49):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v(49): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v</Navigation>
             <Navigation>49</Navigation>
@@ -371,7 +331,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(16):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(16): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>16</Navigation>
@@ -379,7 +339,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v(45):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v(45): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v</Navigation>
             <Navigation>45</Navigation>
@@ -387,7 +347,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(17):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(17): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_dsp.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>17</Navigation>
@@ -395,7 +355,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(10):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(10): </Dynamic>
             <Dynamic>Sine_LUT</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>10</Navigation>
@@ -403,7 +363,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(164):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(164): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom(RADDR_DEPTH=2048,RADDR_WIDTH=11,RDATA_WIDTH=16,REGMODE=&quot;noreg&quot;,INIT_FILE=&quot;misc/sin_lut2048_Sine_LUT_copy.mem&quot;,INIT_FILE_FORMAT=&quot;hex&quot;,INIT_MODE=&quot;mem_file&quot;,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EE00E0xB41EB41EB41EB41EB41EB41EB41   ....   7870FB7C3785A69D2695A786987E1870x875A1E964B1F96D7C3795EB02516F0DA2DF00C0CD2E3C32D3CD22D3CC3E3FA050xC3FFA7DDEE00A8224EAA29BB47333566D2FFC488CD11BC772DFF3DEE0DDD1455&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>164</Navigation>
@@ -411,7 +371,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(425):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(425): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst(FAMILY=&quot;iCE40UP&quot;,ADDR_DEPTH=2048,ADDR_WIDTH=11,DATA_WIDTH=16,REGMODE=&quot;noreg&quot;,INIT_FILE=&quot;misc/sin_lut2048_Sine_LUT_copy.mem&quot;,INIT_FILE_FORMAT=&quot;hex&quot;,INIT_MODE=&quot;mem_file&quot;,BYTE_WIDTH=1,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EE   ....   7870FB7C3785A69D2695A786987E1870x875A1E964B1F96D7C3795EB02516F0DA2DF00C0CD2E3C32D3CD22D3CC3E3FA050xC3FFA7DDEE00A8224EAA29BB47333566D2FFC488CD11BC772DFF3DEE0DDD1455&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>425</Navigation>
@@ -419,7 +379,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b0,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0x0BBBCB774BFFD3EE3B883211B4FFCA662ECC49DD2755514477005EBB3CFFAE44&quot;,INIT_VALUE_01=&quot;0xA4EEA82269FF451187FFAF55AD775FAA7BCC9900BD66D2FF94DD7077EE0082AA&quot;,IN   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1304</Navigation>
@@ -427,15 +387,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x0BBBCB774BFFD3EE3B883211B4FFCA662ECC49DD2755514477005EBB3CFFAE44&quot;,INITVAL_1=&quot;0xA4EEA82269FF451187FFAF55AD775FAA7BCC9900BD66D2FF94DD7077EE0082AA&quot;,INITVAL_2=&quot;0x06667255B6DDF1EED5881766213349DDEB55C1DD20222ECCC6AA48CCA4EE68EE&quot;,INITVAL_3=&quot;0x716629BB8C44D3EE23116CAA94DD7344CD11660096FF1CDD3566E799EB550AAA&quot;,INI   ....   60555&quot;,INITVAL_E=&quot;0x7700E0EE92BBB4FFDB669900ED33AF555BEE5FAA1EFF2A8869FF514452776177&quot;,INITVAL_F=&quot;0xC3FFA7DDEE00A8224EAA29BB47333566D2FFC488CD11BC772DFF3DEE0DDD1455&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1608</Navigation>
@@ -443,7 +403,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b010,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0x3C7C4BC3C3B43C4BB47C03034BF0F0B54A86A7D03CE996BE2D8F87961EA5A4A4&quot;,INIT_VALUE_01=&quot;0xB5E0787D2DA5C914960FD2960F0F4BB4962DF2D42D4B69F0D00D16164BF1F50A&quot;,   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1304</Navigation>
@@ -451,15 +411,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x3C7C4BC3C3B43C4BB47C03034BF0F0B54A86A7D03CE996BE2D8F87961EA5A4A4&quot;,INITVAL_1=&quot;0xB5E0787D2DA5C914960FD2960F0F4BB4962DF2D42D4B69F0D00D16164BF1F50A&quot;,INITVAL_2=&quot;0x34713452C3A5C396D0C1343425472F585A2D5A7A0ECE4B975BC2941DE02CE1F1&quot;,INITVAL_3=&quot;0x34079292E06A4BA56DB81F6894C1B49E872FAD352D961EA73CBC2D0F0F3C1F4E&quot;,INI   ....   88F27&quot;,INITVAL_E=&quot;0x2DF88686B00B69F04B2DF4B2964B2DD20F0FB496960F39824B5AE1EBDA7078F8&quot;,INITVAL_F=&quot;0x875A1E964B1F96D7C3795EB02516F0DA2DF00C0CD2E3C32D3CD22D3CC3E3FA05&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1608</Navigation>
@@ -467,7 +427,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b0100,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0x691EA5E1B469A5693CE10FDE1E1E879686A4962D872D3C872D963C3C2D3CA4A4&quot;,INIT_VALUE_01=&quot;0x87D29696960F4BE35A69C3A5D2B487781EF00F3C0F2DD2E1E349F8436996781E&quot;   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1304</Navigation>
@@ -475,15 +435,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x691EA5E1B469A5693CE10FDE1E1E879686A4962D872D3C872D963C3C2D3CA4A4&quot;,INITVAL_1=&quot;0x87D29696960F4BE35A69C3A5D2B487781EF00F3C0F2DD2E1E349F8436996781E&quot;,INITVAL_2=&quot;0xA5DABC16784BE187B6498F611EBC4B78D2B487780EE01E2DC3E1D26B4B971E5A&quot;,INITVAL_3=&quot;0x5A8F87C7F07969B43C5AA5967AD04B3C87E1960F4BC35A0FA5E1B43C69F0783C&quot;,INI   ....   5E1C3&quot;,INITVAL_E=&quot;0x6996F12C7C29B4780F4B0FC387F01EE1B4D23C5AA5692D7C960F96961EB487A5&quot;,INITVAL_F=&quot;0x4BC3C3C34B96C31E1E4B964B16521E9687870FB7C3785A69D2695A786987E187&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1608</Navigation>
@@ -491,7 +451,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b0110,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0x87A53C873C3C8796962D2DA50F1E963C2D973C2D8787873C3C962D2D96870EA4&quot;,INIT_VALUE_01=&quot;0x5AB4690FF0A5874B0FF0B4D2A5691EC31E78A5D2B4780F0F96A5B41E2DB41E0F&quot;   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1304</Navigation>
@@ -499,15 +459,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x87A53C873C3C8796962D2DA50F1E963C2D973C2D8787873C3C962D2D96870EA4&quot;,INITVAL_1=&quot;0x5AB4690FF0A5874B0FF0B4D2A5691EC31E78A5D2B4780F0F96A5B41E2DB41E0F&quot;,INITVAL_2=&quot;0x1EE13C5AA5B41E960F2DB487B43C4BD2D2E1E14B79E05A5AC33C7887692DC396&quot;,INITVAL_3=&quot;0xA5781E5A8787962D3C96A5B4D24B4BE1F0C3F0784B965A2DC32D69963C7887C3&quot;,INI   ....   81E3C&quot;,INITVAL_E=&quot;0x4BD2D287965A0F0FD2E15AB487E1873C5A69D2B40FF01E2DF05A690FA5D23C96&quot;,INITVAL_F=&quot;0x961E4B4BC3961EC31E1EC34B4B9E96C30F874B5A964B1E96C3C3C31E1E5A870F&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1608</Navigation>
@@ -515,7 +475,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b01000,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0x1EA51EA51EA53C1E3C1E2D0F2D2DA5A5A5B4A5B4960F960F960F961E1EB40EA4&quot;,INIT_VALUE_01=&quot;0x963C872D0FA52D962D962D1E3C0F3C2D3C2DB4B4B4B48787870F870F871E873C   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1304</Navigation>
@@ -523,15 +483,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x1EA51EA51EA53C1E3C1E2D0F2D2DA5A5A5B4A5B4960F960F960F961E1EB40EA4&quot;,INITVAL_1=&quot;0x963C872D0FA52D962D962D1E3C0F3C2D3C2DB4B4B4B48787870F870F871E873C&quot;,INITVAL_2=&quot;0x87F087F09669B44BB45A3CD23CD22DA52D2D2D3C2D3C0F1E968796879696963C&quot;,INITVAL_3=&quot;0x5A3C781EE187E187E187E11EA578B4693CE13CE11ED21ED20F4B0F4B0F4B87F0&quot;,INI   ....   01EF0&quot;,INITVAL_E=&quot;0x1E871E0F1E0F1E1ED2D2D2D2C34BC34BC30F4B874B964B960F5A1E4B96C396C3&quot;,INITVAL_F=&quot;0x87D29687960F960F960F5AD25AD25A5A4B4B4B0FC387C387875A875A875A1EC3&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1608</Navigation>
@@ -539,7 +499,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b01010,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0x960F960F960F960F960F961E961E1E961E961E961EB41EB41EB41EB41EB40EA4&quot;,INIT_VALUE_01=&quot;0xA5A5A5B4A5B4A5B4A5B4A5B4A5B4A5B4A5B4A53CA53C960F960F960F960F960F   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1304</Navigation>
@@ -547,15 +507,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x960F960F960F960F960F961E961E1E961E961E961EB41EB41EB41EB41EB40EA4&quot;,INITVAL_1=&quot;0xA5A5A5B4A5B4A5B4A5B4A5B4A5B4A5B4A5B4A53CA53C960F960F960F960F960F&quot;,INITVAL_2=&quot;0x3C1E3C1E3C1E3C1E3C1E3C1E3C1E2D0F2D0F2D0F2D0F2D2DA5A5A5A5A5A5A5A5&quot;,INITVAL_3=&quot;0x873C873C1EA51EA51EA51EA51EA51EA51EA51EA53C873C873C963C963C963C1E&quot;,INI   ....   7C387&quot;,INITVAL_E=&quot;0x960F960F960F960F5AC35AC35AD25AD25AD25AD25AD25AD25AD25AD25A5A5A5A&quot;,INITVAL_F=&quot;0x87D287D287D287D287D287968796879696879687960F960F960F960F960F960F&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1608</Navigation>
@@ -563,7 +523,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b01100,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0xB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EA40E&quot;,INIT_VALUE_01=&quot;0x963C963C963C963C963C963C963C963C963C963C963CB41EB41EB41EB41EB41E   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1304</Navigation>
@@ -571,15 +531,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0xB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EA40E&quot;,INITVAL_1=&quot;0x963C963C963C963C963C963C963C963C963C963C963CB41EB41EB41EB41EB41E&quot;,INITVAL_2=&quot;0x96A596A596A596A596A596A596A596B496B496B496B496B4963C963C963C963C&quot;,INITVAL_3=&quot;0x96A596A596A596A596A596A596A596A596A596A596A596A596A596A596A596A5&quot;,INI   ....   A965A&quot;,INITVAL_E=&quot;0xD287D287D287D28796C396C396C396C396C396C396C396C396C396C396C396C3&quot;,INITVAL_F=&quot;0xD287D287D287D287D287D287D287D287D287D287D287D287D287D287D287D287&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1608</Navigation>
@@ -587,7 +547,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b01110,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EE00E&quot;,INIT_VALUE_01=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01E   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1304</Navigation>
@@ -595,15 +555,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EE00E&quot;,INITVAL_1=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01E&quot;,INITVAL_2=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01E&quot;,INITVAL_3=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01E&quot;,INI   ....   7F087&quot;,INITVAL_E=&quot;0xF087F087F087F087F087F087F087F087F087F087F087F087F087F087F087F087&quot;,INITVAL_F=&quot;0xF087F087F087F087F087F087F087F087F087F087F087F087F087F087F087F087&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v</Navigation>
             <Navigation>1608</Navigation>
@@ -611,7 +571,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(1):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(1): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>1</Navigation>
@@ -619,7 +579,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v(40):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v(40): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v</Navigation>
             <Navigation>40</Navigation>
@@ -627,7 +587,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(2):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(2): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>2</Navigation>
@@ -635,7 +595,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v(50):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v(50): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/adder/rtl/lscc_adder.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v</Navigation>
             <Navigation>50</Navigation>
@@ -643,7 +603,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(3):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(3): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>3</Navigation>
@@ -651,7 +611,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v(52):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v(52): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v</Navigation>
             <Navigation>52</Navigation>
@@ -659,7 +619,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(4):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(4): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>4</Navigation>
@@ -667,7 +627,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v(39):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v(39): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/counter/rtl/lscc_cntr.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v</Navigation>
             <Navigation>39</Navigation>
@@ -675,7 +635,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(5):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(5): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>5</Navigation>
@@ -683,7 +643,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v(44):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v(44): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/fifo/rtl/lscc_fifo.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v</Navigation>
             <Navigation>44</Navigation>
@@ -691,7 +651,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(6):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(6): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>6</Navigation>
@@ -699,7 +659,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v(47):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v(47): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v</Navigation>
             <Navigation>47</Navigation>
@@ -707,7 +667,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(7):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(7): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>7</Navigation>
@@ -715,7 +675,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v(52):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v(52): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v</Navigation>
             <Navigation>52</Navigation>
@@ -723,7 +683,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(8):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(8): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>8</Navigation>
@@ -731,7 +691,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v(53):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v(53): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v</Navigation>
             <Navigation>53</Navigation>
@@ -739,7 +699,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(9):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(9): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>9</Navigation>
@@ -747,7 +707,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v(52):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v(52): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v</Navigation>
             <Navigation>52</Navigation>
@@ -755,7 +715,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(10):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(10): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>10</Navigation>
@@ -763,7 +723,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v(51):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v(51): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v</Navigation>
             <Navigation>51</Navigation>
@@ -771,7 +731,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(11):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(11): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>11</Navigation>
@@ -779,7 +739,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v(48):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v(48): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v</Navigation>
             <Navigation>48</Navigation>
@@ -787,7 +747,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(12):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(12): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>12</Navigation>
@@ -795,7 +755,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v(45):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v(45): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v</Navigation>
             <Navigation>45</Navigation>
@@ -803,7 +763,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(13):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(13): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>13</Navigation>
@@ -811,7 +771,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v(45):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v(45): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/rom/rtl/lscc_rom.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v</Navigation>
             <Navigation>45</Navigation>
@@ -819,7 +779,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(14):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(14): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>14</Navigation>
@@ -827,7 +787,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v(50):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v(50): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v</Navigation>
             <Navigation>50</Navigation>
@@ -835,7 +795,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(15):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(15): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>15</Navigation>
@@ -843,7 +803,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v(49):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v(49): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v</Navigation>
             <Navigation>49</Navigation>
@@ -851,7 +811,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(16):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(16): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>16</Navigation>
@@ -859,7 +819,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v(45):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v(45): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v</Navigation>
             <Navigation>45</Navigation>
@@ -867,7 +827,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(17):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(17): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_dsp.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>17</Navigation>
@@ -875,7 +835,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(10):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(10): </Dynamic>
             <Dynamic>SamplePos_RAM</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v</Navigation>
             <Navigation>10</Navigation>
@@ -883,7 +843,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(171):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(171): </Dynamic>
             <Dynamic>SamplePos_RAM_ipgen_lscc_ram_dq(FAMILY=&quot;iCE40UP&quot;,ADDR_DEPTH=256,ADDR_WIDTH=8,DATA_WIDTH=16,REGMODE=&quot;noreg&quot;,INIT_FILE=&quot;misc/sample_pos_lut_optimised_SamplePos_RAM_copy.mem&quot;,INIT_FILE_FORMAT=&quot;hex&quot;,INIT_MODE=&quot;mem_file&quot;,BYTE_WIDTH=2,MEM_SIZE=&quot;16,256&quot;,MEM_ID=&quot;SamplePos_RAM&quot;,INIT_VALUE_00=&quot;0x8C28451EB28F58F59AE12333466655C267AE00   ....   NIT_VALUE_0E=&quot;0xC0A3151E48F5F28FA47A370A0A3D628FA851EA3D5AE1CCCC98F5DB85B999D51E&quot;,INIT_VALUE_0F=&quot;0x851E07AE0F5C9333D28FEA3D90A3751EB333D000D8F54AE1E000D51E4EB853D7&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v</Navigation>
             <Navigation>171</Navigation>
@@ -891,7 +851,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(422):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(422): </Dynamic>
             <Dynamic>SamplePos_RAM_ipgen_lscc_write_through(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=16)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v</Navigation>
             <Navigation>422</Navigation>
@@ -899,7 +859,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(536):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(536): </Dynamic>
             <Dynamic>SamplePos_RAM_ipgen_lscc_ram_dq_inst(FAMILY=&quot;iCE40UP&quot;,ADDR_DEPTH=256,ADDR_WIDTH=8,DATA_WIDTH=16,REGMODE=&quot;noreg&quot;,INIT_FILE=&quot;misc/sample_pos_lut_optimised_SamplePos_RAM_copy.mem&quot;,INIT_FILE_FORMAT=&quot;hex&quot;,INIT_MODE=&quot;mem_file&quot;,BYTE_SIZE=10'b01000,BYTE_WIDTH=2,MEM_SIZE=&quot;16,256&quot;,MEM_ID=&quot;SamplePos_RAM&quot;,INIT_VALUE_00=&quot;0x8C28451EB28F5   ....   NIT_VALUE_0E=&quot;0xC0A3151E48F5F28FA47A370A0A3D628FA851EA3D5AE1CCCC98F5DB85B999D51E&quot;,INIT_VALUE_0F=&quot;0x851E07AE0F5C9333D28FEA3D90A3751EB333D000D8F54AE1E000D51E4EB853D7&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v</Navigation>
             <Navigation>536</Navigation>
@@ -907,7 +867,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(1416):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v(1416): </Dynamic>
             <Dynamic>SamplePos_RAM_ipgen_lscc_ram_dq_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010000,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b0,POSy=32'b0,MEM_SIZE=&quot;16,256&quot;,MEM_ID=&quot;SamplePos_RAM&quot;,INIT_VALUE_00=&quot;0x8C28451EB28F58F59AE12333466655C267AE0000A00000003000000020000000&quot;,INIT_VALUE_01=&quot;0xD5C210A38EB83999F70A2F5CD28F98F53EB881EB50A313D7CE146C28A9   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v</Navigation>
             <Navigation>1416</Navigation>
@@ -915,10 +875,298 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x8C28451EB28F58F59AE12333466655C267AE0000A00000003000000020000000&quot;,INITVAL_1=&quot;0xD5C210A38EB83999F70A2F5CD28F98F53EB881EB50A313D7CE146C28A999E51E&quot;,INITVAL_2=&quot;0x4AE1614727AECC28551EB70AFB853AE17F5CAA3DE0A3099925C2447AB1EB2C28&quot;,INITVAL_3=&quot;0x847A566627AE428F4F5C1666347A0147A8F51A3DAEB815C26CCC50A3F0A3CB85&quot;,INI   ....   A47A370A0A3D628FA851EA3D5AE1CCCC98F5DB85B999D51E&quot;,INITVAL_F=&quot;0x851E07AE0F5C9333D28FEA3D90A3751EB333D000D8F54AE1E000D51E4EB853D7&quot;,DATA_WIDTH_W=&quot;16&quot;,DATA_WIDTH_R=&quot;16&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(1): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>1</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v(40): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v</Navigation>
+            <Navigation>40</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(2): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>2</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v(50): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/adder/rtl/lscc_adder.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v</Navigation>
+            <Navigation>50</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(3): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>3</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v(52): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v</Navigation>
+            <Navigation>52</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(4): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>4</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v(39): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/counter/rtl/lscc_cntr.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v</Navigation>
+            <Navigation>39</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(5): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>5</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v(44): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/fifo/rtl/lscc_fifo.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v</Navigation>
+            <Navigation>44</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(6): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>6</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v(47): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v</Navigation>
+            <Navigation>47</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(7): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>7</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v(52): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v</Navigation>
+            <Navigation>52</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(8): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>8</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v(53): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v</Navigation>
+            <Navigation>53</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(9): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>9</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v(52): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v</Navigation>
+            <Navigation>52</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(10): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>10</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v(51): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v</Navigation>
+            <Navigation>51</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(11): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>11</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v(48): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v</Navigation>
+            <Navigation>48</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(12): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>12</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v(45): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v</Navigation>
+            <Navigation>45</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(13): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>13</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v(45): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/rom/rtl/lscc_rom.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v</Navigation>
+            <Navigation>45</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(14): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>14</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v(50): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v</Navigation>
+            <Navigation>50</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(15): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>15</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v(49): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v</Navigation>
+            <Navigation>49</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(16): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>16</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v(45): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v</Navigation>
+            <Navigation>45</Navigation>
+        </Message>
+        <Message>
+            <ID>35901328</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(17): </Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_dsp.v</Dynamic>
+            <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
+            <Navigation>17</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod_Mult/rtl/Ring_Mod_Mult.v(10): </Dynamic>
+            <Dynamic>Ring_Mod_Mult</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod_Mult/rtl/Ring_Mod_Mult.v</Navigation>
+            <Navigation>10</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod_Mult/rtl/Ring_Mod_Mult.v(98): </Dynamic>
+            <Dynamic>Ring_Mod_Mult_ipgen_lscc_multiplier(COEFF=2,A_WIDTH=20,B_WIDTH=20,PIPELINES=3,IMPL=&quot;DSP&quot;,FAMILY=&quot;iCE40UP&quot;)</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod_Mult/rtl/Ring_Mod_Mult.v</Navigation>
+            <Navigation>98</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod_Mult/rtl/Ring_Mod_Mult.v(454): </Dynamic>
+            <Dynamic>Ring_Mod_Mult_ipgen_lscc_multiplier_dsp(USE_COEFF=0,A_WIDTH=20,B_WIDTH=20,PIPELINES=3)</Dynamic>
+            <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod_Mult/rtl/Ring_Mod_Mult.v</Navigation>
+            <Navigation>454</Navigation>
         </Message>
         <Message>
             <ID>35831026</ID>
@@ -927,7 +1175,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(1):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(1): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>1</Navigation>
@@ -935,7 +1183,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v(40):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v(40): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v</Navigation>
             <Navigation>40</Navigation>
@@ -943,7 +1191,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(2):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(2): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>2</Navigation>
@@ -951,7 +1199,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v(50):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v(50): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/adder/rtl/lscc_adder.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_add.v</Navigation>
             <Navigation>50</Navigation>
@@ -959,7 +1207,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(3):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(3): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>3</Navigation>
@@ -967,7 +1215,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v(52):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v(52): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v</Navigation>
             <Navigation>52</Navigation>
@@ -975,7 +1223,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(4):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(4): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>4</Navigation>
@@ -983,7 +1231,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v(39):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v(39): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/counter/rtl/lscc_cntr.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_counter.v</Navigation>
             <Navigation>39</Navigation>
@@ -991,7 +1239,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(5):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(5): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>5</Navigation>
@@ -999,7 +1247,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v(44):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v(44): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/fifo/rtl/lscc_fifo.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v</Navigation>
             <Navigation>44</Navigation>
@@ -1007,7 +1255,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(6):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(6): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>6</Navigation>
@@ -1015,7 +1263,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v(47):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v(47): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v</Navigation>
             <Navigation>47</Navigation>
@@ -1023,7 +1271,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(7):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(7): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>7</Navigation>
@@ -1031,7 +1279,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v(52):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v(52): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_mac.v</Navigation>
             <Navigation>52</Navigation>
@@ -1039,7 +1287,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(8):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(8): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>8</Navigation>
@@ -1047,7 +1295,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v(53):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v(53): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v</Navigation>
             <Navigation>53</Navigation>
@@ -1055,7 +1303,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(9):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(9): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>9</Navigation>
@@ -1063,7 +1311,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v(52):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v(52): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v</Navigation>
             <Navigation>52</Navigation>
@@ -1071,7 +1319,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(10):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(10): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>10</Navigation>
@@ -1079,7 +1327,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v(51):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v(51): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_mult.v</Navigation>
             <Navigation>51</Navigation>
@@ -1087,7 +1335,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(11):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(11): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>11</Navigation>
@@ -1095,7 +1343,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v(48):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v(48): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v</Navigation>
             <Navigation>48</Navigation>
@@ -1103,7 +1351,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(12):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(12): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>12</Navigation>
@@ -1111,7 +1359,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v(45):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v(45): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v</Navigation>
             <Navigation>45</Navigation>
@@ -1119,7 +1367,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(13):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(13): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>13</Navigation>
@@ -1127,7 +1375,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v(45):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v(45): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/rom/rtl/lscc_rom.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_rom.v</Navigation>
             <Navigation>45</Navigation>
@@ -1135,7 +1383,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(14):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(14): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>14</Navigation>
@@ -1143,7 +1391,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v(50):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v(50): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_sub.v</Navigation>
             <Navigation>50</Navigation>
@@ -1151,7 +1399,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(15):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(15): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>15</Navigation>
@@ -1159,7 +1407,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v(49):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v(49): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v</Navigation>
             <Navigation>49</Navigation>
@@ -1167,7 +1415,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(16):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(16): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>16</Navigation>
@@ -1175,7 +1423,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v(45):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v(45): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v</Navigation>
             <Navigation>45</Navigation>
@@ -1183,7 +1431,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(17):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v(17): </Dynamic>
             <Dynamic>C:/lscc/radiant/2.0/ip/pmi/pmi_dsp.v</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v</Navigation>
             <Navigation>17</Navigation>
@@ -1191,7 +1439,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(1):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(1): </Dynamic>
             <Dynamic>top</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v</Navigation>
             <Navigation>1</Navigation>
@@ -1199,7 +1447,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/PLL_Primitive_48MHz.v(6):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/PLL_Primitive_48MHz.v(6): </Dynamic>
             <Dynamic>PLL_Primitive_48MHz</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/PLL_Primitive_48MHz.v</Navigation>
             <Navigation>6</Navigation>
@@ -1207,7 +1455,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(428):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(428): </Dynamic>
             <Dynamic>PLL_B(PLLOUT_SELECT_PORTA=&quot;GENCLK&quot;,PLLOUT_SELECT_PORTB=&quot;GENCLK&quot;,DIVF=&quot;63&quot;,DIVQ=&quot;4&quot;,FILTER_RANGE=&quot;1&quot;,FREQUENCY_PIN_REFERENCECLK=&quot;12.000000&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>428</Navigation>
@@ -1215,7 +1463,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Position.v(8):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Position.v(8): </Dynamic>
             <Dynamic>Sample_Position</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Position.v</Navigation>
             <Navigation>8</Navigation>
@@ -1223,7 +1471,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>SamplePos_RAM.v(60):</Dynamic>
+            <Dynamic>SamplePos_RAM.v(60): </Dynamic>
             <Dynamic>SamplePos_RAM</Dynamic>
             <Navigation>SamplePos_RAM.v</Navigation>
             <Navigation>60</Navigation>
@@ -1231,7 +1479,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>Sine_LUT.v(60):</Dynamic>
+            <Dynamic>Sine_LUT.v(60): </Dynamic>
             <Dynamic>Sine_LUT</Dynamic>
             <Navigation>Sine_LUT.v</Navigation>
             <Navigation>60</Navigation>
@@ -1239,7 +1487,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/ADC_SPI_In.v(4):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/ADC_SPI_In.v(4): </Dynamic>
             <Dynamic>ADC_SPI_In</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/ADC_SPI_In.v</Navigation>
             <Navigation>4</Navigation>
@@ -1247,7 +1495,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v(6):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v(6): </Dynamic>
             <Dynamic>Adder</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v</Navigation>
             <Navigation>6</Navigation>
@@ -1255,7 +1503,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Scale_Mult.v(4):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Scale_Mult.v(4): </Dynamic>
             <Dynamic>Scale_Mult</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Scale_Mult.v</Navigation>
             <Navigation>4</Navigation>
@@ -1263,7 +1511,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Output.v(1):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Output.v(1): </Dynamic>
             <Dynamic>Sample_Output</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Output.v</Navigation>
             <Navigation>1</Navigation>
@@ -1271,7 +1519,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod.v(1):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod.v(1): </Dynamic>
             <Dynamic>Ring_Mod</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod.v</Navigation>
             <Navigation>1</Navigation>
@@ -1279,16 +1527,16 @@
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod.v(70):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod.v(75): </Dynamic>
             <Dynamic>20</Dynamic>
             <Dynamic>16</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod.v</Navigation>
-            <Navigation>70</Navigation>
+            <Navigation>75</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/DAC_SPI_Out.v(1):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/DAC_SPI_Out.v(1): </Dynamic>
             <Dynamic>DAC_SPI_Out</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/DAC_SPI_Out.v</Navigation>
             <Navigation>1</Navigation>
@@ -1296,11 +1544,15 @@
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(149):</Dynamic>
+            <Dynamic>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v(149): </Dynamic>
             <Dynamic>16</Dynamic>
             <Dynamic>8</Dynamic>
             <Navigation>D:/Eurorack/Addatone/Addatone_ICE40/src/top.v</Navigation>
             <Navigation>149</Navigation>
+        </Message>
+        <Message>
+            <ID>35834002</ID>
+            <Severity>16</Severity>
         </Message>
         <Message>
             <ID>35001786</ID>
@@ -1309,7 +1561,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(1):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(1): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>1</Navigation>
@@ -1317,7 +1569,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v(40):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v(40): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/adder_subtractor/rtl/lscc_add_sub.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v</Navigation>
             <Navigation>40</Navigation>
@@ -1325,7 +1577,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(2):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(2): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_add.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>2</Navigation>
@@ -1333,7 +1585,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_add.v(50):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_add.v(50): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/adder/rtl/lscc_adder.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_add.v</Navigation>
             <Navigation>50</Navigation>
@@ -1341,7 +1593,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(3):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(3): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>3</Navigation>
@@ -1349,7 +1601,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v(52):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v(52): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/complex_mult/rtl/lscc_complex_mult.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v</Navigation>
             <Navigation>52</Navigation>
@@ -1357,7 +1609,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(4):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(4): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_counter.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>4</Navigation>
@@ -1365,7 +1617,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_counter.v(39):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_counter.v(39): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/counter/rtl/lscc_cntr.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_counter.v</Navigation>
             <Navigation>39</Navigation>
@@ -1373,7 +1625,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(5):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(5): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>5</Navigation>
@@ -1381,7 +1633,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v(44):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v(44): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/fifo/rtl/lscc_fifo.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v</Navigation>
             <Navigation>44</Navigation>
@@ -1389,7 +1641,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(6):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(6): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>6</Navigation>
@@ -1397,7 +1649,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v(47):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v(47): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/fifo_dc/rtl/lscc_fifo_dc.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v</Navigation>
             <Navigation>47</Navigation>
@@ -1405,7 +1657,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(7):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(7): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_mac.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>7</Navigation>
@@ -1413,7 +1665,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_mac.v(52):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_mac.v(52): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/mult_accumulate/rtl/lscc_mult_accumulate.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_mac.v</Navigation>
             <Navigation>52</Navigation>
@@ -1421,7 +1673,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(8):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(8): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>8</Navigation>
@@ -1429,7 +1681,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v(53):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v(53): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v</Navigation>
             <Navigation>53</Navigation>
@@ -1437,7 +1689,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(9):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(9): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>9</Navigation>
@@ -1445,7 +1697,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v(52):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v(52): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/mult_add_sub/rtl/lscc_mult_add_sub.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v</Navigation>
             <Navigation>52</Navigation>
@@ -1453,7 +1705,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(10):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(10): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_mult.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>10</Navigation>
@@ -1461,7 +1713,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_mult.v(51):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_mult.v(51): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/multiplier/rtl/lscc_multiplier.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_mult.v</Navigation>
             <Navigation>51</Navigation>
@@ -1469,7 +1721,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(11):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(11): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>11</Navigation>
@@ -1477,7 +1729,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v(48):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v(48): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v</Navigation>
             <Navigation>48</Navigation>
@@ -1485,7 +1737,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(12):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(12): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>12</Navigation>
@@ -1493,7 +1745,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v(45):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v(45): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v</Navigation>
             <Navigation>45</Navigation>
@@ -1501,7 +1753,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(13):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(13): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_rom.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>13</Navigation>
@@ -1509,7 +1761,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_rom.v(45):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_rom.v(45): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/rom/rtl/lscc_rom.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_rom.v</Navigation>
             <Navigation>45</Navigation>
@@ -1517,7 +1769,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(14):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(14): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_sub.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>14</Navigation>
@@ -1525,7 +1777,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_sub.v(50):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_sub.v(50): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/subtractor/rtl/lscc_subtractor.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_sub.v</Navigation>
             <Navigation>50</Navigation>
@@ -1533,7 +1785,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(15):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(15): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>15</Navigation>
@@ -1541,7 +1793,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v(49):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v(49): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/ram_dp/rtl/lscc_ram_dp.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v</Navigation>
             <Navigation>49</Navigation>
@@ -1549,7 +1801,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(16):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(16): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>16</Navigation>
@@ -1557,7 +1809,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v(45):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v(45): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/../common/ram_dq/rtl/lscc_ram_dq.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v</Navigation>
             <Navigation>45</Navigation>
@@ -1565,7 +1817,7 @@
         <Message>
             <ID>35901328</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(17):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v(17): </Dynamic>
             <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_dsp.v</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v</Navigation>
             <Navigation>17</Navigation>
@@ -1573,7 +1825,7 @@
         <Message>
             <ID>35921014</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.vhd(4):</Dynamic>
+            <Dynamic>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.vhd(4): </Dynamic>
             <Dynamic>components</Dynamic>
             <Navigation>c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.vhd</Navigation>
             <Navigation>4</Navigation>
@@ -1587,7 +1839,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(1):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(1): </Dynamic>
             <Dynamic>top</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/top.v</Navigation>
             <Navigation>1</Navigation>
@@ -1595,7 +1847,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/pll_primitive_48mhz.v(6):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/pll_primitive_48mhz.v(6): </Dynamic>
             <Dynamic>PLL_Primitive_48MHz</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/pll_primitive_48mhz.v</Navigation>
             <Navigation>6</Navigation>
@@ -1603,7 +1855,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(428):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(428): </Dynamic>
             <Dynamic>PLL_B(PLLOUT_SELECT_PORTA=&quot;GENCLK&quot;,PLLOUT_SELECT_PORTB=&quot;GENCLK&quot;,DIVF=&quot;63&quot;,DIVQ=&quot;4&quot;,FILTER_RANGE=&quot;1&quot;,FREQUENCY_PIN_REFERENCECLK=&quot;12.000000&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>428</Navigation>
@@ -1611,7 +1863,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_position.v(8):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_position.v(8): </Dynamic>
             <Dynamic>Sample_Position</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_position.v</Navigation>
             <Navigation>8</Navigation>
@@ -1619,7 +1871,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(10):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(10): </Dynamic>
             <Dynamic>SamplePos_RAM</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v</Navigation>
             <Navigation>10</Navigation>
@@ -1627,7 +1879,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(171):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(171): </Dynamic>
             <Dynamic>SamplePos_RAM_ipgen_lscc_ram_dq(FAMILY=&quot;iCE40UP&quot;,ADDR_DEPTH=256,ADDR_WIDTH=8,DATA_WIDTH=16,REGMODE=&quot;noreg&quot;,INIT_FILE=&quot;misc/sample_pos_lut_optimised_SamplePos_RAM_copy.mem&quot;,INIT_FILE_FORMAT=&quot;hex&quot;,INIT_MODE=&quot;mem_file&quot;,BYTE_WIDTH=2,MEM_SIZE=&quot;16,256&quot;,MEM_ID=&quot;SamplePos_RAM&quot;,INIT_VALUE_00=&quot;0x8C28451EB28F58F59AE12333466655C267AE00   ....   NIT_VALUE_0E=&quot;0xC0A3151E48F5F28FA47A370A0A3D628FA851EA3D5AE1CCCC98F5DB85B999D51E&quot;,INIT_VALUE_0F=&quot;0x851E07AE0F5C9333D28FEA3D90A3751EB333D000D8F54AE1E000D51E4EB853D7&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v</Navigation>
             <Navigation>171</Navigation>
@@ -1635,7 +1887,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(422):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(422): </Dynamic>
             <Dynamic>SamplePos_RAM_ipgen_lscc_write_through(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=16)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v</Navigation>
             <Navigation>422</Navigation>
@@ -1643,7 +1895,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(536):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(536): </Dynamic>
             <Dynamic>SamplePos_RAM_ipgen_lscc_ram_dq_inst(FAMILY=&quot;iCE40UP&quot;,ADDR_DEPTH=256,ADDR_WIDTH=8,DATA_WIDTH=16,REGMODE=&quot;noreg&quot;,INIT_FILE=&quot;misc/sample_pos_lut_optimised_SamplePos_RAM_copy.mem&quot;,INIT_FILE_FORMAT=&quot;hex&quot;,INIT_MODE=&quot;mem_file&quot;,BYTE_SIZE=10'b01000,BYTE_WIDTH=2,MEM_SIZE=&quot;16,256&quot;,MEM_ID=&quot;SamplePos_RAM&quot;,INIT_VALUE_00=&quot;0x8C28451EB28F5   ....   NIT_VALUE_0E=&quot;0xC0A3151E48F5F28FA47A370A0A3D628FA851EA3D5AE1CCCC98F5DB85B999D51E&quot;,INIT_VALUE_0F=&quot;0x851E07AE0F5C9333D28FEA3D90A3751EB333D000D8F54AE1E000D51E4EB853D7&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v</Navigation>
             <Navigation>536</Navigation>
@@ -1651,7 +1903,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(1416):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v(1416): </Dynamic>
             <Dynamic>SamplePos_RAM_ipgen_lscc_ram_dq_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010000,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b0,POSy=32'b0,MEM_SIZE=&quot;16,256&quot;,MEM_ID=&quot;SamplePos_RAM&quot;,INIT_VALUE_00=&quot;0x8C28451EB28F58F59AE12333466655C267AE0000A00000003000000020000000&quot;,INIT_VALUE_01=&quot;0xD5C210A38EB83999F70A2F5CD28F98F53EB881EB50A313D7CE146C28A9   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/samplepos_ram/rtl/samplepos_ram.v</Navigation>
             <Navigation>1416</Navigation>
@@ -1659,7 +1911,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x8C28451EB28F58F59AE12333466655C267AE0000A00000003000000020000000&quot;,INITVAL_1=&quot;0xD5C210A38EB83999F70A2F5CD28F98F53EB881EB50A313D7CE146C28A999E51E&quot;,INITVAL_2=&quot;0x4AE1614727AECC28551EB70AFB853AE17F5CAA3DE0A3099925C2447AB1EB2C28&quot;,INITVAL_3=&quot;0x847A566627AE428F4F5C1666347A0147A8F51A3DAEB815C26CCC50A3F0A3CB85&quot;,INI   ....   A47A370A0A3D628FA851EA3D5AE1CCCC98F5DB85B999D51E&quot;,INITVAL_F=&quot;0x851E07AE0F5C9333D28FEA3D90A3751EB333D000D8F54AE1E000D51E4EB853D7&quot;,DATA_WIDTH_W=&quot;16&quot;,DATA_WIDTH_R=&quot;16&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
@@ -1667,7 +1919,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(10):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(10): </Dynamic>
             <Dynamic>Sine_LUT</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>10</Navigation>
@@ -1675,7 +1927,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(164):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(164): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom(RADDR_DEPTH=2048,RADDR_WIDTH=11,RDATA_WIDTH=16,REGMODE=&quot;noreg&quot;,INIT_FILE=&quot;misc/sin_lut2048_Sine_LUT_copy.mem&quot;,INIT_FILE_FORMAT=&quot;hex&quot;,INIT_MODE=&quot;mem_file&quot;,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EE00E0xB41EB41EB41EB41EB41EB41EB41   ....   7870FB7C3785A69D2695A786987E1870x875A1E964B1F96D7C3795EB02516F0DA2DF00C0CD2E3C32D3CD22D3CC3E3FA050xC3FFA7DDEE00A8224EAA29BB47333566D2FFC488CD11BC772DFF3DEE0DDD1455&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>164</Navigation>
@@ -1683,7 +1935,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(425):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(425): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst(FAMILY=&quot;iCE40UP&quot;,ADDR_DEPTH=2048,ADDR_WIDTH=11,DATA_WIDTH=16,REGMODE=&quot;noreg&quot;,INIT_FILE=&quot;misc/sin_lut2048_Sine_LUT_copy.mem&quot;,INIT_FILE_FORMAT=&quot;hex&quot;,INIT_MODE=&quot;mem_file&quot;,BYTE_WIDTH=1,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EE   ....   7870FB7C3785A69D2695A786987E1870x875A1E964B1F96D7C3795EB02516F0DA2DF00C0CD2E3C32D3CD22D3CC3E3FA050xC3FFA7DDEE00A8224EAA29BB47333566D2FFC488CD11BC772DFF3DEE0DDD1455&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>425</Navigation>
@@ -1691,7 +1943,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b0,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0x0BBBCB774BFFD3EE3B883211B4FFCA662ECC49DD2755514477005EBB3CFFAE44&quot;,INIT_VALUE_01=&quot;0xA4EEA82269FF451187FFAF55AD775FAA7BCC9900BD66D2FF94DD7077EE0082AA&quot;,IN   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1304</Navigation>
@@ -1699,15 +1951,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x0BBBCB774BFFD3EE3B883211B4FFCA662ECC49DD2755514477005EBB3CFFAE44&quot;,INITVAL_1=&quot;0xA4EEA82269FF451187FFAF55AD775FAA7BCC9900BD66D2FF94DD7077EE0082AA&quot;,INITVAL_2=&quot;0x06667255B6DDF1EED5881766213349DDEB55C1DD20222ECCC6AA48CCA4EE68EE&quot;,INITVAL_3=&quot;0x716629BB8C44D3EE23116CAA94DD7344CD11660096FF1CDD3566E799EB550AAA&quot;,INI   ....   60555&quot;,INITVAL_E=&quot;0x7700E0EE92BBB4FFDB669900ED33AF555BEE5FAA1EFF2A8869FF514452776177&quot;,INITVAL_F=&quot;0xC3FFA7DDEE00A8224EAA29BB47333566D2FFC488CD11BC772DFF3DEE0DDD1455&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1608</Navigation>
@@ -1715,7 +1967,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b010,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0x3C7C4BC3C3B43C4BB47C03034BF0F0B54A86A7D03CE996BE2D8F87961EA5A4A4&quot;,INIT_VALUE_01=&quot;0xB5E0787D2DA5C914960FD2960F0F4BB4962DF2D42D4B69F0D00D16164BF1F50A&quot;,   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1304</Navigation>
@@ -1723,15 +1975,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x3C7C4BC3C3B43C4BB47C03034BF0F0B54A86A7D03CE996BE2D8F87961EA5A4A4&quot;,INITVAL_1=&quot;0xB5E0787D2DA5C914960FD2960F0F4BB4962DF2D42D4B69F0D00D16164BF1F50A&quot;,INITVAL_2=&quot;0x34713452C3A5C396D0C1343425472F585A2D5A7A0ECE4B975BC2941DE02CE1F1&quot;,INITVAL_3=&quot;0x34079292E06A4BA56DB81F6894C1B49E872FAD352D961EA73CBC2D0F0F3C1F4E&quot;,INI   ....   88F27&quot;,INITVAL_E=&quot;0x2DF88686B00B69F04B2DF4B2964B2DD20F0FB496960F39824B5AE1EBDA7078F8&quot;,INITVAL_F=&quot;0x875A1E964B1F96D7C3795EB02516F0DA2DF00C0CD2E3C32D3CD22D3CC3E3FA05&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1608</Navigation>
@@ -1739,7 +1991,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b0100,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0x691EA5E1B469A5693CE10FDE1E1E879686A4962D872D3C872D963C3C2D3CA4A4&quot;,INIT_VALUE_01=&quot;0x87D29696960F4BE35A69C3A5D2B487781EF00F3C0F2DD2E1E349F8436996781E&quot;   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1304</Navigation>
@@ -1747,15 +1999,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x691EA5E1B469A5693CE10FDE1E1E879686A4962D872D3C872D963C3C2D3CA4A4&quot;,INITVAL_1=&quot;0x87D29696960F4BE35A69C3A5D2B487781EF00F3C0F2DD2E1E349F8436996781E&quot;,INITVAL_2=&quot;0xA5DABC16784BE187B6498F611EBC4B78D2B487780EE01E2DC3E1D26B4B971E5A&quot;,INITVAL_3=&quot;0x5A8F87C7F07969B43C5AA5967AD04B3C87E1960F4BC35A0FA5E1B43C69F0783C&quot;,INI   ....   5E1C3&quot;,INITVAL_E=&quot;0x6996F12C7C29B4780F4B0FC387F01EE1B4D23C5AA5692D7C960F96961EB487A5&quot;,INITVAL_F=&quot;0x4BC3C3C34B96C31E1E4B964B16521E9687870FB7C3785A69D2695A786987E187&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1608</Navigation>
@@ -1763,7 +2015,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b0110,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0x87A53C873C3C8796962D2DA50F1E963C2D973C2D8787873C3C962D2D96870EA4&quot;,INIT_VALUE_01=&quot;0x5AB4690FF0A5874B0FF0B4D2A5691EC31E78A5D2B4780F0F96A5B41E2DB41E0F&quot;   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1304</Navigation>
@@ -1771,15 +2023,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x87A53C873C3C8796962D2DA50F1E963C2D973C2D8787873C3C962D2D96870EA4&quot;,INITVAL_1=&quot;0x5AB4690FF0A5874B0FF0B4D2A5691EC31E78A5D2B4780F0F96A5B41E2DB41E0F&quot;,INITVAL_2=&quot;0x1EE13C5AA5B41E960F2DB487B43C4BD2D2E1E14B79E05A5AC33C7887692DC396&quot;,INITVAL_3=&quot;0xA5781E5A8787962D3C96A5B4D24B4BE1F0C3F0784B965A2DC32D69963C7887C3&quot;,INI   ....   81E3C&quot;,INITVAL_E=&quot;0x4BD2D287965A0F0FD2E15AB487E1873C5A69D2B40FF01E2DF05A690FA5D23C96&quot;,INITVAL_F=&quot;0x961E4B4BC3961EC31E1EC34B4B9E96C30F874B5A964B1E96C3C3C31E1E5A870F&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1608</Navigation>
@@ -1787,7 +2039,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b01000,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0x1EA51EA51EA53C1E3C1E2D0F2D2DA5A5A5B4A5B4960F960F960F961E1EB40EA4&quot;,INIT_VALUE_01=&quot;0x963C872D0FA52D962D962D1E3C0F3C2D3C2DB4B4B4B48787870F870F871E873C   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1304</Navigation>
@@ -1795,15 +2047,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x1EA51EA51EA53C1E3C1E2D0F2D2DA5A5A5B4A5B4960F960F960F961E1EB40EA4&quot;,INITVAL_1=&quot;0x963C872D0FA52D962D962D1E3C0F3C2D3C2DB4B4B4B48787870F870F871E873C&quot;,INITVAL_2=&quot;0x87F087F09669B44BB45A3CD23CD22DA52D2D2D3C2D3C0F1E968796879696963C&quot;,INITVAL_3=&quot;0x5A3C781EE187E187E187E11EA578B4693CE13CE11ED21ED20F4B0F4B0F4B87F0&quot;,INI   ....   01EF0&quot;,INITVAL_E=&quot;0x1E871E0F1E0F1E1ED2D2D2D2C34BC34BC30F4B874B964B960F5A1E4B96C396C3&quot;,INITVAL_F=&quot;0x87D29687960F960F960F5AD25AD25A5A4B4B4B0FC387C387875A875A875A1EC3&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1608</Navigation>
@@ -1811,7 +2063,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b01010,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0x960F960F960F960F960F961E961E1E961E961E961EB41EB41EB41EB41EB40EA4&quot;,INIT_VALUE_01=&quot;0xA5A5A5B4A5B4A5B4A5B4A5B4A5B4A5B4A5B4A53CA53C960F960F960F960F960F   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1304</Navigation>
@@ -1819,15 +2071,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0x960F960F960F960F960F961E961E1E961E961E961EB41EB41EB41EB41EB40EA4&quot;,INITVAL_1=&quot;0xA5A5A5B4A5B4A5B4A5B4A5B4A5B4A5B4A5B4A53CA53C960F960F960F960F960F&quot;,INITVAL_2=&quot;0x3C1E3C1E3C1E3C1E3C1E3C1E3C1E2D0F2D0F2D0F2D0F2D2DA5A5A5A5A5A5A5A5&quot;,INITVAL_3=&quot;0x873C873C1EA51EA51EA51EA51EA51EA51EA51EA53C873C873C963C963C963C1E&quot;,INI   ....   7C387&quot;,INITVAL_E=&quot;0x960F960F960F960F5AC35AC35AD25AD25AD25AD25AD25AD25AD25AD25A5A5A5A&quot;,INITVAL_F=&quot;0x87D287D287D287D287D287968796879696879687960F960F960F960F960F960F&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1608</Navigation>
@@ -1835,7 +2087,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b01100,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0xB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EA40E&quot;,INIT_VALUE_01=&quot;0x963C963C963C963C963C963C963C963C963C963C963CB41EB41EB41EB41EB41E   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1304</Navigation>
@@ -1843,15 +2095,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0xB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EB41EA40E&quot;,INITVAL_1=&quot;0x963C963C963C963C963C963C963C963C963C963C963CB41EB41EB41EB41EB41E&quot;,INITVAL_2=&quot;0x96A596A596A596A596A596A596A596B496B496B496B496B4963C963C963C963C&quot;,INITVAL_3=&quot;0x96A596A596A596A596A596A596A596A596A596A596A596A596A596A596A596A5&quot;,INI   ....   A965A&quot;,INITVAL_E=&quot;0xD287D287D287D28796C396C396C396C396C396C396C396C396C396C396C396C3&quot;,INITVAL_F=&quot;0xD287D287D287D287D287D287D287D287D287D287D287D287D287D287D287D287&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1608</Navigation>
@@ -1859,7 +2111,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1304): </Dynamic>
             <Dynamic>Sine_LUT_ipgen_lscc_rom_inst_core(FAMILY=&quot;iCE40UP&quot;,DATA_WIDTH=32'b010,GSR=&quot;&quot;,INIT_MODE=&quot;mem_file&quot;,POSx=32'b01110,POSy=32'b0,MEM_SIZE=&quot;16,2048&quot;,MEM_ID=&quot;Sine_LUT&quot;,INIT_VALUE_00=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EE00E&quot;,INIT_VALUE_01=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01E   ....   T_VALUE_38=&quot;0x00&quot;,INIT_VALUE_39=&quot;0x00&quot;,INIT_VALUE_3A=&quot;0x00&quot;,INIT_VALUE_3B=&quot;0x00&quot;,INIT_VALUE_3C=&quot;0x00&quot;,INIT_VALUE_3D=&quot;0x00&quot;,INIT_VALUE_3E=&quot;0x00&quot;,INIT_VALUE_3F=&quot;0x00&quot;)</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1304</Navigation>
@@ -1867,15 +2119,15 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693):</Dynamic>
+            <Dynamic>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(693): </Dynamic>
             <Dynamic>PDP4K(INITVAL_0=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EE00E&quot;,INITVAL_1=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01E&quot;,INITVAL_2=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01E&quot;,INITVAL_3=&quot;0xF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01EF01E&quot;,INI   ....   7F087&quot;,INITVAL_E=&quot;0xF087F087F087F087F087F087F087F087F087F087F087F087F087F087F087F087&quot;,INITVAL_F=&quot;0xF087F087F087F087F087F087F087F087F087F087F087F087F087F087F087F087&quot;)</Dynamic>
             <Navigation>C:/lscc/radiant/2.0/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
             <Navigation>693</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1608</Navigation>
@@ -1883,7 +2135,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adc_spi_in.v(4):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adc_spi_in.v(4): </Dynamic>
             <Dynamic>ADC_SPI_In</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/adc_spi_in.v</Navigation>
             <Navigation>4</Navigation>
@@ -1891,7 +2143,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(6):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/adder.v(6): </Dynamic>
             <Dynamic>Adder</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/adder.v</Navigation>
             <Navigation>6</Navigation>
@@ -1899,7 +2151,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/scale_mult.v(4):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/scale_mult.v(4): </Dynamic>
             <Dynamic>Scale_Mult</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/scale_mult.v</Navigation>
             <Navigation>4</Navigation>
@@ -1907,7 +2159,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(1):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(1): </Dynamic>
             <Dynamic>Sample_Output</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
             <Navigation>1</Navigation>
@@ -1915,7 +2167,7 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/ring_mod.v(1):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/ring_mod.v(1): </Dynamic>
             <Dynamic>Ring_Mod</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/ring_mod.v</Navigation>
             <Navigation>1</Navigation>
@@ -1923,16 +2175,16 @@
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/ring_mod.v(70):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/ring_mod.v(75): </Dynamic>
             <Dynamic>20</Dynamic>
             <Dynamic>16</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/ring_mod.v</Navigation>
-            <Navigation>70</Navigation>
+            <Navigation>75</Navigation>
         </Message>
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(1):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(1): </Dynamic>
             <Dynamic>DAC_SPI_Out</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v</Navigation>
             <Navigation>1</Navigation>
@@ -1940,7 +2192,7 @@
         <Message>
             <ID>35901209</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(149):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(149): </Dynamic>
             <Dynamic>16</Dynamic>
             <Dynamic>8</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/top.v</Navigation>
@@ -1948,8 +2200,8 @@
         </Message>
         <Message>
             <ID>35931002</ID>
-            <Severity>1</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608):</Dynamic>
+            <Severity>16</Severity>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v(1608): </Dynamic>
             <Dynamic>iCE40UP.wdata_w[15]</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sine_lut/rtl/sine_lut.v</Navigation>
             <Navigation>1608</Navigation>
@@ -1974,7 +2226,7 @@
         <Message>
             <ID>35935013</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(148):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(148): </Dynamic>
             <Dynamic>\sample_output/Output_Data_i0_i23</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
             <Navigation>148</Navigation>
@@ -1982,7 +2234,7 @@
         <Message>
             <ID>35935014</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(148):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/sample_output.v(148): </Dynamic>
             <Dynamic>\sample_output/Output_Data_i0_i21</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/sample_output.v</Navigation>
             <Navigation>148</Navigation>
@@ -1990,7 +2242,7 @@
         <Message>
             <ID>35935013</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(83):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(83): </Dynamic>
             <Dynamic>\sample_output/dac/r_Data_To_Send_i23_i5</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v</Navigation>
             <Navigation>83</Navigation>
@@ -1998,7 +2250,7 @@
         <Message>
             <ID>35935014</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(83):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v(83): </Dynamic>
             <Dynamic>\sample_output/dac/r_Data_To_Send_i23_i3</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/dac_spi_out.v</Navigation>
             <Navigation>83</Navigation>
@@ -2006,7 +2258,7 @@
         <Message>
             <ID>35935013</ID>
             <Severity>16</Severity>
-            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(243):</Dynamic>
+            <Dynamic>d:/eurorack/addatone/addatone_ice40/src/top.v(243): </Dynamic>
             <Dynamic>SM_Top__i3</Dynamic>
             <Navigation>d:/eurorack/addatone/addatone_ice40/src/top.v</Navigation>
             <Navigation>243</Navigation>
@@ -2149,6 +2401,46 @@
             <ID>70009502</ID>
             <Severity>2</Severity>
             <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+    </Task>
+    <Task name="Export">
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>2469992</ID>
+            <Severity>1</Severity>
+            <Dynamic>initView runs: 0 ms / size : 0 MB</Dynamic>
+        </Message>
+        <Message>
+            <ID>70009502</ID>
+            <Severity>2</Severity>
+            <Dynamic>The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.</Dynamic>
+        </Message>
+        <Message>
+            <ID>1191031</ID>
+            <Severity>1</Severity>
+        </Message>
+    </Task>
+    <Task name="Map">
+        <Message>
+            <ID>71003005</ID>
+            <Severity>16</Severity>
+            <Dynamic>i_ADC_CS</Dynamic>
+            <Dynamic>10</Dynamic>
+        </Message>
+        <Message>
+            <ID>71003005</ID>
+            <Severity>16</Severity>
+            <Dynamic>i_Ring_Mod</Dynamic>
+            <Dynamic>19</Dynamic>
         </Message>
         <Message>
             <ID>70009502</ID>

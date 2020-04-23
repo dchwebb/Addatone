@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<ipxact:design xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014" xmlns:lsccip="http://www.latticesemi.com/XMLSchema/Radiant/ip">
+    <ipxact:vendor>latticesemi.com</ipxact:vendor>
+    <ipxact:library>module</ipxact:library>
+    <ipxact:name>Ring_Mod_Mult</ipxact:name>
+    <ipxact:version>1.1.0</ipxact:version>
+    <ipxact:componentInstances>
+        <ipxact:componentInstance>
+            <ipxact:instanceName>lscc_multiplier_inst</ipxact:instanceName>
+            <ipxact:componentRef library="module" name="multiplier" vendor="latticesemi.com" version="1.1.0">
+                <ipxact:configurableElementValues>
+                    <ipxact:configurableElementValue referenceId="USE_COEFF">False</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="COEFF">2</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="A_WIDTH">20</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="B_WIDTH">20</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="A_SIGNED">on</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="B_SIGNED">on</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="USE_IREG">True</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="USE_OREG">True</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="PIPELINES">3</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="IMPL">DSP</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="A_WDT">20</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="B_WDT">20</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="M_WDT">40</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="O_CLOCKS">5</ipxact:configurableElementValue>
+                    <ipxact:configurableElementValue referenceId="FAMILY">iCE40UP</ipxact:configurableElementValue>
+                </ipxact:configurableElementValues>
+            </ipxact:componentRef>
+        </ipxact:componentInstance>
+    </ipxact:componentInstances>
+    <ipxact:adHocConnections>
+        <ipxact:adHocConnection>
+            <ipxact:name>Ring_Mod_Mult.clk_i</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="Ring_Mod_Mult" portRef="clk_i"/>
+                <ipxact:externalPortReference portRef="clk_i"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>Ring_Mod_Mult.clk_en_i</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="Ring_Mod_Mult" portRef="clk_en_i"/>
+                <ipxact:externalPortReference portRef="clk_en_i"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>Ring_Mod_Mult.rst_i</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="Ring_Mod_Mult" portRef="rst_i"/>
+                <ipxact:externalPortReference portRef="rst_i"/>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>Ring_Mod_Mult.data_a_i</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="Ring_Mod_Mult" portRef="data_a_i"/>
+                <ipxact:externalPortReference portRef="data_a_i">
+                    <ipxact:partSelect>
+                        <ipxact:range>
+                            <ipxact:left>19</ipxact:left>
+                            <ipxact:right>0</ipxact:right>
+                        </ipxact:range>
+                    </ipxact:partSelect>
+                </ipxact:externalPortReference>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>Ring_Mod_Mult.data_b_i</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="Ring_Mod_Mult" portRef="data_b_i"/>
+                <ipxact:externalPortReference portRef="data_b_i">
+                    <ipxact:partSelect>
+                        <ipxact:range>
+                            <ipxact:left>19</ipxact:left>
+                            <ipxact:right>0</ipxact:right>
+                        </ipxact:range>
+                    </ipxact:partSelect>
+                </ipxact:externalPortReference>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+        <ipxact:adHocConnection>
+            <ipxact:name>Ring_Mod_Mult.result_o</ipxact:name>
+            <ipxact:portReferences>
+                <ipxact:internalPortReference componentRef="Ring_Mod_Mult" portRef="result_o"/>
+                <ipxact:externalPortReference portRef="result_o">
+                    <ipxact:partSelect>
+                        <ipxact:range>
+                            <ipxact:left>39</ipxact:left>
+                            <ipxact:right>0</ipxact:right>
+                        </ipxact:range>
+                    </ipxact:partSelect>
+                </ipxact:externalPortReference>
+            </ipxact:portReferences>
+        </ipxact:adHocConnection>
+    </ipxact:adHocConnections>
+</ipxact:design>

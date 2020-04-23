@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<RadiantModule architecture="iCE40UP" date="2020 04 23 11:28:32" device="iCE40UP5K" generator="ipgen" library="module" module="multiplier" name="Ring_Mod_Mult" package="SG48" source_format="Verilog" speed="High-Performance_1.2V" vendor="latticesemi.com" version="1.1.0">
+ <Package>
+  <File modified="2020 04 23 11:28:32" name="design.xml" type="IP-XACT_design"/>
+  <File modified="2020 04 23 11:28:32" name="rtl/Ring_Mod_Mult_bb.v" type="black_box_verilog"/>
+  <File modified="2020 04 23 11:28:32" name="testbench/dut_params.v" type="dependency_file"/>
+  <File modified="2020 04 23 11:28:32" name="misc/Ring_Mod_Mult_tmpl.vhd" type="template_vhdl"/>
+  <File modified="2020 04 23 11:28:32" name="testbench/dut_inst.v" type="dependency_file"/>
+  <File modified="2020 04 23 11:28:32" name="misc/Ring_Mod_Mult_tmpl.v" type="template_verilog"/>
+  <File modified="2020 04 23 11:28:32" name="component.xml" type="IP-XACT_component"/>
+  <File modified="2020 04 23 11:28:32" name="constraints/Ring_Mod_Mult.ldc" type="timing_constraints"/>
+  <File modified="2020 04 23 11:28:32" name="Ring_Mod_Mult.cfg" type="cfg"/>
+  <File modified="2020 04 23 11:28:32" name="rtl/Ring_Mod_Mult.v" type="top_level_verilog"/>
+  <File modified="2019 10 01 05:14:55" name="testbench/tb_top.v" type="testbench_verilog"/>
+ </Package>
+</RadiantModule>

@@ -35,6 +35,7 @@
 -use_io_insertion 1
 -resolve_mixed_drivers 0
 -sdc "Addatone_ICE40_impl_1_cpe.ldc"
+-path "D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod_Mult"
 -path "D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM"
 -path "D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT"
 -path "C:/lscc/radiant/2.0/ispfpga/ice40tp/data" "D:/Eurorack/Addatone/Addatone_ICE40/impl_1" "D:/Eurorack/Addatone/Addatone_ICE40"
@@ -51,6 +52,7 @@
 "D:/Eurorack/Addatone/Addatone_ICE40/src/PLL_Primitive_48MHz.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v"
+"D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod_Mult/rtl/Ring_Mod_Mult.v"
 
 
 -path "D:/Eurorack/Addatone/Addatone_ICE40"

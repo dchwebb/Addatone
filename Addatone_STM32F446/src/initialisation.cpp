@@ -48,7 +48,10 @@ void InitMCO2() {
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
 	GPIOC->MODER |= GPIO_MODER_MODER9_1;			// Set PC9 to Alternate function mode (0b10); Uses alternate function AF0 so set by default
 
-	RCC->CFGR |= RCC_CFGR_MCO2_1; 					// 00: System clock; 01: PLLI2S clock; 10: HSE; 11: PLL clock
+	//RCC->CFGR |= RCC_CFGR_MCO2_1; 					// 00: System clock; 01: PLLI2S clock; 10: HSE; 11: PLL clock
+
+	// FIXME: I2S PLL Test
+	RCC->CFGR |= RCC_CFGR_MCO2_0; 					// 00: System clock; 01: PLLI2S clock; 10: HSE; 11: PLL clock
 }
 
 
@@ -325,11 +328,23 @@ void InitI2S()
 	SPI2->I2SCFGR |= SPI_I2SCFGR_CHLEN;				// Channel Length = 32bits
 
 	/* RCC Clock calculations:
-	f[VCO clock] = f[PLLI2S clock input] � (PLLI2SN / PLLM)		Eg (8MHz osc) * (192 / 4) = 384MHz
+	f[VCO clock] = f[PLLI2S clock input] x (PLLI2SN / PLLM)		Eg (8MHz osc) * (192 / 4) = 384MHz
 	f[PLL I2S clock output] = f[VCO clock] / PLLI2SR			Eg 384 / 5 = 76.8MHz
 	*/
-	RCC->CFGR &= ~RCC_CFGR_I2SSRC;					// Set I2S PLL source to internal
-	RCC->PLLI2SCFGR = (RCC_PLLI2SCFGR_PLLI2SN & (192 << 6)) | (RCC_PLLI2SCFGR_PLLI2SR & (5 << 28));
+
+	/*
+	RCC->DCKCFGR
+	00: I2S2 clock frequency = f(PLLI2S_R);
+	01: I2S2 clock frequency = I2S_CKIN Alternate function input frequency
+	10: I2S2 clock frequency = f(PLL_R)
+	11: I2S2 clock frequency = HSI/HSE depends on PLLSRC bit (PLLCFGR[22])
+
+	RCC->PLLI2SCFGR
+	Def: M = 16; N = 192; Q = 4; R = 2
+	Try: M = 4; N = 77; R = 2		ie 8Mz * 77 / 4 / 2 = 77MHz
+	*/
+	//RCC->CFGR &= ~RCC_CFGR_I2SSRC;					// Set I2S PLL source to internal
+	RCC->PLLI2SCFGR = (RCC_PLLI2SCFGR_PLLI2SM & 4) | (RCC_PLLI2SCFGR_PLLI2SN & (77 << 6)) | (RCC_PLLI2SCFGR_PLLI2SR & (2 << 28));			//p 163
 	RCC->CR |= RCC_CR_PLLI2SON;
 
 	/* I2S Prescaler Clock calculations:

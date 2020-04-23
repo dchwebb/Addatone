@@ -1,5 +1,5 @@
 // Verilog netlist produced by program LSE 
-// Netlist written on Thu Apr 23 11:45:14 2020
+// Netlist written on Thu Apr 23 11:45:16 2020
 // Source file index table: 
 // Object locations will have the form @<file_index>(<first_ line>[<left_column>],<last_line>[<right_column>])
 // file 0 "c:/lscc/radiant/2.0/ip/common/adder/rtl/lscc_adder.v"
@@ -54,17 +54,17 @@
 // file 49 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/legacy.v"
 
 //
-// Verilog Description of module Sine_LUT
+// Verilog Description of module Ring_Mod_Mult
 //
 
-module Sine_LUT (rd_clk_i, rst_i, rd_en_i, rd_clk_en_i, rd_addr_i, 
-            rd_data_o);
-    input rd_clk_i;
+module Ring_Mod_Mult (clk_i, clk_en_i, rst_i, data_a_i, data_b_i, 
+            result_o);
+    input clk_i;
+    input clk_en_i;
     input rst_i;
-    input rd_en_i;
-    input rd_clk_en_i;
-    input [10:0]rd_addr_i;
-    output [15:0]rd_data_o;
+    input [19:0]data_a_i;
+    input [19:0]data_b_i;
+    output [39:0]result_o;
     
     
     
