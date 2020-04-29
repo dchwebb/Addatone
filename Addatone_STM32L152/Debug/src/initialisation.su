@@ -3,10 +3,10 @@ core_cm3.h:1639:22:void __NVIC_SetPriority(IRQn_Type, uint32_t)	16	static
 initialisation.cpp:9:6:void SystemClock_Config()	4	static
 initialisation.cpp:51:6:void InitSimpleADC()	8	static
 initialisation.cpp:76:6:void InitADC()	4	static
-initialisation.cpp:165:6:void InitIO()	4	static
-initialisation.cpp:172:6:void InitSysTick()	8	static
-initialisation.cpp:204:6:void InitSPI()	4	static
-initialisation.cpp:239:6:void sendI2SData(uint32_t)	16	static
-initialisation.cpp:253:6:void sendSPIData(uint16_t)	16	static
-initialisation.cpp:259:6:void clearSPI()	4	static
-initialisation.cpp:266:6:void InitSPITimer()	8	static
+initialisation.cpp:186:6:void InitIO()	4	static
+initialisation.cpp:193:6:void InitSysTick()	8	static
+initialisation.cpp:225:6:void InitSPI()	4	static
+initialisation.cpp:260:6:void sendI2SData(uint32_t)	16	static
+initialisation.cpp:274:6:void sendSPIData(uint16_t)	16	static
+initialisation.cpp:280:6:void clearSPI()	4	static
+initialisation.cpp:287:6:void InitSPITimer()	8	static

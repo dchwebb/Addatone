@@ -43,6 +43,7 @@
 -lib pmi -vhd "C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.vhd"
 -ver "D:/Eurorack/Addatone/Addatone_ICE40/src/top.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/DAC_SPI_Out.v"
+"D:/Eurorack/Addatone/Addatone_ICE40/src/DAC_I2S.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/ADC_SPI_In.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/Sample_Position.v"
 "D:/Eurorack/Addatone/Addatone_ICE40/src/Adder.v"

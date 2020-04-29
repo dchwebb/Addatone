@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020070  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000397c  00000000  00000000  00020099  2**0
+ 12 .debug_info   00003980  00000000  00000000  00020099  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_abbrev 00000b1b  00000000  00000000  00023a15  2**0
+ 13 .debug_abbrev 00000b0c  00000000  00000000  00023a19  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_aranges 00000150  00000000  00000000  00024530  2**3
+ 14 .debug_aranges 00000150  00000000  00000000  00024528  2**3
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_ranges 00000118  00000000  00000000  00024680  2**3
+ 15 .debug_ranges 00000118  00000000  00000000  00024678  2**3
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_macro  0000ffc7  00000000  00000000  00024798  2**0
+ 16 .debug_macro  0000ffc7  00000000  00000000  00024790  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   00002317  00000000  00000000  0003475f  2**0
+ 17 .debug_line   00002319  00000000  00000000  00034757  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    0004e008  00000000  00000000  00036a76  2**0
+ 18 .debug_str    0004e008  00000000  00000000  00036a70  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  00084a7e  2**0
+ 19 .comment      0000007b  00000000  00000000  00084a78  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00000844  00000000  00000000  00084afc  2**2
+ 20 .debug_frame  00000844  00000000  00000000  00084af4  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -1331,6 +1331,9 @@ void InitADC(void)
  8000dec:	4a7a      	ldr	r2, [pc, #488]	; (8000fd8 <_Z7InitADCv+0x27c>)
  8000dee:	f443 7300 	orr.w	r3, r3, #512	; 0x200
  8000df2:	6213      	str	r3, [r2, #32]
+	PB0 ADC12_IN8
+	PB1 ADC12_IN9
+	*/
 
 	// Enable ADC - Set Pins to Analog mode (0b11)
 	GPIOA->MODER |= GPIO_MODER_MODER0;				// Set PA0 ADC_IN0

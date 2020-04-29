@@ -6,7 +6,7 @@ Performance Grade:      High-Performance_1.2V
 PACKAGE:          SG48
 Package Status:                     Preliminary    Version 1.5
 
-Thu Apr 23 11:46:13 2020
+Wed Apr 29 14:34:31 2020
 
 Pinout by Port Name:
 +-------------+----------+--------------+-------+--------------------+
@@ -22,7 +22,7 @@ Pinout by Port Name:
 | o_DAC_CS    | 48/2     | LVCMOS33_OUT | PL8A  | DRIVE:8mA PULL:NA  |
 | o_DAC_MOSI  | 3/2      | LVCMOS33_OUT | PL10B | DRIVE:8mA PULL:NA  |
 | o_DAC_SCK   | 4/2      | LVCMOS33_OUT | PL10A | DRIVE:8mA PULL:NA  |
-| reset_n     | 26/0     | LVCMOS33_IN  | PR19A | PULL:100K          |
+| reset_n     | 27/0     | LVCMOS33_IN  | PR19B | PULL:100K          |
 | test        | 46/2     | LVCMOS33_OUT | PL6A  | DRIVE:8mA PULL:NA  |
 +-------------+----------+--------------+-------+--------------------+
 
@@ -58,8 +58,8 @@ Pinout by Pin Number:
 | 21/1     |     unused, PULL:UP |            |              | PL19B |                  |
 | 23/0     |     unused, PULL:UP |            |              | PR20A |                  |
 | 25/0     |     unused, PULL:UP |            |              | PR20B |                  |
-| 26/0     | reset_n             |            | LVCMOS33_IN  | PR19A |                  |
-| 27/0     |     unused, PULL:UP |            |              | PR19B |                  |
+| 26/0     |     unused, PULL:UP |            |              | PR19A |                  |
+| 27/0     | reset_n             |            | LVCMOS33_IN  | PR19B |                  |
 | 28/0     |     unused, PULL:UP |            |              | PR18A |                  |
 | 31/0     |     unused, PULL:UP |            |              | PR17B |                  |
 | 32/0     |     unused, PULL:UP |            |              | PR17A |                  |
@@ -110,7 +110,7 @@ ldc_set_location -site {19} [ get_ports {i_Ring_Mod} ]
 ldc_set_location -site {48} [ get_ports {o_DAC_CS} ]
 ldc_set_location -site {3} [ get_ports {o_DAC_MOSI} ]
 ldc_set_location -site {4} [ get_ports {o_DAC_SCK} ]
-ldc_set_location -site {26} [ get_ports {reset_n} ]
+ldc_set_location -site {27} [ get_ports {reset_n} ]
 ldc_set_location -site {46} [ get_ports {test} ]
 
 
@@ -118,5 +118,5 @@ ldc_set_location -site {46} [ get_ports {test} ]
 
 
 Copyright 2015 Lattice Semiconductor Corporation, All Rights Reserved
-Thu Apr 23 11:46:13 2020
+Wed Apr 29 14:34:31 2020
 

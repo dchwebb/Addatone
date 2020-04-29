@@ -1,5 +1,5 @@
 module DAC_I2S
-#(parameter CLOCK_TICKS = 1000)				// Number of clock ticks from one full LR sample to the next
+#(parameter CLOCK_TICKS = 1000)		// Number of clock ticks from one full LR sample to the next
 	(
 		input wire i_Clock,
 		input wire i_Reset,
@@ -30,7 +30,7 @@ module DAC_I2S
 	always @(posedge i_Clock) begin
 		if (i_Reset) begin
 			Bit_Counter <= 1'b0;
-			o_LR_Clock <= 1'b0;					// High = left channel, Low = right
+			o_LR_Clock <= 1'b0;			// High = left channel, Low = right
 			o_Bit_Clock <= 1'b0;
 		end
 		else begin

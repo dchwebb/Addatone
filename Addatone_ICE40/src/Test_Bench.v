@@ -36,7 +36,7 @@ module Test_Bench;
 
 		begin
 			i_ADC_CS = 1'b0;
-			for (p = 0; p < 5; p = p + 1) begin
+			for (p = 0; p < 7; p = p + 1) begin
 				for (i = 16; i > 0; i = i - 1) begin
 					#375
 					i_ADC_Clock <= 1'b0;
@@ -52,11 +52,6 @@ module Test_Bench;
 		end
 	endtask
 
-	reg signed [11:0] mult1 = 11'd1234;
-	reg signed [15:0] mult2 = -16'sd22111;
-	reg signed [27:0] mult_result = 1'b0;
-
-
 	always
 		#41.6666666 clock = !clock;			// 48MHz clock
 
@@ -64,18 +59,18 @@ module Test_Bench;
 		i_ADC_CS = 1'b1;
 		i_ADC_Clock = 1'b0;
 		i_ADC_Data = 1'b0;
-		mult_result = mult2 * mult1;
 
-		data_packet[0] = {16'h007B};
-		data_packet[1] = {16'h0067};
-		data_packet[2] = {16'd506};
-		data_packet[3] = {16'h0000};
-		data_packet[4] = {16'h0000};
+		data_packet[0] = {16'h007B};		// Frequency
+		data_packet[1] = {16'h0067};		// Harmonic_Scale[0] Rate of attenuation of harmonic scaling (lower means more harmonics)
+		data_packet[2] = {16'd506};		// Scale_Initial[0] Starting value for scaling (lower if there are more harmonics)
+		data_packet[3] = {16'h0020};		// Harmonic_Scale[1]
+		data_packet[4] = {16'h0500};		// Scale_Initial[1]
+		data_packet[5] = {16'h0000};		// Freq_Scale
+		data_packet[6] = {16'h0032};		// Harmonic_Count
 
 		reset_n = 1'b0;
-		#1000
+		#100
 		reset_n = 1'b1;
-		mult_result = mult2 * $signed({5'b00000, mult1});
 
 		#50
 		Send_ADC();
@@ -84,3 +79,4 @@ module Test_Bench;
 		//$finish();
 	end
 endmodule
+

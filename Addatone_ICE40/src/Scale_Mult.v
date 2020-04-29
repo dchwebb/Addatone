@@ -20,6 +20,7 @@ module Scale_Mult
 	reg SM_Scale_Mult = sm_ready;
 
 	initial begin
+		o_Mult = 1'b0;
 		SM_Scale_Mult <= sm_ready;
 	end
 

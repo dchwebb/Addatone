@@ -24,11 +24,11 @@ module top
 
 	// Sample position RAM - memory array to store current position in cycle of each harmonic
 	parameter SAMPLERATE = 16'd48000;
-	parameter SAMPLEINTERVAL = 16'd1000;			// Clock frequency / sample rate - eg 48Mhz / 48khz = 1000
+	parameter SAMPLEINTERVAL = 16'd1023;			// Clock frequency / sample rate - eg 48Mhz / 48khz = 1000
 
 	reg [15:0] Sample_Timer = 1'b0;					// Counts up to SAMPLEINTERVAL to set sample rate interval
 	reg [7:0] Harmonic = 1'b0;							// Number of harmonic being calculated
-	reg [7:0] Harmonic_Count;							// Number of harmonics produced (before scaling)
+	reg [7:0] Harmonic_Count = 1'b0;							// Number of harmonics produced (before scaling)
 	reg Next_Sample;										// Trigger from top module to say current value has been read and ready for next sample
 	wire signed [15:0] Sample_Value;
 	reg [15:0] Frequency = 16'd90;
@@ -121,11 +121,10 @@ module top
 		.i_Sample_R(r_Adder_Total[1]),
 		.i_Mix(i_Mix),
 		.i_Ring_Mod(i_Ring_Mod),
-		.o_SPI_CS(o_DAC_CS),
-		.o_SPI_Clock(o_DAC_SCK),
-		.o_SPI_Data(o_DAC_MOSI)
+		.o_I2S_LR_Clock(o_DAC_CS),
+		.o_I2S_Bit_Clock(o_DAC_SCK),
+		.o_I2S_Data(o_DAC_MOSI)
 	);
-
 
 	// State Machine settings - used to control calculation of amplitude of each harmonic sample
 	localparam sm_init = 4'd0;
@@ -147,7 +146,6 @@ module top
 		Scale_Initial[1] <= ADC_Data[4][DIV_BIT - 1:0];				// Starting value for scaling (lower if there are more harmonics)
 		Freq_Scale <= ADC_Data[5];											// Frequency scaling offset - higher frequencies will be moved further from multiple of fundamental
 		Harmonic_Count <= ADC_Data[6];									// Number of harmonics before scaling
-		test <= ~test;
 	end
 
 	always @(posedge Main_Clock) begin
@@ -198,7 +196,9 @@ module top
 					end
 
 				sm_adder_wait:
+					
 					begin
+						test <= 1'b0;
 						Adder_Start <= 1'b0;
 						SM_Top <= sm_next_harmonic;
 					end
@@ -224,6 +224,8 @@ module top
 
 				sm_ready_to_send:
 					if (Sample_Timer == SAMPLEINTERVAL) begin
+						test <= 1'b1;
+						
 						// Send sample value to DAC
 						DAC_Send <= 1'b1;
 

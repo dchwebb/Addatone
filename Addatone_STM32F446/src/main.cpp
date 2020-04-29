@@ -87,6 +87,11 @@ void programFPGA() {
 
 }
 
+int16_t i2sVal = 0;
+int32_t send = 0;
+uint32_t i = 0;
+int8_t inc = 40;
+
 extern uint32_t SystemCoreClock;
 int main(void)
 {
@@ -101,16 +106,20 @@ int main(void)
 	programFPGA();
 	InitADC();
 
-	uint32_t i = 0;
+
+
 
 	while (1)
 	{
-		i++;
-		uint16_t s = (uint16_t)(i >> 3);
+		i2sVal += inc;
+		if (i2sVal > 30000 || i2sVal < -30000) {
+			inc *= -1;
+		}
+
 		while ((SPI2->SR & SPI_SR_TXE) == 0);
-		SPI2->DR = s;
+		SPI2->DR = 0;
 		while ((SPI2->SR & SPI_SR_TXE) == 0);
-		SPI2->DR = s;
+		SPI2->DR = i2sVal;
 /*		while ((SPI2->SR & SPI_SR_TXE) == 0);
 		SPI2->DR = 0x3799;
 		while ((SPI2->SR & SPI_SR_TXE) == 0);

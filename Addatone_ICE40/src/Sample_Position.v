@@ -15,7 +15,7 @@ module Sample_Position
 		output reg o_Sample_Ready = 1'b0,			// Tells top module that sample position has been loaded
 		input wire i_Next_Sample,						// Trigger from top module to say current value has been read and ready for next sample
 		output wire [15:0] o_Sample_Value,
-		output reg o_Freq_Too_High
+		output reg o_Freq_Too_High = 1'b0
 	);
 
 	reg Sample_Pos_WE;
