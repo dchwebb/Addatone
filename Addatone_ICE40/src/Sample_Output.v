@@ -1,5 +1,5 @@
 module Sample_Output
-	#(parameter SAMPLE_OFFSET = 20'sh7FFF, parameter SAMPLE_LIMIT = 20'sd30000, parameter SEND_CHANNEL_A = 8'b00110001, parameter SEND_CHANNEL_B = 8'b00110010)
+	#(parameter SAMPLE_OFFSET = 20'sh7FFF, parameter SAMPLE_LIMIT = 20'sd20000, parameter SEND_CHANNEL_A = 8'b00110001, parameter SEND_CHANNEL_B = 8'b00110010)
 	(
 		input wire i_Clock,
 		input wire i_Reset,

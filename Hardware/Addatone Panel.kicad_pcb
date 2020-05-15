@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 120)
+    (drawings 122)
     (tracks 0)
     (zones 0)
     (modules 21)
@@ -11,8 +11,8 @@
 
   (page A4)
   (layers
-    (0 F.Cu signal)
-    (31 B.Cu signal)
+    (0 F.Cu signal hide)
+    (31 B.Cu signal hide)
     (32 B.Adhes user)
     (33 F.Adhes user hide)
     (34 B.Paste user)
@@ -88,7 +88,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "Gerbers/PCB/"))
+      (outputdirectory "Gerbers/Panel/"))
   )
 
   (net 0 "")
@@ -556,6 +556,12 @@
     (pad "" np_thru_hole oval (at 0 0) (size 5 3.2) (drill oval 5 3.2) (layers *.Cu *.Mask))
   )
 
+  (gr_text JLCJLCJLCJLC (at 130.5 161.4) (layer F.SilkS)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (gr_text "Addatone Panel v1.0" (at 130.2 51.7) (layer F.SilkS)
+    (effects (font (size 2 2) (thickness 0.3)))
+  )
   (gr_line (start 113.4 49.6) (end 146.6 49.6) (layer B.Mask) (width 0.4) (tstamp 5E9EDEE5))
   (gr_line (start 146.6 49.6) (end 148.6 46.6) (layer B.Mask) (width 0.4) (tstamp 5E9EDEE6))
   (gr_line (start 111.4 46.6) (end 113.4 49.6) (layer B.Mask) (width 0.4) (tstamp 5E9EDEE8))
@@ -715,7 +721,7 @@
   (gr_line (start 100 50) (end 100 160) (layer Dwgs.User) (width 0.2))
   (gr_line (start 100 50) (end 160 50) (layer Dwgs.User) (width 0.2))
 
-  (zone (net 1) (net_name GND) (layer F.Cu) (tstamp 5E99CF42) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer F.Cu) (tstamp 5EB1987A) (hatch edge 0.508)
     (connect_pads (clearance 0.508))
     (min_thickness 0.254)
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))

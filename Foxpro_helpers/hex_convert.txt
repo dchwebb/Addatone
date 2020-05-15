@@ -1,0 +1,5 @@
+*	Converts text hex data to unsigned decimal
+REPLACE ALL dec with EVALUATE("0x" + hex)
+
+*	Converts unsigned decimal to signed decimal (two's complement logic)
+REPLACE ALL signed WITH IIF(BITTEST(dec, 31), -1 * (BITNOT(dec) + 1), dec)

@@ -9,6 +9,9 @@
         <Source name="src/DAC_SPI_Out.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
+        <Source name="src/DAC_I2S.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
         <Source name="src/ADC_SPI_In.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
