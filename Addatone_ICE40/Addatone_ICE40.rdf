@@ -1,7 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RadiantProject version="4.1" title="Addatone_ICE40" device="iCE40UP5K-SG48I" performance_grade="High-Performance_1.2V" default_implementation="impl_1">
+<RadiantProject version="4.1" title="Addatone_ICE40" device="iCE40UP5K-SG48I" performance_grade="High-Performance_1.2V" default_implementation="impl_Addatone">
     <Options/>
     <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
+        <Options def_top="Ring_Mod_Mult" top="top"/>
+        <Source name="src/top.v" type="Verilog" type_short="Verilog">
+            <Options top_module="top"/>
+        </Source>
+        <Source name="src/DAC_SPI_Out.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/DAC_I2S.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/ADC_SPI_In.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/Sample_Position.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/Adder.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/Scale_Mult.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/Sample_Output.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/Ring_Mod.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/Test_Bench.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
+            <Options/>
+        </Source>
+        <Source name="src/PLL_Primitive_48MHz.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="src/Sine_LUT/Sine_LUT.ipx" type="IPX_Module" type_short="IPX">
+            <Options/>
+        </Source>
+        <Source name="src/SamplePos_RAM/SamplePos_RAM.ipx" type="IPX_Module" type_short="IPX">
+            <Options/>
+        </Source>
+        <Source name="src/Ring_Mod_Mult/Ring_Mod_Mult.ipx" type="IPX_Module" type_short="IPX">
+            <Options/>
+        </Source>
+        <Source name="Addaton_Sim/Addaton_Sim.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
+        <Source name="Addatone_Sim/Addatone_Sim.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
+        <Source name="src/constraints.pdc" type="Physical Constraints File" type_short="PDC">
+            <Options/>
+        </Source>
+        <Source name="src/SRAM_Prog.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Implementation title="impl_Addatone" dir="impl_Addatone" description="impl_Addatone" synthesis="lse" default_strategy="Strategy1">
         <Options def_top="Ring_Mod_Mult" top="top"/>
         <Source name="src/top.v" type="Verilog" type_short="Verilog">
             <Options top_module="top"/>

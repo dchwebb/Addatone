@@ -1,10 +1,10 @@
 #include "initialisation.h"
 
 #define USE_HSE
-#define PLL_M 4
+#define PLL_M 6
 #define PLL_N 144
 #define PLL_P 2		//  Main PLL (PLL) division factor for main system clock can be 2 (PLL_P = 0), 4 (PLL_P = 1), 6 (PLL_P = 2), 8 (PLL_P = 3)
-#define PLL_Q 6
+#define PLL_Q 2
 
 void SystemClock_Config(void) {
 
@@ -48,10 +48,7 @@ void InitMCO2() {
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
 	GPIOC->MODER |= GPIO_MODER_MODER9_1;			// Set PC9 to Alternate function mode (0b10); Uses alternate function AF0 so set by default
 
-	//RCC->CFGR |= RCC_CFGR_MCO2_1; 					// 00: System clock; 01: PLLI2S clock; 10: HSE; 11: PLL clock
-
-	// FIXME: I2S PLL Test
-	RCC->CFGR |= RCC_CFGR_MCO2_0; 					// 00: System clock; 01: PLLI2S clock; 10: HSE; 11: PLL clock
+	RCC->CFGR |= RCC_CFGR_MCO2_1; 					// 00: System clock; 01: PLLI2S clock; 10: HSE; 11: PLL clock
 }
 
 

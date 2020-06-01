@@ -1,0 +1,7 @@
+-ver "C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v"
+-lib pmi -vhd "C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.vhd"
+-ver "D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod_Mult/rtl/Ring_Mod_Mult.v"
+-sdc  "D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod_Mult/constraints/Ring_Mod_Mult.ldc"
+-path "D:/Eurorack/Addatone/Addatone_ICE40/src/Ring_Mod_Mult"
+-top Ring_Mod_Mult
+-a "iCE40UP"

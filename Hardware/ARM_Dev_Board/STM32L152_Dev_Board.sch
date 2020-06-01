@@ -715,7 +715,7 @@ U 1 1 5E448758
 P 2550 3750
 F 0 "U1" H 2950 2300 50  0000 C CNN
 F 1 "STM32L451CCUx" H 2700 4350 50  0000 C CNN
-F 2 "Custom_Footprints:ARM-UQFN-48-7x7mm_Pitch0.5mm" H 2050 2350 50  0001 R CNN
+F 2 "Custom_Footprints:ICE40_QFN-48-1EP_7x7mm_Pitch0.5mm" H 2050 2350 50  0001 R CNN
 F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00340475.pdf" H 2550 3750 50  0001 C CNN
 	1    2550 3750
 	1    0    0    -1  

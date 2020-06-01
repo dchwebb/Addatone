@@ -1,0 +1,7 @@
+-ver "C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v"
+-lib pmi -vhd "C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.vhd"
+-ver "D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/rtl/Sine_LUT.v"
+-sdc  "D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT/constraints/Sine_LUT.ldc"
+-path "D:/Eurorack/Addatone/Addatone_ICE40/src/Sine_LUT"
+-top Sine_LUT
+-a "iCE40UP"

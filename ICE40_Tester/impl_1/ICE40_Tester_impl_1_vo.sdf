@@ -1,0 +1,118 @@
+(DELAYFILE
+  (SDFVERSION "3.0")
+  (DESIGN "top")
+  (DATE "Mon Jun 01 12:38:08 2020")
+  (VENDOR "Lattice")
+  (PROGRAM "backanno")
+  (VERSION "Radiant Software (64-bit) 2.0.1.281.2")
+  (DIVIDER /)
+  (VOLTAGE 1.26:1.20:1.14)
+  (PROCESS "default")
+  (TEMPERATURE -40:25:85)
+  (TIMESCALE 1ps)
+  (CELL
+    (CELLTYPE "SLICE_0")
+    (INSTANCE SLICE_0)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH D0 F0 (453:466:480)(453:466:480))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "o_Test1")
+    (INSTANCE o_Test1_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO o_Test1 (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "o_Test2")
+    (INSTANCE o_Test2_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO o_Test2 (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "o_DAC_BClk")
+    (INSTANCE o_DAC_BClk_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO o_DAC_BClk (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "o_DAC_Data")
+    (INSTANCE o_DAC_Data_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO o_DAC_Data (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "o_DAC_LRClk")
+    (INSTANCE o_DAC_LRClk_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH PADDO o_DAC_LRClk (1914:2001:2088)(1914:2001:2088))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "i_Mix")
+    (INSTANCE i_Mix_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i_Mix PADDI (460:485:510)(460:485:510))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "i_RingMod")
+    (INSTANCE i_RingMod_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i_RingMod PADDI (460:485:510)(460:485:510))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "i_ADC_Data")
+    (INSTANCE i_ADC_Data_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i_ADC_Data PADDI (460:485:510)(460:485:510))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "i_ADC_Clk")
+    (INSTANCE i_ADC_Clk_I)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH i_ADC_Clk PADDI (460:485:510)(460:485:510))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "top")
+    (INSTANCE )
+    (DELAY
+      (ABSOLUTE
+        (INTERCONNECT i_Mix_I/PADDI SLICE_0/D0 (6762:6842:6922)(6762:6842:6922))
+        (INTERCONNECT i_Mix_I/PADDI o_DAC_Data_I/PADDO (7349:7422:7495)(7349:7422:7495))
+        (INTERCONNECT SLICE_0/F0 o_DAC_LRClk_I/PADDO (3694:3861:4028)(3694:3861:4028))
+        (INTERCONNECT i_ADC_Data_I/PADDI o_Test1_I/PADDO (8522:8689:8856)(8522:8689:8856))
+        (INTERCONNECT i_ADC_Clk_I/PADDI o_Test2_I/PADDO (7522:7595:7669)(7522:7595:7669))
+        (INTERCONNECT i_RingMod_I/PADDI o_DAC_BClk_I/PADDO (8629:8782:8936)
+          (8629:8782:8936))
+      )
+    )
+  )
+)

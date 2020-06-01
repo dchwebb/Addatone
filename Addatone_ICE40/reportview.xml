@@ -5,4 +5,8 @@
         <ToolReport id="toolpio" path="D:/Eurorack/Addatone/Addatone_ICE40/drc.log" status="1"/>
         <ToolReport id="toolsso" path="" status="0"/>
     </Implement>
+    <Implement name="impl_Addatone">
+        <ToolReport id="toolpio" path="" status="0"/>
+        <ToolReport id="toolsso" path="" status="0"/>
+    </Implement>
 </ReportView>

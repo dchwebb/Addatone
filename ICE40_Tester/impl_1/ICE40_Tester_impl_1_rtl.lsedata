@@ -1,0 +1,76 @@
+<top name = "top"  library = "work"  arch = ""  entry = "Verilog">
+
+<clocks>
+</clocks>
+
+<!--
+    //=============================================================
+    //  Number of Clocks processed: 0
+    //
+    //  If a clock cannot be found in the top level pins section,
+    //  that means it is an internal clock.
+    //
+    //=============================================================
+-->
+
+<library name = "generic">
+
+</library>
+
+<library name = "lsccsp">
+
+</library>
+
+<library name = "lsccspparam">
+
+</library>
+
+<library name = "work">
+
+<unit name = "top">
+
+    <!--
+        Top Level Pins: 10
+    -->
+
+    <pins>
+        <pitem  name = "i_Mix"  direction = "in"  />
+        <pitem  name = "i_RingMod"  direction = "in"  />
+        <pitem  name = "i_ADC_Data"  direction = "in"  />
+        <pitem  name = "i_ADC_Clk"  direction = "in"  />
+        <pitem  name = "i_ADC_CS"  direction = "in"  />
+        <pitem  name = "o_Test1"  direction = "out"  />
+        <pitem  name = "o_Test2"  direction = "out"  />
+        <pitem  name = "o_DAC_BClk"  direction = "out"  />
+        <pitem  name = "o_DAC_Data"  direction = "out"  />
+        <pitem  name = "o_DAC_LRClk"  direction = "out"  />
+    </pins>
+
+    <!--
+        Instances in netlist: 1
+    -->
+
+    <instance  name = "i_Mix_I_0"  library = "work"  arch = ""  type = "comb">
+        <pins>
+        <pitem  name = "i"  direction = "in"  />
+        <pitem  name = "o"  direction = "out"  />
+        </pins>
+
+        <nets>
+        <nitem  name = "i_Mix"  />
+        <nitem  name = "i_Mix_N_1"  />
+        </nets>
+    </instance>
+
+    <!--
+        Views in design "top": 0
+    -->
+
+    <views>
+    </views>
+
+</unit>
+
+</library>
+
+</top>

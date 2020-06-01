@@ -1,0 +1,86 @@
+// Verilog netlist produced by program LSE :  version Radiant Software (64-bit) 2.0.1.281.2
+// Netlist written on Mon Jun 01 12:36:36 2020
+// Source file index table: 
+// Object locations will have the form @<file_index>(<first_ line>[<left_column>],<last_line>[<right_column>])
+// file 0 "c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.v"
+// file 1 "c:/lscc/radiant/2.0/ip/pmi/pmi_ice40up.vhd"
+// file 2 "d:/eurorack/addatone/ice40_tester/source/top.v"
+// file 3 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/ccu2_b.v"
+// file 4 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/fd1p3bz.v"
+// file 5 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/fd1p3dz.v"
+// file 6 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/fd1p3iz.v"
+// file 7 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/fd1p3jz.v"
+// file 8 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/hsosc.v"
+// file 9 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/hsosc1p8v.v"
+// file 10 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/ib.v"
+// file 11 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/ifd1p3az.v"
+// file 12 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/lsosc.v"
+// file 13 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/lsosc1p8v.v"
+// file 14 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/ob.v"
+// file 15 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/obz_b.v"
+// file 16 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/ofd1p3az.v"
+// file 17 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/pdp4k.v"
+// file 18 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/rgb.v"
+// file 19 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/rgb1p8v.v"
+// file 20 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/sp256k.v"
+// file 21 "c:/lscc/radiant/2.0/cae_library/simulation/verilog/ice40up/legacy.v"
+// file 22 "c:/lscc/radiant/2.0/ip/common/adder/rtl/lscc_adder.v"
+// file 23 "c:/lscc/radiant/2.0/ip/common/adder_subtractor/rtl/lscc_add_sub.v"
+// file 24 "c:/lscc/radiant/2.0/ip/common/complex_mult/rtl/lscc_complex_mult.v"
+// file 25 "c:/lscc/radiant/2.0/ip/common/counter/rtl/lscc_cntr.v"
+// file 26 "c:/lscc/radiant/2.0/ip/common/fifo/rtl/lscc_fifo.v"
+// file 27 "c:/lscc/radiant/2.0/ip/common/fifo_dc/rtl/lscc_fifo_dc.v"
+// file 28 "c:/lscc/radiant/2.0/ip/common/mult_accumulate/rtl/lscc_mult_accumulate.v"
+// file 29 "c:/lscc/radiant/2.0/ip/common/mult_add_sub/rtl/lscc_mult_add_sub.v"
+// file 30 "c:/lscc/radiant/2.0/ip/common/mult_add_sub_sum/rtl/lscc_mult_add_sub_sum.v"
+// file 31 "c:/lscc/radiant/2.0/ip/common/multiplier/rtl/lscc_multiplier.v"
+// file 32 "c:/lscc/radiant/2.0/ip/common/ram_dp/rtl/lscc_ram_dp.v"
+// file 33 "c:/lscc/radiant/2.0/ip/common/ram_dq/rtl/lscc_ram_dq.v"
+// file 34 "c:/lscc/radiant/2.0/ip/common/rom/rtl/lscc_rom.v"
+// file 35 "c:/lscc/radiant/2.0/ip/common/subtractor/rtl/lscc_subtractor.v"
+// file 36 "c:/lscc/radiant/2.0/ip/pmi/pmi_add.v"
+// file 37 "c:/lscc/radiant/2.0/ip/pmi/pmi_addsub.v"
+// file 38 "c:/lscc/radiant/2.0/ip/pmi/pmi_complex_mult.v"
+// file 39 "c:/lscc/radiant/2.0/ip/pmi/pmi_counter.v"
+// file 40 "c:/lscc/radiant/2.0/ip/pmi/pmi_dsp.v"
+// file 41 "c:/lscc/radiant/2.0/ip/pmi/pmi_fifo.v"
+// file 42 "c:/lscc/radiant/2.0/ip/pmi/pmi_fifo_dc.v"
+// file 43 "c:/lscc/radiant/2.0/ip/pmi/pmi_mac.v"
+// file 44 "c:/lscc/radiant/2.0/ip/pmi/pmi_mult.v"
+// file 45 "c:/lscc/radiant/2.0/ip/pmi/pmi_multaddsub.v"
+// file 46 "c:/lscc/radiant/2.0/ip/pmi/pmi_multaddsubsum.v"
+// file 47 "c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp.v"
+// file 48 "c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dp_be.v"
+// file 49 "c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq.v"
+// file 50 "c:/lscc/radiant/2.0/ip/pmi/pmi_ram_dq_be.v"
+// file 51 "c:/lscc/radiant/2.0/ip/pmi/pmi_rom.v"
+// file 52 "c:/lscc/radiant/2.0/ip/pmi/pmi_sub.v"
+
+//
+// Verilog Description of module top
+//
+
+module top (input i_Mix, input i_RingMod, input i_ADC_Data, input i_ADC_Clk, 
+            input i_ADC_CS, output o_Test1, output o_Test2, output o_DAC_BClk, 
+            output o_DAC_Data, output o_DAC_LRClk);   /* synthesis lineinfo="@2(1[8],1[11])"*/
+    
+    
+    wire o_DAC_Data_c_c, o_DAC_BClk_c_c, o_Test1_c_c, o_Test2_c_c, o_DAC_LRClk_c, 
+        VCC_net, GND_net;
+    
+    VLO i25 (.Z(GND_net));
+    (* lut_function="(!(A))" *) LUT4 i_Mix_I_0_1_lut (.A(o_DAC_Data_c_c), 
+            .Z(o_DAC_LRClk_c));   /* synthesis lineinfo="@2(18[23],18[29])"*/
+    defparam i_Mix_I_0_1_lut.INIT = "0x5555";
+    OB o_Test1_pad (.I(o_Test1_c_c), .O(o_Test1));   /* synthesis lineinfo="@2(8[15],8[22])"*/
+    OB o_Test2_pad (.I(o_Test2_c_c), .O(o_Test2));   /* synthesis lineinfo="@2(9[15],9[22])"*/
+    OB o_DAC_BClk_pad (.I(o_DAC_BClk_c_c), .O(o_DAC_BClk));   /* synthesis lineinfo="@2(10[15],10[25])"*/
+    OB o_DAC_Data_pad (.I(o_DAC_Data_c_c), .O(o_DAC_Data));   /* synthesis lineinfo="@2(11[15],11[25])"*/
+    OB o_DAC_LRClk_pad (.I(o_DAC_LRClk_c), .O(o_DAC_LRClk));   /* synthesis lineinfo="@2(12[15],12[26])"*/
+    IB o_DAC_Data_c_pad (.I(i_Mix), .O(o_DAC_Data_c_c));   /* synthesis lineinfo="@2(3[14],3[19])"*/
+    IB o_DAC_BClk_c_pad (.I(i_RingMod), .O(o_DAC_BClk_c_c));   /* synthesis lineinfo="@2(4[14],4[23])"*/
+    IB o_Test1_c_pad (.I(i_ADC_Data), .O(o_Test1_c_c));   /* synthesis lineinfo="@2(5[14],5[24])"*/
+    IB o_Test2_c_pad (.I(i_ADC_Clk), .O(o_Test2_c_c));   /* synthesis lineinfo="@2(6[14],6[23])"*/
+    VHI i26 (.Z(VCC_net));
+    
+endmodule

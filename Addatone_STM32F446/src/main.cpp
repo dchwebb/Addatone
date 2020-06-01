@@ -84,7 +84,7 @@ void programFPGA() {
 		SPI2->DR = 0;
 	}
 	//SPI2->CR1 |= SPI_CR1_CPOL;						// Reset the clock polarity to idle high
-
+	SPI2->CR1 &= ~SPI_CR1_SPE;				// Disable FPGA Programming SPI as lines cross oscillator input from MCU
 }
 
 float i2sVal = 0;
@@ -100,26 +100,24 @@ int main(void)
 	SystemClock_Config();					// Configure the clock and PLL
 	SystemCoreClockUpdate();				// Update SystemCoreClock (system clock frequency) derived from settings of oscillators, prescalers and PLL
 	InitMCO2();								// Initialise output of HSE oscillator on pin PC9
-	InitI2S();	// PB9: LRClk I2S2_WS; PB13: BClk I2S2_CK; PB15: Data I2S2_SD
-
-
 	InitSysTick();
-/*
+
 	InitFPGAProg();
 	programFPGA();
+
+	InitIO();
 	InitADC();
-*/
-
-	// FIXME disable SPI after programming to prevent noise on oscillator output trace
-
+	InitSPI();
+	InitSPITimer();
 
 
 	while (1)
 	{
-		i2sVal += inc;
-/*		if (i2sVal > 20000 || i2sVal < -20000) {
+		/*
+		 * 		i2sVal += inc;
+		if (i2sVal > 20000 || i2sVal < -20000) {
 			inc *= -1;
-		}*/
+		}
 		if (i2sVal > 20000) {
 			i2sVal = -20000;
 		}
@@ -131,12 +129,13 @@ int main(void)
 		SPI2->DR = i2sOut;
 		while ((SPI2->SR & SPI_SR_TXE) == 0);
 		SPI2->DR = i2sOut;
-/*		while ((SPI2->SR & SPI_SR_TXE) == 0);
+		while ((SPI2->SR & SPI_SR_TXE) == 0);
 		SPI2->DR = 0x3799;
 		while ((SPI2->SR & SPI_SR_TXE) == 0);
-		SPI2->DR = 0xCCDD;*/
+		SPI2->DR = 0xCCDD;
 
 		oldVal = i2sOut;
+		*/
 	}
 }
 

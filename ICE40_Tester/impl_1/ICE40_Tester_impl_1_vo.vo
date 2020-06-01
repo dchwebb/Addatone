@@ -1,0 +1,175 @@
+
+// Verilog netlist produced by program backanno, Version Radiant Software (64-bit) 2.0.1.281.2
+
+// backanno -o ICE40_Tester_impl_1_vo.vo -sp High-Performance_1.2V -w -neg -gui ICE40_Tester_impl_1.udb 
+// Netlist created on Mon Jun 01 12:38:06 2020
+// Netlist written on Mon Jun 01 12:38:08 2020
+// Design is for device iCE40UP5K
+// Design is for package SG48
+// Design is for performance grade High-Performance_1.2V
+
+`timescale 1 ns / 1 ps
+
+module top ( o_Test1, o_Test2, o_DAC_BClk, o_DAC_Data, o_DAC_LRClk, i_Mix, 
+             i_RingMod, i_ADC_Data, i_ADC_Clk, i_ADC_CS );
+  input  i_Mix, i_RingMod, i_ADC_Data, i_ADC_Clk, i_ADC_CS;
+  output o_Test1, o_Test2, o_DAC_BClk, o_DAC_Data, o_DAC_LRClk;
+  wire   o_DAC_Data_c_c, o_DAC_LRClk_c, o_Test1_c_c, o_Test2_c_c, 
+         o_DAC_BClk_c_c;
+
+  SLICE_0 SLICE_0( .D0(o_DAC_Data_c_c), .F0(o_DAC_LRClk_c));
+  o_Test1 o_Test1_I( .PADDO(o_Test1_c_c), .o_Test1(o_Test1));
+  o_Test2 o_Test2_I( .PADDO(o_Test2_c_c), .o_Test2(o_Test2));
+  o_DAC_BClk o_DAC_BClk_I( .PADDO(o_DAC_BClk_c_c), .o_DAC_BClk(o_DAC_BClk));
+  o_DAC_Data o_DAC_Data_I( .PADDO(o_DAC_Data_c_c), .o_DAC_Data(o_DAC_Data));
+  o_DAC_LRClk o_DAC_LRClk_I( .PADDO(o_DAC_LRClk_c), .o_DAC_LRClk(o_DAC_LRClk));
+  i_Mix i_Mix_I( .PADDI(o_DAC_Data_c_c), .i_Mix(i_Mix));
+  i_RingMod i_RingMod_I( .PADDI(o_DAC_BClk_c_c), .i_RingMod(i_RingMod));
+  i_ADC_Data i_ADC_Data_I( .PADDI(o_Test1_c_c), .i_ADC_Data(i_ADC_Data));
+  i_ADC_Clk i_ADC_Clk_I( .PADDI(o_Test2_c_c), .i_ADC_Clk(i_ADC_Clk));
+endmodule
+
+module SLICE_0 ( input D0, output F0 );
+  wire   GNDI;
+
+  lut4 i_Mix_I_0_1_lut( .A(GNDI), .B(GNDI), .C(GNDI), .D(D0), .Z(F0));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (D0 => F0) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module lut4 ( input A, B, C, D, output Z );
+
+  LUT4 #("0x00FF") INST10( .A(A), .B(B), .C(C), .D(D), .Z(Z));
+endmodule
+
+module gnd ( output PWR0 );
+
+  VLO INST1( .Z(PWR0));
+endmodule
+
+module o_Test1 ( input PADDO, output o_Test1 );
+  wire   VCCI;
+
+  BB_B_B \o_Test1_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(o_Test1));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => o_Test1) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module BB_B_B ( input T_N, I, output O, inout B );
+
+  BB_B INST10( .T_N(T_N), .I(I), .O(O), .B(B));
+endmodule
+
+module vcc ( output PWR1 );
+
+  VHI INST1( .Z(PWR1));
+endmodule
+
+module o_Test2 ( input PADDO, output o_Test2 );
+  wire   VCCI;
+
+  BB_B_B \o_Test2_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(o_Test2));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => o_Test2) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module o_DAC_BClk ( input PADDO, output o_DAC_BClk );
+  wire   VCCI;
+
+  BB_B_B \o_DAC_BClk_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(o_DAC_BClk));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => o_DAC_BClk) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module o_DAC_Data ( input PADDO, output o_DAC_Data );
+  wire   VCCI;
+
+  BB_B_B \o_DAC_Data_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), .B(o_DAC_Data));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => o_DAC_Data) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module o_DAC_LRClk ( input PADDO, output o_DAC_LRClk );
+  wire   VCCI;
+
+  BB_B_B \o_DAC_LRClk_pad.bb_inst ( .T_N(VCCI), .I(PADDO), .O(), 
+    .B(o_DAC_LRClk));
+  vcc DRIVEVCC( .PWR1(VCCI));
+
+  specify
+    (PADDO => o_DAC_LRClk) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module i_Mix ( output PADDI, input i_Mix );
+  wire   GNDI;
+
+  BB_B_B \o_DAC_Data_c_pad.bb_inst ( .T_N(GNDI), .I(GNDI), .O(PADDI), 
+    .B(i_Mix));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (i_Mix => PADDI) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module i_RingMod ( output PADDI, input i_RingMod );
+  wire   GNDI;
+
+  BB_B_B \o_DAC_BClk_c_pad.bb_inst ( .T_N(GNDI), .I(GNDI), .O(PADDI), 
+    .B(i_RingMod));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (i_RingMod => PADDI) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module i_ADC_Data ( output PADDI, input i_ADC_Data );
+  wire   GNDI;
+
+  BB_B_B \o_Test1_c_pad.bb_inst ( .T_N(GNDI), .I(GNDI), .O(PADDI), 
+    .B(i_ADC_Data));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (i_ADC_Data => PADDI) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule
+
+module i_ADC_Clk ( output PADDI, input i_ADC_Clk );
+  wire   GNDI;
+
+  BB_B_B \o_Test2_c_pad.bb_inst ( .T_N(GNDI), .I(GNDI), .O(PADDI), 
+    .B(i_ADC_Clk));
+  gnd DRIVEGND( .PWR0(GNDI));
+
+  specify
+    (i_ADC_Clk => PADDI) = (0:0:0,0:0:0);
+  endspecify
+
+endmodule

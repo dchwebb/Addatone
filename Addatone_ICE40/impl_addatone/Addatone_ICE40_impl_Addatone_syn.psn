@@ -1,0 +1,27 @@
+POSTSYN: Post Synthesis Process Radiant Software (64-bit) 2.0.1.281.2
+Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o Addatone_ICE40_impl_Addatone_syn.udb -ldc D:/Eurorack/Addatone/Addatone_ICE40/impl_addatone/Addatone_ICE40_impl_Addatone.ldc -gui -msgset D:/Eurorack/Addatone/Addatone_ICE40/promote.xml Addatone_ICE40_impl_Addatone.vm 
+   Architecture:     iCE40UP
+   Device:           iCE40UP5K
+   Package:          SG48
+   Performance:      High-Performance_1.2V
+Reading input file 'Addatone_ICE40_impl_Addatone.vm' ...
+Reading constraint file 'D:/Eurorack/Addatone/Addatone_ICE40/impl_addatone/Addatone_ICE40_impl_Addatone.ldc' ...
+Removing unused logic...
+INFO - Signal sample_position/Accumulated_Offset[17] undriven or does not drive anything - clipped
+INFO - Signal sample_position/Accumulated_Offset[16] undriven or does not drive anything - clipped
+INFO - Signal genadder[1].adder/Adder_Total[1][31] undriven or does not drive anything - clipped
+INFO - Signal genadder[1].adder/Adder_Total[1][30] undriven or does not drive anything - clipped
+INFO - Signal genadder[1].adder/Adder_Total[1][29] undriven or does not drive anything - clipped
+INFO - Signal genadder[1].adder/Adder_Total[1][28] undriven or does not drive anything - clipped
+INFO - Signal genadder[1].adder/Adder_Total[1][27] undriven or does not drive anything - clipped
+INFO - Signal genadder[1].adder/Adder_Total[1][26] undriven or does not drive anything - clipped
+INFO - Signal genadder[1].adder/Adder_Total[1][25] undriven or does not drive anything - clipped
+INFO - Signal genadder[1].adder/Adder_Total[1][24] undriven or does not drive anything - clipped
+INFO - ... More signals are undriven or does not drive anything - clipped
+Starting design annotation....
+INFO - The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
+Writing output file 'Addatone_ICE40_impl_Addatone_syn.udb'.
+POSTSYN finished successfully.
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 43 MB

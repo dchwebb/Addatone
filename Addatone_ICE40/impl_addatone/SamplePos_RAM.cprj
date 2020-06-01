@@ -1,0 +1,7 @@
+-ver "C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.v"
+-lib pmi -vhd "C:/lscc/radiant/2.0/ip/pmi/pmi_iCE40UP.vhd"
+-ver "D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/rtl/SamplePos_RAM.v"
+-sdc  "D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM/constraints/SamplePos_RAM.ldc"
+-path "D:/Eurorack/Addatone/Addatone_ICE40/src/SamplePos_RAM"
+-top SamplePos_RAM
+-a "iCE40UP"

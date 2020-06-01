@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RadiantProject version="4.1" title="ICE40_Tester" device="iCE40UP5K-UWG30ITR" performance_grade="High-Performance_1.2V" default_implementation="impl_1">
+    <Options/>
+    <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
+        <Options/>
+    </Implementation>
+    <Strategy name="Strategy1" file="ICE40_Tester1.sty"/>
+</RadiantProject>
