@@ -3,6 +3,18 @@ void ADC1_IRQHandler(void) {
 	uint16_t adcval = ADC1->DR;
 }
 
+/*
+#define PITCH_CV       0
+#define HARM1_CV       1
+#define HARM2_CV       2
+#define WARP_CV        3
+#define HARMCNT_POT    4
+#define FTUNE_POT      5
+#define CTUNE_POT      6
+#define HARM1_POT      7
+#define HARM2_POT      8
+#define WARP_POT       9
+*/
 
 // SPI Send timer
 void TIM3_IRQHandler(void) {
@@ -10,12 +22,26 @@ void TIM3_IRQHandler(void) {
 	#define ADC_SUM(x) (ADC_array[x] + ADC_array[ADC_BUFFER_LENGTH + x] + ADC_array[ADC_BUFFER_LENGTH * 2 + x] + ADC_array[ADC_BUFFER_LENGTH * 3 + x])
 
 	TIM3->SR &= ~TIM_SR_UIF;					// clear UIF flag
-	//sendSPIData((uint16_t)0);
+
+	//	Coarse tuning - add some hysteresis to prevent jumping
+	if (coarseTune > ADC_array[CTUNE_POT] + 128 || coarseTune < ADC_array[CTUNE_POT] - 128)
+		coarseTune = ADC_array[CTUNE_POT];
+
+	int16_t octave = 0;
+	if (coarseTune > 3412)
+		octave = -2 * 590;
+	else if (coarseTune > 2728)
+		octave = -590;
+	else if (coarseTune < 682)
+		octave = 2 * 590;
+	else if (coarseTune < 1364)
+		octave = 590;
 
 	// Pitch calculations - Increase 2270 to increase pitch; Reduce ABS(610) to increase spread
-	pitch = (float)((ADC_SUM(0)) >> 2);
+	float ftune = (8192.0f - ADC_SUM(FTUNE_POT)) / 14.0f;				// Gives around an octave of fine tune
+	pitch = (float)(ADC_SUM(PITCH_CV) >> 2) + ftune + (float)octave;
 	//freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);			// for cycle length matching sample rate (48k)
-	freq = 3750.0f * std::pow(2.0f, pitch / -590.0f);			// for cycle length of 65k
+	freq = 3200.0f * std::pow(2.0f, pitch / -590.0f);			// for cycle length of 65k
 
 
 	/* Scaling logic
@@ -46,11 +72,11 @@ void TIM3_IRQHandler(void) {
 	constexpr uint8_t scaleInit = std::log2(std::pow(2, 14) / (maxScale + 1));
 	constexpr float scaleDivisor = maxScale / std::log2(maxScale + 1);
 
-	harmonicScaleOdd = (uint16_t)(ADC_SUM(1)) >> scaleInit;		// scale 0 to 511
+	harmonicScaleOdd = (uint16_t)(ADC_SUM(HARM1_CV)) >> scaleInit;		// scale 0 to 511
 	dampedHarmonicScaleOdd = ((15 * dampedHarmonicScaleOdd) + harmonicScaleOdd) >> 4;
 	harmScaleOdd = ((31.0f * harmScaleOdd) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScaleOdd / scaleDivisor) - 1)) / 32.0f;
 
-	harmonicScaleEven = (uint16_t)(ADC_SUM(2)) >> scaleInit;		// scale 2^16 to maxScale
+	harmonicScaleEven = (uint16_t)(ADC_SUM(HARM2_CV)) >> scaleInit;		// scale 2^16 to maxScale
 	dampedHarmonicScaleEven = ((15 * dampedHarmonicScaleEven) + harmonicScaleEven) >> 4;
 	harmScaleEven = ((31.0f * harmScaleEven) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScaleEven / scaleDivisor) - 1)) / 32.0f;
 
@@ -63,13 +89,11 @@ void TIM3_IRQHandler(void) {
 	startVolEven = ((0.7f - 0.7f * std::pow(volEven, 4.0f)) + 0.3f) * maxScale;
 
 	// Send CV value for frequency scaling
-	//freqScale = std::max((int16_t)126 - ((int16_t)ADC_SUM(3)) >> 7, 0);		// scale to range 0-127
-	freqScale = std::max(126 - ((int16_t)ADC_SUM(3) >> 7), 0);		// scale to range 0-127
+	freqScale = std::max(126 - ((int16_t)ADC_SUM(WARP_CV) >> 7), 0);		// scale to range 0-127
 
 	// Send potentiometer value for number of harmonics
-	if (harmCountTemp > ADC_SUM(4) + 100 || harmCountTemp < ADC_SUM(4) - 100)
-		harmCountTemp = ADC_SUM(4);
-	//harmCount = harmCountTemp >> 7;		// scale to range 0-127
+	if (harmCountTemp > ADC_SUM(HARMCNT_POT) + 100 || harmCountTemp < ADC_SUM(HARMCNT_POT) - 100)
+		harmCountTemp = ADC_SUM(HARMCNT_POT);
 	harmCount = std::max(126 - ((int16_t)harmCountTemp >> 7), 0);		// scale to range 0-127
 
 

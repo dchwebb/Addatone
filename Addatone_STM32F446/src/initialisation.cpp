@@ -73,7 +73,7 @@ void InitADC(void)
 	// Enable ADC
 	GPIOA->MODER |= GPIO_MODER_MODER6;				// Set PA6 to Analog mode (0b11)
 	GPIOC->MODER |= GPIO_MODER_MODER3;				// Set PC3 to Analog mode (0b11)
-	GPIOA->MODER |= GPIO_MODER_MODER3;				// Set PA3 to Analog mode (0b11)
+	GPIOA->MODER |= GPIO_MODER_MODER3;				// Set PA3 to Analog mode (á0b11)
 	GPIOA->MODER |= GPIO_MODER_MODER7;				// Set PA7 to Analog mode (0b11)
 	GPIOA->MODER |= GPIO_MODER_MODER2;				// Set PA2 to Analog mode (0b11)
 	GPIOC->MODER |= GPIO_MODER_MODER5;				// Set PC5 to Analog mode (0b11)
@@ -236,7 +236,7 @@ void InitFPGAProg()
 	//SPI2->CR1 |= SPI_CR1_DFF;						// Use 16 bit data frame (default 8 bit)
 	SPI2->CR1 |= SPI_CR1_SSM;						// Software slave management: When SSM bit is set, NSS pin input is replaced with the value from the SSI bit
 	SPI2->CR1 |= SPI_CR1_SSI;						// Internal slave select
-	SPI2->CR1 |= SPI_CR1_BR_2;						// Baud rate control prescaler: 0b001: fPCLK/4; 0b100: fPCLK/32
+	SPI2->CR1 |= SPI_CR1_BR_0;						// Baud rate control prescaler: 0b001: fPCLK/4; 0b100: fPCLK/32
 	SPI2->CR1 |= SPI_CR1_MSTR;						// Master selection
 	SPI2->CR1 |= SPI_CR1_CPOL;						// Clock polarity (0: CK to 0 when idle; 1: CK to 1 when idle)
 

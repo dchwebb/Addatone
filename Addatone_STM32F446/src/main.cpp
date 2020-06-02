@@ -6,9 +6,7 @@ volatile uint32_t SysTickVal;
 extern uint32_t SystemCoreClock;
 volatile uint16_t ADC_array[ADC_BUFFER_LENGTH * 4];
 
-// Create aliases for ADC inputs
-volatile uint16_t& ADC_PITCH = ADC_array[0];	// PB0 ADC12_IN8   Pin 26
-volatile uint16_t& ADC_FTUNE = ADC_array[1];	// PB1 ADC12_IN9   Pin 27
+volatile uint16_t coarseTune;
 volatile float pitch;
 volatile float freq = 220;
 

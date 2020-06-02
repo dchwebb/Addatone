@@ -20,7 +20,7 @@
 				<BScanVal>0</BScanVal>
 			</Bypass>
 			<File>../../impl_1/ICE40_Tester_impl_1.bin</File>
-			<FileTime>05/31/20 18:04:05</FileTime>
+			<FileTime>06/01/20 12:38:08</FileTime>
 			<MemoryType>Compressed Random Access Memory (CRAM)</MemoryType>
 			<Operation>Fast Configuration</Operation>
 			<Option>
