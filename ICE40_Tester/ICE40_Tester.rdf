@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RadiantProject version="4.1" title="ICE40_Tester" device="iCE40UP5K-UWG30ITR" performance_grade="High-Performance_1.2V" default_implementation="impl_1">
+<RadiantProject version="4.1" title="ICE40_Tester" device="iCE40UP5K-SG48I" performance_grade="High-Performance_1.2V" default_implementation="impl_1">
     <Options/>
     <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
-        <Options/>
+        <Options def_top="top"/>
+        <Source name="source/Top.v" type="Verilog" type_short="Verilog">
+            <Options top_module="top"/>
+        </Source>
+        <Source name="source/constraints.pdc" type="Physical Constraints File" type_short="PDC">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
     </Implementation>
     <Strategy name="Strategy1" file="ICE40_Tester1.sty"/>
 </RadiantProject>

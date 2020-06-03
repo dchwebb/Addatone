@@ -29,7 +29,7 @@ extern "C" {
 }
 
 void programFPGA() {
-	// SPI clock should be between 1 and 25MHz with minimum clock low/high time of 20ns)
+	// SPI clock should be between 1 and 25MHz with minimum clock low/high time of 20ns - currently set to around 9MHz
 
 	// Pull reset low (PC7)
 	GPIOC->BSRR |= GPIO_BSRR_BR_7;

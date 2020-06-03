@@ -1,7 +1,7 @@
-void ADC1_IRQHandler(void) {
+/*void ADC1_IRQHandler(void) {
 
 	uint16_t adcval = ADC1->DR;
-}
+}*/
 
 /*
 #define PITCH_CV       0
@@ -20,6 +20,7 @@ void ADC1_IRQHandler(void) {
 void TIM3_IRQHandler(void) {
 	// create macro to enable summing of four most recent values of ADC regardless of how many ADC samples are in the buffer
 	#define ADC_SUM(x) (ADC_array[x] + ADC_array[ADC_BUFFER_LENGTH + x] + ADC_array[ADC_BUFFER_LENGTH * 2 + x] + ADC_array[ADC_BUFFER_LENGTH * 3 + x])
+	#define ADC_REV(x) 16384 - ADC_SUM(x)
 
 	TIM3->SR &= ~TIM_SR_UIF;					// clear UIF flag
 
@@ -69,14 +70,14 @@ void TIM3_IRQHandler(void) {
 	sendSPIData(outputVal);
 	 */
 	constexpr float maxScale = 2047.0f;
-	constexpr uint8_t scaleInit = std::log2(std::pow(2, 14) / (maxScale + 1));
+	constexpr uint8_t scaleInit = std::log2(std::pow(2, 15) / (maxScale + 1));
 	constexpr float scaleDivisor = maxScale / std::log2(maxScale + 1);
 
-	harmonicScaleOdd = (uint16_t)(ADC_SUM(HARM1_CV)) >> scaleInit;		// scale 0 to 511
+	harmonicScaleOdd = (uint16_t)(ADC_SUM(HARM1_CV) + ADC_REV(HARM1_POT)) >> scaleInit;		// scale 0 to 511
 	dampedHarmonicScaleOdd = ((15 * dampedHarmonicScaleOdd) + harmonicScaleOdd) >> 4;
 	harmScaleOdd = ((31.0f * harmScaleOdd) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScaleOdd / scaleDivisor) - 1)) / 32.0f;
 
-	harmonicScaleEven = (uint16_t)(ADC_SUM(HARM2_CV)) >> scaleInit;		// scale 2^16 to maxScale
+	harmonicScaleEven = (uint16_t)(ADC_SUM(HARM2_CV) + ADC_REV(HARM2_POT)) >> scaleInit;		// scale 2^16 to maxScale
 	dampedHarmonicScaleEven = ((15 * dampedHarmonicScaleEven) + harmonicScaleEven) >> 4;
 	harmScaleEven = ((31.0f * harmScaleEven) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScaleEven / scaleDivisor) - 1)) / 32.0f;
 
@@ -89,7 +90,7 @@ void TIM3_IRQHandler(void) {
 	startVolEven = ((0.7f - 0.7f * std::pow(volEven, 4.0f)) + 0.3f) * maxScale;
 
 	// Send CV value for frequency scaling
-	freqScale = std::max(126 - ((int16_t)ADC_SUM(WARP_CV) >> 7), 0);		// scale to range 0-127
+	freqScale = std::min((int16_t)(ADC_REV(WARP_CV) + ADC_SUM(WARP_POT)) >> 7, 127);		// scale to range 0-127
 
 	// Send potentiometer value for number of harmonics
 	if (harmCountTemp > ADC_SUM(HARMCNT_POT) + 100 || harmCountTemp < ADC_SUM(HARMCNT_POT) - 100)
