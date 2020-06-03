@@ -1,8 +1,8 @@
 <top name = "top"  library = "work"  arch = ""  entry = "Verilog">
 
 <clocks>
-    <clockitem name = "Main_Clock"  type = "net" />
     <clockitem name = "i_Clock"  type = "port" />
+    <clockitem name = "Main_Clock"  type = "net" />
     <clockitem name = "ADC_Data_Received"  type = "net" />
     <clockitem name = "adc/Clock_Stable"  type = "net" />
 </clocks>
@@ -47,9 +47,9 @@
         <pitem  name = "i_ADC_CS"  direction = "in"  />
         <pitem  name = "i_Mix"  direction = "in"  />
         <pitem  name = "i_Ring_Mod"  direction = "in"  />
-        <pitem  name = "o_DAC_MOSI"  direction = "out"  />
-        <pitem  name = "o_DAC_SCK"  direction = "out"  />
-        <pitem  name = "o_DAC_CS"  direction = "out"  />
+        <pitem  name = "o_DAC_Data"  direction = "out"  />
+        <pitem  name = "o_DAC_Bit_Clock"  direction = "out"  />
+        <pitem  name = "o_DAC_LR_Clock"  direction = "out"  />
     </pins>
 
     <!--
@@ -29895,7 +29895,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "o_DAC_SCK"  />
+        <nitem  name = "o_DAC_Bit_Clock"  />
         <nitem  name = "sample_output/dac2/o_Bit_Clock_N_1584"  />
         <nitem  name = "sample_output/dac2/o_Bit_Clock_N_1583"  />
         </nets>
@@ -30145,7 +30145,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "o_DAC_CS"  />
+        <nitem  name = "o_DAC_LR_Clock"  />
         <nitem  name = "sample_output/dac2/o_LR_Clock_N_1577"  />
         <nitem  name = "sample_output/dac2/o_LR_Clock_N_1576"  />
         </nets>
@@ -30239,7 +30239,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "o_DAC_SCK"  />
+        <nitem  name = "o_DAC_Bit_Clock"  />
         <nitem  name = "sample_output/dac2/o_Bit_Clock_N_1586"  />
         </nets>
     </instance>
@@ -31158,7 +31158,7 @@
         </pins>
 
         <nets>
-        <nitem  name = "o_DAC_CS"  />
+        <nitem  name = "o_DAC_LR_Clock"  />
         <nitem  name = "sample_output/dac2/o_LR_Clock_N_1580"  />
         <nitem  name = "sample_output/dac2/o_LR_Clock_N_1576"  />
         <nitem  name = "sample_output/dac2/o_LR_Clock_N_1575"  />
@@ -32186,7 +32186,7 @@
 
         <nets>
         <nitem  name = "reset_n_N_207"  />
-        <nitem  name = "o_DAC_MOSI"  />
+        <nitem  name = "o_DAC_Data"  />
         <nitem  name = "sample_output/dac2/o_Data_N_1588"  />
         <nitem  name = "sample_output/dac2/o_Data_N_1587"  />
         </nets>
@@ -32204,7 +32204,7 @@
         <nets>
         <nitem  name = "sample_output/dac2/gnd"  />
         <nitem  name = "Main_Clock"  />
-        <nitem  name = "o_DAC_CS"  />
+        <nitem  name = "o_DAC_LR_Clock"  />
         <nitem  name = "sample_output/dac2/o_LR_Clock_N_1574"  />
         </nets>
     </instance>
@@ -32221,7 +32221,7 @@
         <nets>
         <nitem  name = "sample_output/dac2/gnd"  />
         <nitem  name = "Main_Clock"  />
-        <nitem  name = "o_DAC_SCK"  />
+        <nitem  name = "o_DAC_Bit_Clock"  />
         <nitem  name = "sample_output/dac2/o_Bit_Clock_N_1581"  />
         </nets>
     </instance>
@@ -32633,7 +32633,7 @@
         <nets>
         <nitem  name = "sample_output/dac2/gnd"  />
         <nitem  name = "Main_Clock"  />
-        <nitem  name = "o_DAC_MOSI"  />
+        <nitem  name = "o_DAC_Data"  />
         <nitem  name = "sample_output/dac2/o_Data_N_1587"  />
         </nets>
     </instance>

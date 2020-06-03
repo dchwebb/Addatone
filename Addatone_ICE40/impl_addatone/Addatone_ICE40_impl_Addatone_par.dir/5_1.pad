@@ -6,25 +6,25 @@ Performance Grade:      High-Performance_1.2V
 PACKAGE:          SG48
 Package Status:                     Preliminary    Version 1.5
 
-Sun May 31 14:29:47 2020
+Wed Jun 03 18:41:30 2020
 
 Pinout by Port Name:
-+-------------+----------+--------------+-------+--------------------+
-| Port Name   | Pin/Bank | Buffer Type  | Site  | Properties         |
-+-------------+----------+--------------+-------+--------------------+
-| debug       | 42/0     | LVCMOS33_OUT | PR9A  | DRIVE:8mA PULL:NA  |
-| i_ADC_CS    | 10/1     | LVCMOS33_IN  | PL17A | PULL:NA            |
-| i_ADC_Clock | 9/1      | LVCMOS33_IN  | PL16A | PULL:NA            |
-| i_ADC_Data  | 6/1      | LVCMOS33_IN  | PL14B | PULL:NA            |
-| i_Clock     | 20/1     | LVCMOS33_IN  | PL20B | PULL:NA            |
-| i_Mix       | 37/0     | LVCMOS33_IN  | PR14A | PULL:100K          |
-| i_Ring_Mod  | 25/0     | LVCMOS33_IN  | PR20B | PULL:100K          |
-| o_DAC_CS    | 48/2     | LVCMOS33_OUT | PL8A  | DRIVE:8mA PULL:NA  |
-| o_DAC_MOSI  | 3/2      | LVCMOS33_OUT | PL10B | DRIVE:8mA PULL:NA  |
-| o_DAC_SCK   | 4/2      | LVCMOS33_OUT | PL10A | DRIVE:8mA PULL:NA  |
-| reset_n     | 31/0     | LVCMOS33_IN  | PR17B | PULL:100K          |
-| test        | 45/2     | LVCMOS33_OUT | PL8B  | DRIVE:8mA PULL:NA  |
-+-------------+----------+--------------+-------+--------------------+
++-----------------+----------+--------------+-------+--------------------+
+| Port Name       | Pin/Bank | Buffer Type  | Site  | Properties         |
++-----------------+----------+--------------+-------+--------------------+
+| debug           | 42/0     | LVCMOS33_OUT | PR9A  | DRIVE:8mA PULL:NA  |
+| i_ADC_CS        | 10/1     | LVCMOS33_IN  | PL17A | PULL:NA            |
+| i_ADC_Clock     | 9/1      | LVCMOS33_IN  | PL16A | PULL:NA            |
+| i_ADC_Data      | 6/1      | LVCMOS33_IN  | PL14B | PULL:NA            |
+| i_Clock         | 20/1     | LVCMOS33_IN  | PL20B | PULL:NA            |
+| i_Mix           | 37/0     | LVCMOS33_IN  | PR14A | PULL:100K          |
+| i_Ring_Mod      | 25/0     | LVCMOS33_IN  | PR20B | PULL:100K          |
+| o_DAC_Bit_Clock | 4/2      | LVCMOS33_OUT | PL10A | DRIVE:8mA PULL:NA  |
+| o_DAC_Data      | 3/2      | LVCMOS33_OUT | PL10B | DRIVE:8mA PULL:NA  |
+| o_DAC_LR_Clock  | 48/2     | LVCMOS33_OUT | PL8A  | DRIVE:8mA PULL:NA  |
+| reset_n         | 34/0     | LVCMOS33_IN  | PR14B | PULL:100K          |
+| test            | 45/2     | LVCMOS33_OUT | PL8B  | DRIVE:8mA PULL:NA  |
++-----------------+----------+--------------+-------+--------------------+
 
 Vccio by Bank:
 +------+-------+
@@ -40,8 +40,8 @@ Pinout by Pin Number:
 | Pin/Bank | Pin Info            | Constraint | Buffer Type  | Site  | Dual Function    |
 +----------+---------------------+------------+--------------+-------+------------------+
 | 2/2      |     unused, PULL:UP |            |              | PL9A  |                  |
-| 3/2      | o_DAC_MOSI          | LOCATED    | LVCMOS33_OUT | PL10B |                  |
-| 4/2      | o_DAC_SCK           | LOCATED    | LVCMOS33_OUT | PL10A |                  |
+| 3/2      | o_DAC_Data          | LOCATED    | LVCMOS33_OUT | PL10B |                  |
+| 4/2      | o_DAC_Bit_Clock     | LOCATED    | LVCMOS33_OUT | PL10A |                  |
 | 6/1      | i_ADC_Data          | LOCATED    | LVCMOS33_IN  | PL14B |                  |
 | 9/1      | i_ADC_Clock         | LOCATED    | LVCMOS33_IN  | PL16A |                  |
 | 10/1     | i_ADC_CS            | LOCATED    | LVCMOS33_IN  | PL17A |                  |
@@ -61,9 +61,9 @@ Pinout by Pin Number:
 | 26/0     |     unused, PULL:UP |            |              | PR19A |                  |
 | 27/0     |     unused, PULL:UP |            |              | PR19B |                  |
 | 28/0     |     unused, PULL:UP |            |              | PR18A |                  |
-| 31/0     | reset_n             |            | LVCMOS33_IN  | PR17B |                  |
+| 31/0     |     unused, PULL:UP |            |              | PR17B |                  |
 | 32/0     |     unused, PULL:UP |            |              | PR17A |                  |
-| 34/0     |     unused, PULL:UP |            |              | PR14B |                  |
+| 34/0     | reset_n             |            | LVCMOS33_IN  | PR14B |                  |
 | 35/0     |     unused, PULL:UP |            |              | PR13B | GPLL_IN/PCLKT0_1 |
 | 36/0     |     unused, PULL:UP |            |              | PR10B |                  |
 | 37/0     | i_Mix               | LOCATED    | LVCMOS33_IN  | PR14A | PCLKT0_0         |
@@ -77,7 +77,7 @@ Pinout by Pin Number:
 | 45/2     | test                | LOCATED    | LVCMOS33_OUT | PL8B  |                  |
 | 46/2     |     unused, PULL:UP |            |              | PL6A  |                  |
 | 47/2     |     unused, PULL:UP |            |              | PL7A  |                  |
-| 48/2     | o_DAC_CS            | LOCATED    | LVCMOS33_OUT | PL8A  |                  |
+| 48/2     | o_DAC_LR_Clock      | LOCATED    | LVCMOS33_OUT | PL8A  |                  |
 | PL6B/2   |     unused, PULL:UP |            |              | PL6B  |                  |
 | PL9B/2   |     unused, PULL:UP |            |              | PL9B  |                  |
 | PL13A/1  |     unused, PULL:UP |            |              | PL13A |                  |
@@ -107,10 +107,10 @@ ldc_set_location -site {6} [ get_ports {i_ADC_Data} ]
 ldc_set_location -site {20} [ get_ports {i_Clock} ]
 ldc_set_location -site {37} [ get_ports {i_Mix} ]
 ldc_set_location -site {25} [ get_ports {i_Ring_Mod} ]
-ldc_set_location -site {48} [ get_ports {o_DAC_CS} ]
-ldc_set_location -site {3} [ get_ports {o_DAC_MOSI} ]
-ldc_set_location -site {4} [ get_ports {o_DAC_SCK} ]
-ldc_set_location -site {31} [ get_ports {reset_n} ]
+ldc_set_location -site {4} [ get_ports {o_DAC_Bit_Clock} ]
+ldc_set_location -site {3} [ get_ports {o_DAC_Data} ]
+ldc_set_location -site {48} [ get_ports {o_DAC_LR_Clock} ]
+ldc_set_location -site {34} [ get_ports {reset_n} ]
 ldc_set_location -site {45} [ get_ports {test} ]
 
 
@@ -118,5 +118,5 @@ ldc_set_location -site {45} [ get_ports {test} ]
 
 
 Copyright 2015 Lattice Semiconductor Corporation, All Rights Reserved
-Sun May 31 14:29:47 2020
+Wed Jun 03 18:41:30 2020
 

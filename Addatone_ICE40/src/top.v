@@ -9,9 +9,9 @@ module top
 		input wire i_ADC_CS,
 		input wire i_Mix,
 		input wire i_Ring_Mod,
-		output wire o_DAC_MOSI,
-		output wire o_DAC_SCK,
-		output wire o_DAC_CS
+		output wire o_DAC_Data,
+		output wire o_DAC_Bit_Clock,
+		output wire o_DAC_LR_Clock
 	);
 	parameter NO_OF_HARMONICS = 8'd100;
 
@@ -121,9 +121,9 @@ module top
 		.i_Sample_R(r_Adder_Total[1]),
 		.i_Mix(i_Mix),
 		.i_Ring_Mod(i_Ring_Mod),
-		.o_I2S_LR_Clock(o_DAC_CS),
-		.o_I2S_Bit_Clock(o_DAC_SCK),
-		.o_I2S_Data(o_DAC_MOSI)
+		.o_I2S_LR_Clock(o_DAC_LR_Clock),
+		.o_I2S_Bit_Clock(o_DAC_Bit_Clock),
+		.o_I2S_Data(o_DAC_Data)
 	);
 
 	// State Machine settings - used to control calculation of amplitude of each harmonic sample
