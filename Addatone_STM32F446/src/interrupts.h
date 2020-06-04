@@ -93,9 +93,9 @@ void TIM3_IRQHandler(void) {
 	freqScale = std::min((int16_t)(ADC_REV(WARP_CV) + ADC_SUM(WARP_POT)) >> 7, 127);		// scale to range 0-127
 
 	// Send potentiometer value for number of harmonics
-	if (harmCountTemp > ADC_SUM(HARMCNT_POT) + 100 || harmCountTemp < ADC_SUM(HARMCNT_POT) - 100)
-		harmCountTemp = ADC_SUM(HARMCNT_POT);
-	harmCount = std::max(126 - ((int16_t)harmCountTemp >> 7), 0);		// scale to range 0-127
+	if (harmCountTemp > ADC_array[HARMCNT_POT] + 20 || harmCountTemp < ADC_array[HARMCNT_POT] - 20)
+		harmCountTemp = ADC_array[HARMCNT_POT];
+	harmCount = std::pow(harmCountTemp >> 5, 2) / 128;		// scale to range 0-127
 
 
 	sendSPIData((uint16_t)freq);
