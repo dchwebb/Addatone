@@ -59,25 +59,15 @@ void TIM3_IRQHandler(void) {
 	 * for 2048: c = 2047/11 = 186.09
 	 */
 
-	/* 255 levels
-	// pass the start volume - signals with more harmonics will be attenuated progressively
-	harmonicScale = (uint16_t)(ADC_array[2] + ADC_array[5] + ADC_array[8] + ADC_array[11]) >> 6;		// scale 0 to 255
-	dampedHarmonicScale = ((7 * dampedHarmonicScale) + harmonicScale) >> 3;
-	harmScale = ((31.0f * harmScale) + (std::pow(2.0f, (float)dampedHarmonicScale / 31.875f) - 1)) / 32.0f;
-	uint16_t minLevel = 140;
-	startVol = minLevel + (harmScale * (255 - minLevel) / 255);
-	outputVal = ((uint8_t)harmScale) | (startVol << 8);
-	sendSPIData(outputVal);
-	 */
 	constexpr float maxScale = 2047.0f;
-	constexpr uint8_t scaleInit = std::log2(std::pow(2, 15) / (maxScale + 1));
+	constexpr uint8_t scaleInit = std::log2(std::pow(2, 14) / (maxScale + 1));
 	constexpr float scaleDivisor = maxScale / std::log2(maxScale + 1);
 
-	harmonicScaleOdd = (uint16_t)(ADC_SUM(HARM1_CV) + ADC_REV(HARM1_POT)) >> scaleInit;		// scale 0 to 511
+	harmonicScaleOdd = std::max((int32_t)(ADC_SUM(HARM1_CV) + ADC_REV(HARM1_POT)) - 16384, 0l) >> scaleInit;		// Scaled from 16384 to 0, divided by 3
 	dampedHarmonicScaleOdd = ((15 * dampedHarmonicScaleOdd) + harmonicScaleOdd) >> 4;
 	harmScaleOdd = ((31.0f * harmScaleOdd) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScaleOdd / scaleDivisor) - 1)) / 32.0f;
 
-	harmonicScaleEven = (uint16_t)(ADC_SUM(HARM2_CV) + ADC_REV(HARM2_POT)) >> scaleInit;		// scale 2^16 to maxScale
+	harmonicScaleEven = std::max((int32_t)(ADC_SUM(HARM2_CV) + ADC_REV(HARM2_POT)) - 16384, 0l) >> scaleInit;
 	dampedHarmonicScaleEven = ((15 * dampedHarmonicScaleEven) + harmonicScaleEven) >> 4;
 	harmScaleEven = ((31.0f * harmScaleEven) + uint16_t(std::pow(2.0f, (float)dampedHarmonicScaleEven / scaleDivisor) - 1)) / 32.0f;
 
@@ -92,9 +82,10 @@ void TIM3_IRQHandler(void) {
 	// Send CV value for frequency scaling
 	freqScale = std::min((int16_t)(ADC_REV(WARP_CV) + ADC_SUM(WARP_POT)) >> 7, 127);		// scale to range 0-127
 
-	// Send potentiometer value for number of harmonics
+	// Send potentiometer value for number of harmonics - this uses hysteresis to avoid jumping
 	if (harmCountTemp > ADC_array[HARMCNT_POT] + 20 || harmCountTemp < ADC_array[HARMCNT_POT] - 20)
 		harmCountTemp = ADC_array[HARMCNT_POT];
+	// Scale input with formula y=(x^2)/128 to give a flattened exponential curve (more control over fewer number of harmonics)
 	harmCount = std::pow(harmCountTemp >> 5, 2) / 128;		// scale to range 0-127
 
 

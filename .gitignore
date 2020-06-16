@@ -26,3 +26,9 @@ Addatone_ICE40/Addatone_Sim/*
 *.hrr
 *.bgn
 *.kicad_pcb-bak
+*.d
+*.su
+*.o
+*.mk
+*.list
+*.map

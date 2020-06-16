@@ -23,6 +23,9 @@ volatile float harmScaleEven;
 volatile int16_t freqScale;
 volatile uint16_t harmCount;
 volatile uint16_t harmCountTemp;				// Temporary value used for hysteresis
+volatile int32_t hp = 0;
+volatile int32_t hc = 0;
+volatile uint16_t hs = 0;
 
 extern "C" {
 #include "interrupts.h"
@@ -88,7 +91,6 @@ void programFPGA() {
 float i2sVal = 0;
 float oldVal = 0;
 int32_t send = 0;
-uint32_t i = 0;
 int8_t inc = 20;
 
 extern uint32_t SystemCoreClock;
