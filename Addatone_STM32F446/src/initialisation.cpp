@@ -69,9 +69,9 @@ void InitAdcPins(ADC_TypeDef* ADC_No, std::initializer_list<uint8_t> channels)
 
 		// 000: 3 cycles, 001: 15 cycles, 010: 28 cycles, 011: 56 cycles, 100: 84 cycles, 101: 112 cycles, 110: 144 cycles, 111: 480 cycles
 		if (channel < 10)
-			ADC_No->SMPR2 |= 0b010 << (3 * channel);
+			ADC_No->SMPR2 |= 0b110 << (3 * channel);
 		else
-			ADC_No->SMPR1 |= 0b010 << (3 * (channel - 10));
+			ADC_No->SMPR1 |= 0b110 << (3 * (channel - 10));
 
 		sequence++;
 	}

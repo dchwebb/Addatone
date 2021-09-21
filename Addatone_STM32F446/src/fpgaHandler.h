@@ -2,7 +2,7 @@
 
 #include "initialisation.h"
 
-class fpgaHandler {
+struct fpgaHandler {
 public:
 	void ProgramBitstream();
 	void SendControls();
@@ -21,5 +21,6 @@ private:
 
 	int16_t freqScale;					// Frequency scaling
 	uint16_t harmCount;					// Number of harmonics
-	uint16_t harmCountTemp;				// Temporary value used for hysteresis
+	float harmCountDamped;
+	float harmCountHysteresis;			// Temporary value used for hysteresis
 };
