@@ -1,4 +1,4 @@
-372739380894684
+390410221359716
 Battery_Holders
 Bulgin_BX0036_1xC
 
@@ -19698,6 +19698,13 @@ Resonator_muRata_DSS6-3pin_w7.0mm_h2.5mm
 0
 0
 Custom_Footprints
+1.3mm_Test_Point
+1.3mm Test Point
+Through Hole Mount Test Points
+0
+1
+1
+Custom_Footprints
 2mm_Connector
 
 
@@ -19775,6 +19782,13 @@ SMD SMT crystal
 2
 2
 Custom_Footprints
+Crystal_SMD_2pin_6.0x3.5mm
+SMD Crystal SERIES SMD0603/2 http://www.petermann-technik.de/fileadmin/petermann/pdf/SMD0603-2.pdf, hand-soldering, 6.0x3.5mm^2 package
+SMD SMT crystal hand-soldering
+0
+2
+2
+Custom_Footprints
 D_SOD-123_custom
 SOD-123
 SOD-123
@@ -19830,6 +19844,27 @@ ILI9341 LCD SPI
 0
 24
 24
+Custom_Footprints
+Inductor_SMD_6x6mm
+3L COILS SNR6045K-680M
+inductor smd
+0
+2
+2
+Custom_Footprints
+JLC_SMT_Tooling_Hole
+Mounting Hole 2.2mm, no annular, M2
+mounting hole 2.2mm no annular m2
+0
+0
+0
+Custom_Footprints
+LED_Hole_3mm
+Mounting Hole 6mm, no annular
+mounting hole 6mm no annular
+0
+0
+0
 Custom_Footprints
 MIDISocket_Hole_15mm
 Mounting Hole 15mm
@@ -19894,6 +19929,13 @@ Light Touch Switch, https://industrial.panasonic.com/cdbs/www-data/pdf/ATK0000/A
 4
 2
 Custom_Footprints
+Small_Pushbutton_Hole_3.5mm
+Button Hole 3.5mm
+
+0
+0
+0
+Custom_Footprints
 Sub_Miniature_Switch_MountingHole_3.5mm
 Mounting Hole 6mm, no annular
 mounting hole 6mm no annular
@@ -19922,6 +19964,13 @@ THONKICONN_hole
 3
 3
 Custom_Footprints
+TSOP-II-54_22.2x10.16mm_P0.8mm
+54-lead TSOP typ II package
+TSOPII TSOP2
+0
+54
+54
+Custom_Footprints
 Thonkiconn_Socket_MountingHole_6mm
 Mounting Hole 6mm, no annular
 mounting hole 6mm no annular
@@ -19941,7 +19990,14 @@ USB B female connector, straight, rugged
 USB_B_MUSB_Straight female connector straight rugged MUSB D511
 0
 6
-4
+5
+Custom_Footprints
+USB_Micro-B_Amphenol
+Micro USB Type B Receptacle
+USB USB_B USB_micro USB_OTG
+0
+9
+6
 Diodes_SMD
 D_0603
 
@@ -21666,13 +21722,6 @@ Fuseholder_Cylinder-6.3x32mm_Schurter_FUP_0031.2520_Horizontal_Closed
 0
 Fuse_Holders_and_Fuses
 Fuseholder_Fuse_TR5_Littlefuse-No560_No460
-
-
-0
-0
-0
-Graphics
-Addatone
 
 
 0
@@ -52102,6 +52151,27 @@ SolderWirePad_single_2mmDrill
 0
 Wire_Pads
 SolderWirePad_single_SMD_5x10mm
+
+
+0
+0
+0
+logo
+alligator
+
+
+0
+0
+0
+logo
+retrospect
+
+
+0
+0
+0
+logo
+retrospector
 
 
 0
