@@ -9,19 +9,18 @@ extern volatile uint32_t SysTickVal;
 
 #define ADC_BUFFER_LENGTH 10
 extern volatile uint16_t ADC_array[ADC_BUFFER_LENGTH * 4];
-
-// Define ADC array positions of various controls
-#define PITCH_CV       0
-#define HARM1_CV       1
-#define HARM2_CV       2
-#define WARP_CV        3
-#define HARMCNT_POT    4
-#define CTUNE_POT      5
-#define FTUNE_POT      6
-#define HARM1_POT      7
-#define HARM2_POT      8
-#define WARP_POT       9
-
+enum ADC_Controls {
+	ADC_Pitch      = 0,       // PA6
+	ADC_Harm1CV    = 1,       // PC3
+	ADC_Harm2CV    = 2,       // PA3
+	ADC_WarpCV     = 3,       // PA7
+	ADC_HarmCntPot = 4,       // PA2
+	ADC_CTune      = 5,       // PB1
+	ADC_FTune      = 6,       // PC5
+	ADC_Harm1Pot   = 7,       // PB0
+	ADC_Harm2Pot   = 8,       // PC2
+	ADC_WarpPot    = 9,       // PC0
+};
 
 void SystemClock_Config(void);
 void InitMCO2();

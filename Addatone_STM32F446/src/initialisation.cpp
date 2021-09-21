@@ -43,12 +43,38 @@ void SystemClock_Config(void) {
 
 }
 
-void InitMCO2() {
+void InitMCO2()
+{
 	// Initialise oscillator output on MCO2 pin PC9
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
 	GPIOC->MODER |= GPIO_MODER_MODER9_1;			// Set PC9 to Alternate function mode (0b10); Uses alternate function AF0 so set by default
 
 	RCC->CFGR |= RCC_CFGR_MCO2_1; 					// 00: System clock; 01: PLLI2S clock; 10: HSE; 11: PLL clock
+}
+
+
+void InitAdcPins(ADC_TypeDef* ADC_No, std::initializer_list<uint8_t> channels)
+{
+	uint8_t sequence = 1;
+
+	for (auto channel: channels) {
+		// Set conversion sequence to order ADC channels are passed to this function
+		if (sequence < 7) {
+			ADC_No->SQR3 |= channel << ((sequence - 1) * 5);
+		} else if (sequence < 13) {
+			ADC_No->SQR2 |= channel << ((sequence - 7) * 5);
+		} else {
+			ADC_No->SQR1 |= channel << ((sequence - 13) * 5);
+		}
+
+		// 000: 3 cycles, 001: 15 cycles, 010: 28 cycles, 011: 56 cycles, 100: 84 cycles, 101: 112 cycles, 110: 144 cycles, 111: 480 cycles
+		if (channel < 10)
+			ADC_No->SMPR2 |= 0b010 << (3 * channel);
+		else
+			ADC_No->SMPR1 |= 0b010 << (3 * (channel - 10));
+
+		sequence++;
+	}
 }
 
 
@@ -97,29 +123,7 @@ void InitADC(void)
 
 	ADC2->CR1 |= ADC_CR1_SCAN;						// Activate scan mode
 	ADC2->SQR1 = (ADC_BUFFER_LENGTH - 1) << 20;		// Number of conversions in sequence
-	ADC2->SQR3 |= 6 << 0;							// Set IN6  1st conversion in sequence
-	ADC2->SQR3 |= 13 << 5;							// Set IN13 2nd conversion in sequence
-	ADC2->SQR3 |= 3 << 10;							// Set IN3  3rd conversion in sequence
-	ADC2->SQR3 |= 7 << 15;							// Set IN7  4th conversion in sequence
-	ADC2->SQR3 |= 2 << 20;							// Set IN2  5th conversion in sequence
-	ADC2->SQR3 |= 15 << 25;							// Set IN15 6th conversion in sequence
-	ADC2->SQR2 |= 9 << 0;							// Set IN9  7th conversion in sequence
-	ADC2->SQR2 |= 8 << 5;							// Set IN8  8th conversion in sequence
-	ADC2->SQR2 |= 12 << 10;							// Set IN12 9th conversion in sequence
-	ADC2->SQR2 |= 10 << 15;							// Set IN10 10th conversion in sequence
-
-	//	Set to 56 cycles (0b11) sampling speed (SMPR2 Left shift speed 3 x ADC_INx up to input 9; use SMPR1 from 0 for ADC_IN10+)
-	// 000: 3 cycles; 001: 15 cycles; 010: 28 cycles; 011: 56 cycles; 100: 84 cycles; 101: 112 cycles; 110: 144 cycles; 111: 480 cycles
-	ADC2->SMPR2 |= 0b110 << 18;						// Set speed of IN6
-	ADC2->SMPR1 |= 0b110 << 9;						// Set speed of IN13
-	ADC2->SMPR2 |= 0b110 << 9;						// Set speed of IN3
-	ADC2->SMPR2 |= 0b110 << 21;						// Set speed of IN7
-	ADC2->SMPR2 |= 0b110 << 3;						// Set speed of IN2
-	ADC2->SMPR1 |= 0b110 << 15;						// Set speed of IN15
-	ADC2->SMPR2 |= 0b110 << 27;						// Set speed of IN9
-	ADC2->SMPR2 |= 0b110 << 24;						// Set speed of IN8
-	ADC2->SMPR1 |= 0b110 << 6;						// Set speed of IN12
-	ADC2->SMPR1 |= 0b110 << 0;						// Set speed of IN10
+	InitAdcPins(ADC2, {6, 13, 3, 7, 2, 15, 9, 8, 12, 10});
 
 	ADC2->CR2 |= ADC_CR2_EOCS;						// Trigger interrupt on end of each individual conversion
 	ADC2->CR2 |= ADC_CR2_EXTEN_0;					// ADC hardware trigger 00: Trigger detection disabled; 01: Trigger detection on the rising edge; 10: Trigger detection on the falling edge; 11: Trigger detection on both the rising and falling edges
@@ -139,7 +143,7 @@ void InitADC(void)
 	DMA2_Stream2->CR |= DMA_SxCR_CIRC;				// circular mode to keep refilling buffer
 	DMA2_Stream2->CR &= ~DMA_SxCR_DIR;				// data transfer direction: 00: peripheral-to-memory; 01: memory-to-peripheral; 10: memory-to-memory
 
-	DMA2_Stream2->NDTR |= ADC_BUFFER_LENGTH * 4;		// Number of data items to transfer (ie size of ADC buffer)
+	DMA2_Stream2->NDTR |= ADC_BUFFER_LENGTH * 4;	// Number of data items to transfer (ie size of ADC buffer)
 	DMA2_Stream2->PAR = (uint32_t)(&(ADC2->DR));	// Configure the peripheral data register address
 	DMA2_Stream2->M0AR = (uint32_t)(ADC_array);		// Configure the memory address (note that M1AR is used for double-buffer mode)
 	DMA2_Stream2->CR |= DMA_SxCR_CHSEL_0;			// channel select to 1 for ADC2
@@ -148,12 +152,14 @@ void InitADC(void)
 	ADC2->CR2 |= ADC_CR2_ADON;						// Activate ADC
 }
 
+
 void InitIO()
 {
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;			// reset and clock control - advanced high performance bus - GPIO port A
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;			// reset and clock control - advanced high performance bus - GPIO port B
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;			// reset and clock control - advanced high performance bus - GPIO port C
 }
+
 
 void InitSysTick()
 {
@@ -174,7 +180,8 @@ void InitSysTick()
 
 
 //	Setup Timer 9 to count clock cycles for coverage profiling
-void InitCoverageTimer() {
+void InitCoverageTimer()
+{
 	RCC->APB2ENR |= RCC_APB2ENR_TIM9EN;				// Enable Timer
 	TIM9->PSC = 100;
 	TIM9->ARR = 65535;
@@ -258,6 +265,8 @@ void InitSPI()
 	SPI3->CR1 |= SPI_CR1_SPE;						// Enable SPI
 }
 
+
+// Only used for testing
 void InitI2S()
 {
 	/* All AF5
@@ -333,7 +342,9 @@ void InitI2S()
 	SPI2->I2SCFGR |= SPI_I2SCFGR_I2SE;				// Enable I2S
 }
 
-void sendI2SData(uint32_t data) {
+
+void sendI2SData(uint32_t data)
+{
 	//while (((SPI2->SR & SPI_SR_TXE) == 0) | ((SPI2->SR & SPI_SR_BSY) == SPI_SR_BSY) );
 	while ((SPI2->SR & SPI_SR_TXE) == 0);
 	SPI2->DR = 0x5533;
@@ -347,19 +358,24 @@ void sendI2SData(uint32_t data) {
 }
 
 
-void sendSPIData(uint16_t data) {
+void sendSPIData(uint16_t data)
+{
 	while (((SPI3->SR & SPI_SR_TXE) == 0) | ((SPI3->SR & SPI_SR_BSY) == SPI_SR_BSY) );
 	GPIOA->BSRR |= GPIO_BSRR_BR_15;
 	SPI3->DR = data;		// Send cmd data [X X C C C A A A]
 }
 
-void clearSPI() {
+
+void clearSPI()
+{
 	while (((SPI3->SR & SPI_SR_TXE) == 0) | ((SPI3->SR & SPI_SR_BSY) == SPI_SR_BSY) );
 	GPIOA->BSRR |= GPIO_BSRR_BS_15;
 }
 
+
 //	Setup Timer 3 on an interrupt to trigger SPI data send
-void InitSPITimer() {
+void InitSPITimer()
+{
 	RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;				// Enable Timer 3
 	TIM3->PSC = 50;									// Set prescaler
 	TIM3->ARR = 140; 								// Set auto reload register
