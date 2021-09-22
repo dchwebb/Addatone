@@ -9,6 +9,7 @@ Addatone_STM32F405/Debug/*
 Addatone_STM32F446/Debug/*
 Addatone_ICE40/Addaton_Sim/*
 Addatone_ICE40/Addatone_Sim/*
+Addatone_ICE40/impl_addatone_old/
 *.html
 *.log
 *.tcr
@@ -33,3 +34,5 @@ Addatone_ICE40/Addatone_Sim/*
 *.mk
 *.list
 *.map
+Addatone_ICE40/.recovery
+*.err

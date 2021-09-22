@@ -1,0 +1,48 @@
+Lattice Timing Report -  Setup , Version Radiant Software (64-bit) 2.0.1.281.2
+
+Wed Sep 22 13:19:43 2021
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
+
+Command line:    timing -iotime -html -rpt Addatone_ICE40_impl_Addatone.ior Addatone_ICE40_impl_Addatone.udb -gui -msgset D:/Eurorack/Addatone/Addatone_ICE40/promote.xml
+
+-----------------------------------------
+Design:          top
+Family:          iCE40UP
+Device:          iCE40UP5K
+Package:         SG48
+Performance:     High-Performance_1.2V
+-----------------------------------------
+
+I/O Timing Report
+=================
+
+Performance Grade Translation Table
+------------------------------
+ Code  |  Performance Grade   
+------------------------------
+HP_1.2V| High-Performance_1.2V
+------------------------------
+
+FPGA Input Port Results for Performance Grade: HP_1.2V
+----------------------------------------------------------
+-----------------------------------------------------
+Port Name|Setup|Grade|Edge|Hold|Grade|edge|Clock Port
+-----------------------------------------------------
+-----------------------------------------------------
+***Warning: IO ports are not constrainted.
+---------------------------------------------------------------------------------------------------------
+
+FPGA Output Port Results for Performance Grade: HP_1.2V
+----------------------------------------------------------
+--------------------------------------------------------------------------------
+Port Name|Clock To Out (MAX)|Grade|Edge|Clock To Out (MIN)|Grade|edge|Clock Port
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+***Warning: IO ports are not constrainted.
+---------------------------------------------------------------------------------------------------------
+

@@ -6,7 +6,7 @@ Performance Grade:      High-Performance_1.2V
 PACKAGE:          SG48
 Package Status:                     Preliminary    Version 1.5
 
-Wed Jun 03 18:41:30 2020
+Wed Sep 22 14:32:54 2021
 
 Pinout by Port Name:
 +-----------------+----------+--------------+-------+--------------------+
@@ -22,7 +22,7 @@ Pinout by Port Name:
 | o_DAC_Bit_Clock | 4/2      | LVCMOS33_OUT | PL10A | DRIVE:8mA PULL:NA  |
 | o_DAC_Data      | 3/2      | LVCMOS33_OUT | PL10B | DRIVE:8mA PULL:NA  |
 | o_DAC_LR_Clock  | 48/2     | LVCMOS33_OUT | PL8A  | DRIVE:8mA PULL:NA  |
-| reset_n         | 34/0     | LVCMOS33_IN  | PR14B | PULL:100K          |
+| reset_n         | 31/0     | LVCMOS33_IN  | PR17B | PULL:100K          |
 | test            | 45/2     | LVCMOS33_OUT | PL8B  | DRIVE:8mA PULL:NA  |
 +-----------------+----------+--------------+-------+--------------------+
 
@@ -61,9 +61,9 @@ Pinout by Pin Number:
 | 26/0     |     unused, PULL:UP |            |              | PR19A |                  |
 | 27/0     |     unused, PULL:UP |            |              | PR19B |                  |
 | 28/0     |     unused, PULL:UP |            |              | PR18A |                  |
-| 31/0     |     unused, PULL:UP |            |              | PR17B |                  |
+| 31/0     | reset_n             |            | LVCMOS33_IN  | PR17B |                  |
 | 32/0     |     unused, PULL:UP |            |              | PR17A |                  |
-| 34/0     | reset_n             |            | LVCMOS33_IN  | PR14B |                  |
+| 34/0     |     unused, PULL:UP |            |              | PR14B |                  |
 | 35/0     |     unused, PULL:UP |            |              | PR13B | GPLL_IN/PCLKT0_1 |
 | 36/0     |     unused, PULL:UP |            |              | PR10B |                  |
 | 37/0     | i_Mix               | LOCATED    | LVCMOS33_IN  | PR14A | PCLKT0_0         |
@@ -110,7 +110,7 @@ ldc_set_location -site {25} [ get_ports {i_Ring_Mod} ]
 ldc_set_location -site {4} [ get_ports {o_DAC_Bit_Clock} ]
 ldc_set_location -site {3} [ get_ports {o_DAC_Data} ]
 ldc_set_location -site {48} [ get_ports {o_DAC_LR_Clock} ]
-ldc_set_location -site {34} [ get_ports {reset_n} ]
+ldc_set_location -site {31} [ get_ports {reset_n} ]
 ldc_set_location -site {45} [ get_ports {test} ]
 
 
@@ -118,5 +118,5 @@ ldc_set_location -site {45} [ get_ports {test} ]
 
 
 Copyright 2015 Lattice Semiconductor Corporation, All Rights Reserved
-Wed Jun 03 18:41:30 2020
+Wed Sep 22 14:32:54 2021
 

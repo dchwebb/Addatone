@@ -6,7 +6,7 @@
 module Adder
 	#(parameter DIVISOR_BITS = 11)
 	(
-		input wire i_Clock, i_Reset, i_Start, i_Clear_Accumulator,
+		input wire i_Clock, i_Reset, i_Start, i_Clear_Accumulator, i_Last_Harmonic,
 		input wire signed [DIVISOR_BITS - 1:0] i_Multiple,
 		input wire signed [15:0] i_Sample,
 		output reg signed [31:0] o_Accumulator = 1'b0,
@@ -24,7 +24,7 @@ module Adder
 		o_Accumulator <= 1'b0;
 	end
 
-	always @(posedge i_Clock or posedge i_Clear_Accumulator) begin
+	always @(posedge i_Clock) begin		//  or posedge i_Clear_Accumulator
 		if (i_Reset || i_Clear_Accumulator) begin
 			SM_Adder = sm_wait;
 			o_Done <= 1'b1;
@@ -37,7 +37,10 @@ module Adder
 
 						if (i_Start) begin
 							o_Done <= 1'b0;
-							Working_Total <= i_Sample * $signed({{16 - DIVISOR_BITS{1'b0}}, i_Multiple});		// sign extend multiple to 16 bits
+							if (i_Last_Harmonic)
+								Working_Total <= i_Sample * $signed({{16 - DIVISOR_BITS{1'b0}}, i_Multiple >>> 1});		// sign extend multiple to 16 bits
+							else
+								Working_Total <= i_Sample * $signed({{16 - DIVISOR_BITS{1'b0}}, i_Multiple});		// sign extend multiple to 16 bits
 							SM_Adder = sm_mult;
 						end
 					end

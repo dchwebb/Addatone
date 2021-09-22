@@ -15,6 +15,7 @@ module top
 	);
 	parameter NO_OF_HARMONICS = 8'd100;
 
+
 	wire Reset;
 	assign Reset = ~reset_n;
 	wire Main_Clock;
@@ -65,6 +66,11 @@ module top
 		.o_Data_Received(ADC_Data_Received)
 	);
 
+	reg Last_Harmonic;
+	always @(posedge Main_Clock) begin
+		Last_Harmonic <= (Harmonic == Harmonic_Count - 1);
+	end
+	
 	// Instantiate scaling adder - this scales then accumulates samples for each sine wave
 	parameter DIV_BIT = 11;									// Allows fractions from 1/128 to 127/128 (for DIV_BIT = 7)
 	reg [DIV_BIT - 1:0] Harmonic_Scale[1:0];			// Level at which higher harmonics are attenuated
@@ -85,6 +91,7 @@ module top
 			.i_Reset(Reset),
 			.i_Start(Adder_Start[a]),
 			.i_Clear_Accumulator(Adder_Clear),
+			.i_Last_Harmonic(Last_Harmonic),
 			.i_Multiple(Adder_Mult[a]),
 			.i_Sample(Sample_Value),
 			.o_Accumulator(Adder_Total[a]),
@@ -147,7 +154,7 @@ module top
 		Freq_Scale <= ADC_Data[5];											// Frequency scaling offset - higher frequencies will be moved further from multiple of fundamental
 		Harmonic_Count <= ADC_Data[6];									// Number of harmonics before scaling
 	end
-
+	
 	always @(posedge Main_Clock) begin
 		if (Reset) begin
 			Sample_Timer <= 1'b0;
