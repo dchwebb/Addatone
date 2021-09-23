@@ -38,7 +38,7 @@ module Adder
 						if (i_Start) begin
 							o_Done <= 1'b0;
 							if (i_Last_Harmonic)
-								Working_Total <= i_Sample * $signed({{16 - DIVISOR_BITS{1'b0}}, i_Multiple >>> 1});		// sign extend multiple to 16 bits
+								Working_Total <= i_Sample * $signed({{16 - DIVISOR_BITS{1'b0}}, i_Multiple >>> 1});		// half level of last multiplier to achieve smoother automation
 							else
 								Working_Total <= i_Sample * $signed({{16 - DIVISOR_BITS{1'b0}}, i_Multiple});		// sign extend multiple to 16 bits
 							SM_Adder = sm_mult;

@@ -66,24 +66,13 @@ void fpgaHandler::SendControls()
 	float volEven = (maxScale - static_cast<float>(harmScaleEven)) / maxScale;
 	startVolEven = ((0.7f - 0.7f * std::pow(volEven, 4.0f)) + 0.3f) * maxScale;
 
-
-#ifdef USEWARPCV
-	// Send CV value for frequency scaling
-	freqScale = std::min((int16_t)(ADC_REV(ADC_WarpCV) + ADC_SUM(ADC_WarpPot)) >> 7, 127);		// scale to range 0-127
-
-	// Send potentiometer value for number of harmonics - this uses hysteresis to avoid jumping
-	if (harmCountHysteresis > ADC_array[ADC_HarmCntPot] + 20 || harmCountHysteresis < ADC_array[ADC_HarmCntPot] - 20) {
-		harmCountHysteresis = ADC_array[ADC_HarmCntPot];
-	}
-#else
 	// Using the warp CV control for harmonic count
 	freqScale = std::min(ADC_SUM(ADC_WarpPot) >> 7, 127);		// scale to range 0-127
 
-	harmCountDamped = (harmCountDamped * 31.0f + (static_cast<float>(ADC_REV(ADC_WarpCV) + ADC_SUM(ADC_HarmCntPot)) / 4.0f)) / 32.0;
+	harmCountDamped = (harmCountDamped * 63.0f + (static_cast<float>(ADC_REV(ADC_WarpCV) + ADC_SUM(ADC_HarmCntPot)) / 4.0f)) / 64.0;
 	if (harmCountHysteresis > harmCountDamped + 40.0f || harmCountHysteresis < harmCountDamped - 40.0f) {
 		harmCountHysteresis = harmCountDamped;
 	}
-#endif
 
 	// Scale input with formula y=(x^2)/128 to give a flattened exponential curve (more control over fewer number of harmonics)
 	harmCount = static_cast<uint16_t>(std::min(harmCountHysteresis * harmCountHysteresis / 131072.0f, 127.0f));		// scale to range 0-127
