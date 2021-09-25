@@ -4,7 +4,7 @@ Overview
 
 Addatone is a Eurorack oscillator using additive synthesis. It is a two channel oscillator with channel one outputting fundamental and odd harmonics and channel two fundamental and even harmonics.
 
-Each channel has potentiometer and CV control over the number of harmonics with higher harmonics progressively attenuated. In addition a 'Count' pot and CV input hard-limit the total numer of audible harmonics. A warp control progressively detunes the odd harmonics up and even harmonics down.
+Each channel has potentiometer and CV control over the number of harmonics with higher harmonics progressively attenuated. In addition a 'Count' pot and CV input hard-limit the total number of audible harmonics. A warp control progressively detunes the odd harmonics up and even harmonics down.
 
 Channel one has a mix switch which allows a mix of both channels to be output from channel one. Channel two has a multiply switch which allows a multiple of both channels to be output from channel two (ie a ring modulation effect).
 
@@ -13,11 +13,11 @@ The final controls are an octave potentiometer covering a five octave range and 
 Architecture
 ------------
 
-The core sound generator is an ICE40UP5K FPGA from Lattice. This is resposible for generating the harmonics, mixing/multiplying and then outputting to the DAC via I2S protocol.
+The core sound generator is an ICE40UP5K FPGA from Lattice. This is responsible for generating the harmonics, mixing/multiplying and then outputting to the DAC via I2S protocol.
 
-The module also contains an STM32F446 microcontroller which holds the FPGA bitstream in internal flash memory; this is used to program the FPGA on startup via SPI. In addition the STM32 is used as an ADC to digitise and scale all potentiometer and CV control data. This is periodically transferred to the FPGA via SPI. The STM32 is clocked from an external 12MHz crystal. This is also used to drive the FPGA clock via the STM32 MCO (Master Clock Output) peripheral.
+The module also contains an STM32F446 microcontroller which holds the FPGA bitstream in internal flash memory; this is used to program the FPGA on start-up via SPI. In addition the STM32 is used as an ADC to digitise and scale all potentiometer and CV control data. This is periodically transferred to the FPGA via SPI. The STM32 is clocked from an external 12MHz crystal. This is also used to drive the FPGA clock via the STM32 MCO (Master Clock Output) peripheral.
 
-The DAC is a Texas Instruments PCM5100APW, operating 2 channels at 16 bits, 48kHz. Two opamps are used to scale input CV voltages and to amplify the DAC output to Eurorack levels (8V peak to peak).
+The DAC is a Texas Instruments PCM5100APW, operating 2 channels at 16 bits, 48kHz. Two op-amps are used to scale input CV voltages and to amplify the DAC output to Eurorack levels (8V peak to peak).
 
 FPGA
 ----
