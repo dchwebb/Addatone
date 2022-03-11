@@ -1,4 +1,5 @@
 # Addatone
+![Image](https://github.com/dchwebb/Addatone/raw/master/pictures/addatone_front.png "icon")
 Overview
 --------
 
@@ -12,6 +13,8 @@ The final controls are an octave potentiometer covering a five octave range and 
 
 Architecture
 ------------
+
+![Image](https://github.com/dchwebb/Addatone/raw/master/pictures/addatone_back.png "icon")
 
 The core sound generator is an ICE40UP5K FPGA from Lattice. This is responsible for generating the harmonics, mixing/multiplying and then outputting to the DAC via I2S protocol.
 
