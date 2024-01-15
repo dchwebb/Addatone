@@ -36,3 +36,6 @@ Addatone_ICE40/impl_addatone_old/
 *.map
 Addatone_ICE40/.recovery
 *.err
+*.lck
+Hardware/\#auto_saved_files\#
+Hardware/_autosave-AddaTone components.sch

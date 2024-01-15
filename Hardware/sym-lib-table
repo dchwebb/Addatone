@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "AddaTone-components-rescue")(type "Legacy")(uri "${KIPRJMOD}/AddaTone components-rescue.lib")(options "")(descr ""))
+  (lib (name "AddaTone-Controls-rescue")(type "Legacy")(uri "${KIPRJMOD}/AddaTone Controls-rescue.lib")(options "")(descr ""))
+  (lib (name "AddaTone components-rescue")(type "KiCad")(uri "${KIPRJMOD}/AddaTone components-rescue.kicad_sym")(options "")(descr ""))
+)
