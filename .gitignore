@@ -6,7 +6,7 @@ Addatone_MachX03/Addatone_tcr.dir/*
 Addatone_MachX03/addatone_sim/src/wave.asdbw/*
 Addatone_MachX03/testsim/
 Addatone_STM32F405/Debug/*
-Addatone_STM32F446/Debug/*
+#Addatone_STM32F446/Debug/
 Addatone_ICE40/Addaton_Sim/*
 Addatone_ICE40/Addatone_Sim/*
 Addatone_ICE40/impl_addatone_old/
@@ -39,3 +39,4 @@ Addatone_ICE40/.recovery
 *.lck
 Hardware/\#auto_saved_files\#
 Hardware/_autosave-AddaTone components.sch
+*.cyclo

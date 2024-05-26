@@ -68,6 +68,12 @@
     "visible_layers": "000ffff_80000001",
     "zone_display_mode": 1
   },
+  "git": {
+    "repo_password": "",
+    "repo_type": "",
+    "repo_username": "",
+    "ssh_key": ""
+  },
   "meta": {
     "filename": "AddaTone components.kicad_prl",
     "version": 3
