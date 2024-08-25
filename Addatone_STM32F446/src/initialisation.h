@@ -1,9 +1,9 @@
 #pragma once
 
-
 #include "stm32f4xx.h"
 #include <algorithm>
 #include <cmath>
+#include "GpioPin.h"
 
 extern volatile uint32_t SysTickVal;
 
@@ -22,11 +22,12 @@ enum ADC_Controls {
 	ADC_WarpPot    = 9,       // PC0
 };
 
-void SystemClock_Config(void);
+void InitHardware();
+void InitClocks();
 void InitMCO2();
 
-void InitADC(void);
-void InitIO(void);
+void InitADC();
+void InitIO();
 void InitSysTick();
 void InitCoverageTimer();
 

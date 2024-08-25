@@ -1,33 +1,44 @@
 #include "initialisation.h"
 
-#define USE_HSE
-#define PLL_M 6
-#define PLL_N 144
-#define PLL_P 2		//  Main PLL (PLL) division factor for main system clock can be 2 (PLL_P = 0), 4 (PLL_P = 1), 6 (PLL_P = 2), 8 (PLL_P = 3)
-#define PLL_Q 2
+void InitHardware()
+{
+	InitClocks();
+	InitMCO2();									// Initialise output of HSE oscillator on pin PC9
+	InitSysTick();
+	InitIO();
+	InitFPGAProg();								// Initialise SPI peripheral used to program bitstream into FPGA
+	InitSPI();
+}
 
-void SystemClock_Config(void) {
 
+struct PLLDividers {
+	uint32_t M;
+	uint32_t N;
+	uint32_t P;
+	uint32_t Q;
+};
+const PLLDividers mainPLL {6, 144, 2, 2};		// Clock: 12MHz / 6 (M) * 144 (N) / 2 (P) = 144MHz
+
+void InitClocks()
+{
 	RCC->APB1ENR |= RCC_APB1ENR_PWREN;			// Enable Power Control clock
 	PWR->CR |= PWR_CR_VOS_0;					// Enable VOS voltage scaling - allows maximum clock speed
 
-	SCB->CPACR |= ((3UL << 10*2)|(3UL << 11*2));// CPACR register: set full access privileges for coprocessors
+	SCB->CPACR |= ((3 << 10 * 2) | (3 << 11 * 2));	// CPACR register: set full access privileges for coprocessors
 
-#ifdef USE_HSE
 	RCC->CR |= RCC_CR_HSEON;					// HSE ON
 	while ((RCC->CR & RCC_CR_HSERDY) == 0);		// Wait till HSE is ready
-	RCC->PLLCFGR = PLL_M | (PLL_N << 6) | (((PLL_P >> 1) -1) << 16) | (RCC_PLLCFGR_PLLSRC_HSE) | (PLL_Q << 24);
-#endif
 
-#ifdef USE_HSI
-	RCC->CR |= RCC_CR_HSION;					// HSI ON
-	while((RCC->CR & RCC_CR_HSIRDY) == 0);		// Wait till HSI is ready
-    RCC->PLLCFGR = PLL_M | (PLL_N << 6) | (((PLL_P >> 1) -1) << 16) | (RCC_PLLCFGR_PLLSRC_HSI) | (PLL_Q << 24);
-#endif
+	RCC->PLLCFGR = 	(mainPLL.M << RCC_PLLCFGR_PLLM_Pos) |
+					(mainPLL.N << RCC_PLLCFGR_PLLN_Pos) |
+					(((mainPLL.P >> 1) - 1) << RCC_PLLCFGR_PLLP_Pos) |
+					(mainPLL.Q << RCC_PLLCFGR_PLLQ_Pos) |
+					RCC_PLLCFGR_PLLSRC_HSE;
 
-    RCC->CFGR |= RCC_CFGR_HPRE_DIV1;			// HCLK = SYSCLK / 1
-	RCC->CFGR |= RCC_CFGR_PPRE2_DIV2;			// PCLK2 = HCLK / 2 (APB2)
-	RCC->CFGR |= RCC_CFGR_PPRE1_DIV4;			// PCLK1 = HCLK / 4 (APB1)
+	RCC->CFGR |= RCC_CFGR_HPRE_DIV1 |			// HCLK = SYSCLK / 1
+				 RCC_CFGR_PPRE1_DIV4 |			// PCLK1 = HCLK / 4 (APB1)
+				 RCC_CFGR_PPRE2_DIV2;			// PCLK2 = HCLK / 2 (APB2)
+
 	RCC->CR |= RCC_CR_PLLON;					// Enable the main PLL
 	while((RCC->CR & RCC_CR_PLLRDY) == 0);		// Wait till the main PLL is ready
 
@@ -37,11 +48,16 @@ void SystemClock_Config(void) {
 	// Select the main PLL as system clock source
 	RCC->CFGR &= ~RCC_CFGR_SW;
 	RCC->CFGR |= RCC_CFGR_SW_PLL;
-
-	// Wait till the main PLL is used as system clock source
 	while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS ) != RCC_CFGR_SWS_PLL);
 
+	// Enable data and instruction cache
+	FLASH->ACR |= FLASH_ACR_ICEN;
+	FLASH->ACR |= FLASH_ACR_DCEN;
+	FLASH->ACR |= FLASH_ACR_PRFTEN;				// Enable the FLASH prefetch buffer
+
+	SystemCoreClockUpdate();					// Update SystemCoreClock variable
 }
+
 
 void InitMCO2()
 {
@@ -68,17 +84,18 @@ void InitAdcPins(ADC_TypeDef* ADC_No, std::initializer_list<uint8_t> channels)
 		}
 
 		// 000: 3 cycles, 001: 15 cycles, 010: 28 cycles, 011: 56 cycles, 100: 84 cycles, 101: 112 cycles, 110: 144 cycles, 111: 480 cycles
-		if (channel < 10)
+		if (channel < 10) {
 			ADC_No->SMPR2 |= 0b110 << (3 * channel);
-		else
+		} else {
 			ADC_No->SMPR1 |= 0b110 << (3 * (channel - 10));
+		}
 
 		sequence++;
 	}
 }
 
 
-void InitADC(void)
+void InitADC()
 {
 	//	Setup Timer 2 to trigger ADC
 	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;				// Enable Timer 2 clock
@@ -90,23 +107,20 @@ void InitADC(void)
 	TIM2->CCMR1 |= TIM_CCMR1_OC1M_1 |TIM_CCMR1_OC1M_2;	// 110 PWM Mode 1
 	TIM2->CR1 |= TIM_CR1_CEN;
 
-	// Enable ADC2 and GPIO clock sources
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
-	RCC->APB2ENR |= RCC_APB2ENR_ADC2EN;
+	RCC->APB2ENR |= RCC_APB2ENR_ADC2EN;				// Enable ADC2 clock source
 
 	// Enable ADC
-	GPIOA->MODER |= GPIO_MODER_MODER6;				// Set PA6 to Analog mode (0b11)
-	GPIOC->MODER |= GPIO_MODER_MODER3;				// Set PC3 to Analog mode (0b11)
-	GPIOA->MODER |= GPIO_MODER_MODER3;				// Set PA3 to Analog mode (0b11)
-	GPIOA->MODER |= GPIO_MODER_MODER7;				// Set PA7 to Analog mode (0b11)
-	GPIOA->MODER |= GPIO_MODER_MODER2;				// Set PA2 to Analog mode (0b11)
-	GPIOC->MODER |= GPIO_MODER_MODER5;				// Set PC5 to Analog mode (0b11)
-	GPIOB->MODER |= GPIO_MODER_MODER1;				// Set PB1 to Analog mode (0b11)
-	GPIOB->MODER |= GPIO_MODER_MODER0;				// Set PB0 to Analog mode (0b11)
-	GPIOC->MODER |= GPIO_MODER_MODER2;				// Set PC2 to Analog mode (0b11)
-	GPIOC->MODER |= GPIO_MODER_MODER0;				// Set PC0 to Analog mode (0b11)
+	GpioPin::Init(GPIOA, 6, GpioPin::Type::Analog);
+	GpioPin::Init(GPIOC, 3, GpioPin::Type::Analog);
+	GpioPin::Init(GPIOA, 3, GpioPin::Type::Analog);
+	GpioPin::Init(GPIOA, 7, GpioPin::Type::Analog);
+	GpioPin::Init(GPIOA, 2, GpioPin::Type::Analog);
+	GpioPin::Init(GPIOC, 5, GpioPin::Type::Analog);
+	GpioPin::Init(GPIOB, 1, GpioPin::Type::Analog);
+	GpioPin::Init(GPIOB, 0, GpioPin::Type::Analog);
+	GpioPin::Init(GPIOC, 2, GpioPin::Type::Analog);
+	GpioPin::Init(GPIOC, 0, GpioPin::Type::Analog);
+
 
 	/* 446:
 	0	PITCH_CV		PA6
@@ -168,7 +182,7 @@ void InitSysTick()
 	SysTick->LOAD = 0xFFFF - 1;							// Set reload register to maximum 2^24 - each tick is around 400us
 
 	// Set priority of Systick interrupt to least urgency (ie largest priority value)
-	NVIC_SetPriority (SysTick_IRQn, (1 << __NVIC_PRIO_BITS) - 1);
+	NVIC_SetPriority (SysTick_IRQn, 0);
 
 	SysTick->VAL = 0;									// Reset the SysTick counter value
 
@@ -192,29 +206,19 @@ void InitCoverageTimer()
 
 }
 
+
 void InitFPGAProg()
 {
 	//	Enable GPIO and SPI clocks
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
 	RCC->APB1ENR |= RCC_APB1ENR_SPI2EN;
 
-	// PB15: SPI_MOSI [alternate function AF5] to ICE_MOSI
-	GPIOB->MODER |= GPIO_MODER_MODER15_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
-	GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR15;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
-	GPIOB->AFR[1] |= 0b0101 << 20;					// 0b0101 = Alternate Function 5 (SPI2); 20 is position of Pin 15
-
-	// PB13: SPI_SCK [alternate function AF5]
-	GPIOB->MODER |= GPIO_MODER_MODER13_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
-	GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR13;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
-	GPIOB->AFR[1] |= 0b0101 << 28;					// 0b0101 = Alternate Function 6 (SPI2); 28 is position of Pin 13
-
-	// PB12 Software NSS
-	GPIOB->MODER |= GPIO_MODER_MODER12_0;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
-	GPIOB->MODER &= ~GPIO_MODER_MODER12_1;
-	GPIOB->BSRR |= GPIO_BSRR_BS_12;
+	GpioPin::Init(GPIOB, 15, GpioPin::Type::AlternateFunction, 5, GpioPin::DriveStrength::VeryHigh);	// PB15: SPI_MOSI [alternate function AF5] to ICE_MOSI
+	GpioPin::Init(GPIOB, 13, GpioPin::Type::AlternateFunction, 5, GpioPin::DriveStrength::VeryHigh);		// PB13: SPI_SCK [alternate function AF5]
+	GpioPin::Init(GPIOB, 12, GpioPin::Type::Output);			// PB12 Software NSS
+	GpioPin::SetHigh(GPIOB, 12);
 
 	// PC7 Reset FPGA - configure as Open drain. This will only pull pin low when set to 0; otherwise output is high impedence
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;			// reset and clock control - advanced high performance bus - GPIO port C
 	GPIOC->OTYPER |= GPIO_OTYPER_OT7;				// Configure as open drain
 	GPIOC->BSRR |= GPIO_BSRR_BS_7;
 	GPIOC->MODER |= GPIO_MODER_MODER7_0;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
@@ -234,26 +238,12 @@ void InitFPGAProg()
 
 void InitSPI()
 {
-	//	Enable GPIO and SPI clocks
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;			// reset and clock control - advanced high performance bus - GPIO port A
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;			// reset and clock control - advanced high performance bus - GPIO port B
-	RCC->APB1ENR |= RCC_APB1ENR_SPI3EN;
+	RCC->APB1ENR |= RCC_APB1ENR_SPI3EN;				//	Enable SPI clock
 
-	// PB5 (57): SPI_MOSI [alternate function AF6]
-	GPIOB->MODER |= GPIO_MODER_MODER5_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
-	GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR5;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
-	GPIOB->AFR[0] |= 0b0110 << 20;					// 0b0110 = Alternate Function 6 (SPI3); 20 is position of Pin 5
-
-	// PB3 (55) SPI_SCK [alternate function AF6]
-	GPIOB->MODER &= ~GPIO_MODER_MODER3;				// Reset value of PB3 is 0b10
-	GPIOB->MODER |= GPIO_MODER_MODER3_1;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
-	GPIOB->OSPEEDR |= GPIO_OSPEEDER_OSPEEDR3;		// V High  - 00: Low speed; 01: Medium speed; 10: High speed; 11: Very high speed
-	GPIOB->AFR[0] |= 0b0110 << 12;					// 0b0110 = Alternate Function 6 (SPI3); 12 is position of Pin 3
-
-	// PA15 (50) Software NSS
-	GPIOA->MODER |= GPIO_MODER_MODER15_0;			// 00: Input (reset state)	01: General purpose output mode	10: Alternate function mode	11: Analog mode
-	GPIOA->MODER &= ~GPIO_MODER_MODER15_1;
-	GPIOA->BSRR |= GPIO_BSRR_BS_15;
+	GpioPin::Init(GPIOB, 5, GpioPin::Type::AlternateFunction, 6, GpioPin::DriveStrength::VeryHigh);		// PB5 (57): SPI_MOSI [AF6]
+	GpioPin::Init(GPIOB, 3, GpioPin::Type::AlternateFunction, 6, GpioPin::DriveStrength::VeryHigh);		// PB3 (55) SPI_SCK [AF6]
+	GpioPin::Init(GPIOA, 15, GpioPin::Type::Output);													// PA15 (50) Software NSS
+	GpioPin::SetHigh(GPIOA, 15);
 
 	// Configure SPI
 	SPI3->CR1 |= SPI_CR1_DFF;						// Use 16 bit data frame

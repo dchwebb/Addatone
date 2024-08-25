@@ -1,35 +1,68 @@
 #include "fpgaHandler.h"
 #include "bitstream.h"
 
+fpgaHandler fpga;
+
+void fpgaHandler::Calibrate()
+{
+//	if (calibrating) {
+//		calibrating = false;
+//
+//	} else {
+//		calibrating = true;
+//		// Read initial position of coarse tune knob as used to set spread
+//		calibSpreadStart = ADC_SUM(ADC_array[ADC_CTune]);			// value between 0 and 16384
+//		calibSpreadOrig = calibSpread;
+//	}
+}
+
+
 void fpgaHandler::SendControls()
 {
-	// create macro to enable summing of four most recent values of ADC regardless of how many ADC samples are in the buffer
-	#define ADC_SUM(x) (ADC_array[x] + ADC_array[ADC_BUFFER_LENGTH + x] + ADC_array[ADC_BUFFER_LENGTH * 2 + x] + ADC_array[ADC_BUFFER_LENGTH * 3 + x])
-	#define ADC_REV(x) 16384 - ADC_SUM(x)
-
 	TIM3->SR &= ~TIM_SR_UIF;					// clear UIF flag
 
-	//	Coarse tuning - add some hysteresis to prevent jumping
-	if (coarseTune > ADC_array[ADC_CTune] + 128 || coarseTune < ADC_array[ADC_CTune] - 128) {
-		coarseTune = ADC_array[ADC_CTune];
+	if (calibBtn.Pressed()) {
+		if (calibrating) {
+			calibrating = false;
+
+			// Calculate fine tune offset
+			cfg.calibFineTuneMid = cfg.calibFineTuneMid + (cfg.calibFineTuneMid - ADC_SUM(ADC_FTune));
+
+			config.SaveConfig(true);
+		} else {
+			calibrating = true;
+			// Read initial position of coarse tune knob as used to set spread
+			calibSpreadStart = ADC_SUM(ADC_CTune);			// value between 0 and 16384
+			calibSpreadOrig = cfg.calibSpread;
+		}
 	}
 
+	if (!calibrating) {			// When calibrating coarse tune is used to set spread
+		//	Coarse tuning - add some hysteresis to prevent jumping
+		if (coarseTune > ADC_array[ADC_CTune] + 128 || coarseTune < ADC_array[ADC_CTune] - 128) {
+			coarseTune = ADC_array[ADC_CTune];
+		}
+	} else {
+		int32_t calibSpreadEnd = ADC_SUM(ADC_CTune);			// value between 0 and 16384
+		float spreadChange = (calibSpreadEnd - calibSpreadStart) / 1000.0f;
+		cfg.calibSpread = calibSpreadOrig + spreadChange;
+	}
 
-	int16_t octave = 0;
+	float octave = 0.0f;
 	if (coarseTune > 3412)
-		octave = -2 * 590;
+		octave = -2.0f * cfg.calibSpread;
 	else if (coarseTune > 2728)
-		octave = -590;
+		octave = -cfg.calibSpread;
 	else if (coarseTune < 682)
-		octave = 2 * 590;
+		octave = 2.0f * cfg.calibSpread;
 	else if (coarseTune < 1364)
-		octave = 590;
+		octave = cfg.calibSpread;
 
 	// Pitch calculations - Increase 2270 to increase pitch; Reduce ABS(610) to increase spread
-	float ftune = (8192.0f - ADC_SUM(ADC_FTune)) / 14.0f;				// Gives around an octave of fine tune
-	float pitch = static_cast<float>(ADC_SUM(ADC_Pitch) >> 2) + ftune + static_cast<float>(octave);
-	//freq = 2270.0f * std::pow(2.0f, pitch / -610.0f);			// for cycle length matching sample rate (48k)
-	freq = 3200.0f * std::pow(2.0f, pitch / -590.0f);			// for cycle length of 65k
+	float ftune = (cfg.calibFineTuneMid - ADC_SUM(ADC_FTune)) / 60.0f;				// Gives around quarter of an octave of fine tune
+	float pitch = static_cast<float>(ADC_SUM(ADC_Pitch) >> 2) + ftune + octave;
+
+	freq = 3200.0f * std::pow(2.0f, -pitch / cfg.calibSpread);			// for cycle length of 65k
 
 
 	/* Scaling logic
