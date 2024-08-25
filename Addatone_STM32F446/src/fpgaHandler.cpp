@@ -3,19 +3,6 @@
 
 fpgaHandler fpga;
 
-void fpgaHandler::Calibrate()
-{
-//	if (calibrating) {
-//		calibrating = false;
-//
-//	} else {
-//		calibrating = true;
-//		// Read initial position of coarse tune knob as used to set spread
-//		calibSpreadStart = ADC_SUM(ADC_array[ADC_CTune]);			// value between 0 and 16384
-//		calibSpreadOrig = calibSpread;
-//	}
-}
-
 
 void fpgaHandler::SendControls()
 {

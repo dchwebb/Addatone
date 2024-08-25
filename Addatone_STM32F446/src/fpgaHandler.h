@@ -12,13 +12,14 @@ struct fpgaHandler {
 public:
 	void ProgramBitstream();
 	void SendControls();
-	void Calibrate();
 
 	ConfigSaver configSaver = {
 		.settingsAddress = &cfg,
 		.settingsSize = sizeof(cfg),
 		.validateSettings = nullptr
 	};
+
+	Btn calibBtn {GPIOC, 13, GpioPin::Type::InputPullup};
 
 private:
 	struct Config {
@@ -46,7 +47,6 @@ private:
 	float harmCountDamped;
 	float harmCountHysteresis;				// Temporary value used for hysteresis
 
-	Btn calibBtn {GPIOC, 13, GpioPin::Type::InputPullup};
 };
 
 extern fpgaHandler fpga;

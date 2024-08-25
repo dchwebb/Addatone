@@ -47,3 +47,14 @@ STM32 Microcontroller
 The module includes an STM32F446 MCU that carries out various helper roles. The firmware was developed in STM's CubeIDE and available here: https://github.com/dchwebb/Addatone/tree/master/Addatone_STM32F446
 
 The FPGA bitstream is stored in the MCU's flash memory and is programmed into the FPGA at startup using an STM32 SPI peripheral (see fpgaHandler::ProgramBitstream method). Once the FPGA is programmed the ADC data derived from external CV control and potentiometers is processed, scaled and transmitted in a periodic packet to the FPGA via SPI (see fpgaHandler::SendControls method).
+
+Calibration
+-----------
+
+The 'calib' button allows the setting of the mid point of the fine tune and the spread of the tuning. To start calibration turn the Octave and Fine Tune knobs to their mid point position.
+
+Press the Calib button. Changing the Fine Tune knob will alter the pitch. Turning the Octave knob clockwise will decrease the tuning spread, and vice versa.
+
+When calibration is complete press the Calib button again. Turning the Fine Tune knob to the center position should set the correct pitch.
+
+To erase the configured calibration hold the Calib button down when powering on the module.
